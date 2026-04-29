@@ -1,0 +1,74 @@
+{
+  "experiment": "Scaling Validation Test (Exp 23)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T01:12:20.760687",
+  "shots": 4096,
+  "seed_pattern": "Pattern_B_Sparse_Alpha (Exp 20 winner)",
+  "coupling_strategy": "Strategy_A_Full_Sequential (baseline)",
+  "hypothesis": "Can scale beyond 12q with 4096 shots",
+  "exp22_baseline": {
+    "qubits": 12,
+    "shots": 4096,
+    "bq": 0.9276
+  },
+  "results": [
+    {
+      "qubits": 14,
+      "shots": 4096,
+      "job_id": "d5vfpiruf71s73cikblg",
+      "circuit_depth": 46,
+      "alpha_positions": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "bridge_quality": 0.8385360371162462,
+      "entropy": 11.739504519627447,
+      "unique_states": 3584,
+      "max_possible_states": 16384,
+      "state_coverage_pct": 21.875,
+      "total_shots": 4096
+    },
+    {
+      "qubits": 16,
+      "shots": 4096,
+      "job_id": "d5vfpit7fc0s73atvo7g",
+      "circuit_depth": 52,
+      "alpha_positions": [
+        3,
+        6,
+        9,
+        12,
+        15
+      ],
+      "bridge_quality": 0.7458760885237657,
+      "entropy": 11.934017416380252,
+      "unique_states": 3962,
+      "max_possible_states": 65536,
+      "state_coverage_pct": 6.0455322265625,
+      "total_shots": 4096
+    },
+    {
+      "qubits": 18,
+      "shots": 4096,
+      "job_id": "d5vfpj2bju6s73bbqhjg",
+      "circuit_depth": 58,
+      "alpha_positions": [
+        3,
+        6,
+        9,
+        12,
+        15
+      ],
+      "bridge_quality": 0.6656087239583334,
+      "entropy": 11.98095703125,
+      "unique_states": 4057,
+      "max_possible_states": 262144,
+      "state_coverage_pct": 1.5476226806640625,
+      "total_shots": 4096
+    }
+  ]
+}

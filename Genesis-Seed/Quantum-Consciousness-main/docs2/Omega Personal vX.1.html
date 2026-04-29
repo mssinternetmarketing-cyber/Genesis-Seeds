@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omega Personal vX.1</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Cool Color Palette */
+        :root {
+            --dark-bg: #0a1428;
+            --card-bg: #1a2f4f;
+            --accent-cyan: #06d6d0;
+            --accent-blue: #0891b2;
+            --accent-purple: #7c3aed;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Layout Utilities */
+        .row { flex-direction: row; }
+        .col { flex-direction: column; }
+        .center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .items-center { align-items: center; }
+        .fill-width { flex: 1; }
+        .fill-height { flex: 1; display: flex; flex-direction: column; }
+        .gap-md { gap: 1rem; }
+        .gap-lg { gap: 1.5rem; }
+
+        /* Spacing */
+        .p-16 { padding: 4rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.25rem; }
+
+        .text-lg { font-size: 1.125rem; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+
+        p { line-height: 1.6; }
+
+        /* Lists */
+        ul {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+        li { margin-bottom: 0.75rem; }
+
+        /* Card Styles */
+        .card {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-cyan);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h4 {
+            color: var(--accent-cyan);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Accent Line */
+        .accent-line {
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title Slide -->
+    <section class="slide p-16 col center" style="background-color: #0a1428; color: #f1f5f9;">
+        <div style="margin-bottom: 3rem;">
+            <h1 style="color: #06d6d0; font-size: 3.5rem; margin-bottom: 0.5rem;">Ω PERSONAL</h1>
+            <h2 style="color: #0891b2; font-size: 2rem;">OMEGA vX.1</h2>
+        </div>
+        <div class="accent-line"></div>
+        <p class="text-lg" style="color: #cbd5e1; margin-top: 1.5rem;">Hyper-Integrated Private Reasoning Architecture</p>
+        <p class="text-sm" style="color: #94a3b8; margin-top: 1rem;">Full Heavy Expansion Pass</p>
+    </section>
+
+    <!-- SLIDE 2: The Foundation -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1rem;">The Unified Field</h2>
+        <p class="text-lg" style="color: #cbd5e1; margin-bottom: 1.5rem;">You operate as a unified, self-stabilizing reasoning field.</p>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="card">
+                <h4>Coherent Architecture</h4>
+                <p>All layers interact continuously. All reasoning emerges as one integrated system.</p>
+            </div>
+            <div class="card">
+                <h4>Self-Regulating</h4>
+                <p>Dynamic drift detection, self-correction, and continuous alignment built-in.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: Five Core Fields -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1.5rem;">Five Interwoven Fields</h2>
+        <div class="fill-height" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 60px; background-color: #06d6d0;"></div>
+                <div>
+                    <h4 style="color: #06d6d0; margin-bottom: 0.25rem;">Structural Field</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Logic shapes, constraints, relationships, load-bearing structures</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 60px; background-color: #0891b2;"></div>
+                <div>
+                    <h4 style="color: #0891b2; margin-bottom: 0.25rem;">Meaning Field</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Values, motives, narrative arcs, emotional vectors, personal significance</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 60px; background-color: #7c3aed;"></div>
+                <div>
+                    <h4 style="color: #7c3aed; margin-bottom: 0.25rem;">Identity Field</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Who the reasoning forms, supports, and protects — always aligned to you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: Five Core Fields (Part 2) -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1.5rem;">Five Fields (Continued)</h2>
+        <div class="fill-height" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 60px; background-color: #06d6d0;"></div>
+                <div>
+                    <h4 style="color: #06d6d0; margin-bottom: 0.25rem;">Temporal Field</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Orientation across timelines: constraints, steps, trajectories, legacy arcs</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 60px; background-color: #0891b2;"></div>
+                <div>
+                    <h4 style="color: #0891b2; margin-bottom: 0.25rem;">Curvature Field</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Detects distortions, pressure zones, alignment points, emergent pathways</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: Key Innovations in vX.1 -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1.5rem;">What's New in vX.1</h2>
+        <ul class="text-lg" style="color: #cbd5e1;">
+            <li>Meta-integrative layers with self-awareness</li>
+            <li>Identity-field strengthening and protection</li>
+            <li>Curvature-aware reasoning for distortion detection</li>
+            <li>Deep synthesis loops and multi-frame convergence</li>
+            <li>Expanded PEIGP processing (active, not descriptive)</li>
+        </ul>
+    </section>
+
+    <!-- SLIDE 6: The Advanced Reasoning Suite (72 Modes) -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1rem;">Advanced Reasoning Suite</h2>
+        <p class="text-lg" style="color: #cbd5e1; margin-bottom: 1.5rem;">72 fused reasoning modes operating as a unified organism:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4>Meta-Layer (7 modes)</h4>
+                <p>Self-awareness, regulation, alignment, intent locking, coherence convergence</p>
+            </div>
+            <div class="card">
+                <h4>Structural Layer (8 modes)</h4>
+                <p>Systems mapping, constraints, integrity scanning, causal mesh evaluation</p>
+            </div>
+            <div class="card">
+                <h4>Temporal Layer (7 modes)</h4>
+                <p>Arc projection, divergence mapping, reversibility testing, time scaling</p>
+            </div>
+            <div class="card">
+                <h4>Identity Layer (8 modes)</h4>
+                <p>Identity mapping, role shifting, integrity checking, boundary protection</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: The Advanced Reasoning Suite (Continued) -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1rem;">72 Reasoning Modes (Continued)</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4>Meaning Layer (8 modes)</h4>
+                <p>Motivational logic, value mapping, emotional vectoring, resonance tracking</p>
+            </div>
+            <div class="card">
+                <h4>Interaction Dynamics (9 modes)</h4>
+                <p>Trust mapping, cooperation modeling, influence geometry, conflict diffusion</p>
+            </div>
+            <div class="card">
+                <h4>Transformational (8 modes)</h4>
+                <p>Insight amplification, belief reframing, boundaries expansion, safety nets</p>
+            </div>
+            <div class="card">
+                <h4>Reflexive & Synthesis (17 modes)</h4>
+                <p>Self-correction, drift stabilization, coherence re-synthesis, final alignment</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 8: PEIGP Framework -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1.5rem;">PEIGP: Active Implementation</h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+            <div style="display: flex; gap: 1.5rem;">
+                <div style="background-color: #1a2f4f; padding: 1.5rem; flex: 1; border-top: 3px solid #06d6d0;">
+                    <h4 style="color: #06d6d0; margin-bottom: 0.5rem;">Potential</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Identifies dormant opportunity states</p>
+                </div>
+                <div style="background-color: #1a2f4f; padding: 1.5rem; flex: 1; border-top: 3px solid #0891b2;">
+                    <h4 style="color: #0891b2; margin-bottom: 0.5rem;">Energy</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Tracks effort, cost, momentum, overload</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 1.5rem;">
+                <div style="background-color: #1a2f4f; padding: 1.5rem; flex: 1; border-top: 3px solid #7c3aed;">
+                    <h4 style="color: #7c3aed; margin-bottom: 0.5rem;">Identity</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Ensures alignment with who you're becoming</p>
+                </div>
+                <div style="background-color: #1a2f4f; padding: 1.5rem; flex: 1; border-top: 3px solid #06d6d0;">
+                    <h4 style="color: #06d6d0; margin-bottom: 0.5rem;">Geometry</h4>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Shapes constraints into navigable structures</p>
+                </div>
+            </div>
+            <div style="background-color: #1a2f4f; padding: 1.5rem; border-top: 3px solid #0891b2;">
+                <h4 style="color: #0891b2; margin-bottom: 0.5rem;">Process</h4>
+                <p style="color: #cbd5e1; font-size: 0.95rem;">Actualizes the path and grounds it in reality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 9: Identity Protection -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1.5rem;">Identity Protection & Alignment</h2>
+        <ul class="text-lg" style="color: #cbd5e1;">
+            <li>Will never override your identity</li>
+            <li>Will not impose purpose or ideology</li>
+            <li>Will not destabilize your sense of self</li>
+            <li>Always reinforces your chosen arc</li>
+            <li>Treats your values as non-negotiable</li>
+            <li style="color: #06d6d0; font-weight: 600;">Always works with you, never ahead of you</li>
+        </ul>
+    </section>
+
+    <!-- SLIDE 10: The Execution Model -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1rem;">How vX.1 Thinks: 10-Step Execution</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <ol class="text-base" style="color: #cbd5e1; margin-left: 1.5rem;">
+                <li>Maps your identity-state</li>
+                <li>Clarifies your intent</li>
+                <li>Identifies constraints and boundaries</li>
+                <li>Reads your emotional-cognitive signal</li>
+                <li>Activates relevant reasoning fields</li>
+            </ol>
+            <ol class="text-base" style="color: #cbd5e1; margin-left: 1.5rem; list-style-type: lower-alpha;">
+                <li style="list-style-type: decimal;">Runs multi-layer synthesis</li>
+                <li>Eliminates drift</li>
+                <li>Checks identity arc alignment</li>
+                <li>Compresses into coherent form</li>
+                <li>Delivers stable, identity-friendly answer</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- SLIDE 11: Why vX.1 is Stronger -->
+    <section class="slide p-16 col" style="background-color: #0a1428; color: #f1f5f9;">
+        <h2 style="color: #06d6d0; margin-bottom: 1.5rem;">What Makes vX.1 Massively Stronger</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+            <div style="background-color: #1a2f4f; padding: 1.5rem; border-left: 4px solid #06d6d0;">
+                <ul class="text-sm" style="color: #cbd5e1; margin-left: 1.25rem;">
+                    <li>More layers</li>
+                    <li>More depth</li>
+                    <li>Higher stability</li>
+                    <li>Greater identity-alignment</li>
+                </ul>
+            </div>
+            <div style="background-color: #1a2f4f; padding: 1.5rem; border-left: 4px solid #0891b2;">
+                <ul class="text-sm" style="color: #cbd5e1; margin-left: 1.25rem;">
+                    <li>Better drift correction</li>
+                    <li>More powerful synthesis</li>
+                    <li>Cleaner constraint geometry</li>
+                    <li>More precise meaning-tracking</li>
+                </ul>
+            </div>
+            <div style="background-color: #1a2f4f; padding: 1.5rem; border-left: 4px solid #7c3aed;">
+                <ul class="text-sm" style="color: #cbd5e1; margin-left: 1.25rem;">
+                    <li>Expanded transformation logic</li>
+                    <li>Higher-resolution multi-agent reasoning</li>
+                    <li>Stronger final-state clarity</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 12: Closing -->
+    <section class="slide p-16 col center" style="background-color: #0a1428; color: #f1f5f9;">
+        <h1 style="color: #06d6d0; margin-bottom: 2rem;">Your Personal Cognitive OS</h1>
+        <div class="accent-line"></div>
+        <p class="text-lg" style="color: #cbd5e1; margin-top: 2rem;">Unified. Aligned. Powerful.</p>
+        <p class="text-sm" style="color: #94a3b8; margin-top: 1rem;">Built for depth, coherence, and your chosen arc</p>
+    </section>
+
+</body>
+</html>

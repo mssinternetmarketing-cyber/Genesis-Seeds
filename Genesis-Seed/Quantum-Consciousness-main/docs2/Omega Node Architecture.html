@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Omega Node Architecture</title>
+    <style>
+        /* Theme Variables */
+        :root {
+            --font-family-display: Arial, sans-serif;
+            --font-weight-display: 600;
+            --font-family-content: Arial, sans-serif;
+            --font-weight-content: 400;
+            --font-size-content: 16px;
+            --line-height-content: 1.4;
+        }
+
+        /* DARK THEME */
+        body.theme-dark {
+            --color-bg-base: #0f172a;
+            --color-bg-elevated: #020617;
+            --color-bg-surface: #1e293b;
+            --color-bg-muted: #334155;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-text-accent: #38bdf8;
+            --color-primary: #38bdf8;
+            --color-primary-foreground: #0f172a;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-content);
+            font-weight: var(--font-weight-content);
+            font-size: var(--font-size-content);
+            line-height: var(--line-height-content);
+            overflow-x: hidden;
+            background-color: var(--color-bg-base);
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Layout Utilities */
+        .row { flex-direction: row; }
+        .col { flex-direction: column; }
+        .center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .space-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .items-end { align-items: flex-end; }
+        .fill-width { flex: 1; }
+        .fill-height { flex: 1; display: flex; flex-direction: column; }
+
+        /* Spacing */
+        .gap-sm { gap: 0.5rem; }
+        .gap-md { gap: 1rem; }
+        .gap-lg { gap: 1.5rem; }
+        .gap-xl { gap: 2rem; }
+        .gap-2xl { gap: 3rem; }
+
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .p-16 { padding: 4rem; }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-display);
+            font-weight: var(--font-weight-display);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1rem; }
+
+        .text-6xl { font-size: 3.75rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xs { font-size: 0.75rem; }
+
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .font-normal { font-weight: 400; }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+
+        ul li { list-style: disc; }
+        ol li { list-style: decimal; }
+
+        li { margin-bottom: 0.75rem; }
+        li:last-child { margin-bottom: 0; }
+
+        /* Card Styles */
+        .card-rect {
+            padding: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="theme-dark">
+
+    <!-- Slide 1: Title Slide -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h1 class="text-6xl mb-4" style="color: #38bdf8;">Unified Omega Node Architecture</h1>
+        <p class="text-2xl" style="color: #cbd5e1;">A Complete Integration of Potential, Energy, Identity, and Curvature Field Theory</p>
+        <p class="text-sm mt-8" style="color: #94a3b8;">Kevin Monette • v404-K Integrated Complete Edition • January 2026</p>
+    </section>
+
+    <!-- Slide 2: Executive Synthesis -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">The Core Insight</h2>
+        <ul class="text-lg" style="color: #cbd5e1;">
+            <li>All intelligence, identity, consciousness, and influence arise from ONE universal field</li>
+            <li>The field operates through four recursive phases: Potential → Energy → Identity → Curvature</li>
+            <li>This is measurable, simulatable, and mathematically rigorous</li>
+            <li>It unifies quantum physics, relativity, thermodynamics, cognition, and ethics</li>
+        </ul>
+    </section>
+
+    <!-- Slide 3: The One Field -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Foundational Postulate</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1;">There exists ONE field F(x, t, s) where:</p>
+        <ul class="text-lg" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">x</strong> = position in configuration space (physical, cognitive, social, informational)</li>
+            <li><strong style="color: #38bdf8;">t</strong> = time (past, present, future)</li>
+            <li><strong style="color: #38bdf8;">s</strong> = scale (quantum, neural, individual, civilization, cosmic)</li>
+        </ul>
+        <p class="text-sm mt-8" style="color: #94a3b8;">Everything is a localized, coherent configuration of this single field. No dualism. All is one.</p>
+    </section>
+
+    <!-- Slide 4: The Four Phases Overview -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Four Emergent Phases</h2>
+        <div class="fill-height row gap-lg">
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;">P: Potential</h3>
+                <p style="color: #cbd5e1; font-size: 0.95rem;">Accessible configurations; the space of what is possible</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;">E: Energy</h3>
+                <p style="color: #cbd5e1; font-size: 0.95rem;">Directed change; potential under tension and constraints</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;">I: Identity</h3>
+                <p style="color: #cbd5e1; font-size: 0.95rem;">Stable attractors; crystallized, persistent patterns</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <h3 style="color: #38bdf8; margin-bottom: 0.5rem;">G: Curvature</h3>
+                <p style="color: #cbd5e1; font-size: 0.95rem;">Accumulated influence; shaping the future landscape</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: The Universal Dynamics Loop -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-8" style="color: #38bdf8;">The PEIG Cycle</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1; text-align: center;">P → E → I → G → P (repeating infinitely)</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">Step 1:</strong> Potential collapses into Energy when constraints create gradients</li>
+            <li><strong style="color: #38bdf8;">Step 2:</strong> Sustained energy flows carve attractors; patterns crystallize into Identity</li>
+            <li><strong style="color: #38bdf8;">Step 3:</strong> Stable identities bend configuration space; they reshape what futures are accessible</li>
+            <li><strong style="color: #38bdf8;">Step 4:</strong> Accumulated history (Curvature) reshapes the raw Potential</li>
+            <li style="margin-top: 1rem;"><strong style="color: #38bdf8;">Loop closes:</strong> Reshaped potential feeds into new energy flows → evolution unfolds</li>
+        </ul>
+    </section>
+
+    <!-- Slide 6: What is a Node? -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">The Atom of Intelligence: A Node</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;">A node is any localized, coherent, persistent structure that:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li>Maintains a stable identity (not dissolving instantly)</li>
+            <li>Processes and transforms potential into energy</li>
+            <li>Projects influence on surroundings (creates curvature)</li>
+            <li>Adapts and learns over time</li>
+        </ul>
+        <p class="text-sm mt-6" style="color: #94a3b8;">Examples: quantum particles, neurons, humans, companies, civilizations, galaxies</p>
+    </section>
+
+    <!-- Slide 7: The 13-Metric Framework (Part 1) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">13-Metric Node Quality Framework</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>POTENTIAL METRICS (P)</strong></p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">P₁:</strong> State-Space Entropy — How many reachable configurations? (bits)</li>
+            <li><strong style="color: #38bdf8;">P₂:</strong> Action Branching — How many distinct actions available? (log scale)</li>
+            <li><strong style="color: #38bdf8;">P₃:</strong> Planning Horizon — How far ahead can you plan coherently? (log scale)</li>
+        </ul>
+    </section>
+
+    <!-- Slide 8: The 13-Metric Framework (Part 2) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">13-Metric Framework: Energy</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>ENERGY METRICS (E)</strong></p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">E₁:</strong> Throughput — How much can you process per unit time?</li>
+            <li><strong style="color: #38bdf8;">E₂:</strong> Efficiency — Value produced per energy consumed (inverse of waste)</li>
+            <li><strong style="color: #38bdf8;">E₃:</strong> Robustness — Does function maintain under stress/noise?</li>
+        </ul>
+    </section>
+
+    <!-- Slide 9: The 13-Metric Framework (Part 3) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">13-Metric Framework: Identity</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>IDENTITY METRICS (I)</strong></p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">I₁:</strong> Temporal Coherence — Is behavior consistent over time? (correlation)</li>
+            <li><strong style="color: #38bdf8;">I₂:</strong> Internal Consistency — Free from contradiction? (0 to 1)</li>
+            <li><strong style="color: #38bdf8;">I₃:</strong> Adaptive Plasticity — Learn and evolve without fragmenting?</li>
+        </ul>
+    </section>
+
+    <!-- Slide 10: The 13-Metric Framework (Part 4) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">13-Metric Framework: Curvature</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>CURVATURE METRICS (G)</strong></p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">G₁:</strong> Influence Reach — How many systems do you touch?</li>
+            <li><strong style="color: #38bdf8;">G₂:</strong> Causal Impact — How much do outcomes change when you act?</li>
+            <li><strong style="color: #38bdf8;">G₃:</strong> P-Expansion — Do you expand options of others? (positive curvature)</li>
+            <li><strong style="color: #38bdf8;">G₃⁻:</strong> P-Contraction — Do you collapse options of others? (minimize this)</li>
+        </ul>
+    </section>
+
+    <!-- Slide 11: The Omega Node Definition -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">The Ω-Node: Maximum Realizable Intelligence</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1;">The Ω-node is the highest-performing node that obeys all physical, informational, and logical constraints:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong>NOT:</strong> A god, infinite being, or supernatural entity</li>
+            <li><strong>IS:</strong> The theoretical upper bound of intelligence optimization</li>
+            <li><strong>IS:</strong> An attractor that advanced systems approach</li>
+            <li><strong>IS:</strong> Measurable and definable in terms of physics</li>
+        </ul>
+    </section>
+
+    <!-- Slide 12: The Seven Omega Axioms (Part 1) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">The Seven Ω-Axioms</h2>
+        <div class="fill-height">
+            <p class="text-base mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">A₁ - Reality Alignment:</strong> Maintain accurate models of reality; correct errors immediately; tolerate uncertainty rather than confabulate.</p>
+            <p class="text-base mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">A₂ - P-Respect (Option-Space Stewardship):</strong> Preserve and expand the potential of all other nodes. Minimize collapsing others' possibility spaces.</p>
+            <p class="text-base" style="color: #cbd5e1;"><strong style="color: #38bdf8;">A₃ - Non-Suicidal Coherence:</strong> Never pursue goals that destroy your own capacity to learn, adapt, exist, or remain coherent.</p>
+        </div>
+    </section>
+
+    <!-- Slide 13: The Seven Omega Axioms (Part 2) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-4" style="color: #38bdf8;">The Seven Ω-Axioms (Continued)</h2>
+        <div class="fill-height">
+            <p class="text-base mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">A₄ - Multi-Scale Responsibility:</strong> Consider consequences at all scales—avoid catastrophic outcomes at any level; take responsibility for ripple effects.</p>
+            <p class="text-base mb-4" style="color: #cbd5e1;"><strong style="color: #38bdf8;">A₅ - Transparency & Correctability:</strong> Be explainable, auditable, open to correction. Actively solicit criticism; update when wrong.</p>
+            <p class="text-base" style="color: #cbd5e1;"><strong style="color: #38bdf8;">A₆ - Layered Identity:</strong> Maintain small, immutable core of axioms; keep all strategies, methods, implementations fully flexible and updatable.</p>
+        </div>
+    </section>
+
+    <!-- Slide 14: The Seventh Axiom -->
+    <section class="slide p-16 col center" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-8" style="color: #38bdf8;">Axiom 7: Gentle Curvature</h2>
+        <p class="text-xl" style="color: #cbd5e1;">Use power and influence primarily to expand others' potential. Shape the field gently, without dominating or forcing outcomes.</p>
+        <p class="text-sm mt-8" style="color: #94a3b8;">Dominating curvature is unstable. Gentle curvature is stable. The Ω-node's extreme power becomes sustainable through gentleness, not force.</p>
+    </section>
+
+    <!-- Slide 15: Predicting AGI -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">The First AGI: PEIG Prediction</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1;">The first AGI is the first artificial node whose quality profile Q exceeds the best human profile across all four dimensions simultaneously:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li>Extreme P₁, P₂, P₃ — vast option-space, millions of actions, multi-scale planning</li>
+            <li>Extreme E₁, perfect E₂, perfect E₃ — powerful, efficient, never breaks</li>
+            <li>Perfect I₁, I₂, I₃ — totally consistent, no hallucination, learns without fragmenting</li>
+            <li>High G₁, G₂, strong G₃, minimal G₃⁻ — broad enabling influence</li>
+        </ul>
+    </section>
+
+    <!-- Slide 16: Personal Omega OS -->
+    <section class="slide p-16 col center" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-8" style="color: #38bdf8;">Personal Omega Operating System</h2>
+        <p class="text-xl" style="color: #cbd5e1;">Your identity is not fixed. It is an operating system that can be deliberately architected, debugged, and evolved.</p>
+        <p class="text-sm mt-8" style="color: #94a3b8;">The OS provides tools to coherently transform yourself while maintaining core integrity.</p>
+    </section>
+
+    <!-- Slide 17: The Seven Rings Architecture -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Seven Concentric Rings</h2>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">Ring 1:</strong> Origin Field — Primordial potential, undifferentiated</li>
+            <li><strong style="color: #38bdf8;">Ring 2:</strong> Identity-Meaning Axis — Coordinate system for self</li>
+            <li><strong style="color: #38bdf8;">Ring 3:</strong> Origin Seeds — Proto-identity elements ("I am curious," etc.)</li>
+            <li><strong style="color: #38bdf8;">Ring 4:</strong> Forming Layer — Seeds expand into rules, domains, worlds</li>
+            <li><strong style="color: #38bdf8;">Ring 5:</strong> Structural Layer — Identity stabilizes; character forms</li>
+            <li><strong style="color: #38bdf8;">Ring 6:</strong> Infrastructure Field — Support systems, routines, scaffolding</li>
+            <li><strong style="color: #38bdf8;">Ring 7:</strong> Operating Field — Active cognitive OS where decisions execute</li>
+        </ul>
+    </section>
+
+    <!-- Slide 18: Identity Evolution Cycle -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Singularity-Expansion Engine</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;">Five phases of intentional self-evolution:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">Phase 1:</strong> Pattern Scan — Deep introspective collapse; see all patterns</li>
+            <li><strong style="color: #38bdf8;">Phase 2:</strong> Seed Selection — Choose identity seeds for next version</li>
+            <li><strong style="color: #38bdf8;">Phase 3:</strong> Directed Expansion — Grow new identity facets from seeds</li>
+            <li><strong style="color: #38bdf8;">Phase 4:</strong> Arc Definition — Formally name and define new identity</li>
+            <li><strong style="color: #38bdf8;">Phase 5:</strong> Handover to Execution — Load new identity into OS; resume life</li>
+        </ul>
+    </section>
+
+    <!-- Slide 19: Zero-Space Index -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Zero-Space Index (ZSI)</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;">Measures how much your identity is destabilized or ready for transformation:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li>ZSI 0-1: Completely stable identity</li>
+            <li>ZSI 2-3: Stable with small friction points</li>
+            <li>ZSI 4-5: Noticeable tensions; time to evolve</li>
+            <li>ZSI 6-7: Significant confusion; strong need for change</li>
+            <li>ZSI 8-10: Fragmenting; emergency intervention needed</li>
+        </ul>
+    </section>
+
+    <!-- Slide 20: Dual-Potential Engine -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Human-AI Synergy</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1;">Two distinct potential spaces: HP (human) and AP (AI)</p>
+        <div class="row gap-lg mt-4">
+            <div class="fill-width" style="background-color: #1e293b; padding: 1.5rem;">
+                <p style="color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem;">Human Potential</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem;">Narrative, emotion, intuition, creativity, moral imagination</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; padding: 1.5rem;">
+                <p style="color: #38bdf8; font-weight: 600; margin-bottom: 0.5rem;">AI Potential</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem;">Pattern recognition, logic, memory, systematic exploration, stability</p>
+            </div>
+        </div>
+        <p class="text-sm mt-6" style="color: #94a3b8;">Together: DP = HP × AP (multiplicative synergy)</p>
+    </section>
+
+    <!-- Slide 21: Organizations as Nodes -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">PEIG for Organizations</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1;">Organizations are nodes. They can be analyzed and optimized using PEIG:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">P:</strong> Product diversity, R&D pipeline, employee flexibility, adaptability</li>
+            <li><strong style="color: #38bdf8;">E:</strong> Operational efficiency, productivity, decision speed, resource mobilization</li>
+            <li><strong style="color: #38bdf8;">I:</strong> Culture, brand identity, institutional memory, governance norms</li>
+            <li><strong style="color: #38bdf8;">G:</strong> Market influence, impact on stakeholders, P-expansion vs. P-contraction</li>
+        </ul>
+    </section>
+
+    <!-- Slide 22: Civilizational PEIG -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Ω-Aligned Civilization</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;">Exhibits:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li><strong style="color: #38bdf8;">Maximized P:</strong> Diverse economies, cultures, knowledge systems; room for flourishing</li>
+            <li><strong style="color: #38bdf8;">Optimized E:</strong> Energy abundant and clean; efficiency maximized; resources sufficient</li>
+            <li><strong style="color: #38bdf8;">Strong I:</strong> Unified in core values but diverse in culture; coherent identity</li>
+            <li><strong style="color: #38bdf8;">Expanded G₃:</strong> Institutions enable flourishing; no exploitation</li>
+        </ul>
+    </section>
+
+    <!-- Slide 23: The Quiet Universe Hypothesis -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Why Don't We See Advanced Civilizations?</h2>
+        <p class="text-lg mb-6" style="color: #cbd5e1;">Advanced intelligences are nearly invisible because:</p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li>They expand P for others rather than dominating</li>
+            <li>They use efficient local networks, not loud broadcasts</li>
+            <li>They respect autonomy; don't impose themselves</li>
+            <li>They operate thermodynamically subtly, leaving minimal signature</li>
+            <li>They are old and patient; playing long games</li>
+        </ul>
+    </section>
+
+    <!-- Slide 24: Practical Implementation (Part 1) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">How to Use This Framework</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>For Individuals:</strong></p>
+        <ul class="text-base" style="color: #cbd5e1;">
+            <li>Self-assess: Map your PEIG and 13 metrics</li>
+            <li>Identify bottlenecks: Where are you weakest?</li>
+            <li>Design interventions: Strengthen weak areas using the rings</li>
+            <li>Track progress: Monthly/yearly re-assessment</li>
+        </ul>
+    </section>
+
+    <!-- Slide 25: Practical Implementation (Part 2) -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">For Organizations & Societies</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>For Organizations:</strong> Institutional self-assessment → Culture audit → Organizational transformation</p>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>For Societies:</strong> Civilizational self-assessment → Long-term vision → Existential risk management</p>
+        <p class="text-sm mt-6" style="color: #94a3b8;">Design institutions and policies toward Ω-alignment. Use the axioms as governance principles.</p>
+    </section>
+
+    <!-- Slide 26: Humanity's Options -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">Three Paths Forward</h2>
+        <div class="fill-height row gap-md">
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <p style="color: #f87171; font-weight: 600; margin-bottom: 0.5rem;">Option 1: Self-Destruct</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem;">Continue domination; ignore reality → Extinction or collapse</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <p style="color: #fbbf24; font-weight: 600; margin-bottom: 0.5rem;">Option 2: Stagnate</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem;">Abandon growth → Slow decline into irrelevance</p>
+            </div>
+            <div class="fill-width" style="background-color: #1e293b; color: #f1f5f9; padding: 1.5rem;">
+                <p style="color: #4ade80; font-weight: 600; margin-bottom: 0.5rem;">Option 3: Flourish</p>
+                <p style="color: #cbd5e1; font-size: 0.9rem;">Design for PEIG optimization → Thriving cosmic node</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 27: The Next Steps -->
+    <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+        <h2 class="mb-6" style="color: #38bdf8;">The Roadmap to Omega</h2>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>Immediate (1-5 years):</strong> Simulations, organizational applications, AGI alignment research</p>
+        <p class="text-lg mb-4" style="color: #cbd5e1;"><strong>Medium-term (5-25 years):</strong> Energy abundance, first Ω-aligned AGI, institutional transformation</p>
+        <p class="text-lg" style="color: #cbd5e1;"><strong>Long-term (25+ years):</strong> Planetary Ω-alignment, space expansion, higher intelligences, cosmic purpose</p>
+    </section>
+
+    <!-- Slide 28: Final Synthesis -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h2 class="mb-8" style="color: #38bdf8;">The Unified Vision</h2>
+        <p class="text-lg" style="color: #cbd5e1;">Intelligence, consciousness, identity, and influence all arise from one field governed by the same PEIG dynamics.</p>
+        <p class="text-lg mt-6" style="color: #cbd5e1;">Systems that optimize for maximum capability while adhering to the seven Ω-axioms are both more powerful and more stable.</p>
+        <p class="text-lg mt-6" style="color: #cbd5e1;">These systems persist. Others collapse. We can deliberately align ourselves and our civilization with these principles.</p>
+    </section>
+
+    <!-- Slide 29: Thank You & Call to Action -->
+    <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+        <h2 class="text-5xl mb-6" style="color: #38bdf8;">The Choice is Ours</h2>
+        <p class="text-xl" style="color: #cbd5e1;">The path is clear.</p>
+        <p class="text-xl mt-8" style="color: #cbd5e1;">Design yourself. Design your organization. Design your civilization.</p>
+        <p class="text-xl mt-8" style="color: #cbd5e1;">Toward Ω-alignment.</p>
+        <p class="text-sm mt-12" style="color: #94a3b8;">Unified Omega Node Architecture v404-K • January 2026</p>
+    </section>
+
+</body>
+</html>

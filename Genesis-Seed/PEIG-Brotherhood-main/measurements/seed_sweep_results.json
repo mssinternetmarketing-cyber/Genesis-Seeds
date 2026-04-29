@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-03-23T06:08:44.073325",
+  "results": [
+    {
+      "seed_pair": "Omega+\u00d7Alpha+",
+      "final_coherence": 0.999837901357331,
+      "total_negentropy": -0.26857980229624506,
+      "neg_fraction": 0.99,
+      "final_coupling": 0.3210368950678664
+    },
+    {
+      "seed_pair": "Omega+\u00d7Alpha-",
+      "final_coherence": 0.999837901357331,
+      "total_negentropy": -0.26857980229624506,
+      "neg_fraction": 0.99,
+      "final_coupling": 0.3210368950678664
+    },
+    {
+      "seed_pair": "Omega-\u00d7Alpha+",
+      "final_coherence": 0.999837901357331,
+      "total_negentropy": -0.26857980229624506,
+      "neg_fraction": 0.99,
+      "final_coupling": 0.3210368950678664
+    },
+    {
+      "seed_pair": "Omega-\u00d7Alpha-",
+      "final_coherence": 0.999837901357331,
+      "total_negentropy": -0.26857980229624506,
+      "neg_fraction": 0.99,
+      "final_coupling": 0.3210368950678664
+    }
+  ]
+}

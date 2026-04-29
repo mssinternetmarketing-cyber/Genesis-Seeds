@@ -1,0 +1,310 @@
+% ============================================================
+% SECTION 05 — FALSIFICATION CRITERION
+% Repository: Monette Research — Entropic Gravity & PEIG Framework
+% Part of: 01_PHYSICS_CORE/A_ENTROPIC_GRAVITY/master_paper.tex
+% Status: Peer-review draft — Phase 2 corrections applied
+% Last Updated: March 2026
+% ============================================================
+%
+% PHASE 2 CORRECTIONS APPLIED IN THIS FILE:
+%   [C14] Unifies the three slightly different falsification statements
+%         appearing across the corpus into one canonical version
+%   [C15] Adds the prediction/confirmation threshold (kappa ~ 10^-4)
+%         alongside the falsification threshold
+%   [C16] Provides the current experimental bounds table with full
+%         citations and clear statement of what each bounds
+% ============================================================
+
+\section{Falsification Criterion}
+\label{sec:falsification}
+
+\subsection{The Centrality of Falsifiability}
+\label{subsec:falsifiability_centrality}
+
+A theoretical framework in physics earns the right to be taken seriously
+in proportion to how clearly and precisely it can be proven wrong. A
+framework that can accommodate any experimental outcome by adjusting
+free parameters is not science --- it is numerology. The framework
+presented in this paper has one free parameter: the dimensionless
+coupling constant $\kappatilde$. This parameter is constrained by the
+first-principles estimate $\kappatilde = -(1/4)\alphascreen$ (with
+$\alphascreen\in[10^{-4},10^{-2}]$) and bounded from above by existing
+experiments.
+
+This section states, with full precision, the experimental conditions
+under which this framework would be:
+\begin{enumerate}
+    \item \textbf{Falsified} --- shown to be incompatible with observation
+    at the predicted sensitivity level
+    \item \textbf{Confirmed} --- shown to be consistent with a positive
+    detection at the predicted coupling level
+    \item \textbf{Constrained} --- bounded more tightly than existing
+    limits without reaching full confirmation or falsification
+\end{enumerate}
+
+\subsection{The Canonical Falsification Criterion}
+\label{subsec:canonical_falsification}
+
+\begin{framed}
+\noindent\textbf{Canonical Falsification Criterion (v1.0):}
+
+This framework is \textbf{falsified for laboratory-scale relevance}
+if all of the following conditions are simultaneously satisfied:
+
+\begin{enumerate}
+    \item \textbf{System size}: Macroscopic quantum-coherent ensembles
+    with $N \geq 10^6$ entangled qubits (or atoms in equivalent
+    entangled states) are used as sources
+
+    \item \textbf{Null result}: No anomalous stress-energy contribution
+    is detected beyond the predictions of standard quantum mechanics and
+    general relativity with $\kappatilde = 0$
+
+    \item \textbf{Sensitivity}: The measurement sensitivity reaches
+    $\Delta p < 10^{-6}$~Pa (equivalently, $\delta|\kappatilde|
+    < 10^{-15}$)
+
+    \item \textbf{Statistical power}: At least $n_{\mathrm{runs}}
+    \geq 1000$ experimental runs are completed
+
+    \item \textbf{Platform independence}: The null result is reproduced
+    across at least two independent experimental platforms from the set
+    \{trapped ions, superconducting circuits, neutral atom arrays,
+    optomechanical systems\}
+\end{enumerate}
+
+\noindent\textbf{Falsification conclusion}: If all five conditions are
+satisfied, then $|\kappatilde| < 10^{-15}$, and this framework predicts
+no detectable entanglement-gravity coupling for any laboratory-scale
+system achievable with foreseeable technology. The framework's relevance
+to laboratory-scale gravity engineering is falsified.
+
+\noindent\textbf{What is not falsified}: A null result at the above
+sensitivity does not falsify the underlying hypothesis that entanglement
+entropy sources curvature at causal horizons (Jacobson's thermodynamic
+gravity). It falsifies only the extrapolation of that mechanism to
+laboratory scales.
+\end{framed}
+
+\subsection{The Confirmation Threshold}
+\label{subsec:confirmation}
+
+The framework is \textbf{confirmed at the predicted level} if:
+
+\begin{enumerate}
+    \item A differential acceleration $\Delta a(R)$ is detected at
+    $\geq 5\sigma$ statistical significance
+
+    \item The measured $\kappatilde$ (extracted via
+    Eq.~\eqref{eq:kappa_extraction}) falls within the predicted range:
+    \begin{equation}
+        \kappatilde \in \left[-2.5\times10^{-3},\;
+        -2.5\times10^{-5}\right]
+        \label{eq:confirmation_range}
+    \end{equation}
+
+    \item The spatial scaling of $\Delta a$ is consistent with the
+    predicted $1/R$ dependence from Eq.~\eqref{eq:delta_a}
+
+    \item The result is reproduced independently on at least two
+    platforms
+\end{enumerate}
+
+\noindent Detection of $|\kappatilde| \sim 10^{-4}$ would constitute
+the discovery of a new gravitational coupling. Detection of
+$|\kappatilde| \sim 10^{-5}$ to $10^{-6}$ would be a weaker but
+still significant confirmation. Any detection at these levels would
+constitute one of the most significant results in experimental
+gravitational physics since the first direct detection of gravitational
+waves~\cite{ligo2016}.
+
+\subsection{The Constraint Regime}
+\label{subsec:constraints}
+
+Between full confirmation and full falsification lies the \textbf{constraint
+regime}: experimental results that bound $|\kappatilde|$ more tightly
+than existing limits without reaching the predicted signal level or the
+falsification threshold.
+
+\begin{equation}
+    10^{-15} < |\kappatilde|_{\mathrm{bound}} < 10^{-10}
+    \quad \Rightarrow \quad \text{constrained, not falsified or confirmed}
+    \label{eq:constraint_regime}
+\end{equation}
+
+Results in this regime are scientifically valuable: each factor of 10
+improvement in the bound progressively constrains the allowed range of
+$\alphascreen$ and narrows the class of decoherence models consistent
+with the framework.
+
+\subsection{Current Experimental Bounds}
+\label{subsec:current_bounds}
+
+The following table summarizes current upper bounds on $|\kappatilde|$
+from experiments that are sensitive to anomalous gravitational effects
+in quantum systems. All experiments are null results --- no anomalous
+coupling has been detected. The bounds are derived by computing the
+expected signal from Eq.~\eqref{eq:delta_a} at each experiment's
+entanglement density and sensitivity, and requiring the predicted signal
+to be below the experimental noise floor.
+
+\begin{table}[H]
+    \centering
+    \caption{Current experimental upper bounds on $|\kappatilde|$ from
+    null results. All values are 95\% confidence level upper bounds.
+    The coupling sensitivity column shows the minimum $|\kappatilde|$
+    detectable given the system size and measurement sensitivity of each
+    experiment.}
+    \label{tab:bounds}
+    \begin{tabular}{p{4.5cm}p{2.5cm}cc}
+        \toprule
+        \textbf{Experiment} & \textbf{Reference}
+        & \textbf{Bound on $|\kappatilde|$}
+        & \textbf{System} \\
+        \midrule
+        Gravity-mediated entanglement
+        & Bose et al.~\cite{bose2023}
+        & $< 3\times10^{-9}$
+        & Nanodiamond NV centers \\
+        Atom interferometry
+        & Kasevich et al.~\cite{kasevich2023}
+        & $< 1.2\times10^{-10}$
+        & $^{87}$Rb BEC \\
+        Equivalence principle
+        & MICROSCOPE~\cite{microscope2022}
+        & $< 8\times10^{-11}$
+        & Macroscopic test masses \\
+        \midrule
+        \textbf{This work (projected)}
+        & ---
+        & $\delta|\kappatilde| = 3.7\times10^{-13}$
+        & $^{87}$Rb GHZ, $N=10^6$ \\
+        \textbf{Falsification threshold}
+        & ---
+        & $|\kappatilde| < 10^{-15}$
+        & Multiple platforms \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\noindent\textbf{Reading the table:}
+\begin{itemize}
+    \item The current best bound ($|\kappatilde| < 8\times10^{-11}$ from
+    MICROSCOPE) is derived from equivalence principle tests, not from
+    direct entanglement manipulation. It bounds $|\kappatilde|$ under
+    the assumption that macroscopic test masses have some residual
+    entanglement entropy density --- a conservative and model-dependent
+    assumption.
+
+    \item The Kasevich et al. bound ($|\kappatilde| < 1.2\times10^{-10}$)
+    is the most directly relevant: it uses atom interferometry on Bose-
+    Einstein condensates, the same technique proposed here, but with
+    lower entanglement entropy density and shorter coherence times.
+
+    \item The proposed experiment sensitivity ($3.7\times10^{-13}$)
+    improves on the best current bound by approximately two orders of
+    magnitude --- sufficient to begin probing the lower end of the
+    predicted coupling range.
+
+    \item The gap between the current best bound ($10^{-10}$) and the
+    predicted realistic coupling ($\sim10^{-5}$ to $10^{-4}$) is
+    \emph{five orders of magnitude}. This is large, which means the
+    framework's predictions are not in tension with any existing
+    experiment. It also means that a definitive test requires a
+    measurement $10^5$ times more sensitive than current limits ---
+    achievable only with the $N = 10^6$ GHZ entanglement protocol
+    proposed here.
+\end{itemize}
+
+\subsection{Decision Tree for Experimental Outcomes}
+\label{subsec:decision_tree}
+
+The following decision tree maps every possible experimental outcome to
+its scientific interpretation:
+
+\begin{enumerate}
+    \item \textbf{Detection at $|\kappatilde|\in[10^{-5},10^{-3}]$,
+    $1/R$ scaling confirmed, reproduced on 2+ platforms}
+    $\Rightarrow$ \textbf{Framework confirmed.} Proceed to engineering
+    implications; design second-generation experiments to measure
+    $\alphascreen$ as a function of decoherence environment.
+
+    \item \textbf{Detection at $|\kappatilde|\in[10^{-13},10^{-5}]$,
+    scaling unclear, not yet reproduced}
+    $\Rightarrow$ \textbf{Candidate detection.} Requires replication;
+    systematic effects must be ruled out; scaling law must be established.
+
+    \item \textbf{Null result at $\delta|\kappatilde|\sim10^{-12}$ to
+    $10^{-10}$}
+    $\Rightarrow$ \textbf{New constraint.} Tightens bound on $\kappatilde$;
+    requires $\alphascreen < 4\times\delta|\kappatilde|$; not yet
+    falsified; proceed to higher-sensitivity platform.
+
+    \item \textbf{Null result at $\delta|\kappatilde| < 10^{-15}$,
+    $\geq 1000$ runs, $\geq 2$ platforms, $N\geq 10^6$}
+    $\Rightarrow$ \textbf{Framework falsified for laboratory-scale
+    relevance.} The ideal coupling $\kappatilde_{\mathrm{ideal}} = -1/4$
+    is suppressed by $\alphascreen < 4\times10^{-15}$, rendering any
+    laboratory-scale effect undetectable with any foreseeable technology.
+    The horizon-scale Jacobson framework remains valid and unaffected.
+
+    \item \textbf{Anomalous signal not consistent with $1/R$ scaling}
+    $\Rightarrow$ \textbf{New physics, but not this framework.}
+    A different source of anomalous gravity is present; full systematic
+    investigation required.
+\end{enumerate}
+
+\subsection{Timeline}
+\label{subsec:timeline}
+
+Based on current experimental capabilities and the timelines of
+comparable atom interferometry experiments:
+
+\begin{itemize}
+    \item \textbf{Months 1--6}: Trap characterization, GHZ state
+    preparation for $N \leq 10^4$, interferometer calibration, SPAM
+    baseline measurement
+
+    \item \textbf{Months 6--12}: Scale to $N = 10^5$; first measurement
+    of $\Delta a$ at $R = 10$~cm; establish systematic floor
+
+    \item \textbf{Months 12--18}: Scale to $N = 10^6$ GHZ state (primary
+    technical challenge); measure $\Delta a$ at three radii; complete
+    1000 runs at each radius
+
+    \item \textbf{Months 18--24}: Statistical analysis, systematic review,
+    independent replication on second platform; publication of final result
+\end{itemize}
+
+\noindent\textbf{The 24-month timeline is realistic} given current
+state-of-the-art in atomic physics. The primary technical bottleneck is
+achieving $N = 10^6$ atom GHZ state coherence times $\tau_{\mathrm{coh}}
+\geq 1$~s. This is at the frontier of current experimental capability
+and may require intermediate milestones at $N = 10^4$ and $N = 10^5$
+with correspondingly lower sensitivity.
+
+\subsection{What Either Outcome Means for Physics}
+\label{subsec:significance}
+
+\begin{itemize}
+    \item \textbf{If confirmed}: The first experimental demonstration that
+    quantum entanglement sources macroscopic spacetime curvature beyond
+    the predictions of standard GR. Opens a new field of ``entanglement
+    engineering for spacetime control.'' Requires extension of the
+    Jacobson framework to volume-law entanglement. Immediately motivates
+    new experiments on larger coherent systems and different entanglement
+    types.
+
+    \item \textbf{If falsified}: Establishes that the thermodynamic
+    gravity mechanism is confined to causal horizons and does not extend
+    to laboratory-scale quantum systems. Provides a precise quantitative
+    boundary for where quantum information physics ceases to have
+    gravitational consequences. This is itself a significant result ---
+    it tells us where the Jacobson mechanism \emph{stops}, which is as
+    important as knowing where it operates. Constrains a broad class of
+    quantum gravity phenomenology proposals.
+\end{itemize}
+
+Either outcome represents \textbf{significant progress in fundamental
+physics}. This is the hallmark of a well-designed experiment: it cannot
+produce an uninterpretable result.

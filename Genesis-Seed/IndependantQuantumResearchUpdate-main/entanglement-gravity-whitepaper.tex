@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{physics}
+\usepackage{bm}
+
+\begin{document}
+
+\title{Entanglement Entropy Density as a Gravitational Source:\\Radial Scaling, Screening, and a Revised Experimental Program}
+\author{Kevin Monette et al.\\Draft White Paper}
+\date{March 2026}
+\maketitle
+
+\begin{abstract}
+We assess the internal consistency and experimental plausibility of a proposed coupling between entanglement entropy density and gravity. We focus on three issues: (i) the radial scaling of the predicted acceleration correction $\Delta a(R)$ under spherical symmetry (OP4), (ii) the numerical stability and regime of validity of the screening factor $\alpha_{\text{screen}}$, and (iii) the compatibility of the experimental protocol with current atom-interferometric and satellite tests of the equivalence principle. Under a modified Poisson equation with an entropic source term, we show that $\Delta a(R)$ must depend on an enclosed entropic ``mass'' $M_{\text{ent}}(<R)$, leading generically to an exterior $1/R^2$ law for bounded sources and to a $1/R$ correction only for suitably extended profiles such as $\rho_{\text{ent}}(r)\propto 1/r^2$. The earlier $1/R$ formula therefore encodes a hidden assumption about the spatial structure of the entanglement source rather than a universal prediction. Using a Gaussian screening model, the effective screening factor for a macroscopic $^{87}$Rb ensemble can be driven to values as small as $\alpha_{\text{screen}}\sim 10^{-43}$, radically below earlier heuristic estimates ($10^{-4}$--$10^{-2}$). This 39-order-of-magnitude mismatch undermines the justification for a million-atom neutral-atom test as the primary near-term experiment and motivates a shift to a 50--100 qubit NISQ-scale platform as the more conceptually clean testbed. We place these developments in context with Verlinde's emergent gravity proposal at galactic scales, atom-interferometric equivalence-principle tests at the $10^{-12}$ level, and MICROSCOPE's $10^{-15}$-level constraint on the E"otv"os parameter.
+\end{abstract}
+
+\section{Introduction}
+
+The working hypothesis of this program is that entanglement entropy density $s_{\text{ent}}(\vb{x})$ enters the low-energy gravitational field equations as an additional source term, analogously to how energy density and pressure appear in the Einstein equations. In the nonrelativistic limit, this idea can be encoded in a modified Poisson equation for an effective potential $\Psi$,
+\begin{equation}
+ \nabla^2 \Psi = 4\pi G\,\rho_{\text{mass}} + \kappa\,\rho_{\text{ent}},
+ \label{eq:poisson-modified}
+\end{equation}
+where $\rho_{\text{mass}}$ is the ordinary mass density, $\rho_{\text{ent}}$ is some coarse-grained entanglement-related density, and $\kappa$ is a phenomenological coupling constant to be constrained experimentally.
+
+This program is conceptually adjacent to emergent-gravity approaches in which gravity arises from entanglement and thermodynamic properties of microscopic degrees of freedom, notably Verlinde's 2017 SciPost Physics proposal ``Emergent Gravity and the Dark Universe.'' In that work, coarse-grained entanglement and horizon thermodynamics lead to an additional elastic-like gravitational contribution that can mimic dark matter phenomenology at galactic scales. Here, by contrast, we seek a microscopic, laboratory-scale realization in which controllable entangled states act as tunable sources for an effective gravitational response.
+
+The experimental ambition is therefore to design controlled tests in which high-entanglement and low-entanglement states of a well-characterized quantum system are compared under otherwise identical conditions, looking for a reproducible difference in acceleration, phase, or related observables. A null result in a regime with well-understood systematics and source modeling would constitute a nontrivial bound or falsification of the entanglement--gravity coupling.
+
+\section{Radial Scaling from the Modified Poisson Equation (OP4)}
+
+\subsection{Spherical symmetry and enclosed entropic source}
+
+Assuming spherical symmetry, Eq.~\eqref{eq:poisson-modified} reduces to a radial equation for $\Psi(R)$,
+\begin{equation}
+ \frac{1}{R^2}\frac{\dd}{\dd R}\!\left(R^2 \frac{\dd\Psi}{\dd R}\right)
+ = 4\pi G\,\rho_{\text{mass}}(R) + \kappa\,\rho_{\text{ent}}(R),
+ \label{eq:radial-poisson}
+\end{equation}
+where $R$ is the radial coordinate and $\rho_{\text{ent}}(R)$ is a spherically symmetric entropic source density. For the entanglement-induced correction, we can separate the mass term and write
+\begin{equation}
+ \frac{1}{R^2}\frac{\dd}{\dd R}\!\left(R^2 \frac{\dd\Psi_{\text{ent}}}{\dd R}\right)
+ = \kappa\,\rho_{\text{ent}}(R).
+ \label{eq:poisson-ent}
+\end{equation}
+
+Define an enclosed entropic ``mass''
+\begin{equation}
+ M_{\text{ent}}(<R) = 4\pi \int_0^R \rho_{\text{ent}}(r)\,r^2\,\dd r.
+ \label{eq:ment}
+\end{equation}
+Integrating Eq.~\eqref{eq:poisson-ent} once gives
+\begin{equation}
+ R^2 \frac{\dd\Psi_{\text{ent}}}{\dd R} = \kappa M_{\text{ent}}(<R) + C,
+\end{equation}
+where $C$ is fixed by regularity and boundary conditions. Choosing the potential to vanish at infinity and imposing regularity at the origin yields $C=0$ for physically reasonable profiles. The entanglement-induced acceleration correction is then
+\begin{equation}
+ \Delta a(R) \equiv -\frac{\dd\Psi_{\text{ent}}}{\dd R} = \frac{\kappa}{R^2}\,M_{\text{ent}}(<R).
+ \label{eq:delta-a-general}
+\end{equation}
+
+Equation~\eqref{eq:delta-a-general} is the key structural result: under spherical symmetry, the radial dependence of the entanglement-induced acceleration is entirely controlled by how the enclosed entropic source $M_{\text{ent}}(<R)$ grows with $R$. The explicit $1/R^2$ factor is universal; deviations from the Newtonian $1/R^2$ law must therefore arise from nontrivial radial dependence of $M_{\text{ent}}(<R)$.
+
+\subsection{Bounded versus extended entropic sources}
+
+Two limiting cases are illustrative.
+
+\paragraph{Bounded source.} Suppose $\rho_{\text{ent}}(r)$ has compact support or is strongly localized inside some radius $R_0$. Then for $R>R_0$ one has
+\begin{equation}
+ M_{\text{ent}}(<R) \to M_{\text{ent}}(<R_0) = \text{const.},
+\end{equation}
+so that Eq.~\eqref{eq:delta-a-general} implies
+\begin{equation}
+ \Delta a(R) \propto \frac{1}{R^2}, \qquad R>R_0.
+\end{equation}
+This is precisely the same shell-theorem logic as in Newtonian gravity: outside a spherically symmetric, bounded source, the field falls off as $1/R^2$.
+
+\paragraph{Extended $1/r^2$ profile.} Now consider an extended entropic profile of the form
+\begin{equation}
+ \rho_{\text{ent}}(r) = \frac{A}{r^2}, \qquad r_\text{min} < r < r_\text{max},
+\end{equation}
+with suitable cutoffs at $r_\text{min}$ and $r_\text{max}$. Then
+\begin{equation}
+ M_{\text{ent}}(<R) = 4\pi A \int_{r_\text{min}}^R \dd r = 4\pi A (R - r_\text{min}) \approx 4\pi A R
+\end{equation}
+for $R\gg r_\text{min}$ but $R<r_\text{max}$. In this regime,
+\begin{equation}
+ \Delta a(R) \propto \frac{1}{R^2}\,R = \frac{1}{R},
+\end{equation}
+which reproduces a $1/R$ law. However, this is not a generic feature of the modified Poisson equation; it is a direct consequence of assuming an extended, approximately scale-free entropic source with $\rho_{\text{ent}}\propto 1/r^2$ over the region of interest.
+
+\subsection{Implications for OP4}
+
+Early formulae in this program treated
+\begin{equation}
+ \Delta a(R) \propto \frac{1}{R}
+\end{equation}
+as if it were a universal consequence of the modified Poisson equation with spherical symmetry. Equation~\eqref{eq:delta-a-general} shows that this is not the case: the $1/R$ behavior encodes a hidden assumption about the radial structure of the entanglement source, namely that $M_{\text{ent}}(<R)\propto R$.
+
+OP4 can therefore be resolved at the structural level by making the following explicit choices in the theory section:
+\begin{itemize}
+ \item If $S_{\text{ent}}$ is intended to be a bounded source localized to a finite ensemble (e.g., an atomic cloud of radius $R_0$), then the asymptotic exterior prediction must be a $1/R^2$ correction for $R>R_0$.
+ \item If the goal is to obtain a $1/R$ correction, one must explicitly posit an extended entropic medium with a profile such as $\rho_{\text{ent}}(r)\propto 1/r^2$ over the experimentally relevant range, and justify this physically.
+\end{itemize}
+
+Until a specific source profile is committed to, any attempt to map a measured acceleration sensitivity $\delta a$ onto a parameter sensitivity $\delta|\tilde{\kappa}|$ necessarily carries an ambiguity in both normalization and radial scaling.
+
+\section{Screening and the Crisis of $\alpha_{\text{screen}}$}
+
+\subsection{Definition and role of $\alpha_{\text{screen}}$}
+
+In the working framework, a screening factor $\alpha_{\text{screen}}$ is introduced to parameterize the extent to which microscopic entanglement is effectively ``visible'' to the emergent gravitational response. In schematic form, one may write an effective source term as
+\begin{equation}
+ \rho_{\text{ent,eff}}(\vb{x}) = \alpha_{\text{screen}}\,s_{\text{ent}}(\vb{x}),
+\end{equation}
+where $s_{\text{ent}}$ is some entanglement entropy density (e.g., von Neumann entropy per unit volume or per site), and $0\leq \alpha_{\text{screen}}\leq 1$ encodes the net effect of decoherence, environment coupling, and internal scrambling.
+
+Early order-of-magnitude estimates, based on heuristic arguments about coherence lengths and environment couplings, placed $\alpha_{\text{screen}}$ in the range $10^{-4}$--$10^{-2}$. Those values were then used in sensitivity estimates, leading to quoted targets such as
+\begin{equation}
+ \delta|\tilde{\kappa}| \approx 3.7\times 10^{-13},
+\end{equation}
+for a million-atom atom-interferometric experiment. These estimates implicitly assumed that screening is significant but not overwhelming.
+
+\subsection{Macroscopic $^{87}$Rb ensemble calculation}
+
+A more careful calculation of $\alpha_{\text{screen}}$ for a macroscopic $^{87}$Rb Bose-Einstein condensate, using a Gaussian screening factor derived in Section~04 of the larger manuscript, yields a dramatically different conclusion: for typical BEC parameters (atom number $N\sim 10^6$, cloud size of order millimeters, relevant coherence lengths), one finds
+\begin{equation}
+ \alpha_{\text{screen}} \sim 10^{-43}.
+\end{equation}
+This value is lower than the earlier heuristic range by roughly 39 orders of magnitude. If taken at face value, it implies that essentially all of the microscopic entanglement relevant to the proposed coupling is screened out in a macroscopic neutral-atom ensemble.
+
+\subsection{Interpretations and regime of validity}
+
+There are at least two broad interpretations of this discrepancy:
+\begin{enumerate}
+ \item \emph{Regime mismatch.} The Gaussian screening factor used may have been derived under assumptions appropriate to microscopic or mesoscopic systems (few-qubit clusters, weak-coupling Markovian baths, limited spatial extent), and its naive extrapolation to a million-atom BEC lies far outside its domain of validity.
+ \item \emph{Definition mismatch.} The quantity labeled $\alpha_{\text{screen}}$ may be playing two distinct roles in different parts of the analysis: in some places as a microscopic overlap or coherence factor per cluster, and in others as a bulk phenomenological prefactor, without a consistent mapping between these.
+\end{enumerate}
+
+In both cases, the scientific conclusion is the same: the screening problem is severe enough that one cannot honestly claim quantitative sensitivity for macroscopic neutral-atom tests without first deriving or bounding $\alpha_{\text{screen}}$ in the appropriate regime.
+
+\subsection{Lindblad derivation as OP3}
+
+A first-principles derivation of $\alpha_{\text{screen}}$ from an open-quantum-system perspective is correctly identified as Open Problem 3 (OP3). Such a derivation would start from a microscopic Hamiltonian for the entanglement-bearing degrees of freedom, couple them to an explicit environment (phonons, photons, technical noise), and derive a Lindblad or more general master equation. One would then compute how the relevant components of the entanglement structure (e.g., certain multi-point correlators) contribute to the emergent gravitational source and how they decay under environmental coupling.
+
+This is a substantial project, likely at least at the graduate level, and is not a prerequisite for stating the current theory. However, without such a derivation, $\alpha_{\text{screen}}$ must be treated as an unknown parameter whose value and scaling can differ drastically between microscopic and macroscopic regimes.
+
+\subsection{Conservative stance on signal magnitude}
+
+Given the potential for $\alpha_{\text{screen}}$ to be as small as $10^{-43}$ in macroscopic ensembles, the only scientifically conservative stance is to treat the \emph{magnitude} of the entanglement-induced signal as \emph{indeterminate} pending a controlled derivation or bounding of $\alpha_{\text{screen}}$ in the relevant regime. The \emph{structure} of the signal---its dependence on $\tilde{\kappa}$, $S_{\text{ent}}$, and the radial profile---remains meaningful, but any numeric forecast must carry an explicit caveat.
+
+\section{Experimental Program: From Macroscopic BEC to NISQ-Scale Devices}
+
+\subsection{Original macroscopic atom-interferometry concept}
+
+The original Section~05 of Paper A proposed an atom-interferometric test using two large, nominally identical $^{87}$Rb ensembles, each with $N\gtrsim 10^6$ atoms, prepared in a Bose-Einstein condensate. One arm would be prepared in a GHZ-like or highly spin-squeezed entangled state with nonzero $S_{\text{ent}}$, while the other would be deliberately decohered or otherwise driven to a low-entanglement reference state. Both arms would experience the same classical gravitational field, so any reproducible differential acceleration $\Delta a$ or phase shift between the arms would be attributed to the entanglement-related source term.
+
+The sensitivity target was motivated by state-of-the-art atom interferometry, in particular experiments that achieve acceleration resolutions of order $10^{-12}\,\text{m/s}^2$ or better in long-baseline, long free-fall configurations. Under earlier assumptions about $\alpha_{\text{screen}}$, this led to quoted parameter sensitivities such as $\delta|\tilde{\kappa}|\approx 3.7\times 10^{-13}$.
+
+\subsection{External atom-interferometric benchmarks}
+
+Modern long-baseline atom interferometers have achieved impressive precision in tests of the equivalence principle. A prominent example is the 2020 experiment by Asenbaum, Overstreet, Kim, Curti, and Kasevich, which used a dual-species $^{85}$Rb/$^{87}$Rb interferometer with $T\sim 2$ s of free fall to compare the gravitational acceleration of the two isotopes. The reported E"otv"os parameter was
+\begin{equation}
+ \eta = [1.6 \pm 1.8\,(\text{stat}) \pm 3.4\,(\text{syst})]\times 10^{-12},
+\end{equation}
+consistent with no violation of the equivalence principle at the $10^{-12}$ level. The per-shot resolution reached values as low as $\sim 1.4\times 10^{-11} g$.
+
+These results demonstrate that atom interferometers can probe differential accelerations at or below the $10^{-12}\,\text{m/s}^2$ scale in carefully controlled configurations. Any entanglement-induced effect that behaves like a composition-dependent fifth force would need to respect these bounds, or else couple in a way that is genuinely orthogonal to composition (e.g., depending only on entanglement structure while preserving universality of free fall for classical matter).
+
+\subsection{MICROSCOPE and satellite tests}
+
+Complementary to atom interferometry, the MICROSCOPE satellite mission has tested the weak equivalence principle in orbit by comparing the free-fall accelerations of platinum and titanium test masses. The final results, published in 2022, constrain the E"otv"os parameter at the $\sim 10^{-15}$ level, again finding no violation within experimental uncertainties.
+
+In principle, one could attempt to reinterpret MICROSCOPE's bounds as constraints on an entanglement-related coupling $\tilde{\kappa}$, by modeling how microscopic entanglement structure differs between the test materials and how that would feed into an effective $\rho_{\text{ent}}$. However, such a mapping has not yet been worked out. Until it is, any MICROSCOPE-derived bound on $\tilde{\kappa}$ must be regarded as conjectural and should not appear in summary tables without an explicit derivation.
+
+\subsection{Revised near-term target: 50--100-qubit NISQ experiment}
+
+In light of the screening crisis for macroscopic ensembles, the revised Section~05 correctly promotes a 50--100-qubit NISQ-scale experiment as the more conceptually clean near-term target. The essential ingredients are:
+\begin{itemize}
+ \item A programmable NISQ platform (neutral-atom array, trapped ions, or superconducting qubits) with the ability to prepare and verify multipartite entangled states of 50--100 qubits.
+ \item A pair of experimental branches:
+   \begin{itemize}
+    \item Branch A: a highly entangled state (GHZ-like, cluster, or another state with high entanglement depth).
+    \item Branch B: a minimally entangled reference state with the same qubit count, control schedule, and gross energy budget, but with entanglement suppressed or destroyed.
+   \end{itemize}
+ \item A differential observable (phase, frequency shift, effective acceleration proxy) that could, in principle, be sensitive to an entanglement-dependent coupling to gravity or inertial structure.
+\end{itemize}
+
+NISQ platforms offer several advantages over macroscopic neutral-atom ensembles for this purpose:
+\begin{itemize}
+ \item Entanglement can be characterized much more directly, using witnesses, tomography on subsystems, or randomized benchmarking.
+ \item Device geometry and control pulse sequences are highly programmable, simplifying the modeling of $\rho_{\text{ent}}(\vb{x})$ and its coupling to any putative gravitational response.
+ \item The regime is closer to that of microscopic open-system models, making it more plausible to derive or bound $\alpha_{\text{screen}}$ using Lindblad or related techniques.
+\end{itemize}
+
+At present, the goal is not to claim that existing NISQ devices already have sufficient sensitivity to detect the hypothesized effect. Rather, the goal is to identify a regime in which the logical structure of the test is clean: if a signal is observed, it can be plausibly attributed to entanglement structure; if no signal is observed, the null result can be translated into a meaningful bound on $\tilde{\kappa}$ once $\alpha_{\text{screen}}$ and the source profile are better understood.
+
+\subsection{Systematics in the revised protocol}
+
+The dominant systematic issues in the NISQ-based protocol differ from those in macroscopic atom interferometry. Key concerns include:
+\begin{itemize}
+ \item \emph{Imperfect state preparation:} deviations from the intended entangled and reference states can mimic a reduced entanglement-dependent signal. This must be mitigated by embedding entanglement verification (depth measures, witnesses) into the protocol.
+ \item \emph{Decoherence drift:} time-dependent drift in decoherence rates or noise spectra can change the contrast between branches over the course of data-taking. Randomization of branch order and frequent calibration runs can help control this.
+ \item \emph{Geometry-dependent coupling assumptions:} the mapping from theory to predicted signal depends on detailed device geometry (qubit locations, wiring, substrate), requiring explicit modeling of $\rho_{\text{ent}}(\vb{x})$ for each architecture.
+ \item \emph{Platform-specific cross-talk:} cross-talk between control lines or qubits can create spurious differences between branches. Symmetrization of control pulses and inclusion of null reference circuits are needed to guard against this.
+ \item \emph{Ambiguous screening regime:} until $\alpha_{\text{screen}}$ is derived or bounded, its value remains an uncontrolled parameter. The protocol must therefore treat the signal magnitude as indeterminate and focus on the structure of any observed dependence on entanglement.
+\end{itemize}
+
+\section{Higher-Level Open Problems}
+
+Two of the labeled open problems in the broader project are appropriately classified as longer-term research directions.
+
+\subsection{OP3: Lindblad derivation of $\alpha_{\text{screen}}$}
+
+Open Problem 3 is to derive $\alpha_{\text{screen}}$ from a microscopic open-quantum-system model. This requires specifying a Hamiltonian for the entanglement-bearing system (qubits or atoms), a bath model, and a system--bath coupling, then deriving a master equation and tracking how the components of the entanglement structure that couple to gravity decay in time and space. The outcome would be a functional dependence $\alpha_{\text{screen}}[\text{geometry},\text{bath},T,\ldots]$ that could be evaluated for both NISQ platforms and macroscopic ensembles.
+
+\subsection{OP10: Planck-scale renormalization}
+
+Open Problem 10 concerns how any low-energy entanglement--gravity coupling might arise from, or be renormalized by, Planck-scale degrees of freedom. Here, tools from quantum gravity and holography (e.g., AdS/CFT) may become relevant. One would like to know whether an effective coupling $\kappa$ of the sort used in Eq.~\eqref{eq:poisson-modified} can be derived as an emergent, renormalized parameter in some UV-complete theory, and whether such a derivation imposes sign, magnitude, or universality constraints on $\kappa$.
+
+\section{Outlook}
+
+The present white paper places the entanglement-entropy gravity framework on a more disciplined scientific footing by resolving the structural content of OP4, elevating the screening problem to a central issue, and identifying NISQ-scale devices as a more appropriate near-term experimental platform than macroscopic neutral-atom ensembles. Several action items follow directly:
+\begin{itemize}
+ \item Finalize and document a specific entropic source profile (bounded versus extended) in the theory section, making clear whether a $1/R^2$ or $1/R$ exterior scaling is assumed.
+ \item Remove or clearly qualify any MICROSCOPE-derived bounds on $\tilde{\kappa}$ until a detailed mapping from microscopic entanglement structure to satellite observables is constructed.
+ \item Develop a concrete NISQ-device proposal, with specified hardware, target entangled states, observables, and an explicit error budget, that can be circulated to experimental collaborators.
+ \item Treat $\alpha_{\text{screen}}$ as an open parameter and prioritize OP3 as a medium-term theoretical objective.
+\end{itemize}
+
+With these steps, the framework becomes both more conservative and more falsifiable: conservative in not over-claiming experimental reach, and falsifiable in that well-designed NISQ-scale tests and improved open-system modeling can, in principle, either detect an entanglement-dependent gravitational response or rule out large classes of couplings.
+
+\end{document}

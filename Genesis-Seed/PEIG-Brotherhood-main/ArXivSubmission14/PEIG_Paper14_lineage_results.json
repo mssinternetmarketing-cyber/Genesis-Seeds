@@ -1,0 +1,1314 @@
+{
+  "_meta": {
+    "title": "PEIG Paper XIV \u2014 Infinite Lineage Protocol Results",
+    "date": "2026-03-25",
+    "steps": 1000,
+    "nodes": 12,
+    "globe_edges": 36,
+    "beta1": 25,
+    "extend_at": [
+      100,
+      300,
+      600,
+      900
+    ],
+    "final_depth": 4
+  },
+  "run_log": [
+    {
+      "step": 0,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": 0.0,
+      "wigner_all_min": -0.5,
+      "lineage_depth": 0,
+      "total_generations": 1,
+      "mean_signal": 0.0,
+      "nonclassical_fraction": 0.4167
+    },
+    {
+      "step": 50,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": 0.0,
+      "wigner_all_min": -0.4906,
+      "lineage_depth": 0,
+      "total_generations": 1,
+      "mean_signal": 0.0,
+      "nonclassical_fraction": 0.5
+    },
+    {
+      "step": 100,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": 0.0,
+      "wigner_all_min": -0.4957,
+      "lineage_depth": 0,
+      "total_generations": 1,
+      "mean_signal": 0.0,
+      "nonclassical_fraction": 0.5
+    },
+    {
+      "step": 200,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": -0.1608,
+      "wigner_all_min": -0.5,
+      "lineage_depth": 1,
+      "total_generations": 2,
+      "mean_signal": 0.4039,
+      "nonclassical_fraction": 0.7083
+    },
+    {
+      "step": 300,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": -0.1608,
+      "wigner_all_min": -0.4957,
+      "lineage_depth": 1,
+      "total_generations": 2,
+      "mean_signal": 0.2227,
+      "nonclassical_fraction": 0.75
+    },
+    {
+      "step": 400,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": -0.2456,
+      "wigner_all_min": -0.4999,
+      "lineage_depth": 2,
+      "total_generations": 3,
+      "mean_signal": 0.2649,
+      "nonclassical_fraction": 0.8333
+    },
+    {
+      "step": 600,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": -0.2456,
+      "wigner_all_min": -0.4999,
+      "lineage_depth": 2,
+      "total_generations": 3,
+      "mean_signal": 0.0559,
+      "nonclassical_fraction": 0.8056
+    },
+    {
+      "step": 800,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": -0.2977,
+      "wigner_all_min": -0.5,
+      "lineage_depth": 3,
+      "total_generations": 4,
+      "mean_signal": 0.2051,
+      "nonclassical_fraction": 0.875
+    },
+    {
+      "step": 1000,
+      "unique_A": 12,
+      "wigner_A": 0.0,
+      "wigner_all_mean": -0.3359,
+      "wigner_all_min": -0.5768,
+      "lineage_depth": 4,
+      "total_generations": 5,
+      "mean_signal": 0.2634,
+      "nonclassical_fraction": 0.9
+    }
+  ],
+  "final_node_reports": {
+    "Omega": {
+      "node": "Omega",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 1.1761,
+          "word": "detect",
+          "cluster": "Alert",
+          "wigner": -0.1923,
+          "nonclassical": true
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 1.4395,
+          "word": "monitor",
+          "cluster": "Alert",
+          "wigner": -0.1254,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 1.4395,
+          "word": "monitor",
+          "cluster": "Alert",
+          "wigner": -0.2288,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 1.4395,
+          "word": "monitor",
+          "cluster": "Alert",
+          "wigner": -0.393,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 1.4395,
+          "word": "monitor",
+          "cluster": "Alert",
+          "wigner": -0.3938,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": -0.1923,
+        "B": -0.1254,
+        "C": -0.2288,
+        "D": -0.393,
+        "E": -0.3938
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 0.0,
+        "gen0_word": "infinite",
+        "gen0_cluster": "Completion",
+        "gen0_wigner": -0.5,
+        "lineage_depth": 4,
+        "lineage_node": "Omega",
+        "gen1_label": "B",
+        "gen1_phase": 1.4395,
+        "gen1_word": "monitor",
+        "gen1_cluster": "Alert",
+        "gen1_wigner": -0.1254,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 1.4395,
+        "gen2_word": "monitor",
+        "gen2_cluster": "Alert",
+        "gen2_wigner": -0.2288,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 1.4395,
+        "gen3_word": "monitor",
+        "gen3_cluster": "Alert",
+        "gen3_wigner": -0.393,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 1.4395,
+        "gen4_word": "monitor",
+        "gen4_cluster": "Alert",
+        "gen4_wigner": -0.3938,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Guardian": {
+      "node": "Guardian",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 0.6525,
+          "word": "keep",
+          "cluster": "Protection",
+          "wigner": -0.3973,
+          "nonclassical": true
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 0.9159,
+          "word": "alert",
+          "cluster": "Alert",
+          "wigner": -0.3096,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 0.9159,
+          "word": "alert",
+          "cluster": "Alert",
+          "wigner": -0.3172,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 0.9159,
+          "word": "alert",
+          "cluster": "Alert",
+          "wigner": -0.3447,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 0.9159,
+          "word": "alert",
+          "cluster": "Alert",
+          "wigner": -0.3611,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": -0.3973,
+        "B": -0.3096,
+        "C": -0.3172,
+        "D": -0.3447,
+        "E": -0.3611
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 5.7596,
+        "gen0_word": "end",
+        "gen0_cluster": "Completion",
+        "gen0_wigner": -0.433,
+        "lineage_depth": 4,
+        "lineage_node": "Guardian",
+        "gen1_label": "B",
+        "gen1_phase": 0.9159,
+        "gen1_word": "alert",
+        "gen1_cluster": "Alert",
+        "gen1_wigner": -0.3096,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 0.9159,
+        "gen2_word": "alert",
+        "gen2_cluster": "Alert",
+        "gen2_wigner": -0.3172,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 0.9159,
+        "gen3_word": "alert",
+        "gen3_cluster": "Alert",
+        "gen3_wigner": -0.3447,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 0.9159,
+        "gen4_word": "alert",
+        "gen4_cluster": "Alert",
+        "gen4_wigner": -0.3611,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Sentinel": {
+      "node": "Sentinel",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 0.1289,
+          "word": "protect",
+          "cluster": "Protection",
+          "wigner": -0.4959,
+          "nonclassical": true
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 0.3923,
+          "word": "stable",
+          "cluster": "Protection",
+          "wigner": -0.4621,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 0.3923,
+          "word": "stable",
+          "cluster": "Protection",
+          "wigner": -0.4622,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 0.3923,
+          "word": "stable",
+          "cluster": "Protection",
+          "wigner": -0.4627,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 0.3923,
+          "word": "stable",
+          "cluster": "Protection",
+          "wigner": -0.4817,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": -0.4959,
+        "B": -0.4621,
+        "C": -0.4622,
+        "D": -0.4627,
+        "E": -0.4817
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 5.236,
+        "gen0_word": "witness",
+        "gen0_cluster": "Vision",
+        "gen0_wigner": -0.25,
+        "lineage_depth": 4,
+        "lineage_node": "Sentinel",
+        "gen1_label": "B",
+        "gen1_phase": 0.3923,
+        "gen1_word": "stable",
+        "gen1_cluster": "Protection",
+        "gen1_wigner": -0.4621,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 0.3923,
+        "gen2_word": "stable",
+        "gen2_cluster": "Protection",
+        "gen2_wigner": -0.4622,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 0.3923,
+        "gen3_word": "stable",
+        "gen3_cluster": "Protection",
+        "gen3_wigner": -0.4627,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 0.3923,
+        "gen4_word": "stable",
+        "gen4_cluster": "Protection",
+        "gen4_wigner": -0.4817,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Nexus": {
+      "node": "Nexus",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 5.8885,
+          "word": "accept",
+          "cluster": "Completion",
+          "wigner": -0.4616,
+          "nonclassical": true
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 6.1519,
+          "word": "infinite",
+          "cluster": "Completion",
+          "wigner": -0.4957,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 6.1519,
+          "word": "infinite",
+          "cluster": "Completion",
+          "wigner": -0.4958,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 6.1519,
+          "word": "infinite",
+          "cluster": "Completion",
+          "wigner": -0.4958,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 6.1519,
+          "word": "infinite",
+          "cluster": "Completion",
+          "wigner": -0.5679,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": -0.4616,
+        "B": -0.4957,
+        "C": -0.4958,
+        "D": -0.4958,
+        "E": -0.5679
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 4.7124,
+        "gen0_word": "integrate",
+        "gen0_cluster": "Connection",
+        "gen0_wigner": 0.0,
+        "lineage_depth": 4,
+        "lineage_node": "Nexus",
+        "gen1_label": "B",
+        "gen1_phase": 6.1519,
+        "gen1_word": "infinite",
+        "gen1_cluster": "Completion",
+        "gen1_wigner": -0.4957,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 6.1519,
+        "gen2_word": "infinite",
+        "gen2_cluster": "Completion",
+        "gen2_wigner": -0.4958,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 6.1519,
+        "gen3_word": "infinite",
+        "gen3_cluster": "Completion",
+        "gen3_wigner": -0.4958,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 6.1519,
+        "gen4_word": "infinite",
+        "gen4_cluster": "Completion",
+        "gen4_wigner": -0.5679,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Storm": {
+      "node": "Storm",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 5.3649,
+          "word": "show",
+          "cluster": "Vision",
+          "wigner": -0.3036,
+          "nonclassical": true
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 5.6283,
+          "word": "receive",
+          "cluster": "Completion",
+          "wigner": -0.3975,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 5.6283,
+          "word": "receive",
+          "cluster": "Completion",
+          "wigner": -0.4054,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 5.6283,
+          "word": "receive",
+          "cluster": "Completion",
+          "wigner": -0.4117,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 5.6283,
+          "word": "receive",
+          "cluster": "Completion",
+          "wigner": -0.5768,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": -0.3036,
+        "B": -0.3975,
+        "C": -0.4054,
+        "D": -0.4117,
+        "E": -0.5768
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 4.1888,
+        "gen0_word": "connect",
+        "gen0_cluster": "Connection",
+        "gen0_wigner": 0.25,
+        "lineage_depth": 4,
+        "lineage_node": "Storm",
+        "gen1_label": "B",
+        "gen1_phase": 5.6283,
+        "gen1_word": "receive",
+        "gen1_cluster": "Completion",
+        "gen1_wigner": -0.3975,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 5.6283,
+        "gen2_word": "receive",
+        "gen2_cluster": "Completion",
+        "gen2_wigner": -0.4054,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 5.6283,
+        "gen3_word": "receive",
+        "gen3_cluster": "Completion",
+        "gen3_wigner": -0.4117,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 5.6283,
+        "gen4_word": "receive",
+        "gen4_cluster": "Completion",
+        "gen4_wigner": -0.5768,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Sora": {
+      "node": "Sora",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 4.8413,
+          "word": "integrate",
+          "cluster": "Connection",
+          "wigner": -0.0643,
+          "nonclassical": true
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 5.1047,
+          "word": "truth",
+          "cluster": "Vision",
+          "wigner": -0.2103,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 5.1047,
+          "word": "truth",
+          "cluster": "Vision",
+          "wigner": -0.313,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 5.1047,
+          "word": "truth",
+          "cluster": "Vision",
+          "wigner": -0.3917,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 5.1047,
+          "word": "truth",
+          "cluster": "Vision",
+          "wigner": -0.5055,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": -0.0643,
+        "B": -0.2103,
+        "C": -0.313,
+        "D": -0.3917,
+        "E": -0.5055
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 3.6652,
+        "gen0_word": "sky",
+        "gen0_cluster": "Flow",
+        "gen0_wigner": 0.433,
+        "lineage_depth": 4,
+        "lineage_node": "Sora",
+        "gen1_label": "B",
+        "gen1_phase": 5.1047,
+        "gen1_word": "truth",
+        "gen1_cluster": "Vision",
+        "gen1_wigner": -0.2103,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 5.1047,
+        "gen2_word": "truth",
+        "gen2_cluster": "Vision",
+        "gen2_wigner": -0.313,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 5.1047,
+        "gen3_word": "truth",
+        "gen3_cluster": "Vision",
+        "gen3_wigner": -0.3917,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 5.1047,
+        "gen4_word": "truth",
+        "gen4_cluster": "Vision",
+        "gen4_wigner": -0.5055,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Echo": {
+      "node": "Echo",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 4.3177,
+          "word": "link",
+          "cluster": "Connection",
+          "wigner": 0.1923,
+          "nonclassical": false
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 4.5811,
+          "word": "bind",
+          "cluster": "Connection",
+          "wigner": -0.0938,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 4.5811,
+          "word": "bind",
+          "cluster": "Connection",
+          "wigner": -0.4095,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 4.5811,
+          "word": "bind",
+          "cluster": "Connection",
+          "wigner": -0.4732,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 4.5811,
+          "word": "bind",
+          "cluster": "Connection",
+          "wigner": -0.5,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": 0.1923,
+        "B": -0.0938,
+        "C": -0.4095,
+        "D": -0.4732,
+        "E": -0.5
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 3.1416,
+        "gen0_word": "offer",
+        "gen0_cluster": "Source",
+        "gen0_wigner": 0.5,
+        "lineage_depth": 4,
+        "lineage_node": "Echo",
+        "gen1_label": "B",
+        "gen1_phase": 4.5811,
+        "gen1_word": "bind",
+        "gen1_cluster": "Connection",
+        "gen1_wigner": -0.0938,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 4.5811,
+        "gen2_word": "bind",
+        "gen2_cluster": "Connection",
+        "gen2_wigner": -0.4095,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 4.5811,
+        "gen3_word": "bind",
+        "gen3_cluster": "Connection",
+        "gen3_wigner": -0.4732,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 4.5811,
+        "gen4_word": "bind",
+        "gen4_cluster": "Connection",
+        "gen4_wigner": -0.5,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Iris": {
+      "node": "Iris",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 3.7941,
+          "word": "open",
+          "cluster": "Flow",
+          "wigner": 0.3973,
+          "nonclassical": false
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 4.0575,
+          "word": "above",
+          "cluster": "Flow",
+          "wigner": -0.2714,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 4.0575,
+          "word": "above",
+          "cluster": "Flow",
+          "wigner": -0.4823,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 4.0575,
+          "word": "above",
+          "cluster": "Flow",
+          "wigner": -0.4964,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 4.0575,
+          "word": "above",
+          "cluster": "Flow",
+          "wigner": -0.4996,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": 0.3973,
+        "B": -0.2714,
+        "C": -0.4823,
+        "D": -0.4964,
+        "E": -0.4996
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 2.618,
+        "gen0_word": "shift",
+        "gen0_cluster": "Change",
+        "gen0_wigner": 0.433,
+        "lineage_depth": 4,
+        "lineage_node": "Iris",
+        "gen1_label": "B",
+        "gen1_phase": 4.0575,
+        "gen1_word": "above",
+        "gen1_cluster": "Flow",
+        "gen1_wigner": -0.2714,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 4.0575,
+        "gen2_word": "above",
+        "gen2_cluster": "Flow",
+        "gen2_wigner": -0.4823,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 4.0575,
+        "gen3_word": "above",
+        "gen3_cluster": "Flow",
+        "gen3_wigner": -0.4964,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 4.0575,
+        "gen4_word": "above",
+        "gen4_cluster": "Flow",
+        "gen4_wigner": -0.4996,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Sage": {
+      "node": "Sage",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 3.2705,
+          "word": "sacred",
+          "cluster": "Source",
+          "wigner": 0.4959,
+          "nonclassical": false
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 3.5339,
+          "word": "flow",
+          "cluster": "Flow",
+          "wigner": -0.4605,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 3.5339,
+          "word": "flow",
+          "cluster": "Flow",
+          "wigner": -0.4997,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 3.5339,
+          "word": "flow",
+          "cluster": "Flow",
+          "wigner": -0.5,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 3.5339,
+          "word": "flow",
+          "cluster": "Flow",
+          "wigner": -0.5,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": 0.4959,
+        "B": -0.4605,
+        "C": -0.4997,
+        "D": -0.5,
+        "E": -0.5
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 2.0944,
+        "gen0_word": "force",
+        "gen0_cluster": "Change",
+        "gen0_wigner": 0.25,
+        "lineage_depth": 4,
+        "lineage_node": "Sage",
+        "gen1_label": "B",
+        "gen1_phase": 3.5339,
+        "gen1_word": "flow",
+        "gen1_cluster": "Flow",
+        "gen1_wigner": -0.4605,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 3.5339,
+        "gen2_word": "flow",
+        "gen2_cluster": "Flow",
+        "gen2_wigner": -0.4997,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 3.5339,
+        "gen3_word": "flow",
+        "gen3_cluster": "Flow",
+        "gen3_wigner": -0.5,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 3.5339,
+        "gen4_word": "flow",
+        "gen4_cluster": "Flow",
+        "gen4_wigner": -0.5,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Kevin": {
+      "node": "Kevin",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 2.7469,
+          "word": "move",
+          "cluster": "Change",
+          "wigner": 0.4616,
+          "nonclassical": false
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 3.0103,
+          "word": "source",
+          "cluster": "Source",
+          "wigner": -0.4957,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 3.0103,
+          "word": "source",
+          "cluster": "Source",
+          "wigner": -0.4999,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 3.0103,
+          "word": "source",
+          "cluster": "Source",
+          "wigner": -0.5,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 3.0103,
+          "word": "source",
+          "cluster": "Source",
+          "wigner": -0.5,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": 0.4616,
+        "B": -0.4957,
+        "C": -0.4999,
+        "D": -0.5,
+        "E": -0.5
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 1.5708,
+        "gen0_word": "observe",
+        "gen0_cluster": "Alert",
+        "gen0_wigner": 0.0,
+        "lineage_depth": 4,
+        "lineage_node": "Kevin",
+        "gen1_label": "B",
+        "gen1_phase": 3.0103,
+        "gen1_word": "source",
+        "gen1_cluster": "Source",
+        "gen1_wigner": -0.4957,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 3.0103,
+        "gen2_word": "source",
+        "gen2_cluster": "Source",
+        "gen2_wigner": -0.4999,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 3.0103,
+        "gen3_word": "source",
+        "gen3_cluster": "Source",
+        "gen3_wigner": -0.5,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 3.0103,
+        "gen4_word": "source",
+        "gen4_cluster": "Source",
+        "gen4_wigner": -0.5,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Atlas": {
+      "node": "Atlas",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 2.2233,
+          "word": "power",
+          "cluster": "Change",
+          "wigner": 0.3036,
+          "nonclassical": false
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 2.4867,
+          "word": "evolve",
+          "cluster": "Change",
+          "wigner": -0.3855,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 2.4867,
+          "word": "evolve",
+          "cluster": "Change",
+          "wigner": -0.4828,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 2.4867,
+          "word": "evolve",
+          "cluster": "Change",
+          "wigner": -0.4986,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 2.4867,
+          "word": "evolve",
+          "cluster": "Change",
+          "wigner": -0.4989,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": 0.3036,
+        "B": -0.3855,
+        "C": -0.4828,
+        "D": -0.4986,
+        "E": -0.4989
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 1.0472,
+        "gen0_word": "alert",
+        "gen0_cluster": "Alert",
+        "gen0_wigner": -0.25,
+        "lineage_depth": 4,
+        "lineage_node": "Atlas",
+        "gen1_label": "B",
+        "gen1_phase": 2.4867,
+        "gen1_word": "evolve",
+        "gen1_cluster": "Change",
+        "gen1_wigner": -0.3855,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 2.4867,
+        "gen2_word": "evolve",
+        "gen2_cluster": "Change",
+        "gen2_wigner": -0.4828,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 2.4867,
+        "gen3_word": "evolve",
+        "gen3_cluster": "Change",
+        "gen3_wigner": -0.4986,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 2.4867,
+        "gen4_word": "evolve",
+        "gen4_cluster": "Change",
+        "gen4_wigner": -0.4989,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    },
+    "Void": {
+      "node": "Void",
+      "lineage_depth": 4,
+      "chain": [
+        {
+          "gen": "A",
+          "role": "LIVE",
+          "phi": 1.6997,
+          "word": "sense",
+          "cluster": "Alert",
+          "wigner": 0.0643,
+          "nonclassical": false
+        },
+        {
+          "gen": "B",
+          "role": "FROZEN",
+          "phi": 1.9631,
+          "word": "change",
+          "cluster": "Change",
+          "wigner": -0.1506,
+          "nonclassical": true
+        },
+        {
+          "gen": "C",
+          "role": "FROZEN",
+          "phi": 1.9631,
+          "word": "change",
+          "cluster": "Change",
+          "wigner": -0.3876,
+          "nonclassical": true
+        },
+        {
+          "gen": "D",
+          "role": "FROZEN",
+          "phi": 1.9631,
+          "word": "change",
+          "cluster": "Change",
+          "wigner": -0.4778,
+          "nonclassical": true
+        },
+        {
+          "gen": "E",
+          "role": "FROZEN",
+          "phi": 1.9631,
+          "word": "change",
+          "cluster": "Change",
+          "wigner": -0.4788,
+          "nonclassical": true
+        }
+      ],
+      "signals_from_A": {
+        "B": -0.2634,
+        "C": -0.2634,
+        "D": -0.2634,
+        "E": -0.2634
+      },
+      "wigner_chain": {
+        "A": 0.0643,
+        "B": -0.1506,
+        "C": -0.3876,
+        "D": -0.4778,
+        "E": -0.4788
+      },
+      "latest_packet": {
+        "gen0_label": "A",
+        "gen0_phase": 0.5236,
+        "gen0_word": "safe",
+        "gen0_cluster": "Protection",
+        "gen0_wigner": -0.433,
+        "lineage_depth": 4,
+        "lineage_node": "Void",
+        "gen1_label": "B",
+        "gen1_phase": 1.9631,
+        "gen1_word": "change",
+        "gen1_cluster": "Change",
+        "gen1_wigner": -0.1506,
+        "gen1_signal_from_A": 0.0,
+        "gen2_label": "C",
+        "gen2_phase": 1.9631,
+        "gen2_word": "change",
+        "gen2_cluster": "Change",
+        "gen2_wigner": -0.3876,
+        "gen2_signal_from_A": -0.2227,
+        "gen3_label": "D",
+        "gen3_phase": 1.9631,
+        "gen3_word": "change",
+        "gen3_cluster": "Change",
+        "gen3_wigner": -0.4778,
+        "gen3_signal_from_A": 0.0559,
+        "gen4_label": "E",
+        "gen4_phase": 1.9631,
+        "gen4_word": "change",
+        "gen4_cluster": "Change",
+        "gen4_wigner": -0.4788,
+        "gen4_signal_from_A": -1.5685
+      },
+      "events": 4
+    }
+  },
+  "wigner_restoration_summary": {
+    "depth0_nc_pct": 42,
+    "depth0_wall": 0.0,
+    "depth1_nc_pct": 75,
+    "depth1_wall": -0.1608,
+    "depth2_nc_pct": 83,
+    "depth2_wall": -0.2456,
+    "depth3_nc_pct": 88,
+    "depth3_wall": -0.2977,
+    "depth4_nc_pct": 90,
+    "depth4_wall": -0.3359,
+    "wigner_floor_theoretical": -0.5,
+    "trend": "Each lineage extension restores ~0.08 additional Wigner per depth",
+    "hypothesis_confirmed": true,
+    "both_problems_solved": true,
+    "phase_diversity": "12/12 at all steps",
+    "wigner_nonclassical_pct_at_depth4": 90
+  }
+}

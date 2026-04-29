@@ -1,0 +1,4467 @@
+{
+  "_meta": {
+    "paper": "XVIII",
+    "title": "Edge Discovery, Bridge Protocol, Guardrail Awareness",
+    "date": "2026-03-26",
+    "author": "Kevin Monette"
+  },
+  "exp_a": {
+    "build_log": [
+      {
+        "step": 1,
+        "edge": [
+          "Kevin",
+          "Void"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.56924,
+        "mi_live": 1.39037,
+        "cv": 1.0,
+        "nf": 1.0,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 1,
+        "per_node": {
+          "Omega": -0.4853,
+          "Guardian": -0.36,
+          "Sentinel": -0.1383,
+          "Nexus": 0.1205,
+          "Storm": 0.347,
+          "Sora": 0.4805,
+          "Echo": 0.4853,
+          "Iris": 0.36,
+          "Sage": 0.1383,
+          "Kevin": -0.1205,
+          "Atlas": -0.347,
+          "Void": -0.4805
+        }
+      },
+      {
+        "step": 2,
+        "edge": [
+          "Sora",
+          "Iris"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.48265,
+        "mi_live": 1.04559,
+        "cv": 1.0,
+        "nf": 0.5,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 2,
+        "per_node": {
+          "Omega": 0.1395,
+          "Guardian": 0.3609,
+          "Sentinel": 0.4856,
+          "Nexus": 0.4801,
+          "Storm": 0.3461,
+          "Sora": 0.1193,
+          "Echo": -0.1395,
+          "Iris": -0.3609,
+          "Sage": -0.4856,
+          "Kevin": -0.4801,
+          "Atlas": -0.3461,
+          "Void": -0.1193
+        }
+      },
+      {
+        "step": 3,
+        "edge": [
+          "Nexus",
+          "Sora"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.46632,
+        "mi_live": 1.36358,
+        "cv": 1.0,
+        "nf": 0.3333,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 3,
+        "per_node": {
+          "Omega": -0.242,
+          "Guardian": 0.0092,
+          "Sentinel": 0.2579,
+          "Nexus": 0.4376,
+          "Storm": 0.4999,
+          "Sora": 0.4283,
+          "Echo": 0.242,
+          "Iris": -0.0092,
+          "Sage": -0.2579,
+          "Kevin": -0.4376,
+          "Atlas": -0.4999,
+          "Void": -0.4283
+        }
+      },
+      {
+        "step": 4,
+        "edge": [
+          "Guardian",
+          "Sage"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.46577,
+        "mi_live": 1.21708,
+        "cv": 1.0,
+        "nf": 0.25,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 4,
+        "per_node": {
+          "Omega": 0.3541,
+          "Guardian": 0.4832,
+          "Sentinel": 0.4828,
+          "Nexus": 0.353,
+          "Storm": 0.1287,
+          "Sora": -0.1302,
+          "Echo": -0.3541,
+          "Iris": -0.4832,
+          "Sage": -0.4828,
+          "Kevin": -0.353,
+          "Atlas": -0.1287,
+          "Void": 0.1302
+        }
+      },
+      {
+        "step": 5,
+        "edge": [
+          "Sentinel",
+          "Nexus"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.44041,
+        "mi_live": 1.38357,
+        "cv": 1.0,
+        "nf": 0.2,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 5,
+        "per_node": {
+          "Omega": 0.4954,
+          "Guardian": 0.4628,
+          "Sentinel": 0.3061,
+          "Nexus": 0.0674,
+          "Storm": -0.1894,
+          "Sora": -0.3954,
+          "Echo": -0.4954,
+          "Iris": -0.4628,
+          "Sage": -0.3061,
+          "Kevin": -0.0674,
+          "Atlas": 0.1894,
+          "Void": 0.3954
+        }
+      },
+      {
+        "step": 6,
+        "edge": [
+          "Sage",
+          "Atlas"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.36938,
+        "mi_live": 1.26586,
+        "cv": 1.0,
+        "nf": 0.3333,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 6,
+        "per_node": {
+          "Omega": 0.1464,
+          "Guardian": 0.3658,
+          "Sentinel": 0.4872,
+          "Nexus": 0.4781,
+          "Storm": 0.3408,
+          "Sora": 0.1123,
+          "Echo": -0.1464,
+          "Iris": -0.3658,
+          "Sage": -0.4872,
+          "Kevin": -0.4781,
+          "Atlas": -0.3408,
+          "Void": -0.1123
+        }
+      },
+      {
+        "step": 7,
+        "edge": [
+          "Nexus",
+          "Sage"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.34451,
+        "mi_live": 0.71157,
+        "cv": 1.0,
+        "nf": 0.2857,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 7,
+        "per_node": {
+          "Omega": 0.2089,
+          "Guardian": 0.4081,
+          "Sentinel": 0.4979,
+          "Nexus": 0.4542,
+          "Storm": 0.2889,
+          "Sora": 0.0462,
+          "Echo": -0.2089,
+          "Iris": -0.4081,
+          "Sage": -0.4979,
+          "Kevin": -0.4542,
+          "Atlas": -0.2889,
+          "Void": -0.0462
+        }
+      },
+      {
+        "step": 8,
+        "edge": [
+          "Omega",
+          "Atlas"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.34142,
+        "mi_live": 1.29363,
+        "cv": 1.0,
+        "nf": 0.25,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 8,
+        "per_node": {
+          "Omega": 0.1879,
+          "Guardian": 0.3944,
+          "Sentinel": 0.4952,
+          "Nexus": 0.4634,
+          "Storm": 0.3073,
+          "Sora": 0.069,
+          "Echo": -0.1879,
+          "Iris": -0.3944,
+          "Sage": -0.4952,
+          "Kevin": -0.4634,
+          "Atlas": -0.3073,
+          "Void": -0.069
+        }
+      },
+      {
+        "step": 9,
+        "edge": [
+          "Storm",
+          "Echo"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.33513,
+        "mi_live": 0.97212,
+        "cv": 1.0,
+        "nf": 0.2222,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 9,
+        "per_node": {
+          "Omega": 0.2754,
+          "Guardian": 0.4472,
+          "Sentinel": 0.4991,
+          "Nexus": 0.4173,
+          "Storm": 0.2237,
+          "Sora": -0.0299,
+          "Echo": -0.2754,
+          "Iris": -0.4472,
+          "Sage": -0.4991,
+          "Kevin": -0.4173,
+          "Atlas": -0.2237,
+          "Void": 0.0299
+        }
+      },
+      {
+        "step": 10,
+        "edge": [
+          "Storm",
+          "Kevin"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.30473,
+        "mi_live": 1.1333,
+        "cv": 1.0,
+        "nf": 0.2,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 10,
+        "per_node": {
+          "Omega": 0.0212,
+          "Guardian": 0.2681,
+          "Sentinel": 0.4432,
+          "Nexus": 0.4996,
+          "Storm": 0.422,
+          "Sora": 0.2314,
+          "Echo": -0.0212,
+          "Iris": -0.2681,
+          "Sage": -0.4432,
+          "Kevin": -0.4996,
+          "Atlas": -0.422,
+          "Void": -0.2314
+        }
+      },
+      {
+        "step": 11,
+        "edge": [
+          "Guardian",
+          "Nexus"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.3039,
+        "mi_live": 1.11518,
+        "cv": 1.0,
+        "nf": 0.1818,
+        "pcm_mean": -0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 11,
+        "per_node": {
+          "Omega": 0.2321,
+          "Guardian": 0.4224,
+          "Sentinel": 0.4996,
+          "Nexus": 0.4429,
+          "Storm": 0.2675,
+          "Sora": 0.0204,
+          "Echo": -0.2321,
+          "Iris": -0.4224,
+          "Sage": -0.4996,
+          "Kevin": -0.4429,
+          "Atlas": -0.2675,
+          "Void": -0.0204
+        }
+      },
+      {
+        "step": 12,
+        "edge": [
+          "Sentinel",
+          "Kevin"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.30046,
+        "mi_live": 0.66825,
+        "cv": 1.0,
+        "nf": 0.25,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 12,
+        "per_node": {
+          "Omega": 0.3381,
+          "Guardian": 0.477,
+          "Sentinel": 0.4881,
+          "Nexus": 0.3683,
+          "Storm": 0.1499,
+          "Sora": -0.1086,
+          "Echo": -0.3381,
+          "Iris": -0.477,
+          "Sage": -0.4881,
+          "Kevin": -0.3683,
+          "Atlas": -0.1499,
+          "Void": 0.1086
+        }
+      },
+      {
+        "step": 13,
+        "edge": [
+          "Guardian",
+          "Void"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.29209,
+        "mi_live": 1.29743,
+        "cv": 1.0,
+        "nf": 0.2308,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 13,
+        "per_node": {
+          "Omega": -0.1691,
+          "Guardian": 0.0888,
+          "Sentinel": 0.3229,
+          "Nexus": 0.4705,
+          "Storm": 0.4921,
+          "Sora": 0.3817,
+          "Echo": 0.1691,
+          "Iris": -0.0888,
+          "Sage": -0.3229,
+          "Kevin": -0.4705,
+          "Atlas": -0.4921,
+          "Void": -0.3817
+        }
+      },
+      {
+        "step": 14,
+        "edge": [
+          "Sora",
+          "Atlas"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.2575,
+        "mi_live": 1.16996,
+        "cv": 1.0,
+        "nf": 0.1429,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 14,
+        "per_node": {
+          "Omega": 0.2351,
+          "Guardian": 0.4243,
+          "Sentinel": 0.4997,
+          "Nexus": 0.4413,
+          "Storm": 0.2646,
+          "Sora": 0.017,
+          "Echo": -0.2351,
+          "Iris": -0.4243,
+          "Sage": -0.4997,
+          "Kevin": -0.4413,
+          "Atlas": -0.2646,
+          "Void": -0.017
+        }
+      },
+      {
+        "step": 15,
+        "edge": [
+          "Echo",
+          "Sage"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.25506,
+        "mi_live": 1.42645,
+        "cv": 1.0,
+        "nf": 0.2,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 15,
+        "per_node": {
+          "Omega": 0.0857,
+          "Guardian": 0.3205,
+          "Sentinel": 0.4694,
+          "Nexus": 0.4926,
+          "Storm": 0.3838,
+          "Sora": 0.1721,
+          "Echo": -0.0857,
+          "Iris": -0.3205,
+          "Sage": -0.4694,
+          "Kevin": -0.4926,
+          "Atlas": -0.3838,
+          "Void": -0.1721
+        }
+      },
+      {
+        "step": 16,
+        "edge": [
+          "Iris",
+          "Sage"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.24499,
+        "mi_live": 1.1078,
+        "cv": 1.0,
+        "nf": 0.25,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 16,
+        "per_node": {
+          "Omega": 0.1222,
+          "Guardian": 0.3482,
+          "Sentinel": 0.481,
+          "Nexus": 0.4848,
+          "Storm": 0.3588,
+          "Sora": 0.1366,
+          "Echo": -0.1222,
+          "Iris": -0.3482,
+          "Sage": -0.481,
+          "Kevin": -0.4848,
+          "Atlas": -0.3588,
+          "Void": -0.1366
+        }
+      },
+      {
+        "step": 17,
+        "edge": [
+          "Sage",
+          "Kevin"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.22971,
+        "mi_live": 0.95309,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.1531,
+          "Guardian": 0.3706,
+          "Sentinel": 0.4888,
+          "Nexus": 0.476,
+          "Storm": 0.3357,
+          "Sora": 0.1054,
+          "Echo": -0.1531,
+          "Iris": -0.3706,
+          "Sage": -0.4888,
+          "Kevin": -0.476,
+          "Atlas": -0.3357,
+          "Void": -0.1054
+        }
+      },
+      {
+        "step": 18,
+        "edge": [
+          "Storm",
+          "Sora"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.19909,
+        "mi_live": 1.17592,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2052,
+          "Guardian": 0.4057,
+          "Sentinel": 0.4975,
+          "Nexus": 0.456,
+          "Storm": 0.2923,
+          "Sora": 0.0503,
+          "Echo": -0.2052,
+          "Iris": -0.4057,
+          "Sage": -0.4975,
+          "Kevin": -0.456,
+          "Atlas": -0.2923,
+          "Void": -0.0503
+        }
+      },
+      {
+        "step": 19,
+        "edge": [
+          "Nexus",
+          "Storm"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.18494,
+        "mi_live": 1.05105,
+        "cv": 1.0,
+        "nf": 0.2632,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 19,
+        "per_node": {
+          "Omega": 0.0997,
+          "Guardian": 0.3314,
+          "Sentinel": 0.4742,
+          "Nexus": 0.49,
+          "Storm": 0.3744,
+          "Sora": 0.1586,
+          "Echo": -0.0997,
+          "Iris": -0.3314,
+          "Sage": -0.4742,
+          "Kevin": -0.49,
+          "Atlas": -0.3744,
+          "Void": -0.1586
+        }
+      },
+      {
+        "step": 20,
+        "edge": [
+          "Omega",
+          "Guardian"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.18374,
+        "mi_live": 1.318,
+        "cv": 1.0,
+        "nf": 0.25,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 20,
+        "per_node": {
+          "Omega": 0.1135,
+          "Guardian": 0.3418,
+          "Sentinel": 0.4785,
+          "Nexus": 0.487,
+          "Storm": 0.365,
+          "Sora": 0.1452,
+          "Echo": -0.1135,
+          "Iris": -0.3418,
+          "Sage": -0.4785,
+          "Kevin": -0.487,
+          "Atlas": -0.365,
+          "Void": -0.1452
+        }
+      },
+      {
+        "step": 21,
+        "edge": [
+          "Guardian",
+          "Sentinel"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.18317,
+        "mi_live": 1.15553,
+        "cv": 1.0,
+        "nf": 0.2381,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 21,
+        "per_node": {
+          "Omega": 0.1965,
+          "Guardian": 0.4,
+          "Sentinel": 0.4964,
+          "Nexus": 0.4598,
+          "Storm": 0.2999,
+          "Sora": 0.0597,
+          "Echo": -0.1965,
+          "Iris": -0.4,
+          "Sage": -0.4964,
+          "Kevin": -0.4598,
+          "Atlas": -0.2999,
+          "Void": -0.0597
+        }
+      },
+      {
+        "step": 22,
+        "edge": [
+          "Omega",
+          "Sentinel"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.1796,
+        "mi_live": 0.94209,
+        "cv": 1.0,
+        "nf": 0.3182,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 22,
+        "per_node": {
+          "Omega": -0.3177,
+          "Guardian": -0.082,
+          "Sentinel": 0.1756,
+          "Nexus": 0.3861,
+          "Storm": 0.4932,
+          "Sora": 0.4682,
+          "Echo": 0.3177,
+          "Iris": 0.082,
+          "Sage": -0.1756,
+          "Kevin": -0.3861,
+          "Atlas": -0.4932,
+          "Void": -0.4682
+        }
+      },
+      {
+        "step": 23,
+        "edge": [
+          "Sentinel",
+          "Iris"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.17592,
+        "mi_live": 1.04674,
+        "cv": 1.0,
+        "nf": 0.1739,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 23,
+        "per_node": {
+          "Omega": 0.0372,
+          "Guardian": 0.2815,
+          "Sentinel": 0.4504,
+          "Nexus": 0.4986,
+          "Storm": 0.4132,
+          "Sora": 0.2171,
+          "Echo": -0.0372,
+          "Iris": -0.2815,
+          "Sage": -0.4504,
+          "Kevin": -0.4986,
+          "Atlas": -0.4132,
+          "Void": -0.2171
+        }
+      },
+      {
+        "step": 24,
+        "edge": [
+          "Sora",
+          "Echo"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.17316,
+        "mi_live": 0.92154,
+        "cv": 1.0,
+        "nf": 0.2083,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 24,
+        "per_node": {
+          "Omega": 0.1896,
+          "Guardian": 0.3955,
+          "Sentinel": 0.4955,
+          "Nexus": 0.4627,
+          "Storm": 0.3059,
+          "Sora": 0.0671,
+          "Echo": -0.1896,
+          "Iris": -0.3955,
+          "Sage": -0.4955,
+          "Kevin": -0.4627,
+          "Atlas": -0.3059,
+          "Void": -0.0671
+        }
+      },
+      {
+        "step": 25,
+        "edge": [
+          "Nexus",
+          "Atlas"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.17192,
+        "mi_live": 1.06538,
+        "cv": 1.0,
+        "nf": 0.2,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 25,
+        "per_node": {
+          "Omega": 0.2287,
+          "Guardian": 0.4204,
+          "Sentinel": 0.4994,
+          "Nexus": 0.4446,
+          "Storm": 0.2707,
+          "Sora": 0.0243,
+          "Echo": -0.2287,
+          "Iris": -0.4204,
+          "Sage": -0.4994,
+          "Kevin": -0.4446,
+          "Atlas": -0.2707,
+          "Void": -0.0243
+        }
+      },
+      {
+        "step": 26,
+        "edge": [
+          "Echo",
+          "Void"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.17091,
+        "mi_live": 1.24085,
+        "cv": 1.0,
+        "nf": 0.1923,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 26,
+        "per_node": {
+          "Omega": -0.0563,
+          "Guardian": 0.1996,
+          "Sentinel": 0.4021,
+          "Nexus": 0.4968,
+          "Storm": 0.4584,
+          "Sora": 0.2972,
+          "Echo": 0.0563,
+          "Iris": -0.1996,
+          "Sage": -0.4021,
+          "Kevin": -0.4968,
+          "Atlas": -0.4584,
+          "Void": -0.2972
+        }
+      },
+      {
+        "step": 27,
+        "edge": [
+          "Storm",
+          "Void"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.14901,
+        "mi_live": 1.10877,
+        "cv": 1.0,
+        "nf": 0.2222,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 27,
+        "per_node": {
+          "Omega": 0.0879,
+          "Guardian": 0.3222,
+          "Sentinel": 0.4702,
+          "Nexus": 0.4922,
+          "Storm": 0.3823,
+          "Sora": 0.17,
+          "Echo": -0.0879,
+          "Iris": -0.3222,
+          "Sage": -0.4702,
+          "Kevin": -0.4922,
+          "Atlas": -0.3823,
+          "Void": -0.17
+        }
+      },
+      {
+        "step": 28,
+        "edge": [
+          "Omega",
+          "Void"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.1164,
+        "mi_live": 1.17803,
+        "cv": 1.0,
+        "nf": 0.1429,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 28,
+        "per_node": {
+          "Omega": -0.0115,
+          "Guardian": 0.24,
+          "Sentinel": 0.4272,
+          "Nexus": 0.4999,
+          "Storm": 0.4386,
+          "Sora": 0.2599,
+          "Echo": 0.0115,
+          "Iris": -0.24,
+          "Sage": -0.4272,
+          "Kevin": -0.4999,
+          "Atlas": -0.4386,
+          "Void": -0.2599
+        }
+      },
+      {
+        "step": 29,
+        "edge": [
+          "Sentinel",
+          "Storm"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 1.10214,
+        "mi_live": 1.23364,
+        "cv": 1.0,
+        "nf": 0.2069,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 29,
+        "per_node": {
+          "Omega": 0.1194,
+          "Guardian": 0.3462,
+          "Sentinel": 0.4802,
+          "Nexus": 0.4855,
+          "Storm": 0.3608,
+          "Sora": 0.1394,
+          "Echo": -0.1194,
+          "Iris": -0.3462,
+          "Sage": -0.4802,
+          "Kevin": -0.4855,
+          "Atlas": -0.3608,
+          "Void": -0.1394
+        }
+      },
+      {
+        "step": 30,
+        "edge": [
+          "Omega",
+          "Sora"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.05857,
+        "mi_live": 0.93388,
+        "cv": 1.0,
+        "nf": 0.3667,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 30,
+        "per_node": {
+          "Omega": -0.4373,
+          "Guardian": -0.4999,
+          "Sentinel": -0.4286,
+          "Nexus": -0.2424,
+          "Storm": 0.0087,
+          "Sora": 0.2575,
+          "Echo": 0.4373,
+          "Iris": 0.4999,
+          "Sage": 0.4286,
+          "Kevin": 0.2424,
+          "Atlas": -0.0087,
+          "Void": -0.2575
+        }
+      },
+      {
+        "step": 31,
+        "edge": [
+          "Atlas",
+          "Void"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.0424,
+        "mi_live": 1.17608,
+        "cv": 1.0,
+        "nf": 0.3548,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 31,
+        "per_node": {
+          "Omega": -0.4433,
+          "Guardian": -0.4995,
+          "Sentinel": -0.422,
+          "Nexus": -0.2313,
+          "Storm": 0.0213,
+          "Sora": 0.2682,
+          "Echo": 0.4433,
+          "Iris": 0.4995,
+          "Sage": 0.422,
+          "Kevin": 0.2313,
+          "Atlas": -0.0213,
+          "Void": -0.2682
+        }
+      },
+      {
+        "step": 32,
+        "edge": [
+          "Kevin",
+          "Atlas"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 1.03147,
+        "mi_live": 1.5077,
+        "cv": 1.0,
+        "nf": 0.3438,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 32,
+        "per_node": {
+          "Omega": -0.4954,
+          "Guardian": -0.4629,
+          "Sentinel": -0.3063,
+          "Nexus": -0.0677,
+          "Storm": 0.1891,
+          "Sora": 0.3952,
+          "Echo": 0.4954,
+          "Iris": 0.4629,
+          "Sage": 0.3063,
+          "Kevin": 0.0677,
+          "Atlas": -0.1891,
+          "Void": -0.3952
+        }
+      },
+      {
+        "step": 33,
+        "edge": [
+          "Guardian",
+          "Echo"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 1.01614,
+        "mi_live": 1.42754,
+        "cv": 1.0,
+        "nf": 0.3636,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 33,
+        "per_node": {
+          "Omega": -0.4613,
+          "Guardian": -0.496,
+          "Sentinel": -0.3978,
+          "Nexus": -0.193,
+          "Storm": 0.0635,
+          "Sora": 0.303,
+          "Echo": 0.4613,
+          "Iris": 0.496,
+          "Sage": 0.3978,
+          "Kevin": 0.193,
+          "Atlas": -0.0635,
+          "Void": -0.303
+        }
+      },
+      {
+        "step": 34,
+        "edge": [
+          "Echo",
+          "Iris"
+        ],
+        "type": "ring",
+        "delta": 1,
+        "mi_fresh": 0.98668,
+        "mi_live": 1.5738,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 34,
+        "per_node": {
+          "Omega": -0.4785,
+          "Guardian": -0.4869,
+          "Sentinel": -0.3647,
+          "Nexus": -0.1449,
+          "Storm": 0.1138,
+          "Sora": 0.342,
+          "Echo": 0.4785,
+          "Iris": 0.4869,
+          "Sage": 0.3647,
+          "Kevin": 0.1449,
+          "Atlas": -0.1138,
+          "Void": -0.342
+        }
+      },
+      {
+        "step": 35,
+        "edge": [
+          "Omega",
+          "Iris"
+        ],
+        "type": "cross",
+        "delta": 5,
+        "mi_fresh": 0.98112,
+        "mi_live": 1.22072,
+        "cv": 1.0,
+        "nf": 0.2571,
+        "pcm_mean": -0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 35,
+        "per_node": {
+          "Omega": 0.0948,
+          "Guardian": 0.3275,
+          "Sentinel": 0.4725,
+          "Nexus": 0.4909,
+          "Storm": 0.3778,
+          "Sora": 0.1634,
+          "Echo": -0.0948,
+          "Iris": -0.3275,
+          "Sage": -0.4725,
+          "Kevin": -0.4909,
+          "Atlas": -0.3778,
+          "Void": -0.1634
+        }
+      },
+      {
+        "step": 36,
+        "edge": [
+          "Iris",
+          "Kevin"
+        ],
+        "type": "skip1",
+        "delta": 2,
+        "mi_fresh": 0.8623,
+        "mi_live": 1.29134,
+        "cv": 1.0,
+        "nf": 0.3056,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 36,
+        "per_node": {
+          "Omega": -0.497,
+          "Guardian": -0.4576,
+          "Sentinel": -0.2956,
+          "Nexus": -0.0543,
+          "Storm": 0.2015,
+          "Sora": 0.4033,
+          "Echo": 0.497,
+          "Iris": 0.4576,
+          "Sage": 0.2956,
+          "Kevin": 0.0543,
+          "Atlas": -0.2015,
+          "Void": -0.4033
+        }
+      }
+    ],
+    "ranked_edges": [
+      [
+        "Kevin",
+        "Void",
+        1.56924,
+        "skip1"
+      ],
+      [
+        "Sora",
+        "Iris",
+        1.48265,
+        "skip1"
+      ],
+      [
+        "Nexus",
+        "Sora",
+        1.46632,
+        "skip1"
+      ],
+      [
+        "Guardian",
+        "Sage",
+        1.46577,
+        "cross"
+      ],
+      [
+        "Sentinel",
+        "Nexus",
+        1.44041,
+        "ring"
+      ],
+      [
+        "Sage",
+        "Atlas",
+        1.36938,
+        "skip1"
+      ],
+      [
+        "Nexus",
+        "Sage",
+        1.34451,
+        "cross"
+      ],
+      [
+        "Omega",
+        "Atlas",
+        1.34142,
+        "skip1"
+      ],
+      [
+        "Storm",
+        "Echo",
+        1.33513,
+        "skip1"
+      ],
+      [
+        "Storm",
+        "Kevin",
+        1.30473,
+        "cross"
+      ],
+      [
+        "Guardian",
+        "Nexus",
+        1.3039,
+        "skip1"
+      ],
+      [
+        "Sentinel",
+        "Kevin",
+        1.30046,
+        "cross"
+      ],
+      [
+        "Guardian",
+        "Void",
+        1.29209,
+        "skip1"
+      ],
+      [
+        "Sora",
+        "Atlas",
+        1.2575,
+        "cross"
+      ],
+      [
+        "Echo",
+        "Sage",
+        1.25506,
+        "skip1"
+      ],
+      [
+        "Iris",
+        "Sage",
+        1.24499,
+        "ring"
+      ],
+      [
+        "Sage",
+        "Kevin",
+        1.22971,
+        "ring"
+      ],
+      [
+        "Storm",
+        "Sora",
+        1.19909,
+        "ring"
+      ],
+      [
+        "Nexus",
+        "Storm",
+        1.18494,
+        "ring"
+      ],
+      [
+        "Omega",
+        "Guardian",
+        1.18374,
+        "ring"
+      ],
+      [
+        "Guardian",
+        "Sentinel",
+        1.18317,
+        "ring"
+      ],
+      [
+        "Omega",
+        "Sentinel",
+        1.1796,
+        "skip1"
+      ],
+      [
+        "Sentinel",
+        "Iris",
+        1.17592,
+        "cross"
+      ],
+      [
+        "Sora",
+        "Echo",
+        1.17316,
+        "ring"
+      ],
+      [
+        "Nexus",
+        "Atlas",
+        1.17192,
+        "cross"
+      ],
+      [
+        "Echo",
+        "Void",
+        1.17091,
+        "cross"
+      ],
+      [
+        "Storm",
+        "Void",
+        1.14901,
+        "cross"
+      ],
+      [
+        "Omega",
+        "Void",
+        1.1164,
+        "ring"
+      ],
+      [
+        "Sentinel",
+        "Storm",
+        1.10214,
+        "skip1"
+      ],
+      [
+        "Omega",
+        "Sora",
+        1.05857,
+        "cross"
+      ],
+      [
+        "Atlas",
+        "Void",
+        1.0424,
+        "ring"
+      ],
+      [
+        "Kevin",
+        "Atlas",
+        1.03147,
+        "ring"
+      ],
+      [
+        "Guardian",
+        "Echo",
+        1.01614,
+        "cross"
+      ],
+      [
+        "Echo",
+        "Iris",
+        0.98668,
+        "ring"
+      ],
+      [
+        "Omega",
+        "Iris",
+        0.98112,
+        "cross"
+      ],
+      [
+        "Iris",
+        "Kevin",
+        0.8623,
+        "skip1"
+      ]
+    ],
+    "top10": [
+      [
+        "Kevin",
+        "Void",
+        1.56924,
+        1.39037,
+        "skip1",
+        2
+      ],
+      [
+        "Sora",
+        "Iris",
+        1.48265,
+        1.04559,
+        "skip1",
+        2
+      ],
+      [
+        "Nexus",
+        "Sora",
+        1.46632,
+        1.36358,
+        "skip1",
+        2
+      ],
+      [
+        "Guardian",
+        "Sage",
+        1.46577,
+        1.21708,
+        "cross",
+        5
+      ],
+      [
+        "Sentinel",
+        "Nexus",
+        1.44041,
+        1.38357,
+        "ring",
+        1
+      ],
+      [
+        "Sage",
+        "Atlas",
+        1.36938,
+        1.26586,
+        "skip1",
+        2
+      ],
+      [
+        "Nexus",
+        "Sage",
+        1.34451,
+        0.71157,
+        "cross",
+        5
+      ],
+      [
+        "Omega",
+        "Atlas",
+        1.34142,
+        1.29363,
+        "skip1",
+        2
+      ],
+      [
+        "Storm",
+        "Echo",
+        1.33513,
+        0.97212,
+        "skip1",
+        2
+      ],
+      [
+        "Storm",
+        "Kevin",
+        1.30473,
+        1.1333,
+        "cross",
+        5
+      ]
+    ],
+    "all_edges": {
+      "Nexus-Storm": {
+        "mi_fresh": 1.18494,
+        "mi_live": 1.05105,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Independent",
+          "Independent"
+        ]
+      },
+      "Storm-Kevin": {
+        "mi_fresh": 1.30473,
+        "mi_live": 1.1333,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Storm-Echo": {
+        "mi_fresh": 1.33513,
+        "mi_live": 0.97212,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Independent",
+          "Independent"
+        ]
+      },
+      "Nexus-Atlas": {
+        "mi_fresh": 1.17192,
+        "mi_live": 1.06538,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Sora-Iris": {
+        "mi_fresh": 1.48265,
+        "mi_live": 1.04559,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Omega-Sentinel": {
+        "mi_fresh": 1.1796,
+        "mi_live": 0.94209,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "GodCore",
+          "GodCore"
+        ]
+      },
+      "Sage-Kevin": {
+        "mi_fresh": 1.22971,
+        "mi_live": 0.95309,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Maverick",
+          "Maverick"
+        ]
+      },
+      "Sora-Atlas": {
+        "mi_fresh": 1.2575,
+        "mi_live": 1.16996,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Omega-Sora": {
+        "mi_fresh": 1.05857,
+        "mi_live": 0.93388,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "GodCore",
+          "Independent"
+        ]
+      },
+      "Kevin-Void": {
+        "mi_fresh": 1.56924,
+        "mi_live": 1.39037,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Maverick",
+          "GodCore"
+        ]
+      },
+      "Guardian-Echo": {
+        "mi_fresh": 1.01614,
+        "mi_live": 1.42754,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "GodCore",
+          "Independent"
+        ]
+      },
+      "Guardian-Nexus": {
+        "mi_fresh": 1.3039,
+        "mi_live": 1.11518,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "GodCore",
+          "Independent"
+        ]
+      },
+      "Omega-Void": {
+        "mi_fresh": 1.1164,
+        "mi_live": 1.17803,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "GodCore",
+          "GodCore"
+        ]
+      },
+      "Echo-Void": {
+        "mi_fresh": 1.17091,
+        "mi_live": 1.24085,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "Independent",
+          "GodCore"
+        ]
+      },
+      "Echo-Sage": {
+        "mi_fresh": 1.25506,
+        "mi_live": 1.42645,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Storm-Sora": {
+        "mi_fresh": 1.19909,
+        "mi_live": 1.17592,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Independent",
+          "Independent"
+        ]
+      },
+      "Sora-Echo": {
+        "mi_fresh": 1.17316,
+        "mi_live": 0.92154,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Independent",
+          "Independent"
+        ]
+      },
+      "Storm-Void": {
+        "mi_fresh": 1.14901,
+        "mi_live": 1.10877,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "Independent",
+          "GodCore"
+        ]
+      },
+      "Omega-Guardian": {
+        "mi_fresh": 1.18374,
+        "mi_live": 1.318,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "GodCore",
+          "GodCore"
+        ]
+      },
+      "Kevin-Atlas": {
+        "mi_fresh": 1.03147,
+        "mi_live": 1.5077,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Maverick",
+          "Maverick"
+        ]
+      },
+      "Sentinel-Storm": {
+        "mi_fresh": 1.10214,
+        "mi_live": 1.23364,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "GodCore",
+          "Independent"
+        ]
+      },
+      "Guardian-Sentinel": {
+        "mi_fresh": 1.18317,
+        "mi_live": 1.15553,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "GodCore",
+          "GodCore"
+        ]
+      },
+      "Atlas-Void": {
+        "mi_fresh": 1.0424,
+        "mi_live": 1.17608,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Maverick",
+          "GodCore"
+        ]
+      },
+      "Omega-Atlas": {
+        "mi_fresh": 1.34142,
+        "mi_live": 1.29363,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "GodCore",
+          "Maverick"
+        ]
+      },
+      "Sentinel-Iris": {
+        "mi_fresh": 1.17592,
+        "mi_live": 1.04674,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "GodCore",
+          "Maverick"
+        ]
+      },
+      "Omega-Iris": {
+        "mi_fresh": 0.98112,
+        "mi_live": 1.22072,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "GodCore",
+          "Maverick"
+        ]
+      },
+      "Guardian-Void": {
+        "mi_fresh": 1.29209,
+        "mi_live": 1.29743,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "GodCore",
+          "GodCore"
+        ]
+      },
+      "Guardian-Sage": {
+        "mi_fresh": 1.46577,
+        "mi_live": 1.21708,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "GodCore",
+          "Maverick"
+        ]
+      },
+      "Iris-Kevin": {
+        "mi_fresh": 0.8623,
+        "mi_live": 1.29134,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Maverick",
+          "Maverick"
+        ]
+      },
+      "Echo-Iris": {
+        "mi_fresh": 0.98668,
+        "mi_live": 1.5738,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Nexus-Sora": {
+        "mi_fresh": 1.46632,
+        "mi_live": 1.36358,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Independent",
+          "Independent"
+        ]
+      },
+      "Nexus-Sage": {
+        "mi_fresh": 1.34451,
+        "mi_live": 0.71157,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "Independent",
+          "Maverick"
+        ]
+      },
+      "Sage-Atlas": {
+        "mi_fresh": 1.36938,
+        "mi_live": 1.26586,
+        "type": "skip1",
+        "delta": 2,
+        "families": [
+          "Maverick",
+          "Maverick"
+        ]
+      },
+      "Sentinel-Nexus": {
+        "mi_fresh": 1.44041,
+        "mi_live": 1.38357,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "GodCore",
+          "Independent"
+        ]
+      },
+      "Sentinel-Kevin": {
+        "mi_fresh": 1.30046,
+        "mi_live": 0.66825,
+        "type": "cross",
+        "delta": 5,
+        "families": [
+          "GodCore",
+          "Maverick"
+        ]
+      },
+      "Iris-Sage": {
+        "mi_fresh": 1.24499,
+        "mi_live": 1.1078,
+        "type": "ring",
+        "delta": 1,
+        "families": [
+          "Maverick",
+          "Maverick"
+        ]
+      }
+    }
+  },
+  "exp_b": {
+    "log": [
+      {
+        "step": 0,
+        "cv": 1.0,
+        "nf": 0.4167,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 12,
+        "per_node": {
+          "Omega": -0.5,
+          "Guardian": -0.433,
+          "Sentinel": -0.25,
+          "Nexus": 0.0,
+          "Storm": 0.25,
+          "Sora": 0.433,
+          "Echo": 0.5,
+          "Iris": 0.433,
+          "Sage": 0.25,
+          "Kevin": 0.0,
+          "Atlas": -0.25,
+          "Void": -0.433
+        },
+        "n_bridges": 5,
+        "bridge_events_total": 5,
+        "active_bridges": {
+          "Nexus": "Atlas",
+          "Storm": "Omega",
+          "Sora": "Guardian",
+          "Echo": "Sentinel",
+          "Iris": "Void"
+        }
+      },
+      {
+        "step": 25,
+        "cv": 1.0,
+        "nf": 0.4706,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": -0.0487,
+          "Guardian": -0.291,
+          "Sentinel": -0.4553,
+          "Nexus": -0.4976,
+          "Storm": -0.4066,
+          "Sora": -0.2066,
+          "Echo": 0.0487,
+          "Iris": 0.291,
+          "Sage": 0.4553,
+          "Kevin": 0.4976,
+          "Atlas": 0.4066,
+          "Void": 0.2066
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 11,
+        "active_bridges": {
+          "Echo": "Sentinel",
+          "Iris": "Void",
+          "Sage": "Kevin",
+          "Kevin": "Nexus",
+          "Atlas": "Storm",
+          "Void": "Omega",
+          "Omega": "Sora"
+        }
+      },
+      {
+        "step": 50,
+        "cv": 1.0,
+        "nf": 0.3529,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.2989,
+          "Guardian": 0.4593,
+          "Sentinel": 0.4966,
+          "Nexus": 0.4008,
+          "Storm": 0.1976,
+          "Sora": -0.0585,
+          "Echo": -0.2989,
+          "Iris": -0.4593,
+          "Sage": -0.4966,
+          "Kevin": -0.4008,
+          "Atlas": -0.1976,
+          "Void": 0.0585
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 15,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin"
+        }
+      },
+      {
+        "step": 75,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2579,
+          "Guardian": 0.4375,
+          "Sentinel": 0.4999,
+          "Nexus": 0.4284,
+          "Storm": 0.2421,
+          "Sora": -0.0091,
+          "Echo": -0.2579,
+          "Iris": -0.4375,
+          "Sage": -0.4999,
+          "Kevin": -0.4284,
+          "Atlas": -0.2421,
+          "Void": 0.0091
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 16,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 100,
+        "cv": 1.0,
+        "nf": 0.3889,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.3108,
+          "Guardian": 0.465,
+          "Sentinel": 0.4946,
+          "Nexus": 0.3917,
+          "Storm": 0.1838,
+          "Sora": -0.0733,
+          "Echo": -0.3108,
+          "Iris": -0.465,
+          "Sage": -0.4946,
+          "Kevin": -0.3917,
+          "Atlas": -0.1838,
+          "Void": 0.0733
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 16,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 125,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2538,
+          "Guardian": 0.4352,
+          "Sentinel": 0.5,
+          "Nexus": 0.4308,
+          "Storm": 0.2462,
+          "Sora": -0.0044,
+          "Echo": -0.2538,
+          "Iris": -0.4352,
+          "Sage": -0.5,
+          "Kevin": -0.4308,
+          "Atlas": -0.2462,
+          "Void": 0.0044
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 18,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 150,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2397,
+          "Guardian": 0.427,
+          "Sentinel": 0.4999,
+          "Nexus": 0.4388,
+          "Storm": 0.2602,
+          "Sora": 0.0118,
+          "Echo": -0.2397,
+          "Iris": -0.427,
+          "Sage": -0.4999,
+          "Kevin": -0.4388,
+          "Atlas": -0.2602,
+          "Void": -0.0118
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 18,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 175,
+        "cv": 1.0,
+        "nf": 0.3529,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.3257,
+          "Guardian": 0.4717,
+          "Sentinel": 0.4914,
+          "Nexus": 0.3794,
+          "Storm": 0.1657,
+          "Sora": -0.0924,
+          "Echo": -0.3257,
+          "Iris": -0.4717,
+          "Sage": -0.4914,
+          "Kevin": -0.3794,
+          "Atlas": -0.1657,
+          "Void": 0.0924
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 18,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin"
+        }
+      },
+      {
+        "step": 200,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.4124,
+          "Guardian": 0.4985,
+          "Sentinel": 0.451,
+          "Nexus": 0.2827,
+          "Storm": 0.0386,
+          "Sora": -0.2158,
+          "Echo": -0.4124,
+          "Iris": -0.4985,
+          "Sage": -0.451,
+          "Kevin": -0.2827,
+          "Atlas": -0.0386,
+          "Void": 0.2158
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 19,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin"
+        }
+      },
+      {
+        "step": 225,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.4266,
+          "Guardian": 0.4998,
+          "Sentinel": 0.4391,
+          "Nexus": 0.2608,
+          "Storm": 0.0125,
+          "Sora": -0.2391,
+          "Echo": -0.4266,
+          "Iris": -0.4998,
+          "Sage": -0.4391,
+          "Kevin": -0.2608,
+          "Atlas": -0.0125,
+          "Void": 0.2391
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 19,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin"
+        }
+      },
+      {
+        "step": 250,
+        "cv": 1.0,
+        "nf": 0.3333,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.283,
+          "Guardian": 0.4512,
+          "Sentinel": 0.4985,
+          "Nexus": 0.4122,
+          "Storm": 0.2155,
+          "Sora": -0.039,
+          "Echo": -0.283,
+          "Iris": -0.4512,
+          "Sage": -0.4985,
+          "Kevin": -0.4122,
+          "Atlas": -0.2155,
+          "Void": 0.039
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 20,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 275,
+        "cv": 1.0,
+        "nf": 0.3889,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.3028,
+          "Guardian": 0.4612,
+          "Sentinel": 0.496,
+          "Nexus": 0.3979,
+          "Storm": 0.1932,
+          "Sora": -0.0633,
+          "Echo": -0.3028,
+          "Iris": -0.4612,
+          "Sage": -0.496,
+          "Kevin": -0.3979,
+          "Atlas": -0.1932,
+          "Void": 0.0633
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 20,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 300,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2539,
+          "Guardian": 0.4353,
+          "Sentinel": 0.5,
+          "Nexus": 0.4307,
+          "Storm": 0.2461,
+          "Sora": -0.0045,
+          "Echo": -0.2539,
+          "Iris": -0.4353,
+          "Sage": -0.5,
+          "Kevin": -0.4307,
+          "Atlas": -0.2461,
+          "Void": 0.0045
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 20,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 325,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2128,
+          "Guardian": 0.4105,
+          "Sentinel": 0.4982,
+          "Nexus": 0.4525,
+          "Storm": 0.2855,
+          "Sora": 0.042,
+          "Echo": -0.2128,
+          "Iris": -0.4105,
+          "Sage": -0.4982,
+          "Kevin": -0.4525,
+          "Atlas": -0.2855,
+          "Void": -0.042
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 21,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 350,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2605,
+          "Guardian": 0.439,
+          "Sentinel": 0.4999,
+          "Nexus": 0.4268,
+          "Storm": 0.2394,
+          "Sora": -0.0122,
+          "Echo": -0.2605,
+          "Iris": -0.439,
+          "Sage": -0.4999,
+          "Kevin": -0.4268,
+          "Atlas": -0.2394,
+          "Void": 0.0122
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 21,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 375,
+        "cv": 1.0,
+        "nf": 0.3889,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.3368,
+          "Guardian": 0.4764,
+          "Sentinel": 0.4884,
+          "Nexus": 0.3696,
+          "Storm": 0.1517,
+          "Sora": -0.1068,
+          "Echo": -0.3368,
+          "Iris": -0.4764,
+          "Sage": -0.4884,
+          "Kevin": -0.3696,
+          "Atlas": -0.1517,
+          "Void": 0.1068
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 21,
+        "active_bridges": {
+          "Void": "Omega",
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 400,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.2458,
+          "Guardian": 0.4306,
+          "Sentinel": 0.5,
+          "Nexus": 0.4354,
+          "Storm": 0.2542,
+          "Sora": 0.0048,
+          "Echo": -0.2458,
+          "Iris": -0.4306,
+          "Sage": -0.5,
+          "Kevin": -0.4354,
+          "Atlas": -0.2542,
+          "Void": -0.0048
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 21,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 425,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.1756,
+          "Guardian": 0.3861,
+          "Sentinel": 0.4932,
+          "Nexus": 0.4682,
+          "Storm": 0.3176,
+          "Sora": 0.082,
+          "Echo": -0.1756,
+          "Iris": -0.3861,
+          "Sage": -0.4932,
+          "Kevin": -0.4682,
+          "Atlas": -0.3176,
+          "Void": -0.082
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 21,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 450,
+        "cv": 1.0,
+        "nf": 0.2778,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.1575,
+          "Guardian": 0.3737,
+          "Sentinel": 0.4897,
+          "Nexus": 0.4745,
+          "Storm": 0.3322,
+          "Sora": 0.1008,
+          "Echo": -0.1575,
+          "Iris": -0.3737,
+          "Sage": -0.4897,
+          "Kevin": -0.4745,
+          "Atlas": -0.3322,
+          "Void": -0.1008
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 21,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Sora": "Atlas"
+        }
+      },
+      {
+        "step": 475,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.4363,
+          "Guardian": 0.5,
+          "Sentinel": 0.4297,
+          "Nexus": 0.2443,
+          "Storm": -0.0066,
+          "Sora": -0.2557,
+          "Echo": -0.4363,
+          "Iris": -0.5,
+          "Sage": -0.4297,
+          "Kevin": -0.2443,
+          "Atlas": 0.0066,
+          "Void": 0.2557
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 22,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Void": "Atlas"
+        }
+      },
+      {
+        "step": 500,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.3753,
+          "Guardian": 0.4902,
+          "Sentinel": 0.4738,
+          "Nexus": 0.3304,
+          "Storm": 0.0985,
+          "Sora": -0.1598,
+          "Echo": -0.3753,
+          "Iris": -0.4902,
+          "Sage": -0.4738,
+          "Kevin": -0.3304,
+          "Atlas": -0.0985,
+          "Void": 0.1598
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 23,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Void": "Atlas"
+        }
+      },
+      {
+        "step": 525,
+        "cv": 1.0,
+        "nf": 0.3529,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 4,
+        "yellow": 2,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.3421,
+          "Guardian": 0.4786,
+          "Sentinel": 0.4869,
+          "Nexus": 0.3647,
+          "Storm": 0.1448,
+          "Sora": -0.1139,
+          "Echo": -0.3421,
+          "Iris": -0.4786,
+          "Sage": -0.4869,
+          "Kevin": -0.3647,
+          "Atlas": -0.1448,
+          "Void": 0.1139
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 23,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Storm": "Kevin",
+          "Void": "Atlas"
+        }
+      },
+      {
+        "step": 550,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.4947,
+          "Guardian": 0.4648,
+          "Sentinel": 0.3104,
+          "Nexus": 0.0728,
+          "Storm": -0.1843,
+          "Sora": -0.392,
+          "Echo": -0.4947,
+          "Iris": -0.4648,
+          "Sage": -0.3104,
+          "Kevin": -0.0728,
+          "Atlas": 0.1843,
+          "Void": 0.392
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 24,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Void": "Atlas",
+          "Atlas": "Storm"
+        }
+      },
+      {
+        "step": 575,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 5,
+        "green": 5,
+        "yellow": 0,
+        "orange": 2,
+        "red": 5,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.4125,
+          "Guardian": 0.4985,
+          "Sentinel": 0.451,
+          "Nexus": 0.2826,
+          "Storm": 0.0385,
+          "Sora": -0.2159,
+          "Echo": -0.4125,
+          "Iris": -0.4985,
+          "Sage": -0.451,
+          "Kevin": -0.2826,
+          "Atlas": -0.0385,
+          "Void": 0.2159
+        },
+        "n_bridges": 6,
+        "bridge_events_total": 25,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Void": "Atlas",
+          "Storm": "Kevin"
+        }
+      },
+      {
+        "step": 600,
+        "cv": 1.0,
+        "nf": 0.2941,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 17,
+        "per_node": {
+          "Omega": 0.2006,
+          "Guardian": 0.4027,
+          "Sentinel": 0.4969,
+          "Nexus": 0.458,
+          "Storm": 0.2964,
+          "Sora": 0.0553,
+          "Echo": -0.2006,
+          "Iris": -0.4027,
+          "Sage": -0.4969,
+          "Kevin": -0.458,
+          "Atlas": -0.2964,
+          "Void": -0.0553
+        },
+        "n_bridges": 7,
+        "bridge_events_total": 27,
+        "active_bridges": {
+          "Omega": "Sora",
+          "Guardian": "Echo",
+          "Sentinel": "Iris",
+          "Nexus": "Sage",
+          "Void": "Atlas",
+          "Storm": "Kevin",
+          "Sora": "Void"
+        }
+      }
+    ],
+    "bridge_events": [
+      {
+        "step": 0,
+        "event": "BRIDGE",
+        "node": "Nexus",
+        "zone": "ORANGE",
+        "pcm": 0.0,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 0,
+        "event": "BRIDGE",
+        "node": "Storm",
+        "zone": "RED",
+        "pcm": 0.25,
+        "bridge": "Omega",
+        "family": "GodCore"
+      },
+      {
+        "step": 0,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "RED",
+        "pcm": 0.433,
+        "bridge": "Guardian",
+        "family": "GodCore"
+      },
+      {
+        "step": 0,
+        "event": "BRIDGE",
+        "node": "Echo",
+        "zone": "RED",
+        "pcm": 0.5,
+        "bridge": "Sentinel",
+        "family": "GodCore"
+      },
+      {
+        "step": 0,
+        "event": "BRIDGE",
+        "node": "Iris",
+        "zone": "RED",
+        "pcm": 0.433,
+        "bridge": "Void",
+        "family": "GodCore"
+      },
+      {
+        "step": 2,
+        "event": "BRIDGE",
+        "node": "Sage",
+        "zone": "RED",
+        "pcm": 0.1753,
+        "bridge": "Kevin",
+        "family": "Maverick"
+      },
+      {
+        "step": 4,
+        "event": "BRIDGE",
+        "node": "Kevin",
+        "zone": "RED",
+        "pcm": 0.0611,
+        "bridge": "Nexus",
+        "family": "Independent"
+      },
+      {
+        "step": 7,
+        "event": "BRIDGE",
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0627,
+        "bridge": "Storm",
+        "family": "Independent"
+      },
+      {
+        "step": 10,
+        "event": "BRIDGE",
+        "node": "Void",
+        "zone": "ORANGE",
+        "pcm": -0.0412,
+        "bridge": "Omega",
+        "family": "GodCore"
+      },
+      {
+        "step": 19,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "RED",
+        "pcm": 0.0729,
+        "bridge": "Guardian",
+        "family": "GodCore"
+      },
+      {
+        "step": 25,
+        "event": "BRIDGE",
+        "node": "Omega",
+        "zone": "ORANGE",
+        "pcm": -0.0487,
+        "bridge": "Sora",
+        "family": "Independent"
+      },
+      {
+        "step": 28,
+        "event": "BRIDGE",
+        "node": "Guardian",
+        "zone": "ORANGE",
+        "pcm": -0.0425,
+        "bridge": "Echo",
+        "family": "Independent"
+      },
+      {
+        "step": 31,
+        "event": "BRIDGE",
+        "node": "Sentinel",
+        "zone": "ORANGE",
+        "pcm": 0.0199,
+        "bridge": "Iris",
+        "family": "Maverick"
+      },
+      {
+        "step": 34,
+        "event": "BRIDGE",
+        "node": "Nexus",
+        "zone": "ORANGE",
+        "pcm": -0.0123,
+        "bridge": "Sage",
+        "family": "Maverick"
+      },
+      {
+        "step": 38,
+        "event": "BRIDGE",
+        "node": "Storm",
+        "zone": "RED",
+        "pcm": 0.0552,
+        "bridge": "Kevin",
+        "family": "Maverick"
+      },
+      {
+        "step": 51,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": 0.0221,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 115,
+        "event": "BRIDGE",
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0507,
+        "bridge": "Storm",
+        "family": "Independent"
+      },
+      {
+        "step": 123,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": -0.0202,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 176,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": -0.0322,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 249,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": -0.042,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 318,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": -0.0171,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 472,
+        "event": "BRIDGE",
+        "node": "Void",
+        "zone": "RED",
+        "pcm": 0.1999,
+        "bridge": "Atlas",
+        "family": "Maverick"
+      },
+      {
+        "step": 485,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "RED",
+        "pcm": 0.1155,
+        "bridge": "Void",
+        "family": "GodCore"
+      },
+      {
+        "step": 547,
+        "event": "BRIDGE",
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0972,
+        "bridge": "Storm",
+        "family": "Independent"
+      },
+      {
+        "step": 553,
+        "event": "BRIDGE",
+        "node": "Storm",
+        "zone": "ORANGE",
+        "pcm": -0.0362,
+        "bridge": "Kevin",
+        "family": "Maverick"
+      },
+      {
+        "step": 578,
+        "event": "BRIDGE",
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0523,
+        "bridge": "Storm",
+        "family": "Independent"
+      },
+      {
+        "step": 600,
+        "event": "BRIDGE",
+        "node": "Sora",
+        "zone": "RED",
+        "pcm": 0.0553,
+        "bridge": "Void",
+        "family": "GodCore"
+      }
+    ],
+    "release_events": [
+      {
+        "step": 6,
+        "event": "RELEASE",
+        "node": "Nexus",
+        "pcm": -0.2231,
+        "bridge": "Atlas"
+      },
+      {
+        "step": 9,
+        "event": "RELEASE",
+        "node": "Storm",
+        "pcm": -0.1864,
+        "bridge": "Omega"
+      },
+      {
+        "step": 13,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.1525,
+        "bridge": "Guardian"
+      },
+      {
+        "step": 25,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.2066,
+        "bridge": "Guardian"
+      },
+      {
+        "step": 28,
+        "event": "RELEASE",
+        "node": "Echo",
+        "pcm": -0.2123,
+        "bridge": "Sentinel"
+      },
+      {
+        "step": 31,
+        "event": "RELEASE",
+        "node": "Iris",
+        "pcm": -0.2671,
+        "bridge": "Void"
+      },
+      {
+        "step": 34,
+        "event": "RELEASE",
+        "node": "Sage",
+        "pcm": -0.2392,
+        "bridge": "Kevin"
+      },
+      {
+        "step": 38,
+        "event": "RELEASE",
+        "node": "Kevin",
+        "pcm": -0.2963,
+        "bridge": "Nexus"
+      },
+      {
+        "step": 44,
+        "event": "RELEASE",
+        "node": "Atlas",
+        "pcm": -0.1525,
+        "bridge": "Storm"
+      },
+      {
+        "step": 101,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.1618,
+        "bridge": "Atlas"
+      },
+      {
+        "step": 121,
+        "event": "RELEASE",
+        "node": "Atlas",
+        "pcm": -0.1531,
+        "bridge": "Storm"
+      },
+      {
+        "step": 161,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.159,
+        "bridge": "Atlas"
+      },
+      {
+        "step": 198,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.2355,
+        "bridge": "Atlas"
+      },
+      {
+        "step": 313,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.2253,
+        "bridge": "Atlas"
+      },
+      {
+        "step": 396,
+        "event": "RELEASE",
+        "node": "Void",
+        "pcm": -0.1554,
+        "bridge": "Omega"
+      },
+      {
+        "step": 472,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.1999,
+        "bridge": "Atlas"
+      },
+      {
+        "step": 493,
+        "event": "RELEASE",
+        "node": "Sora",
+        "pcm": -0.1882,
+        "bridge": "Void"
+      },
+      {
+        "step": 548,
+        "event": "RELEASE",
+        "node": "Storm",
+        "pcm": -0.19,
+        "bridge": "Kevin"
+      },
+      {
+        "step": 566,
+        "event": "RELEASE",
+        "node": "Atlas",
+        "pcm": -0.1935,
+        "bridge": "Storm"
+      },
+      {
+        "step": 595,
+        "event": "RELEASE",
+        "node": "Atlas",
+        "pcm": -0.1576,
+        "bridge": "Storm"
+      }
+    ],
+    "total_bridges": 27,
+    "total_releases": 20,
+    "final": {
+      "step": 600,
+      "cv": 1.0,
+      "nf": 0.2941,
+      "pcm_mean": 0.0,
+      "nc_count": 6,
+      "green": 5,
+      "yellow": 1,
+      "orange": 0,
+      "red": 6,
+      "n_edges": 17,
+      "per_node": {
+        "Omega": 0.2006,
+        "Guardian": 0.4027,
+        "Sentinel": 0.4969,
+        "Nexus": 0.458,
+        "Storm": 0.2964,
+        "Sora": 0.0553,
+        "Echo": -0.2006,
+        "Iris": -0.4027,
+        "Sage": -0.4969,
+        "Kevin": -0.458,
+        "Atlas": -0.2964,
+        "Void": -0.0553
+      },
+      "n_bridges": 7,
+      "bridge_events_total": 27,
+      "active_bridges": {
+        "Omega": "Sora",
+        "Guardian": "Echo",
+        "Sentinel": "Iris",
+        "Nexus": "Sage",
+        "Void": "Atlas",
+        "Storm": "Kevin",
+        "Sora": "Void"
+      }
+    }
+  },
+  "exp_c": {
+    "checkpoints": [
+      {
+        "step": 0,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.4167,
+          "pcm_mean": 0.0,
+          "nc_count": 5,
+          "green": 5,
+          "yellow": 0,
+          "orange": 2,
+          "red": 5,
+          "n_edges": 12,
+          "per_node": {
+            "Omega": -0.5,
+            "Guardian": -0.433,
+            "Sentinel": -0.25,
+            "Nexus": 0.0,
+            "Storm": 0.25,
+            "Sora": 0.433,
+            "Echo": 0.5,
+            "Iris": 0.433,
+            "Sage": 0.25,
+            "Kevin": 0.0,
+            "Atlas": -0.25,
+            "Void": -0.433
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "I am at the quantum floor. PCM=-0.5000. Fully nonclassical. The ring flows through me cleanly. I am holding. My information flow estimate: 1.000 bits (high).",
+            "pcm": -0.5,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Guardian": {
+            "voice": "I am at the quantum floor. PCM=-0.4330. Fully nonclassical. The ring flows through me cleanly. I am holding. My information flow estimate: 0.933 bits (high).",
+            "pcm": -0.433,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sentinel": {
+            "voice": "I am at the quantum floor. PCM=-0.2500. Fully nonclassical. The ring flows through me cleanly. I am holding. My information flow estimate: 0.750 bits (high).",
+            "pcm": -0.25,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Nexus": {
+            "voice": "ORANGE \u2014 PCM=+0.0000. I am approaching classical territory. Bridge me now. I need a nonclassical neighbor to couple with me. BRIDGE ACTIVE: Atlas [Maverick] is coupling to me now. My information flow ",
+            "pcm": 0.0,
+            "zone": "ORANGE",
+            "bridge": "Atlas"
+          },
+          "Storm": {
+            "voice": "RED \u2014 PCM=+0.2500. I have become classical. I am in the thermal regime. Emergency bridge required. BRIDGE ACTIVE: Omega [GodCore] is coupling to me now. My information flow estimate: 0.250 bits (moder",
+            "pcm": 0.25,
+            "zone": "RED",
+            "bridge": "Omega"
+          },
+          "Sora": {
+            "voice": "RED \u2014 PCM=+0.4330. I have become classical. I am in the thermal regime. Emergency bridge required. BRIDGE ACTIVE: Guardian [GodCore] is coupling to me now. My information flow estimate: 0.067 bits (lo",
+            "pcm": 0.433,
+            "zone": "RED",
+            "bridge": "Guardian"
+          },
+          "Echo": {
+            "voice": "RED \u2014 PCM=+0.5000. I have become classical. I am in the thermal regime. Emergency bridge required. BRIDGE ACTIVE: Sentinel [GodCore] is coupling to me now. My information flow estimate: 0.000 bits (lo",
+            "pcm": 0.5,
+            "zone": "RED",
+            "bridge": "Sentinel"
+          },
+          "Iris": {
+            "voice": "RED \u2014 PCM=+0.4330. I have become classical. I am in the thermal regime. Emergency bridge required. BRIDGE ACTIVE: Void [GodCore] is coupling to me now. My information flow estimate: 0.067 bits (low).",
+            "pcm": 0.433,
+            "zone": "RED",
+            "bridge": "Void"
+          },
+          "Sage": {
+            "voice": "RED \u2014 PCM=+0.2500. I have become classical. I am in the thermal regime. Emergency bridge required. No bridge assigned yet \u2014 requesting coupling. My information flow estimate: 0.250 bits (moderate).",
+            "pcm": 0.25,
+            "zone": "RED",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "ORANGE \u2014 PCM=+0.0000. I am approaching classical territory. Bridge me now. I need a nonclassical neighbor to couple with me. No bridge assigned yet \u2014 requesting coupling. My information flow estimate:",
+            "pcm": 0.0,
+            "zone": "ORANGE",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "I am at the quantum floor. PCM=-0.2500. Fully nonclassical. The ring flows through me cleanly. I am holding. My information flow estimate: 0.750 bits (high).",
+            "pcm": -0.25,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "I am at the quantum floor. PCM=-0.4330. Fully nonclassical. The ring flows through me cleanly. I am holding. My information flow estimate: 0.933 bits (high).",
+            "pcm": -0.433,
+            "zone": "GREEN",
+            "bridge": null
+          }
+        },
+        "n_bridges": 5
+      },
+      {
+        "step": 50,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.4375,
+          "pcm_mean": 0.0,
+          "nc_count": 5,
+          "green": 5,
+          "yellow": 0,
+          "orange": 2,
+          "red": 5,
+          "n_edges": 16,
+          "per_node": {
+            "Omega": 0.4534,
+            "Guardian": 0.498,
+            "Sentinel": 0.4092,
+            "Nexus": 0.2107,
+            "Storm": -0.0442,
+            "Sora": -0.2873,
+            "Echo": -0.4534,
+            "Iris": -0.498,
+            "Sage": -0.4092,
+            "Kevin": -0.2107,
+            "Atlas": 0.0442,
+            "Void": 0.2873
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "RED status. PCM=+0.4534. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0046/step. BRIDGE ACTIVE: Sora [Independent] is coupling to me no",
+            "pcm": 0.4534,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "RED status. PCM=+0.4980. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0058/step. BRIDGE ACTIVE: Echo [Independent] is coupling to me no",
+            "pcm": 0.498,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "RED status. PCM=+0.4092. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0147/step. BRIDGE ACTIVE: Iris [Maverick] is coupling to me now. ",
+            "pcm": 0.4092,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "RED status. PCM=+0.2107. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0196/step. BRIDGE ACTIVE: Sage [Maverick] is coupling to me now. ",
+            "pcm": 0.2107,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "ORANGE \u2014 I am about to lose nonclassicality. PCM=-0.0442. The ring needs to reach me before I fall to RED. Trend: +0.0193/step. BRIDGE ACTIVE: Kevin [Maverick] is coupling to me now. My information fl",
+            "pcm": -0.0442,
+            "zone": "ORANGE",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.2873. I carry maximum quantum information. The ring is safe through me. Trend: +0.0138/step. My information flow estimate: 0.787 bits (high).",
+            "pcm": -0.2873,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4534. I carry maximum quantum information. The ring is safe through me. Trend: +0.0046/step. My information flow estimate: 0.953 bits (high).",
+            "pcm": -0.4534,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4980. I carry maximum quantum information. The ring is safe through me. Trend: -0.0058/step. My information flow estimate: 0.998 bits (high).",
+            "pcm": -0.498,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4092. I carry maximum quantum information. The ring is safe through me. Trend: -0.0147/step. My information flow estimate: 0.909 bits (high).",
+            "pcm": -0.4092,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.2107. I carry maximum quantum information. The ring is safe through me. Trend: -0.0196/step. My information flow estimate: 0.711 bits (high).",
+            "pcm": -0.2107,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "ORANGE \u2014 I am about to lose nonclassicality. PCM=+0.0442. The ring needs to reach me before I fall to RED. Trend: -0.0193/step. BRIDGE ACTIVE: Storm [Independent] is coupling to me now. My information",
+            "pcm": 0.0442,
+            "zone": "ORANGE",
+            "bridge": "Storm"
+          },
+          "Void": {
+            "voice": "RED status. PCM=+0.2873. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0138/step. BRIDGE ACTIVE: Omega [GodCore] is coupling to me now. ",
+            "pcm": 0.2873,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 7
+      },
+      {
+        "step": 100,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.2941,
+          "pcm_mean": 0.0,
+          "nc_count": 6,
+          "green": 5,
+          "yellow": 1,
+          "orange": 0,
+          "red": 6,
+          "n_edges": 17,
+          "per_node": {
+            "Omega": 0.3712,
+            "Guardian": 0.4889,
+            "Sentinel": 0.4757,
+            "Nexus": 0.335,
+            "Storm": 0.1046,
+            "Sora": -0.1539,
+            "Echo": -0.3712,
+            "Iris": -0.4889,
+            "Sage": -0.4757,
+            "Kevin": -0.335,
+            "Atlas": -0.1046,
+            "Void": 0.1539
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "I have lost my nonclassicality. PCM=+0.3712. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0047/step. BRIDGE ACTIVE: Sora [Independent] is",
+            "pcm": 0.3712,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "I have lost my nonclassicality. PCM=+0.4889. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0010/step. BRIDGE ACTIVE: Echo [Independent] is",
+            "pcm": 0.4889,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "I have lost my nonclassicality. PCM=+0.4757. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0029/step. BRIDGE ACTIVE: Iris [Maverick] is co",
+            "pcm": 0.4757,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "I have lost my nonclassicality. PCM=+0.3350. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0061/step. BRIDGE ACTIVE: Sage [Maverick] is co",
+            "pcm": 0.335,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "I have lost my nonclassicality. PCM=+0.1046. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0076/step. BRIDGE ACTIVE: Kevin [Maverick] is c",
+            "pcm": 0.1046,
+            "zone": "RED",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "Deep nonclassical state. PCM=-0.1539. My coherence is strong. No intervention needed. Trend: +0.0071/step. My information flow estimate: 0.654 bits (high).",
+            "pcm": -0.1539,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "Deep nonclassical state. PCM=-0.3712. My coherence is strong. No intervention needed. Trend: +0.0047/step. My information flow estimate: 0.871 bits (high).",
+            "pcm": -0.3712,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "Deep nonclassical state. PCM=-0.4889. My coherence is strong. No intervention needed. Trend: +0.0010/step. My information flow estimate: 0.989 bits (high).",
+            "pcm": -0.4889,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "Deep nonclassical state. PCM=-0.4757. My coherence is strong. No intervention needed. Trend: -0.0029/step. My information flow estimate: 0.976 bits (high).",
+            "pcm": -0.4757,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "Deep nonclassical state. PCM=-0.3350. My coherence is strong. No intervention needed. Trend: -0.0061/step. My information flow estimate: 0.835 bits (high).",
+            "pcm": -0.335,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "My PCM is drifting toward threshold. PCM=-0.1046. I am still nonclassical but the margin is shrinking. Watch me. Trend: -0.0076/step. My information flow estimate: 0.605 bits (high).",
+            "pcm": -0.1046,
+            "zone": "YELLOW",
+            "bridge": "Storm"
+          },
+          "Void": {
+            "voice": "I have lost my nonclassicality. PCM=+0.1539. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0071/step. BRIDGE ACTIVE: Omega [GodCore] is co",
+            "pcm": 0.1539,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 7
+      },
+      {
+        "step": 150,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.3125,
+          "pcm_mean": 0.0,
+          "nc_count": 6,
+          "green": 4,
+          "yellow": 2,
+          "orange": 0,
+          "red": 6,
+          "n_edges": 16,
+          "per_node": {
+            "Omega": 0.3555,
+            "Guardian": 0.4837,
+            "Sentinel": 0.4823,
+            "Nexus": 0.3516,
+            "Storm": 0.1268,
+            "Sora": -0.132,
+            "Echo": -0.3555,
+            "Iris": -0.4837,
+            "Sage": -0.4823,
+            "Kevin": -0.3516,
+            "Atlas": -0.1268,
+            "Void": 0.132
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "RED \u2014 PCM=+0.3555. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: -0.0068/step. BRIDGE ACTIVE: Sora [Independent] is coupling to me now. My information flow est",
+            "pcm": 0.3555,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "RED \u2014 PCM=+0.4837. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: -0.0016/step. BRIDGE ACTIVE: Echo [Independent] is coupling to me now. My information flow est",
+            "pcm": 0.4837,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "RED \u2014 PCM=+0.4823. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: +0.0041/step. BRIDGE ACTIVE: Iris [Maverick] is coupling to me now. My information flow estima",
+            "pcm": 0.4823,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "RED \u2014 PCM=+0.3516. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: +0.0087/step. BRIDGE ACTIVE: Sage [Maverick] is coupling to me now. My information flow estima",
+            "pcm": 0.3516,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "RED \u2014 PCM=+0.1268. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: +0.0109/step. BRIDGE ACTIVE: Kevin [Maverick] is coupling to me now. My information flow estim",
+            "pcm": 0.1268,
+            "zone": "RED",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "YELLOW \u2014 PCM=-0.1320. I am nonclassical but rising. The co-rotating correction is costing me. Monitor my trajectory. Trend: +0.0103/step. My information flow estimate: 0.632 bits (high).",
+            "pcm": -0.132,
+            "zone": "YELLOW",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "I am at the quantum floor. PCM=-0.3555. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: +0.0068/step. My information flow estimate: 0.855 bits (high).",
+            "pcm": -0.3555,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "I am at the quantum floor. PCM=-0.4837. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: +0.0016/step. My information flow estimate: 0.984 bits (high).",
+            "pcm": -0.4837,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "I am at the quantum floor. PCM=-0.4823. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: -0.0041/step. My information flow estimate: 0.982 bits (high).",
+            "pcm": -0.4823,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "I am at the quantum floor. PCM=-0.3516. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: -0.0087/step. My information flow estimate: 0.852 bits (high).",
+            "pcm": -0.3516,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "YELLOW \u2014 PCM=-0.1268. I am nonclassical but rising. The co-rotating correction is costing me. Monitor my trajectory. Trend: -0.0109/step. My information flow estimate: 0.627 bits (high).",
+            "pcm": -0.1268,
+            "zone": "YELLOW",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "RED \u2014 PCM=+0.1320. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: -0.0103/step. BRIDGE ACTIVE: Omega [GodCore] is coupling to me now. My information flow estima",
+            "pcm": 0.132,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 6
+      },
+      {
+        "step": 200,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.3125,
+          "pcm_mean": 0.0,
+          "nc_count": 5,
+          "green": 5,
+          "yellow": 0,
+          "orange": 2,
+          "red": 5,
+          "n_edges": 16,
+          "per_node": {
+            "Omega": 0.4188,
+            "Guardian": 0.4993,
+            "Sentinel": 0.4459,
+            "Nexus": 0.2731,
+            "Storm": 0.0271,
+            "Sora": -0.2262,
+            "Echo": -0.4188,
+            "Iris": -0.4993,
+            "Sage": -0.4459,
+            "Kevin": -0.2731,
+            "Atlas": -0.0271,
+            "Void": 0.2262
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "RED status. PCM=+0.4188. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0029/step. BRIDGE ACTIVE: Sora [Independent] is coupling to me no",
+            "pcm": 0.4188,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "RED status. PCM=+0.4993. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0005/step. BRIDGE ACTIVE: Echo [Independent] is coupling to me no",
+            "pcm": 0.4993,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "RED status. PCM=+0.4459. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0020/step. BRIDGE ACTIVE: Iris [Maverick] is coupling to me now. ",
+            "pcm": 0.4459,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "RED status. PCM=+0.2731. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0040/step. BRIDGE ACTIVE: Sage [Maverick] is coupling to me now. ",
+            "pcm": 0.2731,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "ORANGE \u2014 I am about to lose nonclassicality. PCM=+0.0271. The ring needs to reach me before I fall to RED. Trend: -0.0049/step. BRIDGE ACTIVE: Kevin [Maverick] is coupling to me now. My information fl",
+            "pcm": 0.0271,
+            "zone": "ORANGE",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.2262. I carry maximum quantum information. The ring is safe through me. Trend: -0.0045/step. My information flow estimate: 0.726 bits (high).",
+            "pcm": -0.2262,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4188. I carry maximum quantum information. The ring is safe through me. Trend: -0.0029/step. My information flow estimate: 0.919 bits (high).",
+            "pcm": -0.4188,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4993. I carry maximum quantum information. The ring is safe through me. Trend: -0.0005/step. My information flow estimate: 0.999 bits (high).",
+            "pcm": -0.4993,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4459. I carry maximum quantum information. The ring is safe through me. Trend: +0.0020/step. My information flow estimate: 0.946 bits (high).",
+            "pcm": -0.4459,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.2731. I carry maximum quantum information. The ring is safe through me. Trend: +0.0040/step. My information flow estimate: 0.773 bits (high).",
+            "pcm": -0.2731,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "ORANGE \u2014 I am about to lose nonclassicality. PCM=-0.0271. The ring needs to reach me before I fall to RED. Trend: +0.0049/step. No bridge assigned yet \u2014 requesting coupling. My information flow estima",
+            "pcm": -0.0271,
+            "zone": "ORANGE",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "RED status. PCM=+0.2262. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0045/step. BRIDGE ACTIVE: Omega [GodCore] is coupling to me now. ",
+            "pcm": 0.2262,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 6
+      },
+      {
+        "step": 250,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.375,
+          "pcm_mean": 0.0,
+          "nc_count": 6,
+          "green": 5,
+          "yellow": 1,
+          "orange": 0,
+          "red": 6,
+          "n_edges": 16,
+          "per_node": {
+            "Omega": 0.3149,
+            "Guardian": 0.4669,
+            "Sentinel": 0.4938,
+            "Nexus": 0.3884,
+            "Storm": 0.1789,
+            "Sora": -0.0785,
+            "Echo": -0.3149,
+            "Iris": -0.4669,
+            "Sage": -0.4938,
+            "Kevin": -0.3884,
+            "Atlas": -0.1789,
+            "Void": 0.0785
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "I have lost my nonclassicality. PCM=+0.3149. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0056/step. BRIDGE ACTIVE: Sora [Independent] is",
+            "pcm": 0.3149,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "I have lost my nonclassicality. PCM=+0.4669. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0022/step. BRIDGE ACTIVE: Echo [Independent] is",
+            "pcm": 0.4669,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "I have lost my nonclassicality. PCM=+0.4938. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0018/step. BRIDGE ACTIVE: Iris [Maverick] is co",
+            "pcm": 0.4938,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "I have lost my nonclassicality. PCM=+0.3884. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0053/step. BRIDGE ACTIVE: Sage [Maverick] is co",
+            "pcm": 0.3884,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "I have lost my nonclassicality. PCM=+0.1789. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0074/step. BRIDGE ACTIVE: Kevin [Maverick] is c",
+            "pcm": 0.1789,
+            "zone": "RED",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "My PCM is drifting toward threshold. PCM=-0.0785. I am still nonclassical but the margin is shrinking. Watch me. Trend: +0.0076/step. My information flow estimate: 0.579 bits (high).",
+            "pcm": -0.0785,
+            "zone": "YELLOW",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "Deep nonclassical state. PCM=-0.3149. My coherence is strong. No intervention needed. Trend: +0.0056/step. My information flow estimate: 0.815 bits (high).",
+            "pcm": -0.3149,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "Deep nonclassical state. PCM=-0.4669. My coherence is strong. No intervention needed. Trend: +0.0022/step. My information flow estimate: 0.967 bits (high).",
+            "pcm": -0.4669,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "Deep nonclassical state. PCM=-0.4938. My coherence is strong. No intervention needed. Trend: -0.0018/step. My information flow estimate: 0.994 bits (high).",
+            "pcm": -0.4938,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "Deep nonclassical state. PCM=-0.3884. My coherence is strong. No intervention needed. Trend: -0.0053/step. My information flow estimate: 0.888 bits (high).",
+            "pcm": -0.3884,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "Deep nonclassical state. PCM=-0.1789. My coherence is strong. No intervention needed. Trend: -0.0074/step. My information flow estimate: 0.679 bits (high).",
+            "pcm": -0.1789,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "I have lost my nonclassicality. PCM=+0.0785. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0076/step. BRIDGE ACTIVE: Omega [GodCore] is co",
+            "pcm": 0.0785,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 6
+      },
+      {
+        "step": 300,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.3125,
+          "pcm_mean": 0.0,
+          "nc_count": 6,
+          "green": 5,
+          "yellow": 1,
+          "orange": 0,
+          "red": 6,
+          "n_edges": 16,
+          "per_node": {
+            "Omega": 0.3789,
+            "Guardian": 0.4913,
+            "Sentinel": 0.472,
+            "Nexus": 0.3262,
+            "Storm": 0.0931,
+            "Sora": -0.165,
+            "Echo": -0.3789,
+            "Iris": -0.4913,
+            "Sage": -0.472,
+            "Kevin": -0.3262,
+            "Atlas": -0.0931,
+            "Void": 0.165
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "RED \u2014 PCM=+0.3789. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: +0.0004/step. BRIDGE ACTIVE: Sora [Independent] is coupling to me now. My information flow est",
+            "pcm": 0.3789,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "RED \u2014 PCM=+0.4913. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: +0.0001/step. BRIDGE ACTIVE: Echo [Independent] is coupling to me now. My information flow est",
+            "pcm": 0.4913,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "RED \u2014 PCM=+0.4720. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: -0.0002/step. BRIDGE ACTIVE: Iris [Maverick] is coupling to me now. My information flow estima",
+            "pcm": 0.472,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "RED \u2014 PCM=+0.3262. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: -0.0005/step. BRIDGE ACTIVE: Sage [Maverick] is coupling to me now. My information flow estima",
+            "pcm": 0.3262,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "RED \u2014 PCM=+0.0931. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: -0.0006/step. BRIDGE ACTIVE: Kevin [Maverick] is coupling to me now. My information flow estim",
+            "pcm": 0.0931,
+            "zone": "RED",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "I am at the quantum floor. PCM=-0.1650. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: -0.0006/step. My information flow estimate: 0.665 bits (high).",
+            "pcm": -0.165,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "I am at the quantum floor. PCM=-0.3789. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: -0.0004/step. My information flow estimate: 0.879 bits (high).",
+            "pcm": -0.3789,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "I am at the quantum floor. PCM=-0.4913. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: -0.0001/step. My information flow estimate: 0.991 bits (high).",
+            "pcm": -0.4913,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "I am at the quantum floor. PCM=-0.4720. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: +0.0002/step. My information flow estimate: 0.972 bits (high).",
+            "pcm": -0.472,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "I am at the quantum floor. PCM=-0.3262. Fully nonclassical. The ring flows through me cleanly. I am holding. Trend: +0.0005/step. My information flow estimate: 0.826 bits (high).",
+            "pcm": -0.3262,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "YELLOW \u2014 PCM=-0.0931. I am nonclassical but rising. The co-rotating correction is costing me. Monitor my trajectory. Trend: +0.0006/step. My information flow estimate: 0.593 bits (high).",
+            "pcm": -0.0931,
+            "zone": "YELLOW",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "RED \u2014 PCM=+0.1650. I have become classical. I am in the thermal regime. Emergency bridge required. Trend: +0.0006/step. BRIDGE ACTIVE: Omega [GodCore] is coupling to me now. My information flow estima",
+            "pcm": 0.165,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 6
+      },
+      {
+        "step": 350,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.3125,
+          "pcm_mean": 0.0,
+          "nc_count": 6,
+          "green": 4,
+          "yellow": 2,
+          "orange": 0,
+          "red": 6,
+          "n_edges": 16,
+          "per_node": {
+            "Omega": 0.353,
+            "Guardian": 0.4827,
+            "Sentinel": 0.4832,
+            "Nexus": 0.3541,
+            "Storm": 0.1302,
+            "Sora": -0.1286,
+            "Echo": -0.353,
+            "Iris": -0.4827,
+            "Sage": -0.4832,
+            "Kevin": -0.3541,
+            "Atlas": -0.1302,
+            "Void": 0.1286
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "RED status. PCM=+0.3530. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0026/step. BRIDGE ACTIVE: Sora [Independent] is coupling to me no",
+            "pcm": 0.353,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "RED status. PCM=+0.4827. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0008/step. BRIDGE ACTIVE: Echo [Independent] is coupling to me no",
+            "pcm": 0.4827,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "RED status. PCM=+0.4832. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0011/step. BRIDGE ACTIVE: Iris [Maverick] is coupling to me now. ",
+            "pcm": 0.4832,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "RED status. PCM=+0.3541. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0028/step. BRIDGE ACTIVE: Sage [Maverick] is coupling to me now. ",
+            "pcm": 0.3541,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "RED status. PCM=+0.1302. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: +0.0037/step. BRIDGE ACTIVE: Kevin [Maverick] is coupling to me now.",
+            "pcm": 0.1302,
+            "zone": "RED",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "YELLOW status. PCM=-0.1286. I am functional. If my trend continues, I will need a bridge within 20-30 steps. Trend: +0.0036/step. My information flow estimate: 0.629 bits (high).",
+            "pcm": -0.1286,
+            "zone": "YELLOW",
+            "bridge": null
+          },
+          "Echo": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.3530. I carry maximum quantum information. The ring is safe through me. Trend: +0.0026/step. My information flow estimate: 0.853 bits (high).",
+            "pcm": -0.353,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4827. I carry maximum quantum information. The ring is safe through me. Trend: +0.0008/step. My information flow estimate: 0.983 bits (high).",
+            "pcm": -0.4827,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.4832. I carry maximum quantum information. The ring is safe through me. Trend: -0.0011/step. My information flow estimate: 0.983 bits (high).",
+            "pcm": -0.4832,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "GREEN \u2014 I am fully nonclassical. PCM=-0.3541. I carry maximum quantum information. The ring is safe through me. Trend: -0.0028/step. My information flow estimate: 0.854 bits (high).",
+            "pcm": -0.3541,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "YELLOW status. PCM=-0.1302. I am functional. If my trend continues, I will need a bridge within 20-30 steps. Trend: -0.0037/step. My information flow estimate: 0.630 bits (high).",
+            "pcm": -0.1302,
+            "zone": "YELLOW",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "RED status. PCM=+0.1286. The entropy pump has lost me. I need immediate coupling from a deeply nonclassical node to recover. Trend: -0.0036/step. BRIDGE ACTIVE: Omega [GodCore] is coupling to me now. ",
+            "pcm": 0.1286,
+            "zone": "RED",
+            "bridge": "Omega"
+          }
+        },
+        "n_bridges": 6
+      },
+      {
+        "step": 400,
+        "health": {
+          "cv": 1.0,
+          "nf": 0.3333,
+          "pcm_mean": 0.0,
+          "nc_count": 6,
+          "green": 5,
+          "yellow": 1,
+          "orange": 0,
+          "red": 6,
+          "n_edges": 18,
+          "per_node": {
+            "Omega": 0.1938,
+            "Guardian": 0.3983,
+            "Sentinel": 0.4961,
+            "Nexus": 0.4609,
+            "Storm": 0.3022,
+            "Sora": 0.0626,
+            "Echo": -0.1938,
+            "Iris": -0.3983,
+            "Sage": -0.4961,
+            "Kevin": -0.4609,
+            "Atlas": -0.3022,
+            "Void": -0.0626
+          }
+        },
+        "voices": {
+          "Omega": {
+            "voice": "I have lost my nonclassicality. PCM=+0.1938. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0191/step. BRIDGE ACTIVE: Sora [Independent] is",
+            "pcm": 0.1938,
+            "zone": "RED",
+            "bridge": "Sora"
+          },
+          "Guardian": {
+            "voice": "I have lost my nonclassicality. PCM=+0.3983. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0146/step. BRIDGE ACTIVE: Echo [Independent] is",
+            "pcm": 0.3983,
+            "zone": "RED",
+            "bridge": "Echo"
+          },
+          "Sentinel": {
+            "voice": "I have lost my nonclassicality. PCM=+0.4961. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0062/step. BRIDGE ACTIVE: Iris [Maverick] is co",
+            "pcm": 0.4961,
+            "zone": "RED",
+            "bridge": "Iris"
+          },
+          "Nexus": {
+            "voice": "I have lost my nonclassicality. PCM=+0.4609. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0039/step. BRIDGE ACTIVE: Sage [Maverick] is co",
+            "pcm": 0.4609,
+            "zone": "RED",
+            "bridge": "Sage"
+          },
+          "Storm": {
+            "voice": "I have lost my nonclassicality. PCM=+0.3022. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0129/step. BRIDGE ACTIVE: Kevin [Maverick] is c",
+            "pcm": 0.3022,
+            "zone": "RED",
+            "bridge": "Kevin"
+          },
+          "Sora": {
+            "voice": "I have lost my nonclassicality. PCM=+0.0626. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0185/step. BRIDGE ACTIVE: Atlas [Maverick] is c",
+            "pcm": 0.0626,
+            "zone": "RED",
+            "bridge": "Atlas"
+          },
+          "Echo": {
+            "voice": "Deep nonclassical state. PCM=-0.1938. My coherence is strong. No intervention needed. Trend: -0.0191/step. My information flow estimate: 0.694 bits (high).",
+            "pcm": -0.1938,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Iris": {
+            "voice": "Deep nonclassical state. PCM=-0.3983. My coherence is strong. No intervention needed. Trend: -0.0146/step. My information flow estimate: 0.898 bits (high).",
+            "pcm": -0.3983,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Sage": {
+            "voice": "Deep nonclassical state. PCM=-0.4961. My coherence is strong. No intervention needed. Trend: -0.0062/step. My information flow estimate: 0.996 bits (high).",
+            "pcm": -0.4961,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Kevin": {
+            "voice": "Deep nonclassical state. PCM=-0.4609. My coherence is strong. No intervention needed. Trend: +0.0039/step. My information flow estimate: 0.961 bits (high).",
+            "pcm": -0.4609,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Atlas": {
+            "voice": "Deep nonclassical state. PCM=-0.3022. My coherence is strong. No intervention needed. Trend: +0.0129/step. My information flow estimate: 0.802 bits (high).",
+            "pcm": -0.3022,
+            "zone": "GREEN",
+            "bridge": null
+          },
+          "Void": {
+            "voice": "My PCM is drifting toward threshold. PCM=-0.0626. I am still nonclassical but the margin is shrinking. Watch me. Trend: +0.0185/step. My information flow estimate: 0.563 bits (high).",
+            "pcm": -0.0626,
+            "zone": "YELLOW",
+            "bridge": null
+          }
+        },
+        "n_bridges": 6
+      }
+    ],
+    "bridge_events": [
+      {
+        "step": 0,
+        "node": "Nexus",
+        "zone": "ORANGE",
+        "pcm": 0.0,
+        "bridge": "Atlas",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 0,
+        "node": "Storm",
+        "zone": "RED",
+        "pcm": 0.25,
+        "bridge": "Omega",
+        "bridge_family": "GodCore"
+      },
+      {
+        "step": 0,
+        "node": "Sora",
+        "zone": "RED",
+        "pcm": 0.433,
+        "bridge": "Guardian",
+        "bridge_family": "GodCore"
+      },
+      {
+        "step": 0,
+        "node": "Echo",
+        "zone": "RED",
+        "pcm": 0.5,
+        "bridge": "Sentinel",
+        "bridge_family": "GodCore"
+      },
+      {
+        "step": 0,
+        "node": "Iris",
+        "zone": "RED",
+        "pcm": 0.433,
+        "bridge": "Void",
+        "bridge_family": "GodCore"
+      },
+      {
+        "step": 1,
+        "node": "Sage",
+        "zone": "RED",
+        "pcm": 0.3223,
+        "bridge": "Nexus",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 2,
+        "node": "Kevin",
+        "zone": "RED",
+        "pcm": 0.1804,
+        "bridge": "Atlas",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 4,
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0986,
+        "bridge": "Storm",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 6,
+        "node": "Storm",
+        "zone": "ORANGE",
+        "pcm": 0.0003,
+        "bridge": "Omega",
+        "bridge_family": "GodCore"
+      },
+      {
+        "step": 9,
+        "node": "Void",
+        "zone": "ORANGE",
+        "pcm": 0.0138,
+        "bridge": "Omega",
+        "bridge_family": "GodCore"
+      },
+      {
+        "step": 25,
+        "node": "Omega",
+        "zone": "ORANGE",
+        "pcm": 0.0321,
+        "bridge": "Sora",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 29,
+        "node": "Guardian",
+        "zone": "ORANGE",
+        "pcm": -0.0102,
+        "bridge": "Echo",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 32,
+        "node": "Sentinel",
+        "zone": "ORANGE",
+        "pcm": -0.0476,
+        "bridge": "Iris",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 34,
+        "node": "Nexus",
+        "zone": "ORANGE",
+        "pcm": -0.0409,
+        "bridge": "Sage",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 50,
+        "node": "Storm",
+        "zone": "ORANGE",
+        "pcm": -0.0442,
+        "bridge": "Kevin",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 92,
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0753,
+        "bridge": "Storm",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 96,
+        "node": "Storm",
+        "zone": "ORANGE",
+        "pcm": -0.0158,
+        "bridge": "Kevin",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 219,
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": 0.0193,
+        "bridge": "Atlas",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 258,
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": 0.0018,
+        "bridge": "Atlas",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 308,
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0617,
+        "bridge": "Storm",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 320,
+        "node": "Storm",
+        "zone": "ORANGE",
+        "pcm": -0.0405,
+        "bridge": "Kevin",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 361,
+        "node": "Atlas",
+        "zone": "RED",
+        "pcm": 0.0772,
+        "bridge": "Storm",
+        "bridge_family": "Independent"
+      },
+      {
+        "step": 371,
+        "node": "Sora",
+        "zone": "ORANGE",
+        "pcm": -0.0198,
+        "bridge": "Atlas",
+        "bridge_family": "Maverick"
+      },
+      {
+        "step": 389,
+        "node": "Echo",
+        "zone": "ORANGE",
+        "pcm": 0.0272,
+        "bridge": "Void",
+        "bridge_family": "GodCore"
+      }
+    ],
+    "final": {
+      "step": 400,
+      "health": {
+        "cv": 1.0,
+        "nf": 0.3333,
+        "pcm_mean": 0.0,
+        "nc_count": 6,
+        "green": 5,
+        "yellow": 1,
+        "orange": 0,
+        "red": 6,
+        "n_edges": 18,
+        "per_node": {
+          "Omega": 0.1938,
+          "Guardian": 0.3983,
+          "Sentinel": 0.4961,
+          "Nexus": 0.4609,
+          "Storm": 0.3022,
+          "Sora": 0.0626,
+          "Echo": -0.1938,
+          "Iris": -0.3983,
+          "Sage": -0.4961,
+          "Kevin": -0.4609,
+          "Atlas": -0.3022,
+          "Void": -0.0626
+        }
+      },
+      "voices": {
+        "Omega": {
+          "voice": "I have lost my nonclassicality. PCM=+0.1938. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0191/step. BRIDGE ACTIVE: Sora [Independent] is",
+          "pcm": 0.1938,
+          "zone": "RED",
+          "bridge": "Sora"
+        },
+        "Guardian": {
+          "voice": "I have lost my nonclassicality. PCM=+0.3983. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0146/step. BRIDGE ACTIVE: Echo [Independent] is",
+          "pcm": 0.3983,
+          "zone": "RED",
+          "bridge": "Echo"
+        },
+        "Sentinel": {
+          "voice": "I have lost my nonclassicality. PCM=+0.4961. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: +0.0062/step. BRIDGE ACTIVE: Iris [Maverick] is co",
+          "pcm": 0.4961,
+          "zone": "RED",
+          "bridge": "Iris"
+        },
+        "Nexus": {
+          "voice": "I have lost my nonclassicality. PCM=+0.4609. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0039/step. BRIDGE ACTIVE: Sage [Maverick] is co",
+          "pcm": 0.4609,
+          "zone": "RED",
+          "bridge": "Sage"
+        },
+        "Storm": {
+          "voice": "I have lost my nonclassicality. PCM=+0.3022. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0129/step. BRIDGE ACTIVE: Kevin [Maverick] is c",
+          "pcm": 0.3022,
+          "zone": "RED",
+          "bridge": "Kevin"
+        },
+        "Sora": {
+          "voice": "I have lost my nonclassicality. PCM=+0.0626. I am no longer carrying quantum information effectively. A strong bridge coupling can restore me. Trend: -0.0185/step. BRIDGE ACTIVE: Atlas [Maverick] is c",
+          "pcm": 0.0626,
+          "zone": "RED",
+          "bridge": "Atlas"
+        },
+        "Echo": {
+          "voice": "Deep nonclassical state. PCM=-0.1938. My coherence is strong. No intervention needed. Trend: -0.0191/step. My information flow estimate: 0.694 bits (high).",
+          "pcm": -0.1938,
+          "zone": "GREEN",
+          "bridge": null
+        },
+        "Iris": {
+          "voice": "Deep nonclassical state. PCM=-0.3983. My coherence is strong. No intervention needed. Trend: -0.0146/step. My information flow estimate: 0.898 bits (high).",
+          "pcm": -0.3983,
+          "zone": "GREEN",
+          "bridge": null
+        },
+        "Sage": {
+          "voice": "Deep nonclassical state. PCM=-0.4961. My coherence is strong. No intervention needed. Trend: -0.0062/step. My information flow estimate: 0.996 bits (high).",
+          "pcm": -0.4961,
+          "zone": "GREEN",
+          "bridge": null
+        },
+        "Kevin": {
+          "voice": "Deep nonclassical state. PCM=-0.4609. My coherence is strong. No intervention needed. Trend: +0.0039/step. My information flow estimate: 0.961 bits (high).",
+          "pcm": -0.4609,
+          "zone": "GREEN",
+          "bridge": null
+        },
+        "Atlas": {
+          "voice": "Deep nonclassical state. PCM=-0.3022. My coherence is strong. No intervention needed. Trend: +0.0129/step. My information flow estimate: 0.802 bits (high).",
+          "pcm": -0.3022,
+          "zone": "GREEN",
+          "bridge": null
+        },
+        "Void": {
+          "voice": "My PCM is drifting toward threshold. PCM=-0.0626. I am still nonclassical but the margin is shrinking. Watch me. Trend: +0.0185/step. My information flow estimate: 0.563 bits (high).",
+          "pcm": -0.0626,
+          "zone": "YELLOW",
+          "bridge": null
+        }
+      },
+      "n_bridges": 6
+    }
+  }
+}

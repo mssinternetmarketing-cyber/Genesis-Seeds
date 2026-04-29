@@ -1,0 +1,217 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\title{Dimensional Repair and Refined Framework for Entanglement-Entropy Sourcing of Gravity}
+\author{Kevin Monette}
+\date{March 19, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This white paper repairs a critical dimensional inconsistency in earlier drafts of the entanglement--gravity framework and presents a refined, self-consistent phenomenological model. Earlier work identified a covariant structure and an experimental program, but treated the entanglement entropy density $S_{\mathrm{ent}}(x)$ as entering the stress--energy tensor without the physical length or energy scale required in SI units. Here we introduce the minimal additional scale needed to make the entanglement contribution a bona fide stress--energy tensor, redefine the effective action accordingly, and re-express the observable combination $\mathcal{B}$ and the fifth-force equation with correct dimensions. The OP3 screening program and NISQ experimental outlook are preserved, but are now placed on a dimensionally sound foundation.
+\end{abstract}
+
+\section{Purpose and Scope}
+
+This document is a dimensional-consistency revision of the entanglement--gravity program. Its goal is not to select a unique microscopic origin for the coupling, but to isolate the minimal scaling assumptions required for a well-posed phenomenological theory.
+
+Earlier drafts used a coupling prefactor proportional to $c^4/(8\pi G k_B \ln 2)$ multiplying an entanglement entropy density measured in bits per unit volume. In SI units, that expression does not yield an energy density, so the resulting stress--energy tensor and derived accelerations were not dimensionally valid. The present revision fixes that problem by introducing a reference energy scale $E_*$ and rebuilding the source term around it.
+
+\section{Units and the Original Problem}
+
+The Einstein equations
+\begin{equation}
+G_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
+\end{equation}
+require the stress--energy tensor to have units of energy density,
+\begin{equation}
+[T_{\mu\nu}] = \mathrm{J\,m^{-3}} = \mathrm{kg\,m^{-1}\,s^{-2}}.
+\end{equation}
+
+The original framework defined the coarse-grained entanglement entropy density as
+\begin{equation}
+[S_{\mathrm{ent}}] = \mathrm{bit\,m^{-3}},
+\end{equation}
+where ``bit'' is dimensionless for unit counting. The problematic source coefficient was written as
+\begin{equation}
+\alpha = \tilde{\kappa}\,\frac{c^4}{8\pi G k_B \ln 2}.
+\end{equation}
+In SI units, this gives
+\begin{equation}
+[\alpha] = \mathrm{J\,m^{-1}\,K^{-1}},
+\end{equation}
+so that
+\begin{equation}
+[\alpha S_{\mathrm{ent}}] = \mathrm{J\,m^{-4}\,K^{-1}},
+\end{equation}
+which is not an energy density. A missing physical scale is therefore required to convert entropy density into energy density.
+
+\section{Minimal Dimensional Fix}
+
+\subsection{Reference energy scale}
+
+We introduce a reference energy scale $E_*$ with units of energy per bit and define the entanglement energy density by
+\begin{equation}
+\rho_{\mathrm{ent}}(x) = E_*\,S_{\mathrm{ent}}(x).
+\end{equation}
+Then
+\begin{equation}
+[\rho_{\mathrm{ent}}] = [E_*][S_{\mathrm{ent}}] = \mathrm{J\,m^{-3}},
+\end{equation}
+as required.
+
+An equivalent parameterization is
+\begin{equation}
+\rho_{\mathrm{ent}}(x) = \lambda_* k_B T_* s_{\mathrm{ent}}(x),
+\end{equation}
+where $s_{\mathrm{ent}}$ is entropy density in thermodynamic units, $T_*$ is an effective temperature scale, and $\lambda_*$ is dimensionless. In this white paper we use the simpler single-scale notation $E_*$.
+
+\subsection{Revised source term}
+
+The entanglement contribution to the stress--energy tensor is rewritten as
+\begin{equation}
+T^{\mathrm{ent}}_{\mu\nu}(x) = \tilde{\kappa}\,\rho_{\mathrm{ent}}(x) g_{\mu\nu} + \text{(gradient terms)},
+\end{equation}
+with
+\begin{equation}
+\rho_{\mathrm{ent}}(x) = E_* S_{\mathrm{ent}}(x).
+\end{equation}
+Thus all previous appearances of $\alpha S_{\mathrm{ent}}$ are replaced by $\tilde{\kappa} E_* S_{\mathrm{ent}}$.
+
+If desired, one may later relate $E_*$ to a microscopic scale such as
+\begin{equation}
+E_* = \eta k_B T_*,
+\end{equation}
+with $\eta$ dimensionless and $T_*$ an effective Unruh or horizon temperature. The present framework leaves the origin of $E_*$ open.
+
+\section{Revised Effective Action and Fifth-Force Equation}
+
+\subsection{External-source action}
+
+Let
+\begin{equation}
+\phi(x) \equiv S_{\mathrm{ent}}(x).
+\end{equation}
+We retain the external-source interpretation: $\phi$ is prescribed by the device quantum state and is not varied as an independent field. The entanglement-sector Lagrangian density is written as
+\begin{equation}
+\mathcal{L}_{\mathrm{ent}} = -\frac{\beta}{2} g^{\mu\nu}(\nabla_\mu\phi)(\nabla_\nu\phi) - \lambda\phi,
+\end{equation}
+with
+\begin{equation}
+\lambda = \tilde{\kappa} E_*.
+\end{equation}
+The full action is therefore
+\begin{equation}
+S[g;\phi] = \int d^4x\,\sqrt{-g}\left[\frac{c^3}{16\pi G}R - \frac{\beta}{2} g^{\mu\nu}(\nabla_\mu\phi)(\nabla_\nu\phi) - \tilde{\kappa} E_*\phi\right].
+\end{equation}
+
+Varying with respect to $g_{\mu\nu}$ yields
+\begin{equation}
+T^{\mathrm{ent}}_{\mu\nu} = \beta\left(\nabla_\mu\phi\,\nabla_\nu\phi - \frac{1}{2}g_{\mu\nu}(\nabla\phi)^2\right) + \tilde{\kappa} E_*\phi\, g_{\mu\nu}.
+\end{equation}
+The dimensions are correct provided $\beta$ carries the dimensions needed to make the gradient term an energy density. In slowly varying configurations, the gradient term is subleading.
+
+\subsection{Matter nonconservation}
+
+Total conservation requires
+\begin{equation}
+\nabla^\mu T^{\mathrm{total}}_{\mu\nu} = 0,
+\end{equation}
+so that
+\begin{equation}
+\nabla^\mu T^{\mathrm{matter}}_{\mu\nu} = -\nabla^\mu T^{\mathrm{ent}}_{\mu\nu}.
+\end{equation}
+Substituting the revised entanglement tensor gives
+\begin{equation}
+\nabla^\mu T^{\mathrm{matter}}_{\mu\nu} = -\left(\tilde{\kappa} E_* + \beta\Box\phi\right)\nabla_\nu\phi + \beta\nabla_\nu\left(\frac{1}{2}(\nabla\phi)^2\right).
+\end{equation}
+In the quasi-static regime with modest gradients and $|\beta\Box\phi| \ll |\tilde{\kappa}E_*|$, this reduces to
+\begin{equation}
+\nabla^\mu T^{\mathrm{matter}}_{\mu\nu} \approx -\tilde{\kappa}E_*\,\nabla_\nu\phi(x) = -\tilde{\kappa}E_*\,\nabla_\nu S_{\mathrm{ent}}(x).
+\end{equation}
+This is the corrected fifth-force law. Its units are now those of force density, as required.
+
+\section{Newtonian Limit and Revised Observable}
+
+\subsection{Modified Poisson equation}
+
+In the Newtonian limit,
+\begin{equation}
+\nabla^2 \Phi = 4\pi G\left(\rho_{\mathrm{matter}} + \rho_{\mathrm{ent}}\right),
+\end{equation}
+with
+\begin{equation}
+\rho_{\mathrm{ent}}(\mathbf{x}) = \tilde{\kappa} E_* S_{\mathrm{ent}}(\mathbf{x}).
+\end{equation}
+Under spherical symmetry,
+\begin{equation}
+\Delta a(R) = -\dv{\Phi_{\mathrm{ent}}}{R} = \frac{G}{R^2}M_{\mathrm{ent}}(<R),
+\end{equation}
+where
+\begin{equation}
+M_{\mathrm{ent}}(<R) = 4\pi\int_0^R \rho_{\mathrm{ent}}(r)r^2\,dr.
+\end{equation}
+For bounded sources, $M_{\mathrm{ent}}(<R)$ saturates outside the source and the correction scales as $1/R^2$.
+
+\subsection{Observable combination}
+
+In branch-comparison experiments, the useful quantity remains
+\begin{equation}
+\mathcal{B} \equiv |\tilde{\kappa}_{\mathrm{eff}}|\,\frac{\Delta M_{\mathrm{ent}}}{R_{\mathrm{eff}}^2},
+\qquad
+\tilde{\kappa}_{\mathrm{eff}} = \tilde{\kappa}\,\alpha_{\mathrm{screen}},
+\end{equation}
+with
+\begin{equation}
+\Delta M_{\mathrm{ent}} = E_*\,\Delta S_{\mathrm{ent}}^{\mathrm{tot}}.
+\end{equation}
+Therefore $\mathcal{B}$ has units of energy density, $\mathrm{J\,m^{-3}}$.
+
+\section{Implications for OP8 and OP10}
+
+\subsection{Fifth-force bounds}
+
+The corrected acceleration scaling is
+\begin{equation}
+\Delta a(R) \sim \frac{G}{R^2}E_*\,\Delta S_{\mathrm{ent}}^{\mathrm{tot}}.
+\end{equation}
+A null force bound $\Delta a_{\max}$ implies
+\begin{equation}
+E_*|\tilde{\kappa}| \lesssim \frac{\Delta a_{\max}R_{\mathrm{eff}}^2}{G\,\Delta S_{\mathrm{ent}}^{\mathrm{tot}}}.
+\end{equation}
+This is the correct way to compare the theory with near-field force measurements or other Newtonian tests once a realistic entanglement inventory is specified.
+
+\subsection{RG interpretation}
+
+With $E_*$ explicit, the natural renormalization-group ansatz becomes
+\begin{equation}
+\tilde{\kappa}_{\mathrm{lab}}E_{*,\mathrm{lab}} = \tilde{\kappa}_{\mathrm{UV}}E_{*,\mathrm{UV}}\left(\frac{E_{\mathrm{lab}}}{E_P}\right)^\gamma,
+\end{equation}
+where $E_P$ is the Planck energy and $\gamma$ is an effective scaling exponent. Experiments therefore constrain the infrared product $\tilde{\kappa}E_*$ rather than $\tilde{\kappa}$ alone.
+
+\section{Programmatic Consequences}
+
+The dimensional repair does not alter the operational definition of $S_{\mathrm{ent}}(x)$, the Lindblad screening program OP3, or the computation of $\alpha_{\mathrm{screen}}(N,\tau)$. Those quantities remain meaningful exactly as before. What changes is only the mapping from entanglement content to physical source strength.
+
+The attached analysis also argues that if one sets $E_*$ near the Planck energy, a Ramsey-redshift experiment becomes far less promising than near-field force sensing, because the clock phase shift remains tiny while the local acceleration can be much larger. This suggests that optomechanical or levitated-mass force sensing may be the better experimental direction once the dimensional repair is accepted.
+
+\section{Conclusions}
+
+The entanglement--gravity framework can be made dimensionally consistent by introducing a reference energy scale $E_*$ that converts entanglement entropy density into an energy density. With this repair, the external-source effective action, the entanglement stress--energy tensor, the matter nonconservation law, and the experimental observable $\mathcal{B}$ all acquire correct SI dimensions.
+
+The open problems are now cleaner. Theory must constrain or derive $E_*$ and its relation to ultraviolet physics; numerics must determine $\alpha_{\mathrm{screen}}$ for realistic devices; and experiments must decide whether branch-comparison clocks or near-field force sensors provide the best route to bounding $\tilde{\kappa}E_*$. The key point is that the framework is no longer blocked by a units-level inconsistency and can now be developed as a well-posed phenomenological theory.
+
+\end{document}

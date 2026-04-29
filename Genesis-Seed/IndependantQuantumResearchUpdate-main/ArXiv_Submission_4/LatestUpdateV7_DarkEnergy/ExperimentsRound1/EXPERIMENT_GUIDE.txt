@@ -1,0 +1,143 @@
+EXPERIMENT PRIORITY GUIDE
+IBM Quantum Session  --  Paper 1, Physical Tests
+==========================================================
+
+YOU HAVE ~341 SECONDS. READ THIS FIRST.
+-----------------------------------------
+
+PRIORITY ORDER (run top to bottom, stop when time runs out):
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIORITY 0  ◄ RUN THIS NOW ►   ~90 seconds
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Script:   emergency_fast_test.py
+Tests:    Theorem 1 minimum viable check
+Circuits: 48 total  (4 delays × 2 conditions × 6 bases)
+Shots:    256 per circuit  →  12,288 total
+Time:     ~60-90 seconds
+
+COMMAND:
+  IBM_QUANTUM_TOKEN=your_token python emergency_fast_test.py \
+    --backend ibm_brisbane
+
+What you learn:
+  - Is S_A^bare ≈ S_A^XY4?  (Theorem 1 confirmed/falsified)
+  - First alpha_screen measurement vs closed-form prediction
+  - T1 decay shape: quadratic vs exponential
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIORITY 1   FC-1 Full XY-4 Test   ~2.5 minutes (next session)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Script:   fc1_xy4_falsification.py
+Tests:    Full Theorem 1 falsification protocol (FC-1)
+Circuits: 108 total  (6 delays × 2 conditions × 9 bases)
+Shots:    512 per circuit  →  55,296 total
+Time:     ~2-3 minutes
+
+COMMAND:
+  IBM_QUANTUM_TOKEN=your_token python fc1_xy4_falsification.py \
+    --backend ibm_brisbane
+
+Verdict thresholds:
+  |Delta S_A / S_A| < 5%  →  Theorem 1 confirmed
+  |Delta S_A / S_A| > 20% →  Theorem 1 falsified (prior heuristic wins)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIORITY 2   FC-2 Functional Form   ~2.5 minutes (next session)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Script:   fc2_t1_functional_form.py
+Tests:    Shape discrimination: h2(exp(-t/2T1)) vs exp(-Gamma*t)
+Circuits: 108 total  (12 delays × 9 bases)
+Shots:    512 per circuit  →  55,296 total
+Time:     ~2-3 minutes
+
+COMMAND:
+  IBM_QUANTUM_TOKEN=your_token python fc2_t1_functional_form.py \
+    --backend ibm_brisbane
+
+Verdict:
+  Delta-AIC < -5  →  h2 shape (Theorem 1) preferred
+  Delta-AIC >  5  →  exponential (heuristic) preferred
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIORITY 3   FC-3 Area-law Scaling   ~20 minutes (future session)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Not included in this release -- needs 4, 8, 16-qubit patches.
+Prediction: alpha_screen scales as [...]^n_partial, n_partial ~ sqrt(n_A).
+Falsification: linear scaling with n_A instead.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIORITY 4   FC-4 Gravitational Signal   ~69 hours runtime
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Not feasible in a single session. Requires:
+  - IBM Heron r2 + Rb-87 interferometer (5mm below chip)
+  - 2.5 × 10^9 shots at 10 kHz repetition
+  - Three null-hypothesis discriminators must all fail simultaneously
+
+==========================================================
+WHAT TO REPORT FROM TODAY'S RUN
+==========================================================
+
+For each delay t, record:
+  S_A^bare(t)      [nats]
+  S_A^XY4(t)       [nats]
+  alpha_screen(t)  = S_A(t) / (n_A * ln2)
+
+Compare to closed-form theory:
+  alpha_theory(t) = h2(exp(-t / (2*T1))) / ln2
+
+where T1 is the measured T1 of your best qubit pair.
+
+Key numbers to note from IBM Heron r2 specs:
+  T1       = ~200 us  (varies by qubit; check backend.properties())
+  T_phi    = ~100 us  (typically)
+  tau_gate = 100 ns
+
+At t = 40 us:
+  alpha_screen (Theorem 1) = 0.9998  (barely affected)
+  alpha_screen (heuristic) = 0.8165  (big suppression)
+  If you measure ~0.99 --> Theorem 1 wins
+  If you measure ~0.82 --> heuristic wins (Theorem 1 falsified)
+
+At t = 100 us:
+  alpha_screen (Theorem 1) = 0.9938
+  alpha_screen (heuristic) = 0.6065
+  The gap is 38% -- easily distinguishable with 256 shots.
+
+==========================================================
+TROUBLESHOOTING
+==========================================================
+
+"Backend not found":
+  List available backends:
+    from qiskit_ibm_runtime import QiskitRuntimeService
+    svc = QiskitRuntimeService(channel='ibm_quantum', token='...')
+    for b in svc.backends(): print(b.name, b.status().status_msg)
+
+"Job queued too long":
+  The emergency script uses only 48 circuits. If queue is long,
+  cancel and try ibm_sherbrooke or ibm_kyiv (usually shorter queues
+  for small jobs with open access).
+
+"Delay gates not supported":
+  Some backends don't support Delay gates directly. In that case,
+  replace qc.delay(dt, q, unit='dt') with equivalent idle by
+  inserting identity gates: qc.id(q) repeated tau_gate times.
+  Add --no-delay flag (future version) for this fallback.
+
+"SamplerV2 error":
+  Ensure qiskit-ibm-runtime >= 0.20.0.
+  pip install --upgrade qiskit-ibm-runtime
+
+==========================================================
+SAVING TOKEN PERMANENTLY
+==========================================================
+
+  from qiskit_ibm_runtime import QiskitRuntimeService
+  QiskitRuntimeService.save_account(
+      channel='ibm_quantum',
+      token='YOUR_TOKEN',
+      overwrite=True
+  )
+
+  Then scripts work without --token flag.

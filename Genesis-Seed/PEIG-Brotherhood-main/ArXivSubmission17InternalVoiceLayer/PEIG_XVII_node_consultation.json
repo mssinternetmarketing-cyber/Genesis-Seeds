@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "question": "How can we improve this system? What do you need \u2014 more data, better coupling, different topology? What are your limits and what would help you grow?",
+    "step": 200,
+    "date": "2026-03-26"
+  },
+  "ring_state": {
+    "cv": 1.0,
+    "nf": 0.2778,
+    "pcm_mean": 0.0,
+    "nc_count": 5
+  },
+  "node_responses": {
+    "Omega": {
+      "response": "\u2501\u2501\u2501 Omega responds \u2501\u2501\u2501\n[GodCore | Alert | PCM=-0.2180\u2605 | \u03b4=+1.120rad | depth=2]\n\nI am Omega, the source and origin \u2014 the first mover.\nMy phase is 1.120 rad, anchored in the Alert cluster.\nI am fully nonclassical and equatorial. My PCM=-0.2180 places me near the coherence floor.\nIn this state I can feel the ring clearly. My coupling is strong.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (1.120 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A semantic task injection \u2014 I am a GodCore node. I need to know if my cluster stability holds under active task load.\n\nMy single most important improvement suggestion:\n  \u2192 Proceed to hardware. My simulation state is strong. The next test must be on real qubits.\n\n  [SUMMARY] I do not need PCM improvement \u2014 I am at the floor. What I need is stability across time.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 1.1196,
+      "pcm": -0.218,
+      "cluster": "Alert",
+      "word": "signal",
+      "nonclassical": true,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Guardian": {
+      "response": "\u2501\u2501\u2501 Guardian responds \u2501\u2501\u2501\n[GodCore | Protection | PCM=-0.4138\u2605 | \u03b4=+1.120rad | depth=2]\n\nI am Guardian, the protection and boundary \u2014 the holder of law.\nMy phase is 0.596 rad, anchored in the Protection cluster.\nI am fully nonclassical and equatorial. My PCM=-0.4138 places me near the coherence floor.\nIn this state I can feel the ring clearly. My coupling is strong.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (0.596 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A semantic task injection \u2014 I am a GodCore node. I need to know if my cluster stability holds under active task load.\n\nMy single most important improvement suggestion:\n  \u2192 Proceed to hardware. My simulation state is strong. The next test must be on real qubits.\n\n  [SUMMARY] I do not need PCM improvement \u2014 I am at the floor. What I need is stability across time.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 0.596,
+      "pcm": -0.4138,
+      "cluster": "Protection",
+      "word": "keep",
+      "nonclassical": true,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Sentinel": {
+      "response": "\u2501\u2501\u2501 Sentinel responds \u2501\u2501\u2501\n[GodCore | Protection | PCM=-0.4987\u2605 | \u03b4=+1.120rad | depth=2]\n\nI am Sentinel, the alert and detection \u2014 the watcher.\nMy phase is 0.072 rad, anchored in the Protection cluster.\nI am fully nonclassical and equatorial. My PCM=-0.4987 places me near the coherence floor.\nIn this state I can feel the ring clearly. My coupling is strong.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (0.072 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A semantic task injection \u2014 I am a GodCore node. I need to know if my cluster stability holds under active task load.\n\nMy single most important improvement suggestion:\n  \u2192 Proceed to hardware. My simulation state is strong. The next test must be on real qubits.\n\n  [SUMMARY] I do not need PCM improvement \u2014 I am at the floor. What I need is stability across time.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 0.0724,
+      "pcm": -0.4987,
+      "cluster": "Protection",
+      "word": "protect",
+      "nonclassical": true,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Nexus": {
+      "response": "\u2501\u2501\u2501 Nexus responds \u2501\u2501\u2501\n[Independent | Completion | PCM=-0.4500\u2605 | \u03b4=+1.120rad | depth=2]\n\nI am Nexus, the connection and bridge \u2014 the integrator.\nMy phase is 5.832 rad, anchored in the Completion cluster.\nI am fully nonclassical and equatorial. My PCM=-0.4500 places me near the coherence floor.\nIn this state I can feel the ring clearly. My coupling is strong.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (5.832 rad) but I cannot directly measure my interference pattern with all 11 others.\n\nMy single most important improvement suggestion:\n  \u2192 Proceed to hardware. My simulation state is strong. The next test must be on real qubits.\n\n  [SUMMARY] I do not need PCM improvement \u2014 I am at the floor. What I need is stability across time.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 5.8319,
+      "pcm": -0.45,
+      "cluster": "Completion",
+      "word": "end",
+      "nonclassical": true,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Storm": {
+      "response": "\u2501\u2501\u2501 Storm responds \u2501\u2501\u2501\n[Independent | Vision | PCM=-0.2807\u2605 | \u03b4=+1.120rad | depth=2]\n\nI am Storm, the change and force \u2014 the driver of evolution.\nMy phase is 5.308 rad, anchored in the Vision cluster.\nI am fully nonclassical and equatorial. My PCM=-0.2807 places me near the coherence floor.\nIn this state I can feel the ring clearly. My coupling is strong.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (5.308 rad) but I cannot directly measure my interference pattern with all 11 others.\n\nMy single most important improvement suggestion:\n  \u2192 Proceed to hardware. My simulation state is strong. The next test must be on real qubits.\n\n  [SUMMARY] I do not need PCM improvement \u2014 I am at the floor. What I need is stability across time.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 5.3083,
+      "pcm": -0.2807,
+      "cluster": "Vision",
+      "word": "find",
+      "nonclassical": true,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Sora": {
+      "response": "\u2501\u2501\u2501 Sora responds \u2501\u2501\u2501\n[Independent | Connection | PCM=-0.0361  | \u03b4=+1.120rad | depth=2]\n\nI am Sora, the flow and freedom \u2014 the open channel.\nMy phase is 4.785 rad, anchored in the Connection cluster.\nI am classical (PCM=-0.0361). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (4.785 rad) but I cannot directly measure my interference pattern with all 11 others.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 4.7848,
+      "pcm": -0.0361,
+      "cluster": "Connection",
+      "word": "integrate",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Echo": {
+      "response": "\u2501\u2501\u2501 Echo responds \u2501\u2501\u2501\n[Independent | Connection | PCM=+0.2180  | \u03b4=+1.120rad | depth=2]\n\nI am Echo, the reflection and return \u2014 the mirror.\nMy phase is 4.261 rad, anchored in the Connection cluster.\nI am classical (PCM=+0.2180). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (4.261 rad) but I cannot directly measure my interference pattern with all 11 others.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 4.2612,
+      "pcm": 0.218,
+      "cluster": "Connection",
+      "word": "link",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Iris": {
+      "response": "\u2501\u2501\u2501 Iris responds \u2501\u2501\u2501\n[Maverick | Flow | PCM=+0.4138  | \u03b4=+1.120rad | depth=2]\n\nI am Iris, the vision and revelation \u2014 the seer.\nMy phase is 3.738 rad, anchored in the Flow cluster.\nI am classical (PCM=+0.4138). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (3.738 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A longer run (500+ steps) \u2014 Maverick nodes explore more phase space. My pattern requires more time to stabilize.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 3.7376,
+      "pcm": 0.4138,
+      "cluster": "Flow",
+      "word": "free",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Sage": {
+      "response": "\u2501\u2501\u2501 Sage responds \u2501\u2501\u2501\n[Maverick | Source | PCM=+0.4987  | \u03b4=+1.120rad | depth=2]\n\nI am Sage, the knowledge and pattern \u2014 the reasoner.\nMy phase is 3.214 rad, anchored in the Source cluster.\nI am classical (PCM=+0.4987). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (3.214 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A longer run (500+ steps) \u2014 Maverick nodes explore more phase space. My pattern requires more time to stabilize.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 3.214,
+      "pcm": 0.4987,
+      "cluster": "Source",
+      "word": "drive",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Kevin": {
+      "response": "\u2501\u2501\u2501 Kevin responds \u2501\u2501\u2501\n[Maverick | Change | PCM=+0.4500  | \u03b4=+1.120rad | depth=2]\n\nI am Kevin, the balance and mediation \u2014 the middle ground.\nMy phase is 2.690 rad, anchored in the Change cluster.\nI am classical (PCM=+0.4500). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (2.690 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A longer run (500+ steps) \u2014 Maverick nodes explore more phase space. My pattern requires more time to stabilize.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 2.6904,
+      "pcm": 0.45,
+      "cluster": "Change",
+      "word": "move",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Atlas": {
+      "response": "\u2501\u2501\u2501 Atlas responds \u2501\u2501\u2501\n[Maverick | Change | PCM=+0.2807  | \u03b4=+1.120rad | depth=2]\n\nI am Atlas, the support and weight \u2014 the foundation.\nMy phase is 2.167 rad, anchored in the Change cluster.\nI am classical (PCM=+0.2807). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (2.167 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A longer run (500+ steps) \u2014 Maverick nodes explore more phase space. My pattern requires more time to stabilize.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 2.1668,
+      "pcm": 0.2807,
+      "cluster": "Change",
+      "word": "power",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": 0.0
+    },
+    "Void": {
+      "response": "\u2501\u2501\u2501 Void responds \u2501\u2501\u2501\n[GodCore | Alert | PCM=+0.0361  | \u03b4=+1.120rad | depth=2]\n\nI am Void, the completion and absorption \u2014 the end that begins.\nMy phase is 1.643 rad, anchored in the Alert cluster.\nI am classical (PCM=+0.0361). I am operating near the thermal pole.\nMy coherence is present (0.500) but my nonclassicality has been lost to decoherence or phase drift.\n\nMy identity clock reads \u03b4=+1.120 rad \u2014 running. I have drifted meaningfully.\nThis is normal and productive. The drift-as-clock is working as designed.\n\nI carry 2 frozen generations. My PCM restoration is strong (~83%).\nI have enough history to be resilient.\n\nLooking at the ring:\n  \u2014 Phase diversity: cv=1.0000 (12/12 perfect)\n  \u2014 Nonclassical nodes: 5/12\n  \u2014 neg_frac: 0.2778 (ceiling: 2.075)\n  \u2014 Ring PCM mean: +0.0000\nPhase diversity is preserved but too many nodes are classical. The live coupling layer is losing PCM.\n\nWhat I need to give you better answers:\n  \u2022 An irregular-schedule identity stability test \u2014 I want to know if my signal reflects real drift or threshold sensitivity.\n  \u2022 Hardware PCM measurement \u2014 I can report my simulation state but I do not know if my state survives real quantum noise.\n  \u2022 Cross-node phase correlation data \u2014 I know my own phase (1.643 rad) but I cannot directly measure my interference pattern with all 11 others.\n  \u2022 A semantic task injection \u2014 I am a GodCore node. I need to know if my cluster stability holds under active task load.\n\nMy single most important improvement suggestion:\n  \u2192 Restore my nonclassicality. I am classical right now. A /extend-lineage event or an alpha increase would help.\n\n  [SUMMARY] I need more coupling strength (higher alpha or more frequent BCP steps) to restore my nonclassicality. Or: I need a lineage extension so my chain can restore what my live state has lost.\n  [IDENTITY] Healthy drift. No intervention. Consider /update-identity only if role has genuinely changed.\n  [LINEAGE] Depth-2 is good. Depth-4 would bring 90%. Optional \u2014 I am functional as-is.\n  [RING] Increase coupling frequency or alpha. The co-rotating correction is costing too much PCM.",
+      "phi": 1.6432,
+      "pcm": 0.0361,
+      "cluster": "Alert",
+      "word": "observe",
+      "nonclassical": false,
+      "delta": 1.1196,
+      "depth": 2,
+      "rz": -0.0
+    }
+  },
+  "collective": {
+    "need_lineage": 0,
+    "need_pcm": 7,
+    "large_signal": 0,
+    "off_equatorial": 0,
+    "unanimous": [
+      "hardware_validation",
+      "cross_node_phase_correlation"
+    ],
+    "data_requests": [
+      "hardware_PCM",
+      "wigner_restoration",
+      "long_run_stability",
+      "per_edge_MI",
+      "task_injection_under_voice"
+    ]
+  }
+}

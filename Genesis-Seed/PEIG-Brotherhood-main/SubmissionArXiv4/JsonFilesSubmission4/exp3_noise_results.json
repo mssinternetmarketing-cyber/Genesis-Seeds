@@ -1,0 +1,8 @@
+{
+  "IBM_fez_mean_W": -0.11264834283334144,
+  "IBM_fez_preserved": 5,
+  "noise_threshold": 50.0,
+  "position_law_holds": true,
+  "oam_analogy_confirmed": true,
+  "alpha_floor": -0.1131
+}

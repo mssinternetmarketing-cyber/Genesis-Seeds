@@ -1,0 +1,411 @@
+\documentclass[12pt,twocolumn]{article}
+
+% ── Packages ─────────────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{margin=0.9in}
+\usepackage{microtype}
+\usepackage{xcolor}
+
+% ── Custom commands ───────────────────────────────────────────────────────────
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\lP}{\ell_{P}}
+\newcommand{\kt}{\tilde{\kappa}}
+\newcommand{\Sent}{S_{\mathrm{ent}}}
+\newcommand{\Ment}{M_{\mathrm{ent}}}
+\newcommand{\asc}{\alpha_{\mathrm{screen}}}
+\newcommand{\tr}{\operatorname{Tr}}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+\title{Entanglement Entropy Density as a Gravitational Source:\\
+A Dimensionally Consistent Framework and Falsification Criterion}
+
+\author{Kevin Monette \\ \small Independent Researcher, \texttt{kevin.monette@research.org}}
+
+\date{\today}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{abstract}
+We propose a dimensionally consistent phenomenological extension of Jacobson's thermodynamic
+gravity in which entanglement entropy density $\Sent$ (bit\,m$^{-3}$) enters the Einstein
+field equations as an additional stress-energy source term.  The modified equation,
+$G_{\mu\nu} = 8\pi G c^{-4}[T_{\mu\nu} + \kt(c^4/8\pi G\kB\ln2)\Sent g_{\mu\nu}]$,
+is dimensionally consistent for any value of the dimensionless coupling $\kt$.  Under the
+\emph{Planck-scale holographic regulator hypothesis} --- that laboratory-scale entanglement
+entropy couples to geometry through the same Planck-length regulation that governs horizon
+entropy --- we obtain the conjectural estimate $\kt = -1/4$.
+This estimate is not derived from first principles; it is a motivated ansatz whose validity is
+the central open question.
+We resolve the radial scaling of the predicted acceleration correction to
+$\Delta a(R) \propto \Ment(<\!R)/R^2$ for bounded sources, and identify the screening factor
+$\asc$ and the Planck-scale renormalization of $\kt$ as the two critical unresolved parameters.
+The framework is falsifiable: if macroscopic quantum-coherent systems ($\geq\!10^6$ entangled
+qubits) show no anomalous stress-energy at pressure sensitivity
+$\Delta p < 10^{-6}$\,Pa after $\geq\!10^3$ independent runs on three or more platforms,
+then $|\kt|<10^{-15}$, ruling out laboratory-scale relevance.
+\end{abstract}
+
+
+\maketitle
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Introduction}
+\label{sec:intro}
+
+Jacobson showed in 1995 that Einstein's field equations follow from the Clausius relation
+$\delta Q = T\,dS$ applied to local Rindler horizons~\cite{Jacobson1995}.  Gravity, in this
+picture, is not a fundamental force but the thermodynamic equation of state of spacetime when
+entropy scales with horizon area.  Verlinde subsequently argued that volume-law entanglement
+entropy at cosmological scales could produce gravity-like effects without horizons~\cite{Verlinde2017}.
+
+A natural question follows: does \emph{laboratory-scale} entanglement entropy density
+contribute measurably to the gravitational source term?  The present paper proposes this as a
+falsifiable phenomenological extension, derives its structural content, and specifies the
+experimental conditions that would rule it out.
+
+We make no claim that the coupling is derived.  We make one claim: the coupling is
+\emph{testable}.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{The Framework}
+\label{sec:framework}
+
+\subsection{Modified field equation and dimensional consistency}
+
+The proposed modification adds an entanglement entropy source term to the Einstein field
+equations:
+\begin{equation}
+  G_{\mu\nu}
+  = \frac{8\pi G}{c^4}
+    \left[
+      T_{\mu\nu}
+      + \kt\,\frac{c^4}{8\pi G\kB\ln 2}\,\Sent\,g_{\mu\nu}
+    \right],
+  \label{eq:modified-einstein}
+\end{equation}
+where $\Sent$ is the entanglement entropy density in bit\,m$^{-3}$ (treating ``bit'' as a
+dimensionless counting unit) and $\kt$ is a dimensionless coupling constant.  The
+bit-to-entropy conversion $S_{\mathrm{phys}} = I_{\mathrm{bits}}\cdot\kB\ln 2$
+(where $\kB\ln 2 = 9.570\times10^{-24}$\,J/K) ensures dimensional consistency: the
+entanglement term has the same units as $T_{\mu\nu}$ for any value of $\kt$.
+
+For a perfect fluid, the active gravitational mass density becomes
+\begin{equation}
+  \rho_{\mathrm{grav}} + \frac{3p_{\mathrm{grav}}}{c^2}
+  = \rho_m + \frac{3p}{c^2}
+    + \frac{3\kt c^2}{8\pi G\kB\ln 2}\,\Sent.
+  \label{eq:source}
+\end{equation}
+For $\kt < 0$ and $\Sent > 0$, the entanglement term contributes negative effective pressure:
+repulsive curvature without exotic matter.
+
+\subsection{The conjectural estimate $\kt = -1/4$}
+
+Jacobson's derivation applies the Clausius relation $\delta Q = T_U\,dS$ at a local Rindler
+horizon, with Unruh temperature $T_U = \hbar a/(2\pi c\kB)$ and Bekenstein-Hawking entropy
+$dS_{BH} = ({\kB c^3}/{4G\hbar})\,dA$.
+
+Under the \textbf{Planck-scale holographic regulator hypothesis}, entanglement entropy density
+$\Sent$ contributes an additional entropy
+\begin{equation}
+  dS_{\mathrm{ent}}
+  = \frac{\Sent}{\kB}\cdot\frac{dV}{4\lP},
+  \quad dV = \lP\,dA,
+  \label{eq:regulator}
+\end{equation}
+where $\lP = \sqrt{\hbar G/c^3} = 1.616\times10^{-35}$\,m is the Planck length.
+Carrying through Jacobson's identification of $\delta Q_{\mathrm{eff}}$ with the
+stress-energy flux yields $T^{\mathrm{ent}}_{\mu\nu} = -(c^4/32\pi G)\Sent g_{\mu\nu}$,
+which by comparison with Eq.~\eqref{eq:modified-einstein} gives
+\begin{equation}
+  \kt = -\frac{1}{4}.
+  \label{eq:kappa}
+\end{equation}
+
+\textbf{This is an estimate, not a derivation.}  Equation~\eqref{eq:regulator} imports
+the Planck-length area-law regulator from horizon physics into a non-horizon volume context.
+This step has no rigorous justification for systems with volume-law entanglement entropy.
+The result $\kt = -1/4$ should be treated as a theoretically motivated ansatz whose
+correctness is precisely what the experiment tests.
+
+\subsection{Radial scaling: resolution of the 1/R vs.\ 1/R$^2$ question}
+
+In the Newtonian limit, Eq.~\eqref{eq:modified-einstein} reduces to a modified Poisson
+equation for the entanglement potential $\Psi$:
+\begin{equation}
+  \nabla^2\Psi = \kappa_{\mathrm{eff}}\,\rho_{\mathrm{ent}}(R),
+  \quad
+  \kappa_{\mathrm{eff}} \equiv \frac{\kt c^4}{2\kB\ln 2}.
+  \label{eq:poisson}
+\end{equation}
+Under spherical symmetry, integrating once with regularity at the origin gives
+\begin{equation}
+  \Delta a(R)
+  \equiv -\frac{d\Psi}{dR}
+  = \frac{\kappa_{\mathrm{eff}}}{R^2}\,\Ment(<\!R),
+  \label{eq:delta-a}
+\end{equation}
+where $\Ment(<\!R) = 4\pi\int_0^R\rho_{\mathrm{ent}}(r)\,r^2\,dr$ is the enclosed
+entanglement entropy.
+
+The $1/R^2$ factor is universal.  A $1/R$ correction requires $\Ment(<\!R)\propto R$,
+which holds only for sources with $\rho_{\mathrm{ent}}\propto 1/r^2$ --- a specific extended
+profile, not a generic prediction.  For compact laboratory sources (bounded within radius
+$R_0$), the exterior prediction is strictly $\Delta a \propto 1/R^2$ for $R > R_0$.
+Earlier formulae in this program that assumed a universal $1/R$ scaling encoded a hidden
+assumption about the source profile and have been corrected.
+
+\subsection{The two critical unresolved parameters}
+
+\textbf{The screening factor $\asc$.}  Environmental decoherence suppresses the coupling:
+$\kt_{\mathrm{eff}} = -(1/4)\asc$.  For macroscopic $^{87}$Rb ensembles
+(cloud radius $\sim\!0.1$\,mm, coherence length $\sim\!1\,\mu$m), the Gaussian spatial
+screening factor $\exp[-(R/\xi)^2]\sim e^{-100}\sim 10^{-43}$, which places the predicted
+signal far below any foreseeable experimental sensitivity.
+For NISQ-scale systems (50--100 qubits, $R\sim\xi$), $\asc$ may be
+$\mathcal{O}(10^{-1})$--$\mathcal{O}(10^{-4})$, but this range is heuristic and requires
+derivation from a Lindblad master equation for the specific system.
+
+\textbf{Planck-scale renormalization (OP10).}  The coupling prefactor
+$c^4/(8\pi\kB\ln 2)\approx 5\times10^{65}$ in SI units reflects the Planck-scale origin of
+the derivation.  Whether $\kt = -1/4$ at the Planck scale renormalizes to a far smaller value
+at laboratory scales is unknown.  Both parameters being simultaneously unresolved means the
+predicted signal magnitude is currently indeterminate.  The falsification criterion below is
+valid regardless.
+
+\subsection{The Bianchi identity and matter non-conservation}
+
+The contracted Bianchi identity $\nabla^\mu G_{\mu\nu} = 0$ applied to
+Eq.~\eqref{eq:modified-einstein} gives
+\begin{equation}
+  \nabla^\mu T_{\mu\nu}^{\mathrm{matter}}
+  = -\frac{\kt c^4}{8\pi G\kB\ln 2}\,\nabla_\nu\Sent.
+  \label{eq:bianchi}
+\end{equation}
+This is a non-trivial prediction: standard matter is not independently energy-momentum
+conserved wherever the entanglement entropy density has a spatial gradient.  The right-hand
+side acts as an effective fifth force on matter proportional to $\nabla\Sent$.
+
+Three interpretations are possible, and the theory must ultimately choose one:
+\begin{enumerate}
+\item[(i)] \textbf{True fifth force}: $\nabla\Sent$ drives a composition-independent anomalous
+  acceleration. This is in principle constrained by the Asenbaum et al.\ 2020 equivalence
+  principle test at $\eta < 10^{-12}$~\cite{Asenbaum2020}, provided the entanglement
+  entropy density is not identically zero for both test masses.
+\item[(ii)] \textbf{Entanglement-sector exchange}: energy is exchanged between ordinary matter
+  and entanglement degrees of freedom, with total $T_{\mu\nu}^{\mathrm{total}}$ (matter plus
+  entanglement field) independently conserved.  Under this interpretation, Eq.~\eqref{eq:bianchi}
+  reflects redistribution, not violation.
+\item[(iii)] \textbf{Incomplete source term}: the modification in Eq.~\eqref{eq:modified-einstein}
+  is incomplete, and a term $\delta T_{\mu\nu}^{\mathrm{ent}}$ must be added to restore
+  independent matter conservation.
+\end{enumerate}
+The paper adopts interpretation~(ii) as the physically most natural and commits to the
+following specific statement: the total stress-energy of matter plus the entanglement sector
+is independently conserved, $\nabla^\mu(T_{\mu\nu}^{\mathrm{matter}}
++ T_{\mu\nu}^{\mathrm{ent}}) = 0$, where $T_{\mu\nu}^{\mathrm{ent}} =
+\kt(c^4/8\pi G\kB\ln 2)\Sent g_{\mu\nu}$.
+
+\textbf{Observational constraint on Eq.~\eqref{eq:bianchi}.}
+For two classical test masses (Pt and Ti alloy, as in MICROSCOPE~\cite{MICROSCOPE2022}), the
+entanglement entropy density $\Sent\approx 0$ for both, making the right-hand side of
+Eq.~\eqref{eq:bianchi} negligible and producing no detectable Eötvös anomaly.  MICROSCOPE
+does not directly constrain $\kt$.  A direct constraint requires a pair of test masses with
+different $\Sent$ -- precisely the coherent-versus-decohered comparison in the proposed
+experiment.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Experimental Proposal and Falsification Criterion}
+\label{sec:experiment}
+
+\subsection{Target regime}
+
+The $\alpha_{\mathrm{screen}}$ analysis rules out macroscopic neutral-atom ensembles
+($N\sim 10^6$ atoms, $R\gg\xi$) as the near-term target.  The revised target is a
+50--100 qubit NISQ platform (neutral-atom array, trapped ions, or superconducting qubits)
+where $R\lesssim\xi$ and entanglement can be directly verified.
+
+The experiment compares:
+\begin{itemize}
+  \item Branch~A: $N$-qubit state with verified entanglement depth $k\geq 10$, realizing
+    nonzero $\Ment^{\mathrm{tot}}$.
+  \item Branch~B: identical qubit count, same control schedule, entanglement destroyed to
+    produce $\Ment^{\mathrm{tot}}\approx 0$.
+\end{itemize}
+A reproducible differential in any gravitational or inertial observable between branches is
+attributed to the $\Sent$ source term.
+
+\subsection{Signal structure}
+
+From Eq.~\eqref{eq:delta-a}, the differential acceleration outside a compact source of radius
+$R_0$ is
+\begin{equation}
+  \Delta a(R)
+  = -\frac{\kt_{\mathrm{eff}}\,c^4}{8\pi\kB\ln 2}
+    \cdot\frac{\Ment^{\mathrm{tot}}}{R^2},
+  \quad R > R_0.
+  \label{eq:signal}
+\end{equation}
+\textbf{The signal magnitude is not predicted} because $\kt_{\mathrm{eff}}$ requires
+$\asc$ (unresolved, OP3) and Planck-scale renormalization (unresolved, OP10).  The
+experiment produces a bound on $|\kt_{\mathrm{eff}}|\cdot\Ment^{\mathrm{tot}}/R^2$, which
+constrains the product of coupling and entanglement content regardless.
+
+\subsection{Falsification criterion}
+
+\begin{center}
+\fbox{\parbox{0.42\textwidth}{%
+\textbf{Falsification (F1--F5):} The framework is falsified for laboratory-scale relevance
+if simultaneously: (F1) $\geq10^6$ genuinely entangled qubits are achieved with depth
+$\geq10^3$ verified; (F2) pressure sensitivity $\Delta p < 10^{-6}$\,Pa is reached;
+(F3) $\geq10^3$ independent null-result runs; (F4) consistent null results across $\geq3$
+independent platforms; (F5) no anomalous signal at F2 sensitivity.\\[3pt]
+\textit{Consequence:} $|\kt| < 10^{-15}$.}}
+\end{center}
+
+Current upper bounds from null results in related experiments are listed in
+Table~\ref{tab:bounds}.  The atom interferometry bound requires care: the Asenbaum et al.\
+dual-species setup compares different atomic species, while the proposed experiment compares
+the same system in entangled versus decohered states.  The coupling to $\Sent$ is
+entanglement-dependent, not composition-dependent, so the two measurements probe different
+aspects of any putative coupling.
+
+\begin{table}[b]
+\caption{Upper bounds on $|\kt|$ from existing null results.}
+\label{tab:bounds}
+\begin{tabular}{@{}p{5cm}cc@{}}
+Experiment & Bound & Ref. \\
+\hline
+Gravity-mediated entanglement & $<3\times10^{-9}$ & \cite{Bose2017}$^a$ \\
+Atom interferometry (equiv.\ principle) & $\eta<10^{-12}$ & \cite{Asenbaum2020}$^b$ \\
+MICROSCOPE (Eötvös parameter) & $\eta<10^{-15}$ & \cite{MICROSCOPE2022}$^c$ \\
+\end{tabular}
+{\footnotesize
+$^a$ Mapping to $\kt$ bound to be verified.
+$^b$ Probes composition-dependence; requires separate argument for $\Sent$-dependence.
+$^c$ Classical test masses ($\Sent\approx 0$); does not directly constrain $\kt$.}
+\end{table}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Relationship to established programs}
+
+This framework is distinct from, but adjacent to, three established programs:
+
+\textit{Jacobson 1995~\cite{Jacobson1995}:} We extend his thermodynamic derivation from
+causal horizons to laboratory volumes by adding the holographic regulator hypothesis.  The
+extension is explicit and clearly marked; we do not claim it follows from Jacobson's result.
+
+\textit{Verlinde 2017~\cite{Verlinde2017}:} Verlinde's emergent gravity addresses galactic
+scales via volume-law entanglement of dark energy.  The present proposal addresses laboratory
+scales with controlled quantum states.  The two are conceptually aligned but make distinct
+experimental predictions.
+
+\textit{ER$=$EPR~\cite{Maldacena2013}:} Maldacena and Susskind propose entanglement
+\emph{is} geometric connectivity.  We propose entanglement \emph{sources} stress-energy.
+These are complementary hypotheses.
+
+\subsection{What this paper claims and does not claim}
+
+\textbf{Claims:}
+(i) Eq.~\eqref{eq:modified-einstein} is dimensionally consistent for any $\kt$.
+(ii) The estimate $\kt = -1/4$ follows from the holographic regulator hypothesis via
+    thermodynamic algebra.
+(iii) For bounded sources, the exterior acceleration correction scales as $1/R^2$.
+(iv) The framework is falsifiable under conditions F1--F5.
+
+\textbf{Does not claim:}
+(i) The coupling is derived from first principles.
+(ii) The signal is detectable with current technology.
+(iii) $\asc$ or the Planck-scale renormalization of $\kt$ are known.
+(iv) MICROSCOPE or atom interferometry presently constrain $\kt$ directly.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Open Problems and Path Forward}
+\label{sec:open}
+
+Three problems must be resolved before the framework can make fully quantitative predictions:
+
+\textbf{OP3 (Critical):} Derive $\asc$ from a Lindblad master equation for a specific
+NISQ platform.  This determines whether the signal is in a detectable regime and what
+experimental geometry to target.
+
+\textbf{OP8 (Resolved in framing):} We adopt interpretation~(ii) (entanglement-sector
+exchange with total stress-energy conservation) and note that a direct observational test
+requires a pair of systems with different $\Sent$, not a classical equivalence-principle test.
+
+\textbf{OP10 (Long-term):} Whether $\kt = -1/4$ at the Planck scale renormalizes to an
+observable laboratory value is a question in quantum gravity phenomenology.  Tools from
+holographic renormalization group~\cite{deHaro2000} may be applicable.
+
+Progress on any one of these three problems would substantially strengthen the framework.
+Papers~B and~C of this research program address the measurement theory prerequisite (Paper~B)
+and the thermodynamic cost structure of entanglement manipulation (Paper~C).
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have proposed a dimensionally consistent phenomenological framework in which entanglement
+entropy density sources spacetime curvature.  The structural content of the framework ---
+the modified field equation, the radial scaling of the signal, the Bianchi identity
+consequences, and the experimental falsification criterion --- is internally consistent and
+clearly bounded.  The conjectural estimate $\kt = -1/4$ is stated with explicit epistemic
+status.  The signal magnitude is indeterminate until the screening factor and
+Planck-scale renormalization are resolved.
+
+The falsification criterion is the framework's primary scientific contribution: it specifies
+exact, achievable experimental conditions under which laboratory-scale entanglement gravity
+would be definitively ruled out, making this a falsifiable hypothesis rather than an
+unfalsifiable metaphysical claim.  Either a signal is found, or it is not.  Both outcomes
+advance physics.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Acknowledgments}
+The author thanks AI research partners for assistance with literature synthesis, dimensional
+verification, and critical review.  All theoretical content and scientific judgments are the
+author's own.
+
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{thebibliography}{99}
+
+\bibitem{Jacobson1995}
+T.~Jacobson,
+Phys.\ Rev.\ Lett.\ \textbf{75}, 1260 (1995).
+
+\bibitem{Verlinde2017}
+E.~Verlinde,
+SciPost Phys.\ \textbf{2}, 016 (2017).
+
+\bibitem{Bose2017}
+S.~Bose \textit{et al.},
+Phys.\ Rev.\ Lett.\ \textbf{119}, 240401 (2017).
+[\textit{Note: Experimental realization in Nature 623 (2023) to be verified by author.}]
+
+\bibitem{Asenbaum2020}
+P.~Asenbaum, C.~Overstreet, T.~Kim, J.~Curti, and M.~A.~Kasevich,
+Phys.\ Rev.\ Lett.\ \textbf{125}, 191101 (2020).
+
+\bibitem{MICROSCOPE2022}
+P.~T.~Touboul \textit{et al.}\ (MICROSCOPE Collaboration),
+Phys.\ Rev.\ Lett.\ \textbf{129}, 121102 (2022).
+
+\bibitem{Maldacena2013}
+J.~Maldacena and L.~Susskind,
+Fortschr.\ Phys.\ \textbf{61}, 781 (2013).
+
+\bibitem{deHaro2000}
+S.~de Haro, S.~N.~Solodukhin, and K.~Skenderis,
+Commun.\ Math.\ Phys.\ \textbf{217}, 595 (2001).
+
+\end{thebibliography}
+
+\end{document}

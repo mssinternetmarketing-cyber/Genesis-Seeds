@@ -1,0 +1,92 @@
+{
+  "experiment": "Hardware Translation with Seed Context",
+  "timestamp": "2026-01-31T07:13:11.662048",
+  "optimal_configuration": {
+    "seed_pair": "Omega++Alpha+",
+    "seed_descriptions": {
+      "qubit_1": "Equal superposition",
+      "qubit_2": "Right circular"
+    },
+    "initialization": {
+      "qubit_1_init": "Omega+",
+      "qubit_2_init": "Alpha+",
+      "method": "Parametric pulse sequence"
+    },
+    "coupling": {
+      "optimal_theta": 0.3,
+      "gate_type": "CNOT",
+      "coupling_strength_mhz": 23.0
+    },
+    "simulation_results": {
+      "initial_coherence": 0.9999999999999996,
+      "final_coherence": 0.9999999999999991,
+      "coherence_retention": 0.9999999999999996
+    },
+    "hardware_requirements": {
+      "qubit_1": {
+        "frequency_ghz": 5.374540118847363,
+        "t1_us": 71.95981825434215,
+        "t2_us": 51.97316968394073,
+        "gate_fidelity": 0.9905227525095138
+      },
+      "qubit_2": {
+        "frequency_ghz": 6.150714306409917,
+        "t1_us": 54.6805592132731,
+        "t2_us": 43.11989040672405,
+        "gate_fidelity": 0.9977955853119744
+      }
+    },
+    "operational_parameters": {
+      "gate_time_ns": 50,
+      "readout_time_us": 1.0,
+      "calibration_frequency_hours": 6
+    }
+  },
+  "reference_configuration": {
+    "seed_pair": "Omega++Alpha+",
+    "seed_descriptions": {
+      "qubit_1": "Equal superposition",
+      "qubit_2": "Right circular"
+    },
+    "initialization": {
+      "qubit_1_init": "Omega+",
+      "qubit_2_init": "Alpha+",
+      "method": "Parametric pulse sequence"
+    },
+    "coupling": {
+      "optimal_theta": 0.3,
+      "gate_type": "CNOT",
+      "coupling_strength_mhz": 23.0
+    },
+    "simulation_results": {
+      "initial_coherence": 0.9999999999999996,
+      "final_coherence": 0.9999999999999991,
+      "coherence_retention": 0.9999999999999996
+    },
+    "hardware_requirements": {
+      "qubit_1": {
+        "frequency_ghz": 5.601115011743209,
+        "t1_us": 50.61753482887407,
+        "t2_us": 59.39819704323989,
+        "gate_fidelity": 0.9916364247048639
+      },
+      "qubit_2": {
+        "frequency_ghz": 5.908072577796045,
+        "t1_us": 74.97327922401266,
+        "t2_us": 44.246782213565524,
+        "gate_fidelity": 0.9916506405886809
+      }
+    },
+    "operational_parameters": {
+      "gate_time_ns": 50,
+      "readout_time_us": 1.0,
+      "calibration_frequency_hours": 6
+    }
+  },
+  "seed_library": {
+    "Omega+": "Equal superposition",
+    "Omega-": "Minus state",
+    "Alpha+": "Right circular",
+    "Alpha-": "Left circular"
+  }
+}

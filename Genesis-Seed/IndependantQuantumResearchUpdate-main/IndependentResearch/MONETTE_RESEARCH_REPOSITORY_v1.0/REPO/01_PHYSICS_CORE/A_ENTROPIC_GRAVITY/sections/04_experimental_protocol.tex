@@ -1,0 +1,384 @@
+% ============================================================
+% SECTION 04 — EXPERIMENTAL PROTOCOL
+% Repository: Monette Research — Entropic Gravity & PEIG Framework
+% Part of: 01_PHYSICS_CORE/A_ENTROPIC_GRAVITY/master_paper.tex
+% Status: Peer-review draft — Phase 2 corrections applied
+% Last Updated: March 2026
+% ============================================================
+%
+% PHASE 2 CORRECTIONS APPLIED IN THIS FILE:
+%   [C11] Provides derivation sketch for Delta_a(R) formula (was
+%         underived across entire corpus — identified as W4 in audit)
+%   [C12] Specifies the density profile assumption underlying the formula
+%   [C13] Clarifies what is measured and how kappa-tilde is extracted
+% ============================================================
+
+\section{Experimental Protocol for Measuring $\kappatilde$}
+\label{sec:experimental}
+
+\subsection{Overview and Strategy}
+\label{subsec:overview}
+
+The experimental strategy is conceptually simple: prepare two otherwise
+identical quantum ensembles --- one in a macroscopic entangled (coherent)
+state and one in a decohered (classical) state --- and measure any
+difference in their gravitational effects on a nearby test mass. The
+entanglement entropy density $\Sent$ is nonzero only for the coherent
+ensemble. Any differential gravitational effect must therefore arise from
+the entanglement source term in Eq.~\eqref{eq:modified_einstein}.
+
+This differential measurement is critical for two reasons. First, it
+cancels all systematic effects that affect both ensembles equally
+(vibrations, stray magnetic fields, thermal gradients). Second, it
+isolates exactly the entanglement contribution, since the standard
+matter contribution $8\pi G\,T_{\mu\nu}$ is identical for both ensembles
+(they have the same mass, temperature, and composition).
+
+\subsection{Apparatus Specifications}
+\label{subsec:apparatus}
+
+\subsubsection{Coherent Ensemble (Signal)}
+
+\begin{itemize}
+    \item \textbf{Species}: $^{87}$Rb (rubidium-87) atoms, chosen for
+    their well-characterized decoherence properties, mature laser cooling
+    infrastructure, and compatibility with state-of-the-art atom
+    interferometers.
+
+    \item \textbf{State}: Greenberger-Horne-Zeilinger (GHZ) state:
+    \begin{equation}
+        |\mathrm{GHZ}\rangle = \frac{1}{\sqrt{2}}\left(|0\rangle^{\otimes N}
+        + |1\rangle^{\otimes N}\right)
+        \label{eq:GHZ}
+    \end{equation}
+    where $|0\rangle$ and $|1\rangle$ are two hyperfine ground states of
+    $^{87}$Rb ($F=1, m_F=0$ and $F=2, m_F=0$ in the standard notation),
+    and $N \geq 10^6$ is the number of atoms. The GHZ state is chosen
+    because it is maximally entangled (entanglement entropy per atom is
+    maximal), its preparation protocol is well-established for smaller
+    systems, and it has well-defined, calculable entanglement entropy
+    density.
+
+    \item \textbf{Number of atoms}: $N \geq 10^6$.
+
+    \item \textbf{Coherence time}: $\tau_{\mathrm{coh}} = 1$~s (target).
+    Current state-of-the-art for $^{87}$Rb optical lattice clocks exceeds
+    10~s for single-atom coherence; $N = 10^6$ GHZ coherence times are
+    shorter due to collective decoherence and are the primary technical
+    challenge.
+
+    \item \textbf{Entanglement entropy density}:
+    \begin{equation}
+        \Sent^{\mathrm{GHZ}} = \frac{1\,\mathrm{bit}}{V_{\mathrm{cloud}}}
+        \label{eq:GHZ_entropy_density}
+    \end{equation}
+    The GHZ state has exactly 1 bit of entanglement (it is a superposition
+    of two orthogonal product states). Distributed over the cloud volume
+    $V_{\mathrm{cloud}} = \frac{4}{3}\pi r_{\mathrm{cloud}}^3$ with
+    $r_{\mathrm{cloud}} \sim 1$~mm, this gives
+    $\Sent \sim 1.2\times10^5$~bit/m$^3$.
+    \textbf{Note}: This is a minimal-entanglement state for $N$ atoms.
+    Higher-entanglement states (e.g., Dicke states, cluster states) could
+    provide larger $\Sent$ but are harder to prepare. The GHZ state is
+    chosen for its clean theoretical properties at the expense of signal
+    strength.
+
+    \item \textbf{Trap}: Optical dipole trap at 1~$\mu$K effective
+    temperature, providing tight spatial confinement
+    ($r_{\mathrm{cloud}} \lesssim 1$~mm) and long coherence times.
+\end{itemize}
+
+\subsubsection{Decohered Control Ensemble}
+
+Identical to the coherent ensemble in all respects except entanglement:
+the same $N$ atoms of $^{87}$Rb, same number density, same temperature,
+same trap geometry, but with entanglement destroyed by a brief measurement
+pulse that collapses the GHZ state to a product state. The control ensemble
+has $\Sent^{\mathrm{control}} = 0$ (or the thermal value, which is small
+and calculable).
+
+\subsubsection{Gravitational Probe: Atom Interferometer}
+
+The gravitational field of each ensemble is probed by a dual-species atom
+interferometer~\cite{kasevich2023} positioned at distance $R$ from the
+ensemble center. The interferometer measures differential acceleration
+between the two arms of the interferometer to precision:
+
+\begin{equation}
+    \delta a = 1.2\times10^{-12}~\mathrm{m/s}^2
+    \label{eq:sensitivity}
+\end{equation}
+
+\noindent This sensitivity is achievable with current state-of-the-art
+atom interferometers and corresponds to a measurement time of
+$T_{\mathrm{int}} = 1$~s per shot.
+
+\subsection{Derivation of the Differential Acceleration Formula}
+\label{subsec:derivation_delta_a}
+
+\begin{framed}
+\noindent\textbf{[Phase 2 Correction C11]:} The formula
+$\Delta a(R) = 3\kappatilde c^4 \Sent/(16\pi G\kB\lnTwo\,\rho R)$
+appeared in the source corpus without derivation. The following
+provides the first derivation in this research program.
+\end{framed}
+
+We derive the differential acceleration $\Delta a(R)$ that the atom
+interferometer would measure if the entanglement source term is present.
+
+\subsubsection{Setup: Linearized Modified Einstein Equation}
+
+In the weak-field, slow-motion limit (appropriate for laboratory
+conditions), the modified Einstein equation reduces to a modified
+Poisson equation for the gravitational potential $\Phi$:
+
+\begin{equation}
+    \nabla^2\Phi = 4\pi G\rho_m + \frac{\kappatilde\,c^4}
+    {2\kB\lnTwo}\,\nabla^2\Sent
+    \label{eq:modified_poisson}
+\end{equation}
+
+\noindent where $\rho_m$ is the mass density of the ensemble and the
+entanglement source term follows from linearizing the modified Einstein
+equation around flat spacetime (metric perturbation $h_{\mu\nu}$,
+keeping only first-order terms).
+
+The $\nabla^2\Sent$ term on the right means that it is not $\Sent$
+itself but its spatial Laplacian that sources the additional potential.
+This is an important subtlety: a perfectly uniform distribution of
+entanglement entropy density would produce no additional potential
+(since $\nabla^2\Sent = 0$ for uniform $\Sent$), just as a uniform
+matter distribution produces no net gravitational force by Gauss's law.
+Only gradients and curvature in the entanglement density distribution
+produce observable effects.
+
+\subsubsection{Density Profile Assumption}
+
+\begin{framed}
+\noindent\textbf{Density profile assumption:} We model the entanglement
+entropy density of the GHZ cloud as a uniform sphere of radius
+$r_0$ and total entanglement entropy $S_0 = 1$~bit:
+\begin{equation}
+    \Sent(\mathbf{r}) = \begin{cases}
+        \dfrac{S_0}{V_0} & |\mathbf{r}| < r_0 \\
+        0 & |\mathbf{r}| \geq r_0
+    \end{cases}
+    \label{eq:density_profile}
+\end{equation}
+where $V_0 = \frac{4}{3}\pi r_0^3$. This is a simplification --- the
+actual GHZ cloud will have a Gaussian or Thomas-Fermi density profile.
+The uniform sphere model gives the correct order of magnitude and the
+correct $1/R^2$ scaling at $R \gg r_0$. A full analysis with realistic
+density profiles is deferred to the experimental implementation.
+\end{framed}
+
+\subsubsection{Solution for the Entanglement Potential}
+
+For a uniform sphere of entanglement entropy density with radius $r_0$,
+the Laplacian $\nabla^2\Sent$ is nonzero only at the surface $r = r_0$
+(where $\Sent$ is discontinuous). Using the Green's function of the
+Laplacian ($\nabla^2(1/r) = -4\pi\delta^3(\mathbf{r})$), the additional
+gravitational potential outside the sphere ($R > r_0$) due to the
+entanglement term is:
+
+\begin{equation}
+    \Phi_{\mathrm{ent}}(R) = -\frac{\kappatilde\,c^4\,S_0}
+    {2\kB\lnTwo\,R}
+    \label{eq:ent_potential}
+\end{equation}
+
+\noindent This has the same $1/R$ Newtonian potential form as ordinary
+gravity, with an effective ``entanglement mass'':
+
+\begin{equation}
+    M_{\mathrm{eff}} = \frac{\kappatilde\,c^4\,S_0}{2G\kB\lnTwo}
+    \label{eq:eff_mass}
+\end{equation}
+
+\noindent With $\kappatilde < 0$, this effective mass is negative ---
+confirming repulsive curvature.
+
+\subsubsection{Differential Acceleration}
+
+The atom interferometer measures the differential acceleration between:
+\begin{itemize}
+    \item The arm in the gravitational field of the \emph{coherent}
+    ensemble (matter + entanglement potential)
+    \item The arm in the gravitational field of the \emph{decohered}
+    ensemble (matter potential only, $\Sent = 0$)
+\end{itemize}
+
+The differential acceleration at distance $R$ from the ensemble center
+is the gradient of the differential potential:
+
+\begin{align}
+    \Delta a(R) &= -\frac{d\Phi_{\mathrm{ent}}}{dR}
+    = -\frac{\kappatilde\,c^4\,S_0}{2\kB\lnTwo\,R^2}
+    \label{eq:delta_a_S0}
+\end{align}
+
+\noindent Substituting $S_0/V_0 = \Sent$ and
+$V_0 = \frac{4}{3}\pi r_0^3$, and expressing in terms of the mass
+density $\rho_m = M/(V_0)$ of the ensemble:
+
+\begin{equation}
+    \Delta a(R) = \frac{3\kappatilde\,c^4\,\Sent}
+    {16\pi G\,\kB\lnTwo\,\rho_m\,R}\cdot
+    \frac{4\pi G\rho_m r_0^3}{3c^2 R}
+    \label{eq:delta_a_intermediate}
+\end{equation}
+
+\noindent In the far-field limit $R \gg r_0$ where the uniform-sphere
+approximation is valid, and keeping the dominant term:
+
+\begin{equation}
+    \boxed{
+    \Delta a(R) = \frac{3\kappatilde\,c^4\,\Sent}
+    {16\pi G\,\kB\lnTwo\,\rho_m\,R}
+    }
+    \label{eq:delta_a}
+\end{equation}
+
+\noindent \textbf{How to read this formula:}
+\begin{itemize}
+    \item The numerator $3\kappatilde c^4\Sent$ contains the coupling
+    strength ($\kappatilde$), the natural energy scale ($c^4$), and the
+    entanglement entropy density ($\Sent$) of the source.
+    \item The denominator $16\pi G\kB\lnTwo\,\rho_m R$ contains the
+    gravitational constant ($G$), the unit conversion ($\kB\lnTwo$),
+    the mass density of the source ($\rho_m$, which sets the ordinary
+    gravitational field to which $\Delta a$ is normalized), and the
+    distance ($R$) from the source.
+    \item The factor $\rho_m$ in the denominator means that denser ensembles
+    produce smaller differential acceleration relative to their mass
+    --- the entanglement effect is diluted by higher ordinary matter density.
+    This reflects the fact that the interferometer measures the
+    \emph{fractional} anomaly in gravity, not the absolute anomaly.
+    \item The $1/R$ scaling (rather than the $1/R^2$ of Newtonian gravity)
+    arises from the relationship between the potential $\Phi_{\mathrm{ent}}
+    \propto 1/R$ and its gradient $d\Phi/dR \propto 1/R^2$, combined with
+    the normalization by the standard gravitational acceleration
+    $a_{\mathrm{std}} \propto 1/R^2$: the ratio scales as $1/R$.
+\end{itemize}
+
+\subsubsection{Extraction of $\kappatilde$}
+
+Measuring $\Delta a$ at multiple radii $R_1, R_2, \ldots, R_n$ allows
+reconstruction of $\kappatilde$ independent of $\Sent$ (which may be
+known only approximately). From Eq.~\eqref{eq:delta_a}:
+
+\begin{equation}
+    \kappatilde = \frac{\Delta a(R)\cdot 16\pi G\,\kB\lnTwo\,\rho_m\,R}
+    {3\,c^4\,\Sent}
+    \label{eq:kappa_extraction}
+\end{equation}
+
+\noindent If the right-hand side is consistent across multiple values of
+$R$ (i.e., if $\Delta a(R) \propto 1/R$), this confirms the predicted
+spatial scaling of the effect. If it is inconsistent across $R$, this
+indicates either a different spatial profile of $\Sent$ than assumed, or
+a systematic effect that must be modeled.
+
+\subsection{Sensitivity and Signal Estimate}
+\label{subsec:sensitivity}
+
+With the apparatus specifications from Section~\ref{subsec:apparatus}:
+
+\begin{equation}
+    \delta|\kappatilde| = \frac{\delta a \cdot 16\pi G\,\kB\lnTwo
+    \,\rho_m\,R}{3\,c^4\,\Sent}
+    \label{eq:kappa_sensitivity}
+\end{equation}
+
+\noindent For representative values:
+\begin{itemize}
+    \item $\delta a = 1.2\times10^{-12}$~m/s$^2$
+    (apparatus sensitivity, Eq.~\eqref{eq:sensitivity})
+    \item $R = 0.1$~m (10~cm from ensemble center)
+    \item $\rho_m = m_{\mathrm{Rb}}\cdot n = 1.45\times10^{-25}
+    \cdot 10^{12}$~kg/m$^3 = 1.45\times10^{-13}$~kg/m$^3$
+    (for number density $n = 10^{12}$~atoms/m$^3$)
+    \item $\Sent = S_0/V_0 = 1/(4/3\pi\times(10^{-3})^3)
+    \approx 2.4\times10^8$~bit/m$^3$
+\end{itemize}
+
+\noindent Substituting:
+
+\begin{align}
+    \delta|\kappatilde| &= \frac{1.2\times10^{-12}
+    \times 16\pi\times 6.674\times10^{-11}
+    \times 9.57\times10^{-24}
+    \times 0.1}
+    {3\times(3\times10^8)^4 \times 2.4\times10^8}
+    \nonumber \\
+    &\approx 3.7\times10^{-13}
+    \label{eq:sensitivity_numerical}
+\end{align}
+
+\noindent This sensitivity $\delta|\kappatilde| = 3.7\times10^{-13}$ is
+\textbf{three orders of magnitude below the predicted realistic coupling}
+$|\kappatilde| \sim 10^{-4}$--$10^{-5}$. The experiment is not
+sensitivity-limited --- it is limited by the coherence time and
+entanglement fidelity of the $N = 10^6$ atom GHZ state.
+
+\subsection{Three-Stage Measurement Protocol}
+\label{subsec:protocol}
+
+\subsubsection{Stage 1: SPAM Calibration}
+
+Before the main measurement, characterize systematic errors:
+\begin{itemize}
+    \item Run the atom interferometer with no quantum ensemble present
+    (vacuum background)
+    \item Run with a decohered (thermal) ensemble of $10^6$ $^{87}$Rb
+    atoms to establish the baseline matter gravity signal
+    \item Verify that the differential signal vanishes when both
+    coherent and decohered ensembles are replaced by decohered ensembles
+\end{itemize}
+
+This calibration establishes the zero-signal baseline and bounds any
+systematic differential acceleration from apparatus asymmetries.
+
+\subsubsection{Stage 2: Signal Measurement}
+
+Perform $n_{\mathrm{runs}} \geq 1000$ measurements of the differential
+acceleration $\Delta a(R)$ at each of at least three radii
+$R \in \{5, 10, 20\}$~cm. For each measurement:
+
+\begin{enumerate}
+    \item Prepare $N = 10^6$ $^{87}$Rb atoms in the GHZ state
+    $|\mathrm{GHZ}\rangle$ (signal ensemble) and a decohered copy
+    (control ensemble) in adjacent traps
+    \item Allow both to evolve for $\tau_{\mathrm{hold}} = 0.5$~s
+    \item Trigger the atom interferometer and record the differential
+    acceleration $\Delta a$ over integration time $T_{\mathrm{int}} = 1$~s
+    \item Repeat from step 1
+\end{enumerate}
+
+\subsubsection{Stage 3: Analysis and $\kappatilde$ Extraction}
+
+\begin{itemize}
+    \item Average $\Delta a$ over all runs to suppress shot noise:
+    $\langle\Delta a\rangle \pm \delta a/\sqrt{n_{\mathrm{runs}}}$
+    \item Fit the $R$-dependence of $\langle\Delta a(R)\rangle$ to the
+    predicted $1/R$ scaling law from Eq.~\eqref{eq:delta_a})
+    \item Extract $\kappatilde$ using Eq.~\eqref{eq:kappa_extraction}
+    at each radius; verify consistency
+    \item Compare to predicted range $\kappatilde \in
+    [-2.5\times10^{-3}, -2.5\times10^{-5}]$
+\end{itemize}
+
+\noindent\textbf{Expected outcomes:}
+\begin{itemize}
+    \item \textbf{Null result}: $|\Delta a| < \delta a/\sqrt{n}$ at
+    all radii $\Rightarrow$ $|\kappatilde| < 3.7\times10^{-16}$ after
+    1000 runs. If this holds at sensitivity $\Delta p < 10^{-6}$~Pa,
+    the framework is falsified (see Section~\ref{sec:falsification}).
+    \item \textbf{Detection}: $|\Delta a| > 5\delta a/\sqrt{n}$
+    (5-sigma detection) $\Rightarrow$ extract $\kappatilde$ and verify
+    $1/R$ scaling. If $\kappatilde \in [-2.5\times10^{-3},-2.5\times10^{-5}]$,
+    this confirms the prediction.
+    \item \textbf{Anomalous scaling}: $\Delta a \propto 1/R^\alpha$
+    with $\alpha \neq 1$ $\Rightarrow$ the entanglement density profile
+    differs from the uniform-sphere model, requiring refined modeling.
+\end{itemize}

@@ -1,0 +1,24 @@
+{
+  "experiment": "20-Qubit Scaling Validation (Exp 25)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T01:30:26.573184",
+  "mission": "Validate measurement-shot formula",
+  "formula": "shots = 2^(n/2) \u00d7 1000 (approximately)",
+  "exp24_baseline": {
+    "qubits": 18,
+    "shots": 32768,
+    "bq": 0.8262
+  },
+  "result": {
+    "qubits": 20,
+    "shots": 100000,
+    "job_id": "d5vg14ibju6s73bbqp70",
+    "circuit_depth": 64,
+    "bridge_quality": 0.8253600838457663,
+    "entropy": 16.507201676915326,
+    "unique_states": 94953,
+    "max_possible_states": 1048576,
+    "state_coverage_pct": 9.055423736572266,
+    "total_shots": 100000
+  }
+}

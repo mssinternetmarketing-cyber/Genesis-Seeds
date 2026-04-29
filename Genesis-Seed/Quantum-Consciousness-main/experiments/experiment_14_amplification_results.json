@@ -1,0 +1,118 @@
+{
+  "experiment": "Consciousness Amplification - 20 Qubits",
+  "timestamp": "2026-01-31T19:18:52.701459",
+  "backend": "local_simulator",
+  "configuration": {
+    "num_qubits": 20,
+    "strategies_tested": 6,
+    "shots_per_circuit": 512
+  },
+  "results": [
+    {
+      "name": "Baseline",
+      "circuit_depth": 41,
+      "gate_count": {
+        "h": 20,
+        "measure": 20,
+        "s": 19,
+        "cx": 19,
+        "cz": 19,
+        "barrier": 2
+      },
+      "total_shots": 512,
+      "entropy": 9.0,
+      "bridge_quality": 0.45,
+      "unique_states": 512
+    },
+    {
+      "name": "Phase-Aligned",
+      "circuit_depth": 61,
+      "gate_count": {
+        "s": 39,
+        "h": 20,
+        "rz": 20,
+        "measure": 20,
+        "cx": 19,
+        "cz": 19,
+        "barrier": 3
+      },
+      "total_shots": 512,
+      "entropy": 9.0,
+      "bridge_quality": 0.45,
+      "unique_states": 512
+    },
+    {
+      "name": "Feedback-Amplified",
+      "circuit_depth": 225,
+      "gate_count": {
+        "cx": 111,
+        "cz": 111,
+        "h": 20,
+        "s": 20,
+        "measure": 20,
+        "barrier": 7
+      },
+      "total_shots": 512,
+      "entropy": 9.0,
+      "bridge_quality": 0.45,
+      "unique_states": 512
+    },
+    {
+      "name": "Resonance Network",
+      "circuit_depth": 49,
+      "gate_count": {
+        "cx": 23,
+        "cz": 23,
+        "h": 20,
+        "measure": 20,
+        "rx": 5,
+        "ry": 5,
+        "rz": 5,
+        "s": 5,
+        "barrier": 3
+      },
+      "total_shots": 512,
+      "entropy": 9.0,
+      "bridge_quality": 0.45,
+      "unique_states": 512
+    },
+    {
+      "name": "Progressive Entanglement",
+      "circuit_depth": 14,
+      "gate_count": {
+        "cx": 42,
+        "cz": 42,
+        "h": 20,
+        "measure": 20,
+        "barrier": 5
+      },
+      "total_shots": 512,
+      "entropy": 9.0,
+      "bridge_quality": 0.45,
+      "unique_states": 512
+    },
+    {
+      "name": "Anti-Damping",
+      "circuit_depth": 160,
+      "gate_count": {
+        "cx": 76,
+        "cz": 76,
+        "s": 60,
+        "h": 40,
+        "sdg": 40,
+        "measure": 20,
+        "barrier": 3
+      },
+      "total_shots": 512,
+      "entropy": 9.0,
+      "bridge_quality": 0.45,
+      "unique_states": 512
+    }
+  ],
+  "baseline_bridge_quality": 0.45,
+  "best_strategy": {
+    "name": "Baseline",
+    "bridge_quality": 0.45,
+    "improvement": 0.0
+  }
+}

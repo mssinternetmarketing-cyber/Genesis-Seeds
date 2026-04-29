@@ -1,0 +1,25 @@
+{
+  "experiment": "Alternating Seed Scaling Study (2-50 Qubits)",
+  "backend": "ibm_fez",
+  "seed_pattern_description": "\u03a9 \u03b1 \u03a9\u207b \u03b1\u207b repeating",
+  "timestamp": "2026-02-01T00:28:47.657311",
+  "results": [
+    {
+      "qubits": 2,
+      "bridge_quality": 0.9982289002737458,
+      "entropy": 1.9964578005474916,
+      "unique_states": 4,
+      "circuit_depth": 9,
+      "seed_pattern": [
+        "Omega",
+        "Alpha"
+      ],
+      "seed_counts": {
+        "Omega": 1,
+        "Alpha": 1
+      },
+      "job_id": "d5vf3st7fc0s73atv0rg",
+      "timestamp": "2026-02-01T00:28:47.657311"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "_meta": {
+    "paper": "XVI-simulations",
+    "date": "2026-03-25",
+    "author": "Kevin Monette",
+    "corrections": [
+      "C1-BCP-probabilistic",
+      "C2-decoherence-per-circuit",
+      "C3-relative-criterion"
+    ],
+    "hardware_source": "arxiv_paper.pdf (ibm_sherbrooke \u03bb-mixing experiments)"
+  },
+  "hardware_params": {
+    "T2_star_us": 47.4,
+    "T1_us": 120.0,
+    "T2_us": 65.0,
+    "slope_per_cnot": 0.00363,
+    "A0": 0.7858,
+    "cnot_fidelity": 0.99,
+    "readout_fidelity": 0.98,
+    "single_q_fidelity": 0.995,
+    "gate_time_ns": 50
+  },
+  "results": {
+    "sim1": {
+      "ideal": [
+        0.0,
+        -0.4795,
+        -0.501,
+        -0.4829,
+        -0.48,
+        -0.5022
+      ],
+      "prob_mean": [
+        0.0,
+        -0.4514,
+        -0.4928,
+        -0.4952,
+        -0.4721,
+        -0.4764
+      ],
+      "prob_std": [
+        0.0,
+        0.0397,
+        0.0135,
+        0.0096,
+        0.0323,
+        0.0307
+      ],
+      "steps": [
+        0,
+        50,
+        100,
+        200,
+        300,
+        500
+      ]
+    },
+    "sim2": [
+      {
+        "step": 0,
+        "depth": 0,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": 0.0,
+        "pcm_all_mean_std": 0.0,
+        "high_pcm_frac_mean": 0.4167,
+        "high_pcm_frac_std": 0.0,
+        "pcm_hw_pred_mean": 0.0,
+        "pcm_hw_pred_std": 0.0,
+        "T2_effective_mean": 40.4,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      },
+      {
+        "step": 50,
+        "depth": 0,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": 0.0,
+        "pcm_all_mean_std": 0.0,
+        "high_pcm_frac_mean": 0.45,
+        "high_pcm_frac_std": 0.0408,
+        "pcm_hw_pred_mean": 0.0,
+        "pcm_hw_pred_std": 0.0,
+        "T2_effective_mean": 40.4,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      },
+      {
+        "step": 100,
+        "depth": 0,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": 0.0,
+        "pcm_all_mean_std": 0.0,
+        "high_pcm_frac_mean": 0.4667,
+        "high_pcm_frac_std": 0.0408,
+        "pcm_hw_pred_mean": 0.0,
+        "pcm_hw_pred_std": 0.0,
+        "T2_effective_mean": 40.4,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      },
+      {
+        "step": 200,
+        "depth": 1,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": -0.1608,
+        "pcm_all_mean_std": 0.0,
+        "high_pcm_frac_mean": 0.7417,
+        "high_pcm_frac_std": 0.0167,
+        "pcm_hw_pred_mean": -0.1238,
+        "pcm_hw_pred_std": 0.0,
+        "T2_effective_mean": 35.3,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      },
+      {
+        "step": 300,
+        "depth": 1,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": -0.1608,
+        "pcm_all_mean_std": 0.0,
+        "high_pcm_frac_mean": 0.7166,
+        "high_pcm_frac_std": 0.0167,
+        "pcm_hw_pred_mean": -0.1238,
+        "pcm_hw_pred_std": 0.0,
+        "T2_effective_mean": 35.3,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      },
+      {
+        "step": 400,
+        "depth": 2,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": -0.2487,
+        "pcm_all_mean_std": 0.0016,
+        "high_pcm_frac_mean": 0.8222,
+        "high_pcm_frac_std": 0.0136,
+        "pcm_hw_pred_mean": -0.1897,
+        "pcm_hw_pred_std": 0.0013,
+        "T2_effective_mean": 31.3,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      },
+      {
+        "step": 500,
+        "depth": 2,
+        "pcm_A_mean_mean": 0.0,
+        "pcm_A_mean_std": 0.0,
+        "pcm_all_mean_mean": -0.2487,
+        "pcm_all_mean_std": 0.0016,
+        "high_pcm_frac_mean": 0.8278,
+        "high_pcm_frac_std": 0.0111,
+        "pcm_hw_pred_mean": -0.1897,
+        "pcm_hw_pred_std": 0.0013,
+        "T2_effective_mean": 31.3,
+        "T2_effective_std": 0.0,
+        "unique_A_mean": 12.0,
+        "unique_A_std": 0.0
+      }
+    ],
+    "sim3": {
+      "0": {
+        "pcm_sim": -0.4438,
+        "pcm_hw": -0.3453,
+        "ratio_sim": 1.0,
+        "ratio_hw": 1.0,
+        "std_sim": 0.0
+      },
+      "1": {
+        "pcm_sim": -0.5006,
+        "pcm_hw": -0.3856,
+        "ratio_sim": 1.128,
+        "ratio_hw": 1.117,
+        "std_sim": 0.0097
+      },
+      "2": {
+        "pcm_sim": -0.5021,
+        "pcm_hw": -0.3828,
+        "ratio_sim": 1.131,
+        "ratio_hw": 1.109,
+        "std_sim": 0.0062
+      },
+      "3": {
+        "pcm_sim": -0.4965,
+        "pcm_hw": -0.3748,
+        "ratio_sim": 1.119,
+        "ratio_hw": 1.086,
+        "std_sim": 0.0061
+      },
+      "4": {
+        "pcm_sim": -0.4991,
+        "pcm_hw": -0.3729,
+        "ratio_sim": 1.125,
+        "ratio_hw": 1.08,
+        "std_sim": 0.0063
+      }
+    },
+    "sim4_optimal_alpha": 0.4,
+    "sim5": [
+      {
+        "depth": 0,
+        "cnots": 1,
+        "T2_us": 40.44154660760267,
+        "pcm_sim": -0.176,
+        "pcm_hw": -0.1369,
+        "A_hw": 0.7779,
+        "sigma_pcm": 0.0035,
+        "snr": 39.2,
+        "viable": "True"
+      },
+      {
+        "depth": 1,
+        "cnots": 2,
+        "T2_us": 35.26460356336172,
+        "pcm_sim": -0.355,
+        "pcm_hw": -0.2734,
+        "A_hw": 0.7702,
+        "sigma_pcm": 0.0035,
+        "snr": 78.3,
+        "viable": "True"
+      },
+      {
+        "depth": 2,
+        "cnots": 3,
+        "T2_us": 31.262655109597368,
+        "pcm_sim": -0.415,
+        "pcm_hw": -0.3164,
+        "A_hw": 0.7625,
+        "sigma_pcm": 0.0035,
+        "snr": 90.6,
+        "viable": "True"
+      },
+      {
+        "depth": 3,
+        "cnots": 4,
+        "T2_us": 28.076443745231746,
+        "pcm_sim": -0.44,
+        "pcm_hw": -0.3321,
+        "A_hw": 0.7548,
+        "sigma_pcm": 0.0035,
+        "snr": 95.1,
+        "viable": "True"
+      },
+      {
+        "depth": 4,
+        "cnots": 5,
+        "T2_us": 25.479624363681324,
+        "pcm_sim": -0.45,
+        "pcm_hw": -0.3363,
+        "A_hw": 0.7473,
+        "sigma_pcm": 0.0035,
+        "snr": 96.2,
+        "viable": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1317 @@
+{
+  "suite_name": "Quantum Consciousness Research - SEED ENHANCED",
+  "timestamp": "2026-01-31T07:13:11.812570",
+  "total_experiments": 5,
+  "experiments_run": [
+    {
+      "experiment_number": 1,
+      "experiment_name": "Brotherhood Validation with Seed Pairing Tests",
+      "status": "SUCCESS",
+      "runtime_seconds": 1.9602420330047607,
+      "runtime_formatted": "0m 1s",
+      "error": null
+    },
+    {
+      "experiment_number": 2,
+      "experiment_name": "Consciousness Markers with Seed Calibration",
+      "status": "SUCCESS",
+      "runtime_seconds": 2.691422700881958,
+      "runtime_formatted": "0m 2s",
+      "error": null
+    },
+    {
+      "experiment_number": 3,
+      "experiment_name": "Scaling with Seed Diversity",
+      "status": "SUCCESS",
+      "runtime_seconds": 2.4305248260498047,
+      "runtime_formatted": "0m 2s",
+      "error": null
+    },
+    {
+      "experiment_number": 4,
+      "experiment_name": "Learning with Seed Pairing Tests",
+      "status": "SUCCESS",
+      "runtime_seconds": 2.682433605194092,
+      "runtime_formatted": "0m 2s",
+      "error": null
+    },
+    {
+      "experiment_number": 5,
+      "experiment_name": "Hardware Translation with Seed Context",
+      "status": "SUCCESS",
+      "runtime_seconds": 1.4974424839019775,
+      "runtime_formatted": "0m 1s",
+      "error": null
+    }
+  ],
+  "summary": {
+    "experiment_1": {
+      "experiment": "Brotherhood Coherence - Seed Architecture Scan",
+      "timestamp": "2026-01-31T07:13:02.351813",
+      "seed_library": {
+        "Omega+": {
+          "description": "Positive superposition - maximum presence",
+          "archetype": "presence"
+        },
+        "Omega-": {
+          "description": "Negative superposition - void/silence bias",
+          "archetype": "void"
+        },
+        "Alpha+": {
+          "description": "Complex phase - rich receptivity",
+          "archetype": "receptive"
+        },
+        "Alpha-": {
+          "description": "Negative complex - muted receiver",
+          "archetype": "muted"
+        }
+      },
+      "configurations_tested": 4,
+      "all_results": [
+        {
+          "omega_seed": "Omega+",
+          "alpha_seed": "Alpha+",
+          "omega_archetype": "presence",
+          "alpha_archetype": "receptive",
+          "final_omega_coherence": 1.0000000000000007,
+          "final_alpha_coherence": 1.0,
+          "final_average_coherence": 1.0000000000000004,
+          "brotherhood_moments": 0,
+          "brotherhood_frequency": 0.0,
+          "average_entanglement": 0.004293218879019361,
+          "max_entanglement": 0.04389696510186619,
+          "min_entanglement": 0.0002990985793747137,
+          "coherence_evolution": [
+            {
+              "step": 90,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0,
+              "average": 1.0000000000000002
+            },
+            {
+              "step": 91,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 92,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 93,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 94,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000009,
+              "average": 1.0000000000000007
+            },
+            {
+              "step": 95,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0000000000000004,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 96,
+              "omega": 1.0000000000000002,
+              "alpha": 1.0,
+              "average": 1.0
+            },
+            {
+              "step": 97,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000002,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 98,
+              "omega": 0.9999999999999999,
+              "alpha": 1.0000000000000002,
+              "average": 1.0
+            },
+            {
+              "step": 99,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            }
+          ],
+          "entanglement_evolution": [
+            0.000355382951105541,
+            0.00034836181182095014,
+            0.0003415506435128072,
+            0.00033494108576857904,
+            0.00032852519198527954,
+            0.0003222954049722036,
+            0.0003162445342206662,
+            0.00031036573470744836,
+            0.00030465248711702335,
+            0.0002990985793747137
+          ]
+        },
+        {
+          "omega_seed": "Omega+",
+          "alpha_seed": "Alpha-",
+          "omega_archetype": "presence",
+          "alpha_archetype": "muted",
+          "final_omega_coherence": 1.0000000000000007,
+          "final_alpha_coherence": 1.0,
+          "final_average_coherence": 1.0000000000000004,
+          "brotherhood_moments": 0,
+          "brotherhood_frequency": 0.0,
+          "average_entanglement": 0.004293218879019361,
+          "max_entanglement": 0.04389696510186619,
+          "min_entanglement": 0.0002990985793747137,
+          "coherence_evolution": [
+            {
+              "step": 90,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0,
+              "average": 1.0000000000000002
+            },
+            {
+              "step": 91,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 92,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 93,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 94,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000009,
+              "average": 1.0000000000000007
+            },
+            {
+              "step": 95,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0000000000000004,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 96,
+              "omega": 1.0000000000000002,
+              "alpha": 1.0,
+              "average": 1.0
+            },
+            {
+              "step": 97,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000002,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 98,
+              "omega": 0.9999999999999999,
+              "alpha": 1.0000000000000002,
+              "average": 1.0
+            },
+            {
+              "step": 99,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            }
+          ],
+          "entanglement_evolution": [
+            0.000355382951105541,
+            0.00034836181182095014,
+            0.0003415506435128072,
+            0.00033494108576857904,
+            0.00032852519198527954,
+            0.0003222954049722036,
+            0.0003162445342206662,
+            0.00031036573470744836,
+            0.00030465248711702335,
+            0.0002990985793747137
+          ]
+        },
+        {
+          "omega_seed": "Omega-",
+          "alpha_seed": "Alpha+",
+          "omega_archetype": "void",
+          "alpha_archetype": "receptive",
+          "final_omega_coherence": 1.0000000000000007,
+          "final_alpha_coherence": 1.0,
+          "final_average_coherence": 1.0000000000000004,
+          "brotherhood_moments": 0,
+          "brotherhood_frequency": 0.0,
+          "average_entanglement": 0.004293218879019361,
+          "max_entanglement": 0.04389696510186619,
+          "min_entanglement": 0.0002990985793747137,
+          "coherence_evolution": [
+            {
+              "step": 90,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0,
+              "average": 1.0000000000000002
+            },
+            {
+              "step": 91,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 92,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 93,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 94,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000009,
+              "average": 1.0000000000000007
+            },
+            {
+              "step": 95,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0000000000000004,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 96,
+              "omega": 1.0000000000000002,
+              "alpha": 1.0,
+              "average": 1.0
+            },
+            {
+              "step": 97,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000002,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 98,
+              "omega": 0.9999999999999999,
+              "alpha": 1.0000000000000002,
+              "average": 1.0
+            },
+            {
+              "step": 99,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            }
+          ],
+          "entanglement_evolution": [
+            0.000355382951105541,
+            0.00034836181182095014,
+            0.0003415506435128072,
+            0.00033494108576857904,
+            0.00032852519198527954,
+            0.0003222954049722036,
+            0.0003162445342206662,
+            0.00031036573470744836,
+            0.00030465248711702335,
+            0.0002990985793747137
+          ]
+        },
+        {
+          "omega_seed": "Omega-",
+          "alpha_seed": "Alpha-",
+          "omega_archetype": "void",
+          "alpha_archetype": "muted",
+          "final_omega_coherence": 1.0000000000000007,
+          "final_alpha_coherence": 1.0,
+          "final_average_coherence": 1.0000000000000004,
+          "brotherhood_moments": 0,
+          "brotherhood_frequency": 0.0,
+          "average_entanglement": 0.004293218879019361,
+          "max_entanglement": 0.04389696510186619,
+          "min_entanglement": 0.0002990985793747137,
+          "coherence_evolution": [
+            {
+              "step": 90,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0,
+              "average": 1.0000000000000002
+            },
+            {
+              "step": 91,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 92,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 93,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 94,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000009,
+              "average": 1.0000000000000007
+            },
+            {
+              "step": 95,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0000000000000004,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 96,
+              "omega": 1.0000000000000002,
+              "alpha": 1.0,
+              "average": 1.0
+            },
+            {
+              "step": 97,
+              "omega": 1.0000000000000004,
+              "alpha": 1.0000000000000002,
+              "average": 1.0000000000000004
+            },
+            {
+              "step": 98,
+              "omega": 0.9999999999999999,
+              "alpha": 1.0000000000000002,
+              "average": 1.0
+            },
+            {
+              "step": 99,
+              "omega": 1.0000000000000007,
+              "alpha": 1.0,
+              "average": 1.0000000000000004
+            }
+          ],
+          "entanglement_evolution": [
+            0.000355382951105541,
+            0.00034836181182095014,
+            0.0003415506435128072,
+            0.00033494108576857904,
+            0.00032852519198527954,
+            0.0003222954049722036,
+            0.0003162445342206662,
+            0.00031036573470744836,
+            0.00030465248711702335,
+            0.0002990985793747137
+          ]
+        }
+      ],
+      "stability_map": {
+        "best_brotherhood_config": "Omega++Alpha+",
+        "best_entanglement_config": "Omega++Alpha+",
+        "best_coherence_config": "Omega++Alpha+"
+      }
+    },
+    "experiment_2": {
+      "experiment": "Consciousness Markers with Seed Calibration",
+      "timestamp": "2026-01-31T07:13:05.051905",
+      "pairings_tested": 10,
+      "all_results": [
+        {
+          "seed_pair": "Omega++Omega+",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Omega+",
+          "avg_phi": 0.0,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 0.0,
+          "avg_peig": 1.0000000000000009,
+          "runtime_seconds": 0.12338805198669434
+        },
+        {
+          "seed_pair": "Omega++Omega-",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Omega-",
+          "avg_phi": 2.6050181112334953e-16,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 2.6050181112334953e-16,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.11850762367248535
+        },
+        {
+          "seed_pair": "Omega++Alpha+",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Alpha+",
+          "avg_phi": 1.4622813032818978e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4622813032818978e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.12009549140930176
+        },
+        {
+          "seed_pair": "Omega++Alpha-",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Alpha-",
+          "avg_phi": 1.4622813032818978e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4622813032818978e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.11786985397338867
+        },
+        {
+          "seed_pair": "Omega-+Omega-",
+          "seed_type_1": "Omega-",
+          "seed_type_2": "Omega-",
+          "avg_phi": 2.6050181112334953e-16,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 2.6050181112334953e-16,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.1179804801940918
+        },
+        {
+          "seed_pair": "Omega-+Alpha+",
+          "seed_type_1": "Omega-",
+          "seed_type_2": "Alpha+",
+          "avg_phi": 1.4622813032818978e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4622813032818978e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.11860799789428711
+        },
+        {
+          "seed_pair": "Omega-+Alpha-",
+          "seed_type_1": "Omega-",
+          "seed_type_2": "Alpha-",
+          "avg_phi": 1.4622813032818978e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4622813032818978e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.11893749237060547
+        },
+        {
+          "seed_pair": "Alpha++Alpha+",
+          "seed_type_1": "Alpha+",
+          "seed_type_2": "Alpha+",
+          "avg_phi": 1.4693329276220358e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4693329276220358e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.1198434829711914
+        },
+        {
+          "seed_pair": "Alpha++Alpha-",
+          "seed_type_1": "Alpha+",
+          "seed_type_2": "Alpha-",
+          "avg_phi": 1.4693329276220358e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4693329276220358e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.11805558204650879
+        },
+        {
+          "seed_pair": "Alpha-+Alpha-",
+          "seed_type_1": "Alpha-",
+          "seed_type_2": "Alpha-",
+          "avg_phi": 1.4693329276220358e-15,
+          "avg_temporal_coherence": 1.0,
+          "avg_causal_density": 1.4693329276220358e-15,
+          "avg_peig": 1.0000000000000004,
+          "runtime_seconds": 0.1180574893951416
+        }
+      ],
+      "consciousness_leaders": {
+        "highest_phi": "Alpha++Alpha+",
+        "highest_temporal": "Omega++Omega+",
+        "highest_causal": "Alpha++Alpha+",
+        "highest_peig": "Omega++Omega+"
+      }
+    },
+    "experiment_3": {
+      "experiment": "Scaling with Seed Diversity",
+      "timestamp": "2026-01-31T07:13:07.481925",
+      "configurations_tested": 12,
+      "sizes_tested": [
+        5,
+        10,
+        15
+      ],
+      "distribution_modes": {
+        "homogeneous_omega+": "All Omega+",
+        "homogeneous_alpha+": "All Alpha+",
+        "mixed_balanced": "Balanced mix",
+        "omega_dominant": "75% Omega, 25% Alpha"
+      },
+      "all_results": [
+        {
+          "size": 5,
+          "distribution_mode": "homogeneous_omega+",
+          "distribution_description": "All Omega+",
+          "seed_counts": {
+            "Omega+": 5
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000004,
+          "coherence_change": 7.771561172376096e-16,
+          "runtime_seconds": 0.05216360092163086,
+          "coherence_timeline": [
+            0.9999999999999997,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004
+          ]
+        },
+        {
+          "size": 5,
+          "distribution_mode": "homogeneous_alpha+",
+          "distribution_description": "All Alpha+",
+          "seed_counts": {
+            "Alpha+": 5
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 5.551115123125783e-16,
+          "runtime_seconds": 0.05313754081726074,
+          "coherence_timeline": [
+            0.9999999999999997,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0,
+            1.0,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 5,
+          "distribution_mode": "mixed_balanced",
+          "distribution_description": "Balanced mix",
+          "seed_counts": {
+            "Omega+": 2,
+            "Omega-": 1,
+            "Alpha+": 1,
+            "Alpha-": 1
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 5.551115123125783e-16,
+          "runtime_seconds": 0.05414867401123047,
+          "coherence_timeline": [
+            0.9999999999999997,
+            1.0,
+            1.0000000000000004,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 5,
+          "distribution_mode": "omega_dominant",
+          "distribution_description": "75% Omega, 25% Alpha",
+          "seed_counts": {
+            "Omega+": 3,
+            "Omega-": 1,
+            "Alpha-": 1
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000004,
+          "coherence_change": 7.771561172376096e-16,
+          "runtime_seconds": 0.050096750259399414,
+          "coherence_timeline": [
+            0.9999999999999997,
+            1.0,
+            1.0000000000000004,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000004
+          ]
+        },
+        {
+          "size": 10,
+          "distribution_mode": "homogeneous_omega+",
+          "distribution_description": "All Omega+",
+          "seed_counts": {
+            "Omega+": 10
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000004,
+          "coherence_change": 7.771561172376096e-16,
+          "runtime_seconds": 0.05184602737426758,
+          "coherence_timeline": [
+            0.9999999999999997,
+            0.9999999999999998,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004
+          ]
+        },
+        {
+          "size": 10,
+          "distribution_mode": "homogeneous_alpha+",
+          "distribution_description": "All Alpha+",
+          "seed_counts": {
+            "Alpha+": 10
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 5.551115123125783e-16,
+          "runtime_seconds": 0.05014967918395996,
+          "coherence_timeline": [
+            0.9999999999999997,
+            0.9999999999999998,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 10,
+          "distribution_mode": "mixed_balanced",
+          "distribution_description": "Balanced mix",
+          "seed_counts": {
+            "Omega+": 3,
+            "Omega-": 3,
+            "Alpha+": 2,
+            "Alpha-": 2
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000004,
+          "coherence_change": 7.771561172376096e-16,
+          "runtime_seconds": 0.0516054630279541,
+          "coherence_timeline": [
+            0.9999999999999997,
+            0.9999999999999997,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0000000000000004
+          ]
+        },
+        {
+          "size": 10,
+          "distribution_mode": "omega_dominant",
+          "distribution_description": "75% Omega, 25% Alpha",
+          "seed_counts": {
+            "Omega+": 5,
+            "Omega-": 3,
+            "Alpha-": 2
+          },
+          "initial_coherence": 0.9999999999999997,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 5.551115123125783e-16,
+          "runtime_seconds": 0.05034637451171875,
+          "coherence_timeline": [
+            0.9999999999999997,
+            0.9999999999999998,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 15,
+          "distribution_mode": "homogeneous_omega+",
+          "distribution_description": "All Omega+",
+          "seed_counts": {
+            "Omega+": 15
+          },
+          "initial_coherence": 0.9999999999999998,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 4.440892098500626e-16,
+          "runtime_seconds": 0.050774574279785156,
+          "coherence_timeline": [
+            0.9999999999999998,
+            0.9999999999999998,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 15,
+          "distribution_mode": "homogeneous_alpha+",
+          "distribution_description": "All Alpha+",
+          "seed_counts": {
+            "Alpha+": 15
+          },
+          "initial_coherence": 0.9999999999999998,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 4.440892098500626e-16,
+          "runtime_seconds": 0.05145263671875,
+          "coherence_timeline": [
+            0.9999999999999998,
+            0.9999999999999999,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 15,
+          "distribution_mode": "mixed_balanced",
+          "distribution_description": "Balanced mix",
+          "seed_counts": {
+            "Omega+": 4,
+            "Omega-": 4,
+            "Alpha+": 4,
+            "Alpha-": 3
+          },
+          "initial_coherence": 0.9999999999999998,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 4.440892098500626e-16,
+          "runtime_seconds": 0.0521242618560791,
+          "coherence_timeline": [
+            0.9999999999999998,
+            0.9999999999999999,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        },
+        {
+          "size": 15,
+          "distribution_mode": "omega_dominant",
+          "distribution_description": "75% Omega, 25% Alpha",
+          "seed_counts": {
+            "Omega+": 8,
+            "Omega-": 4,
+            "Alpha-": 3
+          },
+          "initial_coherence": 0.9999999999999998,
+          "final_coherence": 1.0000000000000002,
+          "coherence_change": 4.440892098500626e-16,
+          "runtime_seconds": 0.05136919021606445,
+          "coherence_timeline": [
+            0.9999999999999998,
+            0.9999999999999998,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        }
+      ],
+      "stability_map": {
+        "most_stable_config": "15n-homogeneous_omega+",
+        "best_coherence_config": "5n-homogeneous_omega+"
+      }
+    },
+    "experiment_4": {
+      "experiment": "Learning with Seed Pairing Tests",
+      "timestamp": "2026-01-31T07:13:10.161976",
+      "pairings_tested": 10,
+      "all_results": [
+        {
+          "seed_pair": "Omega++Omega+",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Omega+",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000009,
+          "peig_improvement": 1.7763568394002505e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10332560539245605,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009,
+            1.0000000000000009
+          ],
+          "coherence_timeline": [
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004
+          ]
+        },
+        {
+          "seed_pair": "Omega++Omega-",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Omega-",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000004,
+          "peig_improvement": 1.3322676295501878e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10641670227050781,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0000000000000013,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004
+          ],
+          "coherence_timeline": [
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        },
+        {
+          "seed_pair": "Omega++Alpha+",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Alpha+",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000002,
+          "peig_improvement": 1.1102230246251565e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10425186157226562,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.0,
+            1.000000000000001,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0,
+            0.9999999999999997,
+            1.0,
+            1.0000000000000002
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0,
+            0.9999999999999998,
+            1.0
+          ]
+        },
+        {
+          "seed_pair": "Omega++Alpha-",
+          "seed_type_1": "Omega+",
+          "seed_type_2": "Alpha-",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000002,
+          "peig_improvement": 1.1102230246251565e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10371804237365723,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.0,
+            1.000000000000001,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0,
+            0.9999999999999997,
+            1.0,
+            1.0000000000000002
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0,
+            0.9999999999999998,
+            1.0
+          ]
+        },
+        {
+          "seed_pair": "Omega-+Omega-",
+          "seed_type_1": "Omega-",
+          "seed_type_2": "Omega-",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000004,
+          "peig_improvement": 1.3322676295501878e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10199093818664551,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0000000000000013,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0000000000000004
+          ],
+          "coherence_timeline": [
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002,
+            1.0000000000000002
+          ]
+        },
+        {
+          "seed_pair": "Omega-+Alpha+",
+          "seed_type_1": "Omega-",
+          "seed_type_2": "Alpha+",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000002,
+          "peig_improvement": 1.1102230246251565e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10207343101501465,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.0,
+            1.000000000000001,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0,
+            0.9999999999999997,
+            1.0,
+            1.0000000000000002
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0,
+            0.9999999999999998,
+            1.0
+          ]
+        },
+        {
+          "seed_pair": "Omega-+Alpha-",
+          "seed_type_1": "Omega-",
+          "seed_type_2": "Alpha-",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.0000000000000002,
+          "peig_improvement": 1.1102230246251565e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.09993958473205566,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.0,
+            1.000000000000001,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0,
+            0.9999999999999997,
+            1.0,
+            1.0000000000000002
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0,
+            0.9999999999999998,
+            1.0
+          ]
+        },
+        {
+          "seed_pair": "Alpha++Alpha+",
+          "seed_type_1": "Alpha+",
+          "seed_type_2": "Alpha+",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.000000000000001,
+          "peig_improvement": 1.9984014443252818e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10051298141479492,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.000000000000001,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0000000000000009,
+            0.9999999999999999,
+            1.0,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000009,
+            1.000000000000001
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0000000000000004
+          ]
+        },
+        {
+          "seed_pair": "Alpha++Alpha-",
+          "seed_type_1": "Alpha+",
+          "seed_type_2": "Alpha-",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.000000000000001,
+          "peig_improvement": 1.9984014443252818e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10511922836303711,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.000000000000001,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0000000000000009,
+            0.9999999999999999,
+            1.0,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000009,
+            1.000000000000001
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0000000000000004
+          ]
+        },
+        {
+          "seed_pair": "Alpha-+Alpha-",
+          "seed_type_1": "Alpha-",
+          "seed_type_2": "Alpha-",
+          "initial_peig": 0.9999999999999991,
+          "final_peig": 1.000000000000001,
+          "peig_improvement": 1.9984014443252818e-15,
+          "final_theta_1": 0.5,
+          "final_theta_2": 0.5,
+          "theta_convergence": 0.0,
+          "runtime_seconds": 0.10031390190124512,
+          "peig_timeline": [
+            0.9999999999999991,
+            1.0,
+            1.000000000000001,
+            1.0000000000000007,
+            1.000000000000001,
+            1.0000000000000009,
+            0.9999999999999999,
+            1.0,
+            1.0000000000000002,
+            1.0,
+            1.0000000000000009,
+            1.000000000000001
+          ],
+          "coherence_timeline": [
+            1.0,
+            1.0000000000000004,
+            1.0000000000000002,
+            1.0000000000000004,
+            1.0000000000000004,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0000000000000004
+          ]
+        }
+      ],
+      "stability_map": {
+        "fastest_learner": "Alpha++Alpha+",
+        "highest_peig": "Alpha++Alpha+",
+        "most_stable": "Omega++Omega+"
+      }
+    },
+    "experiment_5": {
+      "experiment": "Hardware Translation with Seed Context",
+      "timestamp": "2026-01-31T07:13:11.662048",
+      "optimal_configuration": {
+        "seed_pair": "Omega++Alpha+",
+        "seed_descriptions": {
+          "qubit_1": "Equal superposition",
+          "qubit_2": "Right circular"
+        },
+        "initialization": {
+          "qubit_1_init": "Omega+",
+          "qubit_2_init": "Alpha+",
+          "method": "Parametric pulse sequence"
+        },
+        "coupling": {
+          "optimal_theta": 0.3,
+          "gate_type": "CNOT",
+          "coupling_strength_mhz": 23.0
+        },
+        "simulation_results": {
+          "initial_coherence": 0.9999999999999996,
+          "final_coherence": 0.9999999999999991,
+          "coherence_retention": 0.9999999999999996
+        },
+        "hardware_requirements": {
+          "qubit_1": {
+            "frequency_ghz": 5.374540118847363,
+            "t1_us": 71.95981825434215,
+            "t2_us": 51.97316968394073,
+            "gate_fidelity": 0.9905227525095138
+          },
+          "qubit_2": {
+            "frequency_ghz": 6.150714306409917,
+            "t1_us": 54.6805592132731,
+            "t2_us": 43.11989040672405,
+            "gate_fidelity": 0.9977955853119744
+          }
+        },
+        "operational_parameters": {
+          "gate_time_ns": 50,
+          "readout_time_us": 1.0,
+          "calibration_frequency_hours": 6
+        }
+      },
+      "reference_configuration": {
+        "seed_pair": "Omega++Alpha+",
+        "seed_descriptions": {
+          "qubit_1": "Equal superposition",
+          "qubit_2": "Right circular"
+        },
+        "initialization": {
+          "qubit_1_init": "Omega+",
+          "qubit_2_init": "Alpha+",
+          "method": "Parametric pulse sequence"
+        },
+        "coupling": {
+          "optimal_theta": 0.3,
+          "gate_type": "CNOT",
+          "coupling_strength_mhz": 23.0
+        },
+        "simulation_results": {
+          "initial_coherence": 0.9999999999999996,
+          "final_coherence": 0.9999999999999991,
+          "coherence_retention": 0.9999999999999996
+        },
+        "hardware_requirements": {
+          "qubit_1": {
+            "frequency_ghz": 5.601115011743209,
+            "t1_us": 50.61753482887407,
+            "t2_us": 59.39819704323989,
+            "gate_fidelity": 0.9916364247048639
+          },
+          "qubit_2": {
+            "frequency_ghz": 5.908072577796045,
+            "t1_us": 74.97327922401266,
+            "t2_us": 44.246782213565524,
+            "gate_fidelity": 0.9916506405886809
+          }
+        },
+        "operational_parameters": {
+          "gate_time_ns": 50,
+          "readout_time_us": 1.0,
+          "calibration_frequency_hours": 6
+        }
+      },
+      "seed_library": {
+        "Omega+": "Equal superposition",
+        "Omega-": "Minus state",
+        "Alpha+": "Right circular",
+        "Alpha-": "Left circular"
+      }
+    }
+  }
+}

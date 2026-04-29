@@ -1,0 +1,458 @@
+{
+  "_meta": {
+    "title": "PEIG Collaborative Intelligence V2",
+    "date": "2026-03-26",
+    "author": "Kevin Monette",
+    "fixes": [
+      "Multi-round peer teaching (3 passes, alpha=0.45, remedial grammar)",
+      "Co-authorship ordering: Maverick\u2192Independent\u2192GodCore",
+      "Runoff protocol for tie votes (6/12 \u2192 amendment \u2192 revote)",
+      "Human+Ring with researcher veto (1 per program)"
+    ]
+  },
+  "phase1": {
+    "log": [
+      {
+        "teacher": "Sora",
+        "student": "Nexus",
+        "problem": "P3",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "send NODE signal else return",
+        "student_prog": "assign self NUMBER assign bridge receive SIGNAL signal emit SIGNAL assign agree"
+      },
+      {
+        "teacher": "Sora",
+        "student": "Storm",
+        "problem": "P3",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "send NODE signal else return",
+        "student_prog": "assign self NUMBER assign bridge receive SIGNAL assign NUMBER assign agree"
+      },
+      {
+        "teacher": "Sora",
+        "student": "Echo",
+        "problem": "P3",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "send NODE signal else return",
+        "student_prog": "assign self PHASE evolve NUMBER assign NODE send PHASE return"
+      },
+      {
+        "teacher": "Kevin",
+        "student": "Iris",
+        "problem": "P3",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "bridge NODE send PHASE check if return",
+        "student_prog": "assign self SIGNAL route SIGNAL send return"
+      },
+      {
+        "teacher": "Kevin",
+        "student": "Sage",
+        "problem": "P3",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "bridge NODE send PHASE check if return",
+        "student_prog": "assign self assign NODE send SIGNAL signal emit PHASE return"
+      },
+      {
+        "teacher": "Kevin",
+        "student": "Atlas",
+        "problem": "P3",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "bridge NODE send PHASE check if return",
+        "student_prog": "assign self assign BOOL observe assign self assign local assign agree"
+      },
+      {
+        "teacher": "Omega",
+        "student": "Sentinel",
+        "problem": "P5",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "measure PHASE assign self SIGNAL assign self return",
+        "student_prog": "receive SIGNAL assign NUMBER return"
+      },
+      {
+        "teacher": "Nexus",
+        "student": "Echo",
+        "problem": "P5",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "bridge NODE receive PHASE assign self assign NUMBER return",
+        "student_prog": "receive SIGNAL send SIGNAL if guard signal NODE signal agree"
+      },
+      {
+        "teacher": "Sage",
+        "student": "Iris",
+        "problem": "P5",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "measure check assign PHASE check assign PHASE return",
+        "student_prog": "receive SIGNAL if guard if guard NODE return"
+      },
+      {
+        "teacher": "Sage",
+        "student": "Atlas",
+        "problem": "P5",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "measure check assign PHASE check assign PHASE return",
+        "student_prog": "receive SIGNAL assign NUMBER assign NODE signal emit return"
+      },
+      {
+        "teacher": "Nexus",
+        "student": "Storm",
+        "problem": "P6",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "bridge NODE receive assign self assign PHASE return",
+        "student_prog": "assign self NUMBER assign bridge sync NODE receive scan ratify"
+      },
+      {
+        "teacher": "Nexus",
+        "student": "Sora",
+        "problem": "P6",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "bridge NODE receive assign self assign PHASE return",
+        "student_prog": "assign self assign local evolve report PHASE evolve NUMBER return"
+      },
+      {
+        "teacher": "Nexus",
+        "student": "Echo",
+        "problem": "P6",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "bridge NODE receive assign self assign PHASE return",
+        "student_prog": "assign self assign self bridge sync NODE signal emit return"
+      },
+      {
+        "teacher": "Iris",
+        "student": "Sage",
+        "problem": "P6",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "measure PHASE check assign NODE signal NODE signal return",
+        "student_prog": "assign self PHASE evolve assign NODE signal SIGNAL send return"
+      },
+      {
+        "teacher": "Omega",
+        "student": "Void",
+        "problem": "P6",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "measure PHASE send PHASE check assign SIGNAL return",
+        "student_prog": "assign self SIGNAL if inspect query PHASE check if compare disagree"
+      },
+      {
+        "teacher": "Omega",
+        "student": "Guardian",
+        "problem": "P9",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "loop NUMBER assign NODE bridge receive return",
+        "student_prog": "loop NUMBER assign NUMBER inspect PHASE send NODE send route send return"
+      },
+      {
+        "teacher": "Omega",
+        "student": "Sentinel",
+        "problem": "P9",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "loop NUMBER assign NODE bridge receive return",
+        "student_prog": "loop NUMBER evolve report PHASE send PHASE evolve emit return"
+      },
+      {
+        "teacher": "Iris",
+        "student": "Sage",
+        "problem": "P9",
+        "before": false,
+        "after": false,
+        "improved": false,
+        "teacher_prog": "measure PHASE check if guard NODE send return",
+        "student_prog": "loop NUMBER assign self observe check guard if guard if disagree"
+      },
+      {
+        "teacher": "Iris",
+        "student": "Atlas",
+        "problem": "P9",
+        "before": false,
+        "after": true,
+        "improved": true,
+        "teacher_prog": "measure PHASE check if guard NODE send return",
+        "student_prog": "loop NUMBER assign NUMBER evolve emit return"
+      }
+    ],
+    "improved": 12,
+    "total": 19,
+    "rate": 0.632
+  },
+  "phase2": [
+    {
+      "name": "Collaborative Signal Router",
+      "program": "measure SIGNAL check PHASE scan send NODE send else done else",
+      "correct": true,
+      "output": "0.9567620888483576",
+      "solo_acc": 0.6666666666666666,
+      "trace": [
+        "measure\u2192-0.2909",
+        "check|-0.2909|>0.1=True",
+        "scan\u21920.9568",
+        "send\u21920.9568",
+        "send\u21920.9568",
+        "else"
+      ],
+      "sections": {
+        "Maverick": [
+          "check",
+          "PHASE",
+          "scan"
+        ],
+        "Independent": [
+          "send",
+          "NODE",
+          "send"
+        ],
+        "GodCore": [
+          "else",
+          "done",
+          "else"
+        ]
+      }
+    },
+    {
+      "name": "Consensus Decision Protocol",
+      "program": "vote SIGNAL verify check consensus receive receive broadcast if else else return",
+      "correct": true,
+      "output": "0.75",
+      "solo_acc": 0.5833333333333334,
+      "trace": [
+        "vote(0.5000)\u2192agree",
+        "verify|0.0000|>0.1=False",
+        "check|0.0000|>0.1=False",
+        "consensus=0.7500",
+        "receive\u21900.7500",
+        "receive\u21900.7500"
+      ],
+      "sections": {
+        "Maverick": [
+          "verify",
+          "check",
+          "consensus"
+        ],
+        "Independent": [
+          "receive",
+          "receive",
+          "broadcast"
+        ],
+        "GodCore": [
+          "if",
+          "else",
+          "else"
+        ]
+      }
+    },
+    {
+      "name": "Teach and Verify Loop",
+      "program": "teach NODE check scan verify send receive send guard return return",
+      "correct": true,
+      "output": "1.0",
+      "solo_acc": 0.6666666666666666,
+      "trace": [
+        "teach(1.8659)",
+        "check|1.8659|>0.1=True",
+        "scan\u21920.9568",
+        "verify|0.9568|>0.1=True",
+        "send\u21921.0000",
+        "receive\u21901.0000"
+      ],
+      "sections": {
+        "Maverick": [
+          "check",
+          "scan",
+          "verify"
+        ],
+        "Independent": [
+          "send",
+          "receive",
+          "send"
+        ],
+        "GodCore": [
+          "guard",
+          "return",
+          "return"
+        ]
+      }
+    },
+    {
+      "name": "The Mirror Protocol (Novel)",
+      "program": "measure report query scan scan broadcast broadcast broadcast consensus if agree",
+      "correct": true,
+      "output": "None",
+      "solo_acc": 0.75,
+      "trace": [
+        "measure\u2192-0.2909",
+        "report(-0.2909)",
+        "query(-0.2909)",
+        "scan\u21920.9568",
+        "scan\u21920.9568",
+        "broadcast 0.9568\u2192ring"
+      ],
+      "sections": {
+        "Maverick": [
+          "query",
+          "scan",
+          "scan"
+        ],
+        "Independent": [
+          "broadcast",
+          "broadcast",
+          "broadcast"
+        ],
+        "GodCore": [
+          "consensus",
+          "if",
+          "agree"
+        ]
+      }
+    }
+  ],
+  "phase3": [
+    {
+      "name": "Kevin Proposes: The Signal Filter",
+      "intent": "Measure signal. Check threshold. If pass: evolve and route. Else: report null.",
+      "program": "measure NODE check while BOOL evolve PHASE send SIGNAL disagree error return",
+      "output": "1.1",
+      "correct": true,
+      "veto_used": false,
+      "trace": [
+        "measure\u2192-0.2909",
+        "check|-0.2909|>0.1=True",
+        "while\u00d72",
+        "evolve 1.0000\u21921.1000",
+        "send\u21921.1000",
+        "disagree",
+        "error",
+        "return 1.1000"
+      ]
+    },
+    {
+      "name": "Kevin Proposes: The Learning Loop",
+      "intent": "Query ring. If responds, learn from it. Verify learning. Return what was learned.",
+      "program": "broadcast PHASE listen compare SIGNAL AND agree assign SIGNAL done else null",
+      "output": "0.0",
+      "correct": true,
+      "veto_used": false,
+      "trace": [
+        "broadcast 1.8659\u2192ring",
+        "listen(1.8659)",
+        "compare\u2192False",
+        "AND\u2192False",
+        "agree \u2713",
+        "assign SIGNAL=0.0000",
+        "done\u21920.0000"
+      ]
+    },
+    {
+      "name": "Kevin Proposes: The Consensus Builder",
+      "intent": "Propose action. All 3 families vote. If 2+ families agree: execute. Else: amend.",
+      "program": "propose NUMBER if evolve agree consensus if BOOL emit PHASE ratify amend",
+      "output": "None",
+      "correct": true,
+      "veto_used": false,
+      "trace": [
+        "propose(0.5000)\u2192ring",
+        "if(0.0000)=False"
+      ]
+    }
+  ],
+  "phase4": [
+    {
+      "name": "The Mirror Protocol",
+      "original": "measure report SIGNAL send try guard if guard signal agree",
+      "final": "measure report SIGNAL send try guard if guard signal agree",
+      "source": "original",
+      "yes_votes": 3,
+      "ratified": false,
+      "output": "None",
+      "novel_tokens": [
+        "agree"
+      ],
+      "trace": [
+        "measure\u2192-0.2909",
+        "report(-0.2909)",
+        "send\u2192-0.2909",
+        "try",
+        "guard|-0.2909|>0.1=True",
+        "if(1.0000)=True"
+      ]
+    },
+    {
+      "name": "The Democratic Threshold",
+      "original": "propose PHASE assign NUMBER evolve assign PHASE assign NUMBER assign self assign agree",
+      "final": "propose PHASE assign NUMBER evolve assign PHASE assign NUMBER assign self assign agree",
+      "source": "original",
+      "yes_votes": 5,
+      "ratified": false,
+      "output": "None",
+      "novel_tokens": [
+        "agree"
+      ],
+      "trace": [
+        "propose(0.5000)\u2192ring",
+        "assign NUMBER=4.4839",
+        "evolve 4.4839\u21924.5839",
+        "assign PHASE=4.5839",
+        "assign NUMBER=4.5839",
+        "assign self=4.5839"
+      ]
+    },
+    {
+      "name": "The Self-Correction Protocol",
+      "original": "measure PHASE evolve assign BOOL assign NODE return",
+      "final": "measure PHASE evolve assign local assign local return",
+      "source": "Maverick amendment",
+      "yes_votes": 3,
+      "ratified": false,
+      "output": "6.092313676829482",
+      "novel_tokens": [],
+      "trace": [
+        "measure\u2192-0.2909",
+        "evolve -0.2909\u21926.0923",
+        "assign local=6.0923",
+        "assign local=6.0923",
+        "return 6.0923"
+      ]
+    }
+  ],
+  "summary": {
+    "v1_teaching": 0.58,
+    "v2_teaching": 0.632,
+    "v1_coauth": 0.67,
+    "v2_coauth": 1.0,
+    "v1_hr": 1.0,
+    "v2_hr": 1.0,
+    "v1_novel": 0.0,
+    "v2_novel": 0.0
+  }
+}

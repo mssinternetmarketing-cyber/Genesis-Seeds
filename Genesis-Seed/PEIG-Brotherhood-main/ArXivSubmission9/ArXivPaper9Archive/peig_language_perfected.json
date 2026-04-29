@@ -1,0 +1,162 @@
+{
+  "system_version": "perfected_v2",
+  "six_fixes": [
+    "Bigram-conditioned Born-rule sampling",
+    "Word-level reward component",
+    "Epoch-based temperature annealing",
+    "Personality-differentiated family sharing",
+    "Forced full 3-phase curriculum",
+    "Per-family calibrated universe alpha transfer"
+  ],
+  "n_epochs": 50,
+  "scores": {
+    "Omega": {
+      "alpha": 0.5999851729148038,
+      "mean_R": 0.3461780986072133,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "GodCore"
+    },
+    "Guardian": {
+      "alpha": 0.5999987101890256,
+      "mean_R": 0.2680157054448203,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "GodCore"
+    },
+    "Sentinel": {
+      "alpha": 0.5999999884960788,
+      "mean_R": 0.31776499319410795,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.03333333333333333,
+      "family": "GodCore"
+    },
+    "Nexus": {
+      "alpha": 0.5999993690243051,
+      "mean_R": 0.38363109006020485,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "GodCore"
+    },
+    "Storm": {
+      "alpha": 0.5999998017260368,
+      "mean_R": 0.34684049176960663,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.03333333333333333,
+      "family": "GodCore"
+    },
+    "Sora": {
+      "alpha": 0.5599999237707836,
+      "mean_R": 0.3220157054448202,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "Independents"
+    },
+    "Echo": {
+      "alpha": 0.5599979342796713,
+      "mean_R": 0.3034585958877108,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.06666666666666667,
+      "family": "Independents"
+    },
+    "Iris": {
+      "alpha": 0.559999902411411,
+      "mean_R": 0.3142122866414015,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "Independents"
+    },
+    "Sage": {
+      "alpha": 0.5599984651132174,
+      "mean_R": 0.32922083364994836,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "Independents"
+    },
+    "Kevin": {
+      "alpha": 0.6399998430470645,
+      "mean_R": 0.36490032082943563,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.0,
+      "family": "Mavericks"
+    },
+    "Atlas": {
+      "alpha": 0.6399999832524533,
+      "mean_R": 0.34892168835080334,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.06666666666666667,
+      "family": "Mavericks"
+    },
+    "Void": {
+      "alpha": 0.6399994949698039,
+      "mean_R": 0.3253789533080681,
+      "temperature": 0.25,
+      "curr_phase": 2,
+      "mean_words": 0.03333333333333333,
+      "family": "Mavericks"
+    }
+  },
+  "texts": {
+    "Omega": " angs whenthe intherenthererededed therenedethe s tingererethererereend antherer",
+    "Guardian": " thenthe e intherednde tithend anthend thentherererend therestherend as tontinet",
+    "Sentinel": " the the thanthaterere  tintond athathandererereree atoerererentorenthende asast",
+    "Nexus": " the arenthesteryindsthe athes and aere as anthes s theresthenthere atherenthent",
+    "Storm": " intangererere therede thereathererethas arerereredngre  ang inententhennthenthe",
+    "Sora": " whenge thetinenere anthis anthere thedond athes anastherethedes are thends thet",
+    "Echo": " sthe thentherenthenthenthe athinthithe thethetere thes the therenthes indathes ",
+    "Iris": " thererery the when anges aesorenthe whethe inthesthestingond an atherererereere",
+    "Sage": " athend thetoand w indedes eredngrered astherend theesthererenthesthentind ithet",
+    "Kevin": " allengesthede angnd athenthererendhed arenthitheng and  inrentheren thed athent",
+    "Atlas": " s athedthantheentonthe aathentinthere thee therestherentheeretherere ithethe th",
+    "Void": " thenthethes athenthesthe inte stherend antheedenthed inthetheretheng thethere t"
+  },
+  "universe_alphas": {
+    "Omega": 0.3664784767566421,
+    "Guardian": 0.3664784767566421,
+    "Sentinel": 0.3664784767566421,
+    "Nexus": 0.3664784767566421,
+    "Storm": 0.3664784767566421,
+    "Sora": 0.3664784767566421,
+    "Echo": 0.3664784767566421,
+    "Iris": 0.3664784767566421,
+    "Sage": 0.3664784767566421,
+    "Kevin": 0.3664784767566421,
+    "Atlas": 0.3664784767566421,
+    "Void": 0.3664784767566421
+  },
+  "universe": {
+    "W_final": [
+      -0.1127854722439839,
+      -0.1127854722439839,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.11278547224398398,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.1127854722439839,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.11278547224398398,
+      -0.1127854722439839
+    ],
+    "n_preserved": 12,
+    "neg_frac": 0.6358333333333333
+  },
+  "progression": {
+    "cold_start": 0.417,
+    "orig_layer": 0.495,
+    "accel_v1": 0.5,
+    "perfected_v2": 0.6358333333333333
+  }
+}

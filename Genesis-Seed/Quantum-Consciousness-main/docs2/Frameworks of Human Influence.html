@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks of Human Influence</title>
+    <style>
+        /* Theme Variables */
+        :root {
+            --font-family-display: Arial, sans-serif;
+            --font-weight-display: 600;
+            --font-family-content: Arial, sans-serif;
+            --font-weight-content: 400;
+            --font-size-content: 16px;
+            --line-height-content: 1.4;
+        }
+
+        /* DARK THEME */
+        body.theme-dark {
+            --color-bg-base: #0f172a;
+            --color-bg-elevated: #020617;
+            --color-bg-surface: #1e293b;
+            --color-bg-muted: #334155;
+            --color-text-primary: #f1f5f9;
+            --color-text-secondary: #cbd5e1;
+            --color-text-muted: #94a3b8;
+            --color-text-accent: #38bdf8;
+            --color-primary: #38bdf8;
+            --color-primary-foreground: #0f172a;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-content);
+            font-weight: var(--font-weight-content);
+            font-size: var(--font-size-content);
+            line-height: var(--line-height-content);
+            overflow-x: hidden;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Layout Utilities */
+        .row { flex-direction: row; }
+        .col { flex-direction: column; }
+        .center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .space-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .items-end { align-items: flex-end; }
+        .fill-width { flex: 1; }
+        .fill-height { flex: 1; display: flex; flex-direction: column; }
+
+        /* Spacing */
+        .gap-sm { gap: 0.5rem; }
+        .gap-md { gap: 1rem; }
+        .gap-lg { gap: 1.5rem; }
+        .gap-xl { gap: 2rem; }
+        .gap-2xl { gap: 3rem; }
+
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .p-16 { padding: 4rem; }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-display);
+            font-weight: var(--font-weight-display);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1rem; }
+
+        .text-6xl { font-size: 3.75rem; }
+        .text-5xl { font-size: 3rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xs { font-size: 0.75rem; }
+
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .font-normal { font-weight: 400; }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        th {
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 12px 8px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #334155;
+            color: #cbd5e1;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(30, 41, 59, 0.5);
+        }
+
+        tr:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        /* List Styles */
+        ul, ol {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+
+        ul li { list-style: disc; }
+        ol li { list-style: decimal; }
+
+        li { margin-bottom: 0.75rem; }
+        li:last-child { margin-bottom: 0; }
+
+        /* Card Styles */
+        .card-rect {
+            padding: 2rem;
+            background-color: #1e293b;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="theme-dark">
+
+  <!-- SLIDE 1: Title Slide -->
+  <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+    <h1 class="text-6xl mb-4" style="color: #38bdf8;">Frameworks of Human Influence</h1>
+    <p class="text-2xl mb-8" style="color: #cbd5e1;">Nine Layers Shaping Civilization Across Time</p>
+    <p class="text-sm" style="color: #94a3b8;">A multi-scale analysis of cosmic, climatic, technological, and ideological forces</p>
+  </section>
+
+  <!-- SLIDE 2: Overview - The Nine Levels -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">The Nine Levels</h2>
+    <div class="fill-height">
+      <ul class="text-lg" style="color: #cbd5e1;">
+        <li><strong style="color: #38bdf8;">Cosmic:</strong> Natural selection &amp; evolution</li>
+        <li><strong style="color: #38bdf8;">Climatic:</strong> Climate change &amp; geography</li>
+        <li><strong style="color: #38bdf8;">Technological:</strong> Writing, metallurgy, agriculture</li>
+        <li><strong style="color: #38bdf8;">Civilizational:</strong> Egypt, Mesopotamia, Indus, Vedic</li>
+        <li><strong style="color: #38bdf8;">Linguistic:</strong> Indo-European, Semitic, Afro-Asiatic</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: Overview Part 2 -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">The Nine Levels (Continued)</h2>
+    <div class="fill-height">
+      <ul class="text-lg" style="color: #cbd5e1;">
+        <li><strong style="color: #38bdf8;">Religious:</strong> Egyptian, Mesopotamian, Vedic, Zoroastrian, Hebrew, Greek</li>
+        <li><strong style="color: #38bdf8;">Philosophical:</strong> Pre-Socratic, Platonic, Aristotelian, Stoic, Neoplatonic</li>
+        <li><strong style="color: #38bdf8;">Political:</strong> Persian Empire, Greek city-states, Roman Republic</li>
+        <li><strong style="color: #38bdf8;">Modern Science:</strong> Copernicus, Galileo, Newton, Darwin</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: Complete Framework Table Part 1 -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Framework Layers (Part 1)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Influence</th>
+          <th>Timeframe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cosmic</strong></td>
+          <td>Natural selection, evolution</td>
+          <td>Millions of years</td>
+        </tr>
+        <tr>
+          <td><strong>Climatic</strong></td>
+          <td>Climate change, geography</td>
+          <td>15,000+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Technological</strong></td>
+          <td>Writing, metallurgy, agriculture</td>
+          <td>10,000+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Civilizational</strong></td>
+          <td>Egypt, Mesopotamia, Indus, Vedic</td>
+          <td>5,000+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Linguistic</strong></td>
+          <td>Indo-European, Semitic, Afro-Asiatic</td>
+          <td>5,000+ years</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SLIDE 5: Complete Framework Table Part 2 -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Framework Layers (Part 2)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Influence</th>
+          <th>Timeframe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Religious</strong></td>
+          <td>Egyptian, Mesopotamian, Vedic, Zoroastrian, Hebrew, Greek</td>
+          <td>3,000+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Philosophical</strong></td>
+          <td>Pre-Socratic, Platonic, Aristotelian, Stoic, Neoplatonic</td>
+          <td>2,500+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Political</strong></td>
+          <td>Persian Empire, Greek city-states, Roman Republic</td>
+          <td>2,500+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Technological</strong></td>
+          <td>Printing press, telescope, microscope</td>
+          <td>500+ years</td>
+        </tr>
+        <tr>
+          <td><strong>Modern Science</strong></td>
+          <td>Copernicus, Galileo, Newton, Darwin</td>
+          <td>500+ years</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SLIDE 6: Effects - Cosmic to Climatic -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Foundational Effects</h2>
+    <div class="row gap-lg fill-height">
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Cosmic</h3>
+        <p style="color: #cbd5e1;">Human cognitive capacity</p>
+      </div>
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Climatic</h3>
+        <p style="color: #cbd5e1;">Agricultural revolution enabling civilization</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: Effects - Technological & Civilizational -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Structural Effects</h2>
+    <div class="row gap-lg fill-height">
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Technological</h3>
+        <p style="color: #cbd5e1;">Surplus, specialization, intellectual classes</p>
+      </div>
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Civilizational</h3>
+        <p style="color: #cbd5e1;">Mathematical, astronomical, theological traditions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: Effects - Linguistic & Religious -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Cognitive & Metaphysical Effects</h2>
+    <div class="row gap-lg fill-height">
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Linguistic</h3>
+        <p style="color: #cbd5e1;">Language structure enabling thought</p>
+      </div>
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Religious</h3>
+        <p style="color: #cbd5e1;">Cosmological frameworks &amp; metaphysical assumptions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: Effects - Philosophical & Political -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Rational & Administrative Effects</h2>
+    <div class="row gap-lg fill-height">
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Philosophical</h3>
+        <p style="color: #cbd5e1;">Explicit rationalism &amp; logical methodology</p>
+      </div>
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Political</h3>
+        <p style="color: #cbd5e1;">Administrative systems &amp; democratic theory</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10: Effects - Modern Era -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Modern & Scientific Effects</h2>
+    <div class="row gap-lg fill-height">
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Technology (Modern)</h3>
+        <p style="color: #cbd5e1;">Empirical verification &amp; data accumulation</p>
+      </div>
+      <div class="fill-width card-rect" style="background-color: #1e293b; color: #f1f5f9;">
+        <h3 style="color: #38bdf8;">Modern Science</h3>
+        <p style="color: #cbd5e1;">Current scientific worldview</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: Timeframe Spectrum -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Timeframe Spectrum</h2>
+    <div class="fill-height">
+      <ul class="text-lg" style="color: #cbd5e1;">
+        <li><strong style="color: #fbbf24;">Millions of years:</strong> Cosmic evolution</li>
+        <li><strong style="color: #fbbf24;">15,000+ years:</strong> Climatic &amp; geographical shifts</li>
+        <li><strong style="color: #fbbf24;">10,000+ years:</strong> Technological foundations</li>
+        <li><strong style="color: #fbbf24;">5,000+ years:</strong> Civilizational &amp; linguistic emergence</li>
+        <li><strong style="color: #fbbf24;">3,000–2,500 years:</strong> Religious &amp; philosophical frameworks</li>
+        <li><strong style="color: #fbbf24;">500+ years:</strong> Scientific &amp; empirical revolution</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 12: Key Insights -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">Key Insights</h2>
+    <div class="fill-height">
+      <ul class="text-lg" style="color: #cbd5e1;">
+        <li>Each layer amplifies and constrains those above it</li>
+        <li>Linguistic structure shapes what we can think</li>
+        <li>Religious &amp; philosophical frameworks guide metaphysics</li>
+        <li>Political systems codify abstract philosophical ideals</li>
+        <li>Modern science emerges from philosophical rationalism</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 13: Integration Model -->
+  <section class="slide p-16 col" style="background-color: #0f172a; color: #f1f5f9;">
+    <h2 class="mb-6" style="color: #38bdf8;">The Integration Model</h2>
+    <p class="text-xl mb-8" style="color: #cbd5e1;">Understanding human culture and thought requires examining all nine levels simultaneously:</p>
+    <ul class="text-lg" style="color: #cbd5e1;">
+      <li>Bottom-up: Physical constraints enable possibilities</li>
+      <li>Top-down: Ideologies reshape how we see the world</li>
+      <li>Recursive: Each layer influences &amp; transforms others</li>
+    </ul>
+  </section>
+
+  <!-- SLIDE 14: Closing Slide -->
+  <section class="slide p-16 col center" style="background-color: #020617; color: #f1f5f9;">
+    <h2 class="text-5xl mb-6" style="color: #38bdf8;">Civilization as Nested Influence</h2>
+    <p class="text-xl" style="color: #cbd5e1;">From cosmic evolution to modern science—nine interconnected frameworks shaping human destiny</p>
+    <p class="text-sm mt-8" style="color: #94a3b8;">A comprehensive map of human intellectual and cultural development</p>
+  </section>
+
+</body>
+</html>

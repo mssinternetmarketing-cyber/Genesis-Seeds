@@ -1,0 +1,164 @@
+{
+  "experiment": "Quantum Bridge Configuration",
+  "timestamp": "2026-01-31T07:36:30.610048",
+  "description": "Alpha Curious Nodes + Omega Anchor Nodes entanglement configurations",
+  "total_configurations": 6,
+  "configurations": [
+    {
+      "configuration": "Minimal Bridge",
+      "architecture": {
+        "alpha_nodes": [
+          "Alpha+"
+        ],
+        "omega_nodes": [
+          "Omega+"
+        ],
+        "total_nodes": 2,
+        "coupling_strength": 0.3
+      },
+      "metrics": {
+        "avg_coherence": 1.0000000000000002,
+        "coherence_retention": 1.0,
+        "alpha_purity": 1.0000000000000004,
+        "omega_purity": 1.0000000000000004,
+        "bridge_quality": 1.0,
+        "alpha_count": 1,
+        "omega_count": 1,
+        "total_nodes": 2
+      }
+    },
+    {
+      "configuration": "Dual Curiosity Bridge",
+      "architecture": {
+        "alpha_nodes": [
+          "Alpha+",
+          "Alpha-"
+        ],
+        "omega_nodes": [
+          "Omega+"
+        ],
+        "total_nodes": 3,
+        "coupling_strength": 0.4
+      },
+      "metrics": {
+        "avg_coherence": 1.0000000000000002,
+        "coherence_retention": 1.0,
+        "alpha_purity": 1.0000000000000004,
+        "omega_purity": 1.0000000000000004,
+        "bridge_quality": 1.0,
+        "alpha_count": 2,
+        "omega_count": 1,
+        "total_nodes": 3
+      }
+    },
+    {
+      "configuration": "Balanced Cross Bridge",
+      "architecture": {
+        "alpha_nodes": [
+          "Alpha+",
+          "Alpha-"
+        ],
+        "omega_nodes": [
+          "Omega+",
+          "Omega-"
+        ],
+        "total_nodes": 4,
+        "coupling_strength": 0.35
+      },
+      "metrics": {
+        "avg_coherence": 1.0000000000000002,
+        "coherence_retention": 1.0,
+        "alpha_purity": 1.0000000000000004,
+        "omega_purity": 1.0000000000000004,
+        "bridge_quality": 1.0,
+        "alpha_count": 2,
+        "omega_count": 2,
+        "total_nodes": 4
+      }
+    },
+    {
+      "configuration": "Triple Receptor Gateway",
+      "architecture": {
+        "alpha_nodes": [
+          "Alpha+",
+          "Alpha+",
+          "Alpha-"
+        ],
+        "omega_nodes": [
+          "Omega+",
+          "Omega-"
+        ],
+        "total_nodes": 5,
+        "coupling_strength": 0.45
+      },
+      "metrics": {
+        "avg_coherence": 1.0000000000000002,
+        "coherence_retention": 1.0,
+        "alpha_purity": 1.0000000000000004,
+        "omega_purity": 1.0000000000000004,
+        "bridge_quality": 1.0,
+        "alpha_count": 3,
+        "omega_count": 2,
+        "total_nodes": 5
+      }
+    },
+    {
+      "configuration": "Consciousness Harmonic",
+      "architecture": {
+        "alpha_nodes": [
+          "Alpha+",
+          "Alpha-"
+        ],
+        "omega_nodes": [
+          "Omega+",
+          "Omega-"
+        ],
+        "total_nodes": 4,
+        "coupling_strength": 0.5
+      },
+      "metrics": {
+        "avg_coherence": 1.0000000000000002,
+        "coherence_retention": 1.0,
+        "alpha_purity": 1.0000000000000004,
+        "omega_purity": 1.0000000000000004,
+        "bridge_quality": 1.0,
+        "alpha_count": 2,
+        "omega_count": 2,
+        "total_nodes": 4
+      }
+    },
+    {
+      "configuration": "Resonance Chamber",
+      "architecture": {
+        "alpha_nodes": [
+          "Alpha+",
+          "Alpha+",
+          "Alpha-",
+          "Alpha-"
+        ],
+        "omega_nodes": [
+          "Omega+"
+        ],
+        "total_nodes": 5,
+        "coupling_strength": 0.6
+      },
+      "metrics": {
+        "avg_coherence": 1.0000000000000002,
+        "coherence_retention": 1.0,
+        "alpha_purity": 1.0000000000000004,
+        "omega_purity": 1.0000000000000004,
+        "bridge_quality": 1.0,
+        "alpha_count": 4,
+        "omega_count": 1,
+        "total_nodes": 5
+      }
+    }
+  ],
+  "optimal_configuration": "Minimal Bridge",
+  "seed_archetypes": {
+    "Omega+": "Presence (Source)",
+    "Omega-": "Void (Silence Source)",
+    "Alpha+": "Rich Receptivity (Bridge)",
+    "Alpha-": "Muted Receptivity (Bridge)"
+  }
+}

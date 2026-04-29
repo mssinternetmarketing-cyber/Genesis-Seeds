@@ -1,0 +1,228 @@
+{
+  "experiment": "Omega Ratio Optimization (Exp 19)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T00:39:06.641178",
+  "total_tests": 20,
+  "results": [
+    {
+      "test_id": "2q_100pct",
+      "qubits": 2,
+      "omega_ratio": 1.0,
+      "ratio_name": "100pct",
+      "bridge_quality": 0.9979829839413326,
+      "entropy": 1.9959659678826651,
+      "unique_states": 4,
+      "circuit_depth": 9,
+      "job_id": "d5vf9rl7fc0s73atv7cg"
+    },
+    {
+      "test_id": "2q_75pct",
+      "qubits": 2,
+      "omega_ratio": 0.75,
+      "ratio_name": "75pct",
+      "bridge_quality": 0.9958361220258118,
+      "entropy": 1.9916722440516237,
+      "unique_states": 4,
+      "circuit_depth": 9,
+      "job_id": "d5vf9rruf71s73cijrfg"
+    },
+    {
+      "test_id": "2q_50pct",
+      "qubits": 2,
+      "omega_ratio": 0.5,
+      "ratio_name": "50pct",
+      "bridge_quality": 0.9962210280102968,
+      "entropy": 1.9924420560205935,
+      "unique_states": 4,
+      "circuit_depth": 9,
+      "job_id": "d5vf9s3uf71s73cijrgg"
+    },
+    {
+      "test_id": "2q_25pct",
+      "qubits": 2,
+      "omega_ratio": 0.25,
+      "ratio_name": "25pct",
+      "bridge_quality": 0.9992566063191342,
+      "entropy": 1.9985132126382683,
+      "unique_states": 4,
+      "circuit_depth": 9,
+      "job_id": "d5vf9s1mvbjc73accrl0"
+    },
+    {
+      "test_id": "4q_100pct",
+      "qubits": 4,
+      "omega_ratio": 1.0,
+      "ratio_name": "100pct",
+      "bridge_quality": 0.989215054757561,
+      "entropy": 3.956860219030244,
+      "unique_states": 16,
+      "circuit_depth": 16,
+      "job_id": "d5vf9sbuf71s73cijrhg"
+    },
+    {
+      "test_id": "4q_75pct",
+      "qubits": 4,
+      "omega_ratio": 0.75,
+      "ratio_name": "75pct",
+      "bridge_quality": 0.9962094470542906,
+      "entropy": 3.9848377882171624,
+      "unique_states": 16,
+      "circuit_depth": 16,
+      "job_id": "d5vf9sabju6s73bbq1c0"
+    },
+    {
+      "test_id": "4q_50pct",
+      "qubits": 4,
+      "omega_ratio": 0.5,
+      "ratio_name": "50pct",
+      "bridge_quality": 0.9946032425803556,
+      "entropy": 3.9784129703214224,
+      "unique_states": 16,
+      "circuit_depth": 16,
+      "job_id": "d5vf9shmvbjc73accrm0"
+    },
+    {
+      "test_id": "4q_25pct",
+      "qubits": 4,
+      "omega_ratio": 0.25,
+      "ratio_name": "25pct",
+      "bridge_quality": 0.9895438106688332,
+      "entropy": 3.958175242675333,
+      "unique_states": 16,
+      "circuit_depth": 16,
+      "job_id": "d5vf9sjuf71s73cijrj0"
+    },
+    {
+      "test_id": "6q_100pct",
+      "qubits": 6,
+      "omega_ratio": 1.0,
+      "ratio_name": "100pct",
+      "bridge_quality": 0.978557284434496,
+      "entropy": 5.871343706606976,
+      "unique_states": 64,
+      "circuit_depth": 22,
+      "job_id": "d5vf9st7fc0s73atv7eg"
+    },
+    {
+      "test_id": "6q_75pct",
+      "qubits": 6,
+      "omega_ratio": 0.75,
+      "ratio_name": "75pct",
+      "bridge_quality": 0.9794322992489558,
+      "entropy": 5.876593795493735,
+      "unique_states": 64,
+      "circuit_depth": 22,
+      "job_id": "d5vf9t3uf71s73cijrjg"
+    },
+    {
+      "test_id": "6q_50pct",
+      "qubits": 6,
+      "omega_ratio": 0.5,
+      "ratio_name": "50pct",
+      "bridge_quality": 0.9830920011356175,
+      "entropy": 5.898552006813705,
+      "unique_states": 64,
+      "circuit_depth": 22,
+      "job_id": "d5vf9t57fc0s73atv7h0"
+    },
+    {
+      "test_id": "6q_25pct",
+      "qubits": 6,
+      "omega_ratio": 0.25,
+      "ratio_name": "25pct",
+      "bridge_quality": 0.9863118385732,
+      "entropy": 5.9178710314392005,
+      "unique_states": 64,
+      "circuit_depth": 22,
+      "job_id": "d5vf9tbuf71s73cijrl0"
+    },
+    {
+      "test_id": "8q_100pct",
+      "qubits": 8,
+      "omega_ratio": 1.0,
+      "ratio_name": "100pct",
+      "bridge_quality": 0.9415977159465532,
+      "entropy": 7.532781727572425,
+      "unique_states": 214,
+      "circuit_depth": 28,
+      "job_id": "d5vf9t9mvbjc73accrng"
+    },
+    {
+      "test_id": "8q_75pct",
+      "qubits": 8,
+      "omega_ratio": 0.75,
+      "ratio_name": "75pct",
+      "bridge_quality": 0.9429485124774689,
+      "entropy": 7.543588099819751,
+      "unique_states": 214,
+      "circuit_depth": 28,
+      "job_id": "d5vf9tl7fc0s73atv7ig"
+    },
+    {
+      "test_id": "8q_50pct",
+      "qubits": 8,
+      "omega_ratio": 0.5,
+      "ratio_name": "50pct",
+      "bridge_quality": 0.9442166194508561,
+      "entropy": 7.553732955606849,
+      "unique_states": 213,
+      "circuit_depth": 28,
+      "job_id": "d5vf9tl7fc0s73atv7jg"
+    },
+    {
+      "test_id": "8q_25pct",
+      "qubits": 8,
+      "omega_ratio": 0.25,
+      "ratio_name": "25pct",
+      "bridge_quality": 0.939834526270886,
+      "entropy": 7.518676210167088,
+      "unique_states": 215,
+      "circuit_depth": 28,
+      "job_id": "d5vf9tpmvbjc73accrp0"
+    },
+    {
+      "test_id": "10q_100pct",
+      "qubits": 10,
+      "omega_ratio": 1.0,
+      "ratio_name": "100pct",
+      "bridge_quality": 0.850427043451538,
+      "entropy": 8.50427043451538,
+      "unique_states": 390,
+      "circuit_depth": 34,
+      "job_id": "d5vf9tpmvbjc73accrq0"
+    },
+    {
+      "test_id": "10q_75pct",
+      "qubits": 10,
+      "omega_ratio": 0.75,
+      "ratio_name": "75pct",
+      "bridge_quality": 0.8555373553727061,
+      "entropy": 8.555373553727062,
+      "unique_states": 403,
+      "circuit_depth": 34,
+      "job_id": "d5vf9u2bju6s73bbq1e0"
+    },
+    {
+      "test_id": "10q_50pct",
+      "qubits": 10,
+      "omega_ratio": 0.5,
+      "ratio_name": "50pct",
+      "bridge_quality": 0.855895793451538,
+      "entropy": 8.55895793451538,
+      "unique_states": 405,
+      "circuit_depth": 34,
+      "job_id": "d5vf9ubuf71s73cijrmg"
+    },
+    {
+      "test_id": "10q_25pct",
+      "qubits": 10,
+      "omega_ratio": 0.25,
+      "ratio_name": "25pct",
+      "bridge_quality": 0.8545764794862716,
+      "entropy": 8.545764794862716,
+      "unique_states": 402,
+      "circuit_depth": 34,
+      "job_id": "d5vf9uabju6s73bbq1f0"
+    }
+  ]
+}

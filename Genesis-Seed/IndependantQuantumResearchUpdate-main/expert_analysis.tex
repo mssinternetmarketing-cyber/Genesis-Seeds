@@ -1,0 +1,965 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage[numbers,sort&compress]{natbib}
+
+\geometry{margin=1in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{openprob}[theorem]{Open Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{flag}[theorem]{Flag}
+
+\definecolor{flagred}{rgb}{0.75,0.1,0.1}
+\definecolor{openblue}{rgb}{0.1,0.1,0.75}
+\definecolor{boxgray}{rgb}{0.95,0.95,0.95}
+
+\newenvironment{expertflag}{%
+  \begin{mdframed}[backgroundcolor=boxgray,linecolor=flagred,linewidth=1.2pt]
+  \noindent\textcolor{flagred}{\textbf{Expert Flag.}}\quad}{%
+  \end{mdframed}}
+
+\newenvironment{openprobbox}{%
+  \begin{mdframed}[backgroundcolor=boxgray,linecolor=openblue,linewidth=1.2pt]
+  \noindent\textcolor{openblue}{\textbf{Open Problem.}}\quad}{%
+  \end{mdframed}}
+
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\lP}{\ell_{P}}
+\newcommand{\kt}{\tilde{\kappa}}
+\newcommand{\kteff}{\tilde{\kappa}_{\mathrm{eff}}}
+\newcommand{\Sent}{S_{\mathrm{ent}}}
+\newcommand{\Ment}{M_{\mathrm{ent}}}
+\newcommand{\asc}{\alpha_{\mathrm{screen}}}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\mP}{m_{\mathrm{P}}}
+\newcommand{\EP}{E_{\mathrm{P}}}
+
+\title{\textbf{Expert Analysis: Entanglement Entropy Density as a Gravitational Source}\\[6pt]
+\large Theoretical Tightening, OP3 Lindblad Model, NISQ Experiment Design,\\
+and Referee-Level Critique}
+
+\author{Analysis prepared by: Expert Theoretical Physics Review\\[2pt]
+\small Responding to: \textit{Refined Entanglement Gravity White Paper}, K.\ Monette (March 2026)}
+
+\date{March 2026}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\bigskip
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Framework Summary (2--3 paragraphs as requested)}
+\addcontentsline{toc}{section}{Framework Summary}
+
+The refined white paper proposes adding a stress-energy source term
+$T^{\mathrm{ent}}_{\mu\nu} = \tilde{\kappa}(c^4/8\pi G\kB\ln 2)\Sent g_{\mu\nu}$
+to the Einstein field equations, where $\Sent$ is the entanglement entropy density of a
+quantum system in bit\,m$^{-3}$ and $\kt$ is a dimensionless coupling.  The dimensional
+consistency of this addition is established regardless of the value of $\kt$.  The specific
+estimate $\kt = -1/4$ is derived under a Planck-scale holographic regulator
+hypothesis --- the ansatz that volume-law entanglement entropy in laboratory systems
+couples to spacetime geometry through the same Planck-length regulator that governs
+horizon area entropy.  This is explicitly labeled a motivated hypothesis, not a theorem.
+
+Three structural results are established correctly.  First, the radial acceleration
+correction $\Delta a(R) \propto \Ment(<\!R)/R^2$ for any bounded, spherically symmetric
+source --- this resolves the prior confusion about $1/R$ versus $1/R^2$ scaling.  Second,
+the Bianchi identity forces $\nabla^\mu T^{\mathrm{matter}}_{\mu\nu} = -\nabla_\nu(\kt c^4 \Sent/8\pi G\kB\ln 2)$,
+so matter is not independently conserved in entanglement-entropy gradients; the paper
+adopts an ``entanglement-sector exchange'' interpretation where the \emph{total} stress-energy
+is conserved.  Third, existing equivalence-principle experiments (MICROSCOPE, Asenbaum et al.)
+do not directly constrain $\kt$ because their test masses have negligible and nearly identical
+$\Sent$.
+
+The experimental program has been correctly revised: macroscopic $^{87}$Rb BEC interferometry
+is demoted because Gaussian spatial screening gives $\asc \sim e^{-(R/\xi)^2} \sim 10^{-43}$
+for cloud radius $R \gg$ coherence length $\xi$, making the signal undetectable.  The primary
+near-term target is now a 50--100 qubit NISQ platform in the regime $R \lesssim \xi$.
+The falsification criterion --- requiring conditions F1--F5 on qubit count, pressure
+sensitivity, run count, platform independence, and null result --- is stated without requiring
+knowledge of $\asc$ or the Planck-scale renormalization of $\kt$.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Tightening the Theoretical Core}
+\label{sec:theory}
+
+\subsection{Covariant notation and the full modified field equations}
+
+The white paper's modified field equations are restated here in the most standard
+covariant notation.  Greek indices $\mu,\nu,\ldots$ run $0,1,2,3$; signature $(-,+,+,+)$;
+$G = 6.674\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$; $c = 2.998\times10^8$\,m\,s$^{-1}$;
+$\kB = 1.381\times10^{-23}$\,J\,K$^{-1}$; $\lP = (\hbar G/c^3)^{1/2} = 1.616\times10^{-35}$\,m.
+
+\textbf{Total stress-energy decomposition.}
+\begin{equation}
+  T^{\mathrm{total}}_{\mu\nu}
+  \;\equiv\;
+  T^{\mathrm{matter}}_{\mu\nu}
+  \;+\;
+  T^{\mathrm{ent}}_{\mu\nu},
+  \label{eq:decomp}
+\end{equation}
+where
+\begin{equation}
+  T^{\mathrm{ent}}_{\mu\nu}
+  \;\equiv\;
+  -\Lambda_{\mathrm{ent}}\,g_{\mu\nu},
+  \quad
+  \Lambda_{\mathrm{ent}}(x)
+  \;\equiv\;
+  -\,\kt\,\frac{c^4}{8\pi G\kB\ln 2}\,\Sent(x).
+  \label{eq:Tent}
+\end{equation}
+The sign convention: $\kt < 0$ gives $\Lambda_{\mathrm{ent}} > 0$ (positive cosmological-constant-like
+term, repulsive curvature).
+
+\textbf{Modified Einstein equations.}
+\begin{equation}
+  G_{\mu\nu}
+  \;\equiv\;
+  R_{\mu\nu} - \tfrac{1}{2}R\,g_{\mu\nu}
+  \;=\;
+  \frac{8\pi G}{c^4}\,T^{\mathrm{total}}_{\mu\nu}
+  \;=\;
+  \frac{8\pi G}{c^4}\bigl(T^{\mathrm{matter}}_{\mu\nu} - \Lambda_{\mathrm{ent}}\,g_{\mu\nu}\bigr).
+  \label{eq:EFE}
+\end{equation}
+
+\textbf{Contracted Bianchi identity.}  The second contracted Bianchi identity
+$\nabla^\mu G_{\mu\nu} \equiv 0$ forces:
+\begin{equation}
+  \nabla^\mu T^{\mathrm{total}}_{\mu\nu} = 0
+  \;\;\Longrightarrow\;\;
+  \nabla^\mu T^{\mathrm{matter}}_{\mu\nu}
+  = -\nabla^\mu T^{\mathrm{ent}}_{\mu\nu}
+  = \nabla_\nu\Lambda_{\mathrm{ent}}
+  = \kt\,\frac{c^4}{8\pi G\kB\ln 2}\,\nabla_\nu\Sent.
+  \label{eq:bianchi}
+\end{equation}
+This is an \emph{exact} consequence of the field equations~\eqref{eq:EFE}.  It is not an
+additional assumption.  It forces the interpretation adopted in the white paper:
+the right-hand side of Eq.~\eqref{eq:bianchi} is the energy-momentum current flowing
+from the entanglement sector into the matter sector (or vice versa, depending on the sign
+of $\nabla_\nu\Sent$).
+
+\begin{expertflag}
+Equation~\eqref{eq:bianchi} implies a physical prediction that the white paper
+has not yet confronted explicitly.  If matter is a point mass $m$ at rest, its equation
+of motion in this background is
+\begin{equation}
+  m\,\frac{Du^\mu}{d\tau}
+  = \kt\,\frac{c^4}{8\pi G\kB\ln 2}\,\frac{\nabla^\mu\Sent}{T^{\mathrm{matter}}_{00}/c^2},
+  \label{eq:eom}
+\end{equation}
+where $D/d\tau$ is the covariant proper-time derivative.  This is a classical fifth force
+proportional to $\nabla\Sent$ and independent of composition.  The atom interferometry
+bound $\eta < 10^{-12}$~\cite{Asenbaum2020} bounds \emph{composition-dependent} forces,
+but if two test masses are placed in regions of different $\nabla\Sent$,
+Eq.~\eqref{eq:eom} predicts different accelerations even without a new force law.
+This observable is not ruled out by current experiments and should be
+stated explicitly in the paper.
+\end{expertflag}
+
+\subsection{Holographic regulator steps: every assumption labeled}
+
+The estimate $\kt = -1/4$ requires two assumptions beyond Jacobson's theorem.
+Both are labeled here with \textbf{[HRH]} (Holographic Regulator Hypothesis):
+
+\begin{enumerate}[label=\textbf{Step \arabic*}]
+  \item \textbf{[Jacobson, established]} Apply $\delta Q = T_U\,dS_{BH}$ to a local
+    Rindler horizon with $T_U = \hbar a/(2\pi c\kB)$ and
+    $dS_{BH} = (\kB c^3/4G\hbar)\,dA$.  This gives $G_{\mu\nu} = 8\pi G c^{-4}T^{\mathrm{matter}}_{\mu\nu}$.
+
+  \item \textbf{[HRH-1]} For a volume with entanglement entropy density $\Sent$ (bit\,m$^{-3}$),
+    propose an additional entropy contribution to the horizon element $dA$:
+    \begin{equation}
+      dS_{\mathrm{ent}} = \frac{\Sent}{\kB}\cdot\frac{\lP\,dA}{4\lP}
+      = \frac{\Sent}{4\kB}\,dA.
+      \label{eq:dSent}
+    \end{equation}
+    \textit{Assumption:} the volume element behind the horizon is exactly one Planck length
+    deep ($dV = \lP\,dA$), so the full volume entropy density collapses to an area density
+    via $\Sent\,dV \to \Sent\,\lP\,dA$.  This regulation has no rigorous justification
+    for non-horizon laboratory volumes.  It is valid at causal horizons (where
+    Bekenstein's bound enforces $S \leq A/4\lP^2$) but not for bulk systems with volume-law
+    entanglement.
+
+  \item \textbf{[HRH-2]} Add $T_U\,dS_{\mathrm{ent}}$ to the Clausius heat flux.
+    Following Jacobson's identification of heat with stress-energy flux gives:
+    \begin{equation}
+      T^{\mathrm{ent}}_{\mu\nu} = -\frac{c^4}{32\pi G}\Sent\,g_{\mu\nu},
+      \label{eq:Tent-derived}
+    \end{equation}
+    which, matched to Eq.~\eqref{eq:Tent}, yields $\kt = -1/4$.
+
+    \textit{Assumption (implicit):} The Clausius identification $\delta Q \leftrightarrow
+    T^{\mathrm{eff}}_{\mu\nu}k^\mu d\Sigma^\nu$ extends to the entanglement contribution.
+    This requires that the entanglement entropy gradient contributes thermodynamically
+    to the local horizon in the same way as matter energy-momentum.  No proof exists.
+\end{enumerate}
+
+The result $\kt = -1/4$ is therefore contingent on both HRH-1 and HRH-2.  Removing either
+assumption leaves the coupling as a free parameter.
+
+\subsection{Minimal addition to the source term for a natural conservation story}
+
+The current source term $T^{\mathrm{ent}}_{\mu\nu} = -\Lambda_{\mathrm{ent}}(x)g_{\mu\nu}$
+is the simplest possible form (cosmological-constant structure with a varying prefactor).
+Its conservation equation~\eqref{eq:bianchi} forces energy-momentum exchange with matter,
+which is physically plausible but lacks an action principle.
+
+\textbf{Proposed minimal extension: kinetic scalar-field term.}
+
+Promote $\Sent$ to a dynamical scalar field $\phi$ and write:
+\begin{equation}
+  T^{\mathrm{ent}}_{\mu\nu}
+  \;=\;
+  \alpha_\phi\!\left(\nabla_\mu\phi\,\nabla_\nu\phi
+  - \tfrac{1}{2}g_{\mu\nu}(\nabla\phi)^2\right)
+  - \Lambda_\phi(\phi)\,g_{\mu\nu},
+  \label{eq:Tent-full}
+\end{equation}
+where $\alpha_\phi$ is a positive constant and $\Lambda_\phi(\phi) = -\kt(c^4/8\pi G\kB\ln 2)\phi$.
+This has a natural action:
+\begin{equation}
+  S_{\mathrm{ent}}[\phi,g]
+  = \int d^4x\,\sqrt{-g}
+    \left[
+      -\frac{\alpha_\phi}{2}(\nabla^\mu\phi\,\nabla_\mu\phi)
+      + \Lambda_\phi(\phi)
+    \right].
+  \label{eq:action}
+\end{equation}
+Varying with respect to $\phi$ gives the scalar field equation of motion:
+\begin{equation}
+  \alpha_\phi\,\Box\phi + \frac{d\Lambda_\phi}{d\phi}
+  = \alpha_\phi\,\Box\phi + \kt\frac{c^4}{8\pi G\kB\ln 2}
+  = 0,
+  \label{eq:phi-eom}
+\end{equation}
+which relates the propagation of $\phi$ to the entanglement source density.
+Varying with respect to $g^{\mu\nu}$ gives Eq.~\eqref{eq:Tent-full} as the entanglement
+stress-energy.  The \emph{combined} system $(g_{\mu\nu}, \phi)$ satisfies
+$\nabla^\mu T^{\mathrm{total}}_{\mu\nu} = 0$ automatically from the action principle.
+
+\textbf{Physical interpretation.}  In the limit $\alpha_\phi \to 0$, $\phi = \Sent$ is fixed
+by external conditions (the quantum state of the system), and Eq.~\eqref{eq:Tent-full}
+reduces to the white paper's current ansatz.  For $\alpha_\phi > 0$, $\phi$ propagates as a
+massless scalar and can exchange energy-momentum with matter via the coupling in
+Eq.~\eqref{eq:bianchi} without violating any conservation law.
+
+\begin{remark}
+The scalar $\phi$ is not a new fundamental field.  It is an effective field representing the
+coarse-grained entanglement entropy density of the quantum system --- an emergent degree of
+freedom, in the same spirit that thermodynamic quantities are emergent from microphysics.
+The action~\eqref{eq:action} should be understood as an effective field theory valid below
+the Planck scale, not a UV-complete theory.  Whether $\phi$ can be derived from a fundamental
+quantum gravity theory (e.g., via holographic renormalization group) is Open Problem~10.
+\end{remark}
+
+\textbf{Conservation in the extended theory.}  With the action~\eqref{eq:action}, the
+stress-energy of the full system satisfies:
+\begin{align}
+  \nabla^\mu T^{\mathrm{matter}}_{\mu\nu}
+  &= -\nabla^\mu T^{\mathrm{ent}}_{\mu\nu}, \label{eq:cons1} \\
+  \nabla^\mu T^{\mathrm{ent}}_{\mu\nu}
+  &= -\alpha_\phi\,(\Box\phi)\,\nabla_\nu\phi
+    + \nabla_\nu\Lambda_\phi
+    = \alpha_\phi(\alpha_\phi^{-1}\nabla_\nu\Lambda_\phi)\cdot(-\Box\phi)
+    + \nabla_\nu\Lambda_\phi, \label{eq:cons2}
+\end{align}
+which vanishes on-shell (when $\phi$ satisfies its equation of motion~\eqref{eq:phi-eom}).
+This is the correct, covariant conservation story.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{OP3: A Concrete Lindblad Model for Screening}
+\label{sec:op3}
+
+\subsection{The precise definition of $S_{\mathrm{ent}}$ that must be used}
+
+Before writing any Lindblad model, the white paper must specify exactly which entropy
+enters $T^{\mathrm{ent}}_{\mu\nu}$.  There are three candidates and they have
+\emph{opposite} behaviors under decoherence:
+
+\begin{enumerate}
+  \item \textbf{Total von Neumann entropy of the quantum system:}
+    $S_{\mathrm{total}} = -\kB\tr(\rho\ln\rho)$.
+    Under decoherence, this \emph{increases} (purity is lost).
+    Using this would make decoherence \emph{increase} the gravitational source --- physically
+    unnatural and inconsistent with the intuition that entanglement sources the effect.
+
+  \item \textbf{System-environment entanglement entropy:}
+    $S_{\mathrm{SE}} = -\kB\tr(\rho_S\ln\rho_S)$ where $\rho_S = \tr_E(\rho_{SE})$.
+    This also increases under decoherence.  Same problem.
+
+  \item \textbf{Internal (inter-qubit) entanglement entropy:}
+    The von Neumann entropy of the reduced state of a subsystem traced over the other
+    subsystems of the \emph{same} quantum device, treating the environment as external.
+    Concretely, for a bipartition $A|B$ of the device:
+    $S_{\mathrm{int}} = -\kB\tr(\rho_A\ln\rho_A)$ where $\rho_A = \tr_B\rho_{\mathrm{device}}$.
+    Under decoherence, $\rho_{\mathrm{device}} \to$ a nearly classically correlated state,
+    and $S_{\mathrm{int}} \to 0$ (the system becomes product after tracing).
+    This \emph{decreases} under decoherence and is what the white paper implicitly intends.
+\end{enumerate}
+
+\begin{expertflag}
+The white paper has not stated which of the three candidates it uses.  Candidate~(3) is
+the physically correct choice --- it is the quantity that (a) decreases under decoherence,
+(b) is zero for a fully decohered state, and (c) is what experimentalists can
+verify via entanglement witnesses.  All subsequent analysis in OP3 uses $\Sent = S_{\mathrm{int}}$:
+the bipartite (or multi-partite) entanglement entropy of the internal degrees of freedom of
+the quantum device, tracing over the environment.  This definition must be added explicitly
+to the white paper's Section~2.
+\end{expertflag}
+
+\subsection{Lindblad model for 50-qubit superconducting transmon qubits}
+
+\textbf{Platform choice.}  We model a chain of $N = 50$ fixed-frequency transmon qubits,
+which is the architecture currently operated by IBM Quantum and Google.  This choice is made
+for concreteness; the hierarchy developed below applies qualitatively to all NISQ platforms.
+
+\textbf{System Hamiltonian.}  In the rotating frame, in the two-level (qubit) approximation:
+\begin{equation}
+  H_{\mathrm{sys}}
+  = \sum_{k=1}^{N}\frac{\omega_k}{2}\sigma^z_k
+  + \sum_{\langle j,k\rangle}J_{jk}\left(\sigma^+_j\sigma^-_k + \mathrm{h.c.}\right),
+  \label{eq:H-transmon}
+\end{equation}
+where $\omega_k/2\pi \in [4.5, 5.0]$\,GHz are qubit frequencies and
+$J_{jk}/2\pi \sim 2$--$10$\,MHz are nearest-neighbor exchange couplings mediated by
+coplanar microwave resonators.
+
+\textbf{Lindblad operators and rates.}  The dominant environmental channels are:
+
+\begin{enumerate}[label=(\roman*)]
+  \item \textit{Energy relaxation} (T1 process):
+    $L_{1,k} = \sqrt{\gamma_1}\,\sigma^-_k$, rate $\gamma_1 = 1/T_1$.
+    State of the art: $T_1 \sim 100$--$500\,\mu$s (Google/IBM, 2025).
+
+  \item \textit{Pure dephasing} (T2 process):
+    $L_{\phi,k} = \sqrt{\gamma_\phi/2}\,\sigma^z_k$, rate $\gamma_\phi = 1/T_\phi$
+    where $T_\phi^{-1} = T_2^{-1} - T_1^{-1}/2$.
+    State of the art: $T_2 \sim 100\,\mu$s, giving $T_\phi \sim 200\,\mu$s.
+
+  \item \textit{Thermal excitation} (small at $T_{\mathrm{fridge}} \sim 15$\,mK):
+    $L_{\mathrm{exc},k} = \sqrt{\bar{n}\gamma_1}\,\sigma^+_k$,
+    where $\bar{n} = (e^{\hbar\omega_k/\kB T_{\mathrm{fridge}}}-1)^{-1} \lesssim 10^{-4}$.
+    Negligible.
+\end{enumerate}
+
+The master equation is:
+\begin{equation}
+  \dot{\rho}
+  = -\frac{i}{\hbar}[H_{\mathrm{sys}},\rho]
+  + \sum_{k=1}^{N}\sum_{\alpha\in\{1,\phi\}}\gamma_\alpha\!
+    \left(L_{\alpha,k}\,\rho\,L_{\alpha,k}^\dagger
+    - \tfrac{1}{2}\{L_{\alpha,k}^\dagger L_{\alpha,k},\rho\}\right).
+  \label{eq:lindblad}
+\end{equation}
+
+\subsection{Which correlators couple to the gravitational source}
+
+The gravitational source $\Sent = S_{\mathrm{int}}$ depends on the full reduced density
+matrix $\rho_S(t) = \tr_E\rho_{SE}(t)$.  For computational purposes, the most tractable
+proxy is the \emph{single-site entropy}:
+\begin{equation}
+  s_k(t) = -\kB\tr_k\!\left[\rho_k(t)\ln\rho_k(t)\right],
+  \quad
+  \rho_k = \tr_{\neq k}\rho_S,
+  \label{eq:single-site}
+\end{equation}
+where $\tr_{\neq k}$ traces over all qubits except qubit $k$.  For a pure state,
+$s_k$ is the entanglement entropy between qubit $k$ and the rest.
+
+For a GHZ state $|\text{GHZ}\rangle = (|0\rangle^{\otimes N}+|1\rangle^{\otimes N})/\sqrt{2}$,
+$s_k = \kB\ln 2$ for every $k$.  Under qubit $k$'s dephasing at rate $\gamma_\phi$:
+\begin{equation}
+  s_k(t) = \kB\,h\!\left(\frac{1 + e^{-\gamma_\phi t}}{2}\right),
+  \label{eq:sk-decay}
+\end{equation}
+where $h(p) = -p\ln p - (1-p)\ln(1-p)$ is binary entropy.  However, a single-qubit
+dephasing event \emph{also} collapses the GHZ entanglement between all other qubits:
+the GHZ correlation $|\langle 0^{\otimes N}|\rho|1^{\otimes N}\rangle|$ decays as
+$e^{-\gamma_\phi t}$ under a \emph{single-qubit} dephasing with rate $\gamma_\phi$,
+but under \emph{any-qubit} dephasing the full GHZ coherence decays at rate $N\gamma_\phi$.
+
+Therefore, the integrated entanglement entropy for GHZ during a measurement protocol of
+duration $\tau$:
+\begin{equation}
+  \Ment^{\mathrm{GHZ}}
+  \approx N\kB\ln 2 \int_0^\tau e^{-N\gamma_\phi t}\,dt
+  = \frac{\kB\ln 2}{\gamma_\phi}\left(1 - e^{-N\gamma_\phi\tau}\right).
+  \label{eq:Ment-GHZ}
+\end{equation}
+Maximized at $\tau \to \infty$: ${\Ment}_{\mathrm{GHZ,max}} = \kB\ln 2/\gamma_\phi$,
+independent of $N$ (the GHZ state's total entanglement is lost on the timescale
+$1/(N\gamma_\phi)$, which decreases with $N$).
+
+For a \textbf{cluster state}, which has short-range entanglement (each qubit entangled with
+its neighbors), the situation is more favorable.  Under single-qubit dephasing:
+\begin{equation}
+  {\Ment}_{\mathrm{cluster}}
+  \approx N\kB\ln 2 \int_0^\tau e^{-\gamma_\phi t}\,dt
+  = \frac{N\kB\ln 2}{\gamma_\phi}\left(1 - e^{-\gamma_\phi\tau}\right).
+  \label{eq:Ment-cluster}
+\end{equation}
+The cluster state's total entanglement grows with $N$ because its local entanglement is
+protected from global collapse.  This suggests cluster states are superior to GHZ states
+for maximizing $\Ment$ under realistic decoherence.
+
+\textbf{Key finding:} The choice of entangled state significantly affects the effective
+$\Ment$, and thus $\asc$:
+\begin{equation}
+  \frac{{\Ment}_{\mathrm{cluster}}}{\Ment^{\mathrm{GHZ}}}
+  \approx N\left(1 - e^{-\gamma_\phi\tau}\right)
+  \gg 1 \quad \text{for } N \gg 1.
+  \label{eq:ratio}
+\end{equation}
+The experiment should use cluster states (or matrix product states with finite correlation
+length), not GHZ states, for maximum signal.
+
+\subsection{Hierarchy of regimes: qualitative expectations for $\asc$}
+
+We define the effective screening factor as the ratio of actual to ideal integrated
+entanglement entropy:
+\begin{equation}
+  \asc \equiv \frac{\Ment^{\mathrm{actual}}}{\Ment^{\mathrm{ideal}}}.
+  \label{eq:asc-def}
+\end{equation}
+
+\textbf{Regime I: Few-qubit ($N \lesssim 20$), short circuits ($d \lesssim 10$ gate layers).}
+\begin{itemize}
+  \item Gate fidelity: $F_{\mathrm{2Q}} \geq 99.5\%$; circuit error per qubit $\varepsilon \lesssim 0.02$
+  \item Coherence: $T_2 \gg N\tau_{\mathrm{gate}}$; negligible decoherence during circuit
+  \item Entanglement depth: achievable up to $k = N$ (full entanglement depth)
+  \item $\asc$ estimate: $0.1 \lesssim \asc \lesssim 0.5$ (significant but not catastrophic suppression)
+  \item $\Ment$: small (few qubits), signal correspondingly small
+\end{itemize}
+
+\textbf{Regime II: Mesoscopic ($N = 50$--$100$), moderate circuits ($d \sim 20$--$50$ layers).}
+\begin{itemize}
+  \item Cluster state preparation requires $d \sim N/2 \sim 25$--$50$ CZ gate layers
+  \item Decoherence per layer: $\varepsilon \sim N\gamma_\phi\tau_{\mathrm{gate}} \sim 50\times10^4\times10^{-7} \approx 5\times10^{-3}$ per qubit per layer
+  \item Total entanglement decay: cluster state entanglement decays at $\sim d\varepsilon \sim 0.1$--$0.25$ (10--25\% loss per circuit)
+  \item $\asc$ estimate (cluster state): $e^{-d\varepsilon} \sim 10^{-1}$ to $10^{-2}$
+  \item $\asc$ estimate (GHZ state): $e^{-N\gamma_\phi\tau} \sim 10^{-3}$ to $10^{-5}$
+  \item This is the \textbf{optimal regime}: large enough $\Ment$, small enough suppression
+\end{itemize}
+
+\textbf{Regime III: Macroscopic ($N \gtrsim 10^3$), deep circuits or long coherence time.}
+\begin{itemize}
+  \item GHZ-type global entanglement: $\asc \sim e^{-N\gamma_\phi\tau} \to 0$ rapidly
+  \item Local entanglement (cluster, MPS): $\asc$ may be $\mathcal{O}(0.01)$ but
+    $\Ment/N^{\alpha}$ saturates as correlation length limits
+  \item Macroscopic BEC: $R/\xi \sim 10$--$100$, Gaussian screening gives
+    $e^{-(R/\xi)^2} \sim e^{-100}$ to $e^{-10000}$: effectively zero
+  \item Verdict: not a viable near-term target for NISQ-based entanglement-gravity search
+\end{itemize}
+
+\begin{openprobbox}
+\textbf{OP3 Lindblad milestone path.}
+\begin{enumerate}
+  \item \textit{Month 1--2}: For a 50-qubit transmon chain with Hamiltonian~\eqref{eq:H-transmon}
+    and Lindblad operators above, numerically solve~\eqref{eq:lindblad} for $N = 5$, $10$, $20$
+    qubits with cluster state initial conditions.  Compute $s_k(t)$ and $\Ment(t)$ as functions
+    of $\gamma_\phi\tau$.  This produces a calibrated $\asc(\gamma_\phi, N, \tau)$ function for
+    the cluster state.
+  \item \textit{Month 2--4}: Extend the Lindblad model to include gate errors (coherent and
+    incoherent) using gate set tomography~\cite{Blume2017} data from actual hardware.  Replace
+    ideal unitary gates with their Kraus-map representations.  Recompute $\Ment$ including
+    gate-level decoherence.
+  \item \textit{Month 4--6}: Scale the numerical solution to $N = 50$ using tensor network
+    (MPO/TDVP) methods.  Identify the circuit depth $d^*$ that maximizes
+    $\Ment^{\mathrm{total}} = \int_0^\tau \sum_k s_k(t)\,dt$.
+  \item \textit{Month 6--12}: Analytically bound $\asc$ using the quantum data processing
+    inequality and the monotonicity of relative entropy under CPTP maps.  Establish whether
+    $\asc$ is bounded away from zero for any circuit on any platform, or whether it
+    necessarily vanishes in the thermodynamic limit.
+\end{enumerate}
+The outcome of step 4 is the most important: if $\asc \to 0$ for all $N \to \infty$,
+the framework's experimental program must be confined to the few-qubit regime.
+\end{openprobbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{NISQ Experiment: Publishable Proposal}
+\label{sec:experiment}
+
+\subsection{Platform: 2D reconfigurable neutral-atom array}
+
+\textbf{Architecture.}
+A $6 \times 6 = 36$ qubit array of $^{87}$Rb atoms held in optical tweezer traps
+at lattice spacing $a = 5\,\mu$m.  Two-qubit gates via Rydberg blockade using
+$|r\rangle = |n\!=\!70, S_{1/2}\rangle$ (blockade radius $r_b \approx 8\,\mu$m for
+nearest-neighbor coupling, $r_b/a \approx 1.6$, ensuring blockade on neighbors only).
+
+\textbf{Hilbert space.}
+Qubit basis: $|0\rangle = |5S_{1/2}, F=1, m_F=0\rangle$,
+$|1\rangle = |5S_{1/2}, F=2, m_F=0\rangle$ (clock transition at $\omega_{hf}/2\pi = 6.835$\,GHz).
+Full Hilbert space: $\mathcal{H} = (\mathbb{C}^2)^{\otimes 36}$.
+
+\textbf{Hamiltonian} (rotating frame, Rydberg dressing on for entangling gates):
+\begin{equation}
+  H
+  = \sum_{k=1}^{36}\!\left(
+      \frac{\Omega_k}{2}\sigma^x_k - \frac{\Delta_k}{2}\sigma^z_k
+    \right)
+  + \sum_{k < l}\!\frac{C_6}{|\mathbf{r}_k - \mathbf{r}_l|^6}\,
+    \hat{n}^{(r)}_k\,\hat{n}^{(r)}_l,
+  \label{eq:H-rydberg}
+\end{equation}
+where $C_6/h = 862\,\text{GHz}\cdot\mu\text{m}^6$ for the $|70S_{1/2}\rangle$ state,
+$\Omega_k$ and $\Delta_k$ are Rabi frequency and detuning from a global or site-addressed
+laser, and $\hat{n}^{(r)}_k = |r\rangle\langle r|_k$ is the Rydberg population operator.
+During gates, $\Omega_k/2\pi \approx 3$\,MHz and $\Delta_k = 0$.
+
+\textbf{Decoherence parameters.}
+\begin{itemize}
+  \item Rydberg lifetime: $\tau_r \approx 0.3$\,ms at $T_{\mathrm{atom}} \sim 5\,\mu$K
+  \item CZ gate time: $\tau_{\mathrm{CZ}} \approx 200$\,ns (limited by $1/\Omega$)
+  \item Single-qubit gate time: $\tau_{\mathrm{1Q}} \approx 500$\,ns
+  \item Coherence time (clock states): $T_2 > 1$\,s (magnetic-field-insensitive transition)
+  \item Readout fidelity: $F_{\mathrm{read}} \approx 99.5\%$ (site-resolved fluorescence)
+\end{itemize}
+
+\subsection{Branch A: High-entanglement states}
+
+\textbf{State A1 (2D cluster state).}  Prepare via:
+\begin{enumerate}
+  \item Initialize all qubits in $|+\rangle^{\otimes 36}$
+  \item Apply CZ$_{kl}$ to all nearest-neighbor pairs (two layers: horizontal + vertical)
+  \item Result: 2D cluster state with entanglement depth $k = 36$ and
+    bipartite entanglement $S_{A|B} \approx \min(|A|, |B|)\ln 2$ for any cut $A|B$
+\end{enumerate}
+Circuit depth: 2 layers of CZ gates + 1 layer of Hadamards.
+Total time: $\tau_{\mathrm{prep}} \approx 2 \times 200\,\text{ns} + 500\,\text{ns} \approx 1\,\mu$s.
+Entanglement entropy: $\Ment^{\mathrm{tot}} \approx 36\kB\ln 2 \approx 25\,\kB$.
+
+\textbf{State A2 (Checkerboard GHZ).}  Divide the 6$\times$6 array into two sublattices
+(checkerboard pattern); prepare an 18-qubit GHZ state on each sublattice.
+Less fragile than full-array GHZ; $\Ment^{\mathrm{tot}} \approx 2\kB\ln 2$.
+
+\subsection{Branch B: Low-entanglement reference states}
+
+\textbf{State B1 (Product state, identical energy).}
+Prepare $|+\rangle^{\otimes 36}$ with the same laser schedule as Branch~A but with all
+CZ gates replaced by identity operations (zero-detuning pulses that return to the
+computational basis without entangling).  Energy difference from A: at most
+$\sim N\langle J_{jk}\rangle \sim 36 \times 5$\,MHz $\sim 10$\,kHz --- must be characterized.
+
+\textbf{State B2 (Two-qubit entangled product).}
+Prepare Bell pairs $|\Phi^+\rangle^{\otimes 18}$ (all 18 nearest-neighbor pairs
+entangled but no multipartite entanglement).  $\Ment^{\mathrm{tot}} \approx 18\kB\ln 2$
+(different from A1 by a factor $\sim 2$, offering an intermediate comparison point).
+
+\subsection{Observable: Ramsey phase differential}
+
+\textbf{Protocol.}
+\begin{enumerate}
+  \item Prepare Branch A (or B) state
+  \item Apply a global $\pi/2$ rotation around $\hat{x}$: maps $|0\rangle \to |+\rangle$,
+    $|1\rangle \to |-\rangle$ on the clock transition
+  \item Free precession for time $T_{\mathrm{Ramsey}}$
+  \item Apply a second $\pi/2$ rotation; measure population in $|1\rangle$
+  \item The accumulated phase $\phi = \omega_{\mathrm{eff}}\,T_{\mathrm{Ramsey}}$ encodes
+    any shift in the effective hyperfine frequency
+\end{enumerate}
+
+\textbf{Signal structure.}  A coupling of the form $T^{\mathrm{ent}}_{\mu\nu} = -\Lambda_{\mathrm{ent}}g_{\mu\nu}$
+modifies the local metric as $\delta g_{00} \approx -2\Phi_{\mathrm{ent}}/c^2$ where
+$\Phi_{\mathrm{ent}}$ is the Newtonian potential of the entanglement source.  This produces
+a gravitational redshift of the hyperfine transition:
+\begin{equation}
+  \frac{\delta\omega_{\mathrm{hf}}}{\omega_{\mathrm{hf}}}
+  = \frac{\Phi_{\mathrm{ent}}}{c^2}
+  = -\frac{\kteff c^2}{8\pi G\kB\ln 2}\frac{\Ment}{R_{\mathrm{eff}}^2},
+  \label{eq:frequency-shift}
+\end{equation}
+where $R_{\mathrm{eff}}$ is the effective distance scale set by the qubit array geometry.
+
+\textbf{What this actually measures.}
+The differential phase between Branch~A and Branch~B accumulated over $T_{\mathrm{Ramsey}}$:
+\begin{equation}
+  \Delta\phi_{AB}
+  = (\omega^A_{\mathrm{eff}} - \omega^B_{\mathrm{eff}})\,T_{\mathrm{Ramsey}}
+  = \frac{\delta\omega^{AB}_{\mathrm{hf}}}{\omega_{\mathrm{hf}}}\,\omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}.
+  \label{eq:phase-diff}
+\end{equation}
+This quantity bounds the combination
+\begin{equation}
+  \left|\kteff\right| \cdot \frac{\Ment^A - \Ment^B}{R_{\mathrm{eff}}^2}
+  < \frac{|\Delta\phi_{AB}|_{\mathrm{sens}}}{T_{\mathrm{Ramsey}}}
+    \cdot \frac{8\pi G\kB\ln 2}{c^2\,\omega_{\mathrm{hf}}},
+  \label{eq:bound}
+\end{equation}
+without requiring knowledge of $\asc$ or the Planck-scale renormalization.
+The right-hand side is a pure number set by the experimental sensitivity.
+
+For current state-of-the-art Ramsey spectroscopy on Rb clock transitions:
+sensitivity $\delta(\delta\omega)/\omega \sim 10^{-14}$--$10^{-16}$ per shot in optimal
+conditions (limited by quantum projection noise at $\delta\phi \sim 1/\sqrt{N_{\mathrm{atoms}}}$
+per shot, and by measurement time).  After $10^4$ shots: $\delta(\Delta\phi) \sim 10^{-3}$\,rad.
+
+\subsection{Systematic error budget and fatal vs.\ non-fatal errors}
+
+\begin{table}[h]
+\centering\small
+\caption{Systematic error budget for the neutral-atom Ramsey protocol.}
+\label{tab:systematics}
+\begin{tabular}{@{}p{4.5cm}p{3.5cm}p{3.5cm}p{2cm}@{}}
+\toprule
+Systematic & Physical origin & Mitigation & Fatal? \\
+\midrule
+Differential mean-field energy shift
+& $\sum_{kl}J_{kl}(\langle\hat{n}_k\hat{n}_l\rangle_A - \langle\hat{n}_k\hat{n}_l\rangle_B)$
+& Match two-body correlators between A and B (e.g., use B2 with same $\langle\hat{n}\hat{n}\rangle$)
+& \textbf{Yes} if uncontrolled \\
+\addlinespace
+Differential AC Stark shift from gate pulses
+& Gate laser amplitude $\propto\Omega^2/\Delta_{\mathrm{laser}}$
+& Zero-area pulse sequences; same laser schedule for A and B
+& No \\
+\addlinespace
+Magnetic field fluctuations
+& $\partial B/\partial t \neq 0$
+& Clock transition insensitive to first order; active shielding
+& No \\
+\addlinespace
+Differential trap displacement (A vs B)
+& Different motional state for entangled atoms
+& Common-mode rejection from differential measurement; same trapping geometry
+& No \\
+\addlinespace
+SPAM errors in entanglement verification
+& Readout fidelity $< 1$
+& Entanglement witnesses with SPAM calibration (GST)
+& No \\
+\addlinespace
+Atom loss during circuit
+& Rydberg decay, collision loss
+& Monitor atom number; postselect on full count
+& No (postselect) \\
+\addlinespace
+Differential motional heating
+& Heating rate $\dot{n}_{\mathrm{phonon}}$
+& Sideband cooling; matched motional temperature for A and B
+& No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The fatal systematic in detail.}
+The entangled state (A1, 2D cluster) has different two-body correlators
+$\langle\hat{n}_j\hat{n}_k\rangle$ than the product state (B1).  For the cluster state,
+$\langle\hat{n}_j\hat{n}_k\rangle_{\mathrm{cluster}} = 1/4$ for all pairs
+(since each qubit is in a $|+\rangle$ state locally).  For $|+\rangle^{\otimes N}$,
+$\langle\hat{n}_j\hat{n}_k\rangle_{\mathrm{product}} = 1/4$ as well.  So this specific
+pair of states has \emph{identical} two-body correlators.  This is why cluster states
+are preferred over GHZ for this comparison: the differential mean-field energy is zero.
+
+However, for GHZ vs.\ product: $\langle\hat{n}_j\hat{n}_k\rangle_{\mathrm{GHZ}} = 1/4$
+but the GHZ has non-trivial $N$-body correlators that create different collective
+energy shifts.  This must be verified numerically for the specific Hamiltonian.
+
+\textbf{Null-result interpretation.}
+If $\Delta\phi_{AB} = 0$ at the level of experimental sensitivity, this rules out:
+\begin{equation}
+  |\kteff|\cdot\frac{\Delta\Ment}{R_{\mathrm{eff}}^2}
+  > \frac{|\Delta\phi|_{\mathrm{sens}}\,8\pi G\kB\ln 2}{c^2\,\omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}}.
+\end{equation}
+With $R_{\mathrm{eff}} \sim 3a = 15\,\mu$m, $\Delta\Ment \sim 18\kB\ln 2$,
+$T_{\mathrm{Ramsey}} = 0.1$\,s, $|\Delta\phi|_{\mathrm{sens}} \sim 10^{-3}$\,rad:
+
+$|\kteff| < \frac{10^{-3} \times 8\pi \times 6.67\times10^{-11} \times 9.57\times10^{-24}}
+  {(3\times10^8)^2 \times 6.84\times10^9 \times 0.1}
+  \times \frac{(1.5\times10^{-5})^2}{18 \times 9.57\times10^{-24}}
+\approx 10^{-47}$.
+
+This is an extraordinarily small bound on $\kteff$, confirming OP10: the coupling prefactor
+$c^4/(8\pi G\kB\ln 2)$ is so large that even with $\asc \sim 10^{-2}$, the experiment
+constrains $\kt$ to be far below $10^{-15}$ --- meaning the falsification criterion F1--F5
+is much harder to reach than the white paper suggests at face value.
+
+\begin{expertflag}
+The experimental bound on $|\kteff|$ from the proposed NISQ experiment is
+approximately $10^{-47}$, not the $10^{-15}$ stated in the falsification criterion.
+This reflects the enormous ratio $c^4/(8\pi G \kB\ln 2) \approx 5\times10^{65}$ in SI units.
+The gap between $10^{-47}$ and $10^{-15}$ (a factor of $10^{32}$) is precisely OP10:
+if the Planck-scale renormalization suppresses $\kt$ to $\sim 10^{-47}$ at laboratory scales,
+the framework is self-consistent and both bounds agree.  If $\kt$ is renormalized to a value
+larger than $10^{-47}$ (e.g., $10^{-15}$), the proposed experiment has already falsified it.
+This should be stated explicitly in the paper's experimental section.
+\end{expertflag}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Mock Referee Report and Three-Paper Sequence}
+\label{sec:referee}
+
+\subsection{Mock referee report}
+
+\begin{mdframed}[backgroundcolor=boxgray,linewidth=1pt]
+\textbf{Referee Report}\\
+\textit{Journal:} Physical Review D (or Classical and Quantum Gravity)\\
+\textit{Manuscript:} Entanglement Entropy Density as a Gravitational Source
+
+\medskip\noindent\textbf{SUMMARY}
+
+The manuscript presents a phenomenological extension of Jacobson's thermodynamic gravity
+in which entanglement entropy density acts as an additional gravitational source term.
+The dimensional consistency of the modification is established, and the paper is
+admirably honest about where derivations end and hypotheses begin.  The resolution of the
+radial scaling question (OP4) and the treatment of the Bianchi identity are genuine
+improvements over prior drafts.
+
+\medskip\noindent\textbf{MAJOR STRENGTHS}
+
+(1) \textit{Epistemic clarity.}  The separation between established results (dimensional
+consistency, radial scaling), motivated hypotheses (Planck regulator, $\kt = -1/4$), and
+unresolved parameters ($\asc$, renormalization) is one of the clearest in speculative
+gravity phenomenology literature.  This alone makes the paper worth reading.
+
+(2) \textit{OP4 resolution.}  The derivation $\Delta a(R) \propto \Ment(<\!R)/R^2$
+from the modified Poisson equation is correct and removes a structural inconsistency
+from prior work.
+
+(3) \textit{Falsification orientation.}  The F1--F5 criterion is quantitative and
+platform-independent.  The paper correctly notes that null results are scientifically
+valuable even before $\asc$ is resolved.
+
+\medskip\noindent\textbf{MAJOR CONCERNS (revisions required)}
+
+(C1) \textit{Definition of $\Sent$ is missing.}
+The manuscript uses $\Sent$ throughout but never states precisely which entropy it is.
+Three options exist (total von Neumann, system-environment, internal inter-qubit) with
+opposite behaviors under decoherence.  The analysis requires candidate~(3) (internal
+entanglement entropy that decreases under decoherence); this must be stated explicitly.
+Without it, the sign of $\asc$'s effect on the gravitational source is ambiguous.
+
+(C2) \textit{The fifth-force prediction from the Bianchi identity is not confronted.}
+Equation~\eqref{eq:bianchi} predicts a classical force on matter proportional to $\nabla\Sent$.
+For a single qubit near an entangled register, this force is not composition-dependent
+(unlike MICROSCOPE's constraint) but is entanglement-density-dependent.  The paper must
+either (a) bound this force from existing precision measurements, or (b) state explicitly
+that it is an unconstrained prediction.  Claiming MICROSCOPE does not constrain $\kt$ is
+correct but incomplete: MICROSCOPE tests composition-dependence, not entanglement-dependence.
+
+(C3) \textit{The signal magnitude is inconsistent with the falsification criterion.}
+The falsification criterion (F2: $\Delta p < 10^{-6}$\,Pa) and the proposed NISQ
+experiment produce a bound on $|\kteff|$ that is approximately $10^{-47}$, not $10^{-15}$.
+Either the falsification criterion should be tightened to match realistic experiments,
+or the criterion should be rephrased as bounding $|\kteff|\cdot\Ment/R^2$ directly
+without implying anything about $\kt$ alone.
+
+(C4) \textit{OP3 is not specific enough to constitute an open problem statement.}
+``Derive $\asc$ from a Lindblad master equation'' is a research direction, not an open
+problem.  A publishable open problem statement must specify: the platform, the specific
+correlators that couple to $\Sent$, the Lindblad operators, and what a ``solution''
+would consist of.  The milestone path outlined in Section~2.4 of this analysis
+is the kind of specificity required.
+
+(C5) \textit{The conservation interpretation (entanglement-sector exchange) is adopted
+without justification.}  Of the three interpretations (fifth force, sector exchange,
+incomplete source term), interpretation~(2) is chosen as ``more natural'' without
+argument.  A natural justification requires an action principle, which the manuscript
+lacks.  The paper should either (a) present the scalar-field effective action
+(Eq.~\eqref{eq:action}) as minimal supporting structure, or (b) explicitly state that
+the conservation story is an ansatz awaiting an action derivation.
+
+\medskip\noindent\textbf{SPECIFIC REQUIRED REVISIONS}
+
+(R1) Add explicit definition: $\Sent = S_{\mathrm{int}}(x)$ = bipartite entanglement entropy
+density of the internal quantum degrees of freedom, tracing over the environment.  Clarify
+that this decreases under decoherence.
+
+(R2) Add a subsection (or boxed remark) working out the classical fifth-force prediction
+from Eq.~\eqref{eq:bianchi} for a representative test case (e.g., a classical test mass
+near a superconducting chip), and quantify how it compares to known precision measurements.
+
+(R3) Add a sentence to the falsification criterion noting that F2 ($\Delta p < 10^{-6}$\,Pa)
+translates to $|\kteff|\cdot\Ment/R^2 < $ [specific number from the proposed experiment's
+geometry], making the bound on $\kt$ dependent on $\asc$ and the Planck-scale
+renormalization.
+
+(R4) Either present the scalar-field action~\eqref{eq:action} as a minimal extension that
+makes the conservation story covariant and natural, or add a ``model uncertainty'' box
+noting that the conservation interpretation is unjustified without an action.
+
+(R5) Concrete intermediate milestones for OP3: see Section~2.4.  The current statement
+``derive $\asc$ from Lindblad'' is too vague for a publishable open problem.
+
+\medskip\noindent\textbf{PUBLISHABILITY RECOMMENDATION}
+
+Reject with major revisions required.  If C1--C5 are adequately addressed, the paper
+would represent a publishable contribution as a theory proposal paper in Physical Review D
+or Classical and Quantum Gravity.  It should not be submitted to Physical Review Letters
+until OP3 is resolved (at least at the qualitative level in one platform).
+
+\end{mdframed}
+
+\subsection{Three-paper sequence}
+
+Based on the referee critique, the most defensible publication strategy is a
+\emph{three-paper sequence}, each making a single, independently defensible claim.
+
+\medskip
+
+\noindent\textbf{Paper~I: Theory Letter (4--6 pages, PRL/PRD Letters)}
+
+\textit{Claim:} Dimensional consistency, $\kt$ estimate under explicit regulator hypothesis,
+OP4 resolution, Bianchi-identity treatment with scalar-field extension, falsification criterion.
+
+\textit{Target journal:} Physical Review D (Letters format) or Physical Review Research.
+
+\textit{Prerequisite:} R1 (define $\Sent$), R4 (scalar-field action or explicit caveat),
+R3 (reformulate falsification criterion).
+
+\textit{What it does NOT need:} OP3 resolution, experimental result, any specific platform.
+
+\medskip
+
+\noindent\textbf{Paper~II: Technical Theory Backup (20--30 pages, PRD)}
+
+\textit{Claim:} Full derivation of OP4, complete OP3 Lindblad model for one platform
+(50-qubit transmon chain), regime hierarchy for $\asc$, OP8 Bianchi analysis with
+quantitative bounds from equivalence-principle tests, OP10 renormalization group
+power-counting argument.
+
+\textit{Target journal:} Physical Review D (full article).
+
+\textit{Prerequisite:} Numerical solution of Lindblad equation for cluster states,
+$N \leq 20$ qubits.  Tensor network extension to $N = 50$.
+
+\textit{Required new work:} Steps 1--2 of the OP3 milestone path (Section~2.4 above).
+
+\medskip
+
+\noindent\textbf{Paper~III: Experimental Proposal (10--15 pages, PRA or npj Quantum Info.)}
+
+\textit{Claim:} A concrete 36-qubit neutral-atom Ramsey experiment that (a) sets a
+bound on $|\kteff|\cdot\Ment/R^2$ and (b) is publishable as a platform-agnostic
+experimental proposal even without performing the measurement.
+
+\textit{Target journal:} Physical Review A (experimental) or npj Quantum Information.
+
+\textit{Content:} Exact Hamiltonian and Lindblad parameters, Branch A/B state preparation
+protocols, Ramsey measurement design, complete systematic error budget
+(Table~\ref{tab:systematics}), and the null-result interpretation bound.
+
+\textit{Required new work:} The mean-field energy matching calculation for cluster vs.\
+product states.  The differential frequency shift from the local entanglement entropy density.
+
+\medskip
+
+\noindent\textbf{Timeline.}
+\begin{center}
+\begin{tabular}{@{}cll@{}}
+\toprule
+Months & Task & Paper \\
+\midrule
+1--3   & R1--R5 revisions to current white paper + scalar field action & I (theory letter) \\
+3--6   & Lindblad numerics, $N \leq 20$, cluster state $\asc$ & II (regime hierarchy section) \\
+6--12  & Tensor network extension to $N=50$; OP3 complete & II (full) \\
+12--18 & Neutral atom experiment design + mean-field systematics & III (full) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Conclusion: What Is Solid, What Is Open, and What To Do Next}
+\addcontentsline{toc}{section}{Conclusion}
+
+\textbf{What is solid and should be published.}
+The dimensional consistency of the modified field equation, the OP4 resolution
+($\Delta a \propto \Ment/R^2$), the Bianchi identity consequences including
+Eq.~\eqref{eq:bianchi}, the MICROSCOPE non-constraint argument, and the falsification
+criterion structure (F1--F5 rephrased as a bound on $|\kteff|\Ment/R^2$).
+These are internally consistent results that can be published as Paper~I now.
+
+\textbf{What is open but not fatal.}
+The $\kt = -1/4$ estimate.  This is motivated and internally consistent.  It cannot be
+treated as a prediction until HRH-1 and HRH-2 are independently justified.  The paper
+correctly labels it as a hypothesis.
+
+\textbf{What is open and important to resolve.}
+OP3 ($\asc$ for real platforms): the milestone path in Section~2.4 provides a concrete
+plan requiring 3--6 months of numerical work.  OP10 (Planck-scale renormalization): harder,
+requiring quantum gravity tools, but power-counting arguments in effective field theory may
+provide qualitative guidance within 6--12 months.
+
+\textbf{The single most important immediate action.}
+Define $\Sent$ precisely as the internal inter-qubit entanglement entropy density, verify
+that the cluster state maintains large $\asc$ under realistic decoherence for $N = 50$
+(using Regime~II estimates), and restate the falsification criterion as a bound on the
+observable combination $|\kteff|\Ment/R^2$.  These three changes transform the paper
+from a work with significant ambiguities to one that is genuinely publishable.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\bibliographystyle{unsrtnat}
+\begin{thebibliography}{99}
+
+\bibitem{Jacobson1995}
+T.~Jacobson,
+``Thermodynamics of spacetime: The Einstein equation of state,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{75}, 1260 (1995).
+
+\bibitem{Verlinde2017}
+E.~Verlinde,
+``Emergent gravity and the dark universe,''
+\textit{SciPost Phys.}\ \textbf{2}, 016 (2017).
+
+\bibitem{Asenbaum2020}
+P.~Asenbaum, C.~Overstreet, T.~Kim, J.~Curti, and M.~A.~Kasevich,
+``Atom-interferometric test of the equivalence principle at the $10^{-12}$ level,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{125}, 191101 (2020).
+
+\bibitem{MICROSCOPE2022}
+P.~T.~Touboul \textit{et al.}\ (MICROSCOPE Collaboration),
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{129}, 121102 (2022).
+
+\bibitem{Flammia2012}
+S.~T.~Flammia, D.~Gross, Y.-K.~Liu, and J.~Eisert,
+\textit{New J.\ Phys.}\ \textbf{14}, 095022 (2012).
+
+\bibitem{Blume2017}
+R.~Blume-Kohout \textit{et al.},
+\textit{Nat.\ Commun.}\ \textbf{8}, 14485 (2017).
+
+\bibitem{deHaro2001}
+S.~de~Haro, S.~N.~Solodukhin, and K.~Skenderis,
+``Holographic reconstruction of spacetime and renormalization in the AdS/CFT correspondence,''
+\textit{Commun.\ Math.\ Phys.}\ \textbf{217}, 595 (2001).
+
+\bibitem{Lukin2019}
+H.~Bernien \textit{et al.},
+``Probing many-body dynamics on a 51-atom quantum simulator,''
+\textit{Nature}\ \textbf{551}, 579 (2017).
+
+\bibitem{Saffman2016}
+M.~Saffman,
+``Quantum computing with atomic qubits and Rydberg interactions: Progress and challenges,''
+\textit{J.\ Phys.\ B}\ \textbf{49}, 202001 (2016).
+
+\bibitem{Braunstein1994}
+S.~L.~Braunstein and C.~M.~Caves,
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{72}, 3439 (1994).
+
+\end{thebibliography}
+
+\end{document}

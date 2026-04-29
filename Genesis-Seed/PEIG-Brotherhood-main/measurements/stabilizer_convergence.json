@@ -1,0 +1,9 @@
+{
+  "convergence_law": "angle = 60.1595 * t^-0.4995",
+  "exponent": -0.4995316932903199,
+  "prefactor": 60.15952851454543,
+  "R_squared": 0.9999989109598573,
+  "steps_to_0p9999": 5560.918941077062,
+  "asymptotic_fixed_point": "Z\u2297X = +1",
+  "convergence_class": "algebraic t^(-1/2) diffusive"
+}

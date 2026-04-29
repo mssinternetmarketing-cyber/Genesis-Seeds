@@ -1,0 +1,667 @@
+@tool
+extends Node3D
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# AriaConstructor.gd  — PEIG Globe + Living Avatar
+# Integrates: 12-node quantum globe  •  Aria skeletal body (GLB)
+#             Live JSON polling       •  AnimationPlayer (mixamo_com)
+#             Bone diagnostic         •  PCM→shader overlay
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ── Globe geometry ─────────────────────────────────────────────────────────────
+const LAT_GODCORE     :=  PI / 3.0
+const LAT_INDEPENDENT :=  0.0
+const LAT_MAVERICK    := -PI / 3.0
+const SPHERE_RADIUS   :=  2.0
+
+const OUTER_NODES := [
+	["Omega",    "GodCore",     0],
+	["Guardian", "GodCore",     1],
+	["Sentinel", "GodCore",     2],
+	["Nexus",    "Independent", 3],
+	["Storm",    "Independent", 4],
+	["Sora",     "Independent", 5],
+	["Echo",     "Independent", 6],
+	["Iris",     "Maverick",    7],
+	["Sage",     "Maverick",    8],
+	["Kevin",    "Maverick",    9],
+	["Atlas",    "Maverick",   10],
+	["Void",     "GodCore",    11],
+]
+
+const LAT_MAP := {
+	"GodCore":     LAT_GODCORE,
+	"Independent": LAT_INDEPENDENT,
+	"Maverick":    LAT_MAVERICK,
+}
+
+# ── PCM zone colors ────────────────────────────────────────────────────────────
+const ZONE_COLORS := {
+	"GREEN":  Color(0.0,  1.0,  0.5,  1.0),
+	"YELLOW": Color(1.0,  0.9,  0.0,  1.0),
+	"ORANGE": Color(1.0,  0.4,  0.0,  1.0),
+	"RED":    Color(1.0,  0.05, 0.1,  1.0),
+}
+
+# ── Edge colors ────────────────────────────────────────────────────────────────
+const COLOR_SPOKE       := Color(1.0,  0.85, 0.3,  0.85)
+const COLOR_BRIDGE      := Color(0.0,  0.9,  1.0,  1.0)
+const COLOR_EDGE_DIM    := Color(0.15, 0.35, 0.8,  0.35)
+
+# ── Aria alarm colors ──────────────────────────────────────────────────────────
+const COLOR_ARIA_STABLE := Color(0.3,  0.6,  1.0,  1.0)
+const COLOR_ARIA_WATCH  := Color(0.0,  0.9,  0.9,  1.0)
+const COLOR_ARIA_WARN   := Color(1.0,  0.5,  0.0,  1.0)
+const COLOR_ARIA_CRIT   := Color(1.0,  0.0,  0.1,  1.0)
+
+# ── Breathing frequencies by family ───────────────────────────────────────────
+const ZONE_FREQ := {
+	"GodCore":     1.8,
+	"Independent": 1.2,
+	"Maverick":    0.7,
+	"Aria":        0.4,
+}
+
+# ── Emission energy ranges by family ──────────────────────────────────────────
+const ZONE_ENERGY := {
+	"GodCore":     [0.5, 1.6],
+	"Independent": [0.3, 1.1],
+	"Maverick":    [0.2, 0.9],
+	"Aria":        [1.2, 3.2],
+}
+
+# ── Globe edge deltas (ring=1, skip1=2, cross=5) ───────────────────────────────
+const OUTER_DELTAS := [1, 2, 5]
+
+# ── Live data I/O ──────────────────────────────────────────────────────────────
+const LIVE_JSON_PATH := "user://aria_globe_live.json"
+const POLL_HZ        := 0.05   # seconds between JSON reads
+
+# ── Aria avatar GLB paths (relative to Armature parent) ───────────────────────
+# Adjust these if your scene tree nests differently.
+# Expected scene structure after GLB import:
+#   Armature  (Node3D or CharacterBody3D)
+#     └─ Skeleton3D
+#          └─ tripo_node_*  (MeshInstance3D)
+#               └─ Ariav5_tripo_node_*  (sub-mesh)
+#   AnimationPlayer  (sibling of Skeleton3D under Armature, anim = "mixamo_com")
+const ARIA_ARMATURE_PATH  := "Node_Aria/Armature"
+const ARIA_SKELETON_PATH  := "Node_Aria/Armature/Skeleton3D"
+const ARIA_ANIM_PATH      := "Node_Aria/Armature/AnimationPlayer"
+
+# Animation track names that map to alarm states.
+# If your AnimationPlayer has different clip names, update these.
+const ANIM_IDLE      := "mixamo_com"   # default Mixamo export name
+const ANIM_ALERT     := "mixamo_com"   # re-use until extra clips exist
+const ANIM_DEFENSIVE := "mixamo_com"
+const ANIM_CRITICAL  := "mixamo_com"
+
+# ── Globe runtime state ────────────────────────────────────────────────────────
+var node_positions  : Dictionary = {}
+var node_mesh_insts : Dictionary = {}
+var node_lights     : Dictionary = {}
+var node_families   : Dictionary = {}
+var node_phases     : Dictionary = {}
+var edge_list       : Array      = []
+var edge_mesh       : ArrayMesh
+var edge_inst       : MeshInstance3D
+var live_frame      : Dictionary = {}
+var poll_timer      : float      = 0.0
+var live_pulse      : Dictionary = {}
+var live_zone       : Dictionary = {}
+var live_bridges    : Array      = []
+var has_live_data   : bool       = false
+
+# ── Aria avatar runtime state ──────────────────────────────────────────────────
+var aria_skeleton    : Skeleton3D      = null
+var aria_anim_player : AnimationPlayer = null
+var aria_body_found  : bool            = false
+var aria_alarm_state : String          = "STABLE"
+var aria_self_coh    : float           = 0.5
+var aria_pcm         : float           = -0.15   # starts green/nonclassical
+var aria_anim_speed  : float           = 1.0
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# _ready — build globe, then hook Aria's body
+# ══════════════════════════════════════════════════════════════════════════════
+func _ready() -> void:
+	_compute_positions()
+	_build_edge_list()
+	_spawn_nodes()
+	_setup_edge_renderer()
+	_redraw_edges({})
+	# Avatar setup runs after globe so Node_Aria already exists
+	_setup_aria_body()
+	if Engine.is_editor_hint():
+		print("[AriaGlobe] Editor vessel built. Nodes: %d | Edges: %d" \
+			% [node_positions.size(), edge_list.size()])
+	else:
+		print("[AriaGlobe] Runtime ready. Polling: ", LIVE_JSON_PATH)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Globe geometry helpers
+# ══════════════════════════════════════════════════════════════════════════════
+func _compute_positions() -> void:
+	node_positions.clear()
+	node_families.clear()
+	node_phases.clear()
+	for entry in OUTER_NODES:
+		var node_name : String = entry[0]
+		var family    : String = entry[1]
+		var idx       : int    = entry[2]
+		var lat : float = LAT_MAP[family]
+		var lon : float = idx * TAU / 12.0
+		var x   : float = SPHERE_RADIUS * cos(lat) * cos(lon)
+		var y   : float = SPHERE_RADIUS * sin(lat)
+		var z   : float = SPHERE_RADIUS * cos(lat) * sin(lon)
+		node_positions[node_name] = Vector3(x, y, z)
+		node_families[node_name]  = family
+		node_phases[node_name]    = idx * (TAU / 12.0) * 0.618
+	node_positions["Aria"] = Vector3.ZERO
+	node_families["Aria"]  = "Aria"
+	node_phases["Aria"]    = 0.0
+
+
+func _build_edge_list() -> void:
+	edge_list.clear()
+	var added : Dictionary = {}
+	var n     : int = OUTER_NODES.size()
+	for delta in OUTER_DELTAS:
+		for i in range(n):
+			var j   : int    = (i + delta) % n
+			var a   : int    = min(i, j)
+			var b   : int    = max(i, j)
+			var nA  : String = OUTER_NODES[a][0]
+			var nB  : String = OUTER_NODES[b][0]
+			var key : String = nA + "_" + nB
+			if not added.has(key):
+				added[key] = true
+				edge_list.append([nA, nB])
+	for entry in OUTER_NODES:
+		edge_list.append(["Aria", entry[0]])
+	print("[AriaGlobe] Edges built: ", edge_list.size(), " (expected 48)")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Node spawning — SPAWN ONCE, PERSIST FOREVER (never wipe Aria's brain)
+# ══════════════════════════════════════════════════════════════════════════════
+func _spawn_nodes() -> void:
+	var all_names : Array = []
+	for entry in OUTER_NODES:
+		all_names.append(entry[0])
+	all_names.append("Aria")
+
+	for node_name in all_names:
+		var existing : Node3D = get_node_or_null("Node_" + node_name)
+		if existing != null:
+			# Node already lives in the scene — just reconnect the references
+			var existing_mesh  : MeshInstance3D = existing.get_node_or_null("Mesh")
+			var existing_light : OmniLight3D    = existing.get_node_or_null("Light")
+			if existing_mesh:
+				node_mesh_insts[node_name] = existing_mesh
+			if existing_light:
+				node_lights[node_name] = existing_light
+			print("[AriaGlobe] Reconnected: ", node_name)
+			continue
+
+		# ── First time only — spawn the node ──────────────────────────────
+		var is_aria : bool = (node_name == "Aria")
+
+		var container := Node3D.new()
+		container.name     = "Node_" + node_name   # name BEFORE add_child
+		container.position = node_positions[node_name]
+		add_child(container)
+		if Engine.is_editor_hint():
+			container.owner = get_tree().edited_scene_root
+
+		var sphere := SphereMesh.new()
+		sphere.radius = 0.18 if is_aria else 0.07
+		sphere.height = sphere.radius * 2.0
+
+		var mesh_inst := MeshInstance3D.new()
+		mesh_inst.name = "Mesh"
+		mesh_inst.mesh = sphere
+		var mat := StandardMaterial3D.new()
+		mat.emission_enabled = true
+		mat.emission         = ZONE_COLORS["GREEN"]
+		mat.emission_energy  = 2.5 if is_aria else 0.8
+		mat.albedo_color     = Color(0.04, 0.04, 0.04)
+		mesh_inst.material_override = mat
+		container.add_child(mesh_inst)
+		if Engine.is_editor_hint():
+			mesh_inst.owner = get_tree().edited_scene_root
+
+		var light := OmniLight3D.new()
+		light.name         = "Light"
+		light.light_color  = ZONE_COLORS["GREEN"]
+		light.light_energy = 3.0 if is_aria else 0.6
+		light.omni_range   = 1.2 if is_aria else 0.35
+		container.add_child(light)
+		if Engine.is_editor_hint():
+			light.owner = get_tree().edited_scene_root
+
+		node_mesh_insts[node_name] = mesh_inst
+		node_lights[node_name]     = light
+		print("[AriaGlobe] Spawned: ", node_name)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Edge renderer setup
+# ══════════════════════════════════════════════════════════════════════════════
+func _setup_edge_renderer() -> void:
+	var old := get_node_or_null("EdgeRenderer")
+	if old:
+		# Reconnect to existing renderer — don't wipe it
+		var old_inst : MeshInstance3D = old.get_node_or_null("EdgeLines")
+		if old_inst and old_inst.mesh is ArrayMesh:
+			edge_mesh = old_inst.mesh as ArrayMesh
+			edge_inst = old_inst
+			print("[AriaGlobe] Reconnected EdgeRenderer")
+			return
+		old.queue_free()
+
+	var renderer := Node3D.new()
+	renderer.name = "EdgeRenderer"
+	add_child(renderer)
+	if Engine.is_editor_hint():
+		renderer.owner = get_tree().edited_scene_root
+
+	edge_mesh = ArrayMesh.new()
+	edge_inst = MeshInstance3D.new()
+	edge_inst.name = "EdgeLines"
+	edge_inst.mesh = edge_mesh
+	var mat := StandardMaterial3D.new()
+	mat.shading_mode               = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.vertex_color_use_as_albedo = true
+	mat.transparency               = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.no_depth_test              = false
+	edge_inst.material_override    = mat
+	renderer.add_child(edge_inst)
+	if Engine.is_editor_hint():
+		edge_inst.owner = get_tree().edited_scene_root
+	print("[AriaGlobe] Spawned EdgeRenderer")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Aria avatar body — hook Skeleton3D + AnimationPlayer from imported GLB
+# ══════════════════════════════════════════════════════════════════════════════
+func _setup_aria_body() -> void:
+	# ── Try to find Skeleton3D ──────────────────────────────────────────────
+	aria_skeleton = get_node_or_null(ARIA_SKELETON_PATH) as Skeleton3D
+	if aria_skeleton == null:
+		# Fallback: walk the tree from Node_Aria looking for the first Skeleton3D
+		var aria_container : Node3D = get_node_or_null("Node_Aria")
+		if aria_container:
+			aria_skeleton = _find_skeleton(aria_container)
+
+	if aria_skeleton:
+		aria_body_found = true
+		var bone_count : int = aria_skeleton.get_bone_count()
+		print("[AriaGlobe] Aria Skeleton3D found. Bone count: ", bone_count)
+		if bone_count == 0:
+			push_warning("[AriaGlobe] Skeleton3D has 0 bones — GLB may need re-import with bone rename enabled.")
+		else:
+			# Print all bone names to help diagnose rename issues
+			print("[AriaGlobe] Bone list:")
+			for i in bone_count:
+				print("  [%d] %s" % [i, aria_skeleton.get_bone_name(i)])
+	else:
+		push_warning("[AriaGlobe] Skeleton3D NOT found at '%s'. Aria will run without skeletal animation." % ARIA_SKELETON_PATH)
+
+	# ── Try to find AnimationPlayer ────────────────────────────────────────
+	aria_anim_player = get_node_or_null(ARIA_ANIM_PATH) as AnimationPlayer
+	if aria_anim_player == null:
+		var aria_container : Node3D = get_node_or_null("Node_Aria")
+		if aria_container:
+			aria_anim_player = _find_animation_player(aria_container)
+
+	if aria_anim_player:
+		print("[AriaGlobe] AnimationPlayer found. Animations: ", aria_anim_player.get_animation_list())
+		# Start idle immediately if the track exists
+		_play_aria_animation("STABLE")
+	else:
+		push_warning("[AriaGlobe] AnimationPlayer NOT found. Check path '%s'." % ARIA_ANIM_PATH)
+
+
+# ── Recursive helpers ──────────────────────────────────────────────────────────
+func _find_skeleton(node: Node) -> Skeleton3D:
+	if node is Skeleton3D:
+		return node as Skeleton3D
+	for child in node.get_children():
+		var result : Skeleton3D = _find_skeleton(child)
+		if result:
+			return result
+	return null
+
+
+func _find_animation_player(node: Node) -> AnimationPlayer:
+	if node is AnimationPlayer:
+		return node as AnimationPlayer
+	for child in node.get_children():
+		var result : AnimationPlayer = _find_animation_player(child)
+		if result:
+			return result
+	return null
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Aria animation control — maps alarm state → animation clip + speed
+# ══════════════════════════════════════════════════════════════════════════════
+func _play_aria_animation(alarm: String) -> void:
+	if aria_anim_player == null:
+		return
+
+	# Choose clip and speed multiplier based on alarm state.
+	# When you add extra Mixamo clips (alert, defensive, etc.) update these.
+	var clip  : String = ANIM_IDLE
+	var speed : float  = 1.0
+
+	match alarm:
+		"STABLE":
+			clip  = ANIM_IDLE
+			speed = 0.8    # slow, calm idle
+		"WATCH":
+			clip  = ANIM_ALERT
+			speed = 1.1    # slightly heightened
+		"WARNING":
+			clip  = ANIM_DEFENSIVE
+			speed = 1.5    # noticeably faster
+		"CRITICAL":
+			clip  = ANIM_CRITICAL
+			speed = 2.2    # urgent
+
+	# Only switch if different to avoid animation restart jitter
+	if aria_anim_player.current_animation != clip:
+		if aria_anim_player.has_animation(clip):
+			aria_anim_player.play(clip)
+		else:
+			# Graceful fallback — play whatever is available
+			var available : PackedStringArray = aria_anim_player.get_animation_list()
+			if available.size() > 0:
+				aria_anim_player.play(available[0])
+
+	aria_anim_player.speed_scale = speed
+	aria_anim_speed = speed
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# _process — idle: breathing + edge shimmer + skeleton PCM overlay
+# ══════════════════════════════════════════════════════════════════════════════
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+	var t : float = Time.get_ticks_msec() / 1000.0
+	_tick_node_breathing(t)
+	_tick_edge_shimmer(t)
+	_tick_aria_pcm_overlay(t)
+
+
+func _tick_node_breathing(t: float) -> void:
+	for node_name in node_mesh_insts:
+		var family       : String            = node_families.get(node_name, "Independent")
+		var freq         : float             = ZONE_FREQ.get(family, 1.0)
+		var phase        : float             = node_phases.get(node_name, 0.0)
+		var energy_range : Array             = ZONE_ENERGY.get(family, [0.3, 1.0])
+		var mat          : StandardMaterial3D = \
+			node_mesh_insts[node_name].material_override as StandardMaterial3D
+		var light        : OmniLight3D       = node_lights.get(node_name)
+		if mat == null:
+			continue
+
+		var breath : float = 0.5 + 0.5 * sin(t * freq + phase)
+
+		if has_live_data and live_pulse.has(node_name):
+			breath = lerp(breath, live_pulse[node_name], 0.7)
+
+		var energy : float = lerp(energy_range[0], energy_range[1], breath)
+
+		var zone_col : Color = ZONE_COLORS["GREEN"]
+		if has_live_data and live_zone.has(node_name):
+			zone_col = ZONE_COLORS.get(live_zone[node_name], ZONE_COLORS["GREEN"])
+
+		mat.emission        = zone_col
+		mat.emission_energy = energy
+
+		if light:
+			light.light_color  = zone_col
+			light.light_energy = energy * (2.0 if node_name == "Aria" else 0.8)
+
+
+func _tick_edge_shimmer(t: float) -> void:
+	if edge_mesh == null:
+		return
+
+	var verts      := PackedVector3Array()
+	var colors     := PackedColorArray()
+	var nodes_data : Dictionary = live_frame.get("nodes", {}) if has_live_data else {}
+
+	for i in range(edge_list.size()):
+		var edge : Array   = edge_list[i]
+		var nA   : String  = edge[0]
+		var nB   : String  = edge[1]
+		var posA : Vector3 = node_positions.get(nA, Vector3.ZERO)
+		var posB : Vector3 = node_positions.get(nB, Vector3.ZERO)
+		var dA   : Dictionary = nodes_data.get(nA, {})
+		var col  : Color
+
+		var is_spoke  : bool = (nA == "Aria" or nB == "Aria")
+		var is_bridge : bool = false
+		for bp in live_bridges:
+			if (bp[0] == nA and bp[1] == nB) or (bp[0] == nB and bp[1] == nA):
+				is_bridge = true
+				break
+
+		if is_bridge:
+			col = COLOR_BRIDGE
+		elif is_spoke:
+			col = COLOR_SPOKE
+		else:
+			var zA : String = dA.get("zone", "GREEN") if has_live_data else "GREEN"
+			col = ZONE_COLORS.get(zA, COLOR_EDGE_DIM)
+
+		var edge_phase : float = float(i) * 0.42
+		var aria_dist  : float = 0.0
+		if is_spoke:
+			var other_node : String = nB if nA == "Aria" else nA
+			aria_dist = node_phases.get(other_node, 0.0) * 0.3
+		var wave : float = 0.5 + 0.5 * sin(t * 2.4 + edge_phase + aria_dist)
+
+		var base_alpha : float
+		if has_live_data and not dA.is_empty():
+			base_alpha = lerp(0.15, 0.92, lerp(wave, float(dA.get("pulse", 0.3)), 0.5))
+		else:
+			base_alpha = lerp(0.08, 0.55, wave)
+
+		col.a = base_alpha
+		verts.append(posA);  colors.append(col)
+		verts.append(posB);  colors.append(col)
+
+	edge_mesh.clear_surfaces()
+	if verts.size() == 0:
+		return
+	var arrays := []
+	arrays.resize(Mesh.ARRAY_MAX)
+	arrays[Mesh.ARRAY_VERTEX] = verts
+	arrays[Mesh.ARRAY_COLOR]  = colors
+	edge_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_LINES, arrays)
+
+
+# ── PCM overlay on Aria's skeletal mesh ──────────────────────────────────────
+# Smoothly tints the mesh emission color to match Aria's current PCM zone.
+func _tick_aria_pcm_overlay(t: float) -> void:
+	if not aria_body_found or aria_skeleton == null:
+		return
+
+	# Find the top-level MeshInstance3D under Skeleton3D and apply zone color
+	var skel_parent : Node = aria_skeleton.get_parent()
+	if skel_parent == null:
+		return
+
+	var zone_col : Color = ZONE_COLORS["GREEN"]
+	if has_live_data and live_zone.has("Aria"):
+		zone_col = ZONE_COLORS.get(live_zone["Aria"], ZONE_COLORS["GREEN"])
+
+	# Pulse the emission slightly so it breathes with self_coherence
+	var pulse  : float = aria_self_coh
+	var energy : float = lerp(1.0, 3.0, pulse) + 0.3 * sin(t * ZONE_FREQ["Aria"])
+
+	# Walk direct children of Skeleton3D looking for mesh instances
+	for child in aria_skeleton.get_children():
+		if child is MeshInstance3D:
+			var m : StandardMaterial3D = child.material_override as StandardMaterial3D
+			if m == null:
+				# Create an overlay material if none exists
+				m = StandardMaterial3D.new()
+				m.albedo_color    = Color(0.05, 0.05, 0.05)
+				m.emission_enabled = true
+				child.material_override = m
+			m.emission        = zone_col
+			m.emission_energy = energy
+			# Also recurse one level for sub-meshes (Ariav5_tripo_node_*)
+			for sub in child.get_children():
+				if sub is MeshInstance3D:
+					var sm : StandardMaterial3D = sub.material_override as StandardMaterial3D
+					if sm == null:
+						sm = StandardMaterial3D.new()
+						sm.albedo_color     = Color(0.05, 0.05, 0.05)
+						sm.emission_enabled = true
+						sub.material_override = sm
+					sm.emission        = zone_col
+					sm.emission_energy = energy * 0.6
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# _physics_process — JSON polling (20 Hz)
+# ══════════════════════════════════════════════════════════════════════════════
+func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+	poll_timer += delta
+	if poll_timer >= POLL_HZ:
+		poll_timer = 0.0
+		_poll_live_json()
+
+
+func _poll_live_json() -> void:
+	if not FileAccess.file_exists(LIVE_JSON_PATH):
+		return
+	var f := FileAccess.open(LIVE_JSON_PATH, FileAccess.READ)
+	if f == null:
+		return
+	var raw    : String  = f.get_as_text()
+	f.close()
+	var parsed : Variant = JSON.parse_string(raw)
+	if typeof(parsed) != TYPE_DICTIONARY:
+		return
+	live_frame    = parsed
+	has_live_data = true
+	_update_visuals()
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# _update_visuals — apply live JSON data to globe + Aria body
+# ══════════════════════════════════════════════════════════════════════════════
+func _update_visuals() -> void:
+	var nodes_data : Dictionary = live_frame.get("nodes", {})
+	if nodes_data.is_empty():
+		return
+
+	live_pulse.clear()
+	live_zone.clear()
+	live_bridges.clear()
+
+	for node_name in nodes_data:
+		if not node_mesh_insts.has(node_name):
+			continue
+		var data : Dictionary = nodes_data[node_name]
+		live_pulse[node_name] = float(data.get("pulse", 0.5))
+		live_zone[node_name]  = data.get("zone", "GREEN")
+
+		var bridge_target : Variant = data.get("bridge", null)
+		if bridge_target != null and node_mesh_insts.has(bridge_target):
+			live_bridges.append([node_name, bridge_target])
+
+		# ── Aria-specific live values ──────────────────────────────────────
+		if node_name == "Aria":
+			aria_self_coh    = float(data.get("self_coherence", 0.5))
+			aria_pcm         = float(data.get("pcm", -0.15))
+			var new_alarm    : String = data.get("alarm", "STABLE")
+
+			# Scale Aria's container by self_coherence
+			var c : Node3D = get_node_or_null("Node_Aria")
+			if c:
+				c.scale = Vector3.ONE * lerp(0.92, 1.18, aria_self_coh)
+
+			# Update light color based on alarm state
+			var light : OmniLight3D = node_lights.get("Aria")
+			if light:
+				match new_alarm:
+					"STABLE":   light.light_color = COLOR_ARIA_STABLE
+					"WATCH":    light.light_color = COLOR_ARIA_WATCH
+					"WARNING":  light.light_color = COLOR_ARIA_WARN
+					"CRITICAL": light.light_color = COLOR_ARIA_CRIT
+
+			# Drive animation only when alarm state changes (avoids jitter)
+			if new_alarm != aria_alarm_state:
+				aria_alarm_state = new_alarm
+				_play_aria_animation(aria_alarm_state)
+
+	# ── Rescue flash — white burst on rescued nodes ────────────────────────
+	var rescues : Array = live_frame.get("rescues_this_step", [])
+	for report in rescues:
+		var target : String = report.get("target", "")
+		if node_mesh_insts.has(target):
+			var m : StandardMaterial3D = \
+				node_mesh_insts[target].material_override as StandardMaterial3D
+			if m:
+				m.emission        = Color.WHITE
+				m.emission_energy = 6.0
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# _redraw_edges — static editor draw (no animation)
+# ══════════════════════════════════════════════════════════════════════════════
+func _redraw_edges(nodes_data: Dictionary) -> void:
+	if edge_mesh == null:
+		return
+	var verts  := PackedVector3Array()
+	var colors := PackedColorArray()
+	for edge in edge_list:
+		var nA   : String  = edge[0]
+		var nB   : String  = edge[1]
+		var posA : Vector3 = node_positions.get(nA, Vector3.ZERO)
+		var posB : Vector3 = node_positions.get(nB, Vector3.ZERO)
+		var col  : Color   = COLOR_SPOKE if (nA == "Aria" or nB == "Aria") else COLOR_EDGE_DIM
+		col.a = 0.35
+		verts.append(posA);  colors.append(col)
+		verts.append(posB);  colors.append(col)
+	edge_mesh.clear_surfaces()
+	if verts.size() == 0:
+		return
+	var arrays := []
+	arrays.resize(Mesh.ARRAY_MAX)
+	arrays[Mesh.ARRAY_VERTEX] = verts
+	arrays[Mesh.ARRAY_COLOR]  = colors
+	edge_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_LINES, arrays)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Public diagnostic — call from an attached script or the debugger console
+# ══════════════════════════════════════════════════════════════════════════════
+func print_bone_diagnostic() -> void:
+	if aria_skeleton == null:
+		print("[AriaGlobe] No Skeleton3D found — run _setup_aria_body() first.")
+		return
+	var n : int = aria_skeleton.get_bone_count()
+	print("[AriaGlobe] Bone diagnostic — count: ", n)
+	for i in n:
+		var bone_name   : String = aria_skeleton.get_bone_name(i)
+		var rest_pose   : Transform3D = aria_skeleton.get_bone_rest(i)
+		var parent_idx  : int    = aria_skeleton.get_bone_parent(i)
+		var parent_name : String = aria_skeleton.get_bone_name(parent_idx) if parent_idx >= 0 else "ROOT"
+		print("  [%d] %s  ←  %s   pos: %s" % [
+			i, bone_name, parent_name,
+			str(rest_pose.origin.snapped(Vector3(0.001, 0.001, 0.001)))
+		])

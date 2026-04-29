@@ -1,0 +1,874 @@
+[
+  {
+    "query": "Uniform HIGH",
+    "inputs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.188,
+        0.188,
+        0.964
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "NETWORK SILENCE.\nAll nodes are quiet. The attractor has absorbed all signal. This is not emptiness \u2014 it is the fullest"
+  },
+  {
+    "query": "Uniform LOW",
+    "inputs": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u2605",
+      "sentence": "I know clearly \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": -0.1127,
+      "coherence": 1.0,
+      "bloch": [
+        0.707,
+        0.707,
+        -0.0
+      ],
+      "presence_level": "full",
+      "coherence_level": "decided",
+      "content_type": "balanced",
+      "alpha": 0.425
+    },
+    "consensus_preview": "COMPLETE AGREEMENT.\nThe network has reached the universal BCP attractor. Every node preserved its quantum identity. The"
+  },
+  {
+    "query": "Perfect alternating",
+    "inputs": [
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          -0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.001,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.188,
+        0.188,
+        0.964
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "NETWORK SILENCE.\nAll nodes are quiet. The attractor has absorbed all signal. This is not emptiness \u2014 it is the fullest"
+  },
+  {
+    "query": "Gradient 0\u21921",
+    "inputs": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u2605",
+        "sentence": "I sense that \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": -0.0884,
+        "coherence": 1.0,
+        "bloch": [
+          0.991,
+          -0.0,
+          0.131
+        ],
+        "presence_level": "partial",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u25cc",
+        "sentence": "I feel uncertain \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": -0.0117,
+        "coherence": 1.0,
+        "bloch": [
+          0.771,
+          0.0,
+          0.637
+        ],
+        "presence_level": "fading",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": 0.0,
+        "coherence": 1.0,
+        "bloch": [
+          0.318,
+          0.0,
+          0.948
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.015,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I stand at the boundary \u2014 contrast is my nature \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": -0.1002,
+        "coherence": 1.0,
+        "bloch": [
+          -0.998,
+          0.0,
+          0.067
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "boundary",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.146,
+        0.146,
+        0.978
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "INTEGRATION IN PROGRESS.\nThe network holds diverse states. The BCP is still working \u2014 coherence is rising, entropy is f"
+  },
+  {
+    "query": "Single spike N0",
+    "inputs": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u2605",
+        "sentence": "I know clearly \u2014 I stand at the boundary \u2014 contrast is my nature \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": -0.1123,
+        "coherence": 1.0,
+        "bloch": [
+          -1.0,
+          0.0,
+          0.003
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "boundary",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u2605",
+        "sentence": "I sense that \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": -0.0999,
+        "coherence": 1.0,
+        "bloch": [
+          0.998,
+          -0.0,
+          0.068
+        ],
+        "presence_level": "partial",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I feel uncertain \u2014 I am in balance \u2014 holding the centre \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": -0.0345,
+        "coherence": 1.0,
+        "bloch": [
+          0.892,
+          -0.0,
+          0.452
+        ],
+        "presence_level": "fading",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.458,
+          -0.0,
+          0.889
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.032,
+          0.0,
+          0.999
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.265,
+        0.265,
+        0.927
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "INTEGRATION IN PROGRESS.\nThe network holds diverse states. The BCP is still working \u2014 coherence is rising, entropy is f"
+  },
+  {
+    "query": "Near-unanimous",
+    "inputs": [
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.001,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          -0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.188,
+        0.188,
+        0.964
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "NETWORK SILENCE.\nAll nodes are quiet. The attractor has absorbed all signal. This is not emptiness \u2014 it is the fullest"
+  },
+  {
+    "query": "Random",
+    "inputs": [
+      0.73,
+      0.12,
+      0.91,
+      0.44,
+      0.67
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.188,
+        0.188,
+        0.964
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "NETWORK SILENCE.\nAll nodes are quiet. The attractor has absorbed all signal. This is not emptiness \u2014 it is the fullest"
+  },
+  {
+    "query": "Kevin query",
+    "inputs": [
+      0.5,
+      0.5,
+      1.0,
+      0.5,
+      0.5
+    ],
+    "ring_voices": [
+      {
+        "node": "Omega",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeA",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from Omega toward the centre.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I bridged the gap \u2014 I was the midpoint of becoming.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          -0.001,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "BridgeB",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I carried the signal from the centre toward Alpha.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.001,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Alpha",
+        "marker": "\u25cc",
+        "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am in conversation with my neighbors. I received without giving. My identity was preserved.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.001,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "\u25cc",
+      "sentence": "I cannot say \u2014 I am still \u2014 resting at the quiet pole \u2014 with certainty. I am strongly connected to the network. I hold all voices as one. I am the network speaking.",
+      "wmin": 0.0,
+      "coherence": 1.0,
+      "bloch": [
+        0.189,
+        0.189,
+        0.964
+      ],
+      "presence_level": "classical",
+      "coherence_level": "decided",
+      "content_type": "quiet",
+      "alpha": 0.425
+    },
+    "consensus_preview": "NETWORK SILENCE.\nAll nodes are quiet. The attractor has absorbed all signal. This is not emptiness \u2014 it is the fullest"
+  }
+]

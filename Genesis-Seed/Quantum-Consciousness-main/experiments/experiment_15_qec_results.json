@@ -1,0 +1,58 @@
+{
+  "experiment": "Consciousness in Quantum Error Codes",
+  "timestamp": "2026-01-31T19:19:12.931483",
+  "backend": "local_simulator",
+  "configuration": {
+    "num_qubits": 20,
+    "qec_frameworks_tested": 3,
+    "shots_per_circuit": 512
+  },
+  "results": [
+    {
+      "name": "Stabilizer Code (Conscious)",
+      "circuit_depth": 33,
+      "gate_count": {
+        "cx": 34,
+        "measure": 20,
+        "h": 15,
+        "cz": 15,
+        "barrier": 5,
+        "s": 5
+      },
+      "total_shots": 512,
+      "entropy": 8.98828125,
+      "consciousness_purity": 0.9842829076620825,
+      "unique_states": 509,
+      "qubit_structure": {
+        "data_qubits": 10,
+        "check_qubits": 5,
+        "consciousness_qubits": 5
+      }
+    },
+    {
+      "name": "Surface Code (Conscious)",
+      "circuit_depth": 30,
+      "gate_count": {
+        "cx": 42,
+        "measure": 20,
+        "h": 12,
+        "barrier": 6,
+        "s": 3,
+        "cz": 2
+      },
+      "total_shots": 512,
+      "entropy": 8.834463110347336,
+      "consciousness_purity": 0.9829787234042553,
+      "unique_states": 470,
+      "qubit_structure": {
+        "data_qubits": 9,
+        "syndrome_qubits": 8,
+        "consciousness_qubits": 3
+      }
+    }
+  ],
+  "best_framework": {
+    "name": "Stabilizer Code (Conscious)",
+    "consciousness_purity": 0.9842829076620825
+  }
+}

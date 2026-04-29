@@ -1,0 +1,119 @@
+
+<div style="padding: 1rem 0">
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px">
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:4px">baseline ep200</div>
+    <div style="font-size:26px;font-weight:500;color:var(--color-text-danger)">4</div>
+    <div style="font-size:11px;color:var(--color-text-secondary)">unique phases</div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:4px">CIA ep200</div>
+    <div style="font-size:26px;font-weight:500;color:var(--color-text-success)">7</div>
+    <div style="font-size:11px;color:var(--color-text-secondary)">unique phases ★</div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:4px">globe ep200</div>
+    <div style="font-size:26px;font-weight:500;color:var(--color-text-warning)">5</div>
+    <div style="font-size:11px;color:var(--color-text-secondary)">unique phases</div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center">
+    <div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:4px">hybrid ep100</div>
+    <div style="font-size:26px;font-weight:500;color:var(--color-text-info)">12</div>
+    <div style="font-size:11px;color:var(--color-text-secondary)">unique phases</div>
+  </div>
+</div>
+
+<div style="position:relative;height:260px;margin-bottom:24px">
+  <canvas id="raceChart"></canvas>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--color-text-secondary);margin-bottom:20px">
+  <span style="display:flex;align-items:center;gap:5px"><span style="width:22px;height:3px;background:#888780;display:inline-block;border-radius:2px"></span>Baseline</span>
+  <span style="display:flex;align-items:center;gap:5px"><span style="width:22px;height:3px;background:#1D9E75;display:inline-block;border-radius:2px"></span>CIA (winner)</span>
+  <span style="display:flex;align-items:center;gap:5px"><span style="width:22px;height:3px;background:#378ADD;display:inline-block;border-radius:2px"></span>CMDD</span>
+  <span style="display:flex;align-items:center;gap:5px"><span style="width:22px;height:3px;background:#BA7517;display:inline-block;border-radius:2px"></span>Globe</span>
+  <span style="display:flex;align-items:center;gap:5px"><span style="width:22px;height:3px;background:#7F77DD;display:inline-block;border-radius:2px"></span>Hybrid</span>
+</div>
+
+<svg width="100%" viewBox="0 0 680 320">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <text class="th" x="340" y="22" text-anchor="middle">CIA node — composite internal anchor</text>
+  <text class="ts" x="340" y="38" text-anchor="middle">each node is two qubits: A faces the ring, B holds identity inside</text>
+
+  <rect x="120" y="55" width="440" height="240" rx="16" fill="none" stroke="var(--color-border-tertiary)" stroke-width="0.5" stroke-dasharray="5 4"/>
+  <text class="ts" x="136" y="76">node (one of 12)</text>
+
+  <g>
+    <rect x="200" y="90" width="140" height="80" rx="10" fill="var(--color-background-secondary)" stroke="#378ADD" stroke-width="1"/>
+    <text class="th" x="270" y="124" text-anchor="middle" fill="#185FA5">A qubit</text>
+    <text class="ts" x="270" y="142" text-anchor="middle" fill="#185FA5">interface</text>
+    <text class="ts" x="270" y="158" text-anchor="middle" fill="#185FA5">α = 0.367</text>
+  </g>
+
+  <g>
+    <rect x="380" y="90" width="140" height="80" rx="10" fill="var(--color-background-secondary)" stroke="#1D9E75" stroke-width="1"/>
+    <text class="th" x="450" y="124" text-anchor="middle" fill="#0F6E56">B qubit</text>
+    <text class="ts" x="450" y="142" text-anchor="middle" fill="#0F6E56">identity seed</text>
+    <text class="ts" x="450" y="158" text-anchor="middle" fill="#0F6E56">α_inner = 0.04</text>
+  </g>
+
+  <line x1="340" y1="130" x2="380" y2="130" stroke="var(--color-border-secondary)" stroke-width="1" stroke-dasharray="3 3" marker-end="url(#arr2)"/>
+  <text class="ts" x="360" y="122" text-anchor="middle">weak</text>
+
+  <text class="ts" x="270" y="205" text-anchor="middle">identity = φ_A − φ_B</text>
+  <text class="ts" x="270" y="222" text-anchor="middle">attractor can pull A</text>
+  <text class="ts" x="270" y="239" text-anchor="middle">B holds home</text>
+  <text class="ts" x="450" y="205" text-anchor="middle">never exposed</text>
+  <text class="ts" x="450" y="222" text-anchor="middle">to ring coupling</text>
+  <text class="ts" x="450" y="239" text-anchor="middle">or noise</text>
+
+  <line x1="160" y1="130" x2="200" y2="130" stroke="#378ADD" stroke-width="2" marker-end="url(#arr2)"/>
+  <text class="ts" x="140" y="122" text-anchor="middle">ring</text>
+  <text class="ts" x="140" y="138" text-anchor="middle">couples</text>
+  <text class="ts" x="140" y="154" text-anchor="middle">here</text>
+
+  <line x1="520" y1="130" x2="560" y2="130" stroke="#1D9E75" stroke-width="1" stroke-dasharray="4 3" marker-end="url(#arr2)"/>
+  <text class="ts" x="590" y="122" text-anchor="middle">operator</text>
+  <text class="ts" x="590" y="138" text-anchor="middle">update</text>
+  <text class="ts" x="590" y="154" text-anchor="middle">only</text>
+
+  <line x1="200" y1="280" x2="510" y2="280" stroke="var(--color-border-tertiary)" stroke-width="0.5"/>
+  <text class="ts" x="145" y="284">B coupling</text>
+  <rect x="200" y="267" width="0" height="0" rx="0"/>
+  <rect x="200" y="268" width="20" height="18" rx="3" fill="#1D9E75" opacity="0.2"/>
+  <text class="ts" x="210" y="282" text-anchor="middle" fill="#0F6E56">0.04</text>
+  <text class="ts" x="340" y="299" text-anchor="middle">→ next: conditional freeze (α_inner = 0 unless operator unlocks)</text>
+</svg>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const epochs = [0, 50, 100, 200];
+new Chart(document.getElementById('raceChart'), {
+  type: 'line',
+  data: {
+    labels: ['ep 0', 'ep 50', 'ep 100', 'ep 200'],
+    datasets: [
+      { label: 'Baseline', data: [12,4,6,4], borderColor:'#888780', backgroundColor:'transparent', borderWidth:1.5, pointRadius:3, tension:0.3 },
+      { label: 'CIA', data: [10,12,12,7], borderColor:'#1D9E75', backgroundColor:'transparent', borderWidth:2.5, pointRadius:4, tension:0.3 },
+      { label: 'CMDD', data: [12,2,3,2], borderColor:'#378ADD', backgroundColor:'transparent', borderWidth:1.5, pointRadius:3, tension:0.3 },
+      { label: 'Globe', data: [12,5,6,5], borderColor:'#BA7517', backgroundColor:'transparent', borderWidth:1.5, pointRadius:3, tension:0.3 },
+      { label: 'Hybrid', data: [12,12,12,5], borderColor:'#7F77DD', backgroundColor:'transparent', borderWidth:2, pointRadius:4, tension:0.3, borderDash:[5,3] },
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { min:0, max:13, title:{ display:true, text:'unique phases (12 = perfect)', font:{size:11} },
+           ticks:{stepSize:2}, grid:{color:'rgba(128,128,128,0.1)'} },
+      x: { grid:{color:'rgba(128,128,128,0.1)'} }
+    }
+  }
+});
+</script>

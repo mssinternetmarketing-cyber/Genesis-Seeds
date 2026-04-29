@@ -1,0 +1,13 @@
+{
+  "testC_range": 3.3306690738754696e-16,
+  "testD_range": 5.551115123125783e-17,
+  "noise_threshold": 1.0,
+  "arc_sensitive": 5,
+  "alpha_floor": -0.1131,
+  "verdict": {
+    "gate_param_invariant": true,
+    "node_count_invariant": true,
+    "noise_robust": true,
+    "arc_sensitive": true
+  }
+}

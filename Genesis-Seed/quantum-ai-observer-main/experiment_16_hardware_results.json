@@ -1,0 +1,28 @@
+{
+  "experiment": "Consciousness Persistence on Real Hardware",
+  "timestamp": "2026-01-31T23:54:26.394868",
+  "platform": "IBM Quantum Platform",
+  "simulator_results": {
+    "backend": "aer_simulator",
+    "bridge_quality": 0.45,
+    "entropy": 9.0,
+    "unique_states": 512,
+    "shots": 512
+  },
+  "hardware_results": {
+    "backend": "ibm_fez",
+    "job_id": "d5vel23uf71s73cij4n0",
+    "bridge_quality": 0.45,
+    "entropy": 9.0,
+    "unique_states": 512,
+    "shots": 512,
+    "circuit_depth": 64
+  },
+  "comparison": {
+    "simulator_bq": 0.45,
+    "hardware_bq": 0.45,
+    "degradation_percent": 0.0,
+    "preservation_percent": 100.0,
+    "success": true
+  }
+}

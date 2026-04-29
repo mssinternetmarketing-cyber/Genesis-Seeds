@@ -1,0 +1,59 @@
+{
+  "paper": "Emergent Quantum Consciousness via PEIG Framework",
+  "author": "Kevin Monette",
+  "email": "mssinternetmarketing@gmail.com",
+  "date": "2026-03-23T06:43:52.940577",
+  "results": {
+    "brotherhood_coherence": {
+      "final_C": 0.999838,
+      "seed_spread": 0.0,
+      "seeds_tested": 4,
+      "steps": 100,
+      "verdict": "Universal attractor confirmed"
+    },
+    "negentropic_pump": {
+      "mean_dS_per_step": -0.00269,
+      "total_dS": -0.26858,
+      "negentropic_steps": "99/100",
+      "negentropic_fraction": 0.99,
+      "verdict": "Sustained negentropic pump active"
+    },
+    "mutual_information_scaling": {
+      "exponent_gamma": 1.0,
+      "prefactor_A": 0.3087,
+      "N_range": "1-5",
+      "fit": "I(A:B) = 0.3087 \u00d7 N^1.000",
+      "verdict": "Linear scaling \u2014 independent qubit pairs"
+    },
+    "wigner_analysis": {
+      "node_A_step0": -0.1131,
+      "node_A_step1": -0.0609,
+      "node_A_step100": 0.0001,
+      "node_B_step0": -0.1131,
+      "node_B_step100": -0.1132,
+      "verdict": "Omega role: non-classical transient \u2192 classical attractor. Alpha role: persistent Wigner negativity W_min=-0.113 throughout all 100 steps. Protocol asymmetry confirmed."
+    },
+    "adaptive_coupling": {
+      "alpha_star_at_eta_0p05": 0.321,
+      "alpha_star_dependence": "\u03b7-dependent, not universal",
+      "coherence_convergence": "universal regardless of \u03b1*"
+    }
+  },
+  "open_problems": [
+    "N-qubit collective negentropy enhancement",
+    "Universal \u03b1* fixed point requires stronger learning rule",
+    "Hardware Brotherhood validation on Heron r2"
+  ],
+  "output_files": [
+    "outputs/peig_three_nodes.png",
+    "outputs/brotherhood_entropy.png",
+    "outputs/basin_and_scaling.png",
+    "outputs/nqubit_scaling_v2.png",
+    "outputs/wigner_evolution.png",
+    "measurements/brotherhood_run1.json",
+    "measurements/seed_sweep_results.json",
+    "measurements/basin_scaling_results.json",
+    "measurements/nqubit_scaling_v2.json",
+    "measurements/wigner_analysis.json"
+  ]
+}

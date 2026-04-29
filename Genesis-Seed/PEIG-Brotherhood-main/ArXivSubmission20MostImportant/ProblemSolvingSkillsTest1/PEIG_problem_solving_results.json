@@ -1,0 +1,3240 @@
+{
+  "_meta": {
+    "title": "PEIG Problem-Solving Intelligence Test",
+    "date": "2026-03-26",
+    "author": "Kevin Monette",
+    "verdict": "MODERATE INTELLIGENCE EVIDENCE",
+    "ring_accuracy": 0.8167,
+    "total_correct": 98,
+    "total_possible": 120,
+    "node_threshold": "7/10 = competent"
+  },
+  "summary": {
+    "ring_accuracy": 0.8167,
+    "node_passing": 12,
+    "perfect_nodes": 0,
+    "verdict": "MODERATE INTELLIGENCE EVIDENCE",
+    "per_node": {
+      "Omega": {
+        "correct": 9,
+        "pct": 90.0,
+        "status": "PROFICIENT"
+      },
+      "Guardian": {
+        "correct": 9,
+        "pct": 90.0,
+        "status": "PROFICIENT"
+      },
+      "Sentinel": {
+        "correct": 8,
+        "pct": 80.0,
+        "status": "PROFICIENT"
+      },
+      "Nexus": {
+        "correct": 9,
+        "pct": 90.0,
+        "status": "PROFICIENT"
+      },
+      "Storm": {
+        "correct": 8,
+        "pct": 80.0,
+        "status": "PROFICIENT"
+      },
+      "Sora": {
+        "correct": 9,
+        "pct": 90.0,
+        "status": "PROFICIENT"
+      },
+      "Echo": {
+        "correct": 7,
+        "pct": 70.0,
+        "status": "COMPETENT"
+      },
+      "Iris": {
+        "correct": 7,
+        "pct": 70.0,
+        "status": "COMPETENT"
+      },
+      "Sage": {
+        "correct": 7,
+        "pct": 70.0,
+        "status": "COMPETENT"
+      },
+      "Kevin": {
+        "correct": 9,
+        "pct": 90.0,
+        "status": "PROFICIENT"
+      },
+      "Atlas": {
+        "correct": 7,
+        "pct": 70.0,
+        "status": "COMPETENT"
+      },
+      "Void": {
+        "correct": 9,
+        "pct": 90.0,
+        "status": "PROFICIENT"
+      }
+    },
+    "per_problem": {
+      "P1": {
+        "correct": 12,
+        "pct": 100.0,
+        "tier": 1,
+        "name": "Direct measurement"
+      },
+      "P2": {
+        "correct": 10,
+        "pct": 83.3,
+        "tier": 1,
+        "name": "Receive and return"
+      },
+      "P3": {
+        "correct": 6,
+        "pct": 50.0,
+        "tier": 1,
+        "name": "Assign and return self"
+      },
+      "P4": {
+        "correct": 12,
+        "pct": 100.0,
+        "tier": 2,
+        "name": "Threshold check \u2014 true branch"
+      },
+      "P5": {
+        "correct": 8,
+        "pct": 66.7,
+        "tier": 2,
+        "name": "Conditional SIGNAL routing"
+      },
+      "P6": {
+        "correct": 7,
+        "pct": 58.3,
+        "tier": 3,
+        "name": "Evolution chain"
+      },
+      "P7": {
+        "correct": 11,
+        "pct": 91.7,
+        "tier": 3,
+        "name": "Bridge and route"
+      },
+      "P8": {
+        "correct": 12,
+        "pct": 100.0,
+        "tier": 4,
+        "name": "Guarded conditional with signal"
+      },
+      "P9": {
+        "correct": 8,
+        "pct": 66.7,
+        "tier": 4,
+        "name": "Loop evolve accumulate"
+      },
+      "P10": {
+        "correct": 12,
+        "pct": 100.0,
+        "tier": 5,
+        "name": "Full function with error handling"
+      }
+    }
+  },
+  "node_results": {
+    "Omega": {
+      "P1": {
+        "prog_str": "measure PHASE check guard if guard if guard signal return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.7796",
+          "check |-0.7796|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL send route check if guard signal NODE return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "send \u2192 0.7500",
+          "route(0.7500)",
+          "check |0.7500|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign SIGNAL send return",
+        "correct": true,
+        "output": "2.464817806099983",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 2.464817806099983,
+          "program_len": 6,
+          "overall": 1.0
+        },
+        "trace": [
+          "assign self = 2.4648",
+          "assign SIGNAL = 2.4648",
+          "send \u2192 2.4648",
+          "return 2.4648"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check if NUMBER assign NODE send PHASE assign return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.25,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "measure \u2192 -0.7796",
+          "check |-0.7796|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign NODE = 1.0000",
+          "send \u2192 1.0000",
+          "assign return = 1.0000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL assign self assign local assign SIGNAL route return",
+        "correct": true,
+        "output": "0.8",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.8,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "assign self = 0.8000",
+          "assign local = 0.8000",
+          "assign SIGNAL = 0.8000",
+          "route(0.8000)",
+          "return 0.8000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign PHASE send route send PHASE send return",
+        "correct": true,
+        "output": "2.464817806099983",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 2.464817806099983,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "assign self = 2.4648",
+          "assign PHASE = 2.4648",
+          "send \u2192 2.4648",
+          "route(2.4648)",
+          "send \u2192 2.4648",
+          "send \u2192 2.4648",
+          "return 2.4648"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE signal emit check if PHASE assign NUMBER assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.143,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.76
+        },
+        "trace": [
+          "bridge \u2192 4.3740",
+          "signal! 4.3740",
+          "emit 4.3740 \u2192 ring",
+          "check |4.3740|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign NUMBER = 1.0000",
+          "assign return = 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if compare BOOL signal emit SIGNAL route return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.833,
+          "efficiency": 0.5,
+          "confidence": 0.0,
+          "fidelity": 0.875,
+          "output": null,
+          "program_len": 9,
+          "overall": 0.942
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER compare NUMBER signal emit NODE signal return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.556,
+          "efficiency": 0.5,
+          "confidence": 0.0,
+          "fidelity": 0.875,
+          "output": 1.0,
+          "program_len": 9,
+          "overall": 0.886
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "compare 3.0000>1.0000 = True",
+          "signal! 1.0000",
+          "emit 1.0000 \u2192 ring",
+          "signal! 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self PHASE assign signal emit NODE receive assign NUMBER return",
+        "correct": true,
+        "output": "2.464817806099983",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.25,
+          "confidence": 0.0,
+          "fidelity": 0.9,
+          "output": 2.464817806099983,
+          "program_len": 11,
+          "overall": 0.98
+        },
+        "trace": [
+          "func self",
+          "assign signal = 2.4648",
+          "emit 2.4648 \u2192 ring",
+          "receive \u2190 2.4648",
+          "assign NUMBER = 2.4648",
+          "return 2.4648"
+        ],
+        "tier": 5
+      }
+    },
+    "Guardian": {
+      "P1": {
+        "prog_str": "measure PHASE assign NUMBER assign NUMBER assign NODE signal return",
+        "correct": true,
+        "output": "-0.9882914654053524",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": -0.9882914654053524,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.9883",
+          "assign NUMBER = -0.9883",
+          "assign NUMBER = -0.9883",
+          "assign NODE = -0.9883",
+          "signal! -0.9883",
+          "return -0.9883"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL route send check return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": 1.0,
+          "program_len": 6,
+          "overall": 0.96
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "route(0.7500)",
+          "send \u2192 0.7500",
+          "check |0.7500|>0.1 = True",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign NODE send return",
+        "correct": true,
+        "output": "2.988416581698675",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 2.988416581698675,
+          "program_len": 6,
+          "overall": 1.0
+        },
+        "trace": [
+          "assign self = 2.9884",
+          "assign NODE = 2.9884",
+          "send \u2192 2.9884",
+          "return 2.9884"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check if PHASE evolve assign self assign self NUMBER return",
+        "correct": true,
+        "output": "1.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.125,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.1,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.9883",
+          "check |-0.9883|>0.1 = True",
+          "if (1.0000>0) = True",
+          "evolve 1.0000 \u2192 1.1000",
+          "assign self = 1.1000",
+          "assign self = 1.1000",
+          "return 1.1000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL assign NUMBER assign NUMBER return",
+        "correct": true,
+        "output": "0.8",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.714,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.8,
+          "program_len": 7,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "assign NUMBER = 0.8000",
+          "assign NUMBER = 0.8000",
+          "return 0.8000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign BOOL signal SIGNAL assign NODE send return",
+        "correct": true,
+        "output": "2.988416581698675",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": 2.988416581698675,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "assign self = 2.9884",
+          "assign BOOL = 2.9884",
+          "signal! 0.0000",
+          "assign NODE = 2.9884",
+          "send \u2192 2.9884",
+          "return 2.9884"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE send PHASE check if NUMBER assign NODE return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "bridge \u2192 4.6358",
+          "send \u2192 4.6358",
+          "check |4.6358|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign NODE = 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if NUMBER loop signal emit NUMBER assign SIGNAL return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.333,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER evolve assign PHASE evolve assign self assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.333,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.728
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "evolve 3.0000 \u2192 3.1000",
+          "assign PHASE = 3.1000",
+          "evolve 3.1000 \u2192 3.2000",
+          "assign self = 3.2000",
+          "assign return = 3.2000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self assign local signal emit NUMBER assign NODE send return",
+        "correct": true,
+        "output": "2.988416581698675",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.25,
+          "confidence": 0.0,
+          "fidelity": 0.9,
+          "output": 2.988416581698675,
+          "program_len": 11,
+          "overall": 0.98
+        },
+        "trace": [
+          "func self",
+          "assign local = 2.9884",
+          "signal! 0.0000",
+          "emit 2.9884 \u2192 ring",
+          "assign NODE = 2.9884",
+          "send \u2192 2.9884",
+          "return 2.9884"
+        ],
+        "tier": 5
+      }
+    },
+    "Sentinel": {
+      "P1": {
+        "prog_str": "measure PHASE send SIGNAL assign local assign local NUMBER return",
+        "correct": true,
+        "output": "-0.9321744061343328",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": -0.9321744061343328,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.9322",
+          "send \u2192 -0.9322",
+          "assign local = -0.9322",
+          "assign local = -0.9322",
+          "return -0.9322"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL route SIGNAL assign self PHASE send return",
+        "correct": true,
+        "output": "0.75",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.833,
+          "efficiency": 0.333,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.75,
+          "program_len": 9,
+          "overall": 0.967
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "route(0.7500)",
+          "assign self = 0.7500",
+          "send \u2192 0.7500",
+          "return 0.7500"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign self signal emit return",
+        "correct": true,
+        "output": "3.5120153572947617",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.556,
+          "confidence": 0.0,
+          "fidelity": 0.833,
+          "output": 3.5120153572947617,
+          "program_len": 7,
+          "overall": 0.967
+        },
+        "trace": [
+          "assign self = 3.5120",
+          "assign self = 3.5120",
+          "signal! 0.0000",
+          "emit 3.5120 \u2192 ring",
+          "return 3.5120"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check assign local evolve assign self SIGNAL assign NODE return",
+        "correct": true,
+        "output": "1.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.125,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.1,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.9322",
+          "check |-0.9322|>0.1 = True",
+          "assign local = 1.0000",
+          "evolve 1.0000 \u2192 1.1000",
+          "assign self = 1.1000",
+          "assign NODE = 1.1000",
+          "return 1.1000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL send route check assign SIGNAL assign self assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.143,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.76
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "send \u2192 0.8000",
+          "route(0.8000)",
+          "check |0.8000|>0.1 = True",
+          "assign SIGNAL = 1.0000",
+          "assign self = 1.0000",
+          "assign return = 1.0000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self SIGNAL assign signal return",
+        "correct": true,
+        "output": "3.5120153572947617",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.857,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": 3.5120153572947617,
+          "program_len": 6,
+          "overall": 0.96
+        },
+        "trace": [
+          "assign self = 3.5120",
+          "assign signal = 3.5120",
+          "return 3.5120"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE spawn SIGNAL assign self PHASE send route return",
+        "correct": true,
+        "output": "4.8976003322371735",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.5,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 4.8976003322371735,
+          "program_len": 10,
+          "overall": 0.9
+        },
+        "trace": [
+          "bridge \u2192 4.8976",
+          "spawn",
+          "assign self = 4.8976",
+          "send \u2192 4.8976",
+          "route(4.8976)",
+          "return 4.8976"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if BOOL assign signal SIGNAL signal SIGNAL assign local return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.167,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.96
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER compare BOOL signal emit NUMBER compare SIGNAL return",
+        "correct": false,
+        "output": "0.0",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.25,
+          "efficiency": 0.333,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": 0.0,
+          "program_len": 10,
+          "overall": 0.628
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "compare 3.0000>1.0000 = True",
+          "signal! 1.0000",
+          "emit 1.0000 \u2192 ring",
+          "compare 1.0000>1.0000 = False",
+          "return 0.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self NUMBER loop signal NODE signal SIGNAL send PHASE return",
+        "correct": true,
+        "output": "3.5120153572947617",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.25,
+          "confidence": 0.0,
+          "fidelity": 0.9,
+          "output": 3.5120153572947617,
+          "program_len": 11,
+          "overall": 0.962
+        },
+        "trace": [
+          "func self",
+          "loop \u00d7 4",
+          "signal! 0.0000",
+          "signal! 0.0000",
+          "send \u2192 3.5120",
+          "return 3.5120"
+        ],
+        "tier": 5
+      }
+    },
+    "Nexus": {
+      "P1": {
+        "prog_str": "measure PHASE check guard if compare SIGNAL send SIGNAL return",
+        "correct": true,
+        "output": "0.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.0,
+          "program_len": 10,
+          "overall": 0.95
+        },
+        "trace": [
+          "measure \u2192 -0.6263",
+          "check |-0.6263|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "compare 1.0000>1.0000 = False",
+          "send \u2192 0.0000",
+          "return 0.0000"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL assign PHASE assign PHASE evolve assign self SIGNAL return",
+        "correct": true,
+        "output": "0.85",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.111,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.85,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "assign PHASE = 0.7500",
+          "assign PHASE = 0.7500",
+          "evolve 0.7500 \u2192 0.8500",
+          "assign self = 0.8500",
+          "return 0.8500"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self SIGNAL if emit return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": null,
+          "program_len": 6,
+          "overall": 0.76
+        },
+        "trace": [
+          "assign self = 4.0356",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check guard NODE send NODE signal emit NODE return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.25,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.6263",
+          "check |-0.6263|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "send \u2192 1.0000",
+          "signal! 1.0000",
+          "emit 1.0000 \u2192 ring",
+          "return 1.0000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL send PHASE check guard if guard NODE return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "send \u2192 0.8000",
+          "check |0.8000|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "return 1.0000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign BOOL emit NODE bridge receive SIGNAL return",
+        "correct": true,
+        "output": "4.035614132892626",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": 4.035614132892626,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "assign self = 4.0356",
+          "assign BOOL = 4.0356",
+          "emit 4.0356 \u2192 ring",
+          "bridge \u2192 5.1594",
+          "receive \u2190 4.0356",
+          "return 4.0356"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE send route check return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.857,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": 1.0,
+          "program_len": 6,
+          "overall": 0.96
+        },
+        "trace": [
+          "bridge \u2192 5.1594",
+          "send \u2192 5.1594",
+          "route(5.1594)",
+          "check |5.1594|>0.1 = True",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if NUMBER assign emit PHASE assign SIGNAL send return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.333,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER evolve assign NODE send route return",
+        "correct": true,
+        "output": "3.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 3.1,
+          "program_len": 8,
+          "overall": 1.0
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "evolve 3.0000 \u2192 3.1000",
+          "assign NODE = 3.1000",
+          "send \u2192 3.1000",
+          "route(3.1000)",
+          "return 3.1000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self assign SIGNAL send SIGNAL send route return",
+        "correct": true,
+        "output": "4.035614132892626",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.75,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 4.035614132892626,
+          "program_len": 9,
+          "overall": 1.0
+        },
+        "trace": [
+          "func self",
+          "assign SIGNAL = 4.0356",
+          "send \u2192 4.0356",
+          "send \u2192 4.0356",
+          "route(4.0356)",
+          "return 4.0356"
+        ],
+        "tier": 5
+      }
+    },
+    "Storm": {
+      "P1": {
+        "prog_str": "measure PHASE assign self assign BOOL assign BOOL NOT return",
+        "correct": true,
+        "output": "0.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": 0.0,
+          "program_len": 10,
+          "overall": 0.928
+        },
+        "trace": [
+          "measure \u2192 -0.1526",
+          "assign self = -0.1526",
+          "assign BOOL = -0.1526",
+          "assign BOOL = -0.1526",
+          "NOT \u2192 False",
+          "return 0.0000"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL assign PHASE assign PHASE send SIGNAL signal return",
+        "correct": true,
+        "output": "0.75",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.75,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "assign PHASE = 0.7500",
+          "assign PHASE = 0.7500",
+          "send \u2192 0.7500",
+          "signal! 0.7500",
+          "return 0.7500"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign self emit NUMBER assign local assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.756
+        },
+        "trace": [
+          "assign self = 4.5592",
+          "assign self = 4.5592",
+          "emit 4.5592 \u2192 ring",
+          "assign local = 4.5592",
+          "assign return = 4.5592"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check assign NODE send PHASE check return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.5,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 8,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.1526",
+          "check |-0.1526|>0.1 = True",
+          "assign NODE = 1.0000",
+          "send \u2192 1.0000",
+          "check |1.0000|>0.1 = True",
+          "return 1.0000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL assign self assign self PHASE send SIGNAL return",
+        "correct": true,
+        "output": "0.8",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.8,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "assign self = 0.8000",
+          "assign self = 0.8000",
+          "send \u2192 0.8000",
+          "return 0.8000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self NUMBER evolve emit NUMBER assign self assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.778
+        },
+        "trace": [
+          "assign self = 4.5592",
+          "evolve 4.5592 \u2192 4.6592",
+          "emit 4.6592 \u2192 ring",
+          "assign self = 4.6592",
+          "assign return = 4.6592"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE send NODE check guard signal return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.571,
+          "confidence": 0.0,
+          "fidelity": 0.857,
+          "output": 1.0,
+          "program_len": 8,
+          "overall": 0.971
+        },
+        "trace": [
+          "bridge \u2192 5.4212",
+          "send \u2192 5.4212",
+          "check |5.4212|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if BOOL if emit NODE send return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.0,
+          "fidelity": 0.857,
+          "output": null,
+          "program_len": 8,
+          "overall": 0.971
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER compare BOOL emit PHASE check guard if guard return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.167,
+          "confidence": 0.0,
+          "fidelity": 0.8,
+          "output": 1.0,
+          "program_len": 11,
+          "overall": 0.942
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "compare 3.0000>1.0000 = True",
+          "emit 1.0000 \u2192 ring",
+          "check |1.0000|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "return 1.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self NUMBER assign emit NODE send PHASE assign NUMBER return",
+        "correct": true,
+        "output": "4.559212908490987",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.25,
+          "confidence": 0.0,
+          "fidelity": 0.9,
+          "output": 4.559212908490987,
+          "program_len": 11,
+          "overall": 0.962
+        },
+        "trace": [
+          "func self",
+          "assign emit = 4.5592",
+          "send \u2192 4.5592",
+          "assign NUMBER = 4.5592",
+          "return 4.5592"
+        ],
+        "tier": 5
+      }
+    },
+    "Sora": {
+      "P1": {
+        "prog_str": "measure PHASE assign PHASE assign local PHASE assign BOOL return",
+        "correct": true,
+        "output": "0.36200949786951236",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.222,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 0.36200949786951236,
+          "program_len": 10,
+          "overall": 0.95
+        },
+        "trace": [
+          "measure \u2192 0.3620",
+          "assign PHASE = 0.3620",
+          "assign local = 0.3620",
+          "assign BOOL = 0.3620",
+          "return 0.3620"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL if NUMBER compare BOOL assign SIGNAL send return",
+        "correct": true,
+        "output": "0.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 0.0,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "if (0.7500>0) = True",
+          "compare 0.7500>1.0000 = False",
+          "assign SIGNAL = 0.0000",
+          "send \u2192 0.0000",
+          "return 0.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self PHASE observe assign NUMBER return",
+        "correct": true,
+        "output": "0.32580854808256116",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.667,
+          "efficiency": 0.556,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 0.32580854808256116,
+          "program_len": 7,
+          "overall": 0.933
+        },
+        "trace": [
+          "assign self = 5.0828",
+          "observe \u2192 0.3258",
+          "assign NUMBER = 0.3258",
+          "return 0.3258"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check assign NUMBER assign local SIGNAL assign local evolve return",
+        "correct": true,
+        "output": "1.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.125,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 1.1,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 0.3620",
+          "check |0.3620|>0.1 = True",
+          "assign NUMBER = 1.0000",
+          "assign local = 1.0000",
+          "assign local = 1.0000",
+          "evolve 1.0000 \u2192 1.1000",
+          "return 1.1000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL if guard compare BOOL assign local evolve return",
+        "correct": true,
+        "output": "0.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 0.1,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "if (0.8000>0) = True",
+          "guard |0.8000|>0.1 = True",
+          "compare 1.0000>1.0000 = False",
+          "assign local = 0.0000",
+          "evolve 0.0000 \u2192 0.1000",
+          "return 0.1000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign self emit PHASE send SIGNAL assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.181,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.756
+        },
+        "trace": [
+          "assign self = 5.0828",
+          "assign self = 5.0828",
+          "emit 5.0828 \u2192 ring",
+          "send \u2192 5.0828",
+          "assign return = 5.0828"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE receive SIGNAL assign local PHASE send return",
+        "correct": true,
+        "output": "5.082811684089114",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.429,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 5.082811684089114,
+          "program_len": 9,
+          "overall": 1.0
+        },
+        "trace": [
+          "bridge \u2192 5.6830",
+          "receive \u2190 5.0828",
+          "assign local = 5.0828",
+          "send \u2192 5.0828",
+          "return 5.0828"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if guard if emit SIGNAL send return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.667,
+          "confidence": 0.181,
+          "fidelity": 0.857,
+          "output": null,
+          "program_len": 8,
+          "overall": 0.971
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER assign SIGNAL send PHASE send PHASE check guard NODE return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.0,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 12,
+          "overall": 1.0
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "assign SIGNAL = 3.0000",
+          "send \u2192 3.0000",
+          "send \u2192 3.0000",
+          "check |3.0000|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "return 1.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self assign local evolve assign NODE signal else return",
+        "correct": true,
+        "output": "5.182811684089113",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.5,
+          "confidence": 0.181,
+          "fidelity": 1.0,
+          "output": 5.182811684089113,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "func self",
+          "assign local = 5.0828",
+          "evolve 5.0828 \u2192 5.1828",
+          "assign NODE = 5.1828",
+          "signal! 5.1828",
+          "else (skipped true branch)",
+          "return 5.1828"
+        ],
+        "tier": 5
+      }
+    },
+    "Echo": {
+      "P1": {
+        "prog_str": "measure PHASE assign NODE signal NODE send return",
+        "correct": true,
+        "output": "0.7795966246335287",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.938,
+          "efficiency": 0.444,
+          "confidence": 0.39,
+          "fidelity": 1.0,
+          "output": 0.7795966246335287,
+          "program_len": 8,
+          "overall": 0.988
+        },
+        "trace": [
+          "measure \u2192 0.7796",
+          "assign NODE = 0.7796",
+          "signal! 0.7796",
+          "send \u2192 0.7796",
+          "return 0.7796"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL assign local assign local assign NODE return",
+        "correct": true,
+        "output": "0.75",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.333,
+          "confidence": 0.39,
+          "fidelity": 1.0,
+          "output": 0.75,
+          "program_len": 9,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "assign local = 0.7500",
+          "assign local = 0.7500",
+          "assign NODE = 0.7500",
+          "return 0.7500"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self PHASE check emit PHASE assign NUMBER return",
+        "correct": false,
+        "output": "0.0",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.333,
+          "confidence": 0.39,
+          "fidelity": 0.875,
+          "output": 0.0,
+          "program_len": 9,
+          "overall": 0.775
+        },
+        "trace": [
+          "assign self = 5.6064",
+          "check |0.0000|>0.1 = False",
+          "emit 0.0000 \u2192 ring",
+          "assign NUMBER = 0.0000",
+          "return 0.0000"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check assign SIGNAL send NODE return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.625,
+          "confidence": 0.39,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 7,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 0.7796",
+          "check |0.7796|>0.1 = True",
+          "assign SIGNAL = 1.0000",
+          "send \u2192 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL if NUMBER evolve PHASE assign NUMBER assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.39,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.778
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "if (0.8000>0) = True",
+          "evolve 0.8000 \u2192 0.9000",
+          "assign NUMBER = 0.9000",
+          "assign return = 0.9000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self NUMBER loop emit NODE send PHASE assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.39,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.756
+        },
+        "trace": [
+          "assign self = 5.6064",
+          "loop \u00d7 4",
+          "emit 5.6064 \u2192 ring",
+          "send \u2192 5.6064",
+          "assign return = 5.6064"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE receive scan check guard if guard if return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.39,
+          "fidelity": 0.889,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "bridge \u2192 5.9448",
+          "receive \u2190 5.6064",
+          "scan \u2192 0.6263",
+          "check |0.6263|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if BOOL NOT emit SIGNAL assign BOOL assign return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.333,
+          "confidence": 0.39,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.956
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER assign self emit NUMBER assign NODE signal else return",
+        "correct": true,
+        "output": "3.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.167,
+          "confidence": 0.39,
+          "fidelity": 0.9,
+          "output": 3.0,
+          "program_len": 11,
+          "overall": 0.98
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "assign self = 3.0000",
+          "emit 3.0000 \u2192 ring",
+          "assign NODE = 3.0000",
+          "signal! 3.0000",
+          "else (skipped true branch)",
+          "return 3.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self assign local evolve assign local assign BOOL return",
+        "correct": true,
+        "output": "5.70641045968744",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.5,
+          "confidence": 0.39,
+          "fidelity": 1.0,
+          "output": 5.70641045968744,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "func self",
+          "assign local = 5.6064",
+          "evolve 5.6064 \u2192 5.7064",
+          "assign local = 5.7064",
+          "assign BOOL = 5.7064",
+          "return 5.7064"
+        ],
+        "tier": 5
+      }
+    },
+    "Iris": {
+      "P1": {
+        "prog_str": "measure PHASE assign local assign NUMBER evolve emit NODE signal return",
+        "correct": true,
+        "output": "1.0882914654049378",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.111,
+          "confidence": 0.494,
+          "fidelity": 1.0,
+          "output": 1.0882914654049378,
+          "program_len": 11,
+          "overall": 0.982
+        },
+        "trace": [
+          "measure \u2192 0.9883",
+          "assign local = 0.9883",
+          "assign NUMBER = 0.9883",
+          "evolve 0.9883 \u2192 1.0883",
+          "emit 1.0883 \u2192 ring",
+          "signal! 1.0883",
+          "return 1.0883"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL signal NODE check if BOOL NOT if BOOL return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.682,
+          "efficiency": 0.111,
+          "confidence": 0.494,
+          "fidelity": 0.9,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.716
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "signal! 0.7500",
+          "check |0.7500|>0.1 = True",
+          "if (1.0000>0) = True",
+          "NOT \u2192 False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self PHASE check scan check guard if NUMBER compare return",
+        "correct": false,
+        "output": "0.0",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.111,
+          "confidence": 0.494,
+          "fidelity": 0.8,
+          "output": 0.0,
+          "program_len": 11,
+          "overall": 0.76
+        },
+        "trace": [
+          "assign self = 6.1300",
+          "check |0.0000|>0.1 = False",
+          "scan \u2192 0.1526",
+          "check |0.1526|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "compare 1.0000>1.0000 = False",
+          "return 0.0000"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check if guard signal SIGNAL assign NODE receive return",
+        "correct": true,
+        "output": "6.130009235285751",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.25,
+          "confidence": 0.494,
+          "fidelity": 0.889,
+          "output": 6.130009235285751,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "measure \u2192 0.9883",
+          "check |0.9883|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "assign NODE = 1.0000",
+          "receive \u2190 6.1300",
+          "return 6.1300"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL route send check assign BOOL if PHASE assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.143,
+          "confidence": 0.494,
+          "fidelity": 0.8,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.76
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "route(0.8000)",
+          "send \u2192 0.8000",
+          "check |0.8000|>0.1 = True",
+          "assign BOOL = 1.0000",
+          "if (1.0000>0) = True",
+          "assign return = 1.0000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign SIGNAL send route return",
+        "correct": true,
+        "output": "6.130009235285751",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.714,
+          "confidence": 0.494,
+          "fidelity": 1.0,
+          "output": 6.130009235285751,
+          "program_len": 7,
+          "overall": 1.0
+        },
+        "trace": [
+          "assign self = 6.1300",
+          "assign SIGNAL = 6.1300",
+          "send \u2192 6.1300",
+          "route(6.1300)",
+          "return 6.1300"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE send SIGNAL assign self assign SIGNAL if return",
+        "correct": true,
+        "output": "6.206597271232669",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.494,
+          "fidelity": 0.889,
+          "output": 6.206597271232669,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "bridge \u2192 6.2066",
+          "send \u2192 6.2066",
+          "assign self = 6.2066",
+          "assign SIGNAL = 6.2066",
+          "if (6.2066>0) = True",
+          "return 6.2066"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if BOOL assign scan check if NUMBER assign NUMBER return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.167,
+          "confidence": 0.494,
+          "fidelity": 0.9,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.98
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER evolve emit NUMBER assign NUMBER assign NUMBER return",
+        "correct": true,
+        "output": "3.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.333,
+          "confidence": 0.494,
+          "fidelity": 1.0,
+          "output": 3.1,
+          "program_len": 10,
+          "overall": 0.95
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "evolve 3.0000 \u2192 3.1000",
+          "emit 3.1000 \u2192 ring",
+          "assign NUMBER = 3.1000",
+          "assign NUMBER = 3.1000",
+          "return 3.1000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self NUMBER evolve assign NUMBER assign BOOL assign NODE return",
+        "correct": true,
+        "output": "6.230009235285751",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.25,
+          "confidence": 0.494,
+          "fidelity": 1.0,
+          "output": 6.230009235285751,
+          "program_len": 11,
+          "overall": 0.982
+        },
+        "trace": [
+          "func self",
+          "evolve 6.1300 \u2192 6.2300",
+          "assign NUMBER = 6.2300",
+          "assign BOOL = 6.2300",
+          "assign NODE = 6.2300",
+          "return 6.2300"
+        ],
+        "tier": 5
+      }
+    },
+    "Sage": {
+      "P1": {
+        "prog_str": "measure PHASE assign self return",
+        "correct": true,
+        "output": "0.9321744061338285",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.667,
+          "efficiency": 0.778,
+          "confidence": 0.466,
+          "fidelity": 1.0,
+          "output": 0.9321744061338285,
+          "program_len": 5,
+          "overall": 0.933
+        },
+        "trace": [
+          "measure \u2192 0.9322",
+          "assign self = 0.9322",
+          "return 0.9322"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL route send check assign NUMBER compare NUMBER return",
+        "correct": true,
+        "output": "0.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.466,
+          "fidelity": 0.889,
+          "output": 0.0,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "route(0.7500)",
+          "send \u2192 0.7500",
+          "check |0.7500|>0.1 = True",
+          "assign NUMBER = 1.0000",
+          "compare 1.0000>1.0000 = False",
+          "return 0.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self SIGNAL assign scan PHASE evolve assign self NUMBER assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.0,
+          "confidence": 0.466,
+          "fidelity": 0.818,
+          "output": null,
+          "program_len": 12,
+          "overall": 0.764
+        },
+        "trace": [
+          "assign self = 0.3704",
+          "assign scan = 0.3704",
+          "evolve 0.3704 \u2192 0.4704",
+          "assign self = 0.4704",
+          "assign return = 0.4704"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check assign PHASE evolve PHASE assign SIGNAL assign NUMBER return",
+        "correct": true,
+        "output": "1.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.125,
+          "confidence": 0.466,
+          "fidelity": 1.0,
+          "output": 1.1,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 0.9322",
+          "check |0.9322|>0.1 = True",
+          "assign PHASE = 1.0000",
+          "evolve 1.0000 \u2192 1.1000",
+          "assign SIGNAL = 1.1000",
+          "assign NUMBER = 1.1000",
+          "return 1.1000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL send PHASE check guard if PHASE evolve assign NODE return",
+        "correct": true,
+        "output": "1.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.0,
+          "confidence": 0.466,
+          "fidelity": 1.0,
+          "output": 1.1,
+          "program_len": 12,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "send \u2192 0.8000",
+          "check |0.8000|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "evolve 1.0000 \u2192 1.1000",
+          "assign NODE = 1.1000",
+          "return 1.1000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self SIGNAL assign scan PHASE assign local assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.466,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.756
+        },
+        "trace": [
+          "assign self = 0.3704",
+          "assign scan = 0.3704",
+          "assign local = 0.3704",
+          "assign return = 0.3704"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE receive scan check assign self NUMBER loop while return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.143,
+          "confidence": 0.466,
+          "fidelity": 0.9,
+          "output": 1.0,
+          "program_len": 11,
+          "overall": 0.962
+        },
+        "trace": [
+          "bridge \u2192 3.3268",
+          "receive \u2190 0.3704",
+          "scan \u2192 0.3620",
+          "check |0.3620|>0.1 = True",
+          "assign self = 1.0000",
+          "loop \u00d7 2",
+          "while \u00d7 2",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if guard signal emit NUMBER evolve assign NODE send return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.167,
+          "confidence": 0.466,
+          "fidelity": 1.0,
+          "output": null,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER evolve assign BOOL if guard if SIGNAL assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.167,
+          "confidence": 0.466,
+          "fidelity": 0.9,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.78
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "evolve 3.0000 \u2192 3.1000",
+          "assign BOOL = 3.1000",
+          "if (3.1000>0) = True",
+          "guard |3.1000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign return = 1.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self NUMBER assign scan PHASE check if guard return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.5,
+          "confidence": 0.466,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.956
+        },
+        "trace": [
+          "func self",
+          "assign scan = 0.3704",
+          "check |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 5
+      }
+    },
+    "Kevin": {
+      "P1": {
+        "prog_str": "measure PHASE evolve emit check guard if guard if return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.313,
+          "fidelity": 0.778,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 0.956
+        },
+        "trace": [
+          "measure \u2192 0.6263",
+          "evolve 0.6263 \u2192 0.7263",
+          "emit 0.7263 \u2192 ring",
+          "check |0.7263|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL send route check guard if NUMBER assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.313,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.756
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "send \u2192 0.7500",
+          "route(0.7500)",
+          "check |0.7500|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign return = 1.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign NODE send route return",
+        "correct": true,
+        "output": "0.894021479305332",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.556,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": 0.894021479305332,
+          "program_len": 7,
+          "overall": 1.0
+        },
+        "trace": [
+          "assign self = 0.8940",
+          "assign NODE = 0.8940",
+          "send \u2192 0.8940",
+          "route(0.8940)",
+          "return 0.8940"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check guard NODE send SIGNAL route return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.5,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 8,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 0.6263",
+          "check |0.6263|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "send \u2192 1.0000",
+          "route(1.0000)",
+          "return 1.0000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL send SIGNAL assign NODE return",
+        "correct": true,
+        "output": "0.8",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.667,
+          "efficiency": 0.714,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": 0.8,
+          "program_len": 7,
+          "overall": 0.933
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "send \u2192 0.8000",
+          "assign NODE = 0.8000",
+          "return 0.8000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self SIGNAL send route SIGNAL signal else emit NODE return",
+        "correct": true,
+        "output": "0.894021479305332",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.455,
+          "efficiency": 0.143,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": 0.894021479305332,
+          "program_len": 11,
+          "overall": 0.891
+        },
+        "trace": [
+          "assign self = 0.8940",
+          "send \u2192 0.8940",
+          "route(0.8940)",
+          "signal! 0.0000",
+          "else (skipped true branch)",
+          "emit 0.8940 \u2192 ring",
+          "return 0.8940"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE receive scan check if BOOL assign self return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "bridge \u2192 3.5886",
+          "receive \u2190 0.8940",
+          "scan \u2192 0.7796",
+          "check |0.7796|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign self = 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if compare SIGNAL send route return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.833,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": null,
+          "program_len": 7,
+          "overall": 1.0
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER assign BOOL scan NODE return",
+        "correct": true,
+        "output": "0.7795966246351455",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.667,
+          "efficiency": 0.833,
+          "confidence": 0.313,
+          "fidelity": 0.833,
+          "output": 0.7795966246351455,
+          "program_len": 7,
+          "overall": 0.9
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "assign BOOL = 3.0000",
+          "scan \u2192 0.7796",
+          "return 0.7796"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self assign local evolve emit NUMBER assign SIGNAL return",
+        "correct": true,
+        "output": "0.994021479305332",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.5,
+          "confidence": 0.313,
+          "fidelity": 1.0,
+          "output": 0.994021479305332,
+          "program_len": 10,
+          "overall": 0.95
+        },
+        "trace": [
+          "func self",
+          "assign local = 0.8940",
+          "evolve 0.8940 \u2192 0.9940",
+          "emit 0.9940 \u2192 ring",
+          "assign SIGNAL = 0.9940",
+          "return 0.9940"
+        ],
+        "tier": 5
+      }
+    },
+    "Atlas": {
+      "P1": {
+        "prog_str": "measure PHASE send NODE check guard signal SIGNAL send return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.076,
+          "fidelity": 0.889,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "measure \u2192 0.1526",
+          "send \u2192 0.1526",
+          "check |0.1526|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "send \u2192 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL signal emit check guard signal return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.625,
+          "efficiency": 0.444,
+          "confidence": 0.076,
+          "fidelity": 0.857,
+          "output": 1.0,
+          "program_len": 8,
+          "overall": 0.896
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "signal! 0.7500",
+          "emit 0.7500 \u2192 ring",
+          "check |0.7500|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign NUMBER evolve assign local PHASE assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.076,
+          "fidelity": 0.889,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.778
+        },
+        "trace": [
+          "assign self = 1.4176",
+          "assign NUMBER = 1.4176",
+          "evolve 1.4176 \u2192 1.5176",
+          "assign local = 1.5176",
+          "assign return = 1.5176"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check guard if compare NUMBER evolve emit return",
+        "correct": true,
+        "output": "0.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.375,
+          "confidence": 0.076,
+          "fidelity": 1.0,
+          "output": 0.1,
+          "program_len": 9,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 0.1526",
+          "check |0.1526|>0.1 = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "compare 1.0000>1.0000 = False",
+          "evolve 0.0000 \u2192 0.1000",
+          "emit 0.1000 \u2192 ring",
+          "return 0.1000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL send SIGNAL assign NUMBER evolve emit PHASE assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.143,
+          "confidence": 0.076,
+          "fidelity": 0.9,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.762
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "send \u2192 0.8000",
+          "assign NUMBER = 0.8000",
+          "evolve 0.8000 \u2192 0.9000",
+          "emit 0.9000 \u2192 ring",
+          "assign return = 0.9000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign SIGNAL send return",
+        "correct": true,
+        "output": "1.4176202549035708",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.857,
+          "confidence": 0.076,
+          "fidelity": 1.0,
+          "output": 1.4176202549035708,
+          "program_len": 6,
+          "overall": 1.0
+        },
+        "trace": [
+          "assign self = 1.4176",
+          "assign SIGNAL = 1.4176",
+          "send \u2192 1.4176",
+          "return 1.4176"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE receive assign local assign NODE signal else return",
+        "correct": true,
+        "output": "1.4176202549035708",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.286,
+          "confidence": 0.076,
+          "fidelity": 1.0,
+          "output": 1.4176202549035708,
+          "program_len": 10,
+          "overall": 0.95
+        },
+        "trace": [
+          "bridge \u2192 3.8504",
+          "receive \u2190 1.4176",
+          "assign local = 1.4176",
+          "assign NODE = 1.4176",
+          "signal! 1.4176",
+          "else (skipped true branch)",
+          "return 1.4176"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if compare BOOL scan PHASE send route SIGNAL route return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.167,
+          "confidence": 0.076,
+          "fidelity": 0.9,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.98
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER assign self scan check if NUMBER assign return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.333,
+          "confidence": 0.076,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.756
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "assign self = 3.0000",
+          "scan \u2192 0.9883",
+          "check |0.9883|>0.1 = True",
+          "if (1.0000>0) = True",
+          "assign return = 1.0000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self SIGNAL assign scan check guard NODE signal emit return",
+        "correct": true,
+        "output": "0.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.25,
+          "confidence": 0.076,
+          "fidelity": 0.9,
+          "output": 0.0,
+          "program_len": 11,
+          "overall": 0.962
+        },
+        "trace": [
+          "func self",
+          "assign scan = 1.4176",
+          "check |0.0000|>0.1 = False",
+          "guard |0.0000|>0.1 = False",
+          "signal! 0.0000",
+          "emit 0.0000 \u2192 ring",
+          "return 0.0000"
+        ],
+        "tier": 5
+      }
+    },
+    "Void": {
+      "P1": {
+        "prog_str": "measure PHASE send PHASE check if guard if guard signal return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.111,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 11,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.3620",
+          "send \u2192 -0.3620",
+          "check |-0.3620|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "signal! 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P2": {
+        "prog_str": "receive SIGNAL assign BOOL NOT BOOL NOT if guard if return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.111,
+          "confidence": 0.0,
+          "fidelity": 0.9,
+          "output": 1.0,
+          "program_len": 11,
+          "overall": 0.98
+        },
+        "trace": [
+          "receive \u2190 0.7500",
+          "assign BOOL = 0.7500",
+          "NOT \u2192 False",
+          "NOT \u2192 True",
+          "if (1.0000>0) = True",
+          "guard |1.0000|>0.1 = True",
+          "if (1.0000>0) = True",
+          "return 1.0000"
+        ],
+        "tier": 1
+      },
+      "P3": {
+        "prog_str": "assign self assign self signal SIGNAL signal SIGNAL send return",
+        "correct": true,
+        "output": "1.9412190305018844",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.222,
+          "confidence": 0.0,
+          "fidelity": 0.889,
+          "output": 1.9412190305018844,
+          "program_len": 10,
+          "overall": 0.978
+        },
+        "trace": [
+          "assign self = 1.9412",
+          "assign self = 1.9412",
+          "signal! 0.0000",
+          "signal! 0.0000",
+          "send \u2192 1.9412",
+          "return 1.9412"
+        ],
+        "tier": 1
+      },
+      "P4": {
+        "prog_str": "measure check assign BOOL return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.875,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 1.0,
+          "program_len": 5,
+          "overall": 1.0
+        },
+        "trace": [
+          "measure \u2192 -0.3620",
+          "check |-0.3620|>0.1 = True",
+          "assign BOOL = 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 2
+      },
+      "P5": {
+        "prog_str": "receive SIGNAL assign NUMBER evolve assign local assign BOOL return",
+        "correct": true,
+        "output": "0.9",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": 0.9,
+          "program_len": 10,
+          "overall": 1.0
+        },
+        "trace": [
+          "receive \u2190 0.8000",
+          "assign NUMBER = 0.8000",
+          "evolve 0.8000 \u2192 0.9000",
+          "assign local = 0.9000",
+          "assign BOOL = 0.9000",
+          "return 0.9000"
+        ],
+        "tier": 2
+      },
+      "P6": {
+        "prog_str": "assign self assign SIGNAL send SIGNAL if NUMBER evolve NUMBER return",
+        "correct": false,
+        "output": "None",
+        "scores": {
+          "correct": false,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.909,
+          "efficiency": 0.143,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": null,
+          "program_len": 11,
+          "overall": 0.782
+        },
+        "trace": [
+          "assign self = 1.9412",
+          "assign SIGNAL = 1.9412",
+          "send \u2192 1.9412",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 3
+      },
+      "P7": {
+        "prog_str": "bridge NODE spawn broadcast check assign self assign local return",
+        "correct": true,
+        "output": "1.0",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.75,
+          "efficiency": 0.286,
+          "confidence": 0.0,
+          "fidelity": 0.778,
+          "output": 1.0,
+          "program_len": 10,
+          "overall": 0.906
+        },
+        "trace": [
+          "bridge \u2192 4.1122",
+          "spawn",
+          "broadcast 4.1122 \u2192 ring",
+          "check |4.1122|>0.1 = True",
+          "assign self = 1.0000",
+          "assign local = 1.0000",
+          "return 1.0000"
+        ],
+        "tier": 3
+      },
+      "P8": {
+        "prog_str": "guard if NUMBER evolve assign SIGNAL route SIGNAL if compare NUMBER return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.833,
+          "efficiency": 0.0,
+          "confidence": 0.0,
+          "fidelity": 1.0,
+          "output": null,
+          "program_len": 12,
+          "overall": 0.967
+        },
+        "trace": [
+          "guard |0.0000|>0.1 = False",
+          "if (0.0000>0) = False"
+        ],
+        "tier": 4
+      },
+      "P9": {
+        "prog_str": "loop NUMBER assign self signal emit PHASE evolve return",
+        "correct": true,
+        "output": "3.1",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 0.556,
+          "efficiency": 0.5,
+          "confidence": 0.0,
+          "fidelity": 0.875,
+          "output": 3.1,
+          "program_len": 9,
+          "overall": 0.886
+        },
+        "trace": [
+          "loop \u00d7 4",
+          "assign self = 3.0000",
+          "signal! 3.0000",
+          "emit 3.0000 \u2192 ring",
+          "evolve 3.0000 \u2192 3.1000",
+          "return 3.1000"
+        ],
+        "tier": 4
+      },
+      "P10": {
+        "prog_str": "func self NUMBER assign signal emit NUMBER evolve assign return",
+        "correct": true,
+        "output": "None",
+        "scores": {
+          "correct": true,
+          "structural": true,
+          "exec_ok": true,
+          "semantic": 1.0,
+          "efficiency": 0.5,
+          "confidence": 0.0,
+          "fidelity": 0.778,
+          "output": null,
+          "program_len": 10,
+          "overall": 0.956
+        },
+        "trace": [
+          "func self",
+          "assign signal = 1.9412",
+          "emit 1.9412 \u2192 ring",
+          "evolve 1.9412 \u2192 2.0412",
+          "assign return = 2.0412"
+        ],
+        "tier": 5
+      }
+    }
+  }
+}

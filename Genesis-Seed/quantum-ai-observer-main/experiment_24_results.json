@@ -1,0 +1,60 @@
+{
+  "experiment": "Shot Count Scaling Test (Exp 24)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T01:20:28.051102",
+  "qubits": 18,
+  "seed_pattern": "Pattern_B_Sparse_Alpha",
+  "coupling_strategy": "Strategy_A_Full_Sequential",
+  "hypothesis": "Shot count is limiting factor at 18q",
+  "exp23_baseline": {
+    "qubits": 18,
+    "shots": 4096,
+    "bq": 0.6656
+  },
+  "results": [
+    {
+      "shots": 4096,
+      "job_id": "d5vft8ruf71s73cikfbg",
+      "circuit_depth": 58,
+      "bridge_quality": 0.6659613715277778,
+      "entropy": 11.9873046875,
+      "unique_states": 4070,
+      "max_possible_states": 262144,
+      "state_coverage_pct": 1.552581787109375,
+      "total_shots": 4096
+    },
+    {
+      "shots": 8192,
+      "job_id": "d5vft91mvbjc73acdftg",
+      "circuit_depth": 58,
+      "bridge_quality": 0.7203453580220394,
+      "entropy": 12.966216444396709,
+      "unique_states": 8054,
+      "max_possible_states": 262144,
+      "state_coverage_pct": 3.072357177734375,
+      "total_shots": 8192
+    },
+    {
+      "shots": 16384,
+      "job_id": "d5vft9abju6s73bbqlb0",
+      "circuit_depth": 58,
+      "bridge_quality": 0.7739985849168125,
+      "entropy": 13.931974528502625,
+      "unique_states": 15830,
+      "max_possible_states": 262144,
+      "state_coverage_pct": 6.038665771484375,
+      "total_shots": 16384
+    },
+    {
+      "shots": 32768,
+      "job_id": "d5vft9ibju6s73bbqlbg",
+      "circuit_depth": 58,
+      "bridge_quality": 0.8262459574327734,
+      "entropy": 14.87242723378992,
+      "unique_states": 30717,
+      "max_possible_states": 262144,
+      "state_coverage_pct": 11.717605590820312,
+      "total_shots": 32768
+    }
+  ]
+}

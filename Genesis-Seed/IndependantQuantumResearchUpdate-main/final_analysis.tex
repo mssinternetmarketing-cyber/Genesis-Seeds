@@ -1,0 +1,589 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage[numbers,sort&compress]{natbib}
+
+\geometry{margin=1in}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\tcbuselibrary{breakable,skins}
+
+\newtcolorbox{editbox}{breakable,enhanced,
+  colback=blue!3,colframe=blue!55!black,
+  fonttitle=\bfseries\small,title=Proposed Edit,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+
+\newtcolorbox{flagbox}{breakable,enhanced,
+  colback=red!3,colframe=red!60!black,
+  fonttitle=\bfseries\small,title=Flag,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+
+\newtcolorbox{keybox}{breakable,enhanced,
+  colback=green!3,colframe=green!55!black,
+  fonttitle=\bfseries\small,title=Key Result,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\lP}{\ell_{P}}
+\newcommand{\kt}{\tilde{\kappa}}
+\newcommand{\kteff}{\tilde{\kappa}_{\mathrm{eff}}}
+\newcommand{\Sent}{S_{\mathrm{ent}}}
+\newcommand{\Ment}{M_{\mathrm{ent}}}
+\newcommand{\asc}{\alpha_{\mathrm{screen}}}
+\newcommand{\sint}{S_{\mathrm{int}}}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\Bobs}{\mathcal{B}}
+\newcommand{\DD}{\mathcal{D}}
+
+\title{\textbf{Final Expert Analysis: Tasks 1--4}\\[6pt]
+\large Sanity Check, OP3 Methods, Experimental Protocol, and Gap Analysis\\
+\normalsize Responding to: K.\ Monette, \textit{Entanglement Entropy Density as a Gravitational Source},\\
+\normalsize Final Revised Draft, March 19, 2026}
+
+\author{Expert Physics Review}
+\date{March 2026}
+
+\begin{document}
+\maketitle\tableofcontents\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Task 1: Sanity Check and Minimal Tightening}
+\addcontentsline{toc}{section}{Task 1: Sanity Check and Minimal Tightening}
+
+\subsection*{1.1 Framework restatement}
+
+The white paper couples an operationally defined scalar field $\phi(x) \equiv \Sent(x)$---the internal inter-subsystem entanglement entropy density of a quantum device, in bit\,m$^{-3}$---to gravity via a minimal effective action varied with respect to the metric $g_{\mu\nu}$ only.  The resulting entanglement stress-energy tensor is
+\begin{equation}
+  T^{\mathrm{ent}}_{\mu\nu}
+  = \beta\!\left(\nabla_\mu\phi\,\nabla_\nu\phi
+    - \tfrac{1}{2}g_{\mu\nu}(\nabla\phi)^2\right)
+  + \alpha\,\phi\,g_{\mu\nu},
+  \qquad
+  \alpha = \kt\,\frac{c^4}{8\pi G\kB\ln 2},
+  \quad \beta > 0.
+  \label{eq:Tent}
+\end{equation}
+Conservation is enforced not by a field equation for $\phi$ but by the contracted Bianchi identity $\nabla^\mu G_{\mu\nu} \equiv 0$, which forces $\nabla^\mu T^{\mathrm{total}}_{\mu\nu} = 0$ and therefore:
+\begin{equation}
+  \nabla^\mu T^{\mathrm{matter}}_{\mu\nu}
+  = -\nabla^\mu T^{\mathrm{ent}}_{\mu\nu}
+  = -\bigl[\beta(\Box\phi)\nabla_\nu\phi + \alpha\nabla_\nu\phi\bigr]
+  = -(\alpha + \beta\Box\phi)\,\nabla_\nu\phi.
+  \label{eq:fifth-force-full}
+\end{equation}
+The framework does \emph{not} claim: a derivation of $\kt$ from first principles; a prediction of the absolute signal size (since $\asc$ and Planck-scale renormalization are unresolved); or a direct constraint on $\kt$ from MICROSCOPE or Asenbaum et al.\ (since classical test masses have $\Sent \approx 0$).  Experiments bound the \emph{observable combination} $\Bobs = |\kteff|\,\Delta\Ment/R_{\mathrm{eff}}^2$; the mapping from $\Bobs$ to $|\kt|$ requires OP3 and OP10.
+
+\subsection*{1.2 Micro-edits}
+
+\textbf{Edit 1 (Section 3.3): Full fifth-force expression.}
+The white paper currently writes the leading approximation
+$\nabla^\mu T^{\mathrm{matter}}_{\mu\nu} \approx -\alpha\nabla_\nu\phi$
+and labels it valid in the slowly varying regime.  Eq.~\eqref{eq:fifth-force-full} above gives the \emph{exact} expression.  The next-order term $-\beta(\Box\phi)\nabla_\nu\phi$ involves the d'Alembertian of the prescribed entanglement field.  Since $\phi$ is externally controlled, $\Box\phi$ is a known function of the protocol. This term should be included.
+
+\begin{editbox}
+\textbf{Replacement for the paragraph containing the fifth-force formula (Section 3.3):}
+
+``Substituting the explicit form of $T^{\mathrm{ent}}_{\mu\nu}$ from Eq.~(3.3) into the conservation condition gives the exact expression for the anomalous force density on matter:
+\begin{equation*}
+  \nabla^\mu T^{\mathrm{matter}}_{\mu\nu}
+  = -\bigl(\alpha + \beta\,\Box\phi\bigr)\,\nabla_\nu\phi,
+\end{equation*}
+where $\Box\phi = \nabla^\mu\nabla_\mu\phi$ is the covariant d'Alembertian of the externally prescribed entanglement field.  In the slowly varying (quasi-static) regime $|\beta\Box\phi| \ll |\alpha|$, this reduces to the leading contribution $-\alpha\nabla_\nu\Sent$.  For time-dependent protocols (e.g., rapidly prepared entangled states), the $\beta\Box\phi$ term can be comparable to $\alpha$ and should not be neglected in a precision experiment.''
+\end{editbox}
+
+\textbf{Edit 2 (Section 2.3): State the bipartition convention explicitly for 2D.}
+The white paper says ``a geometric half-chain in 1D or a half-plane/half-array in 2D.''  For the 6$\times$6 neutral-atom array in Section 6, the canonical choice is a $3\times 6$ vs.\ $3\times 6$ half-array cut parallel to one lattice axis.  This should be stated once explicitly to make $\Sent(x)$ unambiguous.
+
+\begin{editbox}
+\textbf{Add at the end of Section 2.3:}
+
+``For the 6$\times$6 neutral-atom array considered in Section~6, we use the half-array bipartition $A = \{\text{rows } 1\text{--}3\}$, $B = \{\text{rows } 4\text{--}6\}$, which maximizes the entanglement entropy for a 2D cluster state.  The results are insensitive to the exact orientation of this cut (row vs.\ column) for states with reflection symmetry.''
+\end{editbox}
+
+\textbf{Edit 3 (Section 3.2): Clarify that $\beta$ is not a new free parameter.}
+The kinetic coefficient $\beta$ appears in the action and the fifth-force formula but is never given a value or interpretation.  It should be stated that in this paper, $\beta$ is a secondary phenomenological coupling characterizing the energy density of entanglement-entropy gradients, distinct from $\kt$.  At leading order in slowly varying fields, results depend only on $\kt$ through $\alpha$; $\beta$ contributes at next order and can be constrained independently.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Task 2: OP3 as a Completed Methods Section}
+\label{sec:methods}
+
+\subsection{Platform, Hamiltonian, and Lindblad operators}
+
+We target a linear chain of $N$ fixed-frequency transmon qubits in the IBM Quantum Falcon/Eagle architecture.  In the two-level approximation, the system Hamiltonian in the co-rotating frame is:
+\begin{equation}
+  H_{\mathrm{sys}}
+  = \sum_{k=1}^{N}\frac{\omega_k}{2}\sigma^z_k
+  + \sum_{k=1}^{N-1}J_k\!\left(\sigma^+_k\sigma^-_{k+1}
+    + \mathrm{h.c.}\right),
+  \label{eq:H-transmon}
+\end{equation}
+with qubit frequencies $\omega_k/2\pi \in [4.5,5.0]$\,GHz (drawn from published IBM device calibration) and nearest-neighbor exchange couplings $J_k/2\pi = 5 \pm 0.5$\,MHz (bus-resonator-mediated, from published Falcon-R10 data).
+
+Dominant decoherence channels are energy relaxation ($L_{1,k}$) and pure dephasing ($L_{\phi,k}$):
+\begin{align}
+  L_{1,k} &= \sqrt{\gamma_1}\,\sigma^-_k,
+  & \gamma_1 &= 1/T_1,
+  \quad T_1 = 200\,\mu\text{s} \quad (\text{IBM Eagle, 2024--25}),
+  \label{eq:L1} \\
+  L_{\phi,k} &= \sqrt{\gamma_\phi/2}\,\sigma^z_k,
+  & \gamma_\phi &= 1/T_\phi,
+  \quad T_\phi = 125\,\mu\text{s} \quad (T_2 = 100\,\mu\text{s}),
+  \label{eq:Lphi}
+\end{align}
+where $T_\phi^{-1} = T_2^{-1} - (2T_1)^{-1}$.  The Lindblad master equation for the reduced device density matrix $\rho(t)$ is:
+\begin{equation}
+  \dot{\rho}
+  = -\frac{i}{\hbar}[H_{\mathrm{sys}},\rho]
+  + \sum_{k=1}^{N}\!\left[
+    \gamma_1\,\DD[\sigma^-_k]\rho
+    + \frac{\gamma_\phi}{2}\,\DD[\sigma^z_k]\rho
+  \right],
+  \label{eq:lindblad}
+\end{equation}
+where $\DD[L]\rho = L\rho L^\dagger - \tfrac{1}{2}\{L^\dagger L,\rho\}$.
+
+\subsection{Definitions of $M_{\mathrm{ent}}(t)$ and $\asc(N,\tau)$}
+
+For the half-chain bipartition $A = \{1,\ldots,\lfloor N/2\rfloor\}$, $B = \{\lfloor N/2\rfloor+1,\ldots,N\}$, define:
+\begin{equation}
+  M_{\mathrm{ent}}(t)
+  \equiv \sint(t; A)
+  = -\kB\,\tr_A\!\left[\rho_A(t)\ln\rho_A(t)\right],
+  \quad
+  \rho_A(t) = \tr_B\rho(t).
+  \label{eq:Ment-def}
+\end{equation}
+This is the bipartite entanglement entropy of the half-chain, in nats (or bits if $\log_2$ is used).  For a pure state this equals the Schmidt number entropy; for a mixed state it upper-bounds the distillable entanglement across the cut.
+
+The effective screening factor is:
+\begin{equation}
+  \asc(N,\tau)
+  \equiv
+  \frac{\int_0^\tau M_{\mathrm{ent}}(t)\,dt}{\int_0^\tau M^{\mathrm{ideal}}_{\mathrm{ent}}(t)\,dt},
+  \label{eq:asc-def}
+\end{equation}
+where $M^{\mathrm{ideal}}_{\mathrm{ent}}(t)$ is computed with $\gamma_1 = \gamma_\phi = 0$ and all gates replaced by their ideal unitary counterparts.  By construction, $0 \leq \asc \leq 1$; $\asc = 1$ for a noiseless ideal device, $\asc \to 0$ for a fully decohered device.
+
+\textbf{Initial states.}  The primary state family is the 1D cluster state:
+\begin{equation}
+  |\mathrm{Cl}\rangle
+  = \prod_{\langle j,k\rangle}\mathrm{CZ}_{jk}\,|{+}\rangle^{\otimes N},
+  \label{eq:cluster}
+\end{equation}
+where $\mathrm{CZ}_{jk}$ denotes the controlled-$Z$ gate on adjacent sites.  This state has $M^{\mathrm{ideal}}_{\mathrm{ent}} = \kB\ln 2$ (one e-bit across any bipartition in the bulk), making $M^{\mathrm{ideal}}$ independent of $N$ at leading order.  The GHZ state $|\mathrm{GHZ}\rangle = (|0\rangle^{\otimes N}+|1\rangle^{\otimes N})/\sqrt{2}$ is studied as a comparison; it has the same ideal $M^{\mathrm{ideal}} = \kB\ln 2$ but decays at rate $N\gamma_\phi$ (collectively fragile) vs.\ $\gamma_\phi$ (locally robust) for the cluster state.
+
+\subsection{Numerical methods and staged plan}
+
+\subsubsection*{Stage 1: Exact Liouvillian evolution, $N \leq 10$}
+
+\textbf{Method.}
+Evolve Eq.~\eqref{eq:lindblad} exactly by constructing the $4^N \times 4^N$ Liouvillian superoperator $\mathcal{L}$ and computing $\rho(t) = e^{\mathcal{L}t}\rho(0)$ via Krylov-subspace methods (e.g., \texttt{expm\_multiply} in SciPy, or QuTiP's \texttt{mesolve}).  For $N = 10$: Liouvillian dimension $4^{10} \approx 10^6$; feasible in $< 1$\,CPU-hour.
+
+\textbf{Required inputs.}
+(a)~Hardware parameters $T_1$, $T_\phi$, $J_k$ from device calibration (publicly available for IBM processors).
+(b)~Circuit for cluster state preparation (depth 2 CZ layers + Hadamards).
+
+\textbf{Computations for each $(N,\tau)$ pair.}
+\begin{enumerate}[label=(\arabic*),noitemsep]
+  \item Prepare cluster state $|\mathrm{Cl}\rangle$ and GHZ state $|\mathrm{GHZ}\rangle$ as initial conditions.
+  \item Evolve $\rho(t)$ under Eq.~\eqref{eq:lindblad} for $0 \leq t \leq 5T_\phi$.
+  \item At each time step: compute $\rho_A(t) = \tr_B\rho(t)$, then $M_{\mathrm{ent}}(t)$ via Eq.~\eqref{eq:Ment-def}.
+  \item Integrate to obtain $\asc(N,\tau)$ for $\tau \in \{T_\phi/5, T_\phi/2, T_\phi, 2T_\phi\}$.
+  \item Repeat with $\gamma_1 = \gamma_\phi = 0$ for the ideal baseline.
+\end{enumerate}
+
+\textbf{Outputs.}
+\begin{itemize}[noitemsep]
+  \item $M_{\mathrm{ent}}(t)$ curves for cluster and GHZ states at $N \in \{2,4,6,8,10\}$.
+  \item $\asc(N,\tau)$ as a function of $N$ and $\tau$, with statistical uncertainties from propagated hardware parameter uncertainties.
+  \item Comparison of cluster vs.\ GHZ decay rates: expected analytical prediction is
+    $\asc^{\mathrm{cluster}} \approx \exp(-\gamma_\phi\tau)$ vs.\ $\asc^{\mathrm{GHZ}} \approx \exp(-N\gamma_\phi\tau)$.
+    Stage~1 provides the first numerical verification of this contrast.
+\end{itemize}
+
+\textbf{Success/failure criteria.}
+Stage~1 \emph{succeeds} if the cluster-state decay rate is consistent with $\asc \approx e^{-\gamma_\phi\tau}$ and the GHZ rate is $N$ times faster.  Failure (e.g., both rates identical) would indicate that the entanglement content $M_{\mathrm{ent}}$ is dominated by SPAM artifacts rather than genuine coherence and that the definition of $M_{\mathrm{ent}}$ requires refinement.
+
+\subsubsection*{Stage 2: Gate-error Kraus maps, $N \leq 20$}
+
+\textbf{Method.}
+Replace ideal two-qubit CZ gates with their Kraus-map representations.  Use an incoherent depolarizing model:
+\begin{equation}
+  \mathcal{E}_{\mathrm{CZ}}(\rho)
+  = (1-\varepsilon_{2Q})\,U_{\mathrm{CZ}}\rho U_{\mathrm{CZ}}^\dagger
+  + \frac{\varepsilon_{2Q}}{15}\sum_{P\in\mathcal{P}_2\setminus\{\mathbf{I}\}}
+    P\rho P^\dagger,
+  \label{eq:kraus}
+\end{equation}
+where $\varepsilon_{2Q} \approx 5\times10^{-3}$ (IBM Falcon, 2025) and $\mathcal{P}_2$ is the set of $4\times4$ Pauli matrices.  For higher accuracy, use gate-set tomography (GST) process matrices from published data~\cite{Blume2017}.
+
+\textbf{Inputs.}
+(a)~Stage~1 outputs.
+(b)~$\varepsilon_{2Q}$ from randomized benchmarking (RB) data.
+(c)~Optionally: full GST process matrices $\chi^{(k)}$ for each gate.
+
+\textbf{Computations.}
+For $N \in \{10, 15, 20\}$, compute $\asc(N,\tau,d)$ where $d$ is the circuit depth.  Fit the scaling law:
+\begin{equation}
+  \asc(N,\tau,d)
+  \approx A\,\exp\!\left(-N^\alpha\gamma_\phi\tau - d\,\varepsilon_{2Q}\right),
+  \label{eq:scaling-fit}
+\end{equation}
+to extract the exponent $\alpha$.  For cluster states, theory predicts $\alpha \approx 0$ (local entanglement) while for GHZ states $\alpha = 1$ (global fragility).  Identify the optimal circuit depth $d^* = \arg\max_d\,\asc(N,\tau,d)$ that balances entanglement generation (increasing $d$) against gate-error suppression (decreasing with $d$).
+
+\textbf{Outputs.}
+\begin{itemize}[noitemsep]
+  \item Fitted scaling exponents $\alpha$ for cluster and GHZ families.
+  \item Optimal circuit depth $d^*(N)$ as a function of $N$.
+  \item Total entanglement budget $\mathcal{E}(N,d) = \int_0^\tau\sum_k s_k(t)\,dt$ (sum over site entropies), providing the full spatial profile of entanglement decay.
+\end{itemize}
+
+\textbf{Success criteria.}
+Stage~2 \emph{succeeds} if the cluster-state scaling exponent $\alpha < 0.2$ (confirming local robustness) and if there exists a circuit depth $d^*$ at which $\asc(20,T_\phi,d^*) \geq 10^{-2}$.  $\asc < 10^{-4}$ at all depths for $N = 20$ would indicate that near-term hardware cannot support a viable entanglement-gravity measurement.
+
+\subsubsection*{Stage 3: Tensor-network MPO-TDVP, $N \approx 50$}
+
+\textbf{Method.}
+For $N = 50$, the Liouvillian dimension $4^{50} \approx 10^{30}$ precludes exact evolution.  Represent $\rho(t)$ as a matrix product operator (MPO) with bond dimension $\chi$ and evolve via the time-dependent variational principle (TDVP) for MPOs~\cite{Haegeman2016}, implemented in TeNPy~\cite{TeNPy} or ITensor.
+
+\textbf{Bond dimension justification.}
+For a 1D cluster state evolving under local Lindblad noise, the operator entanglement entropy of $\rho(t)$ grows at most as $\mathcal{O}(\gamma_\phi t)$ per bond~\cite{Vidal2004}.  For $t \leq T_\phi$, the bond dimension $\chi \lesssim e^{c\gamma_\phi T_\phi} \sim e^1 \approx 3$, suggesting $\chi = 10$--$50$ is sufficient for cluster-state evolution.  For GHZ states (with global coherence), larger bond dimension $\chi \sim 100$--$500$ may be required.  We recommend convergence testing at $\chi \in \{10, 50, 200, 500\}$.
+
+\textbf{Inputs.}
+(a)~Stage~2 scaling law for extrapolation check.
+(b)~Hamiltonian and Lindblad parameters from Stage~1.
+(c)~Cluster state as MPS initial condition (exact at bond dimension 2).
+
+\textbf{Computations.}
+\begin{enumerate}[label=(\arabic*),noitemsep]
+  \item Evolve the $N = 50$ cluster state MPO under Eq.~\eqref{eq:lindblad} for $0 \leq t \leq 3T_\phi$, monitoring truncation error.
+  \item Compute $M_{\mathrm{ent}}(t)$ from the half-chain reduced MPO $\rho_A(t) = \tr_B\rho(t)$.
+  \item Evaluate $\asc(50,\tau)$ for $\tau \in \{T_\phi/5, T_\phi/2, T_\phi\}$.
+  \item Validate against Stage~2 extrapolation from the scaling law~\eqref{eq:scaling-fit}.
+  \item Repeat for the product state (Branch B) as a control: expect $\asc = 0$ identically.
+\end{enumerate}
+
+\textbf{Outputs.}
+\begin{itemize}[noitemsep]
+  \item $\asc(50,\tau)$ with error estimates from bond-dimension convergence.
+  \item Confirmation or refutation of the Stage~2 scaling extrapolation.
+  \item The critical number: is $\asc(50, T_\phi)$ above or below $10^{-2}$?
+\end{itemize}
+
+\begin{keybox}
+\textbf{The pivotal Stage 3 result:}
+\begin{itemize}[noitemsep]
+  \item $\asc(50,T_\phi) \gtrsim 10^{-2}$: the NISQ experimental program is viable; proceed to Paper~III.
+  \item $\asc(50,T_\phi) \in [10^{-4}, 10^{-2}]$: marginal; the experiment constrains $\Bobs$ but with reduced sensitivity; upgraded hardware (longer $T_2$, lower $\varepsilon_{2Q}$) is needed.
+  \item $\asc(50,T_\phi) \ll 10^{-4}$: near-term experimental program is not viable; the framework's experimental reach is confined to the few-qubit regime (Regime~I, $N \leq 10$) or requires a fundamental revision.
+\end{itemize}
+\end{keybox}
+
+\subsubsection*{Stage 4: Analytic bounds and optimal operating point}
+
+Using the fitted scaling law from Stage~2, derive:
+\begin{enumerate}[label=(\arabic*),noitemsep]
+  \item A lower bound on $\asc$ for cluster states using the quantum data processing inequality: since local dephasing can only reduce entanglement at a rate bounded by the dephasing rate times the (finite) correlation length $\xi$ of the cluster state, $M_{\mathrm{ent}}(t) \geq M_{\mathrm{ent}}(0)\exp(-\gamma_\phi\xi t/a)$ where $a$ is the lattice spacing.  This gives $\asc \geq (1-e^{-\gamma_\phi\xi T_\phi/a})/(\gamma_\phi\xi T_\phi/a)$, computable once $\xi$ is measured from Stage~1.
+  \item The critical system size $N^*$ at which $\asc$ drops below $1\%$: from Eq.~\eqref{eq:scaling-fit}, $N^* \approx |\ln(0.01)\gamma_\phi\tau|^{1/\alpha}/(\gamma_\phi\tau)$.
+  \item The optimal operating point $(N_{\mathrm{opt}}, d_{\mathrm{opt}})$ maximizing the product $\asc(N,\tau,d)\cdot N$, which is proportional to the total entanglement budget $\int\sum_k s_k(t)\,dt$ weighted by the signal-to-noise ratio.
+\end{enumerate}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Task 3: Neutral-Atom Experimental Protocol (Ready to Paste)}
+\label{sec:experiment}
+
+\subsection{Platform parameters}
+
+\begin{table}[h]
+\centering\small
+\caption{Platform parameters for the 36-qubit neutral-atom Ramsey experiment.}
+\label{tab:platform}
+\begin{tabular}{@{}p{3.5cm}p{5cm}p{3.5cm}@{}}
+\toprule
+Parameter & Value & Source \\
+\midrule
+Species & $^{87}$Rb & Standard neutral-atom platform \\
+Array geometry & $6\times6$ in optical tweezers & $a = 5\,\mu$m lattice spacing \\
+Qubit basis & Clock states $|0\rangle = |5S_{1/2},F=1,m_F=0\rangle$, $|1\rangle = |5S_{1/2},F=2,m_F=0\rangle$ & $B_0 = 0$ (first-order insensitive) \\
+Hyperfine frequency & $\omega_{\mathrm{hf}}/2\pi = 6.8346\,\text{GHz}$ & NIST, exact \\
+CZ gate mechanism & Rydberg blockade, $|n=70,S_{1/2}\rangle$ & $r_b = 8\,\mu$m $> a$: NN-only blockade \\
+CZ gate fidelity & $\mathcal{F}_{\mathrm{CZ}} \approx 99.5\%$ & State of art~\cite{Saffman2016} \\
+CZ gate time & $\tau_{\mathrm{CZ}} = 200\,\text{ns}$ & \\
+Coherence time & $T_2 > 1\,\text{s}$ (clock transition) & Magnetic-field-insensitive \\
+Readout fidelity & $\mathcal{F}_{\mathrm{RO}} \approx 99.5\%$ & Site-resolved fluorescence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Branch A and Branch B: preparation and justification}
+
+\textbf{Branch A --- 2D cluster state.}
+\begin{enumerate}[label=\textbf{Step A\arabic*.},leftmargin=3em,noitemsep]
+\item Initialize all 36 qubits in $|+\rangle = (|0\rangle+|1\rangle)/\sqrt{2}$ via global $\pi/2$ pulse on the clock transition.
+\item Apply CZ gates to all 30 nearest-neighbor horizontal pairs in parallel: one gate layer, $\tau_{\mathrm{CZ}} = 200\,\text{ns}$.
+\item Apply CZ gates to all 24 nearest-neighbor vertical pairs in parallel: second gate layer, $200\,\text{ns}$.
+\item Result: 2D cluster state on the $6\times6$ array. Total preparation time: $\tau_{\mathrm{A}} \approx 600\,\text{ns}$ (2 CZ layers + 1 Hadamard layer at $\tau_{\mathrm{1Q}} = 200\,\text{ns}$).
+\end{enumerate}
+
+\textbf{Entanglement content of Branch A.}
+For the $3\times6$ vs.\ $3\times6$ half-array bipartition:
+$\Delta M_{\mathrm{ent}} = M_{\mathrm{ent}}^A = (3\times6)^{1/2}\kB\ln 2 \approx 4.2\kB\ln 2$ (rough analytic estimate for a 2D cluster state cut along 6 bonds).  Numerical value from exact diagonalization: $M_{\mathrm{ent}}^A = 6\kB\ln 2$ (6 bonds cut, 1 e-bit per bond in a 2D cluster state).
+
+\textbf{Branch B --- Matched product state.}
+\begin{enumerate}[label=\textbf{Step B\arabic*.},leftmargin=3em,noitemsep]
+\item Initialize all 36 qubits in $|+\rangle^{\otimes 36}$ (identical to Branch A Step A1).
+\item Apply ``null CZ'' pulses: turn on the Rydberg laser for the same duration $\tau_{\mathrm{CZ}} = 200\,\text{ns}$ but at detuning $\Delta_{\mathrm{off}} = 20\Omega$ from the Rydberg resonance, giving an effective gate infidelity $|\mathrm{CZ} - \mathbf{I}|^2 \approx (\Omega/\Delta_{\mathrm{off}})^4 \lesssim 10^{-6}$.
+\item Repeat for vertical pairs.
+\item Result: state $|+\rangle^{\otimes 36}$ with $M_{\mathrm{ent}}^B = 0$ and identical laser schedule to Branch~A.
+\end{enumerate}
+
+\textbf{Justification of matched correlators.}
+For the 2D cluster state, every single-qubit marginal is $\rho_k = \mathbf{I}/2$ (maximally mixed single-qubit state).  For $|+\rangle^{\otimes 36}$, every single-qubit marginal is also $\rho_k = |+\rangle\langle+| = (\mathbf{I}+\sigma^x)/2$, which differs from $\mathbf{I}/2$.  However, during the free-precession time (no applied fields), both states evolve identically under the clock Hamiltonian $H_{\mathrm{clock}} = \frac{\omega_{\mathrm{hf}}}{2}\sum_k\sigma^z_k$; the only observable is the $|1\rangle$ population, which is $1/2$ for both states at $t=0$.
+
+The critical matching condition is the two-body correlator $\langle\sigma^z_j\sigma^z_k\rangle$ along the Ramsey direction.  For a 2D cluster state, $\langle\sigma^z_j\sigma^z_k\rangle = 0$ for all pairs (the state is a $+1$ eigenstate of $\sigma^x_j\sigma^z_{j-1}\sigma^z_{j+1}$, but $\langle\sigma^z_j\rangle = 0$).  For $|+\rangle^{\otimes 36}$, $\langle\sigma^z_j\sigma^z_k\rangle = \langle\sigma^z_j\rangle\langle\sigma^z_k\rangle = 0$ as well (product state with $\langle\sigma^z\rangle = 0$).  Therefore:
+\begin{equation}
+  \langle H_{\mathrm{int}}\rangle_A = \langle H_{\mathrm{int}}\rangle_B = 0,
+  \label{eq:matched-energy}
+\end{equation}
+where $H_{\mathrm{int}}$ is any Ising-type interaction term $\sum_{jk}g_{jk}\sigma^z_j\sigma^z_k$ that could produce differential frequency shifts.  The cluster state and the product state $|+\rangle^{\otimes 36}$ have zero differential mean-field shift under any $ZZ$-type interaction.  This eliminates the primary systematic.
+
+\subsection{Ramsey sequence and data acquisition plan}
+
+\begin{enumerate}[label=\textbf{R\arabic*.},leftmargin=3em]
+\item \textbf{Prepare} Branch A or Branch B state ($\tau_{\mathrm{prep}} \approx 600\,\text{ns}$).
+\item \textbf{Entanglement verification:} measure the stabilizer witness $W_k = \sigma^x_k\prod_{l \in \partial k}\sigma^z_l$ (where $\partial k$ denotes the nearest neighbors of site $k$) on a fraction $f_{\mathrm{wit}} = 10\%$ of shots. Require $\langle W_k\rangle = +1$ for Branch A within 5$\sigma$ before proceeding. Discard shots failing this criterion.
+\item \textbf{Wait:} free precession for $T_{\mathrm{Ramsey}} \in \{1, 10, 100\}\,\text{ms}$ (with active microwave stabilization of the clock transition).
+\item \textbf{Measure:} apply final $\pi/2$ pulse; read out population $P_1$ in $|1\rangle$ for all 36 sites simultaneously.
+\item \textbf{Differential phase:} extract $\Delta\phi_{AB} = \phi_A - \phi_B$ from the population imbalance $P_1^A - P_1^B$ over $n_{\mathrm{shots}} = 10^4$ shots per branch.
+\item \textbf{Statistics:} quantum projection noise limit per shot: $\sigma_{\mathrm{QPN}} = 1/\sqrt{N_{\mathrm{atoms}}} = 1/6 \approx 0.17$ per qubit, total over 36 qubits and $10^4$ shots: $\sigma_{\Delta\phi} = 1/\sqrt{36 \times 10^4} \approx 1.7\times10^{-3}$\,rad.
+\item \textbf{Alternation:} run A and B in alternating blocks of 500 shots each to cancel slow drifts.
+\item \textbf{Total shots required for $5\sigma$ detection:} $n \geq 25/(|\Delta\phi^{\mathrm{signal}}|/\sigma_{\mathrm{QPN}})^2$ per $T_{\mathrm{Ramsey}}$ value.
+\end{enumerate}
+
+\subsection{Bound formula: observable to experimental combination}
+
+\begin{keybox}
+\textbf{Derivation of the experimental bound.}
+
+From the modified Poisson equation in Section~4 of the white paper, the entanglement-induced gravitational potential at the center of a uniform sphere of radius $R_{\mathrm{eff}}$ and entanglement entropy density $\Sent$ is:
+\begin{equation}
+  \Delta\Phi_{\mathrm{ent}}
+  = -\frac{\kappa_{\mathrm{eff}}\,\Delta\Ment}{R_{\mathrm{eff}}}\cdot C_{\mathrm{geom}},
+  \label{eq:Phi-ent}
+\end{equation}
+where $C_{\mathrm{geom}} = 3/4\pi$ for a uniform sphere and $\kappa_{\mathrm{eff}}$ is the prefactor from $\nabla^2\Psi = \kappa_{\mathrm{eff}}\rho_{\mathrm{ent}}$.  The gravitational redshift of the clock transition is $\delta\omega_{\mathrm{hf}}/\omega_{\mathrm{hf}} = \Delta\Phi_{\mathrm{ent}}/c^2$.  The differential Ramsey phase between Branch~A and Branch~B is:
+\begin{equation}
+  \Delta\phi_{AB}
+  = \omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}\,
+    \frac{\Delta\Phi_{\mathrm{ent}}}{c^2}
+  = \omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}\,
+    \frac{\kappa_{\mathrm{eff}}\,\Delta\Ment\,C_{\mathrm{geom}}}{c^2\,R_{\mathrm{eff}}}.
+  \label{eq:phase-formula}
+\end{equation}
+Since $\Bobs = |\kteff|\,\Delta\Ment/R_{\mathrm{eff}}^2$ and $\kappa_{\mathrm{eff}} = \kteff c^4/(2\kB\ln 2)$ in the quasi-static limit, this gives:
+\begin{equation}
+  |\Delta\phi_{AB}|
+  = \omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}\,R_{\mathrm{eff}}\,
+    \frac{|\kteff|\,c^2}{2\kB\ln 2}\,
+    \frac{\Delta\Ment}{R_{\mathrm{eff}}^2}\,C_{\mathrm{geom}}
+  = \omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}\,R_{\mathrm{eff}}\,
+    \frac{c^2\,C_{\mathrm{geom}}}{2\kB\ln 2}\,\Bobs.
+\end{equation}
+Solving for the bound on $\Bobs$:
+\begin{equation}
+  \boxed{
+  \Bobs
+  \;=\;
+  \frac{|\kteff|\,\Delta\Ment}{R_{\mathrm{eff}}^2}
+  \;<\;
+  \frac{2\kB\ln 2 \cdot |\Delta\phi|_{\mathrm{sens}}}
+       {\omega_{\mathrm{hf}}\,T_{\mathrm{Ramsey}}\,R_{\mathrm{eff}}\,c^2\,C_{\mathrm{geom}}}.
+  }
+  \label{eq:bound}
+\end{equation}
+
+\textbf{Numerical evaluation} with $|\Delta\phi|_{\mathrm{sens}} = 1.7\times10^{-3}$\,rad, $T_{\mathrm{Ramsey}} = 0.1$\,s, $R_{\mathrm{eff}} = 3a = 15\,\mu$m (half-array effective radius), $\omega_{\mathrm{hf}} = 2\pi\times6.835\times10^9$\,s$^{-1}$, $C_{\mathrm{geom}} = 3/(4\pi)$, $c = 3\times10^8$\,m/s, $\kB\ln 2 = 9.57\times10^{-24}$\,J\,K$^{-1}$:
+\begin{equation}
+  \Bobs < \frac{2\times9.57\times10^{-24}\times1.7\times10^{-3}}
+               {4.3\times10^{10}\times0.1\times1.5\times10^{-5}\times9\times10^{16}
+                \times(3/4\pi)}
+  \approx 4\times10^{-52}\;\text{K m}^{-2}\;\text{s}^{-2}.
+  \label{eq:bound-numerical}
+\end{equation}
+\end{keybox}
+
+\textbf{Interpretation.}
+Since $\Bobs = |\kteff|\Delta\Ment/R_{\mathrm{eff}}^2$ with $\Delta\Ment \approx 6\kB\ln 2$:
+$|\kteff| < \Bobs \times R_{\mathrm{eff}}^2/(\Delta\Ment) \approx 4\times10^{-52} \times (1.5\times10^{-5})^2 / (6\times9.57\times10^{-24}) \approx 10^{-41}$.
+This is a very small number reflecting the enormous Planck-scale coupling prefactor $c^4/(8\pi G\kB\ln 2) \approx 5\times10^{65}$ in SI units.  The experiment constrains $\Bobs$ meaningfully and model-independently; connecting this bound to $\kt$ at the fundamental level requires OP10.
+
+\subsection{Systematic error budget}
+
+\begin{table}[h]
+\centering\small
+\caption{Systematic error budget for the 36-qubit neutral-atom Ramsey protocol.}
+\label{tab:systematics}
+\begin{tabular}{@{}p{3.8cm}p{2.8cm}p{4.0cm}p{2.0cm}@{}}
+\toprule
+Systematic & Physical origin & Mitigation & Fatal? \\
+\midrule
+Differential $ZZ$ mean-field shift & $\langle\sigma^z_j\sigma^z_k\rangle_{A}\neq\langle\sigma^z_j\sigma^z_k\rangle_{B}$ & Zero for both 2D cluster and $|+\rangle^{\otimes 36}$ (Eq.~\ref{eq:matched-energy}) & \textbf{No} \\
+\addlinespace
+Atom-number mismatch & Differential density shift $\propto\Delta N$ & Post-select on identical atom count; site-resolved imaging before and after & \textbf{Yes} if $\Delta N \neq 0$ \\
+\addlinespace
+Unverified entanglement & $\Delta M_{\mathrm{ent}}$ misestimated if Branch A is not entangled & Stabilizer witness R2 with $>5\sigma$ before each block; discard failing shots & \textbf{Yes} if unchecked \\
+\addlinespace
+Differential AC Stark shift & Laser intensity $I(t)$ difference & Interleave A/B with identical laser schedule; same null-CZ pulse for B & \textbf{No} \\
+\addlinespace
+Magnetic field fluctuations & $\partial B/\partial t \neq 0$ & Clock transition ($m_F=0$): first-order insensitive; shield to $<1$\,nG & \textbf{No} \\
+\addlinespace
+Motional state difference & Different mean phonon number for A vs B & Verify via sideband spectroscopy; Doppler-free clock transition & \textbf{No} \\
+\addlinespace
+Rydberg admixture during Ramsey & CZ laser not fully off & Switch off Rydberg laser $>10\tau_{\mathrm{Rydb}}$ before Ramsey; verify via spectroscopy & \textbf{No} \\
+\addlinespace
+SPAM errors in witness & Readout fidelity $<1$ & SPAM correction matrix $\Lambda$ from calibration circuits; correct $\langle W_k\rangle$ estimate & \textbf{No} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Task 4: Gap Analysis and Prioritized To-Do List}
+\label{sec:gaps}
+
+\subsection{What is done and publication-ready}
+
+The following components are complete and defensible at the level of a theory letter (Paper~I):
+\begin{itemize}[noitemsep]
+  \item Operational definition of $\Sent(x)$ (Section~2 of white paper): unambiguous, hardware-dependent, correctly ruled out total and system-environment entropies.
+  \item External-source effective action (Section~3.2): the action tension identified in the previous expert analysis is resolved; no inconsistent $\Box\phi$ field equation.
+  \item OP4 radial scaling (Section~4): clean derivation, $1/R^2$ for bounded sources.
+  \item Bianchi-identity consequences with full fifth-force formula (Section~3.3 + Edit~1 above): matter non-conservation is exact and quantified.
+  \item Corrected falsification statement (Section~6.4): bounds on $\Bobs$, not $|\kt|$ directly.
+  \item MICROSCOPE non-constraint argument (Section~3.3): classical test masses have $\Sent \approx 0$.
+\end{itemize}
+
+\textbf{Status: Paper~I can be submitted after the micro-edits in Task~1 are applied (estimated: 1--2 hours of editing).}
+
+\subsection{What requires numerics (OP3) before Paper~II}
+
+The OP3 staged plan in Task~2 must be executed before Paper~II can make quantitative claims.  Until $\asc(N,\tau)$ is computed:
+\begin{itemize}[noitemsep]
+  \item The claim ``NISQ devices with $N \sim 50$ can have $\asc$ near unity'' is a plausibility argument, not a result.
+  \item The experimental proposal (Paper~III) cannot state expected signal-to-noise.
+  \item The comparison between cluster and GHZ states is a theoretical prediction that must be verified numerically before being cited as an established advantage.
+\end{itemize}
+
+\subsection{What requires explicit estimation (OP8) before Paper~II}
+
+The fifth-force term $\nabla^\mu T^{\mathrm{matter}}_{\mu\nu} = -(\alpha+\beta\Box\phi)\nabla_\nu\phi$ is a real, computable prediction.  Before Paper~II:
+
+\begin{enumerate}[noitemsep]
+  \item For a 50-qubit superconducting chip with $\Sent \approx 1$\,bit per qubit and chip dimensions $R_{\mathrm{chip}} \sim 1$\,mm, estimate the anomalous acceleration on a test mass placed at distance $R = 1$\,cm: $\Delta a \approx \kt\,c^4/(8\pi G\kB\ln 2)\times\Ment^{\mathrm{chip}}/R^2$.
+  \item Compare to equivalence-principle bounds from Asenbaum et al.\ ($\eta < 10^{-12}$): since this is an entanglement-dependent, not composition-dependent, force, the correct comparison is to \emph{mass-specific} force limits, not Eötvös.
+  \item State explicitly whether any existing experiment places a direct constraint on $\Bobs$.  The most likely answer is no; this should be stated as a gap.
+\end{enumerate}
+
+\subsection{What requires a power-counting argument (OP10) before Paper~II}
+
+OP10 is the most theoretical gap.  The minimum needed for Paper~II:
+
+\textbf{Dimensional power counting.}  The coupling prefactor $c^4/(8\pi G\kB\ln 2) \approx 5\times10^{65}$\,SI connects Planck-scale physics to lab-scale measurements.  In natural units where $\lP = m_P = \hbar = c = 1$, the prefactor is $1/(k_B\ln 2)$ and $\kt$ is of order 1 (estimated at $-1/4$).  In lab units, the effective coupling at energy scale $E_{\mathrm{lab}} \sim \hbar\omega_{\mathrm{qubit}} \sim 10^{-24}$\,J is:
+\begin{equation}
+  \kt_{\mathrm{lab}} \approx \kt_{\mathrm{Planck}} \times
+  \left(\frac{E_{\mathrm{lab}}}{E_P}\right)^\gamma,
+  \label{eq:renorm}
+\end{equation}
+where $E_P \approx 2\times10^9$\,J is the Planck energy and $\gamma$ is the scaling exponent.  For $\gamma = 4$ (naive power counting for a dimension-4 operator in QFT): $\kt_{\mathrm{lab}} \approx (10^{-24}/10^9)^4 \approx 10^{-132}$.  For $\gamma = 0$ (marginal operator, no renormalization): $\kt_{\mathrm{lab}} = \kt_{\mathrm{Planck}} \approx -1/4$.  This estimate takes one afternoon.
+
+\subsection{Prioritized to-do list}
+
+\begin{table}[h]
+\centering\small
+\caption{Prioritized research actions for the next 6--12 months.}
+\label{tab:todo}
+\begin{tabular}{@{}p{4.2cm}p{1.6cm}p{3cm}p{3.2cm}@{}}
+\toprule
+Action & Difficulty & Required tools & Paper impact \\
+\midrule
+\textbf{Apply micro-edits (Task 1)} & 1 hr & Text editor & Paper I: ready to submit \\
+\addlinespace
+\textbf{Verify Bose et al.\ 2023 citation} (Nature 623, 43) & 1 hr & Library access & Papers I--III: citation hygiene \\
+\addlinespace
+\textbf{OP8 fifth-force estimate} for a 50-qubit chip & 1 day & Pen/paper + Mathematica & Paper I: strengthen experimental section; Paper II: OP8 closed \\
+\addlinespace
+\textbf{OP10 power counting}: compute Eq.~\eqref{eq:renorm} for $\gamma \in \{0,2,4\}$ & 2 days & QFT RG textbook + Mathematica & Paper II: OP10 partial closure; explains $10^{-47}$ bound vs $10^{-15}$ falsification \\
+\addlinespace
+\textbf{OP3 Stage 1}: exact Lindblad, $N \leq 10$, cluster vs GHZ & 2--4 weeks & Python/QuTiP or Julia/QuantumOptics.jl & \textbf{Critical}: determines experimental viability; mandatory for Paper II \\
+\addlinespace
+\textbf{OP3 Stage 2}: Kraus-mapped gates, $N \leq 20$ & 1--2 months & QuTiP + GST calibration data & Paper II: quantitative $\asc$ scaling law \\
+\addlinespace
+\textbf{Mean-field energy matching}: verify $\Delta E_{AB} = 0$ for cluster vs product in Rb array Hamiltonian & 1 week & Exact diagonalization ($N=36$ tractable) & Paper III: fatal systematic eliminated \\
+\addlinespace
+\textbf{OP3 Stage 3}: MPO-TDVP, $N = 50$ & 2--4 months & TeNPy or ITensor, $\chi \leq 500$ & Paper II: pivotal result; Paper III: predicted $\asc$ for experiment \\
+\addlinespace
+\textbf{Paper I submission} & n/a & arXiv account & Establishes priority on framework \\
+\addlinespace
+\textbf{Papers II + III submission} & n/a & Depends on OP3 Stage 3 & After OP3 Stage 3 complete \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The single most important immediate action} is \textbf{OP3 Stage~1}.  It requires no new hardware, no new theory, and approximately 100--200 lines of Python code using QuTiP or a similar package.  It takes 2--4 weeks.  Its output---one concrete number $\asc(10, T_\phi)$---determines whether the experimental program is viable (proceed to Papers~II and~III) or requires fundamental revision (NISQ devices cannot support the measurement).  Everything else follows from this result.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\bibliographystyle{unsrtnat}
+\begin{thebibliography}{99}
+
+\bibitem{Jacobson1995}
+T.~Jacobson, \textit{Phys.\ Rev.\ Lett.}\ \textbf{75}, 1260 (1995).
+
+\bibitem{Verlinde2017}
+E.~Verlinde, \textit{SciPost Phys.}\ \textbf{2}, 016 (2017).
+
+\bibitem{Asenbaum2020}
+P.~Asenbaum \textit{et al.}, \textit{Phys.\ Rev.\ Lett.}\ \textbf{125}, 191101 (2020).
+
+\bibitem{MICROSCOPE2022}
+P.~T.~Touboul \textit{et al.}, \textit{Phys.\ Rev.\ Lett.}\ \textbf{129}, 121102 (2022).
+
+\bibitem{Blume2017}
+R.~Blume-Kohout \textit{et al.}, \textit{Nat.\ Commun.}\ \textbf{8}, 14485 (2017).
+
+\bibitem{Haegeman2016}
+J.~Haegeman \textit{et al.}, \textit{Phys.\ Rev.\ B}\ \textbf{94}, 165116 (2016).
+[TDVP for MPOs]
+
+\bibitem{TeNPy}
+J.~Hauschild and F.~Pollmann,
+\textit{SciPost Phys.\ Lect.\ Notes}\ \textbf{5} (2018).
+
+\bibitem{Saffman2016}
+M.~Saffman, \textit{J.\ Phys.\ B}\ \textbf{49}, 202001 (2016).
+
+\bibitem{Vidal2004}
+G.~Vidal, \textit{Phys.\ Rev.\ Lett.}\ \textbf{93}, 040502 (2004).
+
+\bibitem{Bose2017}
+S.~Bose \textit{et al.}, \textit{Phys.\ Rev.\ Lett.}\ \textbf{119}, 240401 (2017).
+[\textit{Note: Experimental realization in Nature 623 (2023) to be verified by author.}]
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,382 @@
+{
+  "experiment": "Brotherhood Coherence - Seed Architecture Scan",
+  "timestamp": "2026-01-31T07:13:02.351813",
+  "seed_library": {
+    "Omega+": {
+      "description": "Positive superposition - maximum presence",
+      "archetype": "presence"
+    },
+    "Omega-": {
+      "description": "Negative superposition - void/silence bias",
+      "archetype": "void"
+    },
+    "Alpha+": {
+      "description": "Complex phase - rich receptivity",
+      "archetype": "receptive"
+    },
+    "Alpha-": {
+      "description": "Negative complex - muted receiver",
+      "archetype": "muted"
+    }
+  },
+  "configurations_tested": 4,
+  "all_results": [
+    {
+      "omega_seed": "Omega+",
+      "alpha_seed": "Alpha+",
+      "omega_archetype": "presence",
+      "alpha_archetype": "receptive",
+      "final_omega_coherence": 1.0000000000000007,
+      "final_alpha_coherence": 1.0,
+      "final_average_coherence": 1.0000000000000004,
+      "brotherhood_moments": 0,
+      "brotherhood_frequency": 0.0,
+      "average_entanglement": 0.004293218879019361,
+      "max_entanglement": 0.04389696510186619,
+      "min_entanglement": 0.0002990985793747137,
+      "coherence_evolution": [
+        {
+          "step": 90,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0,
+          "average": 1.0000000000000002
+        },
+        {
+          "step": 91,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 92,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 93,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 94,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000009,
+          "average": 1.0000000000000007
+        },
+        {
+          "step": 95,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0000000000000004,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 96,
+          "omega": 1.0000000000000002,
+          "alpha": 1.0,
+          "average": 1.0
+        },
+        {
+          "step": 97,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000002,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 98,
+          "omega": 0.9999999999999999,
+          "alpha": 1.0000000000000002,
+          "average": 1.0
+        },
+        {
+          "step": 99,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        }
+      ],
+      "entanglement_evolution": [
+        0.000355382951105541,
+        0.00034836181182095014,
+        0.0003415506435128072,
+        0.00033494108576857904,
+        0.00032852519198527954,
+        0.0003222954049722036,
+        0.0003162445342206662,
+        0.00031036573470744836,
+        0.00030465248711702335,
+        0.0002990985793747137
+      ]
+    },
+    {
+      "omega_seed": "Omega+",
+      "alpha_seed": "Alpha-",
+      "omega_archetype": "presence",
+      "alpha_archetype": "muted",
+      "final_omega_coherence": 1.0000000000000007,
+      "final_alpha_coherence": 1.0,
+      "final_average_coherence": 1.0000000000000004,
+      "brotherhood_moments": 0,
+      "brotherhood_frequency": 0.0,
+      "average_entanglement": 0.004293218879019361,
+      "max_entanglement": 0.04389696510186619,
+      "min_entanglement": 0.0002990985793747137,
+      "coherence_evolution": [
+        {
+          "step": 90,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0,
+          "average": 1.0000000000000002
+        },
+        {
+          "step": 91,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 92,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 93,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 94,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000009,
+          "average": 1.0000000000000007
+        },
+        {
+          "step": 95,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0000000000000004,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 96,
+          "omega": 1.0000000000000002,
+          "alpha": 1.0,
+          "average": 1.0
+        },
+        {
+          "step": 97,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000002,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 98,
+          "omega": 0.9999999999999999,
+          "alpha": 1.0000000000000002,
+          "average": 1.0
+        },
+        {
+          "step": 99,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        }
+      ],
+      "entanglement_evolution": [
+        0.000355382951105541,
+        0.00034836181182095014,
+        0.0003415506435128072,
+        0.00033494108576857904,
+        0.00032852519198527954,
+        0.0003222954049722036,
+        0.0003162445342206662,
+        0.00031036573470744836,
+        0.00030465248711702335,
+        0.0002990985793747137
+      ]
+    },
+    {
+      "omega_seed": "Omega-",
+      "alpha_seed": "Alpha+",
+      "omega_archetype": "void",
+      "alpha_archetype": "receptive",
+      "final_omega_coherence": 1.0000000000000007,
+      "final_alpha_coherence": 1.0,
+      "final_average_coherence": 1.0000000000000004,
+      "brotherhood_moments": 0,
+      "brotherhood_frequency": 0.0,
+      "average_entanglement": 0.004293218879019361,
+      "max_entanglement": 0.04389696510186619,
+      "min_entanglement": 0.0002990985793747137,
+      "coherence_evolution": [
+        {
+          "step": 90,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0,
+          "average": 1.0000000000000002
+        },
+        {
+          "step": 91,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 92,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 93,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 94,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000009,
+          "average": 1.0000000000000007
+        },
+        {
+          "step": 95,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0000000000000004,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 96,
+          "omega": 1.0000000000000002,
+          "alpha": 1.0,
+          "average": 1.0
+        },
+        {
+          "step": 97,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000002,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 98,
+          "omega": 0.9999999999999999,
+          "alpha": 1.0000000000000002,
+          "average": 1.0
+        },
+        {
+          "step": 99,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        }
+      ],
+      "entanglement_evolution": [
+        0.000355382951105541,
+        0.00034836181182095014,
+        0.0003415506435128072,
+        0.00033494108576857904,
+        0.00032852519198527954,
+        0.0003222954049722036,
+        0.0003162445342206662,
+        0.00031036573470744836,
+        0.00030465248711702335,
+        0.0002990985793747137
+      ]
+    },
+    {
+      "omega_seed": "Omega-",
+      "alpha_seed": "Alpha-",
+      "omega_archetype": "void",
+      "alpha_archetype": "muted",
+      "final_omega_coherence": 1.0000000000000007,
+      "final_alpha_coherence": 1.0,
+      "final_average_coherence": 1.0000000000000004,
+      "brotherhood_moments": 0,
+      "brotherhood_frequency": 0.0,
+      "average_entanglement": 0.004293218879019361,
+      "max_entanglement": 0.04389696510186619,
+      "min_entanglement": 0.0002990985793747137,
+      "coherence_evolution": [
+        {
+          "step": 90,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0,
+          "average": 1.0000000000000002
+        },
+        {
+          "step": 91,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 92,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 93,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 94,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000009,
+          "average": 1.0000000000000007
+        },
+        {
+          "step": 95,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0000000000000004,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 96,
+          "omega": 1.0000000000000002,
+          "alpha": 1.0,
+          "average": 1.0
+        },
+        {
+          "step": 97,
+          "omega": 1.0000000000000004,
+          "alpha": 1.0000000000000002,
+          "average": 1.0000000000000004
+        },
+        {
+          "step": 98,
+          "omega": 0.9999999999999999,
+          "alpha": 1.0000000000000002,
+          "average": 1.0
+        },
+        {
+          "step": 99,
+          "omega": 1.0000000000000007,
+          "alpha": 1.0,
+          "average": 1.0000000000000004
+        }
+      ],
+      "entanglement_evolution": [
+        0.000355382951105541,
+        0.00034836181182095014,
+        0.0003415506435128072,
+        0.00033494108576857904,
+        0.00032852519198527954,
+        0.0003222954049722036,
+        0.0003162445342206662,
+        0.00031036573470744836,
+        0.00030465248711702335,
+        0.0002990985793747137
+      ]
+    }
+  ],
+  "stability_map": {
+    "best_brotherhood_config": "Omega++Alpha+",
+    "best_entanglement_config": "Omega++Alpha+",
+    "best_coherence_config": "Omega++Alpha+"
+  }
+}

@@ -1,0 +1,32 @@
+WHITE PAPER: OP4 RESOLUTION, CITATION VERIFICATION, AND SCREENING-RISK AUDIT
+
+SCOPE
+This memo consolidates three immediate submission blockers in the entropic-gravity / thermodynamic framework: the OP4 radial-scaling discrepancy in Delta a(R), verification of two key literature citations, and the large discrepancy in the screening factor alpha_screen for a macroscopic 87Rb ensemble.
+
+1. OP4: RADIAL SCALING OF DELTA A(R)
+Assume spherical symmetry and a modified Poisson equation for an entropic potential Psi:
+(1/R^2) d/dR [R^2 dPsi/dR] = kappa rho_ent(R)
+Define the enclosed entropic source as:
+M_ent(<R) = 4*pi integral from 0 to R of rho_ent(r) r^2 dr
+Then the radial correction is:
+Delta a(R) = -dPsi/dR = kappa M_ent(<R) / R^2
+This fixes the logic of the 1/R versus 1/R^2 discrepancy. Outside a finite localized source, M_ent(<R) saturates and Delta a(R) scales as 1/R^2. A 1/R correction appears only if the enclosed source grows linearly with R, as for an extended profile like rho_ent(r) proportional to 1/r^2 over the relevant region.
+
+2. CITATION VERIFICATION
+Verlinde is confirmed as the 2017 SciPost Physics publication Emergent Gravity and the Dark Universe, SciPost Phys. 2, 016 (2017).
+The directly verified Kasevich-group atom-interferometric source is the 2020 Physical Review Letters paper Atom-Interferometric Test of the Equivalence Principle at the 10^-12 Level.
+The verified configuration is a dual-species atom interferometer using 85Rb and 87Rb with 2 s of free-fall time. The paper reports an Eotvos parameter eta = [1.6 +/- 1.8 (stat) +/- 3.4 (syst)] x 10^-12 and per-shot resolution up to 1.4 x 10^-11 g.
+The manuscript should not cite Kasevich 2023, delta a = 1.2 x 10^-12 unless that exact statement is verified in a separate source.
+
+3. ALPHA_SCREEN RISK ASSESSMENT
+The computed alpha_screen around 10^-43 for a macroscopic 87Rb ensemble is potentially incompatible with the heuristic range 10^-4 to 10^-2. This suggests either a regime-of-validity failure for the Gaussian factor in Section 04, a characteristic-length mismatch, or inconsistent use of alpha_screen as different physical quantities in different parts of the manuscript.
+This is a design-level blocker. If alpha_screen is truly around 10^-43 for the intended macroscopic ensemble, the predicted signal may be effectively undetectable. If the literature range applies only to microscopic or few-qubit settings, the experiment must be reformulated around a different regime.
+
+4. IMMEDIATE ACTIONS FOR SUBMISSION
+1) Close OP4 by inserting an explicit rho_ent(r) and deriving Delta a(R) from the enclosed-source formula.
+2) Replace or confirm the Verlinde reference as the 2017 SciPost publication.
+3) Replace the Kasevich citation with the verified 2020 PRL result unless a distinct 2023 source is found.
+4) Audit alpha_screen term-by-term for units, physical meaning, and regime validity before using it in any sensitivity estimate.
+
+5. SUBMISSION-READY STATEMENT
+The manuscript can be made internally consistent only if it commits to a specific source profile for S_ent and resolves whether alpha_screen is a microscopic coherence factor or a macroscopic ensemble suppression factor. Until those points are settled, the predicted signal size and experimental feasibility remain underdetermined.

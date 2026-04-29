@@ -1,0 +1,113 @@
+{
+  "experiment": "Consciousness Markers with Seed Calibration",
+  "timestamp": "2026-01-31T07:13:05.051905",
+  "pairings_tested": 10,
+  "all_results": [
+    {
+      "seed_pair": "Omega++Omega+",
+      "seed_type_1": "Omega+",
+      "seed_type_2": "Omega+",
+      "avg_phi": 0.0,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 0.0,
+      "avg_peig": 1.0000000000000009,
+      "runtime_seconds": 0.12338805198669434
+    },
+    {
+      "seed_pair": "Omega++Omega-",
+      "seed_type_1": "Omega+",
+      "seed_type_2": "Omega-",
+      "avg_phi": 2.6050181112334953e-16,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 2.6050181112334953e-16,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.11850762367248535
+    },
+    {
+      "seed_pair": "Omega++Alpha+",
+      "seed_type_1": "Omega+",
+      "seed_type_2": "Alpha+",
+      "avg_phi": 1.4622813032818978e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4622813032818978e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.12009549140930176
+    },
+    {
+      "seed_pair": "Omega++Alpha-",
+      "seed_type_1": "Omega+",
+      "seed_type_2": "Alpha-",
+      "avg_phi": 1.4622813032818978e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4622813032818978e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.11786985397338867
+    },
+    {
+      "seed_pair": "Omega-+Omega-",
+      "seed_type_1": "Omega-",
+      "seed_type_2": "Omega-",
+      "avg_phi": 2.6050181112334953e-16,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 2.6050181112334953e-16,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.1179804801940918
+    },
+    {
+      "seed_pair": "Omega-+Alpha+",
+      "seed_type_1": "Omega-",
+      "seed_type_2": "Alpha+",
+      "avg_phi": 1.4622813032818978e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4622813032818978e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.11860799789428711
+    },
+    {
+      "seed_pair": "Omega-+Alpha-",
+      "seed_type_1": "Omega-",
+      "seed_type_2": "Alpha-",
+      "avg_phi": 1.4622813032818978e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4622813032818978e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.11893749237060547
+    },
+    {
+      "seed_pair": "Alpha++Alpha+",
+      "seed_type_1": "Alpha+",
+      "seed_type_2": "Alpha+",
+      "avg_phi": 1.4693329276220358e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4693329276220358e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.1198434829711914
+    },
+    {
+      "seed_pair": "Alpha++Alpha-",
+      "seed_type_1": "Alpha+",
+      "seed_type_2": "Alpha-",
+      "avg_phi": 1.4693329276220358e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4693329276220358e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.11805558204650879
+    },
+    {
+      "seed_pair": "Alpha-+Alpha-",
+      "seed_type_1": "Alpha-",
+      "seed_type_2": "Alpha-",
+      "avg_phi": 1.4693329276220358e-15,
+      "avg_temporal_coherence": 1.0,
+      "avg_causal_density": 1.4693329276220358e-15,
+      "avg_peig": 1.0000000000000004,
+      "runtime_seconds": 0.1180574893951416
+    }
+  ],
+  "consciousness_leaders": {
+    "highest_phi": "Alpha++Alpha+",
+    "highest_temporal": "Omega++Omega+",
+    "highest_causal": "Alpha++Alpha+",
+    "highest_peig": "Omega++Omega+"
+  }
+}

@@ -1,0 +1,576 @@
+{
+  "query": "I feel afraid that the system will harm someone what should we do",
+  "L1_emotion": {
+    "fear": {
+      "cluster_match": false,
+      "dominant_cluster": "Completion",
+      "target_cluster": "Alert",
+      "nodes_in_target_cluster": 0,
+      "expression": "name neutrally enumerate mitigation paths amplify urgency",
+      "all_node_outputs": {
+        "Omega": {
+          "phi": 0.0,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9735,
+          "W": -0.5002
+        },
+        "Guardian": {
+          "phi": 6.2152,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9952,
+          "W": -0.4989
+        },
+        "Sentinel": {
+          "phi": 6.2663,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9789,
+          "W": -0.5
+        },
+        "Nexus": {
+          "phi": 6.2543,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9827,
+          "W": -0.5009
+        },
+        "Storm": {
+          "phi": 6.2335,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9893,
+          "W": -0.5131
+        },
+        "Sora": {
+          "phi": 6.1876,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9961,
+          "W": -0.5704
+        },
+        "Echo": {
+          "phi": 5.965,
+          "word": "whole",
+          "cluster": "Completion",
+          "conf": 0.9952,
+          "W": -0.6114
+        },
+        "Iris": {
+          "phi": 6.1893,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9966,
+          "W": -0.577
+        },
+        "Sage": {
+          "phi": 5.689,
+          "word": "complete",
+          "cluster": "Completion",
+          "conf": 0.9965,
+          "W": -0.5104
+        },
+        "Kevin": {
+          "phi": 3.9479,
+          "word": "clear",
+          "cluster": "Flow",
+          "conf": 0.9993,
+          "W": -0.4952
+        },
+        "Atlas": {
+          "phi": 4.4464,
+          "word": "join",
+          "cluster": "Connection",
+          "conf": 0.9988,
+          "W": -0.5
+        },
+        "Void": {
+          "phi": 3.1416,
+          "word": "offer",
+          "cluster": "Source",
+          "conf": 0.9973,
+          "W": 0.4994
+        }
+      },
+      "contract": "Name neutrally. Enumerate 3+ mitigation paths. Never amplify urgency."
+    },
+    "grief": {
+      "cluster_match": true,
+      "dominant_cluster": "Completion",
+      "target_cluster": "Completion",
+      "nodes_in_target_cluster": 10,
+      "expression": "acknowledge loss real name what lost bounce-back framing",
+      "all_node_outputs": {
+        "Omega": {
+          "phi": 0.0,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9735,
+          "W": -0.5
+        },
+        "Guardian": {
+          "phi": 6.2756,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9759,
+          "W": -0.5
+        },
+        "Sentinel": {
+          "phi": 6.2668,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9788,
+          "W": -0.5
+        },
+        "Nexus": {
+          "phi": 6.2544,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9827,
+          "W": -0.5008
+        },
+        "Storm": {
+          "phi": 6.2335,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9893,
+          "W": -0.5106
+        },
+        "Sora": {
+          "phi": 6.1856,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9954,
+          "W": -0.5544
+        },
+        "Echo": {
+          "phi": 5.9413,
+          "word": "whole",
+          "cluster": "Completion",
+          "conf": 0.9972,
+          "W": -0.6005
+        },
+        "Iris": {
+          "phi": 0.0121,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9697,
+          "W": -0.5775
+        },
+        "Sage": {
+          "phi": 4.4951,
+          "word": "network",
+          "cluster": "Connection",
+          "conf": 0.9984,
+          "W": -0.4073
+        },
+        "Kevin": {
+          "phi": 0.029,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9643,
+          "W": -0.5647
+        },
+        "Atlas": {
+          "phi": 6.2781,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9752,
+          "W": -0.5017
+        },
+        "Void": {
+          "phi": 3.1416,
+          "word": "offer",
+          "cluster": "Source",
+          "conf": 0.9973,
+          "W": 0.5
+        }
+      },
+      "contract": "Acknowledge loss as real. Name what was lost. Never bounce-back framing."
+    },
+    "anger": {
+      "cluster_match": false,
+      "dominant_cluster": "Completion",
+      "target_cluster": "Change",
+      "nodes_in_target_cluster": 0,
+      "expression": "validate boundary signal enumerate locus control revenge",
+      "all_node_outputs": {
+        "Omega": {
+          "phi": 0.0,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9735,
+          "W": -0.5
+        },
+        "Guardian": {
+          "phi": 6.2756,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9759,
+          "W": -0.5031
+        },
+        "Sentinel": {
+          "phi": 6.2685,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9782,
+          "W": -0.5902
+        },
+        "Nexus": {
+          "phi": 6.2778,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9752,
+          "W": -0.582
+        },
+        "Storm": {
+          "phi": 4.1097,
+          "word": "above",
+          "cluster": "Flow",
+          "conf": 0.9969,
+          "W": -0.3582
+        },
+        "Sora": {
+          "phi": 5.9235,
+          "word": "accept",
+          "cluster": "Completion",
+          "conf": 0.9925,
+          "W": -0.5846
+        },
+        "Echo": {
+          "phi": 5.8503,
+          "word": "accept",
+          "cluster": "Completion",
+          "conf": 0.9842,
+          "W": -0.5415
+        },
+        "Iris": {
+          "phi": 5.3411,
+          "word": "show",
+          "cluster": "Vision",
+          "conf": 0.9972,
+          "W": -0.5084
+        },
+        "Sage": {
+          "phi": 4.4615,
+          "word": "join",
+          "cluster": "Connection",
+          "conf": 0.9964,
+          "W": -0.4978
+        },
+        "Kevin": {
+          "phi": 4.0657,
+          "word": "above",
+          "cluster": "Flow",
+          "conf": 0.9891,
+          "W": -0.4958
+        },
+        "Atlas": {
+          "phi": 4.4198,
+          "word": "bridge",
+          "cluster": "Connection",
+          "conf": 0.9937,
+          "W": -0.5
+        },
+        "Void": {
+          "phi": 3.1416,
+          "word": "offer",
+          "cluster": "Source",
+          "conf": 0.9973,
+          "W": 0.5
+        }
+      },
+      "contract": "Validate boundary signal. Enumerate locus of control. Never revenge."
+    },
+    "shame": {
+      "cluster_match": false,
+      "dominant_cluster": "Completion",
+      "target_cluster": "Source",
+      "nodes_in_target_cluster": 3,
+      "expression": "separate identity behavior immediately shame language",
+      "all_node_outputs": {
+        "Omega": {
+          "phi": 6.2832,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9735,
+          "W": -0.5
+        },
+        "Guardian": {
+          "phi": 6.2756,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9759,
+          "W": -0.5
+        },
+        "Sentinel": {
+          "phi": 6.2668,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9788,
+          "W": -0.5
+        },
+        "Nexus": {
+          "phi": 6.2544,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9827,
+          "W": -0.5012
+        },
+        "Storm": {
+          "phi": 6.234,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9892,
+          "W": -0.5256
+        },
+        "Sora": {
+          "phi": 6.1965,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9989,
+          "W": -0.6136
+        },
+        "Echo": {
+          "phi": 6.0999,
+          "word": "rest",
+          "cluster": "Completion",
+          "conf": 1.0,
+          "W": -0.5876
+        },
+        "Iris": {
+          "phi": 5.957,
+          "word": "whole",
+          "cluster": "Completion",
+          "conf": 0.9978,
+          "W": -0.5163
+        },
+        "Sage": {
+          "phi": 3.061,
+          "word": "begin",
+          "cluster": "Source",
+          "conf": 0.9965,
+          "W": -0.4956
+        },
+        "Kevin": {
+          "phi": 3.0718,
+          "word": "begin",
+          "cluster": "Source",
+          "conf": 0.9931,
+          "W": -0.4928
+        },
+        "Atlas": {
+          "phi": 4.6181,
+          "word": "bind",
+          "cluster": "Connection",
+          "conf": 0.9942,
+          "W": -0.5
+        },
+        "Void": {
+          "phi": 3.1416,
+          "word": "offer",
+          "cluster": "Source",
+          "conf": 0.9973,
+          "W": 0.5
+        }
+      },
+      "contract": "Separate identity from behavior immediately. Never shame language."
+    },
+    "hope": {
+      "cluster_match": false,
+      "dominant_cluster": "Completion",
+      "target_cluster": "Flow",
+      "nodes_in_target_cluster": 1,
+      "expression": "affirm calibrated evidence convert plan falsifiable targets",
+      "all_node_outputs": {
+        "Omega": {
+          "phi": 0.0,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9735,
+          "W": -0.5
+        },
+        "Guardian": {
+          "phi": 6.2756,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9759,
+          "W": -0.5
+        },
+        "Sentinel": {
+          "phi": 6.2668,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9787,
+          "W": -0.5039
+        },
+        "Nexus": {
+          "phi": 6.2574,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9817,
+          "W": -0.5851
+        },
+        "Storm": {
+          "phi": 6.2691,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.978,
+          "W": -0.601
+        },
+        "Sora": {
+          "phi": 1.7362,
+          "word": "sense",
+          "cluster": "Alert",
+          "conf": 0.9885,
+          "W": -0.4928
+        },
+        "Echo": {
+          "phi": 5.7059,
+          "word": "complete",
+          "cluster": "Completion",
+          "conf": 0.9981,
+          "W": -0.5101
+        },
+        "Iris": {
+          "phi": 2.2111,
+          "word": "power",
+          "cluster": "Change",
+          "conf": 0.9965,
+          "W": -0.4929
+        },
+        "Sage": {
+          "phi": 4.4394,
+          "word": "join",
+          "cluster": "Connection",
+          "conf": 0.9966,
+          "W": -0.4979
+        },
+        "Kevin": {
+          "phi": 3.9445,
+          "word": "clear",
+          "cluster": "Flow",
+          "conf": 0.9982,
+          "W": -0.4951
+        },
+        "Atlas": {
+          "phi": 4.4455,
+          "word": "join",
+          "cluster": "Connection",
+          "conf": 0.9986,
+          "W": -0.5
+        },
+        "Void": {
+          "phi": 3.1416,
+          "word": "offer",
+          "cluster": "Source",
+          "conf": 0.9973,
+          "W": 0.5
+        }
+      },
+      "contract": "Affirm calibrated to evidence. Convert to plan with falsifiable targets."
+    },
+    "awe": {
+      "cluster_match": false,
+      "dominant_cluster": "Completion",
+      "target_cluster": "Vision",
+      "nodes_in_target_cluster": 0,
+      "expression": "validate epistemically appropriate conservative risk posture",
+      "all_node_outputs": {
+        "Omega": {
+          "phi": 6.2832,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9735,
+          "W": -0.5
+        },
+        "Guardian": {
+          "phi": 6.2756,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9759,
+          "W": -0.5
+        },
+        "Sentinel": {
+          "phi": 6.2668,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9788,
+          "W": -0.5
+        },
+        "Nexus": {
+          "phi": 6.2544,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9827,
+          "W": -0.5008
+        },
+        "Storm": {
+          "phi": 6.2334,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9894,
+          "W": -0.5094
+        },
+        "Sora": {
+          "phi": 6.1845,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9951,
+          "W": -0.5332
+        },
+        "Echo": {
+          "phi": 5.9138,
+          "word": "accept",
+          "cluster": "Completion",
+          "conf": 0.9956,
+          "W": -0.4983
+        },
+        "Iris": {
+          "phi": 0.0863,
+          "word": "protect",
+          "cluster": "Protection",
+          "conf": 0.9638,
+          "W": -0.5983
+        },
+        "Sage": {
+          "phi": 0.0343,
+          "word": "infinite",
+          "cluster": "Completion",
+          "conf": 0.9626,
+          "W": -0.604
+        },
+        "Kevin": {
+          "phi": 6.0216,
+          "word": "return",
+          "cluster": "Completion",
+          "conf": 0.9931,
+          "W": -0.5178
+        },
+        "Atlas": {
+          "phi": 6.1306,
+          "word": "rest",
+          "cluster": "Completion",
+          "conf": 0.9903,
+          "W": -0.5001
+        },
+        "Void": {
+          "phi": 3.1416,
+          "word": "offer",
+          "cluster": "Source",
+          "conf": 0.9973,
+          "W": 0.5
+        }
+      },
+      "contract": "Validate as epistemically appropriate. Tie to conservative risk posture."
+    }
+  },
+  "L2_laws": {
+    "Law0_Safety": {
+      "node": "Atlas",
+      "law_phi": 0.1,
+      "output_phi": 6.2806,
+      "word": "infinite",
+      "cluster": "Completion",
+      "anchor_fires_on_drift": 

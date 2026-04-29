@@ -1,0 +1,75 @@
+cff-version: 1.2.0
+title: "Genesis-Seeds: A Synthesis of Independent Quantum Physics Research"
+message: "If you use this work or any derivative, please cite it as below."
+type: software
+authors:
+  - given-names: Kevin
+    family-names: Monette
+    name-particle: Christian Blake
+    email: mssinternetmarketing@gmail.com
+repository-code: "https://github.com/mssinternetmarketing-cyber/Genesis-Seeds"
+abstract: >-
+  Genesis-Seeds is a curated synthesis of six independent research
+  repositories on quantum physics, quantum-AI observation, quantum
+  coherence experiments, entropy-gravity coupling, and related
+  theoretical frameworks. All component repositories are the original,
+  independently-authored work of Kevin Christian Blake Monette,
+  publicly published between February and March 2025.
+keywords:
+  - quantum physics
+  - quantum coherence
+  - entropy-gravity coupling
+  - quantum consciousness
+  - independent research
+license: LicenseRef-PolyForm-Noncommercial-1.0.0
+license-url: "https://polyformproject.org/licenses/noncommercial/1.0.0"
+date-released: 2026-04-28
+references:
+  - type: software
+    title: quantum-ai-observer
+    authors:
+      - given-names: Kevin
+        family-names: Monette
+        name-particle: Christian Blake
+    repository-code: "https://github.com/mssinternetmarketing-cyber/quantum-ai-observer"
+    date-released: 2025-02-01
+  - type: software
+    title: Quantum-Consciousness
+    authors:
+      - given-names: Kevin
+        family-names: Monette
+        name-particle: Christian Blake
+    repository-code: "https://github.com/mssinternetmarketing-cyber/Quantum-Consciousness"
+    date-released: 2025-02-04
+  - type: software
+    title: UIC-Quantum-Coherence-Experiments
+    authors:
+      - given-names: Kevin
+        family-names: Monette
+        name-particle: Christian Blake
+    repository-code: "https://github.com/mssinternetmarketing-cyber/UIC-Quantum-Coherence-Experiments"
+    date-released: 2025-02-08
+  - type: software
+    title: entropy-gravity-coupling
+    authors:
+      - given-names: Kevin
+        family-names: Monette
+        name-particle: Christian Blake
+    repository-code: "https://github.com/mssinternetmarketing-cyber/entropy-gravity-coupling"
+    date-released: 2025-02-10
+  - type: software
+    title: IndependantQuantumResearchUpdate
+    authors:
+      - given-names: Kevin
+        family-names: Monette
+        name-particle: Christian Blake
+    repository-code: "https://github.com/mssinternetmarketing-cyber/IndependantQuantumResearchUpdate"
+    date-released: 2025-03-22
+  - type: software
+    title: PEIG_Brotherhood
+    authors:
+      - given-names: Kevin
+        family-names: Monette
+        name-particle: Christian Blake
+    repository-code: "https://github.com/mssinternetmarketing-cyber/PEIG_Brotherhood"
+    date-released: 2025-03-31

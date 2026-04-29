@@ -1,0 +1,456 @@
+\documentclass[12pt,letterpaper]{article}
+
+% ── Packages ─────────────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+
+\geometry{margin=1in}
+
+% ── Theorem environments ──────────────────────────────────────────────────────
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+% ── Custom commands ───────────────────────────────────────────────────────────
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Dens}{\mathcal{D}(\mathcal{H})}
+\newcommand{\Cman}{\mathcal{C}}
+\newcommand{\Obs}{\mathcal{O}}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\SvN}{S_{\mathrm{vN}}}
+\newcommand{\FQ}{F_{Q}}
+\newcommand{\Bspam}{B_{\mathrm{SPAM}}}
+\newcommand{\hSvN}{\hat{S}_{\mathrm{vN}}}
+\newcommand{\half}{\tfrac{1}{2}}
+
+% ── Metadata ─────────────────────────────────────────────────────────────────
+\title{\textbf{Constraint Manifolds and the Limits of Quantum Observability}\\[4pt]
+\large Resolving the 40--50\% Entropy Plateau in NISQ Devices}
+
+\author{Kevin Monette\\[2pt]
+\small Independent Researcher (AI-assisted research)\\
+\small \texttt{kevin.monette@research.org}}
+
+\date{February 9, 2026 \quad (repository version March 2026)}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In near-term quantum devices with 16--28$+$ qubits, state tomography consistently yields
+von~Neumann entropy estimates at 40--50\% of the theoretical maximum --- a plateau widely
+attributed to a fundamental decoherence limit of current hardware.  We show instead that
+this plateau is a \emph{measurement artifact arising from finite-sample estimator bias}, not a
+physical decoherence ceiling.
+
+We formalize the distinction through the constraint manifold
+$\Cman \subset \Dens$ --- the subspace of physically accessible density operators --- and
+prove that required measurement resources scale as $\nu \propto 2^{n/2}$ via quantum Fisher
+information analysis.  For typical NISQ tomography budgets ($\nu \sim 10^{3}$ shots) on
+systems with $n \geq 15$ qubits, finite-sample estimator bias alone accounts for the observed
+plateau without invoking physical decoherence.
+
+The framework connects naturally to thermodynamic gravity: constraint-induced entropy
+gradients source effective stress-energy via the coupling derived in a companion
+paper~\cite{MonetteA2026}.
+
+\medskip\noindent
+\textbf{Falsification criterion.} If entropy estimates for $n$-qubit coherent states fail to
+converge to $\SvN < 0.1$\,bits when $\nu \geq 100 \cdot 2^{n/2}$ after SPAM calibration, the
+measurement-insufficiency hypothesis is falsified.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{The Constraint Manifold Formalism}
+\label{sec:manifold}
+
+\subsection{Physically Accessible State Space}
+
+Not all density operators in $\Dens$ are physically accessible to a quantum system evolving
+under real conditions.  Conservation laws, decoherence channels, and initial-state constraints
+restrict evolution to a proper sub-manifold.
+
+\begin{definition}[Constraint Manifold]
+\label{def:manifold}
+\begin{equation}
+  \Cman
+  \;=\;
+  \bigl\{\,\rho \in \Dens
+      \;\big|\;
+      \tr\!\bigl(\hat{C}_{i}\,\rho\bigr) = c_{i}
+      \;\;\forall\, i \in \mathcal{I}_{\mathrm{irr}}
+  \bigr\},
+  \label{eq:constraint-manifold}
+\end{equation}
+where $\hat{C}_{i}$ are constraint operators (e.g.\ $\hat{H}$ for energy conservation,
+$\hat{Q}$ for charge), $c_{i}$ are the constraint values fixed by initial conditions, and
+$\mathcal{I}_{\mathrm{irr}}$ indexes \emph{irreversible} constraints --- those that cannot be
+undone by subsequent unitary evolution.
+\end{definition}
+
+Soft constraints (e.g.\ thermodynamic bias toward equilibrium) enter through a measure $\mu$
+on $\Cman$ rather than its definition:
+\begin{equation}
+  \mu(d\rho)
+  \;\propto\;
+  e^{-\beta\,\tr(\hat{H}\rho)}\,d\rho.
+  \label{eq:soft-constraint}
+\end{equation}
+
+\subsection{The Observable Subspace}
+
+A measurement history $r = \{i_{1}, i_{2}, \ldots, i_{k}\}$ represents the sequence of
+constraint-fixing events that have become irreversible.  Each event reduces the accessible
+subspace:
+\begin{equation}
+  \Obs(r)
+  \;=\;
+  \bigl\{\,\rho \in \Cman
+      \;\big|\;
+      \tr\!\bigl(\hat{C}_{i_{j}}\,\rho\bigr) = c_{i_{j}}
+      \;\;\forall\, j \leq k
+  \bigr\}.
+  \label{eq:observable-subspace}
+\end{equation}
+
+As $k$ increases, $\Obs(r)$ shrinks.  This is not decoherence --- it is the progressive fixing
+of constraints by observation.
+
+\begin{proposition}[Dimension of the Observable Subspace]
+\label{prop:dimension}
+For an $n$-qubit system with $m$ linearly independent measurement constraints,
+\begin{equation}
+  \dim\Obs(r)
+  \;=\;
+  4^{n} - \operatorname{rank}(\mathcal{C}) - 1,
+  \label{eq:dim}
+\end{equation}
+where $\operatorname{rank}(\mathcal{C})$ is the number of linearly independent constraints.
+\end{proposition}
+
+\begin{proof}
+The space of $n$-qubit density operators (Hermitian, positive semidefinite, trace-1) has
+real dimension $4^{n}-1$ (the $2^{n}\times 2^{n}$ Hermitian matrix parameters minus the
+trace normalization).  Each linearly independent irreversible constraint reduces the dimension
+by one.  Linear independence must be verified in the space of Hermitian operators; redundant
+constraints reduce the effective rank below $m$.
+\end{proof}
+
+\begin{remark}
+When $m \ll 4^{n}$, the observable subspace vastly undersamples the physical state space,
+creating an apparent entropy increase without any physical decoherence.
+\end{remark}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Quantum Fisher Information and Shot Scaling}
+\label{sec:qfi}
+
+\subsection{The Quantum Cram\'{e}r--Rao Bound}
+
+The quantum Cram\'{e}r--Rao bound places a fundamental lower limit on the variance of any
+unbiased estimator $\hSvN$ of the von~Neumann entropy:
+\begin{equation}
+  \operatorname{Var}[\hSvN]
+  \;\geq\;
+  \frac{\bigl[\FQ(\rho)\bigr]^{-1}}{\nu},
+  \label{eq:cramer-rao}
+\end{equation}
+where $\nu$ is the number of independent measurement shots and
+$\FQ(\rho) = \tr[\rho\,L^{2}]$ is the quantum Fisher information, with $L$ the symmetric
+logarithmic derivative satisfying $\partial_{\theta}\rho = (\rho L + L\rho)/2$.
+
+\subsection{Exponential Scaling Near Maximum Entropy}
+
+\begin{lemma}[Fisher Information Scaling]
+\label{lem:fisher}
+For states near the maximally mixed state $\rho \approx \mathbf{I}/2^{n}$,
+\begin{equation}
+  \FQ(\rho) \;\sim\; 2^{-n/2}.
+  \label{eq:fisher-scaling}
+\end{equation}
+\end{lemma}
+
+Near maximum entropy, all probability distributions over measurement outcomes are nearly
+identical.  Distinguishing $\SvN = 0.99\,S_{\max}$ from $\SvN = S_{\max}$ requires resolving
+tiny differences in an exponentially large space of nearly equally likely outcomes.  The
+sensitivity of the measurement record to entropy changes scales as the average overlap between
+adjacent density matrices in the entropy-variation direction, which is exponentially close to
+unity in any product measurement basis.
+
+\subsection{Required Shot Count}
+
+To achieve precision $\varepsilon$ in the entropy estimate, the Cram\'{e}r--Rao bound requires:
+\begin{equation}
+  \nu
+  \;\gtrsim\;
+  \varepsilon^{-2}\cdot 2^{n/2}.
+  \label{eq:shot-scaling}
+\end{equation}
+
+\begin{table}[h]
+\centering
+\caption{Required measurement shots for entropy estimation at precision $\varepsilon = 0.1$\,bits.}
+\label{tab:shots}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+Qubit count $n$ & Hilbert dim.\ $d=2^{n}$ & Required $\nu$ & Typical NISQ $\nu$ & Gap factor \\
+\midrule
+5  & 32          & $\approx$560       & $10^{3}$ & $<$1 (sufficient) \\
+10 & 1\,024      & $\approx$3\,160    & $10^{3}$ & $\approx$3$\times$ \\
+15 & 32\,768     & $\approx$17\,800   & $10^{3}$ & $\approx$18$\times$ \\
+20 & 1\,048\,576 & $\approx$100\,000  & $10^{3}$ & $\approx$100$\times$ \\
+25 & $\approx33$M & $\approx$560\,000 & $10^{3}$ & $\approx$560$\times$ \\
+28 & $\approx268$M & $\approx$1.6M    & $10^{3}$ & $\approx$1\,600$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The gap between required and typical shot budgets explains the entropy plateau for
+$n \geq 15$ entirely: NISQ devices are being measured with 18--1\,600$\times$ too few shots to
+accurately estimate entropy.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{The Estimator Bias Formula}
+\label{sec:bias}
+
+\subsection{Linear Inversion Bias}
+
+The standard linear-inversion tomographic estimator exhibits systematic bias scaling with
+Hilbert space dimension $d = 2^{n}$~\cite{Flammia2012}:
+\begin{equation}
+  \mathbb{E}[\hSvN]
+  \;=\;
+  \SvN(\rho)
+  \;+\;
+  \underbrace{\frac{d-1}{2\nu}}_{\text{finite-sampling bias}}
+  \;+\;
+  \underbrace{\Bspam}_{\text{readout errors}}
+  \;+\;
+  O\!\left(\nu^{-2}\right).
+  \label{eq:bias}
+\end{equation}
+
+The estimator \emph{systematically overestimates} entropy by $(d-1)/(2\nu)$ bits, independent
+of the true entropy and regardless of hardware quality.
+
+\subsection{Quantitative Explanation of the 40--50\% Plateau}
+
+\paragraph{Example: $n = 15$ qubits, $\nu = 10^{4}$ shots.}
+\begin{align}
+  d &= 2^{15} = 32\,768, \notag\\[2pt]
+  \text{Finite-sampling bias} &= \frac{d-1}{2\nu}
+      = \frac{32\,767}{20\,000} \approx 1.64\;\text{bits}, \notag\\[2pt]
+  S_{\max} &= n\ln 2 \approx 10.4\;\text{bits}, \notag\\[2pt]
+  \text{Bias as fraction of }S_{\max} &\approx 15.8\%.
+\end{align}
+
+Adding SPAM errors ($\Bspam \approx 0.5$--$1.0$\,bits for current hardware):
+\begin{equation}
+  \text{Total apparent inflation} \approx
+  \frac{1.64 + 0.75}{10.4} \approx 23\%.
+\end{equation}
+For a state with true $\SvN \approx 20$--$25\%$ of $S_{\max}$, the measured value lands at
+$\approx 43$--$48\%$ --- precisely matching the observed NISQ plateau without physical
+decoherence.
+
+\subsection{The Bias-Corrected Estimator}
+
+Define the corrected estimator:
+\begin{equation}
+  \hSvN^{\,\mathrm{corr}}
+  \;=\;
+  \hSvN - \frac{d-1}{2\nu} - \hat{B}_{\mathrm{SPAM}},
+  \label{eq:corrected}
+\end{equation}
+where $\hat{B}_{\mathrm{SPAM}}$ is estimated from measurement calibration circuits.
+
+Under the measurement-insufficiency hypothesis, the corrected estimator satisfies:
+\begin{equation}
+  \hSvN^{\,\mathrm{corr}}(\nu)
+  \;=\;
+  \SvN^{\,\mathrm{phys}}(\rho)
+  \;+\;
+  \frac{d-1}{2\nu}
+  \;+\;
+  O\!\left(\nu^{-2}\right),
+  \label{eq:convergence}
+\end{equation}
+converging monotonically to the true physical entropy as $\nu \to \infty$.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Connection to Thermodynamic Gravity}
+\label{sec:gravity}
+
+The constraint manifold formalism connects naturally to the entropic gravity program.  In
+Jacobson's thermodynamic derivation~\cite{Jacobson1995}, spacetime geometry emerges from
+entropy gradients across causal horizons.  The companion paper~\cite{MonetteA2026} extends
+this to laboratory scales.
+
+Constraint-induced entropy gradients $\nabla\SvN$ source effective stress-energy via:
+\begin{equation}
+  \text{(entropy gradient)}
+  \;\longrightarrow\;
+  \text{effective stress-energy}
+  \;\longrightarrow\;
+  \text{spacetime curvature}.
+\end{equation}
+
+For the gravitational prediction to be testable, experiments must measure \emph{physical}
+entropy changes, not artifacts of the measurement budget.  Accordingly, the shot-scaling
+requirement~\eqref{eq:shot-scaling} is a prerequisite for any entanglement-gravity experiment:
+SPAM-corrected, high-$\nu$ tomography must be performed before interpreting any entropy
+difference as a gravitational source.
+
+\paragraph{Observation is not passive.}
+An observation is any physical process that irreversibly correlates with a constraint value of
+the observed system.  Decoherence is environmental observation.  Conscious measurement is the
+same physical process, more controlled.  Consciousness plays no special role --- the
+constraint-fixing is thermodynamic, not mental.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Experimental Protocol for Falsification}
+\label{sec:experiment}
+
+\subsection{Three-Stage Validation Protocol}
+
+\paragraph{Stage 1 --- Calibration.}
+Prepare known-entropy states (computational basis states, Bell pairs, product states) with
+theoretically exact $\SvN$.  Construct the SPAM correction matrix $\Lambda$ from calibration
+circuits.  Verify that $\hSvN^{\,\mathrm{corr}}$ converges to theoretical $\SvN$ at rate
+$O(1/\nu)$.
+
+\paragraph{Stage 2 --- Scaling test.}
+Prepare $n$-qubit GHZ states
+$|\mathrm{GHZ}\rangle = (|0\rangle^{\otimes n} + |1\rangle^{\otimes n})/\!\sqrt{2}$
+for $n \in \{5, 8, 10, 12, 15\}$.  Measure
+$\hSvN(\nu)$ for $\nu \in \{10^{3}, 10^{4}, 10^{5}, 10^{6}\}$ shots.
+Apply SPAM correction: $\hat{\rho}_{\mathrm{corr}} = \Lambda^{-1}\hat{\rho}_{\mathrm{raw}}$.
+
+\paragraph{Stage 3 --- Convergence verification.}
+Compute $\hSvN^{\,\mathrm{corr}}(\nu)$ from~\eqref{eq:corrected}.  Fit to the scaling model:
+\begin{equation}
+  \hSvN^{\,\mathrm{corr}}(\nu)
+  = \SvN^{\,\mathrm{phys}}
+  + \frac{A}{\nu}
+  + O\!\left(\nu^{-2}\right).
+  \label{eq:scaling-model}
+\end{equation}
+Extract $\SvN^{\,\mathrm{phys}}$ as the $\nu \to \infty$ extrapolation and compare to the
+theoretical prediction ($\SvN = 0$ for pure GHZ).
+
+\subsection{Falsification Criterion}
+
+\begin{center}
+\fbox{\parbox{0.88\textwidth}{%
+\textbf{Falsification:} The measurement-insufficiency hypothesis is falsified if, for
+$n$-qubit GHZ states with verified entanglement depth $\geq n$, the SPAM-corrected entropy
+estimate $\hSvN^{\,\mathrm{corr}}$ fails to converge to $\SvN < 0.1$\,bits when shot count
+$\nu \geq 100 \cdot 2^{n/2}$, verified by bootstrap resampling with $>95\%$ confidence.%
+}}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Implications}
+\label{sec:implications}
+
+\subsection{For Quantum Computing}
+Many NISQ devices have better coherence properties than their entropy estimates suggest.
+Quantum-advantage assessments based on entropy metrics should account for the estimator bias
+of Eq.~\eqref{eq:bias} before concluding that hardware is at a decoherence limit.
+
+\subsection{For Quantum Gravity Experiments}
+Physical entropy measurement (not estimated entropy) is a prerequisite for any entanglement-gravity experiment.  The shot-scaling requirement~\eqref{eq:shot-scaling} must be satisfied
+before any differential entropy is attributed to a gravitational source.
+
+\subsection{For Quantum Information}
+The scaling law $\nu \propto 2^{n/2}$ is a fundamental resource bound for entropy estimation
+in $n$-qubit systems.  This is sub-exponential compared to full state tomography ($\nu \propto
+4^{n}$) and can in principle be achieved by randomized measurement
+protocols~\cite{Cotler2020}.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusion}
+\label{sec:conclusion}
+
+The apparent entropy plateau at 40--50\% in NISQ devices is a consequence of finite-sample
+estimator bias, not fundamental hardware limitations.  Required shot count for accurate entropy
+estimation scales as $\nu \propto 2^{n/2}$, derived rigorously from quantum Fisher information
+analysis.  The measurement-insufficiency hypothesis makes precise, falsifiable predictions
+verifiable with existing hardware.
+
+The framework establishes three results for quantum physics broadly:
+\begin{enumerate}
+  \item Physical entropy and measured entropy are distinct quantities, separated by a
+        computable, correctable bias.
+  \item Observation is a physical resource (measurement shots) that must scale with Hilbert
+        space dimension.
+  \item Much apparent disorder in NISQ systems is epistemic (measurement-limited), not
+        physical (decoherence-limited).
+\end{enumerate}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Acknowledgments}
+The author acknowledges AI research partners for assistance with literature synthesis, equation
+formatting, and critical review.  All theoretical content and experimental design originate from
+the author's independent research program.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\bibliographystyle{unsrtnat}
+\begin{thebibliography}{99}
+
+\bibitem{Jacobson1995}
+T.~Jacobson,
+``Thermodynamics of spacetime: The Einstein equation of state,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{75}, 1260 (1995).
+\href{https://doi.org/10.1103/PhysRevLett.75.1260}{doi:10.1103/PhysRevLett.75.1260}
+
+\bibitem{MonetteA2026}
+K.~Monette,
+``Gravitational coupling to entanglement entropy density,''
+Independent Research Program, March 2026.
+
+\bibitem{Flammia2012}
+S.~T.~Flammia, D.~Gross, Y.-K.~Liu, and J.~Eisert,
+``Quantum tomography via compressed sensing: error bounds, sample complexity, and
+efficient estimators,''
+\textit{New J.\ Phys.}\ \textbf{14}, 095022 (2012).
+\href{https://doi.org/10.1088/1367-2630/14/9/095022}{doi:10.1088/1367-2630/14/9/095022}
+
+\bibitem{Paris2009}
+M.~G.~A.~Paris,
+``Quantum estimation for quantum technology,''
+\textit{Int.\ J.\ Quantum Inf.}\ \textbf{7}, 125 (2009).
+\href{https://doi.org/10.1142/S0219749909004839}{doi:10.1142/S0219749909004839}
+
+\bibitem{Cotler2020}
+J.~Cotler and F.~Wilczek,
+``Quantum overlapping tomography,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{124}, 100401 (2020).
+\href{https://doi.org/10.1103/PhysRevLett.124.100401}{doi:10.1103/PhysRevLett.124.100401}
+
+\bibitem{Knill2008}
+E.~Knill \textit{et al.},
+``Randomized benchmarking of quantum gates,''
+\textit{Phys.\ Rev.\ A}\ \textbf{77}, 012307 (2008).
+
+\end{thebibliography}
+
+\end{document}

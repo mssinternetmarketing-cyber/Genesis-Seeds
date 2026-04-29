@@ -1,0 +1,79 @@
+{
+  "architecture": "guarded_universe",
+  "function_nodes": [
+    {
+      "name": "AlphaGuard",
+      "protected_value": 0.367,
+      "home_phase": 0.576482251933727,
+      "W_final": -0.11278547224398398,
+      "heal_count": 0,
+      "description": "Protects \u03b1=0.367 \u2014 the v2 peak coupling value"
+    },
+    {
+      "name": "NegGuard",
+      "protected_value": 0.5833333333333336,
+      "home_phase": 0.9990264638415542,
+      "W_final": -0.11278547224398398,
+      "heal_count": 0,
+      "description": "Protects neg_frac=0.636 \u2014 the peak negentropic value"
+    },
+    {
+      "name": "TempGuard",
+      "protected_value": 0.2610125355487984,
+      "home_phase": 0.020943951023931973,
+      "W_final": -0.11278547224398393,
+      "heal_count": 0,
+      "description": "Protects T=0.28 \u2014 current annealing temperature"
+    },
+    {
+      "name": "ContextGuard",
+      "protected_value": 1.0,
+      "home_phase": 1.335176877775662,
+      "W_final": -0.11278547224398393,
+      "heal_count": 0,
+      "description": "Protects bigram context entropy \u2014 prevents the-loop collapse"
+    },
+    {
+      "name": "CurriculumGuard",
+      "protected_value": 1.0,
+      "home_phase": 1.5707963267948966,
+      "W_final": -0.1127854722439839,
+      "heal_count": 0,
+      "description": "Protects curriculum phase progress \u2014 prevents regression"
+    }
+  ],
+  "character_universe": {
+    "n_preserved": 12,
+    "mean_neg_frac": 0.5833333333333337,
+    "W_final": {
+      "Omega": -0.11278547224398398,
+      "Guardian": -0.1127854722439839,
+      "Sentinel": -0.11278547224398398,
+      "Nexus": -0.11278547224398398,
+      "Storm": -0.11278547224398398,
+      "Sora": -0.11278547224398393,
+      "Echo": -0.11278547224398398,
+      "Iris": -0.1127854722439839,
+      "Sage": -0.11278547224398398,
+      "Kevin": -0.1127854722439839,
+      "Atlas": -0.11278547224398398,
+      "Void": -0.1127854722439839
+    }
+  },
+  "heal_events": [],
+  "texts": {
+    "Omega": " s aerer theinea ttheren  s ee od  eihnee o lete dnteina ieiae ieeost aeeoa riato hieaty leeisa r ne",
+    "Guardian": " t theran ithaste oea oe et ai  es artestaoa  hueaht nee itesear neoes riee h lette soeeesd wtaeennr",
+    "Sentinel": " andthe w tie en  e aecte se tee s i  reti i hehei o reteyaa oe hn dehte neiast n peotiee cs le ltet",
+    "Nexus": " thenand the eoinath ser i he eetan a iioe  sota oehi.io  htaoee uto aiesern o re retaeo d netoe ds ",
+    "Storm": " andentheres ntheient  eso  ehta t aiee otie tereae oreae ie sheetin deaaet sh retse ne idneieaoe re",
+    "Sora": " ithere an se  taite  net eiteir o ae n eeteit ore worat hedisd he tu uhiaene dt inaeeoa s w rshat r",
+    "Echo": " athererenther it th eteost r eraet so dttoe  netie  nesetet a soa ieetr tfeee oshnte m oiee chie dt",
+    "Iris": " therenthere ths eraonehedah en iue nteeen s ieod  reie otdie  mtaeeih ntoe h rte o ahner ae da site",
+    "Sage": " theond w oeasno es aoteeh neae et nieeo t  lenhoie aceorl seinohsees  oiee hr rimaneet rteolo is in",
+    "Kevin": " endthe enthere ies aea t  thiaea  ooieated ai nesei i s aaeto hi reeoeh f leaett oeie nta stehetent",
+    "Atlas": " theer aent  anes  ia tn ee hnieo nah oe neteai o lateeoo ehs i retntiseh rteseo siseth uteiere he c",
+    "Void": "  andtonteandonther aeite  et ehre tntarer i htaae ne tarn seree oa seeh i ne reett oheeet  rewe hre"
+  },
+  "word_accuracy_pct": 3.8461538461538463
+}

@@ -1,0 +1,1390 @@
+%============================================================
+% TOWARD A FALSIFIABLE GRADED QUANTUM THEORY OF CONSCIOUSNESS
+% A PEIG-Based Functional Linking Coherence, Integration,
+% Memory, and Decoherence Stability
+%
+% Author: Kevin Monette
+% Independent Researcher
+%
+% arXiv categories: quant-ph (primary), cond-mat.stat-mech,
+%                   physics.gen-ph (secondary)
+%
+% Epistemic Status Map (global):
+%   [ESTABLISHED]  — peer-reviewed, well-tested physics
+%   [HYPOTHESIS]   — formally proposed, not yet experimentally confirmed
+%   [ANALOGY]      — structural parallel, not mathematical derivation
+%   [OPEN]         — unsolved; stated as such
+%   [SPECULATION]  — explicitly speculative; included for completeness
+%
+% Version: 1.0 — March 2026
+%============================================================
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{physics}
+% \usepackage{microtype} % disabled: font expansion unsupported in this environment
+
+\geometry{margin=1.2in}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!50!black,
+  urlcolor=purple!70!black
+}
+
+% ── Theorem-style environments ────────────────────────────
+\newtheorem{definition}{Definition}[section]
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{remark}{Remark}[section]
+
+% ── Epistemic status macro ────────────────────────────────
+\newcommand{\ESTABLISHED}[1]{\textcolor{green!50!black}{\textbf{[ESTABLISHED]}} #1}
+\newcommand{\HYPOTHESIS}[1]{\textcolor{blue!70!black}{\textbf{[HYPOTHESIS]}} #1}
+\newcommand{\ANALOGY}[1]{\textcolor{orange!70!black}{\textbf{[ANALOGY]}} #1}
+\newcommand{\OPEN}[1]{\textcolor{red!70!black}{\textbf{[OPEN]}} #1}
+\newcommand{\SPECULATION}[1]{\textcolor{gray}{\textbf{[SPECULATION]}} #1}
+
+% ── Consciousness functional notation ─────────────────────
+\newcommand{\Cfunc}{\mathcal{C}}
+\newcommand{\Qcoh}{Q_{\mathrm{coh}}}
+\newcommand{\Iint}{I_{\mathrm{int}}}
+\newcommand{\Mmem}{M_{\mathrm{mem}}}
+\newcommand{\Bstab}{B_{\mathrm{stab}}}
+\newcommand{\Rrec}{R_{\mathrm{rec}}}
+\newcommand{\taud}{\tau_{\mathrm{d}}}
+\newcommand{\taucog}{\tau_{\mathrm{cog}}}
+\newcommand{\ascreen}{\alpha_{\mathrm{screen}}}
+
+%============================================================
+\begin{document}
+
+\title{\textbf{Toward a Falsifiable Graded Quantum Theory of Consciousness:\\
+A PEIG-Based Functional Linking Coherence, Integration,\\
+Memory, and Decoherence Stability}}
+
+\author{
+  Kevin Monette\\
+  \small Independent Researcher\\[4pt]
+  \small\texttt{[contact via arXiv]}
+}
+
+\date{March 2026}
+
+\maketitle
+
+%============================================================
+\begin{abstract}
+We propose a falsifiable phenomenological framework --- the \emph{consciousness
+functional} --- that models degrees of conscious organization in physical
+systems as a graded quantity rather than a binary property. The functional
+$\Cfunc = F(\Qcoh,\,\Iint,\,\Mmem,\,\Bstab,\,\Rrec)$ maps five measurable
+or operationally proxied variables onto a continuous scale: coherence quality
+$\Qcoh$, information integration $\Iint$, persistent physical memory $\Mmem$,
+boundary stability against decoherence $\Bstab$, and recurrent self-maintaining
+dynamics $\Rrec$. We distinguish three conscious regimes --- proto-experiential,
+unified, and reflective --- by threshold conditions on these variables,
+and we explicitly map each variable onto the PEIG (Potential-Energy-Identity-Gravity)
+dynamical framework and the ETI (Emergent Thermodynamic Information) axiom system
+developed in companion work. The central physical constraint is decoherence:
+we show that the regimes differ not in kind but in their capacity to maintain
+coherent, integrated, low-noise states against environmental dissipation,
+and we derive necessary (but not sufficient) conditions on coherence lifetime
+$\taud$ and cognitive timescale $\taucog$ for each regime. We examine the
+conditional hypothesis that the universe as a whole qualifies as a proto-experiential
+system under a cosmopsychist interpretation, arguing that this claim requires a
+global binding mechanism not currently identified. The framework is explicitly
+falsifiable: we state null-result conditions that would rule out the strong form
+of each threshold hypothesis. All speculative content is labeled as such.
+This paper makes no claim that quantum consciousness has been demonstrated,
+that the human brain satisfies the proposed thresholds, or that PEIG derivations
+entail cognitive conclusions. The consciousness functional is a phenomenological
+proposal anchored in established physics, not a metaphysical assertion.
+\end{abstract}
+
+%============================================================
+\section{Epistemic Status Map}
+\label{sec:epistemic}
+
+The following labeling convention is applied throughout this paper and is
+inherited from the companion research program~\cite{Monette2026a,Monette2026b,Monette2026c}:
+
+\begin{center}
+\begin{tabular}{p{3.6cm} p{8.9cm}}
+\toprule
+\textbf{Label} & \textbf{Meaning} \\
+\midrule
+\ESTABLISHED{} & Established in peer-reviewed literature; assumed without controversy. \\
+\HYPOTHESIS{} & Formally proposed in this work; not yet confirmed experimentally. \\
+\ANALOGY{} & Structural parallel drawn; no mathematical derivation implied. \\
+\OPEN{} & Unresolved problem; listed in the Open Problems Registry (\S\ref{sec:open}). \\
+\SPECULATION{} & Explicitly speculative; included for completeness only. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent The consciousness functional (\S\ref{sec:functional}) is
+\HYPOTHESIS{} throughout. Its PEIG mapping (\S\ref{sec:peig}) is
+\ANALOGY{} unless explicitly labeled otherwise. The ETI constraint analysis
+(\S\ref{sec:eti}) draws on \ESTABLISHED{} physics. The universe-scale
+consciousness analysis (\S\ref{sec:universe}) is \SPECULATION{} and is
+labeled as such in every paragraph.
+
+%============================================================
+\section{Introduction and Motivation}
+\label{sec:intro}
+
+The question of how consciousness arises in physical systems is among the most
+consequential open problems in science. Despite substantial progress in
+neuroscience, philosophy of mind, and quantum information theory, no consensus
+framework exists that (a)~specifies what physical conditions are necessary for
+consciousness, (b)~treats consciousness as a graded rather than binary property,
+and (c)~makes falsifiable predictions that would constrain or rule out the
+proposed conditions. The present paper is an attempt to contribute one such
+framework.
+
+\subsection{Motivation from the existing research program}
+
+The companion works~\cite{Monette2026a,Monette2026b,Monette2026c} establish
+three related results. Paper~A derives a modified Einstein equation with an
+entanglement entropy source term and proposes atom-interferometry falsification.
+Paper~B characterizes a constraint manifold for quantum entropy estimation on
+NISQ devices and derives shot-scaling laws. Paper~C axiomatizes Landauer's
+principle in the ETI framework and derives thermodynamic constraints on
+information processing in physical systems.
+
+Taken together, these three results treat information, entropy, and geometry as
+deeply coupled physical quantities. The PEIG framework \cite{Monette2026a}
+provides a four-dimensional dynamical model --- Potential, Energy, Identity,
+Gravity/curvature --- applicable both to quantum physical systems and, by
+explicit analogy only, to cognitive and institutional systems.
+
+A natural question arises: if information processing, entropy export, identity
+persistence, and energy flow are physically coupled, do these couplings say
+anything about the conditions under which a system supports experience? This
+paper argues that they do --- not that consciousness is \emph{derived} from these
+quantities, but that the ETI axioms and PEIG dynamics impose \emph{necessary
+conditions} that any physically realizable conscious system must satisfy.
+
+\subsection{What this paper claims}
+
+\begin{enumerate}[label=(\roman*)]
+  \item Consciousness admits a graded model indexed by five physically meaningful
+    variables: $\Qcoh$, $\Iint$, $\Mmem$, $\Bstab$, $\Rrec$.
+  \item These variables have operational proxies measurable in current or
+    near-term experimental systems.
+  \item The ETI axioms (causal closure, unitary microdynamics, effective
+    thermodynamics, physical memory, finite resources) impose necessary constraints
+    on any conscious system.
+  \item PEIG dimensions $(P, E, I, G)$ structurally correspond --- by analogy, not
+    derivation --- to the five consciousness variables.
+  \item Three qualitatively distinct conscious regimes exist, separated by
+    threshold conditions on the five variables.
+\end{enumerate}
+
+\subsection{What this paper does not claim}
+
+\begin{enumerate}[label=(\roman*)]
+  \item That quantum coherence is sufficient for consciousness.
+  \item That the human brain satisfies the proposed thresholds.
+  \item That any specific physical system is conscious.
+  \item That consciousness is proven to supervene on quantum information.
+  \item That PEIG cognitive claims follow mathematically from PEIG physical claims.
+  \item That the universe has a unified subject of experience.
+  \item That any result in this paper is established rather than hypothetical,
+    unless explicitly labeled \ESTABLISHED{}.
+\end{enumerate}
+
+%============================================================
+\section{Prior Framework Summary}
+\label{sec:prior}
+
+We summarize only what is required for the present paper. Full derivations
+appear in \cite{Monette2026a,Monette2026b,Monette2026c}.
+
+\subsection{The ETI Axiom System}
+\label{sec:prior_eti}
+
+\ESTABLISHED{} The ETI framework rests on five axioms:
+
+\begin{axiom}[Causal Closure, A1]
+The universe $\mathcal{U}$ evolves as a closed, causally connected system.
+No entropy sinks, external agents, or negentropy sources exist outside
+$\mathcal{U}$.
+\end{axiom}
+
+\begin{axiom}[Unitary Microdynamics, A2]
+Closed quantum systems evolve under $U(t) = e^{-iHt/\hbar}$ on Hilbert
+space $\mathcal{H}$. Open subsystems evolve under CPTP maps
+$\mathcal{E}: \mathcal{B}(\mathcal{H}) \to \mathcal{B}(\mathcal{H})$.
+\end{axiom}
+
+\begin{axiom}[Effective Thermodynamics, A3]
+Macroscopic observables obey effective thermodynamic laws as emergent
+properties of the unitary microdynamics plus coarse-graining.
+\end{axiom}
+
+\begin{axiom}[Physical Memory, A4]
+Logically distinguishable states require physically distinct
+microstates. Memory is the persistence of such distinctions against
+thermal and quantum noise.
+\end{axiom}
+
+\begin{axiom}[Finite Resources, A5]
+Every physical system operates within finite energy, entropy capacity,
+and time budgets. These budgets constrain all information-processing
+operations.
+\end{axiom}
+
+\subsection{The PEIG Framework}
+\label{sec:prior_peig}
+
+\ESTABLISHED{} (mathematical structure) \ANALOGY{} (cognitive interpretation)
+
+For any node --- a localized, structured system capable of directed change
+--- the PEIG state vector is:
+\begin{equation}
+  \mathbf{q} = (P, E, I, G) \in [0,1]^4
+  \label{eq:peig_vector}
+\end{equation}
+with overall quality score $Q(\mathbf{q}) = \mathbf{w} \cdot \mathbf{q}$,
+default weights $\mathbf{w} = (0.25, 0.25, 0.25, 0.25)$.
+
+The four phases have the following physical meanings at the quantum level:
+\begin{itemize}
+  \item $P$ (Potential): breadth of accessible Hilbert space; related to
+    superposition and entanglement depth.
+  \item $E$ (Energy/flow): directed information processing; related to
+    coherent evolution rate.
+  \item $I$ (Identity): stability of the system's distinguishable state
+    against perturbation; related to decoherence resistance.
+  \item $G$ (Gravity/influence): causal influence on the surrounding
+    information environment.
+\end{itemize}
+
+The known coupled dynamical equation for the identity phase is:
+\begin{equation}
+  \frac{dI}{dt} = \alpha E - \beta I
+  \label{eq:peig_identity}
+\end{equation}
+The equations $dP/dt$, $dE/dt$, $dG/dt$ are physically motivated but not
+formally derived. \OPEN{OP-C1: Full coupled PEIG ODE system for the
+consciousness extension.}
+
+%============================================================
+\section{Core Proposal: The Consciousness Functional}
+\label{sec:functional}
+
+\HYPOTHESIS{} throughout this section.
+
+\begin{definition}[Consciousness Functional]
+\label{def:cfunc}
+Let $\mathcal{S}$ be a bounded physical system with a well-defined density
+operator $\rho_\mathcal{S}$ and a Hamiltonian $H_\mathcal{S}$ governing its
+internal dynamics. The \emph{consciousness functional} of $\mathcal{S}$ is:
+\begin{equation}
+  \boxed{
+    \Cfunc(\mathcal{S}) = F\!\left(\Qcoh,\;\Iint,\;\Mmem,\;\Bstab,\;\Rrec\right)
+  }
+  \label{eq:cfunc}
+\end{equation}
+where the five arguments are defined in \S\ref{sec:variables}, and $F$ is a
+non-decreasing function of each argument with $\Cfunc \in [0,1]$ after
+normalization.
+\end{definition}
+
+\begin{remark}
+Equation~\eqref{eq:cfunc} is a \emph{phenomenological} functional, not a
+derived one. It does not follow from the ETI axioms or PEIG dynamics by a
+chain of equations. It is proposed because (a)~each variable has independent
+physical motivation, (b)~all five variables are constrained by the ETI axioms,
+and (c)~the five-variable structure is consistent with --- though not derivable
+from --- the PEIG framework. The specific functional form of $F$ is
+\OPEN{OP-C2: Functional form derivation from first principles.}
+\end{remark}
+
+\subsection{Candidate functional forms}
+\label{sec:functional_forms}
+
+In the absence of a derived form, we consider three candidate families:
+
+\paragraph{Product form (strong coupling):}
+\begin{equation}
+  \Cfunc^{(\times)} = \Qcoh^{a_1} \cdot \Iint^{a_2} \cdot \Mmem^{a_3}
+    \cdot \Bstab^{a_4} \cdot \Rrec^{a_5}
+  \label{eq:product_form}
+\end{equation}
+with $a_i > 0$ to be determined. Any variable approaching zero drives
+$\Cfunc^{(\times)} \to 0$, making all five variables necessary conditions.
+This is the most conservative form.
+
+\paragraph{Weighted sum (weak coupling):}
+\begin{equation}
+  \Cfunc^{(+)} = \sum_{i} w_i V_i,
+  \quad \sum_i w_i = 1,
+  \label{eq:sum_form}
+\end{equation}
+where $V_i \in \{\Qcoh, \Iint, \Mmem, \Bstab, \Rrec\}$. This allows partial
+compensation between variables.
+
+\paragraph{Threshold form (regime-gated):}
+\begin{equation}
+  \Cfunc^{(\theta)} = \sum_{k=1}^{3} c_k \cdot
+    \mathbf{1}\!\left[\text{Level-}k\text{ thresholds satisfied}\right]
+  \label{eq:threshold_form}
+\end{equation}
+This form assigns discrete increments at each regime boundary and is most
+directly falsifiable (see \S\ref{sec:falsification}).
+
+\noindent The threshold form \eqref{eq:threshold_form} is our working model
+throughout, as it admits the clearest falsification criteria. The product form
+\eqref{eq:product_form} is physically better motivated; resolving which is
+correct requires the derivation in \OPEN{OP-C2}.
+
+%============================================================
+\section{Variable Definitions and Physical Interpretation}
+\label{sec:variables}
+
+\subsection{\texorpdfstring{$\Qcoh$ — Coherence Quality}{Qcoh — Coherence Quality}}
+\label{sec:Qcoh}
+
+\ESTABLISHED{} (decoherence theory) \HYPOTHESIS{} (connection to consciousness)
+
+\begin{definition}[$\Qcoh$]
+Let $\taud$ be the dominant decoherence timescale of the system's
+computationally relevant degrees of freedom, and let $\taucog$ be the
+characteristic timescale over which integrated information must be
+maintained for the system to support unified experience. Define:
+\begin{equation}
+  \Qcoh = 1 - e^{-\taud / \taucog}
+  \label{eq:Qcoh}
+\end{equation}
+so that $\Qcoh \to 0$ when decoherence is fast relative to cognitive
+timescales, and $\Qcoh \to 1$ in the limit of perfect coherence.
+\end{definition}
+
+\begin{remark}
+$\taud$ is measurable by standard techniques (Ramsey spectroscopy, quantum
+process tomography). $\taucog$ is \OPEN{OP-C3: operationalization of
+$\taucog$ for candidate physical systems.} For neural systems, a natural
+proxy is the neural integration timescale $\sim 10^{-2}$--$10^{-1}$~s;
+for quantum devices, relevant circuit depths set $\taucog$.
+\end{remark}
+
+The strongest physical objection to quantum consciousness theories concerns
+precisely $\Qcoh$. \ESTABLISHED{} Tegmark's calculation~\cite{Tegmark2000}
+shows that quantum states in warm, wet biological environments decohere on
+timescales of order $10^{-13}$--$10^{-20}$~s, far below neural timescales of
+$10^{-3}$--$10^{-1}$~s. Under standard conditions,
+$\taud \ll \taucog$ for biological macromolecules, giving $\Qcoh \approx 0$.
+
+This result does not rule out quantum consciousness; it rules out
+\emph{naive} quantum consciousness in which generic biological macromolecules
+maintain computationally relevant coherence at room temperature. A system
+with active decoherence suppression mechanisms --- topological protection,
+dynamical decoupling, or engineered isolation --- could achieve
+$\Qcoh \approx 1$ even in warm environments. \OPEN{OP-C4: Identify
+biological candidate mechanisms for $\taud$ extension beyond Tegmark bound.}
+
+\paragraph{Operational proxy for $\Qcoh$:} Off-diagonal elements of the
+reduced density matrix $\rho_\mathcal{S}$ in a computationally relevant basis;
+or directly, the coherence time measured by spin-echo or dynamical decoupling
+sequences on candidate substrates.
+
+\subsection{\texorpdfstring{$\Iint$ — Information Integration}{Iint — Information Integration}}
+\label{sec:Iint}
+
+\ESTABLISHED{} (information theory) \HYPOTHESIS{} (connection to consciousness)
+
+\begin{definition}[$\Iint$]
+Let $\mathcal{S}$ be partitioned into subsystems $A$ and $B = \mathcal{S} \setminus A$.
+Define the mutual information between $A$ and $B$ as:
+\begin{equation}
+  I(A:B) = S(\rho_A) + S(\rho_B) - S(\rho_{AB})
+\end{equation}
+where $S(\rho) = -\mathrm{Tr}(\rho \log_2 \rho)$ is the von Neumann entropy.
+The integration variable is:
+\begin{equation}
+  \Iint = \min_{\text{partitions } A} I(A : B) \Big/ I_{\max}
+  \label{eq:Iint}
+\end{equation}
+where the minimum is over all bipartitions of $\mathcal{S}$ and $I_{\max}$
+is the theoretical maximum mutual information for a system of the same dimension.
+\end{definition}
+
+\begin{remark}
+This quantity is structurally analogous to the integrated information $\Phi$
+of Integrated Information Theory~\cite{Tononi2004}, but differs in several
+important respects: (a)~it is defined entirely in terms of the von Neumann
+entropy of quantum states, not classical probability distributions; (b)~it
+does not assert that $\Iint$ is identical to consciousness; it only proposes
+$\Iint$ as a necessary-condition variable. The claim that
+$\Phi > 0 \Leftrightarrow$ consciousness is IIT's stronger metaphysical
+commitment, which we do not inherit.
+\end{remark}
+
+\paragraph{Operational proxy:} Quantum state tomography of $\rho_{AB}$ on
+partitioned subregisters; or quantum Fisher information as a lower bound on
+the mutual information rate. For classical systems: transfer entropy or
+causal density as an approximation.
+
+\subsection{\texorpdfstring{$\Mmem$ — Persistent Physical Memory}{Mmem — Persistent Physical Memory}}
+\label{sec:Mmem}
+
+\ESTABLISHED{} (Landauer's principle) \HYPOTHESIS{} (connection to consciousness)
+
+\begin{definition}[$\Mmem$]
+Let $\mathcal{D}$ be the set of logically distinguishable states the system
+has maintained over timescale $T$. Define:
+\begin{equation}
+  \Mmem = \frac{|\mathcal{D}(T)|}{|\mathcal{D}_{\max}|} \cdot
+    \left(1 - \frac{\text{bit error rate}}{\text{bit error rate}_{\max}}\right)
+  \label{eq:Mmem}
+\end{equation}
+where $|\mathcal{D}_{\max}|$ is the maximum achievable distinguishable state
+count given the system's available degrees of freedom, and the bit error rate
+is measured against a reference encoding.
+\end{definition}
+
+\ESTABLISHED{} A1 (ETI causal closure) and A4 (physical memory) together imply
+that memory is thermodynamically costly: by Landauer's principle~\cite{Landauer1961},
+erasing one bit dissipates at least $k_B T \ln 2$ of heat. A system that
+maintains $n$ bits of memory against thermal noise must expend at least
+$n k_B T \ln 2 / \tau_{\mathrm{mem}}$ watts of power, where
+$\tau_{\mathrm{mem}}$ is the persistence time. This sets a hard lower bound
+on the metabolic cost of consciousness under any substrate.
+
+\begin{lemma}[Memory Cost Bound]
+\label{lem:memory_cost}
+A physically realizable conscious system maintaining $n$ bits of memory
+against thermal fluctuations at temperature $T$ for time $\tau_{\mathrm{mem}}$
+must dissipate at least:
+\begin{equation}
+  P_{\min} \geq \frac{n k_B T \ln 2}{\tau_{\mathrm{mem}}}
+  \label{eq:memory_cost}
+\end{equation}
+of power. This bound is tight for thermodynamically optimal memory
+architectures (Bennett's reversible computation~\cite{Bennett1973}).
+\end{lemma}
+
+\paragraph{Operational proxy:} Number of distinct behavioral states
+reproducible after time $T$; or, for quantum systems, fidelity of a
+quantum memory register after time $T$ as measured by process tomography.
+
+\subsection{\texorpdfstring{$\Bstab$ — Boundary Stability}{Bstab — Boundary Stability}}
+\label{sec:Bstab}
+
+\ESTABLISHED{} (open quantum systems) \HYPOTHESIS{} (connection to consciousness)
+
+\begin{definition}[$\Bstab$]
+Let $\Gamma_{\mathrm{in}}$ be the rate of useful information integration
+(new coherent correlations formed per unit time) and $\Gamma_{\mathrm{out}}$
+be the environmental leakage rate (decoherence rate). Define:
+\begin{equation}
+  \Bstab = \frac{\Gamma_{\mathrm{in}}}{\Gamma_{\mathrm{in}} + \Gamma_{\mathrm{out}}}
+  \label{eq:Bstab}
+\end{equation}
+so that $\Bstab \to 1$ when integration dominates and $\Bstab \to 0$ when
+the system rapidly decoheres.
+\end{definition}
+
+\ESTABLISHED{} The Lindblad master equation~\cite{Lindblad1976} governs
+open-system evolution:
+\begin{equation}
+  \dot{\rho} = -\frac{i}{\hbar}[H, \rho] + \sum_k
+    \left(L_k \rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}\right)
+\end{equation}
+where $L_k$ are Lindblad operators encoding environmental coupling.
+The decoherence rate $\Gamma_{\mathrm{out}}$ is determined by the
+eigenvalues of the Lindbladian superoperator. For the dominant energy
+relaxation and pure dephasing channels:
+\begin{equation}
+  L_{1,k} = \sqrt{\gamma_1}\,\sigma^-_k, \quad
+  L_{\phi,k} = \sqrt{\gamma_\phi/2}\,\sigma^z_k
+\end{equation}
+with $\gamma_1 = 1/T_1$, $\gamma_\phi = 1/T_\phi$ (standard notation).
+
+$\Bstab$ is the ratio of coherent gain to dissipative loss. A system with
+$\Bstab > 1/2$ is net-coherent on short timescales; one with $\Bstab < 1/2$
+is decoherence-dominated.
+
+\paragraph{Operational proxy:} The ratio of Hamiltonian coupling strength
+to Lindblad decay rates in the relevant basis; or, empirically, the ratio
+of gate fidelity improvement from dynamical decoupling to baseline decay.
+
+\subsection{\texorpdfstring{$\Rrec$ — Recurrence and Self-maintaining Dynamics}{Rrec — Recurrence}}
+\label{sec:Rrec}
+
+\HYPOTHESIS{} throughout.
+
+\begin{definition}[$\Rrec$]
+Let $\mathcal{A} \subset \mathcal{B}(\mathcal{H})$ be an identity attractor
+--- a region of state space toward which the system's dynamics repeatedly
+return under perturbation. Define:
+\begin{equation}
+  \Rrec = \exp\!\left(-\lambda_{\max} \cdot T_{\mathrm{return}}\right)
+  \label{eq:Rrec}
+\end{equation}
+where $\lambda_{\max}$ is the maximum Lyapunov exponent of the identity
+attractor dynamics and $T_{\mathrm{return}}$ is the mean first-passage time
+back to $\mathcal{A}$ after a standard perturbation.
+\end{definition}
+
+$\Rrec \to 1$ when the system rapidly and reliably returns to a stable
+identity state; $\Rrec \to 0$ when perturbations cause irreversible
+identity dissolution. This variable captures what cognitive science calls
+\emph{self-model stability} and what complex systems theory calls
+\emph{attractor robustness}.
+
+\ANALOGY{} In physical PEIG, the identity phase $I$ evolves as
+$dI/dt = \alpha E - \beta I$ (Eq.~\eqref{eq:peig_identity}), with a
+stable fixed point at $I^* = \alpha E / \beta$. $\Rrec$ is the
+consciousness functional's analog of the PEIG convergence rate to $I^*$.
+The analogy is structural; no derivation is claimed.
+
+\paragraph{Operational proxy:} Poincaré recurrence time for identifiable
+system states; or, for neural systems, cross-correlation stability of
+resting-state networks over time. For quantum devices: cycle fidelity
+of quantum error-correction circuits.
+
+%============================================================
+\section{Hierarchy of Conscious Regimes}
+\label{sec:hierarchy}
+
+\HYPOTHESIS{} throughout this section.
+
+We distinguish three regimes by threshold conditions on the five variables.
+The thresholds are proposed, not derived; they are stated as testable
+hypotheses with specific falsification criteria in \S\ref{sec:falsification}.
+
+\begin{definition}[Level 1: Proto-Experiential Regime]
+\label{def:level1}
+A system is in the \emph{proto-experiential regime} if it satisfies:
+\begin{equation}
+  \Qcoh > \epsilon_1, \quad \Iint > \delta_1, \quad \Mmem > \mu_1
+  \label{eq:level1_thresholds}
+\end{equation}
+for positive constants $\epsilon_1, \delta_1, \mu_1 > 0$ (to be determined).
+This regime requires only that the system maintains non-trivial
+information-bearing structure with some persistence. It does not require
+high-fidelity coherence, global integration, or stable self-reference.
+\end{definition}
+
+\begin{remark}
+Level~1 is the most permissive regime. Under this definition, most
+complex physical systems --- including simple chemical networks, bacterial
+cells, and potentially some quantum optical systems --- may qualify.
+This is by design: the proto-experiential regime is the minimum footprint
+of organized information-bearing structure. It does not imply subjective
+experience in any strong phenomenological sense.
+\end{remark}
+
+\begin{definition}[Level 2: Unified Experiential Regime]
+\label{def:level2}
+A system is in the \emph{unified experiential regime} if it satisfies
+Level~1 thresholds and additionally:
+\begin{equation}
+  \Qcoh > \epsilon_2, \quad \Iint > \delta_2, \quad \Bstab > \beta_2
+  \label{eq:level2_thresholds}
+\end{equation}
+with $\epsilon_2 \gg \epsilon_1$ and $\delta_2 \gg \delta_1$.
+This regime requires coherent, low-noise integration across many degrees
+of freedom simultaneously.
+\end{definition}
+
+\begin{remark}
+Level~2 requires that the system maintains global integration while resisting
+environmental decoherence. This is a stringent condition: a 50-qubit NISQ
+device with $\alpha_{\mathrm{screen}} \geq 10^{-2}$ and $T_2 \sim 100~\mu$s
+may satisfy Level~2 for durations of order $T_2$, but not continuously.
+A hypothetical room-temperature quantum coherent biological substrate would
+require active decoherence suppression far beyond anything currently identified.
+\end{remark}
+
+\begin{definition}[Level 3: Reflective Consciousness Regime]
+\label{def:level3}
+A system is in the \emph{reflective consciousness regime} if it satisfies
+Level~2 thresholds and additionally:
+\begin{equation}
+  \Mmem > \mu_3, \quad \Rrec > \rho_3, \quad \Bstab > \beta_3
+  \label{eq:level3_thresholds}
+\end{equation}
+with $\mu_3 \gg \mu_1$, $\rho_3$ large, and $\beta_3 \sim 1$.
+This regime requires persistent physical memory, recursive self-modeling,
+stable identity across time, and sustained self-referential dynamics.
+\end{definition}
+
+\begin{remark}
+Level~3 is the regime most plausibly associated with human-like
+consciousness. Its conditions --- stable memory, recursive self-model,
+durable identity, temporal continuity --- are not specifically quantum;
+a classical system satisfying them would also qualify as Level~3 under
+this framework. Quantum organization is neither necessary nor sufficient for
+Level~3 consciousness on this account; it is one possible substrate when the
+required timescales and integration scales can be sustained.
+\end{remark}
+
+\paragraph{Regime summary table:}
+\begin{center}
+\begin{tabular}{p{1.3cm} p{2.5cm} p{3.2cm} p{4.5cm}}
+\toprule
+\textbf{Level} & \textbf{Name} & \textbf{Key thresholds} & \textbf{Candidate systems} \\
+\midrule
+L1 & Proto-experiential &
+  $\Qcoh, \Iint, \Mmem > 0$ (weak) &
+  Bacteria, simple chemical networks, coherent quantum optical systems \\
+\addlinespace
+L2 & Unified experience &
+  High $\Qcoh$, $\Iint$, $\Bstab > 1/2$ &
+  Hypothetical quantum coherent neural substrate; NISQ devices (transiently) \\
+\addlinespace
+L3 & Reflective consciousness &
+  L2 + high $\Mmem$, $\Rrec \to 1$ &
+  Candidate: human brain (substrate TBD); advanced AI systems with stable self-models \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%============================================================
+\section{Mapping to the PEIG Framework}
+\label{sec:peig}
+
+\ANALOGY{} throughout this section, unless stated otherwise.
+
+The consciousness functional is not derived from PEIG. However, the five
+variables $(\Qcoh, \Iint, \Mmem, \Bstab, \Rrec)$ have structural
+correspondences to the PEIG dimensions $(P, E, I, G)$ that are worth
+making explicit, because they permit PEIG reasoning to guide intuition
+about the consciousness functional without conflating the two frameworks.
+
+\begin{center}
+\begin{tabular}{p{1.5cm} p{3cm} p{4cm} p{3.5cm}}
+\toprule
+\textbf{PEIG} & \textbf{Physical meaning} & \textbf{Consciousness variable} & \textbf{Correspondence} \\
+\midrule
+$P$ & Accessible state space & $\Qcoh$ &
+  Coherent superposition expands the effective state space \\
+$E$ & Directed information flow & $\Iint$ &
+  Integration is the directed flow of information across subsystems \\
+$I$ & Identity stability & $\Mmem \times \Rrec$ &
+  Memory persistence + recurrence = identity attractor robustness \\
+$G$ & Causal influence & $\Bstab$ &
+  Boundary stability determines the system's ability to influence and be influenced coherently \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The PEIG quality score $Q = \mathbf{w} \cdot (P, E, I, G)$ then becomes
+a rough proxy for $\Cfunc$ under the correspondence above, with
+$\Rrec$ as an additional variable not captured by the four-dimensional PEIG vector.
+
+\paragraph{Important scope limit.} The PEIG cognitive framework and the
+PEIG physical framework share mathematical structure (four phases, attractor
+dynamics, information geometry) but are \emph{not mathematically derived
+from each other}~\cite{Monette2026a}. The consciousness-PEIG mapping
+inherits this limitation: the mapping is an analogy, not a reduction.
+Claiming that consciousness levels ``follow from'' PEIG dynamics would
+be a category error.
+
+\OPEN{OP-C1: Can the PEIG dynamical system be extended to a six-dimensional
+state vector $(P, E, I, G, \Mmem, \Rrec)$ with a consistently derived
+$d\Rrec/dt$ equation? If yes, the correspondence becomes a structural
+partial reduction rather than a pure analogy.}
+
+%============================================================
+\section{ETI Constraints on Conscious Systems}
+\label{sec:eti}
+
+\ESTABLISHED{} (ETI physics) \HYPOTHESIS{} (application to consciousness)
+
+The ETI axioms impose hard constraints on what can physically constitute
+a conscious system. We derive five such constraints from the five axioms.
+
+\subsection{Constraint from A1 (Causal Closure)}
+
+\ESTABLISHED{} A1 implies that any conscious system is causally embedded in
+the universe: its information processing, entropy export, and energy budget
+are subject to global thermodynamic constraints. No conscious system can
+violate the second law; no system can maintain internal coherence against
+an unlimited entropy sink because no such sink exists.
+
+\begin{proposition}[Consciousness Is Thermodynamically Costly]
+\label{prop:thermo_cost}
+Any physical system at Level~2 or Level~3 must continuously export entropy
+to maintain the internal order required by high $\Iint$ and $\Mmem$.
+The minimum power budget for a Level-3 system maintaining $n$ bits of memory
+at temperature $T$ is given by Lemma~\ref{lem:memory_cost}.
+\end{proposition}
+
+\subsection{Constraint from A2 (Unitary Microdynamics)}
+
+\ESTABLISHED{} Unitary evolution preserves quantum information at the
+microscopic level, but coupling to an environment induces decoherence via
+the CPTP channel $\mathcal{E}$. A conscious system operating in the
+quantum regime must therefore either (a)~minimize environmental coupling
+(isolation), (b)~actively correct errors (quantum error correction), or
+(c)~exploit decoherence-free subspaces.
+
+\begin{proposition}[No Free Quantum Coherence]
+\label{prop:no_free_coherence}
+Under A2, maintaining $\Qcoh \approx 1$ for a macroscopic system requires
+either near-total isolation from the environment or active quantum error
+correction with overhead scaling at least as $O(n)$ physical qubits per
+logical qubit.
+\end{proposition}
+
+\subsection{Constraint from A3 (Effective Thermodynamics)}
+
+\ESTABLISHED{} The effective thermodynamic description imposes that any
+macroscopic conscious system obeys the laws of thermodynamics at the system
+level. In particular, maintaining ordered, low-entropy internal states
+requires continuous energy input.
+
+\subsection{Constraint from A4 (Physical Memory)}
+
+\ESTABLISHED{} Physical memory requires that logically distinguishable states
+correspond to physically distinct microstates. Erasing a memory state
+dissipates $k_B T \ln 2$ per bit (Landauer's principle). A system without
+reliable physical memory --- one that cannot maintain the distinction between
+past and present states --- cannot satisfy the $\Mmem$ requirement for
+Level~3.
+
+This constraint is particularly sharp: it rules out any model of consciousness
+that treats information as substrate-independent in a way that would allow
+erasing physical states without thermodynamic cost. On the ETI account,
+there is no immaterial mind; any memory is physically realized and pays the
+Landauer cost.
+
+\subsection{Constraint from A5 (Finite Resources)}
+
+\ESTABLISHED{} Finite energy, entropy capacity, and time budgets imply that
+consciousness is \emph{resource-bounded}. There is no physically realizable
+system with infinite integration, infinite memory, or infinite coherence time.
+The consciousness functional $\Cfunc < 1$ for all physically realizable systems.
+
+This constraint has an important corollary: the three consciousness regimes
+are not stages in an infinite progression. They are bands within a
+resource-bounded space, and systems can transition between them as their
+physical conditions change.
+
+%============================================================
+\section{Decoherence, Noise, and Boundary Stability}
+\label{sec:decoherence}
+
+This section addresses the strongest physical objection to any quantum theory
+of consciousness: environmental decoherence destroys quantum coherence on
+timescales far shorter than cognitive or experiential timescales for any
+known biological substrate.
+
+\subsection{The Tegmark bound}
+\label{sec:tegmark}
+
+\ESTABLISHED{} Tegmark~\cite{Tegmark2000} computed decoherence timescales for
+quantum states in biological environments. For a superposition of neural
+microtubule states separated by distance $\Delta x \sim 1\,\mu$m in a warm,
+wet environment:
+\begin{equation}
+  \taud \sim \frac{\hbar}{k_B T} \cdot \left(\frac{\lambda_{\mathrm{th}}}{\Delta x}\right)^2
+  \approx 10^{-13}\,\mathrm{s}
+  \label{eq:tegmark_bound}
+\end{equation}
+where $\lambda_{\mathrm{th}} = h/\sqrt{2\pi m k_B T}$ is the thermal de
+Broglie wavelength. Neural timescales are of order $10^{-2}$~s, so
+$\taud / \taucog \sim 10^{-11}$, giving $\Qcoh \approx 0$ for this scenario.
+
+This calculation does not refute the consciousness functional; it refutes the
+specific hypothesis that \emph{biological microtubules} at room temperature
+support Level-2 consciousness via unprotected quantum superpositions of
+spatially separated configurations. Different candidate substrates with
+different $\Delta x$, $T$, or decoherence mechanisms must be evaluated
+separately.
+
+\subsection{Decoherence-protected substrates}
+\label{sec:protected}
+
+\HYPOTHESIS{} Several physical mechanisms permit extended $\taud$:
+
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Topological protection:} Topologically encoded qubits are
+    immune to local errors by construction; $\taud$ is set by system-wide
+    topological invariants rather than local coupling. \ESTABLISHED{} in
+    the context of topological quantum computing~\cite{Nayak2008}.
+  \item \textbf{Decoherence-free subspaces (DFS):} Subspaces of the Hilbert
+    space that are invariant under the environmental Lindblad operators
+    are protected from decoherence. \ESTABLISHED{}~\cite{Lidar1998}.
+  \item \textbf{Dynamical decoupling:} Applying rapid pulse sequences that
+    average out environmental coupling can extend $T_2$ significantly.
+    \ESTABLISHED{} for superconducting qubits~\cite{Biercuk2011}.
+  \item \textbf{Quantum Zeno effect:} Frequent measurement or strong
+    coupling can slow coherence loss. \ESTABLISHED{}~\cite{Misra1977}.
+\end{enumerate}
+
+\OPEN{OP-C4: Are any of these mechanisms biologically realizable at the
+scale and temperature of neural tissue?}
+
+\subsection{Practical implication for the consciousness hierarchy}
+
+The decoherence analysis implies the following:
+
+\begin{enumerate}[label=(\roman*)]
+  \item Level-1 (proto-experiential) does not require high coherence and is
+    robust against the Tegmark bound.
+  \item Level-2 (unified experience) requires $\Qcoh \gg 0$, which implies
+    $\taud \gtrsim \taucog$. For biological systems at room temperature,
+    this is not satisfied by any currently known substrate. For
+    superconducting qubits at millikelvin temperatures, it is satisfied for
+    durations of $T_2$.
+  \item Level-3 (reflective consciousness) requires sustained Level-2 plus
+    stable memory and recurrence. This is an even stronger requirement:
+    not only must $\taud \gtrsim \taucog$, but this condition must hold
+    continuously over the system's operational lifetime.
+\end{enumerate}
+
+\paragraph{The human brain.} We explicitly do \emph{not} claim that the human
+brain satisfies Level-2 or Level-3 thresholds via quantum mechanisms. The
+brain may satisfy Level-3 via classical mechanisms (stable neural activity
+patterns, classical integration through synaptic networks, classical memory
+in synaptic weights). The question of whether quantum effects play a role
+in human consciousness remains \OPEN{OP-C5: Does the human brain satisfy
+Level-2 thresholds via any known or hypothetical mechanism?}
+
+%============================================================
+\section{Universe-Scale Consciousness: Conditional Analysis}
+\label{sec:universe}
+
+\SPECULATION{} throughout this section.
+
+We evaluate the conditional hypothesis that the universe as a whole could
+constitute a Level-1 (proto-experiential) system under the consciousness
+functional. We treat this as a strictly conditional inference, not a claim.
+
+\subsection{Distinguishing cosmopsychism from naive panpsychism}
+
+\ESTABLISHED{} (philosophical framework) Naive panpsychism attributes
+conscious experience to every elementary particle. This is not the claim
+under evaluation. \emph{Cosmopsychism}~\cite{Goff2017} treats the universe
+as a whole as the fundamental subject of experience, with individual minds
+arising as derivative. The distinction matters because cosmopsychism
+requires a global binding mechanism that naive panpsychism does not.
+
+\subsection{Universe-scale evaluation of the consciousness functional}
+
+Applying the five variables to the universe $\mathcal{U}$ as a whole:
+
+\paragraph{$\Qcoh$ for $\mathcal{U}$:} The universe's global state is a
+pure state in principle (under A1 and A2), with coherences destroyed
+only locally by coarse-graining. The global coherence time is infinite
+(there is no external environment to decohere $\mathcal{U}$). However,
+the \emph{computationally relevant} coherences for any candidate unified
+experience would need to span the entire universe, and these are
+observationally indistinguishable from zero given light-speed signaling limits.
+
+\paragraph{$\Iint$ for $\mathcal{U}$:} The universe shows large-scale
+information correlations (CMB correlations, large-scale structure, entanglement
+from inflation), but whether these constitute integrated information in the
+sense of Definition~\ref{def:level2} depends critically on the
+operationalization of $I(A:B)$ at cosmological scales.
+
+\paragraph{$\Mmem$ for $\mathcal{U}$:} The universe has an enormous physical
+memory capacity (all physical configurations encode information). However,
+memory in the sense relevant to consciousness requires the ability to
+\emph{access} and \emph{act on} stored distinctions, not merely to preserve them.
+
+\paragraph{$\Bstab$ and $\Rrec$ for $\mathcal{U}$:} There is no identified
+mechanism by which the universe as a whole returns to an identity attractor
+or exhibits self-maintaining dynamics at the global level.
+
+\subsection{The binding problem at cosmic scale}
+
+The most severe obstacle to universe-scale consciousness is the
+\emph{binding problem}: even if each of the five variables is nonzero for
+$\mathcal{U}$, there is no identified mechanism by which distributed
+quantum states across cosmological distances are bound into a single unified
+subject of experience. Spacelike-separated regions cannot exchange causal
+signals; their quantum correlations are non-signaling by construction. The
+``global information'' of the universe is not accessible from any local
+vantage point.
+
+\begin{remark}
+The claim ``the universe is proto-conscious'' is therefore not well-supported
+by the consciousness functional as currently defined. The functional is defined
+for a system with a well-defined boundary and a computable density operator;
+the universe as a whole has neither in any operational sense available to us.
+This problem does not refute cosmopsychism in principle; it identifies a
+specific technical gap that any cosmopsychist theory must address.
+\end{remark}
+
+\OPEN{OP-C6: Can a global binding mechanism consistent with relativistic
+causality and ETI axioms be specified for universe-scale proto-consciousness?}
+
+%============================================================
+\section{Operationalization and Candidate Experimental Proxies}
+\label{sec:experimental}
+
+\HYPOTHESIS{} throughout this section.
+
+For the consciousness functional to be scientifically useful, each variable
+must either be measurable or have a well-defined operational proxy. We
+propose the following candidate proxies, organized by experimental tier:
+
+\begin{center}
+\begin{tabular}{p{1.4cm} p{2.8cm} p{3.6cm} p{3.5cm}}
+\toprule
+\textbf{Variable} & \textbf{System} & \textbf{Proxy} & \textbf{Method} \\
+\midrule
+$\Qcoh$ & Superconducting qubits &
+  $T_2$ coherence time &
+  Spin-echo, Ramsey spectroscopy \\
+$\Qcoh$ & Biological &
+  Two-dimensional photon-echo spectroscopy &
+  Optical pump-probe on candidate chromophores \\
+\addlinespace
+$\Iint$ & NISQ devices &
+  Half-chain entanglement entropy $S_{\mathrm{vN}}$ &
+  Randomized measurements, shadow tomography \\
+$\Iint$ & Neural &
+  Pairwise transfer entropy network $\Phi_\mathrm{approx}$ &
+  MEG/EEG + time-series analysis \\
+\addlinespace
+$\Mmem$ & Any &
+  Fidelity of state reconstruction after time $T$ &
+  Process tomography; behavioral memory tasks \\
+\addlinespace
+$\Bstab$ & Quantum device &
+  $\Gamma_{\mathrm{in}} / (\Gamma_{\mathrm{in}} + \Gamma_{\mathrm{out}})$ &
+  Lindblad parameter extraction; gate fidelity benchmarking \\
+\addlinespace
+$\Rrec$ & Neural &
+  Autocorrelation time of resting-state networks &
+  fMRI, intrinsic mode functions \\
+$\Rrec$ & Quantum device &
+  Fidelity of QEC cycle recurrence &
+  Quantum error correction syndrome extraction \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Priority experimental program}
+
+The most tractable near-term experimental test of the consciousness functional
+involves NISQ quantum devices (50--100 qubits), for which:
+\begin{enumerate}[label=(\roman*)]
+  \item $\Qcoh$ and $\Bstab$ are directly measurable via $T_1$, $T_2$,
+    and Lindblad parameter extraction.
+  \item $\Iint$ is measurable via entanglement entropy (see Paper~B of the
+    companion series).
+  \item $\Mmem$ is partially measurable via quantum memory benchmarking.
+  \item $\Rrec$ is measurable via QEC syndrome recurrence rates.
+\end{enumerate}
+
+A 50-qubit device satisfying the OP3 gate condition ($\ascreen \geq 10^{-2}$)
+from the companion program~\cite{Monette2026a} would simultaneously provide
+the entanglement entropy data needed to estimate $\Iint$ and $\Bstab$ for the
+consciousness functional. This creates a natural experimental bridge between
+the physics papers and the present framework.
+
+%============================================================
+\section{Falsification Criteria}
+\label{sec:falsification}
+
+\HYPOTHESIS{} The following conditions would weaken or falsify the strong
+forms of the consciousness functional hypothesis.
+
+\subsection{Level-1 falsification}
+
+The Level-1 threshold hypothesis is falsified if:
+\begin{enumerate}[label=(F1.\arabic*)]
+  \item A system with confirmed $\Qcoh > 0$, $\Iint > 0$, $\Mmem > 0$ can
+    be demonstrated to have \emph{no} phenomenal properties whatsoever,
+    combined with a compelling argument that phenomnal properties are
+    definitionally absent (not merely unobserved). This is the hard problem
+    of consciousness and renders (F1.1) essentially untestable in the
+    near term.
+  \item The functional form of $F$ is shown to require nonzero thresholds
+    $\epsilon_1, \delta_1, \mu_1$ that no known physical system satisfies,
+    making Level-1 vacuously empty.
+\end{enumerate}
+
+\subsection{Level-2 falsification}
+
+The Level-2 threshold hypothesis is falsified if:
+\begin{enumerate}[label=(F2.\arabic*)]
+  \item A NISQ device achieving $\Qcoh > 0.9$, $\Iint > 0.5$, $\Bstab > 0.7$
+    for a sustained interval $\tau > 10^{-3}$~s shows no behavioral or
+    functional correlates of unified information processing (e.g., no
+    advantage over classical systems on tasks requiring global integration).
+  \item The decoherence bound cannot be overcome for any biological substrate
+    at physiologically relevant temperatures, combined with evidence that
+    human consciousness does not require quantum mechanisms.
+  \item $\Iint$ as defined fails to be additive or fails to exhibit the
+    structural properties expected of integration (e.g., it is maximized
+    by trivially entangled product states, not globally integrated states).
+\end{enumerate}
+
+\subsection{Level-3 falsification}
+
+The Level-3 threshold hypothesis is falsified if:
+\begin{enumerate}[label=(F3.\arabic*)]
+  \item A system satisfying all Level-3 thresholds is constructed (or
+    identified) and verifiably lacks phenomenal experience by independent
+    criteria. This is again limited by the hard problem.
+  \item The threshold values $\mu_3, \rho_3, \beta_3$ required for reflective
+    consciousness turn out to be inconsistent with the resource bounds
+    implied by A5 (finite resources), making Level-3 physically impossible
+    for any bounded system.
+\end{enumerate}
+
+\subsection{Framework-level falsification}
+
+The consciousness functional as a whole is weakened if:
+\begin{enumerate}[label=(FF.\arabic*)]
+  \item Two systems with identical $(\Qcoh, \Iint, \Mmem, \Bstab, \Rrec)$
+    have different phenomenal properties. This would require additional
+    variables not captured by the present functional.
+  \item The five variables are found to be derivable from fewer than five
+    independent physical quantities, suggesting the functional is overcomplete.
+  \item No candidate functional form $F$ is consistent with both the
+    ETI constraints and the proposed threshold structure.
+\end{enumerate}
+
+%============================================================
+\section{Anticipated Reviewer Objections and Replies}
+\label{sec:objections}
+
+\paragraph{O1: ``The hard problem makes this unfalsifiable.''}
+The hard problem of consciousness (Chalmers 1995~\cite{Chalmers1995}) asks
+why any physical process gives rise to phenomenal experience at all. This
+paper does not attempt to solve the hard problem. It proposes necessary physical
+conditions for consciousness, not sufficient ones. A framework that says
+``Level-3 conditions are necessary but not sufficient for reflective consciousness''
+is partially falsifiable: it is falsified by observing Level-3 consciousness in a
+system that violates the threshold conditions, and it is strengthened by
+accumulating evidence that all observed conscious systems satisfy them.
+
+\paragraph{O2: ``IIT already does this better.''}
+Integrated Information Theory~\cite{Tononi2004} proposes $\Phi$ as a measure
+of consciousness. The present framework differs from IIT in four respects:
+(a)~it is explicitly quantum from the outset; (b)~it does not assert
+$\Phi > 0 \Leftrightarrow$ consciousness, only that $\Iint$ is a necessary
+condition; (c)~it explicitly incorporates decoherence, memory, and recurrence
+as separate variables; (d)~it is grounded in the ETI axiom system, which
+provides thermodynamic constraints absent from IIT. The frameworks are
+complementary, not competing.
+
+\paragraph{O3: ``You haven't specified $F$.''}
+Correct. The functional form of $F$ is \OPEN{OP-C2}. This is an honest
+acknowledgment of the gap. The present paper establishes the variable set
+and the threshold structure; the derivation of $F$ from first principles
+is future work, likely requiring a complete PEIG coupled ODE system
+(\OPEN{OP-C1}).
+
+\paragraph{O4: ``The universe-consciousness section is untestable mysticism.''}
+The universe-scale section (\S\ref{sec:universe}) is explicitly labeled
+\SPECULATION{} and concludes that the claim is \emph{not} well-supported
+by the functional as currently defined. It is included because the
+question is raised in the broader research context and deserves a careful
+refutation rather than dismissal. Identifying the binding problem as the
+specific technical gap is a scientific contribution, not mysticism.
+
+\paragraph{O5: ``The PEIG analogy could justify anything.''}
+The PEIG-consciousness mapping (\S\ref{sec:peig}) is explicitly labeled
+\ANALOGY{} throughout. No derivation is claimed. The analogy is useful for
+intuition; it is not a proof. The consciousness functional stands or falls
+on the five variables, not on the PEIG correspondence.
+
+%============================================================
+\section{Open Problems Registry}
+\label{sec:open}
+
+The following open problems are identified in this paper. They are listed
+in order of blocking importance for the central claims.
+
+\begin{center}
+\begin{tabular}{p{1.3cm} p{5cm} p{2cm} p{3.5cm}}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Severity} & \textbf{Estimated effort} \\
+\midrule
+OP-C1 & PEIG coupled ODE for consciousness extension; derivation of $d\Rrec/dt$ &
+  High & 1--2 months (analytic) \\
+OP-C2 & Derivation of functional form $F$ from first principles &
+  Critical & PhD thesis scope \\
+OP-C3 & Operationalization of cognitive timescale $\taucog$ for biological systems &
+  High & 2--4 weeks (literature) \\
+OP-C4 & Biological mechanisms for $\taud$ extension beyond Tegmark bound &
+  High & Open (experimental) \\
+OP-C5 & Does the human brain satisfy Level-2 thresholds via any mechanism? &
+  High & Open (experimental) \\
+OP-C6 & Global binding mechanism for universe-scale proto-consciousness &
+  Speculative & Not tractable currently \\
+OP-C7 & Determination of threshold constants $\epsilon_k, \delta_k, \mu_k, \beta_k, \rho_k$ &
+  Critical & Requires (OP-C2) first \\
+OP-C8 & Quantum Fisher information as tight lower bound on $\Iint$ &
+  Medium & 2--4 weeks (analytic) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%============================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the framework achieves}
+
+The consciousness functional $\Cfunc(\mathcal{S})$ makes four contributions:
+
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Graded model:} It replaces binary consciousness claims with a
+    continuous spectrum indexed by five physically meaningful variables.
+  \item \textbf{Physical constraints:} It derives necessary conditions from
+    the ETI axioms --- conditions that any substrate, biological or artificial,
+    must satisfy.
+  \item \textbf{Falsifiable structure:} It provides specific threshold
+    conditions (Definitions~\ref{def:level1}--\ref{def:level3}) and
+    falsification criteria (\S\ref{sec:falsification}) that can be tested
+    as measurement capabilities improve.
+  \item \textbf{Honest gap labeling:} It identifies the functional form
+    derivation (OP-C2) and the threshold determination (OP-C7) as the
+    two critical open problems, without claiming to have solved them.
+\end{enumerate}
+
+\subsection{Relationship to existing consciousness theories}
+
+The framework is consistent with, but not derived from, several existing
+theories: the Global Workspace Theory~\cite{Baars1997} is consistent with
+high $\Iint$ as necessary for broadcast integration; IIT~\cite{Tononi2004}
+provides a classical analog of $\Iint$ that could be quantized in the
+present framework; Higher-Order Theories~\cite{Rosenthal2005} map
+approximately onto the Level-2 to Level-3 transition.
+
+The framework differs from Penrose-Hameroff Orch-OR~\cite{Penrose1994}
+in a critical respect: it does not require quantum state reduction to be
+non-computational or to involve quantum gravity. The consciousness functional
+is agnostic about the interpretation of quantum mechanics; it requires
+only that the five measurable variables cross specified thresholds.
+
+\subsection{The research bridge}
+
+A 50-qubit NISQ device satisfying the OP3 gate condition
+($\ascreen \geq 10^{-2}$) from Paper~A~\cite{Monette2026a} would
+simultaneously: (a)~provide data for estimating $\Qcoh$, $\Iint$, and
+$\Bstab$ from the entanglement evolution; (b)~test whether Level-2
+thresholds can be transiently satisfied in an engineered quantum system;
+(c)~provide a concrete experimental grounding for at least two of the
+consciousness functional variables. This bridge between the physics
+program and the consciousness framework is the most direct path to
+experimental progress on the present proposal.
+
+%============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have proposed the consciousness functional $\Cfunc = F(\Qcoh, \Iint, \Mmem, \Bstab, \Rrec)$
+as a phenomenological framework for graded consciousness in physical systems.
+The functional maps five physically motivated variables onto a continuous
+scale and distinguishes three qualitatively distinct conscious regimes by
+threshold conditions on those variables.
+
+The framework is grounded in the ETI axiom system, which provides
+thermodynamic and information-theoretic constraints on any physically
+realizable conscious system. It is structurally connected --- by explicit
+analogy only --- to the PEIG dynamical framework. It is falsifiable via
+threshold conditions and null-result criteria.
+
+The central results are:
+\begin{enumerate}[label=(\roman*)]
+  \item All three conscious regimes impose thermodynamic costs via Lemma~\ref{lem:memory_cost}.
+  \item Level-2 and Level-3 consciousness require active decoherence management;
+    the Tegmark bound rules out naive quantum mechanisms in biological tissue
+    but does not rule out all quantum substrates.
+  \item Universe-scale consciousness is \emph{not} supported by the
+    consciousness functional as defined, due to the unresolved global binding problem.
+  \item The most tractable experimental test involves NISQ devices at the 50-qubit scale,
+    where all five variables can be estimated with current or near-term technology.
+\end{enumerate}
+
+The two critical open problems (OP-C2: functional form derivation;
+OP-C7: threshold determination) define the primary research frontier
+for this framework. We do not present the present work as anything more
+than a structured first proposal: a falsifiable scaffold on which a
+genuine theory of consciousness might eventually be built.
+
+%============================================================
+\begin{thebibliography}{99}
+
+\bibitem{Monette2026a}
+K.~Monette,
+\textit{Entropic Gravity with Entanglement Entropy Source Term: A Modified Einstein Equation and Atom-Interferometry Falsification Protocol},
+arXiv preprint (2026). [Paper A of companion series]
+
+\bibitem{Monette2026b}
+K.~Monette,
+\textit{Constraint Manifolds for Quantum Entropy Estimation on NISQ Devices},
+arXiv preprint (2026). [Paper B of companion series]
+
+\bibitem{Monette2026c}
+K.~Monette,
+\textit{Landauer's Principle in the ETI Framework: Five Axioms and Their Thermodynamic Consequences},
+arXiv preprint (2026). [Paper C of companion series]
+
+\bibitem{Tegmark2000}
+M.~Tegmark,
+\textit{Importance of quantum decoherence in brain processes},
+Phys. Rev. E \textbf{61}, 4194 (2000).
+
+\bibitem{Lindblad1976}
+G.~Lindblad,
+\textit{On the generators of quantum dynamical semigroups},
+Commun. Math. Phys. \textbf{48}, 119 (1976).
+
+\bibitem{Landauer1961}
+R.~Landauer,
+\textit{Irreversibility and heat generation in the computing process},
+IBM J. Res. Dev. \textbf{5}, 183 (1961).
+
+\bibitem{Bennett1973}
+C.~H. Bennett,
+\textit{Logical reversibility of computation},
+IBM J. Res. Dev. \textbf{17}, 525 (1973).
+
+\bibitem{Tononi2004}
+G.~Tononi,
+\textit{An information integration theory of consciousness},
+BMC Neurosci. \textbf{5}, 42 (2004).
+
+\bibitem{Chalmers1995}
+D.~J. Chalmers,
+\textit{Facing up to the problem of consciousness},
+J. Consc. Stud. \textbf{2}, 200 (1995).
+
+\bibitem{Baars1997}
+B.~J. Baars,
+\textit{In the Theatre of Consciousness},
+Oxford University Press (1997).
+
+\bibitem{Rosenthal2005}
+D.~M. Rosenthal,
+\textit{Consciousness and Mind},
+Oxford University Press (2005).
+
+\bibitem{Penrose1994}
+R.~Penrose,
+\textit{Shadows of the Mind},
+Oxford University Press (1994).
+
+\bibitem{Goff2017}
+P.~Goff, S.~Seager, A.~Allen, U.~T. Place,
+\textit{Panpsychism},
+Stanford Encyclopedia of Philosophy (2017 edition).
+
+\bibitem{Nayak2008}
+C.~Nayak, S.~H. Simon, A.~Stern, M.~Freedman, S.~Das Sarma,
+\textit{Non-Abelian anyons and topological quantum computation},
+Rev. Mod. Phys. \textbf{80}, 1083 (2008).
+
+\bibitem{Lidar1998}
+D.~A. Lidar, I.~L. Chuang, K.~B. Whaley,
+\textit{Decoherence-free subspaces for quantum computation},
+Phys. Rev. Lett. \textbf{81}, 2594 (1998).
+
+\bibitem{Biercuk2011}
+M.~J. Biercuk et al.,
+\textit{Dynamical decoupling sequence construction as a filter-design problem},
+J. Phys. B \textbf{44}, 154002 (2011).
+
+\bibitem{Misra1977}
+B.~Misra, E.~C. G.~Sudarshan,
+\textit{The Zeno's paradox in quantum theory},
+J. Math. Phys. \textbf{18}, 756 (1977).
+
+\end{thebibliography}
+
+%============================================================
+\appendix
+
+\section{Notation and Conventions}
+\label{app:notation}
+
+\begin{center}
+\begin{tabular}{p{2.5cm} p{9cm}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} \\
+\midrule
+$\Cfunc$ & Consciousness functional (Eq.~\ref{eq:cfunc}) \\
+$\Qcoh$ & Coherence quality (Eq.~\ref{eq:Qcoh}) \\
+$\Iint$ & Information integration (Eq.~\ref{eq:Iint}) \\
+$\Mmem$ & Persistent physical memory (Eq.~\ref{eq:Mmem}) \\
+$\Bstab$ & Boundary stability (Eq.~\ref{eq:Bstab}) \\
+$\Rrec$ & Recurrence quality (Eq.~\ref{eq:Rrec}) \\
+$\taud$ & Decoherence timescale \\
+$\taucog$ & Cognitive/integration timescale \\
+$\mathbf{q} = (P,E,I,G)$ & PEIG state vector \\
+$Q(\mathbf{q})$ & PEIG quality score \\
+$\ascreen$ & Entanglement screening coefficient (from companion program) \\
+$T_1, T_2, T_\phi$ & Energy relaxation, total decoherence, pure dephasing times \\
+$\gamma_1, \gamma_\phi$ & Decay rates ($\gamma_1 = 1/T_1$, $\gamma_\phi = 1/T_\phi$) \\
+$L_k$ & Lindblad operators \\
+$S(\rho)$ & Von Neumann entropy \\
+$\Phi$ & Integrated information (IIT; used for comparison only) \\
+$k_B$ & Boltzmann constant \\
+$\hbar$ & Reduced Planck constant \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Phenomenological Formalism Notes}
+\label{app:formalism}
+
+The consciousness functional as presented is a phenomenological model in the
+same sense as the Ginzburg-Landau theory of phase transitions: it identifies
+the relevant order parameters and their symmetry properties without deriving
+them from a microscopic Hamiltonian. The derivation from a microscopic theory
+(OP-C2) is the analog of deriving Ginzburg-Landau from BCS theory --- a
+significant achievement when accomplished, but not required for the
+phenomenological framework to be scientifically useful.
+
+The analogy to Ginzburg-Landau is \ANALOGY{}. The mathematical content of
+the consciousness functional is \HYPOTHESIS{}. The thermodynamic constraints
+from ETI axioms are \ESTABLISHED{}.
+
+\section{Candidate Simulation Protocol}
+\label{app:simulation}
+
+The following simulation program would provide the most direct test of the
+Level-2 threshold hypothesis on NISQ devices:
+
+\begin{enumerate}
+  \item Prepare an $n$-qubit cluster state on a superconducting quantum processor
+    with $n \in \{10, 20, 50\}$.
+  \item Evolve under the Lindblad master equation with measured device parameters
+    $(T_1, T_2, \gamma_\phi)$.
+  \item At each time step $t$, compute:
+    \begin{align}
+      \Qcoh(t) &= 1 - e^{-t/T_2} \\
+      \Iint(t) &= S_{\mathrm{vN}}(\rho_A(t)) / \log_2(\dim \mathcal{H}_A) \\
+      \Bstab(t) &= \frac{\Vert [H, \rho(t)] \Vert}{\Vert [H, \rho(t)] \Vert + \sum_k \Vert \mathcal{D}[L_k]\rho(t) \Vert}
+    \end{align}
+    where $\mathcal{D}[L]\rho = L\rho L^\dagger - \tfrac{1}{2}\{L^\dagger L, \rho\}$.
+  \item Identify the time window $[t_0, t_1]$ during which Level-2 thresholds
+    are jointly satisfied, if any such window exists.
+  \item A null result (no such window exists for any $n \leq 50$) constrains
+    the Level-2 threshold constants from below.
+\end{enumerate}
+
+This simulation is a direct extension of the OP3 numerical campaign described
+in the companion program~\cite{Monette2026a}, requiring only the addition of
+the $\Bstab$ computation to the existing simulation infrastructure.
+
+\end{document}

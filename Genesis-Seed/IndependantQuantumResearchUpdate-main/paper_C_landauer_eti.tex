@@ -1,0 +1,417 @@
+\documentclass[12pt,letterpaper]{article}
+
+% ── Packages ─────────────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+
+\geometry{margin=1in}
+
+% ── Theorem environments ──────────────────────────────────────────────────────
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{prediction}[theorem]{Prediction}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ── Custom commands ───────────────────────────────────────────────────────────
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\lnTwo}{\ln 2}
+\newcommand{\Qmin}{Q_{\min}}
+\newcommand{\Smax}{S_{\max}}
+
+% ── Metadata ─────────────────────────────────────────────────────────────────
+\title{\textbf{Landauer's Principle in the Emergent Thermodynamic Information Framework}\\[4pt]
+\large Operational Foundations, Rigorous Limits, and Testable Predictions}
+
+\author{Kevin Monette\\[2pt]
+\small Independent Researcher (AI-assisted research)\\
+\small \texttt{kevin.monette@research.org}}
+
+\date{February 9, 2026 \quad (repository version March 2026)}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Landauer's principle --- that erasing one bit of information at temperature $T$ dissipates at
+least $\Qmin = \kB T \lnTwo$ --- is commonly mischaracterized as either a fundamental law of
+nature or a speculative claim.  We show it is neither: it is a precise thermodynamic
+\emph{cost of agency}, a constraint on how physical systems implement logically irreversible
+operations.
+
+Within the Emergent Thermodynamic Information (ETI) framework, we derive Landauer's principle
+from five explicit assumptions~(A1--A5), state four lemmas~(L1--L5) as rigorous consequences,
+and formulate three falsifiable predictions~(P1--P3).  We further show that (i)~vacuum
+fluctuations do not violate the principle, (ii)~reversible computation defers but cannot
+eliminate dissipation, and (iii)~the universe as a whole cannot violate the principle because it
+has no external entropy sink.
+
+The framework is non-mystical, observer-independent, and grounded in established quantum
+thermodynamics.  The ETI treatment of information as emergent from physical correlations and
+constraints --- never as a fundamental substance --- clarifies longstanding confusions about the
+relationship between information, entropy, and energy.
+\end{abstract}
+
+\tableofcontents
+\bigskip
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Foundational Assumptions}
+\label{sec:assumptions}
+
+All results derive from the following five assumptions, stated explicitly so that any claim can
+be traced to its premises.
+
+\begin{assumption}[Causal Closure]\label{ass:A1}
+The universe $\mathcal{U}$ is a closed, causally connected system.  No external entropy sinks
+exist outside $\mathcal{U}$.
+\end{assumption}
+
+\begin{assumption}[Microdynamics]\label{ass:A2}
+Closed systems evolve unitarily under $U(t)$ on Hilbert space $\mathcal{H}$.  Open subsystems
+evolve via completely positive trace-preserving (CPTP) maps $\mathcal{E}$ on density operators.
+\end{assumption}
+
+\begin{assumption}[Thermodynamics as Effective]\label{ass:A3}
+The thermodynamic entropy $S(\rho) = -\kB\tr(\rho\ln\rho)$ is a coarse-grained statistical
+description of a physical state relative to a chosen partitioning.  It is emergent, not
+fundamental.
+\end{assumption}
+
+\begin{assumption}[Physical Memory]\label{ass:A4}
+Logical information (bits, qubits) is always instantiated in physical substrates with stability
+requirements: memory states must be distinguishable, persistent on relevant timescales, and not
+spontaneously decohered faster than the operation rate.
+\end{assumption}
+
+\begin{assumption}[Finite Resources]\label{ass:A5}
+Any physical agent operates under finite memory, finite energy and cooling capacity, and finite
+control precision.  Indefinite information storage without resource expenditure is impossible
+under Assumptions~\ref{ass:A1}--\ref{ass:A4}.
+\end{assumption}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Definitions}
+\label{sec:definitions}
+
+\subsection{Logical vs.\ Physical Operations}
+
+Let a memory register have logical state space $\mathcal{M} = \{0,1\}^{n}$, implemented via
+physical Hilbert space $\mathcal{H}$.
+
+\begin{definition}[Logically Irreversible Operation]
+A map $f\colon\mathcal{M}\to\mathcal{M}$ is \emph{logically irreversible} if it is
+many-to-one:
+\begin{equation}
+  \exists\; m \neq m' \in \mathcal{M} \;\text{ such that }\; f(m) = f(m').
+  \label{eq:irreversible}
+\end{equation}
+The canonical example is the reset operation $f(0) = f(1) = 0$.
+\end{definition}
+
+\begin{definition}[Logically Reversible Operation]
+A bijection on $\mathcal{M}$, implementable by a unitary $U$ on $\mathcal{H}$ acting as a
+permutation on the physical states corresponding to $\mathcal{M}$.
+\end{definition}
+
+\begin{remark}
+Physical evolution of a closed system is always reversible (unitary).  Thermodynamic cost
+arises from the \emph{choice to lose information} about prior states, not from physics per se.
+\end{remark}
+
+\subsection{Entropy and Negentropy}
+
+\begin{definition}[Thermodynamic Entropy]
+\begin{equation}
+  S(\rho) = -\kB\,\tr(\rho\ln\rho).
+  \label{eq:vN-entropy}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Negentropy]
+\begin{equation}
+  N(\rho) = S(\rho_{\max}) - S(\rho),
+  \label{eq:negentropy}
+\end{equation}
+where $\rho_{\max}$ is the maximally mixed state on the same support.  Negentropy measures
+local deviation from maximum disorder.
+\end{definition}
+
+\begin{remark}
+Negentropy is not conserved; it is not Shannon information; and in the ETI framework,
+``information'' is not a fundamental substance but an emergent descriptor of physical
+correlations and constraints.
+\end{remark}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Landauer's Principle: Operational Statement}
+\label{sec:landauer}
+
+\subsection{Standard Formulation}
+
+\begin{theorem}[Landauer 1961, rigorous form Bennett 2003]\label{thm:landauer}
+Resetting a single bit of information stored in a physical memory in thermal equilibrium at
+temperature $T$ requires dissipation of at least
+\begin{equation}
+  Q \geq \kB T \lnTwo
+  \label{eq:landauer-bound}
+\end{equation}
+into an effective thermal reservoir, under the following conditions:
+\begin{enumerate}[label=(\roman*)]
+  \item the memory is in thermal equilibrium with a bath at temperature $T$;
+  \item memory states are energetically degenerate, distinguishable, and stable
+        (Assumption~\ref{ass:A4});
+  \item the reset is logically irreversible (a many-to-one map);
+  \item the reset succeeds with high probability.
+\end{enumerate}
+\end{theorem}
+
+\subsection{The Correct Interpretation}
+
+Landauer's principle is a constraint on the thermodynamic cost of implementing logically
+irreversible operations on physical substrates.  It states precisely: if information about the
+prior state is lost in a logically irreversible way, entropy must be exported to the environment
+at a minimum rate of $\kB\lnTwo$ per bit erased at temperature $T$.
+
+It does \emph{not} state: ``information cannot be erased'' or ``information is physical in a
+mystical sense.'' The cost arises because erasure is a \emph{physical process} that must
+redistribute entropy; it is not because information is a substance.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Reversible Computation and the Persistence of Dissipation}
+\label{sec:reversible}
+
+\subsection{Ideal Reversible Gates: No Immediate Cost}
+
+A unitary gate $U$ acting on a pure state $|\psi\rangle$ produces a pure state.  No entropy is
+generated:
+\begin{equation}
+  S\!\left(U\rho U^{\dagger}\right) = S(\rho)
+  \quad \text{for any unitary }U.
+  \label{eq:unitary-entropy}
+\end{equation}
+Reversible gates do not require dissipation in the logical transformation.  They defer
+dissipation but cannot eliminate it.
+
+\subsection{Why Sustained Computing Dissipates}
+
+Even with all-reversible gates, three mechanisms force entropy export under
+Assumption~\ref{ass:A5}:
+
+\paragraph{Error correction.}
+Quantum error correction requires syndrome extraction (measurement) and ancilla reset.  Each
+reset incurs a Landauer cost.  In the surface code, each syndrome measurement requires resetting
+ancilla qubits, costing at least $\kB T\lnTwo$ per bit per cycle.
+
+\paragraph{Memory recycling.}
+Any agent with finite memory must eventually overwrite registers.  Each overwrite is a logically
+irreversible map: a Landauer operation.
+
+\paragraph{Control and refrigeration.}
+Maintaining quantum coherence requires active cooling and control-field generation --- both
+thermodynamically irreversible processes generating waste heat in control infrastructure.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Lemmas: Rigorous Consequences}
+\label{sec:lemmas}
+
+\begin{lemma}[No External Entropy Sink]\label{lem:L1}
+Under Assumption~\ref{ass:A1}, any entropy sink exchanging energy or information with
+$\mathcal{U}$ is part of $\mathcal{U}$.  No external reservoir exists.
+\end{lemma}
+
+\begin{proof}
+Any system exchanging energy or information with $\mathcal{U}$ is causally connected to
+$\mathcal{U}$ and therefore, by Assumption~\ref{ass:A1}, part of $\mathcal{U}$.
+\end{proof}
+
+\begin{lemma}[Landauer Cost for Irreversible Reset]\label{lem:L2}
+Under Assumptions~\ref{ass:A1}--\ref{ass:A4}, any implemented many-to-one reset of a stable
+memory in thermal equilibrium at temperature $T$ incurs entropy export of at least
+$\kB\lnTwo$ per bit to the environment.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+The reset maps two distinct microstates to one.  Under unitarity (Assumption~\ref{ass:A2}),
+degrees of freedom must be transferred from the memory to the environment to preserve total
+state-space dimension.  This expansion of the environment's accessible microstates constitutes
+an entropy increase of at least $\kB\lnTwo$ per bit, by the argument of Penrose and Bennett
+\cite{Bennett2003}.
+\end{proof}
+
+\begin{lemma}[Reversible Computation Defers Dissipation]\label{lem:L3}
+Under Assumption~\ref{ass:A2}, unitary gates do not require dissipation in the logical
+transformation.  Under Assumption~\ref{ass:A5}, dissipation is inevitable for sustained
+finite-resource computation via error correction, memory recycling, or control overhead.
+\end{lemma}
+
+\begin{lemma}[Sustained Computing Requires Entropy Export]\label{lem:L4}
+Under Assumptions~\ref{ass:A2} and~\ref{ass:A5}, any computing process on $n$ qubits with
+error rate $\Gamma_{\mathrm{err}}$ per qubit running for time $t$ must export total entropy at
+least:
+\begin{equation}
+  \Delta S_{\mathrm{env}}
+  \;\geq\;
+  \Gamma_{\mathrm{err}}\cdot n \cdot t \cdot \kB\lnTwo.
+  \label{eq:entropy-export}
+\end{equation}
+\end{lemma}
+
+\begin{lemma}[Vacuum Fluctuations Are Not Free Thermodynamic Fuel]\label{lem:L5}
+Vacuum fluctuations do not violate Landauer's principle, because they are not logical
+operations.  They do not reset, overwrite, or record information in a way requiring a
+many-to-one mapping on logical states.  Any thermodynamic relevance requires coupling to an
+apparatus that measures, stores, and eventually resets --- incurring Landauer cost at those
+stages.
+\end{lemma}
+
+\begin{remark}
+Lemma~\ref{lem:L5} rules out Casimir-based or zero-point-energy-based ``free entropy''
+proposals.  Any scheme claiming sustained net work from vacuum fluctuations must identify where
+the Landauer cost of the measurement--storage--reset cycle is paid.
+\end{remark}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Predictions: Falsifiable Claims}
+\label{sec:predictions}
+
+\begin{prediction}[Scaling of Coherent Computation Dissipation]\label{pred:P1}
+As quantum computers scale to larger systems and longer computation times, the total system
+entropy export (cooling load plus error-correction overhead) increases with system size and
+computation length.  No asymptotic limit at which a quantum computer of size $n$ qubits
+running for time $t$ requires zero entropy export exists under Assumption~\ref{ass:A5}.
+
+\medskip\noindent
+\textit{Test:} Measure total cooling power required for superconducting quantum computers of
+sizes $n \in \{10, 50, 100, 1000\}$ qubits at fixed error rate, normalized per logical gate
+operation.
+\end{prediction}
+
+\begin{prediction}[Vacuum Work Extraction]\label{pred:P2}
+Any proposal claiming to extract net useful work from vacuum fluctuations indefinitely must
+specify: (i)~the initial state of the extraction apparatus, and (ii)~where the Landauer cost
+of the measurement--storage--reset cycle is paid.  Under Lemma~\ref{lem:L5}, no such scheme
+produces sustained net output when all entropy accounts are closed.
+
+\medskip\noindent
+\textit{Test:} Examine any specific vacuum energy extraction device.  Prediction: the entropy
+export is either (a)~hidden in an ignored component, (b)~deferred to a periodic
+reinitialization, or (c)~implicitly violating Assumption~\ref{ass:A1}.
+\end{prediction}
+
+\begin{prediction}[Sub-Landauer Erasure Claims]\label{pred:P3}
+If any experiment reports bit erasure with energy cost below $\kB T\lnTwo$ per bit, at least
+one of the following must hold:
+\begin{enumerate}[label=(\roman*)]
+  \item The temperature $T$ is defined non-standardly;
+  \item The erasure success probability is not unity;
+  \item Entropy is exported to a subsystem excluded from the energy budget;
+  \item The system starts outside thermal equilibrium, consuming non-equilibrium resources.
+\end{enumerate}
+\end{prediction}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Integration with the Entropic Gravity Program}
+\label{sec:gravity}
+
+Within the ETI framework, measurement-induced constraint-fixing (formalized in the companion
+paper~\cite{MonetteB2026}) is a Landauer operation: it irreversibly fixes a constraint and
+exports entropy to the environment.  This entropy export creates a local negentropy gradient
+$\nabla N$.
+
+The companion entropic gravity paper~\cite{MonetteA2026} proposes that negentropy gradients
+source attractive gravitational curvature through an extension of Jacobson's thermodynamic
+gravity~\cite{Jacobson1995}.  If correct, every measurement --- every thermodynamically
+irreversible constraint-fixing event --- produces a minute gravitational imprint.
+
+This is the unifying thread of the research program: information processing and spacetime
+geometry are the same phenomenon viewed at different scales.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusion}
+\label{sec:conclusion}
+
+Landauer's principle is not a fundamental law of nature in the sense of Newton's laws.  It is
+a precise, operational consequence of implementing logically irreversible operations on physical
+substrates in a universe with no external entropy sink.
+
+\medskip
+
+\begin{center}
+\textit{Landauer's principle is not a law --- it is a cost of agency.}
+\end{center}
+
+\medskip
+
+Whenever a physical agent exercises control in a logically irreversible way, thermodynamic
+entropy must be redistributed to the environment at the minimum rate set by
+Theorem~\ref{thm:landauer}.  This is not mystical.  It is the cleanest possible statement of
+the relationship between physical processes and information management in a causally closed
+universe.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section*{Acknowledgments}
+The author acknowledges AI research partners for assistance with literature synthesis and
+critical review.  All theoretical content originates from the author's independent research
+program.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\bibliographystyle{unsrtnat}
+\begin{thebibliography}{99}
+
+\bibitem{Landauer1961}
+R.~Landauer,
+``Irreversibility and heat generation in the computing process,''
+\textit{IBM J.\ Res.\ Dev.}\ \textbf{5}, 183 (1961).
+\href{https://doi.org/10.1147/rd.53.0183}{doi:10.1147/rd.53.0183}
+
+\bibitem{Bennett2003}
+C.~H.~Bennett,
+``Notes on Landauer's principle, reversible computation, and Maxwell's demon,''
+\textit{Stud.\ Hist.\ Phil.\ Mod.\ Phys.}\ \textbf{34}, 501 (2003).
+\href{https://doi.org/10.1016/S1355-2198(03)00039-X}{doi:10.1016/S1355-2198(03)00039-X}
+
+\bibitem{Jacobson1995}
+T.~Jacobson,
+``Thermodynamics of spacetime: The Einstein equation of state,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{75}, 1260 (1995).
+\href{https://doi.org/10.1103/PhysRevLett.75.1260}{doi:10.1103/PhysRevLett.75.1260}
+
+\bibitem{Parrondo2015}
+J.~M.~R.~Parrondo, J.~M.~Horowitz, and T.~Sagawa,
+``Thermodynamics of information,''
+\textit{Nature Phys.}\ \textbf{11}, 131 (2015).
+\href{https://doi.org/10.1038/nphys3230}{doi:10.1038/nphys3230}
+
+\bibitem{Sagawa2009}
+T.~Sagawa and M.~Ueda,
+``Minimal energy cost for thermodynamic information processing,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{102}, 250602 (2009).
+\href{https://doi.org/10.1103/PhysRevLett.102.250602}{doi:10.1103/PhysRevLett.102.250602}
+
+\bibitem{MonetteA2026}
+K.~Monette,
+``Gravitational coupling to entanglement entropy density,''
+Independent Research Program, March 2026.
+
+\bibitem{MonetteB2026}
+K.~Monette,
+``Constraint manifolds and the limits of quantum observability,''
+Independent Research Program, March 2026.
+
+\end{thebibliography}
+
+\end{document}

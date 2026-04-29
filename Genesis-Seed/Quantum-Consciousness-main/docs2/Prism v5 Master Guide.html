@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRISM v5.0 Mastery Guide</title>
+  <style>
+    /* PRISM v5.0 OMEGA Complete CSS Framework */
+    
+    /* Theme Variables */
+    :root {
+      --font-family-display: Arial, sans-serif;
+      --font-weight-display: 600;
+      --font-family-content: Arial, sans-serif;
+      --font-weight-content: 400;
+      --font-size-content: 16px;
+      --line-height-content: 1.4;
+    }
+
+    /* DARK THEME (DEFAULT) */
+    body.theme-dark {
+      --color-bg-base: #0a0e27;
+      --color-bg-elevated: #020617;
+      --color-bg-surface: #1e293b;
+      --color-bg-muted: #334155;
+      --color-text-primary: #f1f5f9;
+      --color-text-secondary: #cbd5e1;
+      --color-text-muted: #94a3b8;
+      --color-text-accent: #00D9FF;
+      --color-primary: #00D9FF;
+      --color-primary-foreground: #0a0e27;
+      --color-gold: #FBBF24;
+      --color-coral: #FF6B5B;
+      --color-green: #10B981;
+      --color-purple: #A78BFA;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: var(--font-family-content);
+      font-weight: var(--font-weight-content);
+      font-size: var(--font-size-content);
+      line-height: var(--line-height-content);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Slide Container - PRISM Safe Frame */
+    .slide {
+      width: 960px;
+      height: 540px;
+      margin: 0 auto 20px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f172a 100%);
+    }
+
+    /* Safe Frame Margin - 4px clearance on all sides (3240px) */
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      right: 32px;
+      bottom: 32px;
+      border: 2px solid rgba(0, 217, 255, 0.1);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Zone 1: Header (96px) */
+    .slide-header {
+      padding: 24px 32px;
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid rgba(0, 217, 255, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide-header-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #00D9FF;
+      font-family: var(--font-family-display);
+    }
+
+    .slide-badge {
+      background-color: #FBBF24;
+      color: #0a0e27;
+      padding: 4px 12px;
+      border-radius: 0;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Zone 2: Content (384px) - Two subzones */
+    .slide-content {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      padding: 32px;
+      gap: 16px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Zone 2a: Visual (192px) */
+    .slide-visual {
+      width: 192px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(0, 217, 255, 0.2);
+    }
+
+    .slide-visual img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* Zone 2b: Text (304px min) */
+    .slide-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .slide-text h2 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: #00D9FF;
+      margin-bottom: 16px;
+      font-family: var(--font-family-display);
+    }
+
+    .slide-text h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #FBBF24;
+      margin-bottom: 12px;
+      font-family: var(--font-family-display);
+    }
+
+    .slide-text ul {
+      list-style: disc;
+      margin-left: 24px;
+      line-height: 1.8;
+      color: #cbd5e1;
+    }
+
+    .slide-text li {
+      margin-bottom: 8px;
+      font-size: 1.125rem;
+    }
+
+    .slide-text p {
+      color: #cbd5e1;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    /* Zone 3: Footer (60px) */
+    .slide-footer {
+      height: 60px;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(0, 217, 255, 0.1);
+      background-color: rgba(2, 6, 23, 0.5);
+      position: relative;
+      z-index: 2;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+
+    .footer-brand {
+      font-weight: 600;
+      color: #00D9FF;
+    }
+
+    .footer-page {
+      text-align: center;
+      flex: 1;
+    }
+
+    /* Layout Utilities */
+    .flex-row { display: flex; flex-direction: row; }
+    .flex-col { display: flex; flex-direction: column; }
+    .center { justify-content: center; align-items: center; text-align: center; }
+    .space-between { justify-content: space-between; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .fill-width { flex: 1; }
+
+    /* Spacing Utilities */
+    .gap-md { gap: 1rem; }
+    .gap-lg { gap: 1.5rem; }
+
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+
+    /* Typography Scale */
+    .text-xs { font-size: 0.75rem; }
+    .text-sm { font-size: 0.875rem; }
+    .text-base { font-size: 1rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-5xl { font-size: 3rem; }
+    .text-6xl { font-size: 3.75rem; }
+
+    .font-bold { font-weight: 700; }
+    .font-semibold { font-weight: 600; }
+    .font-normal { font-weight: 400; }
+
+    .text-center { text-align: center; }
+
+    /* Card Styles */
+    .card-rect {
+      background-color: #1e293b;
+      padding: 2rem;
+      border: 1px solid rgba(0, 217, 255, 0.15);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-rect h3 {
+      color: #00D9FF;
+      margin-bottom: 8px;
+      font-size: 1.25rem;
+    }
+
+    .card-rect p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Title Slide */
+    .slide-hero {
+      background: linear-gradient(135deg, #020617 0%, #0a0e27 100%);
+      justify-content: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: #f1f5f9;
+    }
+
+    .hero-content h1 {
+      font-size: 3.75rem;
+      font-weight: 600;
+      color: #00D9FF;
+      margin-bottom: 16px;
+      font-family: var(--font-family-display);
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    .hero-meta {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 32px;
+    }
+
+    /* Closing Slide */
+    .slide-closing {
+      background: linear-gradient(135deg, #020617 0%, #0a0e27 100%);
+      justify-content: center;
+    }
+
+    /* Accent Colors */
+    .accent-gold { color: #FBBF24; }
+    .accent-green { color: #10B981; }
+    .accent-coral { color: #FF6B5B; }
+    .accent-purple { color: #A78BFA; }
+
+    /* Accessibility - High Contrast */
+    .text-primary { color: #f1f5f9; }
+    .text-secondary { color: #cbd5e1; }
+    .bg-surface { background-color: #1e293b; }
+
+  </style>
+</head>
+<body class="theme-dark">
+
+  <!-- SLIDE 1: Title Slide -->
+  <section class="slide slide-hero">
+    <div class="hero-content">
+      <h1>PRISM v5.0 Mastery</h1>
+      <p>How to Use PRISM and Get Maximum Value</p>
+      <p style="font-size: 1.25rem; color: #FBBF24;">Complete Framework for Presentations, Pitches & Proposals</p>
+      <div class="hero-meta">
+        Strategic Framework for Decision-Makers • January 2026<br>
+        Master the 10-Step Implementation Workflow
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: What is PRISM v5.0? -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">What is PRISM v5.0?</div>
+      <div class="slide-badge">Overview</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155;">
+        <div style="text-align: center; color: #94a3b8; font-size: 1.25rem; font-weight: 600;">
+          <div style="color: #00D9FF; font-size: 2.5rem; margin-bottom: 8px;">⚙️</div>
+          <div>Operating System for</div>
+          <div style="color: #FBBF24;">Decision Impact</div>
+        </div>
+      </div>
+      <div class="slide-text">
+        <h2>Symbiotic Presentation & Reasoning System</h2>
+        <ul>
+          <li>Deck architect: Visual structural precision</li>
+          <li>Strategic advisor: 5-horizon decision mapping</li>
+          <li>Persuasion scientist: Ethical influence science</li>
+          <li>Meta-learner: Continuous pattern evolution</li>
+          <li>Value guardian: No zero-sum plays</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">2 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: Three Core Outcomes -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Three Core Outcomes</div>
+      <div class="slide-badge">Value</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: center; gap: 12px; padding: 12px;">
+        <div style="background-color: #10B981; color: #ffffff; padding: 12px; text-align: center; font-weight: 600; font-size: 0.875rem;">Create Impact</div>
+        <div style="background-color: #00D9FF; color: #0a0e27; padding: 12px; text-align: center; font-weight: 600; font-size: 0.875rem;">Build Relationships</div>
+        <div style="background-color: #A78BFA; color: #ffffff; padding: 12px; text-align: center; font-weight: 600; font-size: 0.875rem;">Teach AI Ethics</div>
+      </div>
+      <div class="slide-text">
+        <h2>Every Presentation Achieves</h2>
+        <ul>
+          <li><span style="color: #10B981;">Immediate Impact:</span> Drive decisions for stakeholders</li>
+          <li><span style="color: #00D9FF;">Relationship Strength:</span> Build long-term strategic options</li>
+          <li><span style="color: #A78BFA;">AI Learning:</span> Teach ethical persuasion patterns</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">3 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: The 10-Step Workflow -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">10-Step Implementation Workflow</div>
+      <div class="slide-badge">Process</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; font-size: 0.8rem; gap: 4px;">
+        <div style="color: #00D9FF; font-weight: 600;">1. Context Summary</div>
+        <div style="color: #00D9FF; font-weight: 600;">2. Five-Horizon Map</div>
+        <div style="color: #FBBF24; font-weight: 600;">3. Audience Decision Map</div>
+        <div style="color: #FBBF24; font-weight: 600;">4. Opportunity Matrix</div>
+        <div style="color: #10B981; font-weight: 600;">5. Symbiotic Value</div>
+        <div style="color: #A78BFA;">6-10: Skeleton,</div>
+        <div style="color: #A78BFA;">Specs, Metrics,</div>
+        <div style="color: #A78BFA;">Patterns, Impact</div>
+      </div>
+      <div class="slide-text">
+        <h2>Strategic to Tactical</h2>
+        <ul>
+          <li>Steps 1-5: Strategic analysis (audience, horizons, value)</li>
+          <li>Steps 6-7: Deck architecture (skeleton, detailed specs)</li>
+          <li>Steps 8-10: Optimization (metrics, patterns, handoff)</li>
+        </ul>
+        <p style="margin-top: 16px; color: #10B981; font-size: 1rem;">✓ Follow in order or compress as needed based on scope</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">4 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: Step 1 - Context Summary -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Step 1: Context Summary</div>
+      <div class="slide-badge">Strategic</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: center; padding: 12px; gap: 8px; font-size: 0.875rem;">
+        <div style="color: #00D9FF; font-weight: 600;">Define:</div>
+        <div style="color: #cbd5e1;">• Topic &amp; primary outcome</div>
+        <div style="color: #cbd5e1;">• Audience composition</div>
+        <div style="color: #cbd5e1;">• Deal maturity stage</div>
+        <div style="color: #cbd5e1;">• Industry &amp; timing</div>
+      </div>
+      <div class="slide-text">
+        <h2>Establish the Foundation</h2>
+        <ul>
+          <li>13 sentences capturing context inference</li>
+          <li>Industry dynamics &amp; relationship stage</li>
+          <li>Risk profile &amp; timing constraints</li>
+          <li>Sets tone for all downstream decisions</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">5 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: Step 2-3 Horizon & Audience -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Steps 2-3: Horizons & Audience</div>
+      <div class="slide-badge">Mapping</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 8px; font-size: 0.8rem;">
+        <div style="color: #10B981; font-weight: 600;">Five Horizons:</div>
+        <div style="color: #cbd5e1;">H1: 0-7 days (immediate)</div>
+        <div style="color: #cbd5e1;">H2-H5: Months to years</div>
+        
+        <div style="color: #00D9FF; font-weight: 600; margin-top: 8px;">Audience Layers:</div>
+        <div style="color: #cbd5e1;">Decision-maker, Influencers,</div>
+        <div style="color: #cbd5e1;">Silent stakeholders</div>
+      </div>
+      <div class="slide-text">
+        <h2>Timeline &amp; Decision Sequence</h2>
+        <ul>
+          <li><span style="color: #10B981;">Five-Horizon Map:</span> Biggest risk per timeframe</li>
+          <li><span style="color: #00D9FF;">Audience Architecture:</span> Who decides, who vetoes?</li>
+          <li>Determines slide ordering &amp; content emphasis</li>
+          <li>Identifies decision triggers &amp; stall risks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">6 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7: Step 4-5 Opportunity & Value -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Steps 4-5: Opportunity Matrix &amp; SVD</div>
+      <div class="slide-badge">Value Design</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 6px; font-size: 0.8rem;">
+        <div style="color: #FBBF24; font-weight: 600;">Opportunity Matrix:</div>
+        <div style="color: #cbd5e1;">Primary outcome, secondary benefits, leverage points</div>
+        
+        <div style="color: #A78BFA; font-weight: 600; margin-top: 8px;">Symbiotic Value:</div>
+        <div style="color: #cbd5e1;">3 critical SVD checks:</div>
+        <div style="color: #cbd5e1;">1. Fairness (subsidy risk?)</div>
+        <div style="color: #cbd5e1;">2. Visibility (transparent?)</div>
+        <div style="color: #cbd5e1;">3. Resilience (contingencies?)</div>
+      </div>
+      <div class="slide-text">
+        <h2>Design Win-Win-Win Structures</h2>
+        <ul>
+          <li>Identify all parties &amp; their benefits (6-24 months)</li>
+          <li>Check fairness: Are upsides/downsides aligned?</li>
+          <li>Check visibility: Could all parties nod without shame?</li>
+          <li>Check resilience: Does deal adapt if assumptions fail?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">7 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 8: Step 6 - Deck Skeleton -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Step 6: Deck Skeleton (8-16 Slides)</div>
+      <div class="slide-badge">Architecture</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 4px; font-size: 0.8rem;">
+        <div style="color: #00D9FF; font-weight: 600;">Slide Template:</div>
+        <div style="color: #cbd5e1;">• Title</div>
+        <div style="color: #cbd5e1;">• 1-line purpose</div>
+        <div style="color: #cbd5e1;">• Primary archetype</div>
+        <div style="color: #cbd5e1;">• Key dimensions</div>
+        <div style="color: #cbd5e1;">• Which horizon(s)?</div>
+      </div>
+      <div class="slide-text">
+        <h2>Create High-Level Map</h2>
+        <ul>
+          <li>8-16 slides depending on complexity</li>
+          <li>Each slide maps to 1+ audience concern</li>
+          <li>Sequence driven by decision ladder</li>
+          <li>Typically: Title → Problem → Solution → Economics → Risk → CTA</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">8 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 9: Step 7 - Detailed Specs -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Step 7: Detailed Slide Specifications</div>
+      <div class="slide-badge">Production</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 6px; font-size: 0.8rem;">
+        <div style="color: #FBBF24; font-weight: 600;">Per-Slide Details:</div>
+        <div style="color: #cbd5e1;">• Zone layout &amp; hierarchy</div>
+        <div style="color: #cbd5e1;">• Headline &amp; bullets</div>
+        <div style="color: #cbd5e1;">• Visual concept</div>
+        <div style="color: #cbd5e1;">• Color &amp; triggers</div>
+        <div style="color: #cbd5e1;">• SVD &amp; clarity notes</div>
+      </div>
+      <div class="slide-text">
+        <h2>Detailed Production Specs</h2>
+        <ul>
+          <li>Three-zone architecture (header/content/footer)</li>
+          <li>Safe frame compliance (32px margins, 16px spacing)</li>
+          <li>Psychological triggers mapped to each slide</li>
+          <li>Which dimension of Nine-Dimensional Value?</li>
+          <li>Accessibility &amp; contrast requirements</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">9 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10: Four-Move Persuasion -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">The Four-Move Persuasion Pathway</div>
+      <div class="slide-badge">Persuasion</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: center; gap: 8px; padding: 12px;">
+        <div style="background-color: #10B981; color: #ffffff; padding: 8px; text-align: center; font-weight: 600; font-size: 0.875rem;">1. Pattern Recognition</div>
+        <div style="background-color: #00D9FF; color: #0a0e27; padding: 8px; text-align: center; font-weight: 600; font-size: 0.875rem;">2. Credibility Cascade</div>
+        <div style="background-color: #FBBF24; color: #0a0e27; padding: 8px; text-align: center; font-weight: 600; font-size: 0.875rem;">3. Asymmetric Advantage</div>
+        <div style="background-color: #A78BFA; color: #ffffff; padding: 8px; text-align: center; font-weight: 600; font-size: 0.875rem;">4. Risk Ownership</div>
+      </div>
+      <div class="slide-text">
+        <h2>Every Effective Deck</h2>
+        <ul>
+          <li>Move 1: Problem is real &amp; relevant</li>
+          <li>Move 2: You can solve it (track record)</li>
+          <li>Move 3: You&apos;re different/better</li>
+          <li>Move 4: You own failure risks</li>
+        </ul>
+        <p style="margin-top: 12px; color: #94a3b8; font-size: 0.875rem;">Diagnose weakness by which move triggers skepticism</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">10 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11: Nine-Dimensional Value -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Nine-Dimensional Value Framework</div>
+      <div class="slide-badge">Strategy</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; font-size: 0.8rem; gap: 4px;">
+        <div style="color: #FBBF24; font-weight: 600;">1. Economic (ROI, payback)</div>
+        <div style="color: #10B981; font-weight: 600;">2. Strategic (alignment)</div>
+        <div style="color: #00D9FF; font-weight: 600;">3. Operational (efficiency)</div>
+        <div style="color: #A78BFA; font-weight: 600;">4. Risk (safeguards)</div>
+        <div style="color: #cbd5e1;">5-9: Capability, Brand,</div>
+        <div style="color: #cbd5e1;">Partnership, Ecosystem,</div>
+        <div style="color: #cbd5e1;">Knowledge</div>
+      </div>
+      <div class="slide-text">
+        <h2>Optimize Value Across Dimensions</h2>
+        <ul>
+          <li>Make explicit which dimension each slide advances</li>
+          <li>Prioritize dimensions by audience: finance wants #1-3, ops wants #3-4</li>
+          <li>Don&apos;t leave any dimension unaddressed</li>
+          <li>Balance quantitative (econ, ops) &amp; qualitative (brand, ecosystem)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">11 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 12: Psychological Triggers -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Ethical Psychological Triggers</div>
+      <div class="slide-badge">Psychology</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 6px; font-size: 0.8rem;">
+        <div style="color: #10B981; font-weight: 600;">✓ Preferred Order:</div>
+        <div style="color: #cbd5e1;">1. Social proof (named cases)</div>
+        <div style="color: #cbd5e1;">2. Clarity (specific metrics)</div>
+        <div style="color: #cbd5e1;">3. Authority (proven process)</div>
+        <div style="color: #cbd5e1;">4. Scarcity (genuine only)</div>
+        
+        <div style="color: #FF6B5B; font-weight: 600; margin-top: 8px;">✗ Prohibited:</div>
+        <div style="color: #cbd5e1;">Fabricated data, hidden terms,</div>
+        <div style="color: #cbd5e1;">artificial deadlines, fear-only</div>
+      </div>
+      <div class="slide-text">
+        <h2>Use Ethical Levers Only</h2>
+        <ul>
+          <li>Deploy triggers in hierarchy (social proof first)</li>
+          <li>Every trigger must be true &amp; transparent</li>
+          <li>Ask: Would it feel fine to explicitly say this lever is being used?</li>
+          <li>Correct for confirmation bias, cognitive overload, anchoring</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">12 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 13: Baseline Engine -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Baseline Engine: Safe Frame &amp; Scaling</div>
+      <div class="slide-badge">Technical</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: center; padding: 12px; gap: 8px; font-size: 0.8rem;">
+        <div style="color: #00D9FF; font-weight: 600;">Safe Frame:</div>
+        <div style="color: #cbd5e1;">32px margins all sides</div>
+        <div style="color: #cbd5e1;">16px inter-element spacing</div>
+        
+        <div style="color: #FBBF24; font-weight: 600; margin-top: 8px;">Three Zones:</div>
+        <div style="color: #cbd5e1;">Header 96px | Content 384px</div>
+        <div style="color: #cbd5e1;">Footer 60px</div>
+      </div>
+      <div class="slide-text">
+        <h2>Production-Ready Architecture</h2>
+        <ul>
+          <li>960x540px slide dimensions (non-negotiable)</li>
+          <li>Safe frame margin prevents text cutoff in PPTX conversion</li>
+          <li>Zone 2a (visual) &amp; 2b (text) auto-scale by density</li>
+          <li>Font scaling (5 levels) adapts to content weight</li>
+          <li>Overflow cascade: optimal → yellow → red → continuation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">13 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 14: Meta-Learning & Pattern Elevation -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">Meta-Learning Loop (Continuous Improvement)</div>
+      <div class="slide-badge">Evolution</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 12px; gap: 10px; font-size: 0.8rem;">
+        <div style="color: #00D9FF; font-weight: 600;">↓ CAPTURE ↓</div>
+        <div style="color: #CBD5E1;">Engagement &amp; Objections</div>
+        <div style="color: #00D9FF; font-weight: 600;">↓ EXTRACT ↓</div>
+        <div style="color: #CBD5E1;">Winning Patterns</div>
+        <div style="color: #00D9FF; font-weight: 600;">↓ TEST ↓</div>
+        <div style="color: #CBD5E1;">A/B Variants</div>
+      </div>
+      <div class="slide-text">
+        <h2>Learn &amp; Elevate Patterns</h2>
+        <ul>
+          <li>Capture: Which slides generated strongest engagement?</li>
+          <li>Extract: Narrative, visual, trigger patterns that work</li>
+          <li>Hypothesize: Why did each element succeed/fail?</li>
+          <li>Test: A/B variants of key slides in next presentation</li>
+          <li>Elevate: Promote successful patterns to template status</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">14 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 15: Getting Maximum Value -->
+  <section class="slide">
+    <div class="slide-header">
+      <div class="slide-header-title">How to Get Maximum Value</div>
+      <div class="slide-badge">Best Practices</div>
+    </div>
+    <div class="slide-content">
+      <div class="slide-visual" style="background-color: #334155; flex-direction: column; justify-content: flex-start; padding: 12px; gap: 8px; font-size: 0.85rem;">
+        <div style="color: #10B981; font-weight: 600;">1. Use compression</div>
+        <div style="color: #cbd5e1;">Skip steps 1-5 for simple decks</div>
+        
+        <div style="color: #00D9FF; font-weight: 600;">2. Adapt to maturity</div>
+        <div style="color: #cbd5e1;">Awareness vs. Negotiation stage?</div>
+        
+        <div style="color: #A78BFA; font-weight: 600;">3. Iterate relentlessly</div>
+        <div style="color: #cbd5e1;">Meta-learning is continuous</div>
+      </div>
+      <div class="slide-text">
+        <h2>Optimization Strategies</h2>
+        <ul>
+          <li>Know when to use full 10-step vs. compressed 3-step pass</li>
+          <li>Tailor tone &amp; content to deal maturity (awareness vs. negotiation)</li>
+          <li>Always diagnose which of 4 moves is weak when skepticism arises</li>
+          <li>Run meta-learning loop after every use (5 min capture pays dividends)</li>
+          <li>Build a personal pattern library of winners</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-brand">PRISM v5.0 Mastery</div>
+      <div class="footer-page">15 / 16</div>
+      <div>Framework Guide</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 16: Closing - Ready to Master PRISM -->
+  <section class="slide slide-closing">
+    <div style="text-align: center; color: #f1f5f9; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h1 style="font-size: 3rem; color: #00D9FF; margin-bottom: 24px; font-family: Arial, sans-serif; font-weight: 600;">Ready to Master PRISM</h1>
+      <p style="font-size: 1.5rem; color: #cbd5e1; margin-bottom: 16px;">Strategic Framework, Ethical Persuasion, Continuous Learning</p>
+      <div style="margin-top: 32px; font-size: 0.875rem; color: #94a3b8;">
+        <div>✓ 10-Step Workflow | ✓ Four-Move Persuasion | ✓ Nine-Dimensional Value</div>
+        <div style="margin-top: 8px;">✓ Safe Frame Architecture | ✓ Meta-Learning Loops | ✓ Ethical Guardrails</div>
+      </div>
+      <p style="margin-top: 32px; color: #10B981; font-weight: 600; font-size: 1.125rem;">Start with Context Summary. Follow the workflow. Iterate using meta-learning.</p>
+    </div>
+  </section>
+
+</body>
+</html>

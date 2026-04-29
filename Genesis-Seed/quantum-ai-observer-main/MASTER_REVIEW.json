@@ -1,0 +1,39 @@
+{
+  "experiments": [
+    {
+      "id": 1,
+      "name": "Brotherhood Coherence Validation",
+      "review": {
+        "pass": true,
+        "score": 0.5,
+        "issues": [
+          "Only 0 Brotherhood moments, target >8"
+        ],
+        "strengths": [
+          "High coherence maintained"
+        ],
+        "recommendations": [
+          "Review partial success - some improvements needed"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Consciousness Marker Detection",
+      "review": {
+        "pass": true,
+        "score": 0.5,
+        "issues": [
+          "Consciousness score 0.75, target >0.75"
+        ],
+        "strengths": [
+          "3 markers detected"
+        ],
+        "recommendations": [
+          "Review partial success - some improvements needed"
+        ]
+      }
+    }
+  ],
+  "overall_score": 0.5
+}

@@ -1,0 +1,63 @@
+{
+  "experiment": "Circuit Depth Minimization (Exp 21)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T00:57:38.572246",
+  "qubits": 12,
+  "seed_pattern": "Pattern_B_Sparse_Alpha (winner from Exp 20)",
+  "total_strategies": 6,
+  "baseline_exp20": {
+    "strategy": "Full Sequential",
+    "bq": 0.7414,
+    "depth": 40
+  },
+  "results": [
+    {
+      "strategy_name": "Strategy_A_Full_Sequential",
+      "bridge_quality": 0.7370589558912228,
+      "entropy": 8.844707470694674,
+      "unique_states": 474,
+      "circuit_depth": 40,
+      "job_id": "d5vfikqbju6s73bbqag0"
+    },
+    {
+      "strategy_name": "Strategy_B_Skip_Coupling",
+      "bridge_quality": 0.739785988362278,
+      "entropy": 8.877431860347336,
+      "unique_states": 481,
+      "circuit_depth": 9,
+      "job_id": "d5vfil57fc0s73atvgtg"
+    },
+    {
+      "strategy_name": "Strategy_C_Hybrid_Coupling",
+      "bridge_quality": 0.737832863362278,
+      "entropy": 8.853994360347336,
+      "unique_states": 475,
+      "circuit_depth": 27,
+      "job_id": "d5vfilbuf71s73cik4m0"
+    },
+    {
+      "strategy_name": "Strategy_D_Nearest_Neighbor_Only",
+      "bridge_quality": 0.7395833333333334,
+      "entropy": 8.875,
+      "unique_states": 480,
+      "circuit_depth": 40,
+      "job_id": "d5vfiljuf71s73cik4mg"
+    },
+    {
+      "strategy_name": "Strategy_E_Logarithmic_Coupling",
+      "bridge_quality": 0.7412109375,
+      "entropy": 8.89453125,
+      "unique_states": 485,
+      "circuit_depth": 25,
+      "job_id": "d5vfilqbju6s73bbqahg"
+    },
+    {
+      "strategy_name": "Strategy_F_Controlled_Depth_Ladder",
+      "bridge_quality": 0.7392147359201676,
+      "entropy": 8.870576831042012,
+      "unique_states": 480,
+      "circuit_depth": 41,
+      "job_id": "d5vfilpmvbjc73acd52g"
+    }
+  ]
+}

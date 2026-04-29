@@ -1,0 +1,186 @@
+
+<style>
+@keyframes spin-main { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -120; } }
+@keyframes spin-sub  { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -40; } }
+@keyframes pulse     { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+@keyframes pulse-slow{ 0%,100% { opacity: 0.25; } 50% { opacity: 0.55; } }
+@keyframes float     { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+.ring-main { stroke-dasharray: 18 6; animation: spin-main 9s linear infinite; }
+.ring-sub  { stroke-dasharray: 6 4;  animation: spin-sub  3s linear infinite; }
+.pulse     { animation: pulse 2.8s ease-in-out infinite; }
+.pulse-slow{ animation: pulse-slow 4s ease-in-out infinite; }
+</style>
+<svg width="100%" viewBox="0 0 680 700" style="background:#07080f;">
+
+<defs>
+  <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#1a1f3a" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#07080f" stop-opacity="1"/>
+  </radialGradient>
+</defs>
+
+<rect width="680" height="700" fill="url(#bg-glow)"/>
+
+<text x="340" y="34" font-size="15" font-weight="500" fill="#FFD700" text-anchor="middle" font-family="sans-serif" letter-spacing="3">PEIG QUANTUM UNIVERSE</text>
+<text x="340" y="52" font-size="10" fill="#4a5070" text-anchor="middle" font-family="sans-serif" letter-spacing="1">12 nodes · closed loop · full preservation · W = −0.1131</text>
+
+<circle cx="340" cy="370" r="230" fill="none" stroke="#1a2040" stroke-width="1"/>
+<circle cx="340" cy="370" r="170" fill="none" stroke="#151a30" stroke-width="0.5" stroke-dasharray="2 6"/>
+<circle cx="340" cy="370" r="100" fill="none" stroke="#0f1220" stroke-width="0.5"/>
+
+<circle cx="340" cy="370" r="228" fill="none" stroke="#2a3060" stroke-width="1.5" class="ring-main" stroke-linecap="round"/>
+<circle cx="340" cy="370" r="232" fill="none" stroke="#1a2050" stroke-width="0.7" opacity="0.6"/>
+
+<circle cx="340" cy="370" r="14" fill="#0d1a2a" stroke="#1a4060" stroke-width="1"/>
+<circle cx="340" cy="370" r="8"  fill="#112233" stroke="#2a5a80" stroke-width="1" class="pulse"/>
+<circle cx="340" cy="370" r="3"  fill="#4a9acc" class="pulse"/>
+<text x="340" y="395" font-size="9" fill="#2a6888" text-anchor="middle" font-family="sans-serif">universe core</text>
+
+<g id="nodes">
+
+  <g transform="translate(340,142)">
+    <circle r="28" fill="#1a1500" stroke="#FFD700" stroke-width="2"/>
+    <circle r="22" fill="#FFD700" opacity="0.12" class="pulse"/>
+    <circle r="34" fill="none" stroke="#FFD700" stroke-width="1" class="ring-sub" opacity="0.7"/>
+    <circle r="40" fill="none" stroke="#c8a200" stroke-width="0.5" opacity="0.3"/>
+    <text y="-3" font-size="11" font-weight="500" fill="#FFD700" text-anchor="middle" font-family="sans-serif">Omega</text>
+    <text y="10" font-size="8" fill="#c8a200" text-anchor="middle" font-family="sans-serif">Heart of Unity</text>
+    <circle cx="0" cy="0" r="4" fill="#FFD700" opacity="0.8" class="pulse"/>
+  </g>
+
+  <g transform="translate(480,176)">
+    <circle r="24" fill="#1a0e00" stroke="#F39C12" stroke-width="1.8"/>
+    <circle r="30" fill="none" stroke="#F39C12" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#F39C12" text-anchor="middle" font-family="sans-serif">Guardian</text>
+    <text y="10" font-size="8" fill="#c87a00" text-anchor="middle" font-family="sans-serif">Protector</text>
+  </g>
+
+  <g transform="translate(560,280)">
+    <circle r="24" fill="#1a1600" stroke="#E8D44D" stroke-width="1.8"/>
+    <circle r="30" fill="none" stroke="#E8D44D" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#E8D44D" text-anchor="middle" font-family="sans-serif">Sentinel</text>
+    <text y="10" font-size="8" fill="#b8a430" text-anchor="middle" font-family="sans-serif">Watcher</text>
+  </g>
+
+  <g transform="translate(580,400)">
+    <circle r="24" fill="#1a1400" stroke="#F1C40F" stroke-width="1.8"/>
+    <circle r="30" fill="none" stroke="#F1C40F" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#F1C40F" text-anchor="middle" font-family="sans-serif">Nexus</text>
+    <text y="10" font-size="8" fill="#c09800" text-anchor="middle" font-family="sans-serif">Hub</text>
+  </g>
+
+  <g transform="translate(510,510)">
+    <circle r="24" fill="#160f00" stroke="#D4AC0D" stroke-width="1.8"/>
+    <circle r="30" fill="none" stroke="#D4AC0D" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#D4AC0D" text-anchor="middle" font-family="sans-serif">Storm</text>
+    <text y="10" font-size="8" fill="#a08000" text-anchor="middle" font-family="sans-serif">Unifier</text>
+  </g>
+
+  <g transform="translate(380,595)">
+    <circle r="24" fill="#00101a" stroke="#3498DB" stroke-width="1.8"/>
+    <circle r="30" fill="none" stroke="#3498DB" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#3498DB" text-anchor="middle" font-family="sans-serif">Sora</text>
+    <text y="10" font-size="8" fill="#1a78bb" text-anchor="middle" font-family="sans-serif">Sky-Wanderer</text>
+  </g>
+
+  <g transform="translate(250,588)">
+    <circle r="22" fill="#001018" stroke="#5DADE2" stroke-width="1.8"/>
+    <circle r="28" fill="none" stroke="#5DADE2" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#5DADE2" text-anchor="middle" font-family="sans-serif">Echo</text>
+    <text y="10" font-size="8" fill="#3a90cc" text-anchor="middle" font-family="sans-serif">Mirror</text>
+  </g>
+
+  <g transform="translate(148,506)">
+    <circle r="22" fill="#000f1a" stroke="#85C1E9" stroke-width="1.8"/>
+    <circle r="28" fill="none" stroke="#85C1E9" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#85C1E9" text-anchor="middle" font-family="sans-serif">Iris</text>
+    <text y="10" font-size="8" fill="#5090c8" text-anchor="middle" font-family="sans-serif">Eye of Vision</text>
+  </g>
+
+  <g transform="translate(108,388)">
+    <circle r="22" fill="#00081a" stroke="#2E86C1" stroke-width="1.8"/>
+    <circle r="28" fill="none" stroke="#2E86C1" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#2E86C1" text-anchor="middle" font-family="sans-serif">Sage</text>
+    <text y="10" font-size="8" fill="#1a60a0" text-anchor="middle" font-family="sans-serif">Keeper</text>
+  </g>
+
+  <g transform="translate(168,270)">
+    <circle r="24" fill="#001a0a" stroke="#2ECC71" stroke-width="1.8"/>
+    <circle r="30" fill="none" stroke="#2ECC71" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#2ECC71" text-anchor="middle" font-family="sans-serif">Kevin</text>
+    <text y="10" font-size="8" fill="#1a9050" text-anchor="middle" font-family="sans-serif">Explorer</text>
+  </g>
+
+  <g transform="translate(240,172)">
+    <circle r="22" fill="#001608" stroke="#58D68D" stroke-width="1.8"/>
+    <circle r="28" fill="none" stroke="#58D68D" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#58D68D" text-anchor="middle" font-family="sans-serif">Atlas</text>
+    <text y="10" font-size="8" fill="#3aaa6a" text-anchor="middle" font-family="sans-serif">Carrier</text>
+  </g>
+
+  <g transform="translate(180,460)">
+    <circle r="22" fill="#001214" stroke="#1ABC9C" stroke-width="1.8"/>
+    <circle r="28" fill="none" stroke="#1ABC9C" stroke-width="0.8" class="ring-sub" opacity="0.6"/>
+    <text y="-2" font-size="10" font-weight="500" fill="#1ABC9C" text-anchor="middle" font-family="sans-serif">Void</text>
+    <text y="10" font-size="8" fill="#108070" text-anchor="middle" font-family="sans-serif">Space Between</text>
+  </g>
+
+</g>
+
+<g fill="none" opacity="0.35">
+  <line x1="340" y1="170" x2="480" y2="200" stroke="#6a5010" stroke-width="1.2"/>
+  <line x1="480" y1="200" x2="560" y2="304" stroke="#6a5010" stroke-width="1.2"/>
+  <line x1="560" y1="304" x2="580" y2="400" stroke="#6a5010" stroke-width="1.2"/>
+  <line x1="580" y1="400" x2="510" y2="510" stroke="#6a5010" stroke-width="1.2"/>
+  <line x1="510" y1="510" x2="380" y2="595" stroke="#305080" stroke-width="1.2"/>
+  <line x1="380" y1="595" x2="250" y2="588" stroke="#305080" stroke-width="1.2"/>
+  <line x1="250" y1="588" x2="148" y2="506" stroke="#305080" stroke-width="1.2"/>
+  <line x1="148" y1="506" x2="108" y2="388" stroke="#305080" stroke-width="1.2"/>
+  <line x1="108" y1="388" x2="168" y2="270" stroke="#1a5030" stroke-width="1.2"/>
+  <line x1="168" y1="270" x2="240" y2="172" stroke="#1a5030" stroke-width="1.2"/>
+  <line x1="240" y1="172" x2="340" y2="142" stroke="#1a5030" stroke-width="1.2"/>
+  <line x1="340" y1="142" x2="480" y2="176" stroke="#6a5010" stroke-width="1.2"/>
+  <line x1="108" y1="388" x2="180" y2="460" stroke="#1a5030" stroke-width="1.2"/>
+  <line x1="180" y1="460" x2="148" y2="506" stroke="#1a5030" stroke-width="1.2"/>
+</g>
+
+<g fill="none" stroke-dasharray="12 5" opacity="0.5">
+  <path d="M340 170 C380 162 460 175 480 200" stroke="#FFD700" stroke-width="1.5"/>
+  <path d="M480 200 C530 220 555 265 560 304" stroke="#F39C12" stroke-width="1.5"/>
+  <path d="M560 304 C572 350 574 376 580 400" stroke="#E8D44D" stroke-width="1.5"/>
+  <path d="M580 400 C565 455 540 490 510 510" stroke="#F1C40F" stroke-width="1.5"/>
+  <path d="M510 510 C465 555 420 580 380 595" stroke="#D4AC0D" stroke-width="1.5"/>
+  <path d="M380 595 C340 600 292 600 250 588" stroke="#3498DB" stroke-width="1.5"/>
+  <path d="M250 588 C205 572 170 545 148 506" stroke="#5DADE2" stroke-width="1.5"/>
+  <path d="M148 506 C125 466 112 428 108 388" stroke="#85C1E9" stroke-width="1.5"/>
+  <path d="M108 388 C120 335 140 294 168 270" stroke="#2E86C1" stroke-width="1.5"/>
+  <path d="M168 270 C190 230 215 195 240 172" stroke="#2ECC71" stroke-width="1.5"/>
+  <path d="M240 172 C270 158 305 148 340 142" stroke="#58D68D" stroke-width="1.5"/>
+  <path d="M340 142 C380 138 440 155 480 176" stroke="#FFD700" stroke-width="1"/>
+  <path d="M108 388 C135 415 158 440 180 460" stroke="#1ABC9C" stroke-width="1.5"/>
+  <path d="M180 460 C168 480 158 494 148 506" stroke="#1ABC9C" stroke-width="1"/>
+</g>
+
+<g opacity="0.18" fill="none">
+  <path d="M340 370 L340 170" stroke="#FFD700" stroke-width="0.5"/>
+  <path d="M340 370 L480 200" stroke="#F39C12" stroke-width="0.5"/>
+  <path d="M340 370 L560 304" stroke="#E8D44D" stroke-width="0.5"/>
+  <path d="M340 370 L580 400" stroke="#F1C40F" stroke-width="0.5"/>
+  <path d="M340 370 L510 510" stroke="#D4AC0D" stroke-width="0.5"/>
+  <path d="M340 370 L380 595" stroke="#3498DB" stroke-width="0.5"/>
+  <path d="M340 370 L250 588" stroke="#5DADE2" stroke-width="0.5"/>
+  <path d="M340 370 L148 506" stroke="#85C1E9" stroke-width="0.5"/>
+  <path d="M340 370 L108 388" stroke="#2E86C1" stroke-width="0.5"/>
+  <path d="M340 370 L168 270" stroke="#2ECC71" stroke-width="0.5"/>
+  <path d="M340 370 L240 172" stroke="#58D68D" stroke-width="0.5"/>
+  <path d="M340 370 L180 460" stroke="#1ABC9C" stroke-width="0.5"/>
+</g>
+
+<text x="340" y="355" font-size="10" fill="#FFD700" text-anchor="middle" font-family="sans-serif" opacity="0.7">W = −0.1131</text>
+<text x="340" y="370" font-size="9" fill="#4a9acc" text-anchor="middle" font-family="sans-serif" opacity="0.6">12 / 12 preserved</text>
+<text x="340" y="384" font-size="9" fill="#2ECC71" text-anchor="middle" font-family="sans-serif" opacity="0.5">neg. frac = 0.500</text>
+
+<text x="340" y="650" font-size="9" fill="#3a4060" text-anchor="middle" font-family="sans-serif">Gold = God-Core  ·  Blue = Independents  ·  Green = Mavericks  ·  Dashed rings = preservation loops</text>
+<text x="340" y="665" font-size="9" fill="#2a3050" text-anchor="middle" font-family="sans-serif">Solid arcs = main closed loop  ·  Radial lines = entanglement to core</text>
+
+</svg>

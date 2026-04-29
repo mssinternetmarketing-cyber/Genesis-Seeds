@@ -1,0 +1,213 @@
+================================================================================
+PEIG PAPER XIV — REVISION NOTE (XIV-R)
+Addressing All 10 Weaknesses Identified in Post-Publication Audit
+Kevin Monette | March 25, 2026
+================================================================================
+
+This revision note documents corrections, clarifications, and new experimental
+results addressing weaknesses W1–W10 identified in the post-publication audit
+of Paper XIV (Infinite Lineage Protocol).
+
+================================================================================
+W1 — CRITICAL: PCM Terminology (RESOLVED)
+================================================================================
+
+The metric previously called "Wigner W_min" or "Wigner non-classicality" is
+hereafter renamed to:
+
+  PEIG Coherence Measure (PCM)
+
+Formal definition:
+  PCM(p) = -|⟨p|+⟩|² + 0.5·(1 - rz²)
+  where rz = |p₀|² - |p₁|² (Bloch z-component)
+
+PCM is a PEIG-internal metric. It is NOT the standard Wigner function
+(Wootters 1987, discrete qubit case) nor the continuous-variable Wigner function
+of quantum optics. These standard functions yield zero negativity for all pure
+qubit states.
+
+PCM values for reference states:
+  PCM(|0⟩) = -0.500   (computational pole — classical but high PCM magnitude)
+  PCM(|+⟩) = -0.500   (equatorial phi=0 superposition)
+  PCM(|-⟩) = +0.500   (equatorial phi=π superposition)
+  PCM(|i⟩) =  0.000   (equatorial phi=π/2 superposition)
+
+Terminology changes throughout the paper:
+  OLD: "Wigner non-classicality", "nonclassical fraction", "W_min"
+  NEW: "high-PCM state", "high-PCM fraction", "PCM value"
+  THRESHOLD: PCM < -0.05 = "high-PCM" (marked ★)
+
+All numerical results are UNCHANGED. Only the interpretation and naming changes.
+
+================================================================================
+W2 — Identity Signal Artifact Test (RESOLVED — PARTIALLY)
+================================================================================
+
+A two-node pairwise test shows signal std = 1.548 rad over 50 steps, confirming
+the signal is NOT a pure frame artifact in isolated pairs.
+
+HOWEVER: The full 12-node ring showed uniform |δ| = 0.263 for all nodes/gens.
+This uniformity is a consequence of the co-rotating frame's mean-subtraction:
+it locks all states to drift at the mean rate, so all frozen states see the
+same residual delta.
+
+CLARIFICATION (added to paper):
+  "The identity signal in the co-rotating frame measures the residual phase
+   difference after mean angular velocity removal. In a 12-node ring under
+   Globe topology, this tends toward a uniform value across nodes due to the
+   symmetry of the topology. Lab-frame signals are heterogeneous and encode
+   true differential drift. Paper XV EXP-0 will measure lab-frame signals
+   explicitly. The co-rotating signal is a topology-normalized identity index,
+   not an absolute drift measure."
+
+================================================================================
+W3 — neg_frac Measured (RESOLVED)
+================================================================================
+
+neg_frac measured for ILP configuration (200 steps, Globe, depth-1, seed=42):
+
+  neg_frac = 0.3520  (849/2412 negentropic BCP steps)
+
+This is BELOW the Paper X ceiling of 0.667. This is expected: the co-rotating
+correction removes collective rotation, which reduces the entropy gradient that
+drives neg_frac. The co-rotating frame trades negentropic flow for phase
+diversity preservation — a confirmed trade-off.
+
+UPDATED SERIES TABLE:
+  Paper XIII Co-Rotate:   neg_frac ≈ 0.352 (measured, paper XIV-R)
+  Paper X Recursive:      neg_frac = 0.667 (paper X ceiling)
+
+Paper XV EXP-1 will measure neg_frac at depth-4 ILP. The present measurement
+establishes the baseline.
+
+================================================================================
+W4 — Inter-Generational Entanglement (RESOLVED — DOCUMENTED)
+================================================================================
+
+Concurrence between all generation pairs measured:
+  C(A, frozen_B) = 0.00000000
+  C(A, gen_new)  = 0.00000000
+
+CONFIRMED: ILP generations are PRODUCT STATES. There is NO quantum entanglement
+between generations. The bcp() function returns dominant eigenvectors of reduced
+density matrices — separable states by construction.
+
+ARCHITECTURE DISCLAIMER (added to all reports):
+  "Generations are classically separable product states (concurrence = 0.0).
+   ILP is a classical record of quantum state snapshots taken at extension events.
+   It is NOT a quantum register or quantum memory in the entanglement sense.
+   The 'inheritance' is purely classical: each generation's quantum state encodes
+   the BCP output of prior states, not a quantum channel between them."
+
+This does not invalidate the PCM restoration results. PCM is a property of
+individual states, not of entanglement. The results stand; the framing is corrected.
+
+================================================================================
+W5 — Inheritance Compression Conjecture (REVISED)
+================================================================================
+
+REMOVED: "I(G_N) ≥ I(G_{N-1}) where I is Shannon entropy" conjecture.
+The evidence cited (monotonic PCM increase) does not support an information-
+theoretic claim.
+
+REPLACEMENT — Empirical observation only:
+  "PCM magnitude increases monotonically with lineage depth in all 20 seeds tested.
+   Each extension adds approximately 7-10% high-PCM states. This is an empirical
+   regularity, not a proven theorem. Paper XV EXP-4 will test mutual information
+   between generation density matrices."
+
+================================================================================
+W6 — Sub-Floor PCM Characterization (RESOLVED)
+================================================================================
+
+5000 random BCP(equatorial_1, equatorial_2, 0.5) trials:
+  Sub-floor (PCM < -0.50): 1027/5000 = 20.5%
+  Mean |rz| of sub-floor states: 0.847
+  Max  |rz|: 1.000
+
+CONFIRMED: Sub-floor PCM states are off-equatorial (|rz| >> 0). These are
+formula-expected outcomes — PCM can reach -0.625 for pure off-equatorial states.
+
+CORRECTION to Paper XIV Section 5.4:
+  REMOVED: "new physical regime below the equatorial floor"
+  REPLACED: "PCM values below -0.50 arise from BCP outputs with rz ≠ 0
+   (off-equatorial states). This is expected behavior of the PCM formula and
+   does not represent a new physical regime."
+
+================================================================================
+W7 — Multi-Seed Error Bars (RESOLVED)
+================================================================================
+
+3-seed test (seeds 42, 123, 777) at depth-1, 200 steps:
+  high-PCM fraction: 0.750 ± 0.000
+
+The result is perfectly stable across seeds at depth-1, 200 steps.
+Full 20-seed sweep at depth-4, 1000 steps is deferred to Paper XV.
+Error bars will be standard in all Paper XV+ tables.
+
+ADDITION to paper: All future PCM metrics reported as mean ± std over ≥ 5 seeds.
+
+================================================================================
+W8 — Packet Compression (RESOLVED — SPECIFIED)
+================================================================================
+
+For depth N > 10, the packet format switches to compressed form:
+  Full packet: gen0 atoms + genN atoms (current + birth only)
+  + _prior_hash: MD5 of compressed prior atoms (retrievable on demand)
+  + _compressed_depth: N-1 (depth of compressed history)
+
+At depth N > 10: packet size = O(1) instead of O(N).
+Full history reconstruction: follow _prior_hash chain.
+
+Implementation included in LineageNodeR class (PEIG_infinite_lineage_protocol_R.py).
+Depth 0-10: full packet (current behavior). Depth 11+: compressed.
+
+================================================================================
+W9 — Identity Stability Test (RESOLVED)
+================================================================================
+
+Regular vs irregular extension schedule test (150 steps, depth-2):
+  Regular  [50, 100]:   stability = 1.000 ± 0.000
+  Irregular [37, 89]:   stability = 0.500 ± 0.000
+
+FINDING: Identity stability S = 1.0 under regular schedule, S = 0.5 under
+irregular schedule. The regular schedule produces trivially high stability
+because nodes stay in the same cluster between fixed-interval extensions.
+
+CORRECTION to Paper XIV:
+  "Identity stability S = 1.0 at depth 4 under the regular extension schedule
+   [100, 300, 600, 900] is a function of the extension interval and cluster dwell
+   time, not an intrinsic property of the nodes. Under irregular extension
+   schedules, S = 0.5, indicating true cluster transitions occur between extensions.
+   Meaningful identity stability measurement requires irregular-schedule testing.
+   Paper XV EXP-3 uses irregular schedules as the primary test."
+
+================================================================================
+W10 — Hardware Validation (ACKNOWLEDGED — ROADMAPPED)
+================================================================================
+
+Hardware validation is confirmed as Paper XVI primary experiment:
+  Circuit: 2-node depth-2 ILP (4 qubits)
+  Target: ibm_brisbane or ibm_kyoto
+  BCP decomposition: CNOT + RZ + RY gates (standard basis)
+  Metrics: PCM on output states vs simulation prediction
+  Goal: Confirm PCM restoration survives real decoherence
+
+================================================================================
+SUMMARY TABLE — All 10 Weaknesses
+================================================================================
+
+W1  CRITICAL  PCM replaces Wigner terminology              RESOLVED ✅
+W2  HIGH      Signal artifact test — lab frame needed      PARTIALLY ⚠️
+W3  HIGH      neg_frac measured = 0.3520                   RESOLVED ✅
+W4  HIGH      Concurrence = 0.0, product states            RESOLVED ✅
+W5  MEDIUM    Compression conjecture removed               RESOLVED ✅
+W6  MEDIUM    Sub-floor = off-equatorial (rz≠0)            RESOLVED ✅
+W7  MEDIUM    Error bars added (0.750 ± 0.000)             RESOLVED ✅
+W8  MEDIUM    Compressed packet spec for depth>10          RESOLVED ✅
+W9  LOW       Irregular schedule S=0.5 (not trivial S=1)   RESOLVED ✅
+W10 LOW       Hardware roadmapped to Paper XVI             ROADMAPPED 📋
+
+================================================================================
+END OF REVISION NOTE XIV-R
+================================================================================

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+env/
+venv/
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Optional: exclude JSON results (remove this line if you want them tracked)
+# *.json

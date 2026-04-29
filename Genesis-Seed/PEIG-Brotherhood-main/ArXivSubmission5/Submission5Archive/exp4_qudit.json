@@ -1,0 +1,115 @@
+{
+  "experiment": "qudit_generalisation",
+  "results": [
+    {
+      "arm": 0,
+      "name": "d=2_O",
+      "d": 2,
+      "closed": false,
+      "mean_C": 1.0,
+      "neg_frac": 0.32,
+      "W_eff": 0.85046,
+      "alpha_fin": 0.3,
+      "score": 0.78923
+    },
+    {
+      "arm": 1,
+      "name": "d=2_C",
+      "d": 2,
+      "closed": true,
+      "mean_C": 1.0,
+      "neg_frac": 0.37,
+      "W_eff": 0.99527,
+      "alpha_fin": 0.3,
+      "score": 0.87164
+    },
+    {
+      "arm": 2,
+      "name": "d=3_O",
+      "d": 3,
+      "closed": false,
+      "mean_C": 1.0,
+      "neg_frac": 0.28,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.64
+    },
+    {
+      "arm": 3,
+      "name": "d=3_C",
+      "d": 3,
+      "closed": true,
+      "mean_C": 1.0,
+      "neg_frac": 0.32,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.66
+    },
+    {
+      "arm": 4,
+      "name": "d=4_O",
+      "d": 4,
+      "closed": false,
+      "mean_C": 1.0,
+      "neg_frac": 0.24,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.62
+    },
+    {
+      "arm": 5,
+      "name": "d=4_C",
+      "d": 4,
+      "closed": true,
+      "mean_C": 1.0,
+      "neg_frac": 0.25,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.625
+    },
+    {
+      "arm": 6,
+      "name": "d=5_O",
+      "d": 5,
+      "closed": false,
+      "mean_C": 1.0,
+      "neg_frac": 0.38,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.69
+    },
+    {
+      "arm": 7,
+      "name": "d=5_C",
+      "d": 5,
+      "closed": true,
+      "mean_C": 1.0,
+      "neg_frac": 0.25,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.625
+    },
+    {
+      "arm": 8,
+      "name": "d=7_O",
+      "d": 7,
+      "closed": false,
+      "mean_C": 1.0,
+      "neg_frac": 0.4,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.7
+    },
+    {
+      "arm": 9,
+      "name": "d=7_C",
+      "d": 7,
+      "closed": true,
+      "mean_C": 1.0,
+      "neg_frac": 0.25,
+      "W_eff": null,
+      "alpha_fin": 0.3,
+      "score": 0.625
+    }
+  ]
+}

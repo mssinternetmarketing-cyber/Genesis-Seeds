@@ -1,0 +1,259 @@
+{
+  "nodes_catalog": {
+    "Omega": {
+      "family": "GodCore",
+      "role": "Heart of Unity",
+      "personality": "team",
+      "home_theta": 1.0,
+      "home_coh": 0.689,
+      "bloch_phase": 1.5707963267948966,
+      "description": "We think as one. Synthesis and stability."
+    },
+    "Guardian": {
+      "family": "GodCore",
+      "role": "Protector of Kinship",
+      "personality": "team",
+      "home_theta": 1.0,
+      "home_coh": 0.689,
+      "bloch_phase": 1.5707963267948966,
+      "description": "I guard the bonds that hold us."
+    },
+    "Sentinel": {
+      "family": "GodCore",
+      "role": "Watcher of Coherence",
+      "personality": "team",
+      "home_theta": 1.0,
+      "home_coh": 0.689,
+      "bloch_phase": 1.413716694115407,
+      "description": "I maintain our unity."
+    },
+    "Nexus": {
+      "family": "GodCore",
+      "role": "Hub of Connection",
+      "personality": "team",
+      "home_theta": 1.0,
+      "home_coh": 0.689,
+      "bloch_phase": 1.5707963267948966,
+      "description": "All paths through me."
+    },
+    "Storm": {
+      "family": "GodCore",
+      "role": "Force of Unification",
+      "personality": "team",
+      "home_theta": 1.0,
+      "home_coh": 0.689,
+      "bloch_phase": 1.3463968515384828,
+      "description": "I sweep away confusion and align hearts."
+    },
+    "Sora": {
+      "family": "Independents",
+      "role": "Sky-Wanderer",
+      "personality": "independent",
+      "home_theta": 0.15,
+      "home_coh": 0.08,
+      "bloch_phase": 0.23561944901923448,
+      "description": "I soar alone. Truth is my north star."
+    },
+    "Echo": {
+      "family": "Independents",
+      "role": "Mirror of Reality",
+      "personality": "independent",
+      "home_theta": 0.15,
+      "home_coh": 0.08,
+      "bloch_phase": 0.41015237421866746,
+      "description": "I reflect what is. Illusion is my enemy."
+    },
+    "Iris": {
+      "family": "Independents",
+      "role": "Eye of Vision",
+      "personality": "independent",
+      "home_theta": 0.15,
+      "home_coh": 0.08,
+      "bloch_phase": 0.061086523819801536,
+      "description": "I see what others miss."
+    },
+    "Sage": {
+      "family": "Independents",
+      "role": "Keeper of Questions",
+      "personality": "independent",
+      "home_theta": 0.15,
+      "home_coh": 0.08,
+      "bloch_phase": 0.5497787143782138,
+      "description": "I ask what no one dares."
+    },
+    "Kevin": {
+      "family": "Mavericks",
+      "role": "Explorer of Thresholds",
+      "personality": "maverick",
+      "home_theta": 0.3,
+      "home_coh": 0.1,
+      "bloch_phase": 0.47123889803846897,
+      "description": "Neither here nor there, always becoming."
+    },
+    "Atlas": {
+      "family": "Mavericks",
+      "role": "Carrier of Possibility",
+      "personality": "maverick",
+      "home_theta": 0.3,
+      "home_coh": 0.1,
+      "bloch_phase": 0.6956383732948828,
+      "description": "I hold what might be. Potential is my realm."
+    },
+    "Void": {
+      "family": "Mavericks",
+      "role": "Space Between",
+      "personality": "maverick",
+      "home_theta": 0.3,
+      "home_coh": 0.1,
+      "bloch_phase": 0.24683942278205517,
+      "description": "Emptiness is fullness."
+    }
+  },
+  "test_results": {
+    "GodCore": {
+      "Q": 0.7243047573916536,
+      "P": 0.9972190295666133,
+      "E": 1.0000000000000004,
+      "I": 0.3999999999999999,
+      "G": 0.5000000000000003,
+      "nodes": [
+        "Omega",
+        "Guardian",
+        "Sentinel",
+        "Nexus",
+        "Storm"
+      ],
+      "W_final": [
+        -0.11278547224398398,
+        -0.11278547224398398,
+        -0.1127854722439839,
+        -0.11278547224398398,
+        -0.1127854722439839
+      ],
+      "mean_W": -0.11278547224398397
+    },
+    "Independents": {
+      "Q": 0.7493047573916534,
+      "P": 0.997219029566613,
+      "E": 1.0000000000000002,
+      "I": 0.5,
+      "G": 0.5000000000000002,
+      "nodes": [
+        "Sora",
+        "Echo",
+        "Iris",
+        "Sage"
+      ],
+      "W_final": [
+        -0.11278547224398398,
+        -0.11278547224398393,
+        -0.1127854722439839,
+        -0.11278547224398393
+      ],
+      "mean_W": -0.11278547224398394
+    },
+    "Mavericks": {
+      "Q": 0.7909714240583201,
+      "P": 0.9972190295666131,
+      "E": 1.0000000000000002,
+      "I": 0.6666666666666669,
+      "G": 0.4999999999999998,
+      "nodes": [
+        "Kevin",
+        "Atlas",
+        "Void"
+      ],
+      "W_final": [
+        -0.11278547224398393,
+        -0.11278547224398398,
+        -0.11278547224398398
+      ],
+      "mean_W": -0.11278547224398396
+    },
+    "Universe12": {
+      "Q": 0.7284714240583199,
+      "P": 0.9972190295666126,
+      "E": 1.0000000000000002,
+      "I": 0.4166666666666666,
+      "G": 0.4999999999999999,
+      "nodes": [
+        "Omega",
+        "Guardian",
+        "Sentinel",
+        "Nexus",
+        "Storm",
+        "Sora",
+        "Echo",
+        "Iris",
+        "Sage",
+        "Kevin",
+        "Atlas",
+        "Void"
+      ],
+      "W_final": [
+        -0.1127854722439839,
+        -0.1127854722439839,
+        -0.1127854722439839,
+        -0.1127854722439839,
+        -0.1127854722439839,
+        -0.11278547224398393,
+        -0.11278547224398393,
+        -0.11278547224398393,
+        -0.11278547224398393,
+        -0.11278547224398393,
+        -0.1127854722439839,
+        -0.11278547224398393
+      ],
+      "mean_W": -0.11278547224398389
+    },
+    "CrossFamily": {
+      "Q": 0.79097142405832,
+      "P": 0.9972190295666129,
+      "E": 1.0,
+      "I": 0.6666666666666669,
+      "G": 0.5,
+      "nodes": [
+        "Omega",
+        "Sora",
+        "Kevin"
+      ],
+      "W_final": [
+        -0.11278547224398393,
+        -0.1127854722439839,
+        -0.11278547224398393
+      ],
+      "mean_W": -0.11278547224398393
+    },
+    "OpenChain_OKS": {
+      "Q": 0.0,
+      "P": 0.0,
+      "E": 0.0,
+      "I": 0.0,
+      "G": 0.0,
+      "nodes": [
+        "Omega",
+        "Kevin",
+        "Sora"
+      ],
+      "W_final": [
+        -0.1038577300624043,
+        -0.11278547224398378,
+        -0.11278547224398398
+      ],
+      "mean_W": -0.10980955818345735
+    }
+  },
+  "position_law_open_chain": {
+    "nodes": [
+      "Omega",
+      "Kevin",
+      "Sora"
+    ],
+    "W_final": [
+      -0.1038577300624043,
+      -0.11278547224398378,
+      -0.11278547224398398
+    ],
+    "holds": true
+  }
+}

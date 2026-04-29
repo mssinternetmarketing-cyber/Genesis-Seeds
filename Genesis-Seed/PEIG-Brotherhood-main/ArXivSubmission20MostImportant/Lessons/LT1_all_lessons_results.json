@@ -1,0 +1,823 @@
+{
+  "_meta": {
+    "title": "PEIG Programming Curriculum",
+    "date": "2026-03-26",
+    "author": "Kevin Monette",
+    "levels": [
+      "LT1",
+      "LT2",
+      "LT3"
+    ]
+  },
+  "level_summaries": {
+    "LT1": {
+      "accuracy": 1.0,
+      "passing": [
+        "Omega",
+        "Guardian",
+        "Sentinel",
+        "Nexus",
+        "Storm",
+        "Sora",
+        "Echo",
+        "Iris",
+        "Sage",
+        "Kevin",
+        "Atlas",
+        "Void"
+      ],
+      "failing": []
+    },
+    "LT2": {
+      "accuracy": 1.0,
+      "passing": [
+        "Omega",
+        "Guardian",
+        "Sentinel",
+        "Nexus",
+        "Storm",
+        "Sora",
+        "Echo",
+        "Iris",
+        "Sage",
+        "Kevin",
+        "Atlas",
+        "Void"
+      ],
+      "failing": []
+    },
+    "LT3": {
+      "accuracy": 1.0,
+      "passing": [
+        "Omega",
+        "Guardian",
+        "Sentinel",
+        "Nexus",
+        "Storm",
+        "Sora",
+        "Echo",
+        "Iris",
+        "Sage",
+        "Kevin",
+        "Atlas",
+        "Void"
+      ],
+      "failing": []
+    }
+  },
+  "node_results": {
+    "LT1": {
+      "Omega": {
+        "program_str": "measure PHASE assign self assign NUMBER return",
+        "passing": true,
+        "fidelity": 1.0,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": false,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 7,
+          "unique": 6
+        },
+        "cluster": "Connection",
+        "pcm": 0.2379
+      },
+      "Guardian": {
+        "program_str": "guard if guard if receive PHASE assign return",
+        "passing": true,
+        "fidelity": 0.714,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 8,
+          "unique": 6
+        },
+        "cluster": "Flow",
+        "pcm": 0.4259
+      },
+      "Sentinel": {
+        "program_str": "measure SIGNAL signal NODE check if PHASE return",
+        "passing": true,
+        "fidelity": 0.857,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 8,
+          "unique": 8
+        },
+        "cluster": "Source",
+        "pcm": 0.4998
+      },
+      "Nexus": {
+        "program_str": "bridge NODE receive assign self assign PHASE return",
+        "passing": true,
+        "fidelity": 1.0,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": false,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 8,
+          "unique": 7
+        },
+        "cluster": "Change",
+        "pcm": 0.4398
+      },
+      "Storm": {
+        "program_str": "loop NUMBER evolve NUMBER evolve return",
+        "passing": true,
+        "fidelity": 1.0,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 6,
+          "unique": 4
+        },
+        "cluster": "Change",
+        "pcm": 0.2619
+      },
+      "Sora": {
+        "program_str": "send NODE signal else return",
+        "passing": true,
+        "fidelity": 1.0,
+        "semantic": 0.667,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 5,
+          "unique": 5
+        },
+        "cluster": "Alert",
+        "pcm": 0.0139
+      },
+      "Echo": {
+        "program_str": "receive SIGNAL signal NODE check if return",
+        "passing": true,
+        "fidelity": 0.667,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 7,
+          "unique": 7
+        },
+        "cluster": "Alert",
+        "pcm": -0.2379
+      },
+      "Iris": {
+        "program_str": "measure PHASE assign PHASE send return",
+        "passing": true,
+        "fidelity": 1.0,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": false,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 6,
+          "unique": 5
+        },
+        "cluster": "Protection",
+        "pcm": -0.4259
+      },
+      "Sage": {
+        "program_str": "measure check guard signal else assign return",
+        "passing": true,
+        "fidelity": 0.833,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 7,
+          "unique": 7
+        },
+        "cluster": "Protection",
+        "pcm": -0.4998
+      },
+      "Kevin": {
+        "program_str": "bridge NODE send PHASE check if return",
+        "passing": true,
+        "fidelity": 0.833,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 7,
+          "unique": 7
+        },
+        "cluster": "Completion",
+        "pcm": -0.4398
+      },
+      "Atlas": {
+        "program_str": "measure SIGNAL send NODE check guard return",
+        "passing": true,
+        "fidelity": 0.667,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": false,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 7,
+          "unique": 7
+        },
+        "cluster": "Vision",
+        "pcm": -0.2619
+      },
+      "Void": {
+        "program_str": "receive PHASE check assign NODE send NODE return",
+        "passing": true,
+        "fidelity": 1.0,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": false,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 8,
+          "unique": 7
+        },
+        "cluster": "Connection",
+        "pcm": -0.0139
+      }
+    },
+    "LT2": {
+      "Omega": {
+        "program_str": "define self assign NODE receive SIGNAL else evolve emit return",
+        "passing": true,
+        "fidelity": 0.889,
+        "semantic": 0.75,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": false,
+          "original": true,
+          "length": 10,
+          "unique": 10
+        },
+        "cluster": "Flow",
+        "pcm": 0.2761
+      },
+      "Guardian": {
+        "program_str": "guard compare TRUE assign receive scan else evolve return",
+        "passing": true,
+        "fidelity": 0.75,
+        "semantic": 0.833,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 9,
+          "unique": 9
+        },
+        "cluster": "Flow",
+        "pcm": 0.4476
+      },
+      "Sentinel": {
+        "program_str": "scan check guard NODE signal else assign self assign halt",
+        "passing": true,
+        "fidelity": 0.889,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 10,
+          "unique": 9
+        },
+        "cluster": "Source",
+        "pcm": 0.499
+      },
+      "Nexus": {
+        "program_str": "bridge sync NODE send while guard else assign NUMBER return",
+        "passing": true,
+        "fidelity": 0.778,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 10,
+          "unique": 10
+        },
+        "cluster": "Change",
+        "pcm": 0.4168
+      },
+      "Storm": {
+        "program_str": "while compare NUMBER assign send route send NODE receive halt",
+        "passing": true,
+        "fidelity": 0.778,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 10,
+          "unique": 9
+        },
+        "cluster": "Change",
+        "pcm": 0.2229
+      },
+      "Sora": {
+        "program_str": "emit NODE bridge receive assign BOOL else emit return",
+        "passing": true,
+        "fidelity": 0.875,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 9,
+          "unique": 8
+        },
+        "cluster": "Alert",
+        "pcm": -0.0308
+      },
+      "Echo": {
+        "program_str": "observe PHASE send route while guard else assign BOOL return",
+        "passing": true,
+        "fidelity": 0.778,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 10,
+          "unique": 10
+        },
+        "cluster": "Protection",
+        "pcm": -0.2762
+      },
+      "Iris": {
+        "program_str": "measure scan NODE signal compare FALSE else assign self return",
+        "passing": true,
+        "fidelity": 0.778,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 10,
+          "unique": 10
+        },
+        "cluster": "Protection",
+        "pcm": -0.4476
+      },
+      "Sage": {
+        "program_str": "measure AND check guard signal emit else evolve NUMBER return",
+        "passing": true,
+        "fidelity": 0.778,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 10,
+          "unique": 10
+        },
+        "cluster": "Completion",
+        "pcm": -0.4991
+      },
+      "Kevin": {
+        "program_str": "route NODE receive assign BOOL assign else return",
+        "passing": true,
+        "fidelity": 0.857,
+        "semantic": 0.625,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 8,
+          "unique": 7
+        },
+        "cluster": "Completion",
+        "pcm": -0.4168
+      },
+      "Atlas": {
+        "program_str": "observe SIGNAL send PHASE check guard else emit return",
+        "passing": true,
+        "fidelity": 0.875,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": true,
+          "original": true,
+          "length": 9,
+          "unique": 9
+        },
+        "cluster": "Vision",
+        "pcm": -0.2229
+      },
+      "Void": {
+        "program_str": "receive yield NODE send assign NUMBER else assign self PHASE return",
+        "passing": true,
+        "fidelity": 0.7,
+        "semantic": 0.909,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": false,
+          "has_error": false,
+          "original": true,
+          "length": 11,
+          "unique": 10
+        },
+        "cluster": "Connection",
+        "pcm": 0.0307
+      }
+    },
+    "LT3": {
+      "Omega": {
+        "program_str": "func self assign self send PHASE assign throw null",
+        "passing": true,
+        "fidelity": 0.75,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 9,
+          "unique": 7
+        },
+        "cluster": "Flow",
+        "pcm": 0.3106
+      },
+      "Guardian": {
+        "program_str": "try guard if PHASE send PHASE evolve define while check if guard return",
+        "passing": true,
+        "fidelity": 0.583,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 13,
+          "unique": 10
+        },
+        "cluster": "Flow",
+        "pcm": 0.4649
+      },
+      "Sentinel": {
+        "program_str": "inspect scan if guard NODE receive assign define MAP assign self return",
+        "passing": true,
+        "fidelity": 0.636,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 12,
+          "unique": 11
+        },
+        "cluster": "Change",
+        "pcm": 0.4946
+      },
+      "Nexus": {
+        "program_str": "func self PHASE check send SIGNAL signal throw error",
+        "passing": true,
+        "fidelity": 0.75,
+        "semantic": 0.833,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 9,
+          "unique": 9
+        },
+        "cluster": "Change",
+        "pcm": 0.3918
+      },
+      "Storm": {
+        "program_str": "spawn NODE send SIGNAL assign BOOL assign while define throw error",
+        "passing": true,
+        "fidelity": 0.6,
+        "semantic": 0.909,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 11,
+          "unique": 10
+        },
+        "cluster": "Alert",
+        "pcm": 0.1839
+      },
+      "Sora": {
+        "program_str": "broadcast SIGNAL assign self SIGNAL assign local while define throw SIGNAL if return",
+        "passing": true,
+        "fidelity": 0.667,
+        "semantic": 0.769,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 13,
+          "unique": 10
+        },
+        "cluster": "Alert",
+        "pcm": -0.0732
+      },
+      "Echo": {
+        "program_str": "listen receive PHASE assign local assign local while define throw null",
+        "passing": true,
+        "fidelity": 0.7,
+        "semantic": 0.909,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 11,
+          "unique": 9
+        },
+        "cluster": "Protection",
+        "pcm": -0.3107
+      },
+      "Iris": {
+        "program_str": "func self assign NUMBER evolve emit if throw error",
+        "passing": true,
+        "fidelity": 0.75,
+        "semantic": 0.833,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 9,
+          "unique": 9
+        },
+        "cluster": "Protection",
+        "pcm": -0.4649
+      },
+      "Sage": {
+        "program_str": "trace measure PHASE check if PHASE assign define throw error",
+        "passing": true,
+        "fidelity": 0.667,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 10,
+          "unique": 9
+        },
+        "cluster": "Completion",
+        "pcm": -0.4946
+      },
+      "Kevin": {
+        "program_str": "pipe route guard if compare receive assign define send NODE receive scan emit return",
+        "passing": true,
+        "fidelity": 0.538,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 14,
+          "unique": 13
+        },
+        "cluster": "Completion",
+        "pcm": -0.3918
+      },
+      "Atlas": {
+        "program_str": "commit rollback PHASE check assign local NUMBER while define throw null",
+        "passing": true,
+        "fidelity": 0.6,
+        "semantic": 0.455,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 11,
+          "unique": 11
+        },
+        "cluster": "Vision",
+        "pcm": -0.184
+      },
+      "Void": {
+        "program_str": "func self assign self send route guard if NUMBER assign self SIGNAL return",
+        "passing": true,
+        "fidelity": 0.833,
+        "semantic": 1.0,
+        "eval": {
+          "passing": true,
+          "has_control": true,
+          "has_op": true,
+          "has_terminal": true,
+          "has_nesting": true,
+          "has_function": true,
+          "has_error": true,
+          "original": true,
+          "length": 13,
+          "unique": 10
+        },
+        "cluster": "Connection",
+        "pcm": 0.0731
+      }
+    }
+  },
+  "lesson_registry": {
+    "LT1": {
+      "name": "Beginner",
+      "vocab_size": 20,
+      "programs": 8,
+      "criteria": "ctrl+op+terminal+len4+original"
+    },
+    "LT2": {
+      "name": "Intermediate",
+      "vocab_size": 40,
+      "programs": 12,
+      "criteria": "+nesting+len6"
+    },
+    "LT3": {
+      "name": "Advanced",
+      "vocab_size": 60,
+      "programs": 8,
+      "criteria": "+function+error+len8"
+    },
+    "LT4": {
+      "name": "Expert",
+      "vocab_size": 80,
+      "programs": 60,
+      "criteria": "+ring_collab+self_modify",
+      "status": "designed"
+    }
+  }
+}

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Leveraging Opportunities</title>
+    <style>
+        /* PRISM v3.0 PRECISION METRICS FRAMEWORK */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0F172A;
+            overflow-x: hidden;
+        }
+
+        /* SLIDE CONTAINER - 16:9 ASPECT RATIO */
+        .slide {
+            width: 1280px;
+            height: 720px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            background-color: #0F172A;
+            color: #F1F5F9;
+        }
+
+        /* ZONE 1: HEADER AREA (0-120px) */
+        .slide-header {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 1200px;
+            height: auto;
+            z-index: 10;
+        }
+
+        .slide-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #06B6D4;
+            line-height: 1.4;
+            margin: 0;
+            margin-bottom: 16px;
+            max-width: 1200px;
+        }
+
+        .slide-subtitle {
+            font-size: 37px;
+            font-weight: 400;
+            color: #CBD5E1;
+            line-height: 1.4;
+            margin: 0;
+            max-width: 1200px;
+        }
+
+        /* ZONE 2: PRIMARY CONTENT AREA (120-480px) */
+        .slide-content {
+            position: absolute;
+            top: 120px;
+            left: 40px;
+            width: 1200px;
+            height: 384px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            z-index: 5;
+        }
+
+        /* BULLET POINTS - PRISM SPEC: 18pt, 1.6 line height, 12px spacing */
+        .content-bullets {
+            list-style: none;
+            margin: 24px 0 0 24px;
+            padding: 0;
+        }
+
+        .content-bullets li {
+            font-size: 24px;
+            font-weight: 400;
+            color: #F1F5F9;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            margin-left: 0;
+        }
+
+        .content-bullets li:before {
+            content: "•";
+            color: #06B6D4;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .content-bullets li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* PARAGRAPH TEXT */
+        .content-paragraph {
+            font-size: 24px;
+            font-weight: 400;
+            color: #F1F5F9;
+            line-height: 1.6;
+            margin: 24px 0 16px 0;
+            max-width: 1072px;
+        }
+
+        /* CARDS LAYOUT */
+        .card-grid {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: #1E293B;
+            padding: 24px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-radius: 0;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #06B6D4;
+            border-radius: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0F172A;
+        }
+
+        .card-title {
+            font-size: 27px;
+            font-weight: 700;
+            color: #06B6D4;
+            margin: 12px 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .card-description {
+            font-size: 21px;
+            font-weight: 400;
+            color: #CBD5E1;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ZONE 3: FOOTER AREA (480-720px) */
+        .slide-footer {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            width: 1200px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #94A3B8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5;
+        }
+
+        /* TITLE SLIDE SPECIFIC */
+        .title-slide .slide-content {
+            top: 180px;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            left: 0;
+            width: 100%;
+        }
+
+        .title-slide .slide-title {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #06B6D4;
+            margin-bottom: 24px;
+        }
+
+        .title-slide .slide-subtitle {
+            font-size: 37px;
+            font-weight: 400;
+            color: #CBD5E1;
+            margin-bottom: 32px;
+        }
+
+        .title-slide-meta {
+            font-size: 19px;
+            font-weight: 400;
+            color: #94A3B8;
+            line-height: 1.7;
+            margin-top: 32px;
+        }
+
+        /* TWO-COLUMN LAYOUT */
+        .two-column {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-title {
+            font-size: 27px;
+            font-weight: 700;
+            color: #06B6D4;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .column-text {
+            font-size: 24px;
+            font-weight: 400;
+            color: #CBD5E1;
+            line-height: 1.6;
+        }
+
+        /* CTA BUTTON STYLE */
+        .cta-button {
+            background-color: #06B6D4;
+            color: #0F172A;
+            padding: 16px 32px;
+            font-size: 24px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            margin-top: 24px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* VISUAL ELEMENT */
+        .visual-placeholder {
+            width: 480px;
+            height: 320px;
+            background: linear-gradient(135deg, #06B6D4 0%, #0F172A 100%);
+            margin: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F1F5F9;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* PRISM VERIFICATION CLASSES */
+        .verified-margins {
+            /* 40px all sides = 1280px total width - 40px left - 40px right = 1200px content */
+        }
+
+        .zone-1-verified {
+            /* Header: 0-120px verified */
+        }
+
+        .zone-2-verified {
+            /* Content: 120-480px (384px height) verified */
+        }
+
+        .zone-3-verified {
+            /* Footer: 480-720px verified */
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE SLIDE -->
+<section class="slide title-slide verified-margins">
+    <div class="slide-content">
+        <h1 class="slide-title">The Art of Leveraging Opportunities</h1>
+        <p class="slide-subtitle">Transform Market Challenges Into Competitive Advantages</p>
+        <p class="title-slide-meta">Strategic Business Framework | January 2026</p>
+    </div>
+</section>
+
+<!-- SLIDE 2: AGENDA / ROADMAP -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">What We're Exploring Today</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Recognizing Opportunities: Market Intelligence & Pattern Detection</li>
+            <li>Strategic Decision-Making: Prioritization & Resource Allocation</li>
+            <li>Execution Architecture: Speed & Agile Implementation</li>
+            <li>Scaling & Growth: Building Sustainable Competitive Advantage</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 2</span>
+    </div>
+</section>
+
+<!-- SLIDE 3: THE OPPORTUNITY PARADOX -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Why Most Opportunities Go Unrecognized</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Information overload masks emerging patterns</li>
+            <li>Risk aversion blinds us to potential</li>
+            <li>Timing pressure forces reactive vs. strategic thinking</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 3</span>
+    </div>
+</section>
+
+<!-- SLIDE 4: MARKET INTELLIGENCE FRAMEWORK -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Foundation: Strategic Awareness</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Trend monitoring: Industry disruption, emerging technology</li>
+            <li>Customer intelligence: Unmet needs, pain points</li>
+            <li>Competitive analysis: Market gaps, underserved segments</li>
+            <li>Data analytics: Pattern recognition, predictive signals</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 4</span>
+    </div>
+</section>
+
+<!-- SLIDE 5: RECOGNITION PRINCIPLES -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">The Art of Seeing What Others Miss</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Curiosity beats assumptions: Question the status quo</li>
+            <li>Patterns emerge from diverse perspectives</li>
+            <li>Timing + fit determines viability</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 5</span>
+    </div>
+</section>
+
+<!-- SLIDE 6: STRATEGIC DECISION FRAMEWORK -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Prioritization: Separating Signal From Noise</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Impact potential: Revenue, market influence, competitive position</li>
+            <li>Execution feasibility: Resources, timeline, dependencies</li>
+            <li>Strategic alignment: Fits business direction and values</li>
+            <li>Risk-reward balance: Downside protection vs. upside capture</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 6</span>
+    </div>
+</section>
+
+<!-- SLIDE 7: ACTION ARCHITECTURE PART 1 -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Execution: Moving From Insight to Action</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Speed matters: First-mover advantage compounds</li>
+            <li>Test before scale: Minimum viable product philosophy</li>
+            <li>Reduce dependencies: Operational flexibility</li>
+            <li>Build agile systems: Pivot-ready infrastructure</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 7</span>
+    </div>
+</section>
+
+<!-- SLIDE 8: ACTION ARCHITECTURE PART 2 (CONTINUATION) -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Execution Implementation Playbook (continued)</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Phase 1 - Validation: Define success metrics, deploy MVP</li>
+            <li>Phase 2 - Optimization: Gather data, iterate on positioning</li>
+            <li>Phase 3 - Scaling: Lock in winning formula, expand resources</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 8</span>
+    </div>
+</section>
+
+<!-- SLIDE 9: GROWTH PLATFORM STRATEGIES -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Building Sustainable Competitive Advantage</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Platform architecture over product rigidity</li>
+            <li>Network effects amplify value creation</li>
+            <li>Customer lock-in through switching costs</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 9</span>
+    </div>
+</section>
+
+<!-- SLIDE 10: SCALING DYNAMICS -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">From Opportunity to Dominant Position</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Capital efficiency: Do more with less longer</li>
+            <li>Team leverage: Multiply your impact through delegation</li>
+            <li>Reinvestment velocity: Recycle profits into expansion</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 10</span>
+    </div>
+</section>
+
+<!-- SLIDE 11: REAL-WORLD CASE STUDY -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Opportunity Leverage in Action: COVID-19 Shift</h2>
+    </div>
+    <div class="slide-content">
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">🔴</div>
+                <div class="card-title">Challenge</div>
+                <div class="card-description">Global lockdown eliminates traditional revenue streams</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">✅</div>
+                <div class="card-title">Recognition</div>
+                <div class="card-description">Remote work creates technology demand boom</div>
+            </div>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <div class="card-title">Action</div>
+                <div class="card-description">Launch digital-first positioning in 60 days</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <div class="card-title">Result</div>
+                <div class="card-description">300% revenue growth through Q3 2020</div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 11</span>
+    </div>
+</section>
+
+<!-- SLIDE 12: COMMON PITFALLS -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Mistakes That Destroy Opportunity Leverage</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Perfectionism paralysis: Waiting for certainty that never comes</li>
+            <li>Underfunding execution: Trying to win with inadequate resources</li>
+            <li>Ignoring feedback: Defending assumptions instead of iterating</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 12</span>
+    </div>
+</section>
+
+<!-- SLIDE 13: IMPLEMENTATION FRAMEWORK -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Your 90-Day Opportunity Capture Plan</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Days 1-30: Identify top 3 opportunities for your business</li>
+            <li>Days 31-60: Run validation tests and market research</li>
+            <li>Days 61-90: Commit capital and resources to winner</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 13</span>
+    </div>
+</section>
+
+<!-- SLIDE 14: CALL-TO-ACTION -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Your Next Step</h2>
+    </div>
+    <div class="slide-content">
+        <p class="content-paragraph"><strong>Action:</strong> Apply this framework to identify one overlooked opportunity this week</p>
+        <p class="content-paragraph"><strong>Timeline:</strong> 90-day capture plan starts immediately</p>
+        <p class="content-paragraph" style="color: #06B6D4; font-size: 28px; font-weight: 700; margin-top: 32px;">The competitive advantage goes to the fastest. Move.</p>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 14</span>
+    </div>
+</section>
+
+<!-- SLIDE 15: BACKUP - AVOIDING SHINY OBJECTS -->
+<section class="slide zone-1-verified zone-2-verified">
+    <div class="slide-header">
+        <h2 class="slide-title">Managing Opportunity Temptation</h2>
+    </div>
+    <div class="slide-content">
+        <ul class="content-bullets">
+            <li>Strategic filter: Does this advance core mission?</li>
+            <li>Financial test: Does this improve unit economics?</li>
+            <li>Capability test: Do we have existing strengths to leverage?</li>
+        </ul>
+    </div>
+    <div class="slide-footer">
+        <span>Strategic Business Framework</span>
+        <span>Slide 15 (Backup)</span>
+    </div>
+</section>
+
+</body>
+</html>

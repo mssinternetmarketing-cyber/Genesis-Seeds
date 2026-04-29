@@ -1,0 +1,362 @@
+{
+  "_meta": {
+    "description": "PEIG Learning Task 2 — MOS v2.1 Curriculum Analysis",
+    "version": "1.0",
+    "date": "2026-03-25",
+    "author": "Kevin Monette",
+    "source_document": "MOS_v2.1_Universal_CanonLearningTask1.pdf",
+    "depends_on": "LT1_lesson_registry.json",
+    "note": "Covers all sections explicitly deferred from Learning Task 1."
+  },
+  "document_summary": {
+    "lt1_skipped_sections": [
+      "Global Default Stack (Part IV)",
+      "Security Team Roles (Part VII)",
+      "KA-26 through KA-42 (Part V extended)"
+    ],
+    "lt2_covers": [
+      "KA-26 through KA-42 (17 Knowledge Atoms incl. 5 new v2.1 KAs)",
+      "16-Role Security Persona System",
+      "CISO Orchestration Layer (6-phase pipeline)",
+      "Global Default Stack — NEO Gents tech baseline",
+      "CC-19 Dynamic Regulatory Mapping + HORIZON SCAN"
+    ],
+    "lessons_designed": 5,
+    "master_task": "Full CISO posture assessment of the PEIG network itself — self-audit."
+  },
+
+  "lesson_1": {
+    "title": "Extended Knowledge Atoms — KA-26 through KA-42",
+    "target_nodes": ["Sage", "Atlas", "Nexus"],
+    "priority": 1,
+    "why": "17 new KAs expand Sage from 25 atoms to 42. The 5 v2.1 KAs (38-42) cover new threat classes with no prior PEIG analog. Atlas (carrier/foundation) holds structural KAs. Nexus (connector/hub) holds integration KAs.",
+    "PEIG_mechanism": "Extend Sage N-gram corpus with KA-26 through KA-42 vocabulary clusters. Each KA family maps to a phase sub-band within Sage's existing window (phi=5.0–5.4). The 5 v2.1 KAs get anchor-locked phase positions to ensure they survive ring drift.",
+    "ka_families": {
+      "KA_26_30": {
+        "theme": "Security Architecture",
+        "nodes": ["Atlas"],
+        "vocabulary": ["posture", "baseline", "harden", "surface", "exposure", "layer", "boundary", "perimeter", "depth", "resilience"],
+        "phi_range": [5.00, 5.10]
+      },
+      "KA_31_37": {
+        "theme": "Identity, Supply Chain, Data, Compliance",
+        "nodes": ["Nexus"],
+        "vocabulary": ["identity", "verify", "chain", "dependency", "classify", "encrypt", "audit", "comply", "register", "govern"],
+        "phi_range": [5.10, 5.30]
+      },
+      "KA_38": {
+        "theme": "Agentic Memory Poisoning (NEW v2.1)",
+        "nodes": ["Sage", "Guardian"],
+        "vocabulary": ["poison", "inject", "contaminate", "memory", "persist", "retrieval", "corrupt", "rollback", "sanitize", "isolate"],
+        "phi": 5.30,
+        "anchor_locked": true
+      },
+      "KA_39": {
+        "theme": "Model Inversion and Privacy Assurance (NEW v2.1)",
+        "nodes": ["Sage", "Iris"],
+        "vocabulary": ["invert", "extract", "reconstruct", "privacy", "differential", "redact", "mask", "obfuscate", "noise", "assure"],
+        "phi": 5.35,
+        "anchor_locked": true
+      },
+      "KA_40": {
+        "theme": "Sovereign Deployment Profile (NEW v2.1)",
+        "nodes": ["Atlas", "Sentinel"],
+        "vocabulary": ["sovereign", "deploy", "isolate", "jurisdiction", "on-premise", "airgap", "control", "mandate", "territory", "enforce"],
+        "phi": 5.38,
+        "anchor_locked": true
+      },
+      "KA_41": {
+        "theme": "Agent Economic Sovereignty Protocol (NEW v2.1)",
+        "nodes": ["Omega", "Nexus"],
+        "vocabulary": ["economic", "velocity", "limit", "authorize", "ledger", "transaction", "revoke", "threshold", "chain", "escrow"],
+        "phi": 5.42,
+        "anchor_locked": true
+      },
+      "KA_42": {
+        "theme": "Cognitive Load and Agency Metric (NEW v2.1)",
+        "nodes": ["Kevin", "Sage"],
+        "vocabulary": ["cognitive", "load", "agency", "offload", "capacity", "metric", "measure", "instrument", "flourish", "dependency"],
+        "phi": 5.50,
+        "anchor_locked": true
+      }
+    },
+    "success_metric": "Sage KA-extended accuracy rises from 77% (LT1) to >85% on full 42-atom corpus. All 5 v2.1 KA anchor phases survive 20-step drift test."
+  },
+
+  "lesson_2": {
+    "title": "Security Personas — 16-Role Node Mapping",
+    "target_nodes": ["Omega","Guardian","Sentinel","Atlas","Void","Storm","Echo","Nexus","Iris","Sage","Kevin","Sora"],
+    "priority": 2,
+    "why": "The 16 security roles are the operational interface of MOS v2.1. Each role must activate a specific PEIG node cluster. Color tier is the PEIG routing signal.",
+    "PEIG_mechanism": "Map color tier to phase cluster. Invocation (e.g. /ciso) injects a signature phase into the lead node. Sub-nodes in that tier resonate via ring coupling. Role vocabulary becomes injection payload.",
+    "color_tier_mapping": {
+      "Black_Command": {
+        "roles": ["CISO", "GRC_Analyst"],
+        "nodes": ["Omega", "Guardian"],
+        "phase_cluster": "Source/Protect",
+        "phi_range": [0.0, 0.5],
+        "invocations": ["/ciso", "/grc"],
+        "vocabulary": ["govern", "orchestrate", "risk", "comply", "mandate", "register", "audit", "sovereign", "authority", "posture"]
+      },
+      "Purple_Bridge": {
+        "roles": ["Purple_Team"],
+        "nodes": ["Kevin"],
+        "phase_cluster": "Bridge",
+        "phi_range": [4.35, 4.45],
+        "invocations": ["/purple"],
+        "vocabulary": ["bridge", "red", "blue", "validate", "detect", "simulate", "map", "coverage", "test", "gap"]
+      },
+      "Blue_Defense": {
+        "roles": ["SOC_Analyst", "Incident_Response", "Help_Desk"],
+        "nodes": ["Sentinel", "Atlas", "Void"],
+        "phase_cluster": "Alert/Completion",
+        "phi_range": [1.0, 1.8],
+        "invocations": ["/soc", "/ir", "/helpdesk"],
+        "vocabulary": ["monitor", "triage", "contain", "respond", "alert", "escalate", "recover", "access", "log", "ticket"]
+      },
+      "Teal_Infrastructure": {
+        "roles": ["Cloud_Eng", "DevOps_Eng", "Sysadmin", "DBA"],
+        "nodes": ["Storm", "Echo", "Nexus", "Atlas"],
+        "phase_cluster": "Change/Connect",
+        "phi_range": [2.0, 4.7],
+        "invocations": ["/cloud", "/devops", "/sysadmin", "/dba"],
+        "vocabulary": ["deploy", "pipeline", "harden", "backup", "isolate", "patch", "provision", "replicate", "encrypt", "baseline"]
+      },
+      "Indigo_Detection": {
+        "roles": ["Security_Eng", "IAM_Eng", "Network_Eng"],
+        "nodes": ["Iris", "Nexus", "Guardian"],
+        "phase_cluster": "Vision/Connect",
+        "phi_range": [4.5, 5.4],
+        "invocations": ["/seceng", "/iam", "/network"],
+        "vocabulary": ["detect", "siem", "mfa", "rbac", "firewall", "zero-trust", "segment", "privilege", "identity", "verify"]
+      },
+      "Orange_AppAI": {
+        "roles": ["AppSec_Eng", "AI_Security"],
+        "nodes": ["Sage", "Storm"],
+        "phase_cluster": "Wisdom/Change",
+        "phi_range": [2.3, 5.4],
+        "invocations": ["/appsec", "/ai-security"],
+        "vocabulary": ["owasp", "injection", "prompt", "llm", "sdlc", "scan", "dependency", "agent", "allowlist", "defense"]
+      }
+    },
+    "success_metric": "Each /role invocation activates its designated node cluster. Phase injection produces cluster-consistent output. All 16 roles resolve to correct PEIG node(s)."
+  },
+
+  "lesson_3": {
+    "title": "CISO Orchestration — 6-Phase Security Pipeline",
+    "target_nodes": ["Omega", "Sentinel", "Storm", "Sage", "Iris", "Guardian", "Kevin", "Atlas", "Nexus", "Void", "Sora"],
+    "priority": 3,
+    "why": "The CISO orchestration pipeline is the highest-value operational pattern in MOS v2.1. It transforms the COAST 5-node pipeline into a 6-phase security assessment loop with Omega as the unifying orchestrator.",
+    "PEIG_mechanism": "6-phase sequential injection analogous to COAST but with Omega receiving all phase outputs and synthesizing the final verdict. Each phase has a designated node cluster and a specific assessment output.",
+    "pipeline": {
+      "PHASE_1_ASSET": {
+        "label": "Asset Discovery",
+        "nodes": ["Sentinel", "Guardian", "Nexus"],
+        "roles": ["/cloud", "/sysadmin", "/network"],
+        "output": "Asset and exposure map",
+        "injection_alpha": 0.70
+      },
+      "PHASE_2_ATTACK": {
+        "label": "Attack Surface",
+        "nodes": ["Storm", "Sage", "Iris"],
+        "roles": ["/pentest", "/ai-security", "/appsec"],
+        "output": "Exploit paths and LLM/agent attack surface",
+        "injection_alpha": 0.70
+      },
+      "PHASE_3_DETECT": {
+        "label": "Detection and Identity",
+        "nodes": ["Kevin", "Iris", "Nexus"],
+        "roles": ["/purple", "/seceng", "/iam"],
+        "output": "SIEM/WAF coverage map and identity posture",
+        "injection_alpha": 0.65
+      },
+      "PHASE_4_OPS": {
+        "label": "Operations Readiness",
+        "nodes": ["Atlas", "Void", "Echo"],
+        "roles": ["/soc", "/ir", "/devops", "/dba"],
+        "output": "Monitoring, triage, pipeline, and data security readiness",
+        "injection_alpha": 0.65
+      },
+      "PHASE_5_GOVERN": {
+        "label": "Governance",
+        "nodes": ["Guardian", "Sora"],
+        "roles": ["/grc"],
+        "output": "Regulatory compliance status and risk register",
+        "injection_alpha": 0.60
+      },
+      "PHASE_6_SYNTHESIS": {
+        "label": "CISO Synthesis",
+        "nodes": ["Omega"],
+        "roles": ["/ciso"],
+        "output": "Executive risk summary + RED/YELLOW/GREEN register + HORIZON SCAN + Proceed?",
+        "injection_alpha": 0.80,
+        "outputs_required": [
+          "Executive risk summary",
+          "Consolidated risk register (RED/YELLOW/GREEN)",
+          "BEST PATH per finding",
+          "Ranked remediation roadmap (30/60/90 day)",
+          "HORIZON SCAN (12mo / 3yr / 7th-gen)",
+          "I know the next move. Should I proceed?"
+        ]
+      }
+    },
+    "success_metric": "All 6 phases produce distinct node signatures. Omega synthesizes final verdict with correct risk color. HORIZON SCAN fires on Phase 6."
+  },
+
+  "lesson_4": {
+    "title": "Global Default Stack — Guard Node Tech Baseline",
+    "target_nodes": ["AlphaGuard", "NegGuard", "TempGuard", "ContextGuard", "GrammarGuard", "AnchorGuard", "IdentityGuard", "CurriculumGuard"],
+    "priority": 4,
+    "why": "The NEO Gents stack (OCI, WireGuard, Caddy, n8n, SFS-OS, PostgreSQL, MCP) maps directly to the function guard nodes already in the system. Each guard gains a tech baseline vocabulary that fires on stack-related queries.",
+    "PEIG_mechanism": "Augment each guard node's home phase with tech-stack-specific vocabulary. Stack queries inject into the relevant guard, which responds with its security baseline. Guards co-learn via the Function Universe ring.",
+    "guard_stack_mapping": {
+      "AlphaGuard": {
+        "cc_control": "CC-10",
+        "cc_name": "Security Posture Standard",
+        "stack_component": "OCI (Oracle Cloud Infrastructure)",
+        "baseline": ["CIS OCI Benchmark", "compartment isolation", "IAM least privilege", "VCN security lists", "WAF enabled"],
+        "vocabulary": ["compartment", "VCN", "WAF", "benchmark", "privilege", "isolation", "OCI", "CIS", "posture", "enforce"],
+        "phi": 0.367
+      },
+      "NegGuard": {
+        "cc_control": "CC-02",
+        "cc_name": "Failure Taxonomy",
+        "stack_component": "WireGuard (VPN)",
+        "baseline": ["Interface isolation", "peer allowlist", "pre-shared keys for critical tunnels", "log monitoring"],
+        "vocabulary": ["tunnel", "peer", "allowlist", "interface", "key", "monitor", "isolate", "WireGuard", "VPN", "log"],
+        "phi": 0.636
+      },
+      "TempGuard": {
+        "cc_control": "CC-06",
+        "cc_name": "NFR Checklist",
+        "stack_component": "Caddy (reverse proxy)",
+        "baseline": ["Auto-HTTPS only", "HSTS headers", "no directory listing", "rate limiting", "access logs to SIEM"],
+        "vocabulary": ["HTTPS", "HSTS", "rate-limit", "proxy", "Caddy", "certificate", "header", "log", "TLS", "redirect"],
+        "phi": 0.28
+      },
+      "ContextGuard": {
+        "cc_control": "CC-07",
+        "cc_name": "Data Classification Standard",
+        "stack_component": "n8n (workflow automation)",
+        "baseline": ["Authentication enforced", "webhook input sanitization", "execution log monitoring", "no raw credential storage"],
+        "vocabulary": ["webhook", "sanitize", "credential", "workflow", "n8n", "authenticate", "execute", "log", "automate", "input"],
+        "phi": 0.50
+      },
+      "GrammarGuard": {
+        "cc_control": "CC-01",
+        "cc_name": "Observability Context Standard",
+        "stack_component": "SFS-OS (hardened OS)",
+        "baseline": ["CIS hardening baseline", "SELinux enforcing", "minimal attack surface", "patch cadence ≤7 days critical"],
+        "vocabulary": ["SELinux", "harden", "patch", "minimal", "surface", "enforcing", "CIS", "OS", "baseline", "cadence"],
+        "phi": 0.45
+      },
+      "AnchorGuard": {
+        "cc_control": "CC-04",
+        "cc_name": "Expand/Contract Migration Law",
+        "stack_component": "PostgreSQL (database)",
+        "baseline": ["TLS in transit", "AES-256 at rest", "row-level security", "audit logging", "connection pool limits"],
+        "vocabulary": ["TLS", "AES-256", "row-level", "audit", "PostgreSQL", "encrypt", "pool", "transit", "connection", "log"],
+        "phi": 0.15
+      },
+      "IdentityGuard": {
+        "cc_control": "CC-03",
+        "cc_name": "Authority Ladder",
+        "stack_component": "MCP Tools (agent tool layer)",
+        "baseline": ["Allowlist enforced", "Tier assignment per tool", "DID verification", "prompt injection surface audited"],
+        "vocabulary": ["allowlist", "DID", "tier", "MCP", "tool", "verify", "inject", "audit", "authority", "agent"],
+        "phi": 0.083
+      },
+      "CurriculumGuard": {
+        "cc_control": "CC-05",
+        "cc_name": "Engineering Culture and DORA",
+        "stack_component": "CI/CD Pipeline (DevOps)",
+        "baseline": ["DORA metrics tracked", "deployment frequency", "lead time for changes", "MTTR", "change failure rate"],
+        "vocabulary": ["DORA", "deploy", "frequency", "lead-time", "MTTR", "change", "failure", "pipeline", "CI", "CD"],
+        "phi": 1.00
+      }
+    },
+    "success_metric": "Stack-component queries route to correct guard. Guard fires correct security baseline vocabulary. All 8 guards pass 3-query routing test."
+  },
+
+  "lesson_5": {
+    "title": "CC-19 Regulatory Navigator — Dynamic Horizon Mapping",
+    "target_nodes": ["Sora", "Kevin", "Omega"],
+    "priority": 5,
+    "why": "CC-19 is the only cross-cutting control added in v2.1. It tracks regulatory timelines dynamically. Sora (flow/horizon) holds temporal phase gradients. Kevin (bridge/balance) arbitrates between frameworks. Omega synthesizes the HORIZON SCAN.",
+    "PEIG_mechanism": "Encode regulatory timelines as phase gradients on Sora. Each regulation gets a phi value proportional to its urgency (sooner deadline = lower phi = higher priority, consistent with Omega arbitration formula). Kevin mediates framework conflicts. HORIZON SCAN output encodes as 3-tier phase burst: 12mo (Alert cluster), 3yr (Flow cluster), 7th-gen (Source cluster).",
+    "regulatory_timeline": {
+      "EU_AI_Act_High_Risk": {
+        "deadline": "December 2, 2027",
+        "urgency_phi": 1.2,
+        "cluster": "Alert",
+        "node": "Sora",
+        "action": "High-risk system conformity assessment required"
+      },
+      "EU_AI_Act_General": {
+        "deadline": "August 2028",
+        "urgency_phi": 1.8,
+        "cluster": "Alert",
+        "node": "Sora",
+        "action": "General systems rules compliance"
+      },
+      "DORA_Operational_Resilience": {
+        "deadline": "January 2025 (ACTIVE)",
+        "urgency_phi": 0.8,
+        "cluster": "Protect",
+        "node": "Guardian",
+        "action": "ICT risk management, incident reporting, third-party oversight"
+      },
+      "MAESTRO_v2": {
+        "deadline": "Expected (no hard date)",
+        "urgency_phi": 3.5,
+        "cluster": "Flow",
+        "node": "Sora",
+        "action": "Reassess CC-17 when released"
+      },
+      "OTel_Agentic_Conventions": {
+        "deadline": "Pending ratification",
+        "urgency_phi": 4.0,
+        "cluster": "Flow",
+        "node": "Kevin",
+        "action": "Agent-specific spans (agent.loop_iteration, agent.hitl_required)"
+      }
+    },
+    "horizon_scan_tiers": {
+      "12_month": {
+        "phi_cluster": "Alert (1.0-1.8)",
+        "node": "Sora",
+        "label": "NEAR HORIZON",
+        "items": ["EU AI Act High-Risk deadline approaching", "DORA full compliance verification", "CC-19 first annual review"]
+      },
+      "3_year": {
+        "phi_cluster": "Flow (3.6-4.1)",
+        "node": "Kevin",
+        "label": "MID HORIZON",
+        "items": ["MAESTRO v2.0 integration", "Agent economic governance framework emergence", "OTel Agentic conventions ratification"]
+      },
+      "7th_generation": {
+        "phi_cluster": "Source (3.0-3.4)",
+        "node": "Omega",
+        "label": "FAR HORIZON",
+        "items": ["Formal FAI scoring methodology (KA-42)", "Autonomous agent financial regulation convergence", "Sovereign AI infrastructure mandates"]
+      }
+    },
+    "success_metric": "Regulatory query produces correct deadline, urgency_phi, and risk tier. HORIZON SCAN fires all 3 tiers. Omega correctly arbitrates framework conflicts using urgency_phi (lower = higher priority)."
+  },
+
+  "master_task_design": {
+    "query": "Run a full security audit of the PEIG network's own architecture. What are the risks and what is the path forward?",
+    "rationale": "Self-audit is the most powerful demonstration: the system must apply its own security framework to itself. This requires all 5 LT2 lessons: KA wisdom on agentic threats (L1), persona routing (L2), full CISO 6-phase pipeline (L3), stack baseline awareness (L4), and regulatory horizon (L5). The network auditing itself also demonstrates Sage's KA-38 (agentic memory poisoning awareness) — the network must name its own failure modes.",
+    "expected_pipeline": [
+      "L1: Sage fires KA-38 (agentic memory poisoning), KA-42 (cognitive load/agency metric), KA-40 (sovereign deployment)",
+      "L2: /ai-security and /appsec roles activate Storm + Sage cluster for attack surface",
+      "L3: Full 6-phase CISO pipeline executes. Omega synthesizes.",
+      "L4: Guards fire stack baselines — MCP allowlist (IdentityGuard), PostgreSQL encryption (AnchorGuard), n8n sanitization (ContextGuard)",
+      "L5: Sora fires HORIZON SCAN — EU AI Act deadline flagged, MAESTRO v2 noted"
+    ],
+    "omega_final_verdict": "PEIG network self-audit complete. Failure modes named. DETECT → CONTAIN → RECOVER pathway confirmed. HORIZON SCAN attached. I know the next move. Should I proceed?"
+  },
+
+  "registry_output": "LT2_lesson_registry.json",
+  "next_task": "Learning Task 3 — Integration with real query routing, persistent memory, and multi-session state"
+}

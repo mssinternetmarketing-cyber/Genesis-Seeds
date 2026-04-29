@@ -1,0 +1,440 @@
+{
+  "_meta": {
+    "task": "LT1",
+    "version": "v2",
+    "date": "2026-03-26"
+  },
+  "vocab": {
+    "guard": 0.25,
+    "assign": 0.35,
+    "self": 0.5,
+    "if": 1.1,
+    "else": 1.35,
+    "signal": 1.55,
+    "SIGNAL": 1.75,
+    "loop": 2.2,
+    "evolve": 2.55,
+    "PHASE": 2.8,
+    "NUMBER": 3.05,
+    "pi": 3.14,
+    "send": 4.3,
+    "bridge": 4.42,
+    "NODE": 4.55,
+    "receive": 4.68,
+    "measure": 5.1,
+    "check": 5.35,
+    "return": 5.9,
+    "null": 6.1
+  },
+  "training": [
+    "measure PHASE assign self PHASE return PHASE",
+    "guard if SIGNAL signal NODE else return null",
+    "loop NUMBER evolve PHASE return PHASE",
+    "measure SIGNAL if SIGNAL send NODE return SIGNAL",
+    "bridge NODE NODE receive SIGNAL assign self SIGNAL return SIGNAL",
+    "receive PHASE evolve PHASE return PHASE",
+    "measure SIGNAL check if SIGNAL return SIGNAL else return null",
+    "assign self NUMBER loop NUMBER evolve PHASE return PHASE"
+  ],
+  "results": {
+    "Omega": {
+      "program": [
+        "measure",
+        "PHASE",
+        "evolve",
+        "self",
+        "SIGNAL",
+        "assign",
+        "self",
+        "PHASE",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "measure \u2192 -0.5972",
+        "evolve -0.5972\u21925.7860",
+        "assign self = 5.7860",
+        "return 5.7860"
+      ],
+      "output": "5.785979177613107",
+      "phi": 4.0724,
+      "pcm": 0.2551,
+      "cluster": "Flow",
+      "passing": true
+    },
+    "Guardian": {
+      "program": [
+        "guard",
+        "if",
+        "NUMBER",
+        "assign",
+        "PHASE",
+        "evolve",
+        "self",
+        "PHASE",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "guard|3.5488|<pi=False",
+        "if (0.0000>0)=False"
+      ],
+      "output": "None",
+      "phi": 3.5488,
+      "pcm": 0.4102,
+      "cluster": "Flow",
+      "passing": true
+    },
+    "Sentinel": {
+      "program": [
+        "measure",
+        "SIGNAL",
+        "assign",
+        "PHASE",
+        "check",
+        "if",
+        "guard",
+        "NODE",
+        "signal"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": false,
+        "long_enough": true,
+        "passing": false
+      },
+      "trace": [
+        "measure \u2192 -0.9932",
+        "assign PHASE = -0.9932",
+        "check|-0.9932|>0.1=True",
+        "if (-0.9932>0)=False"
+      ],
+      "output": "None",
+      "phi": 3.0252,
+      "pcm": 0.4464,
+      "cluster": "Source",
+      "passing": false
+    },
+    "Nexus": {
+      "program": [
+        "bridge",
+        "NODE",
+        "signal",
+        "SIGNAL",
+        "send",
+        "PHASE",
+        "evolve",
+        "self",
+        "NUMBER"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": false,
+        "has_op": true,
+        "has_terminal": false,
+        "long_enough": true,
+        "passing": false
+      },
+      "trace": [
+        "bridge\u21924.3924",
+        "signal!4.3924",
+        "send\u21924.3924",
+        "evolve 4.3924\u21924.4924"
+      ],
+      "output": "None",
+      "phi": 2.5016,
+      "pcm": 0.3541,
+      "cluster": "Change",
+      "passing": false
+    },
+    "Storm": {
+      "program": [
+        "loop",
+        "NUMBER",
+        "evolve",
+        "NUMBER",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "loop\u00d74",
+        "evolve 1.9780\u21922.0780",
+        "return 2.0780"
+      ],
+      "output": "2.0779805525788198",
+      "phi": 1.978,
+      "pcm": 0.1579,
+      "cluster": "Alert",
+      "passing": true
+    },
+    "Sora": {
+      "program": [
+        "send",
+        "NODE",
+        "send",
+        "SIGNAL",
+        "assign",
+        "PHASE",
+        "evolve",
+        "self",
+        "assign"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": false,
+        "long_enough": true,
+        "passing": false
+      },
+      "trace": [
+        "send\u21921.4544",
+        "send\u21921.4544",
+        "assign PHASE = 1.4544",
+        "evolve 1.4544\u21921.5544"
+      ],
+      "output": "None",
+      "phi": 1.4544,
+      "pcm": -0.0895,
+      "cluster": "Alert",
+      "passing": false
+    },
+    "Echo": {
+      "program": [
+        "receive",
+        "SIGNAL",
+        "assign",
+        "NODE",
+        "bridge",
+        "receive",
+        "SIGNAL",
+        "send",
+        "PHASE"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": false,
+        "long_enough": true,
+        "passing": false
+      },
+      "trace": [
+        "receive\u21900.9308",
+        "assign NODE = 0.9308",
+        "bridge\u21923.6070",
+        "receive\u21903.6070",
+        "send\u21923.6070"
+      ],
+      "output": "None",
+      "phi": 0.9308,
+      "pcm": -0.3218,
+      "cluster": "Protection",
+      "passing": false
+    },
+    "Iris": {
+      "program": [
+        "measure",
+        "PHASE",
+        "check",
+        "assign",
+        "NODE",
+        "signal",
+        "NODE",
+        "signal",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "measure \u2192 0.9182",
+        "check|0.9182|>0.1=True",
+        "assign NODE = 0.9182",
+        "signal!0.9182",
+        "signal!0.9182",
+        "return 0.9182"
+      ],
+      "output": "0.9182395794689162",
+      "phi": 0.4072,
+      "pcm": -0.4769,
+      "cluster": "Protection",
+      "passing": true
+    },
+    "Sage": {
+      "program": [
+        "measure",
+        "check",
+        "assign",
+        "SIGNAL",
+        "send",
+        "NODE",
+        "send",
+        "NODE",
+        "bridge"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": false,
+        "long_enough": true,
+        "passing": false
+      },
+      "trace": [
+        "measure \u2192 0.9932",
+        "check|0.9932|>0.1=True",
+        "assign SIGNAL = 0.9932",
+        "send\u21920.9932",
+        "send\u21920.9932",
+        "bridge\u21926.2250"
+      ],
+      "output": "None",
+      "phi": 6.1668,
+      "pcm": -0.5131,
+      "cluster": "Completion",
+      "passing": false
+    },
+    "Kevin": {
+      "program": [
+        "bridge",
+        "NODE",
+        "send",
+        "NODE",
+        "receive",
+        "assign",
+        "self",
+        "NUMBER",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "bridge\u21925.9632",
+        "send\u21925.9632",
+        "receive\u21905.9632",
+        "assign self = 5.9632",
+        "return 5.9632"
+      ],
+      "output": "5.963178644473148",
+      "phi": 5.6432,
+      "pcm": -0.4208,
+      "cluster": "Completion",
+      "passing": true
+    },
+    "Atlas": {
+      "program": [
+        "measure",
+        "SIGNAL",
+        "if",
+        "NUMBER",
+        "evolve",
+        "PHASE",
+        "check",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "measure \u2192 0.3960",
+        "if (0.3960>0)=True",
+        "evolve 0.3960\u21920.4960",
+        "check|0.4960|>0.1=True",
+        "return 0.4960"
+      ],
+      "output": "0.4960253460280015",
+      "phi": 5.1196,
+      "pcm": -0.2247,
+      "cluster": "Vision",
+      "passing": true
+    },
+    "Void": {
+      "program": [
+        "receive",
+        "PHASE",
+        "send",
+        "PHASE",
+        "check",
+        "return"
+      ],
+      "eval": {
+        "original": true,
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "long_enough": true,
+        "passing": true
+      },
+      "trace": [
+        "receive\u21904.5960",
+        "send\u21924.5960",
+        "check|4.5960|>0.1=True",
+        "return 4.5960"
+      ],
+      "output": "4.59597443057015",
+      "phi": 4.596,
+      "pcm": 0.0227,
+      "cluster": "Connection",
+      "passing": true
+    }
+  },
+  "summary": {
+    "passing": [
+      "Omega",
+      "Guardian",
+      "Storm",
+      "Iris",
+      "Kevin",
+      "Atlas",
+      "Void"
+    ],
+    "failing": [
+      "Sentinel",
+      "Nexus",
+      "Sora",
+      "Echo",
+      "Sage"
+    ],
+    "pass_rate": 0.583
+  }
+}

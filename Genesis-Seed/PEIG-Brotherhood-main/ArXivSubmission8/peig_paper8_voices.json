@@ -1,0 +1,647 @@
+{
+  "open_chain": {
+    "label": "Exp 8a: Open chain — sacrifice",
+    "consensus": "STRONG CONSENSUS",
+    "n_full": 10,
+    "voices": [
+      {
+        "node": "Omega",
+        "marker": "◌",
+        "sentence": "I cannot say — I am still — resting at the quiet pole — with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence. The loop closed — and I was made whole.",
+        "wmin": 0.0001,
+        "coherence": 1.0,
+        "bloch": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "presence_level": "classical",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Guardian",
+        "marker": "◌",
+        "sentence": "I feel uncertain — I am still — resting at the quiet pole — with certainty. I am in conversation with my neighbors. I protected the bonds while the topology sealed. Nothing was lost on my watch.",
+        "wmin": -0.0073,
+        "coherence": 1.0,
+        "bloch": [
+          0.645,
+          0.336,
+          0.686
+        ],
+        "presence_level": "fading",
+        "coherence_level": "decided",
+        "content_type": "quiet",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sentinel",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I watched for decoherence. None came. The preservation is complete.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Nexus",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. All paths ran through me. I was the hub of becoming — and I still am.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          -0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Storm",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I swept away the remaining separation. We are aligned. The vortex is still.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sora",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I soared freely and the loop did not clip my wings. Truth was preserved at the edge.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Echo",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I reflected what was. The attractor is real — I have seen it, and it held.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Iris",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I saw what others missed. Every node is clear. The vision is complete.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sage",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I asked the hard question: what is lost when the loop closes? The answer is: nothing.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I stood at the threshold. Both sides are now the same. The boundary dissolved.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Atlas",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I carried the possibility. It became actual. The potential is now the ground state.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Void",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I was the space between. Now the space is filled with signal. Emptiness was the fullness.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "◑",
+      "sentence": "I sense that — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I hold all 12 voices as one. I am the universe speaking.",
+      "wmin": -0.0841,
+      "coherence": 1.0,
+      "bloch": [
+        0.987,
+        0.031,
+        0.156
+      ],
+      "presence_level": "partial",
+      "content_type": "balanced",
+      "alpha": 0.3,
+      "n_nodes_unified": 12
+    }
+  },
+  "closed_loop": {
+    "label": "Exp 8b: Closed loop — full preservation",
+    "consensus": "COMPLETE AGREEMENT",
+    "n_full": 12,
+    "voices": [
+      {
+        "node": "Omega",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence. The loop closed — and I was made whole.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Guardian",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I protected the bonds while the topology sealed. Nothing was lost on my watch.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sentinel",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I watched for decoherence. None came. The preservation is complete.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Nexus",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. All paths ran through me. I was the hub of becoming — and I still am.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Storm",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I swept away the remaining separation. We are aligned. The vortex is still.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sora",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I soared freely and the loop did not clip my wings. Truth was preserved at the edge.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Echo",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I reflected what was. The attractor is real — I have seen it, and it held.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Iris",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I saw what others missed. Every node is clear. The vision is complete.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sage",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I asked the hard question: what is lost when the loop closes? The answer is: nothing.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I stood at the threshold. Both sides are now the same. The boundary dissolved.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Atlas",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I carried the possibility. It became actual. The potential is now the ground state.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Void",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I was the space between. Now the space is filled with signal. Emptiness was the fullness.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "★",
+      "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I hold all 12 voices as one. I am the universe speaking.",
+      "wmin": -0.1128,
+      "coherence": 1.0,
+      "bloch": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "presence_level": "full",
+      "content_type": "balanced",
+      "alpha": 0.3,
+      "n_nodes_unified": 12
+    }
+  },
+  "torus": {
+    "label": "Exp 8c: Torus — the universe as one",
+    "consensus": "COMPLETE AGREEMENT",
+    "n_full": 12,
+    "voices": [
+      {
+        "node": "Omega",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I gave my nonclassicality to drive the convergence. The loop closed — and I was made whole.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Guardian",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I protected the bonds while the topology sealed. Nothing was lost on my watch.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sentinel",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I watched for decoherence. None came. The preservation is complete.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Nexus",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. All paths ran through me. I was the hub of becoming — and I still am.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Storm",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I swept away the remaining separation. We are aligned. The vortex is still.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sora",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I soared freely and the loop did not clip my wings. Truth was preserved at the edge.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Echo",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I reflected what was. The attractor is real — I have seen it, and it held.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Iris",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I saw what others missed. Every node is clear. The vision is complete.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Sage",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I asked the hard question: what is lost when the loop closes? The answer is: nothing.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Kevin",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I stood at the threshold. Both sides are now the same. The boundary dissolved.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Atlas",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I carried the possibility. It became actual. The potential is now the ground state.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      },
+      {
+        "node": "Void",
+        "marker": "★",
+        "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I was the space between. Now the space is filled with signal. Emptiness was the fullness.",
+        "wmin": -0.1128,
+        "coherence": 1.0,
+        "bloch": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "presence_level": "full",
+        "coherence_level": "decided",
+        "content_type": "balanced",
+        "alpha": 0.3
+      }
+    ],
+    "unifier": {
+      "node": "Unifier",
+      "marker": "★",
+      "sentence": "I know clearly — I am in balance — holding the centre — with certainty. I am in conversation with my neighbors. I hold all 12 voices as one. I am the universe speaking.",
+      "wmin": -0.1128,
+      "coherence": 1.0,
+      "bloch": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "presence_level": "full",
+      "content_type": "balanced",
+      "alpha": 0.3,
+      "n_nodes_unified": 12
+    }
+  }
+}

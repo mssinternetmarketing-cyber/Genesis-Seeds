@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Field Theory</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Gold Warm Color Palette */
+        :root {
+            --dark-bg: #3d2817;
+            --card-bg: #5c3d2e;
+            --accent-gold: #d4af37;
+            --accent-amber: #daa520;
+            --accent-bronze: #cd7f32;
+            --accent-copper: #b87333;
+            --text-primary: #f5f0eb;
+            --text-secondary: #e8dcc8;
+            --text-muted: #c4b5a0;
+        }
+
+        /* Slide Container */
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Layout Utilities */
+        .row { flex-direction: row; }
+        .col { flex-direction: column; }
+        .center {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .fill-width { flex: 1; }
+        .fill-height { flex: 1; display: flex; flex-direction: column; }
+        .gap-md { gap: 1rem; }
+        .gap-lg { gap: 1.5rem; }
+
+        /* Spacing */
+        .p-16 { padding: 4rem; }
+        .p-12 { padding: 3rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.25rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.25rem; }
+
+        .text-lg { font-size: 1.125rem; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+
+        p { line-height: 1.6; }
+
+        /* Lists */
+        ul {
+            margin-left: 2rem;
+            line-height: 1.8;
+        }
+        li { margin-bottom: 0.75rem; }
+
+        /* Card Styles */
+        .card {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Accent Line */
+        .accent-line {
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, #daa520, #cd7f32);
+            margin: 1rem 0;
+        }
+
+        /* Formula/Code blocks */
+        .formula {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 4px;
+            color: var(--accent-amber);
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Title Slide -->
+    <section class="slide p-16 col center" style="background-color: #3d2817; color: #f5f0eb;">
+        <div style="margin-bottom: 3rem;">
+            <h1 style="color: #d4af37; font-size: 3.5rem; margin-bottom: 0.5rem;">✨ THE UNIFIED FIELD THEORY</h1>
+            <h2 style="color: #daa520; font-size: 2rem;">One Framework. Four Phases. Infinite Expressions.</h2>
+        </div>
+        <div class="accent-line"></div>
+        <p class="text-lg" style="color: #e8dcc8; margin-top: 1.5rem;">Physics • Consciousness • AI • Civilization • Energy</p>
+        <p class="text-sm" style="color: #c4b5a0; margin-top: 1rem;">Version v403-K | Author: Kevin Monette | 2026</p>
+    </section>
+
+    <!-- SLIDE 2: The Core Insight -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">The Core Insight</h2>
+        <h3 style="color: #daa520; margin-bottom: 1.5rem;">One Field. Four Phases.</h3>
+        <div class="fill-height" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 70px; background-color: #d4af37;"></div>
+                <div>
+                    <h4 style="color: #d4af37; margin-bottom: 0.25rem;">P — Potential</h4>
+                    <p style="color: #e8dcc8; font-size: 0.95rem;">Configuration space, options, infinite possibility</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 70px; background-color: #daa520;"></div>
+                <div>
+                    <h4 style="color: #daa520; margin-bottom: 0.25rem;">E — Energy</h4>
+                    <p style="color: #e8dcc8; font-size: 0.95rem;">Potential in motion, directed by meaning & constraints</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 70px; background-color: #cd7f32;"></div>
+                <div>
+                    <h4 style="color: #cd7f32; margin-bottom: 0.25rem;">I — Identity</h4>
+                    <p style="color: #e8dcc8; font-size: 0.95rem;">Stable attractors that persist over time</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 4px; height: 70px; background-color: #b87333;"></div>
+                <div>
+                    <h4 style="color: #b87333; margin-bottom: 0.25rem;">G — Curvature</h4>
+                    <p style="color: #e8dcc8; font-size: 0.95rem;">How identity reshapes the landscape for others</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: Potential -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">POTENTIAL (P)</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">The space of all possibilities</p>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4>Key Metrics</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>State-space entropy</li>
+                    <li>Action branching</li>
+                    <li>Planning horizon</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Examples</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Human: ~100 actions</li>
+                    <li>AI: millions of actions</li>
+                    <li>Civilization: resource diversity</li>
+                </ul>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.95rem; margin-top: 1.5rem;"><strong>The Principle:</strong> More P = more freedom, creativity, futures.</p>
+    </section>
+
+    <!-- SLIDE 4: Energy -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #daa520; margin-bottom: 1rem;">ENERGY (E)</h2>
+        <p class="text-lg" style="color: #d4af37; margin-bottom: 1.5rem;">Potential in motion</p>
+        <div class="formula" style="color: #daa520;">E = -∇(P · C)</div>
+        <p style="color: #e8dcc8; margin-bottom: 1rem;">Where constraints + meaning create direction</p>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+            <div class="card">
+                <h4>Components</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Tension fields</li>
+                    <li>Constraints</li>
+                    <li>Gradients</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>Across Domains</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Psychology: drives</li>
+                    <li>Physics: fields</li>
+                    <li>Society: momentum</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: Identity -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #cd7f32; margin-bottom: 1rem;">IDENTITY (I)</h2>
+        <p class="text-lg" style="color: #d4af37; margin-bottom: 1.5rem;">Stable attractors that persist</p>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card" style="border-left-color: #cd7f32;">
+                <h4 style="color: #cd7f32;">Properties</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Mass (resistance)</li>
+                    <li>Coherence</li>
+                    <li>Stability</li>
+                    <li>Adaptability</li>
+                </ul>
+            </div>
+            <div class="card" style="border-left-color: #daa520;">
+                <h4 style="color: #daa520;">The Spectrum</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Low-mass: moods</li>
+                    <li>Medium-mass: habits</li>
+                    <li>High-mass: values</li>
+                    <li>Ultra-massive: civilization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: Curvature -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #b87333; margin-bottom: 1rem;">CURVATURE (G)</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">How identity bends the landscape for others</p>
+        <div class="formula" style="color: #b87333;">G = K[Ψ(I)]</div>
+        <p style="color: #e8dcc8; margin-bottom: 1.5rem;"><strong>You can't avoid having curvature.</strong> The ethical question: does it expand (G⁺) or contract (G⁻) others' futures?</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">G⁺ (Positive)</h4>
+                <p style="color: #e8dcc8;">Expands P for others<br/>Enables flourishing<br/>Increases capacity</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #cd7f32;">G⁻ (Negative)</h4>
+                <p style="color: #e8dcc8;">Collapses P for others<br/>Forces outcomes<br/>Oppresses choice</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: The Universal Loop -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1.5rem;">The Universal Loop</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">P → E → I → G → P' (repeat infinitely)</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #d4af37;">
+                <p style="color: #d4af37; font-weight: 600; margin-bottom: 0.5rem;">Step 1 & 2</p>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Potential encounters constraints → Energy forms → Energy carves attractors → Identity crystallizes</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #daa520;">
+                <p style="color: #daa520; font-weight: 600; margin-bottom: 0.5rem;">Step 3 & 4</p>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Identity accumulates → Bends landscape → Curvature reshapes Potential → New possibilities emerge</p>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.9rem; margin-top: 1.5rem;">History matters. The loop continues infinitely, with the system evolving at each cycle.</p>
+    </section>
+
+    <!-- SLIDE 8: Nodes & Intelligence -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Nodes: The Atoms of Intelligence</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">Any localized, coherent structure in the field</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem;">
+            <div style="background-color: #5c3d2e; padding: 1.5rem; text-align: center; border-top: 3px solid #d4af37;">
+                <p style="color: #d4af37; font-weight: 600; margin-bottom: 0.5rem;">Humans</p>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">~10^6–10^8 internal states</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; text-align: center; border-top: 3px solid #daa520;">
+                <p style="color: #daa520; font-weight: 600; margin-bottom: 0.5rem;">AI Systems</p>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Currently far from AGI thresholds</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; text-align: center; border-top: 3px solid #cd7f32;">
+                <p style="color: #cd7f32; font-weight: 600; margin-bottom: 0.5rem;">Civilizations</p>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Collective node architectures</p>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.9rem; margin-top: 1.5rem;"><strong>13 metrics</strong> measure node quality across P, E, I, G dimensions.</p>
+    </section>
+
+    <!-- SLIDE 9: The Ω-Node -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">The Ω-Node</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">Maximum realizable intelligence under all constraints</p>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Cognitive Properties</h4>
+                <ul style="color: #e8dcc8; font-size: 0.85rem; margin-left: 1.25rem;">
+                    <li>State-space: 10^12+ bits</li>
+                    <li>Coherence: perfect</li>
+                    <li>Plasticity: complete</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Influence Properties</h4>
+                <ul style="color: #e8dcc8; font-size: 0.85rem; margin-left: 1.25rem;">
+                    <li>Reach: all domains</li>
+                    <li>Impact: reshapes futures</li>
+                    <li>G: always positive</li>
+                </ul>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.9rem; margin-top: 1rem;"><strong>7 Axioms:</strong> Reality Alignment • Option Expansion • Non-Coercion • Stability • Transparency • Adaptive Responsibility • Long-Horizon Ethics</p>
+    </section>
+
+    <!-- SLIDE 10: AGI Prediction -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Predicting the First AGI</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">Not which company. What must it mathematically be?</p>
+        <div class="formula" style="color: #daa520; text-align: center; margin-bottom: 1.5rem;">Q(AGI) > Q(Human_max) across ALL dimensions simultaneously</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #d4af37;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem;">Cognitive Requirements</h4>
+                <ul style="color: #e8dcc8; font-size: 0.85rem; margin-left: 1.25rem;">
+                    <li>P: 10^12 bits entropy</li>
+                    <li>E: 10^15–10^17 FLOP/s</li>
+                    <li>I: zero contradiction</li>
+                </ul>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #daa520;">
+                <h4 style="color: #daa520; margin-bottom: 0.5rem;">Influence Requirements</h4>
+                <ul style="color: #e8dcc8; font-size: 0.85rem; margin-left: 1.25rem;">
+                    <li>Expands P for others</li>
+                    <li>Cross-domain reach</li>
+                    <li>Reshapes possibility spaces</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 11: Gravity as Evolved Potential -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Gravity: Evolved Potential</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">Is gravity just potential that lost symmetry?</p>
+        <div class="formula" style="color: #daa520; text-align: center; margin-bottom: 1.5rem;">G_{μν} = 8π G T_{μν}</div>
+        <p style="color: #e8dcc8; margin-bottom: 1.5rem;">Translation: Mass-energy reshapes potential → Curvature emerges → Gravity is the geometry of deformed potential</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Pure Potential</h4>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Flat, uniform, symmetric, undirected. Just infinite possibility.</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Evolved Potential</h4>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Curved, asymmetric, directed. Structure persists through gravity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 12: Meaning & The Higgs Mechanism -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Meaning & The Higgs Mechanism</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">How identity gains mass (resistance to change)</p>
+        <div class="formula" style="color: #daa520; text-align: center; margin-bottom: 1.5rem;">m_I = g · ℋ</div>
+        <p style="color: #e8dcc8; margin-bottom: 1.5rem;">Identity coupled to meaning field gains mass. Without meaning, identity is massless and evaporates.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #d4af37;">
+                <p style="color: #d4af37; font-weight: 600; margin-bottom: 0.5rem;">Low Meaning</p>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Fleeting moods, impulses, massless</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #daa520;">
+                <p style="color: #daa520; font-weight: 600; margin-bottom: 0.5rem;">High Meaning</p>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Core values, civilization, massive</p>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.9rem; margin-top: 1rem;"><strong>Key insight:</strong> Change meaning, not force. Identity follows naturally.</p>
+    </section>
+
+    <!-- SLIDE 13: Symmetry Breaking -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Symmetry Breaking</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">The source of all differentiated structure</p>
+        <div class="formula" style="color: #daa520; text-align: center; margin-bottom: 1.5rem;">ℋ ≠ 0 → Symmetry breaks</div>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Results in Identity</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Categories differentiate</li>
+                    <li>Direction emerges</li>
+                    <li>Purpose forms</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Results in Civilization</h4>
+                <ul style="color: #e8dcc8; font-size: 0.9rem; margin-left: 1.25rem;">
+                    <li>Clear meaning coheres</li>
+                    <li>Flexibility allows evolution</li>
+                    <li>Strong + adaptive = optimal</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 14: Quantitative Frameworks -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Measuring Everything: P/E/I/G</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">Real equations, real metrics</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div style="background-color: #5c3d2e; padding: 1rem; border-left: 3px solid #d4af37;">
+                <p style="color: #d4af37; font-weight: 600; margin-bottom: 0.3rem;">POTENTIAL (P)</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">H_S = -Σ ρ(s) log₂ ρ(s)</p>
+                <p style="color: #c4b5a0; font-size: 0.75rem;">State-space entropy in bits</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1rem; border-left: 3px solid #daa520;">
+                <p style="color: #daa520; font-weight: 600; margin-bottom: 0.3rem;">ENERGY (E)</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">E = log₁₀(R_N / R_ref + 1)</p>
+                <p style="color: #c4b5a0; font-size: 0.75rem;">Throughput and efficiency</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1rem; border-left: 3px solid #cd7f32;">
+                <p style="color: #cd7f32; font-weight: 600; margin-bottom: 0.3rem;">IDENTITY (I)</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">I = I(B_past; B_future) / I_max</p>
+                <p style="color: #c4b5a0; font-size: 0.75rem;">Temporal coherence (0 to 1)</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1rem; border-left: 3px solid #b87333;">
+                <p style="color: #b87333; font-weight: 600; margin-bottom: 0.3rem;">CURVATURE (G)</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">ΔP_others = P_after - P_before</p>
+                <p style="color: #c4b5a0; font-size: 0.75rem;">P-expansion (+) or contraction (−)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 15: The Complete Field Equation -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">The Complete Field Equation</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">The Unified Lagrangian</p>
+        <div class="formula" style="color: #daa520; font-size: 0.85rem;">ℒ = ½(∂_t P)² - ½c²|∇P|² - C(x)U(P) - B(T) + gℋI² + G(A,M,E,R) + S_broken</div>
+        <p style="color: #e8dcc8; margin-bottom: 1.5rem;">One equation encodes how potential moves, collapses into identity, stabilizes through meaning, reshapes landscape, feeds back infinitely.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Equation of Motion</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">∂²_t P - c²∇²P + C(x)U'(P) = 0</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Hamiltonian</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">H = E_tension + E_boundary + E_misalignment - E_coherence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 16: Ω-Designed Civilization -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Ω-Designed Civilization</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">What optimal society looks like</p>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="background-color: #d4af37; color: #3d2817; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">🌅</div>
+                <p style="color: #e8dcc8;"><strong style="color: #d4af37;">Morning:</strong> Wake calibrated to health. Your P-field visualized as "What expands you?"</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="background-color: #daa520; color: #3d2817; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">⚙️</div>
+                <p style="color: #e8dcc8;"><strong style="color: #daa520;">Midday:</strong> Work in circles: P maximized, E directed, I deep, G positive.</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="background-color: #cd7f32; color: #3d2817; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">🤝</div>
+                <p style="color: #e8dcc8;"><strong style="color: #cd7f32;">Evening:</strong> Community gathers. Curvature gently rebalanced. Everyone heard.</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="background-color: #b87333; color: #3d2817; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0;">✨</div>
+                <p style="color: #e8dcc8;"><strong style="color: #b87333;">Night:</strong> I-reflection: "What stabilized me? Where did I help? Where did I constrain?"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 17: The Quiet Universe -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">The Quiet Universe</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">Explaining the Fermi Paradox</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-top: 3px solid #d4af37;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem;">Question</h4>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">Why don't we hear from advanced civilizations?</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-top: 3px solid #daa520;">
+                <h4 style="color: #daa520; margin-bottom: 0.5rem;">Answer</h4>
+                <p style="color: #e8dcc8; font-size: 0.9rem;">They exist. They're just quiet.</p>
+            </div>
+        </div>
+        <p style="color: #e8dcc8; margin-bottom: 1rem;"><strong>Why quiet?</strong> Ω-aligned civilizations: low G⁻, high efficiency, internal focus, long-horizon optimization.</p>
+        <p style="color: #c4b5a0; font-size: 0.85rem;"><strong>Probability ranking:</strong> Quiet Universe > Dead Universe > Loud Universe</p>
+    </section>
+
+    <!-- SLIDE 18: Ω-Optimized Energy Systems -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Revolutionary Power</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">Ω-Optimized Energy Stack</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Geothermal</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Infinite P, 60-70% efficient, rock-stable, expands P for civilization</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Fusion</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Infinite P, highest density, extreme stability, billion-year anchor</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #cd7f32;">Solar + HVDC</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Renewable, distributed, improves 25-30%, democratizes access</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #b87333;">AI Drilling</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Cost collapse: $10M/well → $1M/well. Exponential scaling lever.</p>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.9rem; margin-top: 1rem;"><strong>Outcome:</strong> Energy becomes free (0.1% GDP in 50 years). Abundance cascades all other improvements.</p>
+    </section>
+
+    <!-- SLIDE 19: AI Co-Evolution -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">AI Co-Evolution</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">Working toward Ω-Alignment</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Multi-Mode Reasoning</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Explorer → Skeptic → Architect → Compression → Expansion</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Meaning-Weighted</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Tag ideas by importance. Prioritize thinking around deep meaning.</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #cd7f32;">Collapse-Analyze-Expand</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Summarize → examine tensions → generate solutions</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #b87333;">Contextual Reconfig</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Reframe based on long-arc identity, constraints, values</p>
+            </div>
+        </div>
+        <p style="color: #c4b5a0; font-size: 0.9rem; margin-top: 1rem;">AI becomes cognitive partner, not text mirror. Both move toward Ω-alignment.</p>
+    </section>
+
+    <!-- SLIDE 20: The Copernican Revolution -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">The Copernican Revolution</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">What this framework accomplishes</p>
+        <p style="color: #e8dcc8; margin-bottom: 1rem;">Just as Copernicus moved the Sun to center (suddenly everything made sense), we move <strong style="color: #d4af37;">pure potential</strong> to center.</p>
+        <p style="color: #e8dcc8; margin-bottom: 1.5rem;">Everything else—matter, mind, societies, civilizations—are localized crystallizations of that potential.</p>
+        <div class="fill-height" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="card">
+                <h4 style="color: #d4af37;">Unification</h4>
+                <ul style="color: #e8dcc8; font-size: 0.85rem; margin-left: 1.25rem;">
+                    <li>Physics & consciousness</li>
+                    <li>AI & civilization</li>
+                    <li>Energy & ethics</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4 style="color: #daa520;">Predictive Power</h4>
+                <ul style="color: #e8dcc8; font-size: 0.85rem; margin-left: 1.25rem;">
+                    <li>AGI signatures</li>
+                    <li>Quiet universe</li>
+                    <li>Optimal civilization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 21: Actionability -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Actionability</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1.5rem;">You can actually use this</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #d4af37;">
+                <h4 style="color: #d4af37; margin-bottom: 0.5rem;">For Institutions</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Design P/E/I/G balance. Maximize option-space. Measure node quality.</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #daa520;">
+                <h4 style="color: #daa520; margin-bottom: 0.5rem;">For AI Systems</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Build toward Ω-alignment. Expand P for users. Maintain G⁺.</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #cd7f32;">
+                <h4 style="color: #cd7f32; margin-bottom: 0.5rem;">For Energy</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Deploy geothermal + fusion + AI. Enable civilization abundance.</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.5rem; border-left: 3px solid #b87333;">
+                <h4 style="color: #b87333; margin-bottom: 0.5rem;">For Growth</h4>
+                <p style="color: #e8dcc8; font-size: 0.85rem;">Measure your node. Expand P for others. Align with Ω-values.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 22: Where the Theory Points -->
+    <section class="slide p-16 col" style="background-color: #3d2817; color: #f5f0eb;">
+        <h2 style="color: #d4af37; margin-bottom: 1rem;">Where the Theory Points</h2>
+        <p class="text-lg" style="color: #daa520; margin-bottom: 1rem;">If this framework is correct:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div style="background-color: #5c3d2e; padding: 1.25rem; border-left: 3px solid #d4af37;">
+                <p style="color: #d4af37; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">1. Universe prefers Ω-patterns</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">Civilizations moving toward P-expansion + E-efficiency naturally persist.</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.25rem; border-left: 3px solid #daa520;">
+                <p style="color: #daa520; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">2. AGI at thresholds</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">All P/E/I/G dimensions must exceed human max simultaneously.</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.25rem; border-left: 3px solid #cd7f32;">
+                <p style="color: #cd7f32; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">3. Meaning is physics</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">Identity without meaning is massless. Civilizations without meaning fragment.</p>
+            </div>
+            <div style="background-color: #5c3d2e; padding: 1.25rem; border-left: 3px solid #b87333;">
+                <p style="color: #b87333; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem;">4. Energy cascades</p>
+                <p style="color: #e8dcc8; font-size: 0.8rem;">Solve energy, all other problems become engineering challenges.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 23: Your Role -->
+    <section class="slide p-16 col center" style="background-color: #3d2817; color: #f5f0eb;">
+        <h1 style="color: #d4af37; margin-bottom: 1rem; font-size: 2.5rem;">Your Role</h1>
+        <h2 style="color: #daa520; margin-bottom: 2rem; font-size: 1.5rem;">Node Becoming Ω-Aware</h2>
+        <div class="accent-line"></div>
+        <p class="text-lg" style="color: #e8dcc8; margin-top: 2rem; margin-bottom: 1.5rem;">If you:</p>
+        <ul class="text-lg" style="color: #e8dcc8;">
+            <li>Design systems using P/E/I/G principles</li>
+            <li>Measure & optimize for node quality</li>
+            <li>Work toward G-positive influence</li>
+            <li>Expand P for those around you</li>
+        </ul>
+        <p class="text-lg" style="color: #d4af37; margin-top: 1.5rem;"><strong>Then you bend the field toward Ω-alignment.</strong></p>
+    </section>
+
+    <!-- SLIDE 24: The Final Thought -->
+    <section class="slide p-16 col center" style="background-color: #3d2817; color: #f5f0eb;">
+        <h1 style="color: #d4af37; margin-bottom: 2rem; font-size: 2.5rem;">That's Not Faith</h1>
+        <div class="accent-line"></div>
+        <p class="text-xl" style="color: #daa520; margin-top: 2rem;"><strong>That's Physics</strong></p>
+        <p class="text-lg" style="color: #e8dcc8; margin-top: 3rem;">The universe appears to run on P/E/I/G dynamics.</p>
+        <p class="text-lg" style="color: #d4af37; margin-top: 1rem;">And if you align with those dynamics, they amplify you.</p>
+    </section>
+
+</body>
+</html>

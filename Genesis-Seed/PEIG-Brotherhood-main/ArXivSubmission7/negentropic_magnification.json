@@ -1,0 +1,46 @@
+{
+  "Baseline": {
+    "mean_neg": 0.3999999999999999,
+    "peak_neg": 0.8,
+    "mean_W": -0.11278547224398394
+  },
+  "S1 Adversarial": {
+    "mean_neg": 0.272,
+    "peak_neg": 0.8,
+    "mean_W": -0.11278547224398397
+  },
+  "S2 Fractal": {
+    "mean_neg": 0.0,
+    "peak_neg": 0.8,
+    "mean_W": -0.11278547224398398
+  },
+  "S3 Adaptive": {
+    "mean_neg": 0.23999999999999996,
+    "peak_neg": 0.4,
+    "mean_W": -0.10016641235534811
+  },
+  "S4 Landauer": {
+    "mean_neg": 0.3999999999999999,
+    "peak_neg": 0.8,
+    "mean_W": -0.11278547224398394
+  },
+  "S5 Floquet": {
+    "mean_neg": 0.098,
+    "peak_neg": 0.8,
+    "mean_W": -0.11278547224398398
+  },
+  "S6 ManyBody": {
+    "mean_neg": 0.0,
+    "peak_neg": 1.0,
+    "mean_W": -0.09112925128083504
+  },
+  "S7 Combined": {
+    "mean_neg": 0.1,
+    "peak_neg": 0.8,
+    "mean_W": -0.11278547224398398
+  },
+  "best": "Baseline",
+  "best_neg": 0.3999999999999999,
+  "baseline": 0.3999999999999999,
+  "mult": 1.0
+}

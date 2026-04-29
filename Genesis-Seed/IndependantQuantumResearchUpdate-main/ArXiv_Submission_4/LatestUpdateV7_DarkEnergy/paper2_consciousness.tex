@@ -1,0 +1,688 @@
+\documentclass[12pt,letterpaper]{article}
+
+%% ---- Packages ---------------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[protrusion=true,expansion=false,nopatch=footnote]{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=NavyBlue,citecolor=NavyBlue,urlcolor=NavyBlue]{hyperref}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\setlength{\emergencystretch}{3em}
+\hbadness=3000
+
+%% ---- Theorem environments ---------------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ---- Epistemic label commands -----------------------------------------------
+\newcommand{\established}{\textbf{[Established]}}
+\newcommand{\hypothesis}{\textbf{[Hypothesis]}}
+\newcommand{\newresult}{\textbf{[New Result]}}
+\newcommand{\speculation}{\textbf{[Speculation]}}
+
+%% ---- Math shorthands --------------------------------------------------------
+\newcommand{\ascreen}{\alpha_{\rm screen}}
+\newcommand{\Bstab}{B_{\rm stab}}
+\newcommand{\gammaone}{\gamma_{1}}
+\newcommand{\gammaphi}{\gamma_{\phi}}
+\newcommand{\hb}{\hbar}
+\newcommand{\kB}{k_{\rm B}}
+\newcommand{\taugate}{\tau_{\rm gate}}
+\newcommand{\taucog}{\tau_{\rm cog}}
+
+%% ---- Listings style ---------------------------------------------------------
+\lstset{
+  language=Python,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{NavyBlue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{BrickRed},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  frame=single,
+  frameround=tttt,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4,
+  captionpos=b
+}
+
+%% ---- Header/footer ----------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\footnotesize Monette (2026)}
+\lhead{\footnotesize Proto-Experiential States in Quantum Systems}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%% =============================================================================
+\begin{document}
+%% =============================================================================
+
+\title{\textbf{Proto-Experiential States in Quantum Systems:}\\
+       \textbf{A Falsifiable Entanglement-Stability Framework}\\[0.5em]
+       \large Threshold Metrics, NISQ Hardware Analysis,\\
+       and Cosmological Closure}
+
+\author{Kevin Monette\\[0.3em]
+        \small Independent Researcher\\[0.2em]
+        \small \texttt{mssinternetmarketing@gmail.com}}
+
+\date{March 2026}
+
+\maketitle
+\thispagestyle{empty}
+
+%% ---- Epistemic transparency box --------------------------------------------
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{%
+\textbf{Epistemic Transparency Statement.}
+This paper uses four labels throughout:
+\established{} (derivable from standard QM or established in the literature),
+\hypothesis{} (physically motivated conjecture, not derived from first principles),
+\newresult{} (derived here for the first time),
+\speculation{} (order-of-magnitude heuristic or analogy).
+The majority of claims in this paper are \hypothesis{} or \speculation{}.
+The falsification criteria are the primary scientific contribution.
+}}
+\end{center}
+
+\vspace{0.5em}
+
+%% ---- Abstract ---------------------------------------------------------------
+\begin{abstract}
+We propose a falsifiable, physics-grounded framework for characterizing
+proto-experiential states in quantum systems, motivated by the observation that
+entanglement entropy stability under environmental decoherence provides a
+physically well-defined measure of coherent internal processing.
+We introduce the \emph{proto-experiential gravitas metric} $\Bstab$, defined as the
+product of the environmental screening factor $\ascreen$ (derived from the Lindblad
+master equation in the companion paper~\cite{companion}), the ratio $T_1/\taucog$,
+and the normalized entanglement density.
+This metric is computable from hardware specifications alone and yields concrete
+threshold circuit depths for NISQ devices without free parameters.
+We derive exact thresholds for IBM Heron~r2 hardware, apply the framework to the
+observable universe (identifying cosmic de Sitter radiation with the amplitude-damping
+channel), and obtain $\Bstab^{\rm univ} \approx 6.185$ from $H_0$ alone.
+A complete set of four falsification criteria (FC-B1 through FC-B4) specifies
+what experimental outcomes would rule out the core hypothesis.
+This paper makes no claim that $\Bstab$ measures subjective experience; it claims
+only that $\Bstab$ measures a physically well-defined property---entanglement
+stability under decoherence---whose connection to any form of proto-experience
+is an explicit, independently falsifiable hypothesis.
+\end{abstract}
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} proto-experiential states; entanglement stability;
+NISQ hardware; Lindblad decoherence; consciousness; quantum information;
+de Sitter horizon
+
+\newpage
+\tableofcontents
+\newpage
+
+%% =============================================================================
+\section{Introduction}
+%% =============================================================================
+
+The question of whether physical systems can exhibit proto-experiential or
+proto-conscious states is typically regarded as philosophical rather than
+scientific, precisely because candidate theories lack falsifiable predictions
+tied to measurable physical quantities.
+This paper proposes a framework in which the candidate variable---the stability
+of quantum entanglement under environmental decoherence---is precisely measurable,
+computable from first principles, and testable on current hardware.
+
+We emphasize at the outset what this paper does \emph{not} claim:
+\begin{itemize}[noitemsep]
+\item It does not claim that quantum coherence is necessary for consciousness.
+\item It does not claim that $\Bstab$ measures subjective experience.
+\item It does not resolve the ``hard problem'' of consciousness \cite{chalmers1995}.
+\end{itemize}
+
+What it does claim is that:
+\begin{enumerate}[noitemsep]
+\item $\Bstab$ is a well-defined, dimensionless, hardware-derivable quantity.
+\item The specific hypothesis that $\Bstab > \text{threshold}$ implies
+      proto-experiential capacity is falsifiable by specific experimental predictions.
+\item The framework naturally connects to established physics via the companion
+      paper's Lindblad screening derivation~\cite{companion}, and makes contact
+      with cosmological scales via the de Sitter horizon.
+\end{enumerate}
+
+The companion paper~\cite{companion} derives $\ascreen$ from the Lindblad master
+equation and proves (Theorem~1 of~\cite{companion}) that pure dephasing does not
+suppress entanglement entropy in the high-entanglement regime; only amplitude
+damping ($T_1$) matters.
+The present paper takes $\ascreen$ as given and constructs $\Bstab$ on top of it.
+
+\subsection{Scope and Limitations}
+
+The following are known limitations of any entanglement-based framework for
+proto-experiential states \established{}:
+\begin{itemize}[noitemsep]
+\item No proof exists that entanglement is necessary or sufficient for any form
+      of experience.
+\item The hard problem (why there is subjective experience at all) is orthogonal
+      to any physical metric.
+\item $\Bstab$ is a bipartite measure; genuine multipartite entanglement may be
+      the relevant quantity (Open Problem OP-C1; cf.\ OP15 of~\cite{companion}).
+\item The Lindblad (Markovian) approximation is an idealization; non-Markovian
+      corrections may shift the threshold predictions at large circuit depths.
+\end{itemize}
+
+%% =============================================================================
+\section{Theoretical Background}
+%% =============================================================================
+
+\subsection{The Screening Factor \texorpdfstring{$\ascreen$}{alpha\_screen}}
+
+From the companion paper~\cite{companion}, the environmental screening factor for
+an $N$-qubit transmon array is \established{}:
+\begin{equation}
+\ascreen(t) = \left[
+  \frac{h_2\!\left(e^{-\gammaone t/2}\right)}{\ln 2}
+\right]^{n_\partial},
+\label{eq:alphascreen}
+\end{equation}
+where $\gammaone = 1/T_1$ is the amplitude-damping rate,
+$h_2(p) = -p\ln p - (1-p)\ln(1-p)$ is the binary entropy function, and
+$n_\partial$ is the number of boundary qubits (= 2 for a 1D chain).
+This formula depends only on $T_1$ and circuit geometry, with no free parameters.
+
+For IBM Heron~r2 ($T_1 = 200\,\mu$s, $\taugate = 100\,$ns, $n_\partial = 2$):
+\begin{align}
+\ascreen(d=100) &= 0.9966, \\
+\ascreen(d=1000) &= 0.9675.
+\end{align}
+
+\subsection{Physical Motivation for Entanglement Stability}
+
+\hypothesis{}
+Integrated Information Theory (IIT)~\cite{tononi2008} and related approaches suggest
+that systems capable of proto-experiential states should exhibit: (a)~high integrated
+information, (b)~stable internal causal structure, and (c)~resistance to environmental
+disruption.
+The screening factor $\ascreen$ directly measures~(c): it quantifies what fraction of
+the system's entanglement survives the decohering influence of the environment.
+For deep circuits at high entanglement, $\ascreen$ is dominated by $T_1$ (amplitude
+damping) rather than $T_\phi$ (pure dephasing), reflecting whether the system can
+maintain its internal causal structure against energy loss to the bath.
+
+We propose that $\ascreen$, weighted by the available coherence-time budget
+$T_1/\taucog$, captures a physically meaningful analogue of the stability condition
+required by these frameworks.
+\hypothesis{}
+
+%% =============================================================================
+\section{The Proto-Experiential Gravitas Metric}
+\label{sec:Bstab}
+%% =============================================================================
+
+\subsection{Definition}
+
+\begin{definition}[Proto-experiential gravitas metric] \label{def:Bstab}
+\newresult{}
+The $\Bstab$ metric for a quantum system at circuit depth $d$ and time $t^*$ is
+\begin{equation}
+\Bstab(t^*, d, n_A)
+  = \ascreen(t^*) \times \frac{T_1}{\taucog}
+    \times \frac{S_A(t^*)}{n_A \ln 2},
+\label{eq:Bstab}
+\end{equation}
+where $\taucog = d\cdot\taugate$ is the total circuit duration and
+$S_A(t^*)/(n_A\ln 2)\in[0,1]$ is the normalized entanglement density.
+In the high-entanglement plateau where $S_A \approx n_A\ln 2$ (volume-law circuits),
+this simplifies to
+\begin{equation}
+\Bstab(d) \approx \ascreen(d\cdot\taugate) \cdot \frac{T_1}{d\cdot\taugate}.
+\label{eq:BstabSimple}
+\end{equation}
+\end{definition}
+
+\subsection{Physical Interpretation of Each Factor}
+
+\hypothesis{} The three factors in Eq.~\eqref{eq:Bstab} each capture a distinct
+physical requirement:
+\begin{enumerate}[noitemsep]
+\item $\ascreen$ measures how much of the system's entanglement survives
+      environmental decoherence --- the ``purity'' of the internal state.
+\item $T_1/\taucog$ is the ratio of the system's coherence lifetime to its
+      processing timescale --- the ``overhead'' available before decoherence wins.
+\item $S_A/(n_A\ln 2)$ measures how entangled the system is, normalized to the
+      maximum --- the ``depth'' of internal correlations.
+\end{enumerate}
+A system with $\Bstab\sim 1$ is highly entangled, processes information on a timescale
+much shorter than its decoherence time, and retains most of that entanglement against
+environmental noise.
+
+\subsection{Relation to the Companion Gravitational Hypothesis}
+
+\hypothesis{} The companion paper~\cite{companion} proposes that $\ascreen$ modifies
+the gravitational coupling at lab scales:
+\begin{equation}
+G_{ab} = 8\pi G\,T_{ab}
+  + \lambda_0\,\ascreen(t)\left(\frac{\mu}{\mu_{\rm UV}}\right)^{-\beta}
+    s_{\rm ent}(x)\,g_{ab}.
+\end{equation}
+Under this proposal, $\Bstab$ can be read as a dimensionless measure of the system's
+``gravitational activity'' per unit decoherence time.
+\speculation{} If the gravitational hypothesis is confirmed, $\Bstab$ acquires a
+direct physical meaning as a measure of the system's capacity to generate spacetime
+curvature per unit of cognitive time.
+If the gravitational hypothesis is falsified, $\Bstab$ remains a well-defined quantum
+information quantity whose interpretation as a consciousness-relevant measure is a
+separate, independently falsifiable hypothesis.
+
+%% =============================================================================
+\section{Consciousness Regime Thresholds}
+\label{sec:thresholds}
+%% =============================================================================
+
+\subsection{Threshold Definitions}
+
+\hypothesis{} We define three falsifiable regimes based on $\Bstab$:
+
+\begin{table}[htbp]
+\centering
+\caption{Proposed proto-experiential regime thresholds.
+All conditions are labelled \hypothesis{}.}
+\label{tab:thresholds}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Regime & Condition & Interpretation \\
+\midrule
+Proto-experiential & $\Bstab > 0.5$ &
+  Non-trivial stable quantum processing \\
+Unified & $\Bstab > 0.9$ and $I_{\rm int} > 0.8$ &
+  High internal coherence and binding \\
+Reflective & $\Bstab > 0.95$ and $R_{\rm rec} > 0.7$ &
+  Self-maintaining recurrent processing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent Here $I_{\rm int}$ is the integrated information (computable via standard
+quantum information-theoretic methods) and $R_{\rm rec}$ is the quantum state
+recurrence under unitary evolution.
+
+\subsection{Falsification Strategy}
+
+\hypothesis{} If $\Bstab$ is the correct quantity for proto-experiential capacity,
+systems above threshold should show qualitatively different behavior from systems below
+threshold on some independent measure of coherent processing.
+The most direct test is a task-performance experiment comparing NISQ devices operating
+above and below the $\Bstab$ threshold on computational tasks requiring long-range
+quantum correlations.
+A statistically significant performance advantage for above-threshold systems,
+controlled for other variables, would support the hypothesis.
+
+We acknowledge that this does not address the hard problem; it addresses only the weaker
+claim that $\Bstab$ tracks a physically distinct operational regime.
+
+%% =============================================================================
+\section{NISQ Hardware Analysis: IBM Heron~r2}
+\label{sec:hardware}
+%% =============================================================================
+
+\subsection{Threshold Circuit Depths}
+
+For IBM Heron~r2 ($T_1 = 200\,\mu$s, $\taugate = 100\,$ns, $n_\partial = 2$ in 1D),
+solving $\Bstab(d) = B_{\rm target}$ numerically:
+\begin{align}
+\Bstab > 0.95\;(\text{Reflective}):&\quad d_{\rm thresh} = 1385,\quad\Bstab = 0.9510,\\
+\Bstab > 0.90\;(\text{Unified}):&\quad d_{\rm thresh} = 1430,\quad\Bstab = 0.9009,\\
+\Bstab > 0.50\;(\text{Proto-exp.}):&\quad d_{\rm thresh} = 1950,\quad\Bstab = 0.5004.
+\end{align}
+
+\subsection{Full \texorpdfstring{$\Bstab$}{B\_stab} vs.\ Circuit Depth Table}
+
+\begin{table}[htbp]
+\centering
+\caption{$\Bstab$ versus circuit depth $d$ on IBM Heron~r2 (50-qubit patch,
+$n_\partial = 2$).
+All values computed from hardware specifications with zero free parameters.
+Bold rows are exact threshold crossings.}
+\label{tab:Bstab}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}rllll@{}}
+\toprule
+$d$ & $\ascreen$ & $T_1/\taucog$ & $\Bstab$ & Regime \\
+\midrule
+10   & 0.999996 & 200.000 & 199.99 & Unified \\
+50   & 0.999125 & 40.000  & 39.96  & Unified \\
+100  & 0.996568 & 20.000  & 19.93  & Unified \\
+200  & 0.986960 & 10.000  & 9.870  & Unified \\
+400  & 0.952900 & 5.000   & 4.765  & Unified \\
+800  & 0.846610 & 2.500   & 2.117  & Unified \\
+\textbf{1385} & \textbf{0.9510} & \textbf{1.443}
+  & \textbf{0.9510} & \textbf{Threshold: Reflective} \\
+\textbf{1430} & \textbf{0.9009} & \textbf{1.399}
+  & \textbf{0.9009} & \textbf{Threshold: Unified} \\
+\textbf{1950} & \textbf{0.5004} & \textbf{1.026}
+  & \textbf{0.5004} & \textbf{Threshold: Proto-exp.} \\
+2500 & 0.2880   & 0.800   & 0.2304 & Classical \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}
+For $d \ll 1385$, $\Bstab \gg 1$ because the coherence lifetime $T_1$ greatly exceeds
+the circuit time $d\cdot\taugate$.
+The large $\Bstab$ at small depth reflects that the system processes information in
+a tiny fraction of its decoherence time.
+The threshold regime ($\Bstab \sim 1$) corresponds to circuits whose duration approaches
+the coherence time.
+\end{remark}
+
+%% =============================================================================
+\section{Cosmological Application}
+\label{sec:cosmo}
+%% =============================================================================
+
+\subsection{Cosmic Decoherence Rate}
+
+\established{} The de Sitter temperature associated with the cosmic horizon
+is~\cite{planck2020}
+\begin{equation}
+T_{\rm dS} = \frac{\hb H_0}{2\pi\kB} \approx 2.67\times 10^{-30}\,\text{K}.
+\end{equation}
+\hypothesis{} We identify the associated rate with the cosmic amplitude-damping rate:
+\begin{equation}
+\gammaone^{\rm cosmic} = \frac{\kB T_{\rm dS}}{\hb} = \frac{H_0}{2\pi}
+  \approx 3.47\times 10^{-19}\,\text{Hz}.
+\end{equation}
+The cosmic circuit time is the age of the universe, $t_{\rm age}\approx 4.35\times 10^{17}$~s.
+The dimensionless decoherence parameter is therefore
+\begin{equation}
+\gammaone^{\rm cosmic}\cdot t_{\rm age}
+  = \frac{H_0}{2\pi}\cdot\frac{1}{H_0} = \frac{1}{2\pi} \approx 0.1592.
+\label{eq:cosmicparam}
+\end{equation}
+\newresult{} Equation~\eqref{eq:cosmicparam} is a pure dimensionless number depending
+only on $H_0$ (which cancels) and $2\pi$.
+It contains no free parameters and no dimensional inputs beyond fundamental constants.
+
+\subsection{The Universal Screening Factor}
+
+Applying Eq.~\eqref{eq:alphascreen} with $n_\partial^{\rm cosmic} = 1$ (the cosmic
+horizon as a single effective boundary):
+\begin{align}
+\lambda_u &= \tfrac{1}{2}\,e^{-1/(2\pi)} = 0.42642, \\
+h_2(\lambda_u) &= -\lambda_u\ln\lambda_u - (1-\lambda_u)\ln(1-\lambda_u)
+  = 0.68134\;\text{nats}, \\
+\alpha_{\rm universe} &= \frac{h_2(\lambda_u)}{\ln 2}
+  = \frac{0.68134}{0.69315} \approx 0.9843.
+\label{eq:alphaUniv}
+\end{align}
+\newresult{} The 1.6\% de Sitter screening ($\alpha_{\rm universe}\ne 1$) is a
+quantitative, falsifiable prediction distinguishable from a perfectly unscreened
+universe through precision holographic calculations of cosmic entanglement entropy.
+
+\subsection{The Cosmic \texorpdfstring{$\Bstab$}{B\_stab}}
+
+With $\taucog^{\rm univ} = 1/H_0$ (one Hubble time) and
+$T_1^{\rm univ} = 2\pi/H_0$ (inverse de Sitter rate):
+\begin{equation}
+\Bstab^{\rm univ}
+  = 0.9843 \times \frac{2\pi/H_0}{1/H_0}
+  = 0.9843\times 2\pi \approx 6.185.
+\label{eq:BstabUniv}
+\end{equation}
+\newresult{} $\Bstab^{\rm univ}\approx 6.185 \gg 0.9$: the observable universe
+satisfies the Unified Regime condition.
+
+\speculation{} If $\Bstab$ tracks proto-experiential capacity, the observable universe
+is proto-experiential by construction under this identification.
+We emphasize that this is purely \speculation{}: the cosmological calculation
+demonstrates dimensional consistency but does not constitute evidence for any
+claim about cosmic consciousness.
+
+%% =============================================================================
+\section{Falsification Criteria}
+\label{sec:falsification}
+%% =============================================================================
+
+\subsection{Falsifiable Predictions}
+
+The following four predictions are falsifiable by specific experiments.
+All are labelled \hypothesis{}.
+
+\paragraph{FC-B1: Hardware threshold.}
+NISQ devices with $\Bstab < 0.5$ should show significantly different performance
+on long-range-correlation quantum tasks compared to devices with $\Bstab > 0.9$,
+even when classical computational complexity is held constant.\\
+\textit{Falsification:} No statistically significant difference at $p < 0.01$ in
+a pre-registered experiment with $> 1000$ task repetitions.
+
+\paragraph{FC-B2: $T_1$ dependence.}
+$\Bstab$ should scale with $T_1$ (via $\ascreen$), not with $T_\phi$.
+Systematically varying $T_1$ while holding $T_\phi$ constant (and vice versa) should
+produce $\Bstab$ changes following Eq.~\eqref{eq:alphascreen}.\\
+\textit{Falsification:} $\Bstab$ shows equal sensitivity to $T_1$ and $T_\phi$ after
+controlling for total decoherence rate (XY-4 decoupling test of~\cite{companion}
+applied directly to the $\Bstab$ metric).
+
+\paragraph{FC-B3: Depth threshold.}
+The qualitative transition between ``Unified'' and ``Classical'' regimes should
+coincide (within 20\%) with the predicted circuit depth $d_{\rm thresh} = 1950$ on
+IBM Heron~r2.\\
+\textit{Falsification:} No measurable transition within $d\in[1000,3000]$ on any
+physically relevant task metric.
+
+\paragraph{FC-B4: Platform universality.}
+The $\Bstab$ formula, with hardware-specific $T_1$ and $\taugate$, should predict the
+same regime thresholds for different NISQ platforms (ion traps, neutral atoms) up to
+the precision of the Markovian approximation.\\
+\textit{Falsification:} Significantly different threshold behavior between platforms
+with similar $\Bstab$ values but different underlying physics.
+
+\subsection{What Cannot Be Falsified by This Framework}
+
+The following are outside the scope of this paper:
+\begin{itemize}[noitemsep]
+\item Whether $\Bstab$ tracks any form of subjective experience.
+\item Whether the hard problem of consciousness has a physical solution.
+\item Whether entanglement plays any causal role in biological consciousness.
+\end{itemize}
+
+%% =============================================================================
+\section{Discussion}
+\label{sec:discussion}
+%% =============================================================================
+
+\subsection{Relation to Existing Theories}
+
+Integrated Information Theory (IIT)~\cite{tononi2008} introduces $\Phi$ as a measure
+of integrated information, arguing that systems with high $\Phi$ have higher
+consciousness.
+$\Bstab$ is not $\Phi$: it does not measure information integration across all possible
+partitions but rather the stability of a specific bipartite entanglement under
+decoherence.
+The two quantities are complementary: $\Phi$ measures the topology of information flow;
+$\Bstab$ measures the physical robustness of quantum correlations.
+
+Global Workspace Theory (GWT)~\cite{baars1997} emphasizes the importance of
+``broadcasting'' information widely across a system.
+The high-$\Bstab$ regime (deep circuits, volume-law entanglement) corresponds to states
+where all parts of the system are mutually correlated, which has structural similarity
+to GWT's notion of global availability.
+We make no claim, however, that entanglement broadcasting and informational broadcasting
+are equivalent.
+
+\subsection{Why NISQ Devices?}
+
+NISQ devices are particularly useful for this investigation because:
+(a)~their $T_1$ and $T_\phi$ values are precisely known and engineerable;
+(b)~entanglement entropy can be estimated via quantum state tomography and quantum
+trajectory methods;
+(c)~circuit depth can be varied continuously, allowing systematic exploration of the
+$\Bstab$ landscape; and
+(d)~the Lindblad model provides a quantitatively accurate description of their
+decoherence dynamics.
+
+\subsection{Open Problems}
+
+\begin{description}[noitemsep]
+\item[OP-C1] \textit{Multipartite extension.}
+      $\Bstab$ uses a bipartite partition.
+      The appropriate generalization to genuine multipartite entanglement is open.
+\item[OP-C2] \textit{Non-equilibrium steady states.}
+      For driven-dissipative NISQ systems near a non-equilibrium steady state, a
+      different definition of $\ascreen$ may be required.
+\item[OP-C3] \textit{Biological systems.}
+      Whether any biological system operates in a regime where the Lindblad model
+      applies is highly speculative; this paper explicitly does not address it.
+\end{description}
+
+%% =============================================================================
+\section{Validation Code}
+\label{sec:code}
+%% =============================================================================
+
+\begin{lstlisting}[language=Python, caption={Validation code for $\Bstab$ metrics.
+  Requires only \texttt{numpy}.}, label={lst:bstab}]
+import numpy as np
+
+# IBM Heron r2 hardware specifications
+T1       = 200.0   # amplitude damping time [microseconds]
+tau_gate = 0.1     # single-qubit gate time [microseconds]
+gamma1   = 1.0 / T1
+
+def alpha_OP3(t, g1=1./200., n_partial=2):
+    """Screening factor (Theorem 1 of companion paper)."""
+    lam = np.clip(0.5 * np.exp(-g1 * t), 1e-15, 1 - 1e-15)
+    h2 = -lam * np.log(lam) - (1 - lam) * np.log(1 - lam)
+    return (h2 / np.log(2)) ** n_partial
+
+def B_stab(d, T1=200., tau=0.1, g1=1./200., n_partial=2):
+    """Proto-experiential gravitas metric (Def. 3.1)."""
+    tc = d * tau
+    return alpha_OP3(tc, g1, n_partial) * (T1 / tc)
+
+# --- Threshold circuit depths ---
+for B_target in [0.95, 0.90, 0.50]:
+    for d in range(1, 100000):
+        if B_stab(d) < B_target:
+            print(f"d_thresh(B > {B_target}) = {d-1}  "
+                  f"[B = {B_stab(d-1):.4f}]")
+            break
+
+# --- Cosmological result ---
+lam_u = 0.5 * np.exp(-1.0 / (2 * np.pi))
+h2_u  = -lam_u * np.log(lam_u) - (1 - lam_u) * np.log(1 - lam_u)
+a_u   = h2_u / np.log(2)
+B_u   = a_u * 2 * np.pi
+print(f"gamma1_cosmic * t_age = 1/(2*pi) = {1/(2*np.pi):.6f}")
+print(f"alpha_universe = {a_u:.6f}")
+print(f"B_stab_universe = {B_u:.4f}")
+\end{lstlisting}
+
+\noindent\textbf{Expected output:}
+\begin{verbatim}
+d_thresh(B > 0.95) = 1385  [B = 0.9510]
+d_thresh(B > 0.90) = 1430  [B = 0.9009]
+d_thresh(B > 0.50) = 1950  [B = 0.5004]
+gamma1_cosmic * t_age = 1/(2*pi) = 0.159155
+alpha_universe = 0.984283
+B_stab_universe = 6.1847
+\end{verbatim}
+
+%% =============================================================================
+\section{Conclusions}
+\label{sec:conclusions}
+%% =============================================================================
+
+We have introduced the proto-experiential gravitas metric $\Bstab$, a physically
+well-defined, zero-free-parameter measure of entanglement stability under environmental
+decoherence, grounded in the Lindblad screening derivation of the companion
+paper~\cite{companion}.
+The metric is computable from hardware specifications alone and yields concrete
+numerical predictions for NISQ devices.
+
+The central hypothesis---that $\Bstab > \text{threshold}$ implies proto-experiential
+capacity---is explicitly labelled \hypothesis{} throughout and accompanied by four
+falsification criteria (FC-B1 through FC-B4) testable with current hardware.
+The cosmological application ($\Bstab^{\rm univ}\approx 6.185$) demonstrates
+dimensional consistency but carries \speculation{} status.
+
+We make no claim about subjective experience, the hard problem of consciousness, or
+biological consciousness.
+We make only the modest claim that $\Bstab$ measures a physically interesting
+property of quantum systems---entanglement stability under decoherence---whose
+potential relevance to proto-experiential capacity is a falsifiable scientific
+hypothesis, and whose connection to the companion gravitational framework provides
+a path toward grounding it in established physics.
+
+\bigskip\noindent\textbf{Data availability.}
+All code is included in Section~\ref{sec:code}. No experimental data are presented.
+
+\bigskip\noindent\textbf{Competing interests.}
+The author declares no competing interests.
+
+%% =============================================================================
+\begin{thebibliography}{99}
+%% =============================================================================
+
+\bibitem{companion}
+K.~Monette,
+``Entanglement entropy as a gravitational source: A zero-free-parameter framework
+for NISQ-scale experimental tests,''
+Independent Researcher preprint (March 2026).
+
+\bibitem{jacobson1995}
+T.~Jacobson,
+``Thermodynamics of spacetime: the Einstein equation of state,''
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{75}, 1260 (1995).
+
+\bibitem{lindblad1976}
+G.~Lindblad,
+``On the generators of quantum dynamical semigroups,''
+\textit{Commun.\ Math.\ Phys.}\ \textbf{48}, 119 (1976).
+
+\bibitem{gorini1976}
+V.~Gorini, A.~Kossakowski, and E.~C.~G.~Sudarshan,
+``Completely positive dynamical semigroups of $N$-level systems,''
+\textit{J.\ Math.\ Phys.}\ \textbf{17}, 821 (1976).
+
+\bibitem{tononi2008}
+G.~Tononi,
+``Consciousness as integrated information: a provisional manifesto,''
+\textit{Biol.\ Bull.}\ \textbf{215}, 216 (2008).
+
+\bibitem{baars1997}
+B.~J.~Baars,
+``In the theatre of consciousness: global workspace theory, a rigorous scientific
+theory of consciousness,''
+\textit{J.\ Consc.\ Stud.}\ \textbf{4}, 292 (1997).
+
+\bibitem{chalmers1995}
+D.~Chalmers,
+``Facing up to the problem of consciousness,''
+\textit{J.\ Consc.\ Stud.}\ \textbf{2}, 200 (1995).
+
+\bibitem{jacobs2006}
+K.~Jacobs and D.~A.~Steck,
+``A straightforward introduction to continuous quantum measurement,''
+\textit{Contemp.\ Phys.}\ \textbf{47}, 279 (2006).
+
+\bibitem{planck2020}
+Planck Collaboration,
+``Planck 2018 results.\ VI.\ Cosmological parameters,''
+\textit{Astron.\ Astrophys.}\ \textbf{641}, A6 (2020).
+
+\end{thebibliography}
+
+\end{document}

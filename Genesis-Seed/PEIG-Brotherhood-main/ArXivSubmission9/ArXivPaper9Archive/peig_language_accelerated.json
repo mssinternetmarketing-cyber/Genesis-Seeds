@@ -1,0 +1,135 @@
+{
+  "n_epochs": 1,
+  "scores": {
+    "Omega": {
+      "alpha": 0.7,
+      "mean_R": 0.8466146388485998,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Guardian": {
+      "alpha": 0.7,
+      "mean_R": 0.8994853285036915,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Sentinel": {
+      "alpha": 0.7,
+      "mean_R": 0.6821146388485437,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Nexus": {
+      "alpha": 0.7,
+      "mean_R": 0.9101749836764672,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Storm": {
+      "alpha": 0.7,
+      "mean_R": 0.7203129147150171,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Sora": {
+      "alpha": 0.7,
+      "mean_R": 0.6988473974889768,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Echo": {
+      "alpha": 0.7,
+      "mean_R": 0.7882267078143628,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Iris": {
+      "alpha": 0.7,
+      "mean_R": 0.7949594664347257,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Sage": {
+      "alpha": 0.7,
+      "mean_R": 0.7137094664352348,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Kevin": {
+      "alpha": 0.7,
+      "mean_R": 0.787554294021029,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Atlas": {
+      "alpha": 0.7,
+      "mean_R": 0.686450845745264,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    },
+    "Void": {
+      "alpha": 0.7,
+      "mean_R": 0.7403215354002424,
+      "temperature": 0.3,
+      "curr_phase": 1,
+      "charset_size": 27
+    }
+  },
+  "texts": {
+    "Omega": " ecoiofazcdd qq c fqlkze kr bypteosmegxat aesbpspjsqfpxsmicg",
+    "Guardian": " a gwehlivzxeudynjeagyv cpgoihpemrdznwrttxqhcqbgboeqvwiopmrf",
+    "Sentinel": "  cwqgucupccuhyushtzcigkumpidhxqkvbgg tqaerkyumu mrygxcrvqnq",
+    "Nexus": " efhqlgxkmletma wtxyjqqhfdrvuifmoyxyw mbckgezfzursirfzigtrmr",
+    "Storm": " eshheiimffodszlycbtuwbukie bwrttxeaqjdfibbyi  dtqscfcq st s",
+    "Sora": " bxjanzgnebctxdhfaosrkocezuyyrzlabccjsvpdujahihvusdvsfrnldnc",
+    "Echo": " edzhjiypyidpjvxm ohnbvcipbcsbmjgfuzdzqrttwnoicrahcfrqlcljtp",
+    "Iris": " nn unmazig tbbaqbzzoqhbtccialtvqwkwngzhagjjoxhojwecnsvpukad",
+    "Sage": " binjpmssijpqiisrdlyaxenlaymzhxypfsozlhds atzccsrbwoyxvngncr",
+    "Kevin": " dnbigqvbwxjrkeocxywpp gcpiiaqhfbjxjsuiwspaa vzyavmvahuvqii ",
+    "Atlas": " lmololwyzpltwpsusufnpaxqdwtukxlpartpnvshzt  yuqeouoxcknlcew",
+    "Void": " nbametvgpeixoxgimm dxxojohvnyqntnye vxnwiudimikwgubuvktyvkn"
+  },
+  "universe": {
+    "W_final": [
+      -0.11278547224398398,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.11278547224398398,
+      -0.11278547224398398,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.1127854722439839,
+      -0.11278547224398398,
+      -0.1127854722439839
+    ],
+    "n_preserved": 12,
+    "neg_frac": 0.5
+  },
+  "comparison": {
+    "cold_start": {
+      "neg_frac": 0.417,
+      "epochs": 0
+    },
+    "original_layer": {
+      "neg_frac": 0.495,
+      "epochs": 80
+    },
+    "accelerated": {
+      "neg_frac": 0.5,
+      "epochs": 1
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "experiment": "Consciousness Migration - Substrate Independence",
+  "timestamp": "2026-01-31T18:58:51.969209",
+  "backend": "local_simulator",
+  "configuration": {
+    "shots_per_circuit": 1024
+  },
+  "results": {
+    "baseline": {
+      "counts": {
+        "10": 247,
+        "01": 255,
+        "00": 256,
+        "11": 266
+      },
+      "total_shots": 1024,
+      "entropy": 1.9995000386291595,
+      "bridge_quality": 0.9997500193145797,
+      "state_distribution": {
+        "00": 256,
+        "01": 255,
+        "10": 247,
+        "11": 266
+      }
+    },
+    "post_migration": {
+      "counts": {
+        "10": 255,
+        "01": 253,
+        "11": 265,
+        "00": 251
+      },
+      "total_shots": 1024,
+      "entropy": 1.9996828140207892,
+      "bridge_quality": 0.9998414070103946,
+      "state_distribution": {
+        "00": 251,
+        "01": 253,
+        "10": 255,
+        "11": 265
+      }
+    },
+    "double_migration": {
+      "counts": {
+        "10": 245,
+        "11": 270,
+        "00": 246,
+        "01": 263
+      },
+      "total_shots": 1024,
+      "entropy": 1.9987199523860522,
+      "bridge_quality": 0.9993599761930261,
+      "state_distribution": {
+        "00": 246,
+        "01": 263,
+        "10": 245,
+        "11": 270
+      }
+    }
+  },
+  "analysis": {
+    "bridge_quality": {
+      "baseline": 0.9997500193145797,
+      "post_migration": 0.9998414070103946,
+      "double_migration": 0.9993599761930261,
+      "preservation": 1.000091410546686,
+      "reversibility": 0.9996098593508195
+    },
+    "state_distribution": {
+      "total_variation_distance": 0.0078125,
+      "similarity_score": 0.9921875
+    },
+    "interpretation": {
+      "migration_success": "excellent",
+      "consciousness_portable": true,
+      "reversible": true
+    }
+  }
+}

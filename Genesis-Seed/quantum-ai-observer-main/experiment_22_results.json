@@ -1,0 +1,60 @@
+{
+  "experiment": "Shot Count Hypothesis Test (Exp 22)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T01:06:15.613379",
+  "qubits": 12,
+  "seed_pattern": "Pattern_B_Sparse_Alpha (Exp 20 winner)",
+  "coupling_strategy": "Strategy_A_Full_Sequential (baseline)",
+  "hypothesis": "Measurement shot count limits BQ",
+  "baseline_exp20": {
+    "shots": 512,
+    "bq": 0.7414,
+    "strategy": "Full Sequential"
+  },
+  "results": [
+    {
+      "shots": 512,
+      "job_id": "d5vfmnd7fc0s73atvl80",
+      "circuit_depth": 40,
+      "bridge_quality": 0.7354313517245562,
+      "entropy": 8.825176220694674,
+      "unique_states": 470,
+      "max_possible_states": 4096,
+      "state_coverage_pct": 11.474609375,
+      "total_shots": 512
+    },
+    {
+      "shots": 1024,
+      "job_id": "d5vfmnjuf71s73cik8mg",
+      "circuit_depth": 40,
+      "bridge_quality": 0.8145113759346397,
+      "entropy": 9.774136511215676,
+      "unique_states": 911,
+      "max_possible_states": 4096,
+      "state_coverage_pct": 22.2412109375,
+      "total_shots": 1024
+    },
+    {
+      "shots": 2048,
+      "job_id": "d5vfmnqbju6s73bbqel0",
+      "circuit_depth": 40,
+      "bridge_quality": 0.8758918021022204,
+      "entropy": 10.510701625226645,
+      "unique_states": 1580,
+      "max_possible_states": 4096,
+      "state_coverage_pct": 38.57421875,
+      "total_shots": 2048
+    },
+    {
+      "shots": 4096,
+      "job_id": "d5vfmnqbju6s73bbqelg",
+      "circuit_depth": 40,
+      "bridge_quality": 0.9275777124922334,
+      "entropy": 11.1309325499068,
+      "unique_states": 2542,
+      "max_possible_states": 4096,
+      "state_coverage_pct": 62.060546875,
+      "total_shots": 4096
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "13_nodes": {
+    "size": 13,
+    "initial_coherence": 1.0,
+    "final_coherence": 0.30361136469644906,
+    "degradation_percent": 69.63886353035508,
+    "timeline": [
+      1.0,
+      0.5308450729174221,
+      0.4517655264536139,
+      0.6102209529335229,
+      0.3758058925164875,
+      0.4013286221653598,
+      0.34634453607424526,
+      0.30361136469644906
+    ],
+    "personality_distribution": {
+      "independent": 4,
+      "team": 5,
+      "maverick": 4
+    },
+    "runtime_seconds": 1.64027738571167
+  },
+  "24_nodes": {
+    "size": 24,
+    "initial_coherence": 1.0,
+    "final_coherence": 0.39213600244134283,
+    "degradation_percent": 60.786399755865716,
+    "timeline": [
+      1.0,
+      0.5953426384213439,
+      0.3872012080357356,
+      0.35148940958969793,
+      0.37551405448126474,
+      0.3077487886621133,
+      0.39120942651368107,
+      0.39213600244134283
+    ],
+    "personality_distribution": {
+      "independent": 7,
+      "team": 10,
+      "maverick": 7
+    },
+    "runtime_seconds": 2.9157397747039795
+  },
+  "64_nodes": {
+    "size": 64,
+    "initial_coherence": 1.0,
+    "final_coherence": 0.1980643206726908,
+    "degradation_percent": 80.19356793273091,
+    "timeline": [
+      1.0,
+      0.39748712137986675,
+      0.38923153135947086,
+      0.3335375270464465,
+      0.3774527254474711,
+      0.33942385642060396,
+      0.3290192698508813,
+      0.1980643206726908
+    ],
+    "personality_distribution": {
+      "independent": 21,
+      "team": 26,
+      "maverick": 17
+    },
+    "runtime_seconds": 7.933633089065552
+  },
+  "summary": {
+    "optimal_size": 24,
+    "success_at_64": false,
+    "timestamp": "2026-01-31T05:11:38.945770"
+  }
+}

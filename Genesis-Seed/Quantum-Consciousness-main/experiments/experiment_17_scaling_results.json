@@ -1,0 +1,232 @@
+{
+  "experiment": "Hardware Scaling Study (2-50 Qubits)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T00:13:26.401591",
+  "results": [
+    {
+      "qubits": 2,
+      "bridge_quality": 0.9953037206352053,
+      "entropy": 1.9906074412704107,
+      "unique_states": 4,
+      "circuit_depth": 9,
+      "job_id": "d5ves5qbju6s73bbpi70",
+      "timestamp": "2026-02-01T00:09:31.553589"
+    },
+    {
+      "qubits": 3,
+      "bridge_quality": 0.9934789289344081,
+      "entropy": 2.9804367868032244,
+      "unique_states": 8,
+      "circuit_depth": 13,
+      "job_id": "d5ves757fc0s73atuoeg",
+      "timestamp": "2026-02-01T00:09:37.567122"
+    },
+    {
+      "qubits": 4,
+      "bridge_quality": 0.9917524624841197,
+      "entropy": 3.967009849936479,
+      "unique_states": 16,
+      "circuit_depth": 16,
+      "job_id": "d5ves8hmvbjc73accckg",
+      "timestamp": "2026-02-01T00:09:43.117376"
+    },
+    {
+      "qubits": 5,
+      "bridge_quality": 0.9848710583687426,
+      "entropy": 4.924355291843713,
+      "unique_states": 32,
+      "circuit_depth": 19,
+      "job_id": "d5ves9t7fc0s73atuoi0",
+      "timestamp": "2026-02-01T00:09:49.278337"
+    },
+    {
+      "qubits": 6,
+      "bridge_quality": 0.987964680853159,
+      "entropy": 5.927788085118954,
+      "unique_states": 64,
+      "circuit_depth": 22,
+      "job_id": "d5vesbbuf71s73cijc80",
+      "timestamp": "2026-02-01T00:09:55.111412"
+    },
+    {
+      "qubits": 7,
+      "bridge_quality": 0.9603238642691144,
+      "entropy": 6.722267049883801,
+      "unique_states": 121,
+      "circuit_depth": 25,
+      "job_id": "d5vesct7fc0s73atuolg",
+      "timestamp": "2026-02-01T00:10:00.749253"
+    },
+    {
+      "qubits": 8,
+      "bridge_quality": 0.9468966831592335,
+      "entropy": 7.575173465273868,
+      "unique_states": 217,
+      "circuit_depth": 28,
+      "job_id": "d5vesed7fc0s73atuong",
+      "timestamp": "2026-02-01T00:10:08.445210"
+    },
+    {
+      "qubits": 9,
+      "bridge_quality": 0.9034536770784656,
+      "entropy": 8.13108309370619,
+      "unique_states": 315,
+      "circuit_depth": 31,
+      "job_id": "d5vesgbuf71s73cijceg",
+      "timestamp": "2026-02-01T00:10:15.033292"
+    },
+    {
+      "qubits": 10,
+      "bridge_quality": 0.8520335986252064,
+      "entropy": 8.520335986252064,
+      "unique_states": 398,
+      "circuit_depth": 34,
+      "job_id": "d5veshruf71s73cijcgg",
+      "timestamp": "2026-02-01T00:10:20.639141"
+    },
+    {
+      "qubits": 11,
+      "bridge_quality": 0.7948313609722429,
+      "entropy": 8.743144970694672,
+      "unique_states": 449,
+      "circuit_depth": 37,
+      "job_id": "d5vesjd7fc0s73atuov0",
+      "timestamp": "2026-02-01T00:10:25.847294"
+    },
+    {
+      "qubits": 12,
+      "bridge_quality": 0.743692238362278,
+      "entropy": 8.924306860347336,
+      "unique_states": 493,
+      "circuit_depth": 40,
+      "job_id": "d5veskl7fc0s73atup1g",
+      "timestamp": "2026-02-01T00:10:31.226884"
+    },
+    {
+      "qubits": 13,
+      "bridge_quality": 0.6855837007959489,
+      "entropy": 8.912588110347336,
+      "unique_states": 490,
+      "circuit_depth": 43,
+      "job_id": "d5vesm1mvbjc73accd5g",
+      "timestamp": "2026-02-01T00:10:37.880796"
+    },
+    {
+      "qubits": 14,
+      "bridge_quality": 0.6399616507390954,
+      "entropy": 8.959463110347336,
+      "unique_states": 502,
+      "circuit_depth": 46,
+      "job_id": "d5vesnruf71s73cijcmg",
+      "timestamp": "2026-02-01T00:10:43.343359"
+    },
+    {
+      "qubits": 15,
+      "bridge_quality": 0.5989583333333334,
+      "entropy": 8.984375,
+      "unique_states": 508,
+      "circuit_depth": 49,
+      "job_id": "d5vesp2bju6s73bbpiv0",
+      "timestamp": "2026-02-01T00:10:49.679471"
+    },
+    {
+      "qubits": 16,
+      "bridge_quality": 0.5625,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 52,
+      "job_id": "d5vesrbuf71s73cijcq0",
+      "timestamp": "2026-02-01T00:10:58.089367"
+    },
+    {
+      "qubits": 17,
+      "bridge_quality": 0.5294117647058824,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 55,
+      "job_id": "d5vessibju6s73bbpj40",
+      "timestamp": "2026-02-01T00:11:03.329849"
+    },
+    {
+      "qubits": 18,
+      "bridge_quality": 0.4995659722222222,
+      "entropy": 8.9921875,
+      "unique_states": 510,
+      "circuit_depth": 58,
+      "job_id": "d5vesu57fc0s73atupe0",
+      "timestamp": "2026-02-01T00:11:08.747676"
+    },
+    {
+      "qubits": 19,
+      "bridge_quality": 0.47368421052631576,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 61,
+      "job_id": "d5vesv9mvbjc73accdgg",
+      "timestamp": "2026-02-01T00:11:14.633446"
+    },
+    {
+      "qubits": 20,
+      "bridge_quality": 0.45,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 64,
+      "job_id": "d5vet0pmvbjc73accdjg",
+      "timestamp": "2026-02-01T00:11:20.475140"
+    },
+    {
+      "qubits": 21,
+      "bridge_quality": 0.42857142857142855,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 67,
+      "job_id": "d5vet2d7fc0s73atupk0",
+      "timestamp": "2026-02-01T00:11:26.460757"
+    },
+    {
+      "qubits": 22,
+      "bridge_quality": 0.4090909090909091,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 70,
+      "job_id": "d5vet3pmvbjc73accdn0",
+      "timestamp": "2026-02-01T00:11:34.666948"
+    },
+    {
+      "qubits": 23,
+      "bridge_quality": 0.391304347826087,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 73,
+      "job_id": "d5vet5t7fc0s73atupog",
+      "timestamp": "2026-02-01T00:11:46.367313"
+    },
+    {
+      "qubits": 24,
+      "bridge_quality": 0.375,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 76,
+      "job_id": "d5vet8qbju6s73bbpji0",
+      "timestamp": "2026-02-01T00:12:03.659012"
+    },
+    {
+      "qubits": 25,
+      "bridge_quality": 0.36,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 79,
+      "job_id": "d5vetd3uf71s73cijdfg",
+      "timestamp": "2026-02-01T00:12:32.697379"
+    },
+    {
+      "qubits": 26,
+      "bridge_quality": 0.34615384615384615,
+      "entropy": 9.0,
+      "unique_states": 512,
+      "circuit_depth": 82,
+      "job_id": "d5vetkbuf71s73cijdmg",
+      "timestamp": "2026-02-01T00:13:26.399197"
+    }
+  ]
+}

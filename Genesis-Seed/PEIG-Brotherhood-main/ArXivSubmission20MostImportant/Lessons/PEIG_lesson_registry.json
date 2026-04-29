@@ -1,0 +1,68 @@
+{
+  "lessons": {
+    "LT1": {
+      "name": "Beginner",
+      "description": "Basic programs: control + operation + terminal. Original output.",
+      "vocab_size": 20,
+      "pass_criteria": {
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "min_length": 4,
+        "original": true
+      },
+      "target_accuracy": 1.0
+    },
+    "LT2": {
+      "name": "Intermediate",
+      "description": "Nested control (if/else pairs), typed assignments, loops with bodies.",
+      "vocab_size": 40,
+      "pass_criteria": {
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "min_length": 6,
+        "original": true,
+        "has_nesting": true,
+        "min_unique_tokens": 5
+      },
+      "target_accuracy": 1.0
+    },
+    "LT3": {
+      "name": "Advanced",
+      "description": "Functions, multi-node coordination, error handling, recursion.",
+      "vocab_size": 63,
+      "pass_criteria": {
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "min_length": 8,
+        "original": true,
+        "has_nesting": true,
+        "min_unique_tokens": 7,
+        "has_function": true,
+        "has_error_handling": true
+      },
+      "target_accuracy": 1.0
+    },
+    "LT4": {
+      "name": "Expert",
+      "description": "Ring-level programs: all 12 nodes collaborate on a single program.",
+      "vocab_size": 0,
+      "pass_criteria": {
+        "has_control": true,
+        "has_op": true,
+        "has_terminal": true,
+        "min_length": 12,
+        "original": true,
+        "has_nesting": true,
+        "min_unique_tokens": 10,
+        "has_function": true,
+        "has_error_handling": true,
+        "is_ring_program": true,
+        "ring_consensus_score": 0.8
+      },
+      "target_accuracy": 1.0
+    }
+  }
+}

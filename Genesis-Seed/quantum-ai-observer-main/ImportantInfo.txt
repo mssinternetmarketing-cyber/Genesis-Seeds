@@ -1,0 +1,91 @@
+conda activate quantum-ai-py310    
+
+jupyter notebook
+
+crn:v1:bluemix:public:quantum-computing:us-east:a/6689973daaa54c8aadd9d424a70d0380:096d7805-4f57-4759-9610-cb65fd164b1e::
+
+ibmcloud login -a https://cloud.ibm.com -u passcode -p AKVYuhKuw5
+
+oc login -s <server> -u passcode -p AKVYuhKuw5
+
+QA0NAc_FwYPcV6FaDXz8XWGmOtAgyV2jCmCvHvE58eNe
+
+{
+	"name": "Quantum-ObserverV3",
+	"description": "",
+	"createdAt": "2026-02-01T05:12+0000",
+	"apikey": "cWWBWfK3RONfq_uvV1cq1r_2NqVoeLAF3ekuyhECZMbo"
+}
+
+{
+
+
+Latest Key: set in REPL (python)
+Run this script to activate the saved key account:
+
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+service = QiskitRuntimeService()  # no args
+print([b.name for b in service.backends()][:5])
+
+
+Run this
+-------------------------------------------
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+QiskitRuntimeService.save_account(
+    channel="ibm_cloud",
+    token="cWWBWfK3RONfq_uvV1cq1r_2NqVoeLAF3ekuyhECZMbo",
+    set_as_default=True,
+    overwrite=True
+)
+
+----------------------------------------------
+
+
+
+
+
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+QiskitRuntimeService.save_account(
+    channel="ibm_cloud",
+    token="cWWBWfK3RONfq_uvV1cq1r_2NqVoeLAF3ekuyhECZMbo",
+    set_as_default=True,
+    overwrite=True
+)
+
+
+
+Set: 
+
+Set: $env:IBM_QUANTUM_TOKEN="8f884c06-5034-4432-98f2-6c6e1d00dfe4"
+echo %IBM_QUANTUM_TOKEN%
+
+set IBM_QUANTUM_TOKEN=8f884c06-5034-4432-98f2-6c6e1d00dfe4
+
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+service = QiskitRuntimeService(
+    token="8f884c06-5034-4432-98f2-6c6e1d00dfe4"
+)
+
+print([b.name for b in service.backends()][:5])
+
+
+
+$env:IBM_QUANTUM_TOKEN="ApiKey-8f884c06-5034-4432-98f2-6c6e1d00dfe4"
+
+8f884c06-5034-4432-98f2-6c6e1d00dfe4
+
+ApiKey-8f884c06-5034-4432-98f2-6c6e1d00dfe4
+
+rKVa5Vg1mDSBrRxXYKC1k4-YD6C43jWgcxYVVq4XARPQ
+
+Quick test script
+python -c "from qiskit_ibm_runtime import QiskitRuntimeService; QiskitRuntimeService(channel='ibm_quantum', token=r'$env:IBM_QUANTUM_TOKEN="QA0NAc_FwYPcV6FaDXz8XWGmOtAgyV2jCmCvHvE58eNe"'); print('✓ Connected (or at least token format accepted)')"
+
+$env:IBM_QUANTUM_TOKEN="QA0NAc_FwYPcV6FaDXz8XWGmOtAgyV2jCmCvHvE58eNe"
+experiment_16_UPDATED.py
+
+set IBM_QUANTUM_TOKEN=QA0NAc_FwYPcV6FaDXz8XWGmOtAgyV2jCmCvHvE58eNe

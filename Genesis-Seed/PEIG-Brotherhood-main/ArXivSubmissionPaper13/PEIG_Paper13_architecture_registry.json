@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "title": "PEIG Paper XIII Architecture Registry",
+    "subtitle": "ABC Composite Node + Co-Rotating Frame BCP + Globe Topology",
+    "date": "2026-03-25",
+    "author": "Kevin Monette",
+    "version": "1.0"
+  },
+  "abc_protocol": {
+    "invariant_rules": [
+      {
+        "rule": 1,
+        "name": "A before B",
+        "text": "A is always created first. B = copy(A) at birth. B never precedes A. A is the living state; B is its first snapshot."
+      },
+      {
+        "rule": 2,
+        "name": "A,B before C",
+        "text": "C is always born from both A and B. C_birth = BCP(A,B,0.5). C never precedes its parents."
+      },
+      {
+        "rule": 3,
+        "name": "C accumulates",
+        "text": "After birth, C receives additional content. Each extension is logged with full A and B state at time of event."
+      },
+      {
+        "rule": 4,
+        "name": "B is a crystal",
+        "text": "B.alpha_inner = 0 permanently. B never moves unless operator explicitly calls /update-identity. No automatic coupling."
+      }
+    ],
+    "qubits": {
+      "A": {
+        "role": "Live ring state",
+        "description": "Drifts freely with BCP ring. Carries task signal and current semantic output. Subject to depolarizing noise. No constraints on drift.",
+        "alpha": 0.367,
+        "auto_update": true,
+        "noise_exposure": true
+      },
+      "B": {
+        "role": "Frozen crystal",
+        "description": "Initialized to home phase at node birth. Never participates in ring BCP automatically. Only updated on explicit /update-identity operator call. Represents identity at moment of last explicit update.",
+        "alpha_inner": 0.0,
+        "auto_update": false,
+        "noise_exposure": false,
+        "operator_command": "/update-identity NODE [label]"
+      },
+      "C": {
+        "role": "Composite memory",
+        "description": "Born as BCP(A,B,0.5) at node creation. At each /update-identity event: C_new = BCP(A_current, B_current, 0.5). Accumulates labeled extension log recording A_phase, B_phase, identity_signal at each transition.",
+        "alpha_compose": 0.5,
+        "auto_update": false,
+        "log_each_event": true
+      }
+    },
+    "identity_signal": {
+      "formula": "delta = (phi_A - phi_B + pi) mod 2pi - pi",
+      "range": "[-pi, pi] radians",
+      "at_birth": 0.0,
+      "interpretation": {
+        "zero": "Node just had /update-identity called, or is at birth. A and B are coincident.",
+        "small (< 0.5 rad)": "Node has drifted slightly. Identity is fresh.",
+        "medium (0.5-1.5 rad)": "Node has drifted meaningfully. Monitor trajectory.",
+        "large (> 1.5 rad)": "Node has traveled far from last frozen identity. Rich clock signal.",
+        "maximum (pi rad)": "Node is at antipodal point from its last identity. Maximum drift."
+      },
+      "reframe": "Drift is a clock, not damage. Large signal = the node has changed significantly from its last known self. Zero signal = the clock just reset."
+    },
+    "update_protocol": {
+      "command": "/update-identity NODE [label]",
+      "steps": [
+        "Record A_phase, B_phase, identity_signal, A_word, B_word to extension_log",
+        "Compute C_new = BCP(A_current, B_current, 0.5) \u2014 archives transition moment",
+        "Update B = A_current (crystal resets to A's new position)",
+        "Identity signal delta resets to 0 (A and B are now coincident)",
+        "Clock restarts from new B position"
+      ],
+      "when_to_call": [
+        "Node has been explicitly retrained (new lesson, new role)",
+        "Operator confirms node's drift represents legitimate growth, not noise",
+        "Identity signal > 1.5 rad AND new role has been deliberately established",
+        "NEVER: automatically, on schedule, or because signal is large alone"
+      ]
+    }
+  },
+  "corotating_frame_bcp": {
+    "motivation": "BCP attractor acts on phase VELOCITY, not position. CMDD (Paper XII) failed because it subtracted position. The correct operation subtracts mean angular velocity.",
+    "algorithm": {
+      "step1": "Record phi_before(n) for all nodes",
+      "step2": "Run standard BCP on all edges",
+      "step3": "Apply depolarizing noise",
+      "step4": "Compute angular velocity: delta(n) = (phi_after - phi_before + pi) mod 2pi - pi",
+      "step5": "Compute mean angular velocity: omega_bar = mean(delta)",
+      "step6": "Correct: phi_corrected(n) = phi_after(n) - (delta(n) - omega_bar)",
+      "result": "Collective rotation removed. Differential motion preserved. Relative phases maintained."
+    },
+    "vs_cmdd": {
+      "cmdd_flaw": "Subtracts instantaneous phase position (phi - mean_phi). BCP attractor still acts on differences in that frame.",
+      "corotate_fix": "Subtracts phase velocity (delta - mean_delta). Like moving to the rotating reference frame of the ring's center of mass."
+    },
+    "known_limitation": "Wigner W_min = 0.000 after correction (states shifted off equatorial plane). Wigner restoration step needed. See Paper XIV EXP-1.",
+    "result": "12/12 unique phases maintained through all 2000 steps tested."
+  },
+  "globe_topology": {
+    "description": "Icosahedron-inspired edge pattern for 12-node ring",
+    "edge_families": {
+      "ring_edges": {
+        "pattern": "(i, (i+1)%12)",
+        "count": 12,
+        "delta": 1
+      },
+      "skip1_edges": {
+        "pattern": "(i, (i+2)%12)",
+        "count": 12,
+        "delta": 2
+      },
+      "cross_edges": {
+        "pattern": "(i, (i+5)%12)",
+        "count": 12,
+        "delta": 5
+      }
+    },
+    "total_edges": 36,
+    "nodes": 12,
+    "beta1": 25,
+    "formula": "beta1 = E - V + 1 = 36 - 12 + 1 = 25",
+    "neg_frac_ceiling_raw": 2.075,
+    "neg_frac_ceiling_normalized": "0.83-0.87 (requires experimental confirmation, Paper XIV)",
+    "paper_reference": "Extended Betti Number Bound, Paper X",
+    "effect_on_phase_diversity": "Maintains 12/12 unique phases when combined with co-rotating frame",
+    "effect_alone": "Phase diversity maintained but Wigner non-classicality disrupted (same as pure co-rotate)"
+  },
+  "experimental_results_2000_steps": {
+    "noise": 0.03,
+    "alpha": 0.367,
+    "nodes": 12,
+    "checkpoints": [
+      0,
+      50,
+      100,
+      200,
+      300,
+      500,
+      750,
+      1000,
+      1500,
+      2000
+    ],
+    "baseline": {
+      "unique_at_2000": 10,
+      "wigner": -0.4142,
+      "idpres": 0.51
+    },
+    "abc_cia": {
+      "unique_at_2000": 8,
+      "wigner": -0.3879,
+      "idpres": 0.525,
+      "signal": 1.681,
+      "drift_as_clock": true
+    },
+    "co_rotate": {
+      "unique_at_2000": 12,
+      "wigner": 0.0,
+      "idpres": 0.5,
+      "12_12_all_checkpoints": true
+    },
+    "globe_cia": {
+      "unique_at_2000": 12,
+      "wigner": 0.0,
+      "idpres": 0.5,
+      "12_12_all_checkpoints": true
+    },
+    "key_finding": "Co-Rotate and Globe+CIA are the first architectures to maintain 12/12 unique phases indefinitely (2000+ steps).",
+    "wigner_cost": "Both perfect-diversity architectures currently report W=0.0 (classical). Wigner restoration is Paper XIV EXP-1."
+  },
+  "paper14_roadmap": [
+    {
+      "exp": 1,
+      "title": "Wigner Restoration After Co-Rotation",
+      "method": "After each co-rotating correction, project states back to equatorial plane (rz=0) while preserving corrected phase.",
+      "predicted": "12/12 phase diversity + W_min restored to -0.113 range"
+    },
+    {
+      "exp": 2,
+      "title": "neg_frac Measurement on Globe+CIA",
+      "method": "Run Globe+CIA with full negentropy tracking over 2000 steps.",
+      "predicted": "neg_frac approximately 0.75-0.87 \u2014 first measurement breaking the 0.667 ceiling"
+    },
+    {
+      "exp": 3,
+      "title": "/update-identity Under Task Load",
+      "method": "Run Globe+CIA for 1000 steps with task injections. Call /update-identity on nodes with signal > 1.5 rad. Measure reset and re-divergence.",
+      "predicted": "Signal resets to 0, then re-diverges uniquely per node. Full operator protocol validated."
+    }
+  ]
+}

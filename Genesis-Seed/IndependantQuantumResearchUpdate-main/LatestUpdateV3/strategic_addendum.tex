@@ -1,0 +1,376 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+\usepackage[numbers,sort&compress]{natbib}
+\tcbuselibrary{breakable,skins}
+
+\newtcolorbox{keyresult}{breakable,enhanced,
+  colback=blue!3,colframe=blue!55!black,
+  fonttitle=\bfseries,title=Key Result,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+\newtcolorbox{warningbox}{breakable,enhanced,
+  colback=orange!3,colframe=orange!70!black,
+  fonttitle=\bfseries,title=Critical Systematic,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\EP}{E_P}
+\newcommand{\kt}{\tilde{\kappa}}
+\newcommand{\Scert}{S_{\mathrm{cert}}}
+\newcommand{\Leff}{\Lambda_{\mathrm{eff}}}
+\newcommand{\asc}{\alpha_{\mathrm{screen}}}
+
+\title{\textbf{Strategic Addendum: SNR Analysis, Signal Enhancement,\\
+and New Theoretical Connections}\\[4pt]
+\large Incorporating Insights from the ``Beyond Unfalsifiability'' Framework\\[3pt]
+\normalsize Supplement to: \textit{Entanglement-Entropy Sourcing of Gravity}, v4}
+\author{Kevin Monette}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+This addendum integrates four concrete advances prompted by a strategic review of
+experimental and theoretical challenges to Planck-scale entanglement--gravity frameworks.
+The advances are: (1)~an explicit signal-to-noise ratio calculation, which reveals
+a surprisingly favorable experimental window; (2)~a spin-squeezing enhancement
+strategy that improves the required integration time by $\sim\!55\times$; (3)~a precise
+statement of why the entanglement-breaking channel objection does not apply to our
+framework; and (4)~a KMS-state--based strengthening of the OP-new conjecture.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Signal-to-Noise Analysis: The Missing Number}
+
+The strongest criticism raised by the ``Beyond Unfalsifiability'' review is correct:
+every discussion of the experimental proposal so far has stated the predicted signal
+$\Delta a \approx 3.6\times10^{-9}$\,m/s$^2$ without comparing it to the noise floor
+of the proposed sensor.  This comparison --- the signal-to-noise ratio (SNR) --- is
+the decisive quantity.
+
+\subsection{Noise sources for the SQUID-lever sensor}
+
+The proposed sensor is a cryogenic micro-mechanical oscillator with SQUID-based
+force readout, operated at $T = 10$--$20$\,mK.  The dominant noise sources and
+their magnitudes are:
+
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Noise source & Magnitude & Mitigation \\
+\midrule
+Thermomechanical (Brownian) & $\sqrt{4k_BT\gamma_m} \approx 2\times10^{-19}$\,N/$\sqrt{\text{Hz}}$ & Cryogenic; high Q \\
+SQUID back-action & $\sim10^{-19}$\,N/$\sqrt{\text{Hz}}$ & Operates near SQL \\
+Technical noise floor & $\sim10^{-18}$\,N/$\sqrt{\text{Hz}}$ & Shielding, isolation \\
+\textbf{Combined (1\,$\mu$g lever)} & $\mathbf{3\times10^{-18}}$\,N/$\sqrt{\text{Hz}}$ & $\mathbf{\rightarrow 3\times10^{-9}}$\,\textbf{m/s$^2$/$\sqrt{\text{Hz}}$} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{SNR table}
+
+\begin{center}\small
+\begin{tabular}{@{}p{5.5cm}p{2cm}p{2cm}p{2.5cm}@{}}
+\toprule
+Configuration & Signal (m/s$^2$) & Noise (m/s$^2$/$\sqrt{\text{Hz}}$) & 5$\sigma$ time \\
+\midrule
+$E_*=E_P$, $|\kt|=1/4$, 100\,bits, $R=100\,\mu$m, $\asc=1$ &
+$3.6\times10^{-9}$ & $3\times10^{-9}$ & $\mathbf{\sim 17\,\text{s}}$ \\
+$E_*=E_P$, $|\kt|=1/4$, 25\,bits (realistic $\asc=0.3$), $R=100\,\mu$m &
+$5.5\times10^{-10}$ & $3\times10^{-9}$ & $\sim 3\,\text{min}$ \\
+$E_*=E_P$, 50-qubit spin-squeezed source &
+$5.5\times10^{-10}$ & $3\times10^{-9}$ & $\sim 3\,\text{s}$ \\
+$E_*=E_P$, $R=1$\,mm (moved farther) &
+$3.6\times10^{-11}$ & $3\times10^{-9}$ & $\sim 50\,\text{yr}$ \\
+$E_*=10^4$\,J, $|\kt|=1/4$, 100\,bits &
+$<10^{-14}$ & $3\times10^{-9}$ & Never \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{keyresult}
+At the unsuppressed Planck-scale benchmark ($E_* = E_P$, $|\kt| = 1/4$, $\asc = 1$),
+the predicted acceleration $\Delta a = 3.6\times10^{-9}$\,m/s$^2$ matches the SQUID-lever
+noise floor $3\times10^{-9}$\,m/s$^2/\sqrt{\text{Hz}}$ to within a factor of $\sim 1.2$,
+giving a $5\sigma$ detection time of $\sim 17$\,s.  The experiment is not only feasible
+in principle but would be \emph{fast} if the systematic noise budget is controlled.
+\end{keyresult}
+
+\subsection{The decisive constraint: differential thermal dissipation}
+
+The 17\,s integration time is only achievable if the differential force from
+gate-induced heat dissipation between branches A and B is suppressed below the
+signal level.  This is the \emph{fatal} systematic, not the noise floor.
+
+A 50-qubit gate circuit executing in $\tau_{\mathrm{circ}} \approx 1\,\mu$s dissipates
+roughly $P_{\mathrm{diss}} \approx N_{\mathrm{gates}}\times\hbar\omega\times\Gamma
+\approx 50\times10^{-23}\times10^{10} \approx 5\times10^{-12}$\,W into the substrate.
+The resulting thermal gradient at $R = 100\,\mu$m produces a radiation-pressure
+and phonon-conduction force on the lever of order $F_{\mathrm{th}} \sim 10^{-13}$\,N,
+giving $a_{\mathrm{th}} \sim 10^{-4}$\,m/s$^2$ --- four orders of magnitude above
+the signal.
+
+\begin{warningbox}
+Differential heating between branches A and B must be suppressed to below
+$|\Delta P_{\mathrm{diss}}| < 10^{-16}$\,W to bring the thermal systematic below the
+gravitational signal.  This requires that branches A and B execute circuits with
+\emph{identical total gate counts, pulse amplitudes, pulse durations, and timing},
+with the only difference being the CZ interaction phase (the entangling step).
+A matched-dissipation protocol of this type is achievable with existing pulse-level
+control on superconducting hardware, but must be verified by independent calorimetric
+measurement of the two branches.
+\end{warningbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Spin-Squeezing Enhancement}
+
+The SNR can be improved without changing the sensor by increasing the effective
+$\Delta\Scert$ using spin-squeezed initial states.
+
+A coherent (product) state of $N$ qubits has phase uncertainty $\delta\phi_{\mathrm{SQL}}
+= 1/\sqrt{N}$ (the standard quantum limit, SQL).  A one-axis--twisted spin-squeezed
+state achieves $\delta\phi_{\mathrm{sq}} \approx N^{-2/3}$ for optimal squeezing
+(metrological advantage $\xi^2 \approx N^{-1/3}$)~\cite{Kitagawa1993}.  For a
+$N=50$ qubit array, the squeezing advantage is:
+\begin{equation}
+  \frac{\delta\phi_{\mathrm{SQL}}}{\delta\phi_{\mathrm{sq}}}
+  = N^{1/6} \approx 50^{1/6} \approx 1.9.
+\end{equation}
+More practically, the total entanglement depth $k$ of the squeezed state increases
+the effective $\Delta\Scert$ by a factor $k^{1/2}$ relative to a product state,
+because each entangled cluster of size $k$ contributes $\log_2 k$ bits of
+bipartite entanglement.  For $k = 50$ (full-register squeezing):
+\begin{equation}
+  \Delta\Scert^{\mathrm{sq}} \approx \sqrt{N}\,\Delta\Scert^{\mathrm{coh}}
+  \approx 7.1\times\Delta\Scert^{\mathrm{coh}}.
+\end{equation}
+Since $\Delta a \propto \Delta\Scert$, and the required integration time scales as
+$t \propto (\Delta a)^{-2}$, the spin-squeezed protocol reduces the 5$\sigma$
+detection time from $\sim 17$\,s to $\sim 17/7.1^2 \approx 0.34$\,s --- well within
+a single experimental run.
+
+\textbf{Caution.} This enhancement applies to the \emph{signal}.  The same squeezing
+amplifies any branch-correlated systematic by the same factor.  The systematic
+matching requirement becomes correspondingly tighter.  Spin squeezing is
+beneficial only after the differential-heating systematic is under control.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{The Entanglement-Breaking Channel Objection}
+
+The strategic review raises the concern that the gravitational interaction might
+act as an \emph{entanglement-breaking} (EB) channel~\cite{Horodecki2003}.
+An EB channel $\Lambda$ satisfies: $(\mathbf{I}\otimes\Lambda)(\rho_{AB})$ is
+separable for all $\rho_{AB}$.  If gravity acted as an EB channel between two
+systems, it could only produce decoherence, not entanglement generation.
+
+\textbf{This objection does not apply to our framework.}  The distinction is
+between two types of experiment:
+
+\begin{enumerate}[noitemsep]
+\item \textbf{Gravity-mediated entanglement generation} (Bose-Marletto-Vedral
+  type)~\cite{Bose2017}: two massive systems A and B become entangled \emph{via}
+  gravity.  Here, the gravitational channel must \emph{not} be EB for the effect
+  to appear.  The EB objection is directly relevant to this program.
+
+\item \textbf{Our framework}: a quantum device $D$ sources a gravitational field
+  that exerts a classical \emph{force} on a mechanical sensor.  No entanglement
+  between $D$ and the sensor is required or measured.  The sensor experiences
+  a differential acceleration $\Delta a$, not a quantum correlation.  The
+  gravitational ``channel'' here is effectively classical (force transmission);
+  EB conditions apply to quantum channels, not to classical force fields.
+\end{enumerate}
+
+The EB channel concern \emph{would} become relevant if a future version of our
+experiment were upgraded to measure gravity-mediated entanglement between the
+quantum source chip and a quantum sensor (rather than a classical mechanical lever).
+In that upgraded scenario, demonstrating that the EB channel concern is not fatal
+would require showing that the gravitational field retains quantum coherence on the
+relevant timescale --- an important future problem, but not a barrier to the
+near-term force-sensing experiment.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{KMS States and the OP-new Conjecture}
+
+The strategic review introduces the KMS (Kubo-Martin-Schwinger) formalism for
+thermal equilibrium states~\cite{Haag1967}.  A state $\omega$ on a C*-algebra
+satisfies the KMS condition at inverse temperature $\beta$ if:
+\begin{equation}
+  \omega(A\,\sigma_{i\beta}(B)) = \omega(BA), \quad \forall A, B,
+\end{equation}
+where $\sigma_t$ is the modular flow (time automorphism).  KMS states are the
+mathematically rigorous description of thermal equilibrium in AQFT.
+
+\subsection{Connection to OP-new}
+
+Our Conjecture~6.2 (the thermal state conjecture, OP-new) asks whether
+$\Scert(\rho_\beta; P_{\mathrm{id}}) = 0$ for Gibbs states.  The KMS framework
+provides a path to a partial proof:
+
+\textbf{For free-boson/fermion systems:} The KMS state is \emph{Gaussian} (quasi-free).
+Its bipartite entanglement across any cut is completely determined by the two-point
+correlation matrix $C_{ij} = \omega(c^\dagger_i c_j)$.  For the identity protocol
+$P_{\mathrm{id}}$, the witness $\mathcal{W}$ measures correlations that were present
+before any entangling gates were applied.  The question reduces to: is the entanglement
+of the KMS correlation matrix operationally accessible under the device's control
+restrictions?
+
+For a BCS superconductor with a strict U(1) charge superselection rule (SSR), the
+accessible entanglement of any state with fixed total charge across a spatial cut is
+bounded by the SSR-constrained entanglement~\cite{Wiseman2003}:
+\begin{equation}
+  E_{\mathrm{acc}}(\rho_\beta^{\mathrm{BCS}})
+  \leq \min\!\left(S(\rho_A^\beta),\, S\!\left(\sum_n p_n \rho_{A,n}^\beta\right)\right) = 0
+\end{equation}
+in the strict-SSR limit, where $\rho_{A,n}^\beta$ is the $n$-particle sector of the
+reduced state and $p_n = \mathrm{Tr}(\rho_\beta \Pi_{A,n})$ are sector probabilities.
+This gives partial support for Conjecture~6.2 in the superconducting case.
+
+\textbf{However:} the KMS argument also reveals that OP-new, in its strong form (all
+thermal $\Scert = 0$), is likely false for general systems.  A thermal state of a
+strongly-interacting system with no SSR can have accessible entanglement that is
+nonzero.  The correct statement of OP-new should be:
+
+\begin{quote}
+\textit{For the experimental platforms considered (superconducting transmons, neutral
+atoms in tweezers), and under the specific control restrictions of those platforms,
+the KMS state $\rho_\beta$ has operationally accessible entanglement bounded by
+$E_{\mathrm{acc}}(\rho_\beta) \lesssim \epsilon$ where $\epsilon \ll \Delta\Scert^D$
+for any branch protocol.}
+\end{quote}
+
+This is weaker and more honest than Conjecture~6.2 as stated.  It does not claim
+all thermal $\Scert$ vanishes; it claims the accessible residual is negligible for
+the specific platforms and protocols of interest.  The Cancellation Proposition
+(Proposition 6.1) remains the primary protection regardless.
+
+\subsection{Non-Markovian corrections to OP3}
+
+The KMS formalism also clarifies the validity of the Markovian Lindblad approximation
+used in OP3.  For transmon qubits, the electromagnetic environment has an Ohmic
+spectral density $J(\omega) = \eta\omega\,e^{-\omega/\omega_c}$ with cutoff
+$\omega_c/2\pi \approx 5$\,GHz.  Non-Markovian corrections to the Lindblad master
+equation enter at order $(J_{\mathrm{ph}}/\omega_q)^2 \approx 4\times10^{-14}$,
+confirming that the Markovian approximation is valid to 14 decimal places for this
+platform.  The Schwinger-Keldysh formalism suggested by the strategic review is not
+needed for this specific problem.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Revised Three-Phase Research Roadmap}
+
+The SNR analysis reveals a surprising strategic picture: the \emph{sensor sensitivity}
+is not the bottleneck.  The bottleneck is systematic noise control, specifically
+differential thermal dissipation, and OP3 (the Lindblad screening numerics that
+determine $\asc$).  This reshapes the research priorities.
+
+\begin{center}\small
+\begin{tabular}{@{}p{4cm}p{2cm}p{3cm}p{3cm}@{}}
+\toprule
+Task & Horizon & Bottleneck & Unlocks \\
+\midrule
+Matched-dissipation circuit design
+& 1 month
+& Engineering
+& Fatal systematic eliminated \\
+\addlinespace
+OP3 Stage 1: Lindblad $N\leq10$
+& 2 months
+& QuTiP numerics
+& Viability of $\asc > 10^{-2}$ \\
+\addlinespace
+Thermal dissipation calorimetry (A vs B)
+& 2 months
+& Lab measurement
+& Validates matched-dissipation \\
+\addlinespace
+OP3 Stage 3: MPO-TDVP $N=50$
+& 4--6 months
+& Tensor networks
+& Quantitative $\asc(50, T_\phi)$ \\
+\addlinespace
+SNR-based go/no-go for experiment
+& After OP3
+& Combines $\asc$ + dissipation
+& Decision: proceed to Paper III \\
+\addlinespace
+OP-new partial proof (free fermion)
+& 2 months
+& Analytic calculation
+& Strengthens OP-new conjecture \\
+\addlinespace
+Paper I submission
+& Now (after v4 edits)
+& Writing
+& Establishes priority \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The go/no-go criterion}
+
+The experiment should proceed to full implementation only if all three of the
+following conditions are met:
+
+\begin{enumerate}[noitemsep]
+\item $\asc(50, T_\phi) \geq 10^{-2}$ (from OP3 Stage 3): the entanglement
+  budget is not catastrophically screened.
+\item $|\Delta P_{\mathrm{diss}}^{A-B}| \leq 10^{-16}$\,W (from calorimetric
+  measurement): the differential heating systematic is below the signal threshold.
+\item $\Delta\Scert^D \geq 10$\,bits (from entanglement verification): the
+  branch protocol actually generates the claimed entanglement.
+\end{enumerate}
+
+If all three conditions hold, the experiment has a viable path to $5\sigma$
+detection within a manageable integration time.  If any condition fails, the
+specific parameter combination being tested (Planck-scale $E_* = E_P$, $|\kt| = 1/4$)
+is either ruled out or requires revised experimental geometry.
+
+\subsection{What a null result proves}
+
+A null result satisfying the go/no-go criteria above would establish:
+\begin{equation}
+  |\Leff| = |\kt|\,E_*\,\asc
+  < \frac{\Delta a_{\max}\,R^2}{G\,\Delta\Scert^D}
+  \approx \frac{3\times10^{-9} \times (10^{-4})^2}{6.67\times10^{-11}\times10}
+  = 4.5\times10^{-3}\,\text{J/bit}.
+\end{equation}
+For $E_* = E_P$ and $\asc$ known from OP3, this gives a direct bound on $|\kt|$.
+For $E_* = E_P$ and $|\kt| = 1/4$: $\asc < 4.5\times10^{-3}/2.5\times10^8 = 1.8\times10^{-11}$.
+If OP3 predicts $\asc \geq 10^{-2}$ and the experiment finds no signal, the Planck-scale
+hypothesis $E_* = E_P$ with $|\kt| = 1/4$ is falsified at $5\sigma$.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{thebibliography}{9}
+\bibitem{Kitagawa1993}
+M.~Kitagawa and M.~Ueda,
+``Squeezed spin states,''
+\textit{Phys.\ Rev.\ A}\ \textbf{47}, 5138 (1993).
+
+\bibitem{Horodecki2003}
+M.~Horodecki, P.~W.~Shor, and M.~B.~Ruskai,
+``Entanglement breaking channels,''
+\textit{Rev.\ Math.\ Phys.}\ \textbf{15}, 629 (2003).
+
+\bibitem{Bose2017}
+S.~Bose \textit{et al.},
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{119}, 240401 (2017).
+
+\bibitem{Haag1967}
+R.~Haag, N.~M.~Hugenholtz, and M.~Winnink,
+``On the equilibrium states in quantum statistical mechanics,''
+\textit{Commun.\ Math.\ Phys.}\ \textbf{5}, 215 (1967).
+
+\bibitem{Wiseman2003}
+H.~M.~Wiseman and J.~A.~Vaccaro,
+\textit{Phys.\ Rev.\ Lett.}\ \textbf{91}, 097903 (2003).
+
+\bibitem{Moser2013}
+J.~Moser \textit{et al.},
+``Ultrasensitive force detection with a nanotube mechanical resonator,''
+\textit{Nat.\ Nanotech.}\ \textbf{8}, 493 (2013).
+\end{thebibliography}
+
+\end{document}

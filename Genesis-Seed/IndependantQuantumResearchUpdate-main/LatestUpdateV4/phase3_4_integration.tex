@@ -1,0 +1,292 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+\newtcolorbox{auditpass}{breakable,enhanced,
+  colback=green!3,colframe=green!55!black,
+  fonttitle=\bfseries\small,title=Audited: Correct and New,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+\newtcolorbox{auditfix}{breakable,enhanced,
+  colback=orange!3,colframe=orange!65!black,
+  fonttitle=\bfseries\small,title=Audited: Contains Error — Corrected Below,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+\newtcolorbox{keynum}{breakable,enhanced,
+  colback=blue!3,colframe=blue!55!black,
+  fonttitle=\bfseries\small,title=Key Number,
+  boxrule=0.8pt,left=4pt,right=4pt,top=3pt,bottom=3pt}
+
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\asc}{\alpha_{\mathrm{screen}}}
+\newcommand{\Scert}{S_{\mathrm{cert}}}
+\newcommand{\Leff}{\Lambda_{\mathrm{eff}}}
+
+\title{\textbf{Phase III--IV Integration: Control Architecture,\\
+CP Shielding, and Deployment Roadmap}\\[4pt]
+\large Audited Engineering Modules for Project SNR--Quantum Gravity\\[3pt]
+\normalsize Supplement to: \textit{Entanglement-Entropy Sourcing of Gravity}, v4}
+\author{Kevin Monette}
+\date{March 2026}
+
+\begin{document}
+\maketitle
+
+This document integrates the genuinely new engineering contributions from the
+``ship-ready blueprint'' into the project's canonical framework, with each claim
+independently audited.  We incorporate what is correct, correct what has an error,
+and discard what duplicates material already in the project.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Revised Integration Time: 34 Seconds, Not 17}
+
+\begin{auditpass}
+The revised integration time of 34\,s is correct and represents a genuine
+upgrade over the 17\,s figure in the previous addendum.
+\end{auditpass}
+
+The 17\,s calculation in the Strategic Addendum used only the statistical noise floor
+$\sigma_{\mathrm{noise}} = 3\times10^{-9}$\,m/s$^2$/\!\sqrt{Hz}.  When the residual
+Casimir-Polder systematic $\sigma_{\mathrm{sys}} \approx 0.5\times10^{-9}$\,m/s$^2$
+(from 0.05\% shield non-uniformity, treated after calibration) is included:
+\begin{equation}
+  \sigma_{\mathrm{tot}}^2 = \frac{\sigma_{\mathrm{noise}}^2}{T_{\mathrm{int}}}
+  + \sigma_{\mathrm{sys}}^2.
+\end{equation}
+Setting Signal\,$/\sigma_{\mathrm{tot}} = 5$ with
+Signal $= 3.6\times10^{-9}$\,m/s$^2$:
+\begin{align}
+  \left(\frac{3.6\times10^{-9}}{5}\right)^2
+  &= \frac{(3\times10^{-9})^2}{T_{\mathrm{int}}} + (0.5\times10^{-9})^2, \\
+  T_{\mathrm{int}}
+  &= \frac{(3\times10^{-9})^2}{(0.72\times10^{-9})^2 - (0.5\times10^{-9})^2}
+  = \frac{9\times10^{-18}}{(0.52-0.25)\times10^{-18}}
+  \approx 33.5\,\text{s}.
+\end{align}
+
+\begin{keynum}
+Revised 5$\sigma$ integration time: $T_{\mathrm{int}} \approx \mathbf{34}$\,\textbf{s},
+accounting for Casimir-Polder systematic after calibration subtraction.
+Per-run data requirement: 100 valid runs $\times$ 34\,s $\approx$ 57\,minutes total.
+\end{keynum}
+
+The 34\,s figure replaces the 17\,s figure in all subsequent project documents.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Gold-on-Silicon Faraday Shield for CP Mitigation}
+
+\begin{auditpass}
+The 200\,nm Gold-on-Silicon Faraday shield is a genuine new component, correctly
+designed to suppress Casimir-Polder forces while being gravitationally transparent.
+\end{auditpass}
+
+\subsection{Design specification}
+
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+Parameter & Specification & Basis & Status \\
+\midrule
+Material & 200\,nm Au on Si substrate & High conductivity; mechanical stability & Manufacturable \\
+Geometry & Grounded planar shield & Screens static $E$-field; suppresses CP & Standard \\
+Gravitational transparency & $<10^{-12}$ attenuation & Gravity couples to $T_{\mu\nu}$; 200\,nm Au is negligible & Trivially satisfied \\
+Thickness control & $\pm100$\,nm (0.05\%) & ALD deposition; AFM verification & Achievable \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Residual systematic from non-uniformity}
+
+A 100\,nm peak-to-peak thickness variation at $R = 100\,\mu$m produces a Casimir
+pressure gradient calculable via the Lifshitz formula.  The estimated systematic
+acceleration on the SQUID lever (1\,$\mu$g, 1\,$\mu$m$^2$ tip) after topographic
+mapping and calibration subtraction is $\sigma_{\mathrm{sys}} \approx 0.5\times10^{-9}$\,m/s$^2$.
+This number enters the 34\,s integration time above.
+
+\textbf{Mitigation path:}  AFM mapping of the fabricated shield provides a topographic
+model $\delta h(x,y)$.  The corresponding Casimir gradient is computed from the Lifshitz
+formula and subtracted as a prior in the Bayesian analysis (Section~\ref{sec:bayes}).
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{MPC Thermal-Nulling Control Loop}
+
+\begin{auditpass}
+The Model Predictive Control (MPC) architecture with look-ahead from the gate schedule
+is a genuine conceptual improvement over a standard PID controller.  The key idea ---
+using the scheduled gate sequence to anticipate heat deposition before it occurs ---
+is not in any prior project document.
+\end{auditpass}
+
+\begin{auditfix}
+The blueprint states the thermal diffusion time across a 500\,$\mu$m silicon substrate
+is $\tau_{\mathrm{th}} \approx 25$\,ns, using $D = 10$\,m$^2$/s.  This is the room-temperature
+diffusivity.  At $T = 15$\,mK, silicon has dramatically reduced thermal conductivity
+and heat capacity.  The correct values are $\kappa_{\mathrm{Si}} \approx 0.01$\,W/(m\,K)
+and $c_p \approx 10^{-10}$\,J/(kg\,K) (Debye $T^3$ suppression), giving
+$D_{\mathrm{mK}} \approx 50{,}000$\,m$^2$/s and $\tau_{\mathrm{th}} \approx 5$\,ps.
+Heat in fact spreads \emph{faster} at 15\,mK through ballistic phonons; the thermal
+equilibration of the chip is near-instantaneous on any timescale relevant to the experiment.
+The MPC latency requirement of $\tau_{\mathrm{loop}} \leq 5\,\mu$s is driven by the
+\emph{electrical} control system, not thermal diffusion.  The thermal-diffusion argument
+in the blueprint is wrong, but the $5\,\mu$s latency requirement is correct on independent
+grounds.
+\end{auditfix}
+
+\subsection{Corrected MPC architecture}
+
+The MPC controller operates as follows:
+\begin{enumerate}[noitemsep]
+  \item The quantum pulse generator provides a look-ahead vector of expected energy
+    deposition $\vec{E}_{\mathrm{gate}}(t)$ for the next $\Delta t = 5\,\mu$s window.
+  \item TES bolometers (NEP $\approx 10^{-20}$\,W/$\sqrt{\mathrm{Hz}}$) at the thermal
+    anchors of both branches read $P_A(t)$ and $P_B(t)$ with power resolution
+    $\approx 4.5\times10^{-18}$\,W in a 5\,$\mu$s window.
+  \item The MPC optimizer minimizes:
+    \begin{equation}
+      J = \sum_{k=0}^{N_p}\!\left(|\Delta P_{\mathrm{diss}}(t+k)|^2
+          + \lambda|\vec{E}_{\mathrm{comp}}(t+k)|^2\right)
+    \end{equation}
+    and emits compensation tones at frequency-detuned frequencies to dummy resistive
+    elements, matching the heat deposited in branch A to branch B.
+  \item The FPGA implementation achieves loop latency $\tau_{\mathrm{loop}} \leq 5\,\mu$s
+    using current commercial hardware (e.g., Keysight M3300A AWG, Xilinx Ultrascale+).
+\end{enumerate}
+
+\textbf{Why this is better than PID:}  A standard PID controller reacts to errors
+\emph{after} they occur.  Heat dissipated by a CZ gate cannot be ``un-deposited.''
+The MPC look-ahead computes the compensation pulse \emph{before} the gate fires,
+preventing the imbalance rather than correcting it.  This is the correct architecture
+for matching dissipation to the required $10^{-16}$\,W precision.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Bayesian Signal Extraction and Blind Injection}
+\label{sec:bayes}
+
+\begin{auditpass}
+The Bayesian hypothesis-testing framework and blind injection protocol are both
+genuine additions.  The Bayes factor formulation correctly handles the systematic floor.
+The blind injection requirement (identify $>90\%$ of injections, $<5\%$ false positives)
+is a standard good-practice requirement not previously specified.
+\end{auditpass}
+
+\subsection{Statistical framework}
+
+The measured lever displacement stream $d(t)$ is analyzed under two hypotheses:
+\begin{align}
+  H_0:&\quad d \sim \mathcal{N}(0,\, \sigma_{\mathrm{noise}}^2 + \sigma_{\mathrm{CP}}^2), \\
+  H_1:&\quad d \sim \mathcal{N}(\Delta a,\, \sigma_{\mathrm{noise}}^2 + \sigma_{\mathrm{CP}}^2).
+\end{align}
+The Bayes factor is $K = P(d|H_1)/P(d|H_0)$.  A detection is claimed at
+$\ln K > 5$ (approximately $5\sigma$ in the Gaussian limit).
+
+With $\Delta a = 3.6\times10^{-9}$\,m/s$^2$, $\sigma_{\mathrm{noise}}
+= 3\times10^{-9}$\,m/s$^2/\sqrt{\mathrm{Hz}}$, and
+$\sigma_{\mathrm{CP}} = 0.5\times10^{-9}$\,m/s$^2$ (Lifshitz-model systematic):
+\begin{equation}
+  T_{\mathrm{int}}(\text{Bayesian}) = 33.5\,\text{s},
+\end{equation}
+consistent with the direct calculation above.
+
+\subsection{Blind injection protocol}
+
+\begin{itemize}[noitemsep]
+  \item 10\% of data runs receive a synthetic signal injected digitally into the SQUID
+    readout by a trusted third-party algorithm, without disclosure to the analysis team.
+  \item Success criterion: $>90\%$ of injections identified, $<5\%$ false positives.
+  \item Pipeline validated against blind injections before unblinding actual data.
+\end{itemize}
+
+This protocol prevents analyst bias and validates the entire signal extraction pipeline.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{18-Month Deployment Roadmap}
+
+\begin{center}\small
+\begin{tabular}{@{}p{2cm}p{4cm}p{5cm}p{2.5cm}@{}}
+\toprule
+Phase & Duration & Deliverable & Milestone \\
+\midrule
+\textbf{Theory} & Now & Submit Paper I (v4); OP3 Stage 1 code & arXiv submission \\
+\addlinespace
+\textbf{Fabrication} & Months 1--6 & ALD Au/Si shields; 50-qubit transmon array with integrated TES heaters & AFM: shield uniformity $<100$\,nm ripple \\
+\addlinespace
+\textbf{Calibration} & Months 7--9 & Cool to 15\,mK; characterize $T_2$; tune MPC loop & $|\Delta P_{\mathrm{diss}}| \leq 10^{-16}$\,W stable for 1\,h \\
+\addlinespace
+\textbf{Validation} & Months 10--12 & Blind injection protocol; baseline noise ($H_0$); OP3 Stage 3 complete & Injections identified; $\ln K < 5$ for baseline \\
+\addlinespace
+\textbf{Execution} & Months 13--15 & Data collection, squeezed cluster state, 100 runs $\times$ 34\,s & Accumulated $3{,}400$\,s valid data \\
+\addlinespace
+\textbf{Publication} & Months 16--18 & Unblind; compute Bayes factor; draft paper & Publish (positive or null) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Revised System Integration Matrix}
+
+\begin{center}\small
+\begin{tabular}{@{}p{2.5cm}p{2.5cm}p{2.5cm}p{3.5cm}p{2cm}@{}}
+\toprule
+Subsystem & Module & Interface & Critical constraint & Status \\
+\midrule
+Quantum source & MPO-TDVP (OP3) & Pulse generator & $\chi \leq 256$; $\asc \geq 10^{-2}$ & Pending Stage 3 \\
+CP shield & Faraday (Au/Si) & Mechanical mount & Non-uniformity $< 0.05\%$ & Design complete \\
+Thermal control & MPC with TES & FPGA + bolometers & Latency $\leq 5\,\mu$s; $\Delta P \leq 10^{-16}$\,W & Architecture set \\
+Data analysis & Bayesian ($H_0/H_1$) & SQUID readout & $T_{\mathrm{int}} \geq 34$\,s; blind injection pass & Framework complete \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Updated Risk Register}
+
+\begin{center}\small
+\begin{tabular}{@{}p{3cm}p{1.5cm}p{1.5cm}p{4.5cm}p{2.5cm}@{}}
+\toprule
+Risk & Prob. & Impact & Mitigation & Gates \\
+\midrule
+Bond dimension $\chi > 256$ & Medium & High & Reduce to $N=30$; longer integration & Blocks Paper III \\
+Shield non-uniformity $>0.05\%$ & High & Medium & AFM map; Lifshitz prior in Bayes & Limits SNR \\
+MPC latency $> 5\,\mu$s & Low & High & FPGA pre-computation; look-ahead & Required \\
+$\asc(50,T_\phi) < 10^{-4}$ & Unknown & Critical & Revert to $N=30$ or revise $E_*$ hypothesis & Pivotal \\
+CP calibration fails & Low & Medium & Increase shield uniformity spec & Increases $T_{\mathrm{int}}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Feasibility Assessment}
+
+The blueprint's overall GREEN/``ship-ready'' conclusion is premature.  The correct
+current status is:
+
+\begin{center}\small
+\begin{tabular}{@{}p{4cm}p{3cm}p{5.5cm}@{}}
+\toprule
+Module & Status & Blocking issue \\
+\midrule
+Theory (v4 paper) & \textbf{Ready to submit} & None \\
+MPO-TDVP (OP3 Stage 1) & Not started & Requires 2--4 weeks QuTiP code \\
+MPO-TDVP (OP3 Stage 3) & Not started & Requires 4--6 months tensor network work \\
+Faraday shield design & Complete & Fabrication requires facility \\
+MPC architecture & Specified & FPGA implementation: 2--3 months \\
+Bayesian pipeline & Framework set & Requires OP3 output for priors \\
+Full experiment & \textbf{Not yet authorized} & Requires OP3 Stage 3 + $\Delta P$ calorimetry \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The experiment is not ``ready to fabricate'' in the sense of authorizing all phases.
+It is ready to:
+(1)~submit Paper I immediately,
+(2)~begin OP3 Stage 1 numerics in parallel,
+(3)~engage a fabrication facility for shield samples and test bolometers.
+
+The full hardware integration should be authorized only after the OP3 go/no-go
+criterion ($\asc(50,T_\phi) \geq 10^{-2}$) is met.
+
+\end{document}

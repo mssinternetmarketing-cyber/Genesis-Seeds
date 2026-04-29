@@ -1,0 +1,13 @@
+{
+  "name": "Kevin",
+  "timestamp": "2026-01-30T13:16:03.913956",
+  "P": 0.9500000000000002,
+  "E": 0.9500000000000001,
+  "I": 1.0,
+  "G": 1.0,
+  "Q": 0.9750000000000001,
+  "trajectory": 0.017499999999999932,
+  "label": "post_first_quantum_run",
+  "note": "After 5 \u03a9-ward PEIG steps in Bloch evolution",
+  "timestamp_override": "2026-01-30T13:18:04.472915"
+}

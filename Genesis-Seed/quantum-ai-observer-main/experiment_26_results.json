@@ -1,0 +1,24 @@
+{
+  "experiment": "22-Qubit Scaling Extension (Exp 26)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T01:56:09.933210",
+  "mission": "Validate formula at 22q",
+  "formula": "shots = 2^(n/2) \u00d7 ~1000",
+  "exp25_baseline": {
+    "qubits": 20,
+    "shots": 100000,
+    "bq": 0.8254
+  },
+  "result": {
+    "qubits": 22,
+    "shots": 320000,
+    "job_id": "d5vgcl1mvbjc73acdv70",
+    "circuit_depth": 70,
+    "bridge_quality": 0.8274097407511156,
+    "entropy": 18.203014296524543,
+    "unique_states": 306602,
+    "max_possible_states": 4194304,
+    "state_coverage_pct": 7.309961318969727,
+    "total_shots": 320000
+  }
+}

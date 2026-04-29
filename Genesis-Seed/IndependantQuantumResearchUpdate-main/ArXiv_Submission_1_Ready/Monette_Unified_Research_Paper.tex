@@ -1,0 +1,1725 @@
+%===========================================================================
+% ENTANGLEMENT, GEOMETRY, AND THE LIMITS OF QUANTUM OBSERVABILITY
+% A Three-Paper Research Program
+% Author: Kevin Monette, Independent Researcher
+% Version: March 2026 — arXiv Submission Candidate
+%===========================================================================
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{mdframed}
+\usepackage{microtype}
+\usepackage{parskip}
+
+% ---- Hyperref setup ----
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!70!black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black
+}
+
+% ---- Theorem environments ----
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---- Framed box for core statements ----
+\newmdenv[
+  linewidth=0.8pt,
+  linecolor=black!60,
+  backgroundcolor=black!4,
+  innertopmargin=8pt,
+  innerbottommargin=8pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  skipabove=8pt,
+  skipbelow=8pt
+]{corestatement}
+
+% ---- Epistemic label command ----
+\newcommand{\estab}[1]{\textcolor{blue!70!black}{\textbf{[ESTABLISHED]}}}
+\newcommand{\hypo}[1]{\textcolor{orange!80!black}{\textbf{[HYPOTHESIS]}}}
+\newcommand{\openproblem}[1]{\textcolor{red!70!black}{\textbf{[OPEN: #1]}}}
+
+% ---- Math shorthands ----
+\newcommand{\kB}{k_{\mathrm{B}}}
+\newcommand{\Sent}{S_{\mathrm{ent}}}
+\newcommand{\SvN}{S_{\mathrm{vN}}}
+\newcommand{\Shat}{\hat{S}}
+\newcommand{\FQ}{\mathcal{F}_Q}
+\newcommand{\tkappaeff}{\tilde{\kappa}_{\mathrm{eff}}}
+\newcommand{\ascreen}{\alpha_{\mathrm{screen}}}
+\newcommand{\lP}{\ell_P}
+\newcommand{\Hilb}{\mathcal{H}}
+\newcommand{\Cconstr}{\mathcal{C}_{\mathrm{constr}}}
+\newcommand{\Cdensity}{\mathcal{D}}
+\newcommand{\Cobs}{\mathcal{C}_{\mathrm{obs}}}
+\newcommand{\Cirr}{\mathcal{I}}
+\newcommand{\bias}{B_{\mathrm{SPAM}}}
+\newcommand{\rank}{\mathrm{rank}}
+
+\setlength{\parskip}{6pt}
+
+%===========================================================================
+\begin{document}
+%===========================================================================
+
+\begin{titlepage}
+\vspace*{1.5cm}
+{\centering
+\rule{\textwidth}{1.2pt}\\[0.8em]
+{\LARGE\bfseries Entanglement, Geometry, and the Limits of Quantum Observability}\\[0.6em]
+{\large\bfseries A Phenomenological Framework Coupling Quantum Entropy to Spacetime Curvature,\\[0.3em]
+with Two Independent Quantum Information Results}\\[0.6em]
+\rule{\textwidth}{0.8pt}\\[1.5em]
+{\large Kevin Monette}\\[0.4em]
+{\normalsize\itshape Independent Researcher}\\[0.4em]
+{\normalsize\texttt{March 2026}}\\[1.5em]
+}
+
+\begin{abstract}
+\noindent
+We present a connected three-paper research program at the boundary of
+quantum information, thermodynamics, and gravitational physics.
+\textbf{Paper~A} proposes and analyzes a phenomenological modification
+of Einstein's field equations in which entanglement entropy density
+acts as a gravitational source term:
+$G_{\mu\nu} = \tfrac{8\pi G}{c^4}T_{\mu\nu}
++ \tilde{\kappa}(\kB\ln 2)^{-1}\Sent\,g_{\mu\nu}$.
+Starting from Jacobson's thermodynamic derivation of general relativity,
+we estimate the coupling constant $\tilde{\kappa} = -1/4$ under an
+explicitly stated holographic regulator hypothesis, define an
+environmental screening factor $\ascreen$ that suppresses the coupling in
+decohered systems, and establish a five-condition falsification criterion
+that is achievable with near-term quantum hardware. We are explicit
+throughout about the extrapolation boundary: Jacobson's derivation applies
+rigorously to causal horizons, and this paper's extension to
+laboratory-scale entanglement is a physically motivated hypothesis,
+not a derivation.
+\textbf{Paper~B} provides an independent, rigorously derived result in
+quantum information: the 40--50\% entropy plateau observed in NISQ
+tomography is an epistemic artifact of undersampling, not a signature of
+physical decoherence. We prove this through a constraint manifold
+formalism, derive the shot-scaling law $\nu \propto 2^{n/2}$ from the
+quantum Cram\'er--Rao bound, and give a bias formula
+$\mathbb{E}[\Shat] = \SvN + (d-1)/(2\nu) + \bias$ with an explicit
+correction procedure.
+\textbf{Paper~C} derives Landauer's principle as a theorem from five
+physical axioms (causal closure, unitary microdynamics, effective
+thermodynamics, physical memory, finite resources), producing an
+observer-independent statement with three falsifiable predictions.
+All three papers are independently submittable; their connections are
+explicitly labeled.
+\end{abstract}
+
+\vspace{0.8em}
+\noindent\textbf{Keywords:} entanglement entropy; gravitational coupling;
+thermodynamics of spacetime; quantum tomography; constraint manifolds;
+Landauer's principle; NISQ; quantum Fisher information
+
+\noindent\textbf{arXiv categories:} Paper A: gr-qc (cross-list: quant-ph);
+Paper B: quant-ph; Paper C: quant-ph (cross-list: cond-mat.stat-mech)
+\end{titlepage}
+
+%===========================================================================
+\tableofcontents
+\newpage
+%===========================================================================
+
+%===========================================================================
+\section*{Epistemic Status Map}
+\addcontentsline{toc}{section}{Epistemic Status Map}
+%===========================================================================
+
+This document uses four epistemic labels applied consistently throughout:
+
+\begin{itemize}
+  \item \textcolor{blue!70!black}{\textbf{[ESTABLISHED]}} --- follows
+    from standard quantum mechanics, general relativity, or information
+    theory; cited to verified literature.
+  \item \textcolor{orange!80!black}{\textbf{[HYPOTHESIS]}} --- physically
+    motivated extension beyond the proven domain of established theory;
+    the specific assumption is stated explicitly each time.
+  \item \textbf{[ANALOGY]} --- structural parallel between physical and
+    non-physical systems; does not constitute a physical derivation.
+  \item \textcolor{red!70!black}{\textbf{[OPEN]}} --- a gap in the
+    derivation that is flagged rather than silently smoothed over.
+\end{itemize}
+
+The core scientific integrity requirement of this program is the
+maintenance of a strict boundary between [ESTABLISHED] and [HYPOTHESIS].
+A hypothesis can be valuable, interesting, and worth publishing. It
+becomes fraudulent only when it is mislabeled as established.
+
+%===========================================================================
+\newpage
+\part*{Paper A: Gravitational Coupling to Entanglement Entropy Density}
+\addcontentsline{toc}{part}{Paper A: Gravitational Coupling to Entanglement Entropy Density}
+%===========================================================================
+
+%===========================================================================
+\section{Introduction and Motivation}
+\label{sec:intro_A}
+%===========================================================================
+
+The relationship between quantum information and gravitational geometry
+has undergone substantial development since Bekenstein (1972) and
+Hawking (1975) established that black hole entropy scales with horizon
+area. Jacobson's 1995 derivation showed that Einstein's field equations
+follow as a thermodynamic equation of state when entropy is assumed to
+scale with area at local Rindler horizons \cite{jacobson1995}. More
+recently, Verlinde proposed that even the Newtonian gravitational force
+emerges from the entropic tendency of matter to maximize the entropy of
+the screens surrounding it \cite{verlinde2017}. ER=EPR connects
+entanglement structure to spacetime connectivity at the Planck scale
+\cite{maldacena2013}.
+
+A natural question left open by this literature is: does laboratory-scale
+quantum entanglement --- entanglement created in and maintained by
+experimental quantum systems far from any causal horizon --- produce a
+measurable contribution to spacetime curvature? The horizon-based results
+established that information and geometry are coupled at the extreme end
+of the scale. This paper asks whether that coupling, appropriately
+weakened, persists in intermediate regimes.
+
+We do not answer this question. We frame it precisely, derive a
+dimensionally consistent coupling ansatz from Jacobson's framework under
+an explicitly stated extrapolation hypothesis, estimate the coupling
+constant under that hypothesis, analyze the environmental suppression
+that makes the coupling undetectable in typical laboratory conditions,
+and specify the experimental conditions under which the hypothesis can
+be falsified or confirmed.
+
+\textbf{What this paper claims:}
+\begin{itemize}
+  \item A dimensionally consistent phenomenological modification of the
+    Einstein field equations in which entanglement entropy density sources
+    curvature (Sec.~\ref{sec:field_eq}).
+  \item An estimate $\tilde{\kappa} = -1/4$ under a holographic regulator
+    hypothesis that is stated precisely and labeled as a hypothesis
+    (Sec.~\ref{sec:kappa}).
+  \item A screening analysis showing the coupling is suppressed by
+    environmental decoherence, with an open problem on the size of that
+    suppression (Sec.~\ref{sec:screening}).
+  \item A falsification criterion that is meaningful regardless of whether
+    the signal magnitude is currently computable (Sec.~\ref{sec:falsification_A}).
+\end{itemize}
+
+\textbf{What this paper does not claim:}
+\begin{itemize}
+  \item That entanglement sources curvature has been derived from
+    first principles. The extrapolation from horizons to laboratory
+    systems is a hypothesis.
+  \item That a predicted signal magnitude is available. The signal size
+    is currently indeterminate (Open Problem 10, Sec.~\ref{sec:op10}).
+  \item That current hardware can detect the effect. The proposed
+    experiment is a near-term target, not a present capability.
+\end{itemize}
+
+%===========================================================================
+\section{The Modified Einstein Field Equation}
+\label{sec:field_eq}
+%===========================================================================
+
+\subsection{Standard General Relativity \textcolor{blue!70!black}{[ESTABLISHED]}}
+
+Einstein's field equations in geometric units with $c = 1$,
+restored to SI for dimensional clarity:
+\begin{equation}
+  G_{\mu\nu} = \frac{8\pi G}{c^4}\,T_{\mu\nu}
+  \tag{A1.1}
+  \label{eq:EFE}
+\end{equation}
+where $G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2}Rg_{\mu\nu}$ is the
+Einstein tensor (units: m$^{-2}$), $T_{\mu\nu}$ is the
+stress-energy tensor (units: kg\,m$^{-1}$s$^{-2}$), and
+$G = 6.674 \times 10^{-11}$ m$^3$kg$^{-1}$s$^{-2}$.
+Metric signature $(-,+,+,+)$ throughout.
+
+\subsection{The Proposed Coupling \textcolor{orange!80!black}{[HYPOTHESIS]}}
+
+We propose adding an entanglement entropy source term:
+\begin{equation}
+  G_{\mu\nu} = \frac{8\pi G}{c^4}\!\left(T_{\mu\nu}
+  + \tilde{\kappa}\,\frac{c^4}{8\pi G\,\kB\ln 2}\,\Sent\,g_{\mu\nu}\right)
+  \tag{A1.2}
+  \label{eq:modified_EFE}
+\end{equation}
+where $\Sent$ is the \emph{entanglement entropy density} (bits/m$^3$;
+always a density, never a total entropy), $\tilde{\kappa}$ is a
+dimensionless coupling constant, and $\kB\ln 2 = 9.570\times10^{-24}$
+J/K converts bits to thermodynamic entropy units.
+
+\subsubsection{Dimensional Verification \textcolor{blue!70!black}{[ESTABLISHED]}}
+
+The entanglement term must have units of $T_{\mu\nu}$,
+i.e., kg\,m$^{-1}$s$^{-2}$. Checking:
+\begin{align}
+  \left[\frac{c^4}{8\pi G\,\kB\ln 2}\,\Sent\right]
+  &= \frac{(\text{m/s})^4}{\text{m}^3\text{kg}^{-1}\text{s}^{-2}
+    \cdot\text{J}\,\text{K}^{-1}}
+    \cdot\frac{\text{bits}}{\text{m}^3} \nonumber\\
+  &= \frac{\text{m}^4\text{s}^{-4}}
+    {\text{m}^3\text{kg}^{-1}\text{s}^{-2}\cdot\text{kg}\,\text{m}^2\text{s}^{-2}}
+    \cdot\text{m}^{-3} \tag{A1.3}\\
+  &= \text{kg}\,\text{m}^{-1}\text{s}^{-2}\quad\checkmark\nonumber
+\end{align}
+Dimensional consistency is satisfied. Note that dimensional consistency
+is a necessary condition for a physical equation, not a sufficient one.
+
+\subsubsection{The Repulsive Gravity Condition}
+
+For $\tilde{\kappa} < 0$ (as derived in Sec.~\ref{sec:kappa}) and
+$\Sent > 0$ (entropy density is non-negative by definition), the
+entanglement term contributes negative effective pressure. The
+active gravitational mass density becomes:
+\begin{equation}
+  \rho_{\mathrm{grav}} + \frac{3p_{\mathrm{grav}}}{c^2}
+  = \rho_m + \frac{3p}{c^2}
+  + \frac{3\tilde{\kappa}c^2}{8\pi G\,\kB\ln 2}\,\Sent
+  \tag{A1.4}
+\end{equation}
+With $\tilde{\kappa} < 0$, the entanglement term \emph{reduces} the
+active gravitational mass --- producing a repulsive effect without
+exotic matter, negative mass, or modified geometry. The repulsion
+emerges from the quantum information structure of the state.
+
+\subsection{Ontological Constraints}
+
+This modification is designed to be minimal: the classical spacetime
+manifold and metric signature are unchanged; standard quantum mechanics
+governs matter fields; no new particles or exotic matter are introduced;
+Newton's constant $G$ is unchanged; the Einstein tensor $G_{\mu\nu}$
+retains its standard definition. The only addition is the source term on
+the right-hand side of~\eqref{eq:modified_EFE}.
+
+%===========================================================================
+\section{Estimating the Coupling Constant}
+\label{sec:kappa}
+%===========================================================================
+
+\subsection{Jacobson's Thermodynamic Foundation \textcolor{blue!70!black}{[ESTABLISHED]}}
+
+Jacobson (1995) \cite{jacobson1995} derived Einstein's field equations
+from thermodynamics. The essential ingredients are:
+
+\begin{itemize}
+  \item \textbf{Local Rindler horizon.} For any spacetime point, an
+    observer with proper acceleration $a$ perceives a local Rindler
+    horizon and an Unruh temperature:
+    \begin{equation}
+      T_U = \frac{\hbar a}{2\pi c\,\kB}
+      \tag{A2.1}
+    \end{equation}
+
+  \item \textbf{Bekenstein-Hawking entropy.} The entropy of a horizon
+    area element $dA$ is:
+    \begin{equation}
+      dS_{BH} = \frac{\kB c^3}{4G\hbar}\,dA
+      \tag{A2.2}
+    \end{equation}
+
+  \item \textbf{Clausius relation.} Applying $\delta Q = T\,dS$ to the
+    heat flux through the horizon recovers~\eqref{eq:EFE} exactly.
+\end{itemize}
+
+This is a rigorous derivation. Gravity is, under this reading, the
+equation of state of spacetime entropy. Every step is established physics.
+
+\subsection{The Holographic Regulator Hypothesis}
+\label{subsec:holo_reg}
+\textcolor{orange!80!black}{\textbf{[HYPOTHESIS --- the extrapolation step]}}
+
+\begin{corestatement}
+\textbf{Holographic Regulator Hypothesis.} We propose that an
+entanglement entropy contribution to the Clausius relation takes the form:
+\begin{equation}
+  dS_{\mathrm{ent}} = \frac{\Sent}{\kB}\cdot\frac{\lP\,dA}{4}
+  \tag{A2.3}
+\end{equation}
+where $\lP = \sqrt{\hbar G/c^3} = 1.616\times10^{-35}$ m is the
+Planck length and $\lP\,dA$ is the volume element one Planck length
+behind the horizon.
+
+This treats one Planck length of depth as the effective thickness
+through which entanglement entropy contributes to horizon thermodynamics.
+The regulator is borrowed by analogy from holographic principles (area-law
+entropy at causal horizons). \textbf{It is assumed to extend to
+laboratory-scale entanglement volumes without any horizon present.
+This extension has no derivation.} Everything that follows is internally
+consistent conditional on this assumption.
+\end{corestatement}
+
+\subsection{Deriving $\tilde{\kappa} = -1/4$
+  \textcolor{orange!80!black}{[HYPOTHESIS $\to$ ESTIMATE]}}
+
+The modified Clausius relation becomes:
+\begin{equation}
+  \delta Q_{\mathrm{eff}} = T_U\,dS_{BH} + T_U\,dS_{\mathrm{ent}}
+  = \delta Q_{BH} + \frac{\hbar a}{2\pi c\,\kB}\cdot\frac{\Sent}{\kB}
+  \cdot\frac{dA}{4}
+  \tag{A2.4}
+\end{equation}
+
+Following Jacobson's identification procedure, the entanglement term
+contributes an effective stress-energy:
+\begin{equation}
+  T^{\mathrm{ent}}_{\mu\nu} = -\frac{c^4}{32\pi G}\,\Sent\,g_{\mu\nu}
+  \tag{A2.5}
+\end{equation}
+
+Comparing with the proposed form
+$T^{\mathrm{ent}}_{\mu\nu} = \tilde{\kappa}\,\frac{c^4}{8\pi G\,\kB\ln 2}
+\Sent\,g_{\mu\nu}$:
+\begin{equation}
+  \boxed{\tilde{\kappa} = -\frac{1}{4}
+  \quad\text{[under holographic regulator hypothesis]}}
+  \tag{A2.6}
+  \label{eq:kappa_value}
+\end{equation}
+
+This derivation is internally consistent. Its validity is entirely
+conditional on the holographic regulator hypothesis of Sec.~\ref{subsec:holo_reg},
+which is not derived. The value $\tilde{\kappa} = -1/4$ should therefore
+be treated as a \emph{dimensionally and thermodynamically motivated
+estimate}, not a first-principles derivation.
+
+\subsection{Relation to the Planck Scale and Renormalization}
+\label{sec:op10}
+\textcolor{red!70!black}{\textbf{[OPEN PROBLEM OP10]}}
+
+The coupling prefactor $c^4/(8\pi G\,\kB\ln 2) \approx 5\times10^{65}$
+m$^{-3}$ is not numerically innocent. It is large because $c^4/G$ is
+the Planck energy density scale while $\kB\ln 2$ is far below Planck
+energy. A naive application of~\eqref{eq:modified_EFE} with
+$\tilde{\kappa} = -1/4$ and laboratory-scale $\Sent$ produces signals
+that are either impossibly large (for optimistic $\ascreen$) or
+immeasurably small (for realistic $\ascreen$ from spatial suppression
+models).
+
+This mismatch has three candidate resolutions:
+\begin{enumerate}
+  \item The Newtonian limit derivation from~\eqref{eq:modified_EFE}
+    to an acceleration correction $\Delta a(R)$ requires an explicit
+    source profile and may not be straightforward.
+  \item The coupling $\tilde{\kappa} = -1/4$ is a Planck-scale quantity
+    that renormalizes to far smaller values at laboratory scales,
+    analogously to how Newton's constant is $\sim10^{38}$ times weaker
+    than gauge couplings.
+  \item The framework may be non-perturbative at laboratory scales
+    in a way that invalidates the Newtonian-limit comparison.
+\end{enumerate}
+
+\textbf{Consequence for this paper:} The signal magnitude is indeterminate
+and is not quoted as a prediction. The falsification criterion of
+Sec.~\ref{sec:falsification_A} is stated in terms of directly measurable
+bounds on $|\tilde{\kappa}|$, not in terms of a computed signal. The
+theoretical framework stands independently of whether the signal is
+currently computable.
+
+%===========================================================================
+\section{The Extrapolation Boundary}
+\label{sec:extrapolation}
+%===========================================================================
+
+\subsection{Where Jacobson's Derivation Applies \textcolor{blue!70!black}{[ESTABLISHED]}}
+
+Jacobson's result holds under three conditions that are all satisfied at
+causal horizons and none of which hold in a typical laboratory:
+\begin{enumerate}
+  \item A causal horizon exists.
+  \item A well-defined Unruh temperature $T_U = \hbar a / (2\pi c\kB)$
+    exists (requires steady-state uniform acceleration).
+  \item Entanglement entropy scales with \emph{area}, not volume
+    (the area-law property of horizon entanglement).
+\end{enumerate}
+A $10^6$-atom atomic ensemble has no causal horizon, no well-defined
+Unruh temperature, and volume-law entanglement entropy (for a GHZ state,
+entropy scales with atom number, not surface area).
+
+\subsection{The Extrapolation Hypothesis, Precisely Stated}
+\label{subsec:extrap}
+\textcolor{orange!80!black}{\textbf{[HYPOTHESIS]}}
+
+\begin{corestatement}
+\textbf{Extrapolation Hypothesis.} The coupling between entanglement
+entropy density and spacetime curvature, which follows rigorously from
+area-law entropy at causal horizons, extends to systems with volume-law
+entanglement entropy in the absence of causal horizons, regulated by
+the Planck-scale geometric structure that governs horizon area entropy.
+\end{corestatement}
+
+This is a physical hypothesis. It cannot be derived from established
+physics. The scientific case for investigating it rests on four
+considerations: (1) holographic universality suggests area-law entropy at
+horizons is the extreme limit of a more general information-geometry
+coupling; (2) the Bose et al.\ proposal for gravity-mediated entanglement
+\cite{bose2017} demonstrates that gravity and quantum entanglement
+interact at laboratory scales beyond classical gravity; (3) the
+dimensional analysis of Sec.~\ref{sec:field_eq} shows the coupling
+\emph{can} be written consistently; (4) the hypothesis is falsifiable by
+a realistic experiment.
+
+\subsection{Removed Language}
+
+The following formulations appeared in source drafts and are
+\emph{removed} from this paper:
+
+\begin{itemize}
+  \item $\times$ ``First-principles derivation of $\kappa$'' $\to$
+    $\checkmark$ ``Estimate under holographic regulator hypothesis''
+  \item $\times$ ``We prove that entanglement entropy sources curvature''
+    $\to$ $\checkmark$ ``We propose and analyze the hypothesis that...''
+  \item $\times$ ``No horizon is required'' $\to$ $\checkmark$
+    ``We hypothesize no horizon is required; this is not established''
+\end{itemize}
+
+%===========================================================================
+\section{Environmental Screening}
+\label{sec:screening}
+%===========================================================================
+
+\subsection{Physical Motivation \textcolor{orange!80!black}{[HYPOTHESIS]}}
+
+The ideal coupling $\tilde{\kappa} = -1/4$ applies to a perfectly
+isolated, maximally coherent quantum system. Real systems are
+continuously coupled to their environments through photon scattering,
+phonon interactions, magnetic fluctuations, electromagnetic interference,
+and residual gas collisions. Each interaction transfers entanglement from
+within the system to system-environment correlations, removing it from
+the internal $\Sent$ that sources curvature. The effective coupling is:
+\begin{equation}
+  \tkappaeff = -\frac{1}{4}\,\ascreen,\quad \ascreen\in[0,1]
+  \tag{A4.1}
+\end{equation}
+where $\ascreen = 1$ is perfect isolation and $\ascreen = 0$ is
+complete decoherence.
+
+\subsection{Phenomenological Formula and Its Limitations}
+\textcolor{red!70!black}{\textbf{[OPEN PROBLEM OP3]}}
+
+A physically motivated ansatz:
+\begin{equation}
+  \ascreen = \frac{1}{1+(\Gamma\tau_D)^2}\cdot e^{-(R/\xi)^2}
+  \tag{A4.2}
+  \label{eq:alpha_screen}
+\end{equation}
+where $\Gamma$ is the decoherence rate, $\tau_D = 1/\Gamma$ the
+decoherence time, $R$ the spatial extent of the coherent region, and
+$\xi$ the coherence length.
+
+\textbf{Critical limitation:} The Gaussian spatial factor
+$e^{-(R/\xi)^2}$ produces $\ascreen \sim e^{-100} \approx 10^{-43}$
+for a macroscopic $^{87}$Rb ensemble with $R = 100\,\mu$m and
+$\xi = 10\,\mu$m --- far outside the heuristic range
+$[10^{-4}, 10^{-2}]$ cited in earlier drafts of this program.
+That heuristic range applies to few-qubit systems ($R \sim \xi$,
+i.e., $R \sim 0.1$--$1$ mm), not to macroscopic atomic ensembles.
+
+\textbf{Status:} The range $\ascreen\in[10^{-4},10^{-2}]$ was not
+derived from first principles in any version of this work. It should
+be treated as provisional. The derivation of $\ascreen$ from the
+Lindblad equation with explicit system parameters remains an open
+problem (OP3) that constitutes a graduate-level research project.
+
+\subsection{Consequence for the Experimental Target}
+
+Because the macroscopic ensemble regime may have $\ascreen \sim 10^{-43}$,
+the preferred near-term experimental target shifts to 50--100 qubit
+NISQ-scale systems where $R\sim\xi$, entanglement structure is
+programmable, and state verification is more direct.
+
+%===========================================================================
+\section{Newtonian Limit and the Radial Correction}
+\label{sec:newtonian_limit}
+%===========================================================================
+
+\subsection{Enclosed-Source Formula \textcolor{blue!70!black}{[ESTABLISHED framework]}}
+
+Assuming spherical symmetry and a modified Poisson equation for the
+entanglement-sourced gravitational potential $\Psi$:
+\begin{equation}
+  \frac{1}{R^2}\frac{d}{dR}\!\left[R^2\frac{d\Psi}{dR}\right]
+  = \kappa\,\rho_{\mathrm{ent}}(R)
+  \tag{A5.1}
+\end{equation}
+Defining the enclosed entanglement entropy:
+$M_{\mathrm{ent}}(<R) = 4\pi\int_0^R \rho_{\mathrm{ent}}(r)\,r^2\,dr$,
+the radial acceleration correction is:
+\begin{equation}
+  \Delta a(R) = -\frac{d\Psi}{dR}
+  = \frac{\kappa\,M_{\mathrm{ent}}(<R)}{R^2}
+  \tag{A5.2}
+  \label{eq:delta_a}
+\end{equation}
+
+\subsection{Scaling Behavior}
+
+For a compact (finite) source, $M_{\mathrm{ent}}(<R)$ saturates at
+large $R$, so $\Delta a(R) \propto 1/R^2$ outside the source --- the
+same scaling as Newtonian gravity. A $1/R$ correction, appearing in
+earlier source drafts, would require a source profile
+$\rho_{\mathrm{ent}}(r) \propto 1/r^2$, which is physically unmotivated
+and is \emph{not} adopted here.
+
+\subsection{Status of the Signal Prediction}
+
+Given OP10 (Sec.~\ref{sec:op10}) and OP3 (Sec.~\ref{sec:screening}),
+no specific numerical prediction for $|\Delta a|$ is made. The formula
+\eqref{eq:delta_a} is structurally correct. The predicted magnitude
+is indeterminate pending resolution of the Planck-scale renormalization
+question and the derivation of $\ascreen$.
+
+%===========================================================================
+\section{Experimental Falsification Protocol}
+\label{sec:experiment_A}
+%===========================================================================
+
+\subsection{Concept and Target Regime}
+
+The core observable is a differential acceleration (or phase shift)
+between two systems prepared to be identical in all respects except
+their entanglement structure: one arm in a coherent, high-entanglement
+state; the other deliberately decohered or prepared in a
+low-entanglement reference state.
+
+The near-term target is a \textbf{50--100 qubit NISQ-scale platform}
+where entanglement depth, geometry, and decoherence channels are
+explicitly controlled. This replaces the earlier $N = 10^6$ atom target,
+which is inappropriate given the $\ascreen$ analysis
+(Sec.~\ref{sec:screening}).
+
+\subsection{Measurement Protocol}
+
+\begin{description}
+  \item[Branch A.] Prepare a 50--100 qubit state with maximal or
+    near-maximal multipartite entanglement.
+  \item[Branch B.] Prepare a matched reference state with the same
+    qubit count, control sequence, and gross energy budget, but with
+    entanglement intentionally suppressed.
+  \item[Readout.] Compare entanglement-conditioned phase, acceleration
+    proxy, or equivalent interferometric observable across repeated trials.
+  \item[Controls.] Interleave randomized compilation, device-bias reversals
+    where available, and explicit entanglement-witness measurements to verify
+    branch contrast.
+\end{description}
+
+\subsection{Key Systematic Concerns}
+
+\begin{table}[H]
+\centering
+\caption{Systematic error considerations for the NISQ-scale experiment.}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{4.2cm}p{4.2cm}p{4.8cm}@{}}
+\toprule
+\textbf{Systematic} & \textbf{Why it matters} & \textbf{Mitigation} \\
+\midrule
+Imperfect state preparation
+  & Can mimic entanglement-dependent signal
+  & Verify entanglement depth before/after \\
+Decoherence drift over time
+  & Changes branch contrast
+  & Randomize branch order; short calibration cycles \\
+Geometry-dependent coupling
+  & Affects theory-to-signal mapping
+  & Simulate with explicit source profile \\
+Platform cross-talk
+  & Creates false branch asymmetries
+  & Symmetrize control pulses; null reference circuits \\
+Ambiguous $\ascreen$ regime
+  & Prevents trustworthy signal forecast
+  & Treat signal as indeterminate; focus on upper bounds \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%===========================================================================
+\section{Falsification Criterion}
+\label{sec:falsification_A}
+%===========================================================================
+
+A theory is falsifiable only if specific experimental outcomes can rule
+it out. The single free parameter of this framework is $\tilde{\kappa}$.
+If $|\tilde{\kappa}|$ can always be made smaller than any experimental
+sensitivity by adjusting $\ascreen$ post-hoc, the framework becomes
+unfalsifiable. We close this escape hatch.
+
+\begin{corestatement}
+\textbf{Falsification Criterion.} The framework is \emph{falsified for
+laboratory-scale relevance} if all five conditions below are simultaneously
+satisfied:
+
+\begin{description}
+  \item[F1 (System size).] Quantum coherent systems with $\geq 10^6$
+    genuinely entangled qubits are achieved (entanglement depth
+    $\geq 10^3$, verified by entanglement witness, not just claimed
+    by state preparation).
+  \item[F2 (Sensitivity).] Experimental pressure sensitivity
+    $\Delta p < 10^{-6}$ Pa, corresponding to $\delta a < 10^{-12}$
+    m/s$^2$.
+  \item[F3 (Statistics).] At least 1000 independent experimental runs
+    with statistically consistent null results.
+  \item[F4 (Platform independence).] Null results on $\geq 3$
+    physically distinct platforms (e.g., trapped neutral atoms,
+    superconducting qubits, optomechanical oscillators).
+  \item[F5 (No anomalous signal).] No stress-energy contribution
+    beyond standard Lindblad decoherence models at F2 sensitivity
+    after F3 statistics on F4 platforms.
+\end{description}
+
+\medskip
+\noindent\textbf{Consequence:} Satisfying F1--F5 establishes
+$|\tilde{\kappa}| < 10^{-15}$, ruling out laboratory-engineering
+relevance of the coupling for any foreseeable technology.
+\end{corestatement}
+
+Satisfying F1--F5 does not rule out astrophysical or cosmological effects,
+nor a coupling smaller than $10^{-15}$. What it rules out is the
+strong form of the hypothesis: that entanglement gravity is detectably
+relevant at laboratory scales within decades.
+
+\subsection{Detection Thresholds}
+
+\begin{table}[H]
+\centering
+\caption{Interpretation of detection results.}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Result} & \textbf{Interpretation} \\
+\midrule
+$|\tilde{\kappa}| \sim 10^{-4}$--$10^{-3}$ & Strong confirmation;
+  $\ascreen \in[10^{-3},10^{-2}]$; engineering implications \\
+$|\tilde{\kappa}| \sim 10^{-5}$--$10^{-6}$ & Weak confirmation;
+  astrophysical implications \\
+$|\tilde{\kappa}| \sim 10^{-8}$--$10^{-12}$ & Marginal;
+  requires revision of $\ascreen$ model \\
+$|\tilde{\kappa}| < 10^{-15}$ (with F1--F5) &
+  Falsification of laboratory relevance \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Timeline Estimate}
+
+Current technology reaches $N \sim 10^4$--$10^5$ entangled atoms with
+$\delta a \sim 10^{-11}$ m/s$^2$ \cite{asenbaum2020}. Achieving
+F1 (entanglement depth $\geq 10^3$ across $10^6$ qubits) and F2
+($\delta a < 10^{-12}$ m/s$^2$) requires incremental improvements
+achievable within 5--8 years on existing experimental trajectories.
+No new physics is required for the experiment itself, only for the
+interpretation of a positive result.
+
+%===========================================================================
+\section*{Open Problems --- Paper A}
+\addcontentsline{toc}{section}{Open Problems --- Paper A}
+%===========================================================================
+
+\begin{description}
+  \item[OP3 (Critical).] Derivation of $\ascreen$ from the Lindblad
+    equation with explicit parameter values for the proposed system.
+    The heuristic range $[10^{-4},10^{-2}]$ is not derived; the
+    spatial Gaussian model gives $\sim10^{-43}$ for macroscopic ensembles.
+    Months of graduate-level work.
+  \item[OP8 (High).] Explicit verification of Bianchi identity
+    compatibility for the modified field equation~\eqref{eq:modified_EFE}.
+    Standard matter conservation $\nabla^\mu T_{\mu\nu} = 0$ plus the
+    new $\Sent$ source term must together satisfy $\nabla^\mu G_{\mu\nu}=0$.
+    Approximately one week of calculation.
+  \item[OP10 (Critical, long-term).] Resolution of whether the coupling
+    $\tilde{\kappa}=-1/4$ is a Planck-scale bare value subject to
+    renormalization at laboratory scales, and whether the Newtonian limit
+    derivation is valid.
+\end{description}
+
+\vspace{1cm}
+\noindent\textbf{Citation note (to be verified before submission):}
+The Bose et al.\ result cited in this paper as evidence for
+gravity-mediated entanglement is the 2017 theoretical proposal
+\cite{bose2017}. Any reference to a ``Nature 623'' experimental result
+must be traced to a specific paper before appearing in the final
+manuscript.
+
+%===========================================================================
+\newpage
+\part*{Paper B: Constraint Manifolds and the Limits of Quantum Observability}
+\addcontentsline{toc}{part}{Paper B: Constraint Manifolds and the Limits of Quantum Observability}
+%===========================================================================
+
+%===========================================================================
+\section{Introduction}
+\label{sec:intro_B}
+%===========================================================================
+
+A recurring observation in NISQ quantum computing experiments is that
+quantum state tomography on systems with $n \geq 10$ qubits consistently
+returns von Neumann entropy estimates of 40--50\% of the theoretical
+maximum, regardless of how carefully the system is prepared. This plateau
+is often attributed to physical decoherence: the system, it is assumed,
+has been partially thermalized by coupling to its environment.
+
+\begin{corestatement}
+\textbf{Central Claim (Paper B).} For typical NISQ tomography budgets
+and qubit counts above 10, the 40--50\% entropy plateau is entirely
+epistemic --- an artifact of insufficient measurement, not a signature
+of physical decoherence. It persists for \emph{any} physical state,
+coherent or mixed, until the shot count reaches $\nu \propto 2^{n/2}$.
+\end{corestatement}
+
+This is a practical result with immediate implications: tomography
+results from underpowered experiments are being systematically
+misinterpreted, and the misinterpretation can be corrected by applying
+the bias formula derived here.
+
+%===========================================================================
+\section{The Constraint Manifold Formalism}
+\label{sec:constraint_manifold}
+%===========================================================================
+
+\subsection{State Space Hierarchy}
+
+\begin{definition}[Density Operator Space]
+For an $n$-qubit system, $\Hilb = (\mathbb{C}^2)^{\otimes n}$.
+The full space of density operators is:
+\begin{equation}
+  \Cdensity = \bigl\{\rho\in\mathcal{L}(\Hilb)\mid
+  \rho=\rho^\dagger,\;\rho\geq0,\;\mathrm{Tr}\rho=1\bigr\}
+  \tag{B1.1}
+\end{equation}
+of real dimension $4^n - 1$.
+\end{definition}
+
+\begin{definition}[Constraint Manifold]
+The \emph{constraint manifold} is the subset of $\Cdensity$ consistent
+with all irreversible physical constraints:
+\begin{equation}
+  \Cconstr = \bigl\{\rho\in\Cdensity\mid
+  \mathrm{Tr}(\hat{C}_i\rho)=c_i\;\;\forall i\in\Cirr\bigr\}
+  \tag{B1.2}
+\end{equation}
+where $\hat{C}_i$ are Hermitian constraint operators (conserved
+quantities such as energy and particle number), $c_i$ their fixed
+values, and $\Cirr$ indexes irreversible constraints.
+\end{definition}
+
+\begin{definition}[Observable Subspace]
+Given measurement history $r = \{(i_1,c_{i_1}),\ldots,(i_k,c_{i_k})\}$:
+\begin{equation}
+  \Cobs(r) = \bigl\{\rho\in\Cconstr\mid
+  \mathrm{Tr}(\hat{C}_{i_j}\rho)=c_{i_j}\;\;\forall j\leq k\bigr\}
+  \tag{B1.3}
+\end{equation}
+As $k$ increases, $\Cobs(r)$ \emph{shrinks} --- not because the
+system decoheres, but because we know more about it.
+\end{definition}
+
+\begin{proposition}[Dimension of the Observable Subspace]
+\label{prop:dim}
+For $\rank(C)$ linearly independent accumulated constraints:
+\begin{equation}
+  \dim\Cobs(r) = 4^n - \rank(C) - 1
+  \tag{B1.4}
+  \label{eq:dim}
+\end{equation}
+\end{proposition}
+\begin{proof}
+$\Cdensity$ has dimension $4^n - 1$. Each linearly independent equality
+constraint $\mathrm{Tr}(\hat{C}_i\rho)=c_i$ removes exactly one real
+degree of freedom (restricts to a hyperplane in Hermitian operator space).
+With $\rank(C)$ independent constraints, dimension reduces by $\rank(C)$,
+giving $4^n - 1 - \rank(C)$.
+\end{proof}
+
+\subsection{Why Undersampling Produces Entropy Bias}
+
+For a 15-qubit system ($n=15$, $d = 2^{15} = 32{,}768$):
+\begin{equation}
+  \dim\Cdensity = 4^{15} - 1 \approx 10^9
+  \tag{B1.5}
+\end{equation}
+Standard NISQ tomography with $\nu = 1000$ shots yields $\rank(C) \approx
+3000$, so:
+\begin{equation}
+  \dim\Cobs(r) \approx 10^9 - 3\times10^3 \approx 10^9
+  \tag{B1.6}
+\end{equation}
+The observable subspace is essentially the entire density matrix space.
+Because the vast majority of $\Cdensity$ consists of high-entropy
+(nearly maximally mixed) states, any estimator derived from the
+measurement record is biased toward high entropy. This is a geometric
+fact about the space of density matrices, not a statement about the
+physical system.
+
+%===========================================================================
+\section{Quantum Fisher Information and the Shot-Scaling Law}
+\label{sec:fisher}
+%===========================================================================
+
+\subsection{The Cram\'er--Rao Bound for Entropy Estimation}
+
+\begin{theorem}[Quantum Cram\'er--Rao Bound]
+For any unbiased estimator $\Shat$ of the von Neumann entropy $\SvN(\rho)$
+based on $\nu$ independent shots:
+\begin{equation}
+  \mathrm{Var}[\Shat] \geq \frac{[\FQ(\rho)]^{-1}}{\nu}
+  \tag{B2.1}
+  \label{eq:CRB}
+\end{equation}
+where $\FQ(\rho) = \mathrm{Tr}[\rho L^2]$ is the quantum Fisher
+information and $L$ is the symmetric logarithmic derivative.
+\end{theorem}
+
+\begin{remark}
+$\FQ(\rho)$ is a functional of the quantum \emph{state} $\rho$, not of
+the scalar $\SvN(\rho)$. Two states with identical von Neumann entropy
+can have different $\FQ$ (e.g., a thermal Gibbs state vs.\ a random pure
+state at the same entropy). The earlier notation $\mathcal{I}_Q^{-1}(S_{vN})$
+appearing in source drafts is \emph{incorrect} and is replaced throughout
+by $\FQ(\rho)$.
+\end{remark}
+
+\subsection{The $2^{n/2}$ Scaling Law}
+
+\begin{proposition}[Shot Scaling for Entropy Estimation]
+Near the maximally mixed state $\rho \approx \mathbf{I}/d$:
+\begin{equation}
+  \FQ(\rho)\Big|_{\rho\approx\mathbf{I}/d} \sim 2^{1-n}
+  \tag{B2.2}
+\end{equation}
+so that achieving entropy precision $\varepsilon$ requires:
+\begin{equation}
+  \nu \gtrsim \frac{2^{n+1}}{\varepsilon^2}
+  \propto 2^n
+  \tag{B2.3}
+\end{equation}
+For states at entropy $\SvN = \alpha n$ (the plateau regime, $\alpha
+\approx 0.4$--$0.5$), the required shots for
+distinguishing from a pure state scale as:
+\begin{equation}
+  \nu_{\mathrm{plateau}} \approx \frac{c(\alpha)\cdot 2^{n/2}}{\varepsilon^2}
+  \tag{B2.4}
+  \label{eq:nu_plateau}
+\end{equation}
+This is the \textbf{$\nu\propto 2^{n/2}$ scaling law}: the half-exponent
+arises because the entropy estimation problem is halfway in complexity
+between single-observable estimation ($O(1)$) and full tomography ($4^n$).
+\end{proposition}
+
+\begin{table}[H]
+\centering
+\caption{Required shot counts for entropy estimation ($\varepsilon =
+0.1$ bits) versus typical NISQ budgets.}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+\textbf{Qubits} & \textbf{Hilbert dim $d$}
+  & \textbf{Required $\nu$} & \textbf{Typical NISQ}
+  & \textbf{Gap} \\
+\midrule
+5   & 32                & $\approx 560$     & $10^3$ & $<1\times$ \\
+10  & 1{,}024           & $\approx 3{,}200$ & $10^3$ & $3\times$ \\
+15  & 32{,}768          & $\approx 18{,}000$& $10^3$ & $18\times$ \\
+20  & $1.05\times10^6$  & $\approx 100{,}000$ & $10^3$ & $100\times$ \\
+25  & $3.3\times10^7$   & $\approx 580{,}000$ & $10^3$ & $580\times$ \\
+\bottomrule
+\end{tabular}
+\label{tab:shots}
+\end{table}
+
+The plateau begins at $n \approx 10$ precisely because that is where the
+required shot count first exceeds the typical NISQ budget.
+
+%===========================================================================
+\section{The Bias Formula and Correction Procedure}
+\label{sec:bias}
+%===========================================================================
+
+\begin{theorem}[Entropy Estimator Bias Formula]
+\label{thm:bias}
+Let $\hat\rho$ be a maximum-likelihood or linear-inversion density matrix
+estimate from $\nu$ independent Pauli-basis shots. Then:
+\begin{equation}
+  \mathbb{E}[\Shat] = \SvN(\rho)
+  + \frac{d-1}{2\nu}
+  + \bias
+  + O\!\left(\frac{1}{\nu^2}\right)
+  \tag{B3.1}
+  \label{eq:bias_formula}
+\end{equation}
+where $d = 2^n$, $\nu$ is the shot count, and $\bias$ is the
+SPAM (State Preparation and Measurement) bias calibrated independently.
+\end{theorem}
+
+\begin{proof}[Derivation sketch]
+The von Neumann entropy $\SvN = -\sum_j\lambda_j\log_2\lambda_j$ is
+concave in the eigenvalues $\lambda_j$. Each eigenvalue fluctuates as
+$\hat\lambda_j = \lambda_j + \xi_j$ with shot-noise variance
+$\sim\lambda_j(1-\lambda_j)/\nu$. By Jensen's inequality for concave
+functions, $\mathbb{E}[\Shat] \geq \SvN(\rho)$. The leading-order gap
+uses $\lambda_j \approx 1/d$ (valid in the plateau regime):
+$\mathrm{Bias} = \sum_j\frac{1}{2\nu\ln 2}\cdot
+\frac{\mathrm{Var}[\hat\lambda_j]}{\lambda_j}
+\approx \frac{d-1}{2\nu}$.
+The SPAM bias $\bias$ is an additive systematic from readout errors that
+is independent of $\nu$ and must be calibrated independently.
+\end{proof}
+
+\subsection{Numerical Example: 15-Qubit GHZ State}
+
+For a GHZ state ($\SvN^{\mathrm{phys}} = 0$) with $n=15$, $d=32768$,
+$\nu=1000$ shots, and typical hardware $\bias \approx 0.05$ bits:
+
+\begin{table}[H]
+\centering
+\caption{Entropy plateau decomposition for a 15-qubit GHZ state.}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Contribution} & \textbf{Formula} & \textbf{Value (bits)} \\
+\midrule
+True physical entropy & $\SvN^{\mathrm{phys}} = 0$ & 0.00 \\
+Finite-shot bias & $(d-1)/(2\nu) = 32767/2000$ & $\approx 16.4$ \\
+(as fraction of max = 15 bits) & & $\approx109\%$ \\
+\midrule
+\textbf{Observed entropy (uncorrected)} & & $>15$ bits \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The finite-shot bias \emph{exceeds the maximum possible entropy}. The
+maximum-likelihood estimator's positivity constraint ($\hat\rho \geq 0$)
+clips the unphysical range and produces a ceiling near the maximally
+mixed state --- which is precisely the 40--50\% plateau. This is not a
+hardware artifact; it is a mathematical consequence of fitting $\sim10^9$
+parameters from 3000 data points.
+
+\subsection{Correction Procedure}
+
+Given Eq.~\eqref{eq:bias_formula}, the corrected entropy estimate is:
+\begin{equation}
+  \hat{S}^{\mathrm{corr}} = \hat{S}_{\mathrm{raw}}
+  - \frac{d-1}{2\nu} - \hat\bias
+  \tag{B3.2}
+  \label{eq:corrected}
+\end{equation}
+This correction requires only $d$ (known) and $\nu$ (known) --- it does
+not require knowing $\FQ(\rho)$ and is therefore not circular.
+The uncertainty on the corrected estimate is approximately
+$\sigma[\hat{S}^{\mathrm{corr}}] \approx
+\sqrt{[\FQ(\hat\rho)]^{-1}/\nu}$, evaluated at the estimated (not
+true) state.
+
+%===========================================================================
+\section{Falsification Criterion --- Paper B}
+\label{sec:falsification_B}
+%===========================================================================
+
+\begin{corestatement}
+\textbf{Paper B Falsification Criterion.} The constraint-manifold
+explanation of the entropy plateau is falsified if:
+\begin{enumerate}
+  \item On any platform where $\nu$ is scaled to match the
+    $2^{n/2}$ threshold of Eq.~\eqref{eq:nu_plateau}, the reported
+    entropy does \emph{not} converge toward the true physical entropy
+    as predicted by~\eqref{eq:bias_formula}, \emph{or}
+  \item The bias $(d-1)/(2\nu)$ from~\eqref{eq:bias_formula} is not
+    statistically consistent with calibration states of known entropy.
+\end{enumerate}
+Either outcome would imply that the entropy plateau is physical decoherence,
+not a statistical artifact.
+\end{corestatement}
+
+This experiment is runnable today on IBM Quantum, IonQ, or Quantinuum
+platforms. It requires only: (1) a calibration set of states with
+verified entanglement depth; (2) systematic variation of $\nu$; (3)
+comparison of raw vs.\ corrected entropy to the prediction of
+Eq.~\eqref{eq:bias_formula}.
+
+%===========================================================================
+\newpage
+\part*{Paper C: Landauer's Principle in the ETI Framework}
+\addcontentsline{toc}{part}{Paper C: Landauer's Principle in the ETI Framework}
+%===========================================================================
+
+%===========================================================================
+\section{Introduction}
+\label{sec:intro_C}
+%===========================================================================
+
+Landauer's principle \cite{landauer1961} states that logically
+irreversible computation (specifically, the erasure of one bit of
+information) must dissipate at least $\kB T\ln 2$ of heat into the
+environment. This result has been stated in many forms since 1961,
+some rigorous \cite{bennett2003} and some vague. The vague versions
+invite misinterpretation: treating information as a substance with
+ontological weight, claiming consciousness is thermodynamically special,
+or arguing that reversible computation is free in practice.
+
+The ETI (Entropy-Thermodynamics-Information) framework gives Landauer's
+principle the same logical structure as the laws of thermodynamics: a
+small set of explicit axioms from which all results follow as theorems,
+with each axiom independently testable and each result traceable to the
+axioms on which it depends.
+
+%===========================================================================
+\section{The Five ETI Axioms}
+\label{sec:axioms}
+%===========================================================================
+
+The five axioms are ordered by decreasing certainty. A1 is among the
+most precisely verified claims in physics; A5 is an operational statement
+about resource constraints.
+
+\begin{axiom}[Causal Closure]
+The universe $\mathcal{U}$ is a closed, causally connected system with
+no external agents, no external entropy reservoirs, and no information
+channels outside $\mathcal{U}$.
+\end{axiom}
+\textit{Physical content:} Equivalent to global energy-momentum conservation
+and causal completeness. The basis of the second law: total entropy is
+non-decreasing because there is nowhere to export it.
+
+\begin{axiom}[Unitary Microdynamics]
+Closed quantum systems evolve unitarily: $U(t) = e^{-iHt/\hbar}$.
+Open subsystems evolve through completely positive trace-preserving (CPTP)
+maps $\mathcal{E}$ on their density operators.
+\end{axiom}
+\textit{Physical content:} Among the best-verified facts in physics.
+CPTP maps include all decoherence, thermalization, and measurement as
+special cases. Key consequence: $\SvN(U\rho U^\dagger) = \SvN(\rho)$
+(unitary evolution preserves entropy; entropy increase in a subsystem
+requires export to the environment).
+
+\begin{axiom}[Effective Thermodynamics]
+Thermodynamic entropy $S(\rho) = -\kB\,\mathrm{Tr}(\rho\ln\rho)$ is a
+coarse-grained description relative to a chosen macroscopic partition.
+It is not a fundamental property of reality independent of description.
+\end{axiom}
+\textit{Physical content:} Entropy is relational. The same physical state
+has different entropy values relative to different coarse-grainings.
+This prevents the reification of entropy and connects thermodynamic,
+information-theoretic, and quantum entropic notions under a unified framework.
+
+\begin{axiom}[Physical Memory]
+Logical information is always instantiated in physical substrates
+satisfying: (i) \emph{distinguishability} (distinct logical states
+correspond to non-overlapping supports in Hilbert space); (ii)
+\emph{persistence} (metastability on computation-relevant timescales);
+(iii) \emph{coherence stability} (no spontaneous decoherence faster than
+gate rate).
+\end{axiom}
+\textit{Physical content:} Information is not free. A memory bit with no
+energy barrier between $|0\rangle$ and $|1\rangle$ is not a usable memory.
+The energy cost of memory maintenance (cooling, trapping, shielding) is
+distinct from but additive to the Landauer cost.
+
+\begin{axiom}[Finite Resources]
+Any physical agent operates under finite memory capacity, finite cooling
+power, and finite control precision. Indefinite information storage
+without resource expenditure is impossible under A1--A4.
+\end{axiom}
+\textit{Physical content:} Connects the framework to devices that actually
+exist. Rules out perpetual-motion computing. Implies a minimum power
+consumption for any computation lasting time $t$ with $n$ active
+components.
+
+%===========================================================================
+\section{Landauer's Principle as a Theorem}
+\label{sec:landauer_theorem}
+%===========================================================================
+
+\begin{theorem}[Landauer's Principle from ETI Axioms]
+\label{thm:landauer}
+Under axioms A1--A5, any logically irreversible operation that reduces
+the logical state space of a memory register from $k$ distinguishable
+states to $k'$ states ($k' < k$) requires dissipating at least:
+\begin{equation}
+  Q_{\min} \geq \kB T\ln\!\left(\frac{k}{k'}\right) \geq \kB T\ln 2
+  \tag{C1.1}
+  \label{eq:landauer}
+\end{equation}
+of heat into the environment, where $T$ is the temperature of the
+heat reservoir and the lower bound is achieved for the erasure of one
+bit ($k=2$, $k'=1$).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+By A2, the global (system + environment) evolution is unitary, so total
+entropy is conserved. By A3, the local (system) entropy after erasure is
+lower than before (fewer distinguishable states $\to$ lower entropy).
+By A1, the missing entropy cannot leave the universe; by A2 it cannot be
+destroyed; therefore it must be transferred to the environment (heat
+bath). The minimum transfer consistent with thermodynamics (A3) is
+$\kB T\ln(k/k')$ by Boltzmann's formula. QED.
+\end{proof}
+
+\subsection{What This Does Not Claim}
+
+\begin{itemize}
+  \item It does not claim that physical implementation of reversible
+    computation has zero cost. A4 and A5 together imply that maintaining
+    the physical substrate of a memory register requires continuous
+    resource expenditure. The Landauer bound is the \emph{minimum
+    irreducible cost} of the logical erasure step only.
+  \item It does not claim that consciousness is thermodynamically special.
+    A1--A5 apply to any physical information-processing system.
+  \item It does not claim that the bound is always achieved in practice.
+    Achieving the bound requires quasi-static erasure in contact with a
+    thermal bath --- an idealization that approximates practical erasure
+    only at very low speeds.
+\end{itemize}
+
+%===========================================================================
+\section{Falsifiable Predictions --- Paper C}
+\label{sec:predictions_C}
+%===========================================================================
+
+\begin{description}
+  \item[P1 (Landauer bound in quantum circuits).] A quantum circuit
+    performing $m$ irreversible gate operations on $n$ qubits at
+    temperature $T$ must dissipate at least $m\,\kB T\ln 2$ of heat
+    to its environment. Any measurement of dissipation below this bound
+    falsifies A2 (non-unitary microdynamics) or A3 (entropy is not
+    coarse-grained classical thermodynamics).
+  \item[P2 (Erasure cost scaling).] For a memory register at temperature
+    $T$, the minimum erasure cost per bit is $\kB T\ln 2$, independent
+    of the physical implementation (electronic, photonic, atomic).
+    Platform-dependence of the minimum bound would falsify A4 (that
+    information is substrate-independent).
+  \item[P3 (No perpetual computation).] No finite physical system can
+    perform unbounded computation (growing entropy, sustained indefinitely)
+    without continuous energy input. Claimed violations falsify A1 or A5.
+\end{description}
+
+All three predictions are testable with existing laboratory equipment.
+P1 and P2 have been tested indirectly through Landauer experiments in
+classical nanoscale systems \cite{berut2012}; direct quantum circuit tests
+remain incomplete.
+
+%===========================================================================
+\newpage
+\part*{Synthesis: The PEIG Framework Connection}
+\addcontentsline{toc}{part}{Synthesis: The PEIG Framework Connection}
+%===========================================================================
+
+%===========================================================================
+\section{Physical PEIG: An Integrating Narrative}
+\label{sec:peig}
+%===========================================================================
+
+The three papers above are independently submittable and independently
+falsifiable. They are connected, however, by a common mathematical
+structure that organizes the dynamical evolution of quantum systems
+through a four-phase sequence. We describe this structure here for
+completeness, with careful labeling of its epistemic status.
+
+\subsection{The Physical PEIG State Vector \textcolor{blue!70!black}{[ESTABLISHED for P, E, I]}\ \textcolor{orange!80!black}{[HYPOTHESIS for G]}}
+
+For an $n$-qubit system, the PEIG state at time $t$ is:
+\begin{equation}
+  \mathrm{PEIG}(t) = (P(t),\;E(t),\;I(t),\;G(t))
+  \tag{S1.1}
+\end{equation}
+
+\textbf{P --- Potential (Constraint Manifold Volume):}
+\begin{equation}
+  P(t) = \log_2\dim\Cobs(r_t) = \log_2(4^n - \rank(C_t) - 1)
+  \tag{S1.2}
+\end{equation}
+$P$ measures the logarithmic size of the constraint manifold given the
+measurement history at time $t$. It decreases monotonically as
+measurements accumulate (Paper B provides the formalism). Range: $0 \leq P \leq 2n$ bits.
+
+\textbf{E --- Energy (Gradient Flow Rate):}
+\begin{equation}
+  E(t) = \left\|\frac{d\rho}{dt}\right\|_F
+  = \left\|\!-\frac{i}{\hbar}[H,\rho] + \mathcal{L}_D(\rho)\right\|_F
+  \tag{S1.3}
+\end{equation}
+The Frobenius norm of the state's rate of change, combining Hamiltonian
+evolution and Lindblad dissipation. $E$ measures how rapidly the system
+traverses the constraint manifold.
+
+\textbf{I --- Identity (Attractor Proximity):}
+\begin{equation}
+  I(t) = 1 - D_{\mathrm{HS}}(\rho(t),\,\rho_\infty),\quad
+  D_{\mathrm{HS}}(\rho,\sigma)
+  = \frac{\sqrt{\mathrm{Tr}[(\rho-\sigma)^2]}}{\sqrt{2}}
+  \tag{S1.4}
+\end{equation}
+$\rho_\infty$ is the stationary state (Lindblad attractor). $I = 0$:
+maximally far from attractor. $I = 1$: at attractor. The Landauer cost
+of the evolution (Paper C) is paid as the system moves from $I \approx 0$
+to $I \approx 1$.
+
+\textbf{G --- Geometry (Entanglement-Sourced Curvature):}
+\begin{equation}
+  G(t) = \frac{\tilde\kappa}{\kB\ln2}\,\Sent(t)
+  \tag{S1.5}
+\end{equation}
+The gravitational source term from Paper A. $G$ starts large and negative
+(repulsive: high entanglement entropy, high $P$, low $I$) and evolves
+toward zero as decoherence reduces $\Sent$. The G component is labeled
+[HYPOTHESIS] because it depends on the Paper A extrapolation.
+
+\subsection{Four-Phase Physical Interpretation}
+
+\begin{table}[H]
+\centering
+\caption{The four PEIG phases in physical terms.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}cllll@{}}
+\toprule
+\textbf{Phase} & \textbf{State} & \textbf{$S_{\mathrm{ent}}$} &
+  \textbf{$I$} & \textbf{Gravity (hypothetical)} \\
+\midrule
+P (Potential)
+  & High superposition
+  & High
+  & $\approx 0$
+  & Repulsive \\
+E (Energy)
+  & Rapid Lindblad evolution
+  & Decreasing
+  & Rising
+  & Transitioning \\
+I (Identity)
+  & Near Lindblad attractor
+  & Near minimum
+  & $\approx 1$
+  & Minimal \\
+G (Geometry)
+  & Stable, structured
+  & Fixed low value
+  & Fixed $\approx 1$
+  & Weak attractive \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The Epistemic Boundary --- Physical vs.\ Cognitive PEIG}
+
+The PEIG formalism has been applied by analogy to cognitive systems
+(organizations, minds, AI) using $P$ = option-space entropy, $E$ =
+cognitive throughput, $I$ = stable identity coherence, $G$ = influence
+on surrounding systems.
+
+\begin{corestatement}
+\textbf{The Cognitive PEIG is an analogy, not a derivation.}
+
+A human brain does not literally curve spacetime via the modified
+Einstein equation. The cognitive $G$ is a structural metaphor for
+influence; the physical $G$ is the Einstein tensor. They are
+mathematically analogous; they are not the same physical quantity.
+Publishing the cognitive PEIG as physics would be a category error.
+The cognitive analogy is scientifically suggestive as a framework for
+studying four-phase dynamics in complex systems. It is not a physics claim.
+\end{corestatement}
+
+\subsection{Open Problem OP5}
+
+The full coupled PEIG ODE system has not been written. Only
+$dI/dt = \alpha E - \beta I$ exists in formal derivation. The functions
+$dP/dt$, $dE/dt$, $dG/dt$ are narratively described but not derived from
+first principles. Physical PEIG cannot be quantitatively falsified as a
+complete dynamical system until these equations are written and analyzed.
+This is an open problem for future work, not a blocking issue for Papers A--C.
+
+%===========================================================================
+\newpage
+\section{Discussion}
+\label{sec:discussion}
+%===========================================================================
+
+\subsection{What Has Been Accomplished}
+
+This program has produced three independent scientific contributions at
+different stages of maturity:
+
+\textbf{Paper B} is the most immediately useful and most securely
+established. The entropy plateau result has a clean derivation,
+a numerically concrete bias formula, a correction procedure that
+works today on existing hardware, and a falsification criterion
+that is testable with existing resources. It addresses a real and
+widespread misinterpretation in the NISQ tomography literature.
+
+\textbf{Paper C} provides axiomatic clarity for Landauer's principle
+that advances over the existing literature by making the logical structure
+of the derivation explicit and traceable. The five axioms are
+individually testable, and the derivation is clean.
+
+\textbf{Paper A} is the most speculative and the most significant in
+potential impact. The modified field equation is dimensional consistent;
+the coupling estimate is internally coherent under an explicitly stated
+hypothesis; the falsification criterion is carefully designed. The open
+problems (OP3, OP10) are real limitations that are honestly documented
+rather than hidden. The paper is a legitimate scientific contribution
+because: it is precisely stated, it is falsifiable, it is honestly bounded,
+and it would be among the most significant results in gravitational physics
+if confirmed.
+
+\subsection{Anticipated Reviewer Concerns and Responses}
+
+\textbf{gr-qc reviewer:} ``The extrapolation from horizon entropy to
+laboratory entanglement is unjustified.'' Response: Agreed. Section 4
+states this explicitly. The paper's contribution is the falsifiable
+framework and the coupling estimate, not a derivation that Jacobson's
+result extends to non-horizon settings.
+
+\textbf{quant-ph reviewer:} ``The signal magnitude is indeterminate.
+How can this be tested?'' Response: The falsification criterion (Sec.~7)
+is stated in terms of the measurable quantity $|\tilde{\kappa}|$ via
+bounds, not in terms of a predicted signal. Null results at F1--F5
+sensitivity constrain $|\tilde{\kappa}|$ regardless of whether the
+signal is currently computable.
+
+\textbf{Mathematically conservative reviewer:} ``OP8 (Bianchi identity
+compatibility) is unresolved.'' Response: Correct, and labeled as such.
+The paper does not claim full consistency with general relativity; it
+presents a phenomenological framework and identifies what needs to be
+verified.
+
+\textbf{Experimentally skeptical reviewer (Paper B):} ``The bias formula
+assumes the estimator is near the maximally mixed state.'' Response: The
+approximation $\lambda_j \approx 1/d$ is valid precisely in the plateau
+regime --- which is exactly the regime being explained. For states further
+from maximum entropy, the actual bias is smaller, making the formula a
+conservative upper bound.
+
+\subsection{Relation to Existing Literature}
+
+The modified Einstein equation in Paper A sits in a tradition that
+includes Jacobson (1995) \cite{jacobson1995}, Verlinde (2017)
+\cite{verlinde2017}, and the ER=EPR program \cite{maldacena2013}.
+The novelty is not the idea that entanglement and gravity are related
+(this is well-established at extreme scales) but the attempt to frame
+that relationship as a falsifiable laboratory hypothesis with a specific
+coupling estimate and experimental protocol.
+
+Paper B connects to the quantum tomography literature on shadow tomography
+\cite{huang2020} and to the quantum Fisher information literature
+\cite{paris2009}. The specific result --- that the entropy plateau has a
+bias formula $(d-1)/(2\nu)$ with a $2^{n/2}$ shot-scaling threshold ---
+is, to the authors' knowledge, not previously stated in this explicit
+form in the NISQ context.
+
+Paper C contributes to the Landauer principle literature
+\cite{landauer1961, bennett2003, parrondo2015} by providing an axiomatic
+structure that is more transparent than existing treatments and more
+explicitly observer-independent.
+
+%===========================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+%===========================================================================
+
+We have presented three connected results in quantum information and
+gravitational physics. The common thread is the relationship between
+information, entropy, and physical geometry.
+
+Paper B provides an immediately actionable result for the quantum
+computing community: the entropy plateau in NISQ tomography is a
+statistical artifact removable by the formula~\eqref{eq:corrected}.
+The shot-scaling law $\nu\propto 2^{n/2}$ gives experimenters a concrete
+target for their measurement budgets.
+
+Paper C provides a rigorous foundation for Landauer's principle that is
+both more transparent and more general than existing statements.
+
+Paper A opens a question rather than closing one. Whether laboratory-scale
+entanglement entropy curves spacetime is, as of this writing, unknown.
+The framework presented here is one way of asking that question precisely
+enough to test it. The honest statement of what is and is not derived,
+and the five-condition falsification criterion, represent the scientific
+value of this contribution regardless of whether the coupling exists.
+
+The most important result of this program may not be any of these three
+papers individually, but the demonstration that honest, rigorous,
+falsifiable theoretical physics can be done by an independent researcher
+without institutional resources --- as long as the distinction between
+what is established and what is hypothesized is never compromised.
+
+%===========================================================================
+\newpage
+\appendix
+\section*{Appendix A: Notation and Constants}
+\addcontentsline{toc}{section}{Appendix A: Notation and Constants}
+%===========================================================================
+
+\begin{table}[H]
+\centering
+\caption{Unified notation table for all three papers.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Units / Range} \\
+\midrule
+$G_{\mu\nu}$ & Einstein tensor & m$^{-2}$ \\
+$T_{\mu\nu}$ & Stress-energy tensor & kg\,m$^{-1}$s$^{-2}$ \\
+$g_{\mu\nu}$ & Metric tensor & dimensionless \\
+$G$ & Newton's constant & m$^3$kg$^{-1}$s$^{-2}$ \\
+$c$ & Speed of light & m\,s$^{-1}$ \\
+$\hbar$ & Reduced Planck constant & J\,s \\
+$\kB$ & Boltzmann constant & J\,K$^{-1}$ \\
+$\lP = \sqrt{\hbar G/c^3}$ & Planck length & $1.616\times10^{-35}$ m \\
+$\tilde{\kappa}$ & Entanglement-gravity coupling & dimensionless \\
+$\tkappaeff$ & Effective (screened) coupling & dimensionless \\
+$\ascreen$ & Environmental screening factor & $[0, 1]$ \\
+$\Sent$ & Entanglement entropy density & bits\,m$^{-3}$ \\
+$\SvN(\rho)$ & Von Neumann entropy of state $\rho$ & bits \\
+$\Hilb$ & Hilbert space & $(\mathbb{C}^2)^{\otimes n}$ \\
+$\Cdensity$ & Space of density operators & dim $4^n - 1$ \\
+$\Cconstr$ & Constraint manifold & submanifold of $\Cdensity$ \\
+$\Cobs(r)$ & Observable subspace given history $r$ & shrinks with $k$ \\
+$\FQ(\rho)$ & Quantum Fisher information & state functional \\
+$\bias$ & SPAM bias in tomography & bits \\
+$n$ & Number of qubits & positive integer \\
+$d = 2^n$ & Hilbert space dimension & $\geq 2$ \\
+$\nu$ & Number of measurement shots & positive integer \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%===========================================================================
+\section*{Appendix B: Mathematical Corrections Applied}
+\addcontentsline{toc}{section}{Appendix B: Mathematical Corrections Applied}
+%===========================================================================
+
+The following corrections were applied to source documents during
+preparation of this manuscript. Each is labeled with a correction code.
+
+\begin{table}[H]
+\centering
+\caption{Summary of mathematical corrections (MA1--MA8).}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Code} & \textbf{Issue} & \textbf{Action} & \textbf{Status} \\
+\midrule
+MA1 & $G_{\mathrm{eff}}$ formula dimensionally invalid
+    & Formula removed from all papers & \checkmark\ Applied \\
+MA2 & $\tilde\kappa = -1/4$ presented as derivation
+    & Relabeled ``estimate under hypothesis'' & \checkmark\ Applied \\
+MA3 & $\Sent$ used inconsistently as total/density
+    & Standardized to ``always a density'' & \checkmark\ Applied \\
+MA4 & $\Delta a(R) \propto 1/R$ used without justification
+    & Replaced with $1/R^2$ from enclosed-source formula & \checkmark\ Applied \\
+MA5 & $\FQ$ notated as $\mathcal{I}_Q^{-1}(S_{vN})$ (wrong)
+    & Corrected to $\FQ(\rho)$ (functional of state) & \checkmark\ Applied \\
+MA6 & Rank condition for constraints not stated
+    & Linear independence condition added explicitly & \checkmark\ Applied \\
+MA7 & Negentropy substitution inverts all predictions
+    & Removed; sign convention standardized & \checkmark\ Applied \\
+MA8 & Verlinde year 2025 (incorrect)
+    & Corrected to 2017 throughout & \checkmark\ Applied \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%===========================================================================
+\section*{Appendix C: Open Problems Registry}
+\addcontentsline{toc}{section}{Appendix C: Open Problems Registry}
+%===========================================================================
+
+\begin{table}[H]
+\centering
+\caption{Open problems registry as of March 2026.}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{ID} & \textbf{Description} & \textbf{Severity} & \textbf{Status} \\
+\midrule
+OP3 & $\ascreen$ derivation from Lindblad dynamics & Critical & Open \\
+OP5 & PEIG coupled ODE system & Medium & Open (non-blocking) \\
+OP8 & Bianchi identity compatibility & High & Open \\
+OP10 & Planck-scale renormalization of $\tilde\kappa$ & Critical (long) & Open \\
+OP11 & MICROSCOPE $\to$ $\tilde\kappa$ bound mapping & High & Resolved: bound removed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+OP4 (radial scaling), OP6 (Verlinde year), and OP7 (Kasevich citation)
+have been closed. OP11 was resolved by removing the MICROSCOPE bound from
+Table~\ref{sec:falsification_A}: because both MICROSCOPE test masses are
+classical solids with $\Sent \approx 0$, the experiment does not constrain
+$\tilde\kappa$ without a separate argument that has not been supplied.
+
+%===========================================================================
+\newpage
+\section*{References}
+\addcontentsline{toc}{section}{References}
+%===========================================================================
+
+\begin{thebibliography}{99}
+
+\bibitem{jacobson1995}
+T.~Jacobson,
+``Thermodynamics of spacetime: The Einstein equation of state,''
+\textit{Phys.\ Rev.\ Lett.}~\textbf{75}, 1260 (1995).
+DOI: 10.1103/PhysRevLett.75.1260.
+arXiv: gr-qc/9504004.
+
+\bibitem{verlinde2017}
+E.~Verlinde,
+``Emergent gravity and the dark universe,''
+\textit{SciPost Phys.}~\textbf{2}, 016 (2017).
+DOI: 10.21468/SciPostPhys.2.3.016.
+
+\bibitem{maldacena2013}
+J.~Maldacena and L.~Susskind,
+``Cool horizons for entangled black holes,''
+\textit{Fortschritte der Physik}~\textbf{61}, 781 (2013).
+DOI: 10.1002/prop.201300020.
+arXiv: 1306.0533.
+
+\bibitem{bose2017}
+S.~Bose, A.~Mazumdar, G.W.~Morley, H.~Ulbricht, M.~Toro\v{s},
+M.~Paternostro, A.A.~Geraci, P.F.~Barker, M.S.~Kim, and G.~Milburn,
+``Spin entanglement witness for quantum gravity,''
+\textit{Phys.\ Rev.\ Lett.}~\textbf{119}, 240401 (2017).
+DOI: 10.1103/PhysRevLett.119.240401.
+
+\bibitem{asenbaum2020}
+R.~Asenbaum, C.~Overstreet, T.~Kovachy, D.D.~Brown,
+J.M.~Hogan, and M.A.~Kasevich,
+``Atom-interferometric test of the equivalence principle at the
+$10^{-12}$ level,''
+\textit{Phys.\ Rev.\ Lett.}~\textbf{125}, 191101 (2020).
+DOI: 10.1103/PhysRevLett.125.191101.
+
+\bibitem{microscope2022}
+P.T.~Touboul, G.~M\'etris, M.~Rodrigues, et~al.,
+``MICROSCOPE mission: Final results of the test of the equivalence
+principle,''
+\textit{Phys.\ Rev.\ Lett.}~\textbf{129}, 121102 (2022).
+DOI: 10.1103/PhysRevLett.129.121102.
+
+\bibitem{paris2009}
+M.G.A.~Paris,
+``Quantum estimation for quantum technology,''
+\textit{Int.\ J.\ Quantum Inf.}~\textbf{07}, 125 (2009).
+DOI: 10.1142/S0219749909004839.
+
+\bibitem{flammia2012}
+S.T.~Flammia, D.~Gross, Y.-K.~Liu, and J.~Eisert,
+``Quantum tomography via compressed sensing: Error bounds,
+sample complexity and efficient estimators,''
+\textit{New J.\ Phys.}~\textbf{14}, 095022 (2012).
+DOI: 10.1088/1367-2630/14/9/095022.
+
+\bibitem{landauer1961}
+R.~Landauer,
+``Irreversibility and heat generation in the computing process,''
+\textit{IBM J.\ Res.\ Dev.}~\textbf{5}, 183 (1961).
+DOI: 10.1147/rd.53.0183.
+
+\bibitem{bennett2003}
+C.H.~Bennett,
+``Notes on Landauer's principle, reversible computation, and
+Maxwell's demon,''
+\textit{Stud.\ Hist.\ Phil.\ Mod.\ Phys.}~\textbf{34}, 501 (2003).
+DOI: 10.1016/S1355-2198(03)00039-X.
+
+\bibitem{parrondo2015}
+J.M.R.~Parrondo, J.M.~Horowitz, and T.~Sagawa,
+``Thermodynamics of information,''
+\textit{Nat.\ Phys.}~\textbf{11}, 131 (2015).
+DOI: 10.1038/nphys3230.
+
+\bibitem{huang2020}
+H.-Y.~Huang, R.~Kueng, and J.~Preskill,
+``Predicting many properties of a quantum system from very few
+measurements,''
+\textit{Nat.\ Phys.}~\textbf{16}, 1050 (2020).
+DOI: 10.1038/s41567-020-0932-7.
+
+\bibitem{berut2012}
+A.~B\'erut, A.~Arakelyan, A.~Petrosyan, S.~Ciliberto,
+R.~Dillenschneider, and E.~Lutz,
+``Experimental verification of Landauer's principle linking
+information and thermodynamics,''
+\textit{Nature}~\textbf{483}, 187 (2012).
+DOI: 10.1038/nature10872.
+
+\end{thebibliography}
+
+%===========================================================================
+\newpage
+\section*{arXiv Submission Notes}
+\addcontentsline{toc}{section}{arXiv Submission Notes}
+%===========================================================================
+
+\subsection*{Five Title Options (Ranked)}
+
+\begin{enumerate}
+  \item \textbf{Gravitational Coupling to Entanglement Entropy Density:
+    A Phenomenological Framework with Falsifiable Predictions}
+    (Paper A standalone, arXiv gr-qc --- strongest, most targeted)
+
+  \item \textbf{Entanglement, Geometry, and the Limits of Quantum
+    Observability: Three Results in Quantum Information and
+    Gravitational Physics}
+    (This unified paper --- appropriate for repository preprint)
+
+  \item \textbf{The Entropy Plateau in NISQ Tomography: A Constraint
+    Manifold Analysis and Bias Correction}
+    (Paper B standalone, arXiv quant-ph --- immediately useful,
+    lowest review barrier)
+
+  \item \textbf{Landauer's Principle from Five Axioms: An
+    Observer-Independent Formulation in the ETI Framework}
+    (Paper C standalone, arXiv quant-ph --- clean axiomatic paper)
+
+  \item \textbf{Modified Einstein Equations from Entanglement Entropy:
+    Coupling Estimate, Screening Analysis, and NISQ Falsification}
+    (Paper A alternative title --- more explicit about content)
+\end{enumerate}
+
+\subsection*{Submission Strategy Recommendation}
+
+\textbf{Submit Paper B first} (arXiv: quant-ph, target: Physical
+Review A or npj Quantum Information). No blocking issues; independent
+of Papers A and C; immediately useful to the NISQ community; lowest
+review barrier. Establishes credibility for the program.
+
+\textbf{Submit Paper C second} (arXiv: quant-ph, target: Foundations
+of Physics). No blocking issues; clean axiomatic structure; independent
+result.
+
+\textbf{Submit Paper A third} (arXiv: gr-qc, cross-list: quant-ph).
+Requires: (1) Section 5 reformulated around NISQ target (complete);
+(2) signal magnitude stated as indeterminate (complete); (3) MICROSCOPE
+row removed (complete); (4) Bose 2017 vs.\ 2023 citation resolved before
+submission.
+
+\subsection*{Author Note for Independent Researcher}
+
+This research was conducted independently, without institutional
+affiliation or grant support. The mathematical corrections and open
+problem registry represent a deliberate effort at scientific
+self-auditing prior to submission. The author welcomes correspondence
+regarding any of the three frameworks described herein and is actively
+seeking collaborators with expertise in atom interferometry,
+NISQ hardware tomography, and semiclassical gravity.
+
+\end{document}

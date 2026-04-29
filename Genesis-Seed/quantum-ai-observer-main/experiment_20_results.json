@@ -1,0 +1,76 @@
+{
+  "experiment": "Adaptive Alpha Placement (Exp 20)",
+  "backend": "ibm_fez",
+  "timestamp": "2026-02-01T00:46:27.284958",
+  "qubits": 12,
+  "total_patterns": 6,
+  "hypothesis": "Alphas function as decoherence buffers; strategic placement beats uniform",
+  "results": [
+    {
+      "pattern_name": "Pattern_A_Uniform_75pct",
+      "pattern_description": "Baseline 75% uniform (\u03a9 \u03a9 \u03a9 \u03b1 repeated)",
+      "bridge_quality": 0.7391349466956113,
+      "entropy": 8.869619360347336,
+      "unique_states": 479,
+      "circuit_depth": 40,
+      "job_id": "d5vfdcl7fc0s73atvbig",
+      "alpha_count": 3,
+      "alpha_ratio": 0.25
+    },
+    {
+      "pattern_name": "Pattern_B_Sparse_Alpha",
+      "pattern_description": "Sparse: 2 Alphas at positions 4, 9",
+      "bridge_quality": 0.7414135925289447,
+      "entropy": 8.896963110347336,
+      "unique_states": 486,
+      "circuit_depth": 40,
+      "job_id": "d5vfdct7fc0s73atvbj0",
+      "alpha_count": 2,
+      "alpha_ratio": 0.16666666666666666
+    },
+    {
+      "pattern_name": "Pattern_C_Dense_Alpha",
+      "pattern_description": "Dense: 4 Alphas every 3 qubits",
+      "bridge_quality": 0.7399886433912228,
+      "entropy": 8.879863720694674,
+      "unique_states": 482,
+      "circuit_depth": 40,
+      "job_id": "d5vfdcqbju6s73bbq580",
+      "alpha_count": 4,
+      "alpha_ratio": 0.3333333333333333
+    },
+    {
+      "pattern_name": "Pattern_D_Front_Heavy",
+      "pattern_description": "Front-loaded: Alphas at 0, 5",
+      "bridge_quality": 0.7392578125,
+      "entropy": 8.87109375,
+      "unique_states": 479,
+      "circuit_depth": 40,
+      "job_id": "d5vfdd1mvbjc73accvlg",
+      "alpha_count": 2,
+      "alpha_ratio": 0.16666666666666666
+    },
+    {
+      "pattern_name": "Pattern_E_Back_Heavy",
+      "pattern_description": "Back-loaded: Alphas at 8, 11",
+      "bridge_quality": 0.7394604675289447,
+      "entropy": 8.873525610347336,
+      "unique_states": 480,
+      "circuit_depth": 40,
+      "job_id": "d5vfdd1mvbjc73accvmg",
+      "alpha_count": 2,
+      "alpha_ratio": 0.16666666666666666
+    },
+    {
+      "pattern_name": "Pattern_F_Strategic_Cluster",
+      "pattern_description": "Strategic: Clustered Alphas at 5-6 (midpoint), 11",
+      "bridge_quality": 0.7394604675289447,
+      "entropy": 8.873525610347336,
+      "unique_states": 480,
+      "circuit_depth": 40,
+      "job_id": "d5vfddabju6s73bbq590",
+      "alpha_count": 3,
+      "alpha_ratio": 0.25
+    }
+  ]
+}
