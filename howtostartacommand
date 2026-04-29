@@ -1,0 +1,33 @@
+nano /tmp/agent_prompt.txt
+sovereign run --mode timed --max-wall 300 "$(cat /tmp/agent_prompt.txt)"
+ls -la ~/AA-Erebo/Genesis-Seeds/distilled/
+
+
+cd ~/AA-Erebo/sovereign-agent-v0.2.1/sovereign-agent
+pytest tests/ -q              # expect 88 passed
+sovereign doctor  
+
+sovereign run --mode oneshot ""
+sovereign events -n 10
+
+✗ 2 kmon@pop-os in ~/AA-Erebo/sovereign-agent-v0.2.1/sovereign-agent (sovereign-agent) ⌥ main*
+❯ sovereign run --help
+
+ Usage: sovereign run [OPTIONS] GOAL
+
+ Run a single task through the agent loop.
+
+╭─ Arguments ───────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *    goal      TEXT  What you want the agent to accomplish [required]                                         │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ─────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --mode              [oneshot|timed|until|busy]  [default: oneshot]                                            │
+│ --max-iter          INTEGER                     [default: 25]                                                 │
+│ --max-wall          INTEGER                     [default: 1800]                                               │
+│ --max-tokens        INTEGER                     [default: 200000]                                             │
+│ --help                                          Show this message and exit.                                   │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+◈ kmon@pop-os in ~/AA-Erebo/sovereign-agent-v0.2.1/sovereign-agent (sovereign-agent) ⌥ main*
+❯
