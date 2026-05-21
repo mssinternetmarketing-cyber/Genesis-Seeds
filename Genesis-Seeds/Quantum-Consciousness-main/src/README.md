@@ -1,1 +1,0 @@
-Figures, plots, and images.
